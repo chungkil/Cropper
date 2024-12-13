@@ -3,172 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cropper for PDF</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <title>Cropper for PDF - Privacy Policy</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 28px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            font-size: 20px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        p {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .date {
+            text-align: right;
+            color: #666;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .content {
+            display: none;
+        }
+        .content.active {
+            display: block;
+        }
+    </style>
 </head>
-<body class="bg-gray-50">
-    <header class="bg-white shadow-sm">
-        <nav class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div class="flex justify-between items-center">
-                <h1 class="text-xl font-bold text-gray-900">Cropper for PDF</h1>
-                <div class="flex items-center space-x-4">
-                    <select id="language-selector" class="text-sm text-gray-500 border rounded-md p-1">
-                        <option value="ko">한국어</option>
-                        <option value="en">English</option>
-                    </select>
-                    <a href="#" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
-                        <span class="lang-ko">App Store에서 다운로드</span>
-                        <span class="lang-en hidden">Download on App Store</span>
-                    </a>
-                </div>
+<body>
+    <div class="container">
+        <!-- 한국어 콘텐츠 -->
+        <div id="ko" class="content">
+            <h1>Cropper for PDF 개인정보처리방침</h1>
+            
+            <div class="section">
+                <h2>1. 개인정보 수집 및 이용</h2>
+                <p>Cropper for PDF는 기본적으로 사용자의 개인정보를 수집하지 않습니다. 모든 PDF 및 이미지 처리는 사용자의 기기 내에서만 이루어지며, 외부 서버로 정보가 전송되지 않습니다.</p>
             </div>
-        </nav>
-    </header>
 
-    <main>
-        <!-- Hero Section -->
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="text-center">
-                <h1 class="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">
-                    <span class="block">
-                        <span class="lang-ko">PDF와 이미지에서</span>
-                        <span class="lang-en hidden">Easily Copy Any Part</span>
-                    </span>
-                    <span class="block text-blue-600">
-                        <span class="lang-ko">원하는 부분만 쉽게 복사하세요</span>
-                        <span class="lang-en hidden">from PDF and Images</span>
-                    </span>
-                </h1>
-                <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5">
-                    <span class="lang-ko">더블 터치로 영역을 선택하고, 터치 한번으로 복사까지. 이보다 더 쉬울 순 없습니다.</span>
-                    <span class="lang-en hidden">Double tap to select, single tap to copy. It couldn't be simpler.</span>
-                </p>
+            <div class="section">
+                <h2>2. 제3자 정보 제공</h2>
+                <p>당사는 다음과 같은 제3자 서비스를 사용합니다:</p>
+                <ul>
+                    <li><strong>AdMob:</strong> 광고 서비스 제공을 위해 Google AdMob을 사용하며, 이 과정에서 제3자 식별자 추적이 사용될 수 있습니다.</li>
+                    <li><strong>Google Drive:</strong> 사용자가 요청하는 경우에만 Google Drive 접근이 가능하며, 이는 사용자의 명시적인 동의하에 이루어집니다.</li>
+                </ul>
             </div>
-        </div>
 
-        <!-- Features -->
-        <div class="bg-white py-12">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="space-y-8">
-                    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                        <div class="relative">
-                            <dt>
-                                <div class="absolute flex items-center justify-center h-10 w-10 rounded-md bg-blue-500 text-white">
-                                    <svg class="h-2 w-2" fill="none" viewBox="0 0 12 12" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5" d="M7.5 7.5l-1 2.5L4.5 4.5l5.5 2-2.5 1zm0 0l2.5 2.5M3.594 1.12l.388 1.448M2.568 3.982l-1.449-.388M6.975 2.025l-1.061 1.061m-2.829 2.828l-1.06 1.061"/>
-                                    </svg>
-                                </div>
-                                <p class="ml-14 text-base font-medium text-gray-900">
-                                    <span class="lang-ko">직관적인 사용법</span>
-                                    <span class="lang-en hidden">Intuitive Interface</span>
-                                </p>
-                            </dt>
-                            <dd class="mt-2 ml-14 text-sm text-gray-500">
-                                <span class="lang-ko">더블 터치로 영역 선택, 터치로 복사. 누구나 쉽게 사용할 수 있습니다.</span>
-                                <span class="lang-en hidden">Double tap to select area, tap to copy. Simple enough for everyone to use.</span>
-                            </dd>
-                        </div>
+            <div class="section">
+                <h2>3. 데이터 처리 방식</h2>
+                <p>앱의 주요 기능과 관련된 데이터 처리는 다음과 같이 이루어집니다:</p>
+                <ul>
+                    <li>PDF 및 이미지 처리는 사용자의 기기 내에서만 수행됩니다.</li>
+                    <li>선택된 영역의 복사본은 기기의 클립보드에만 임시 저장됩니다.</li>
+                    <li>앱은 처리된 데이터를 별도로 저장하거나 외부로 전송하지 않습니다.</li>
+                </ul>
+            </div>
 
-                        <div class="relative">
-                            <dt>
-                                <div class="absolute flex items-center justify-center h-10 w-10 rounded-md bg-blue-500 text-white">
-                                    <svg class="h-2 w-2" fill="none" viewBox="0 0 12 12" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5" d="M4.5 6h3m-3 2h3m1 2.5H3.5a1 1 0 01-1-1V2.5a1 1 0 011-1h2.793a.5.5 0 01.353.146l2.707 2.707a.5.5 0 01.147.353V9.5a1 1 0 01-1 1z"/>
-                                    </svg>
-                                </div>
-                                <p class="ml-14 text-base font-medium text-gray-900">
-                                    <span class="lang-ko">다중 페이지 지원</span>
-                                    <span class="lang-en hidden">Multi-page Support</span>
-                                </p>
-                            </dt>
-                            <dd class="mt-2 ml-14 text-sm text-gray-500">
-                                <span class="lang-ko">PDF의 모든 페이지를 손쉽게 탐색하고 원하는 영역을 복사하세요.</span>
-                                <span class="lang-en hidden">Easily navigate and copy from any page in your PDF documents.</span>
-                            </dd>
-                        </div>
+            <div class="section">
+                <h2>4. 결제 정보</h2>
+                <p>인앱 결제 기능이 제공되며, 결제와 관련된 모든 처리는 App Store의 시스템을 통해 이루어집니다. 당사는 결제 정보를 별도로 수집하거나 저장하지 않습니다.</p>
+            </div>
 
-                        <div class="relative">
-                            <dt>
-                                <div class="absolute flex items-center justify-center h-10 w-10 rounded-md bg-blue-500 text-white">
-                                    <svg class="h-2 w-2" fill="none" viewBox="0 0 12 12" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5" d="M7.5 7.5l-1 2.5L4.5 4.5l5.5 2-2.5 1zm0 0l2.5 2.5M3.594 1.12l.388 1.448M2.568 3.982l-1.449-.388M6.975 2.025l-1.061 1.061m-2.829 2.828l-1.06 1.061"/>
-                                    </svg>
-                                </div>
-                                <p class="ml-14 text-base font-medium text-gray-900">Apple Pencil Support</p>
-                            </dt>
-                            <dd class="mt-2 ml-14 text-sm text-gray-500">
-                                <span class="lang-ko">Apple Pencil로 더욱 정교한 영역 선택이 가능합니다.</span>
-                                <span class="lang-en hidden">Use Apple Pencil for more precise area selection.</span>
-                            </dd>
-                        </div>
-                    </div>
-                </div>
+            <div class="section">
+                <h2>5. 사용자 권리</h2>
+                <p>사용자는 다음과 같은 권리를 가집니다:</p>
+                <ul>
+                    <li>Google Drive 연동 동의를 거부할 권리</li>
+                    <li>광고 식별자 추적을 제한할 권리</li>
+                    <li>앱 사용 중단 및 삭제할 권리</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>6. 개인정보처리방침 변경</h2>
+                <p>본 개인정보처리방침은 법률 또는 서비스의 변경사항을 반영하기 위해 수정될 수 있습니다. 변경 사항이 있는 경우 App Store 페이지를 통해 공지됩니다.</p>
+            </div>
+
+            <div class="date">
+                <p>최종 수정일: 2024년 11월 24일</p>
+                <p>문의사항: App Store의 개발자 페이지를 통해 문의해 주시기 바랍니다.</p>
             </div>
         </div>
 
-        <!-- Use Cases -->
-        <div class="bg-gray-50 py-12">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-2xl font-extrabold text-gray-900 text-center mb-8">
-                    <span class="lang-ko">이럴 때 유용해요</span>
-                    <span class="lang-en hidden">Perfect For</span>
-                </h2>
-                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                    <div class="bg-white overflow-hidden shadow rounded-lg">
-                        <div class="px-4 py-4">
-                            <h3 class="text-base font-medium text-gray-900">
-                                <span class="lang-ko">문제 풀이 준비</span>
-                                <span class="lang-en hidden">Study Materials</span>
-                            </h3>
-                            <p class="mt-2 text-sm text-gray-500">
-                                <span class="lang-ko">문제지에서 필요한 문제만 선택적으로 복사하여 학습 자료를 만들 수 있습니다.</span>
-                                <span class="lang-en hidden">Selectively copy questions from worksheets to create your study materials.</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="bg-white overflow-hidden shadow rounded-lg">
-                        <div class="px-4 py-4">
-                            <h3 class="text-base font-medium text-gray-900">
-                                <span class="lang-ko">이미지 편집</span>
-                                <span class="lang-en hidden">Image Editing</span>
-                            </h3>
-                            <p class="mt-2 text-sm text-gray-500">
-                                <span class="lang-ko">큰 이미지에서 필요한 부분만 잘라내어 사용할 수 있습니다.</span>
-                                <span class="lang-en hidden">Extract specific parts from larger images for your needs.</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+        <!-- English Content -->
+        <div id="en" class="content">
+            <h1>Cropper for PDF Privacy Policy</h1>
+            
+            <div class="section">
+                <h2>1. Collection and Use of Personal Information</h2>
+                <p>Cropper for PDF does not collect personal information. All PDF and image processing is performed locally on the user's device, and no information is transmitted to external servers.</p>
             </div>
-        </div>
-    </main>
 
-    <footer class="bg-white">
-        <div class="max-w-5xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-            <div class="text-center space-y-4">
-                <div class="space-x-4">
-                    <a href="./privacy-policy.html" class="text-sm text-gray-500 hover:text-gray-700">
-                        <span class="lang-ko">개인정보처리방침</span>
-                        <span class="lang-en hidden">Privacy Policy</span>
-                    </a>
-                </div>
-                <p class="text-sm text-gray-500">
-                    © 2024 Cropper for PDF. All rights reserved.
-                </p>
+            <div class="section">
+                <h2>2. Third-Party Services</h2>
+                <p>We use the following third-party services:</p>
+                <ul>
+                    <li><strong>AdMob:</strong> We use Google AdMob for advertising services, which may involve third-party identifier tracking.</li>
+                    <li><strong>Google Drive:</strong> Google Drive access is only available upon user request and requires explicit user consent.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>3. Data Processing</h2>
+                <p>Data processing related to the app's main features is conducted as follows:</p>
+                <ul>
+                    <li>PDF and image processing is performed locally on the user's device only.</li>
+                    <li>Selected area copies are temporarily stored in the device's clipboard only.</li>
+                    <li>The app does not separately store or transmit processed data externally.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>4. Payment Information</h2>
+                <p>In-app purchases are processed through the App Store system. We do not collect or store any payment information separately.</p>
+            </div>
+
+            <div class="section">
+                <h2>5. User Rights</h2>
+                <p>Users have the following rights:</p>
+                <ul>
+                    <li>Right to refuse Google Drive integration</li>
+                    <li>Right to limit advertising identifier tracking</li>
+                    <li>Right to discontinue app usage and delete the app</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>6. Changes to Privacy Policy</h2>
+                <p>This privacy policy may be modified to reflect changes in laws or services. Any changes will be announced through the App Store page.</p>
+            </div>
+
+            <div class="date">
+                <p>Last updated: November 24, 2024</p>
+                <p>For inquiries: Please contact us through the developer page on the App Store.</p>
             </div>
         </div>
-    </footer>
+    </div>
 
     <script>
-        document.getElementById('language-selector').addEventListener('change', function(e) {
-            const lang = e.target.value;
-            document.querySelectorAll('.lang-ko, .lang-en').forEach(el => {
-                el.classList.add('hidden');
-            });
-            document.querySelectorAll('.lang-' + lang).forEach(el => {
-                el.classList.remove('hidden');
-            });
-        });
+        // 브라우저 언어 설정 확인
+        function getBrowserLanguage() {
+            return (navigator.language || navigator.userLanguage).toLowerCase();
+        }
+
+        // 언어에 따라 컨텐츠 표시
+        function showContent() {
+            const lang = getBrowserLanguage();
+            const koContent = document.getElementById('ko');
+            const enContent = document.getElementById('en');
+
+            if (lang.startsWith('ko')) {
+                koContent.classList.add('active');
+                enContent.classList.remove('active');
+            } else {
+                enContent.classList.add('active');
+                koContent.classList.remove('active');
+            }
+        }
+
+        // 페이지 로드 시 실행
+        document.addEventListener('DOMContentLoaded', showContent);
     </script>
 </body>
 </html>
