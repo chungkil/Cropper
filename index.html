@@ -1,8 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cropper for PDF - Powerful area copy tool for PDF and images. Double-tap to select, touch to copy.">
+
+    <!-- OpenGraph Meta Tags -->
+    <meta property="og:title" content="Cropper for PDF">
+    <meta property="og:description" content="Powerful area copy tool for PDF and images. Double-tap to select, touch to copy.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cksw.pe.kr/">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Cropper for PDF">
+    <meta name="twitter:description" content="Powerful area copy tool for PDF and images. Double-tap to select, touch to copy.">
+
     <title>Cropper for PDF</title>
     <style>
         body {
@@ -59,12 +72,35 @@
             margin-top: 20px;
             color: #666;
         }
+        .language-selector button {
+            padding: 6px 12px;
+            margin: 0 4px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background: #fff;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .language-selector button:hover {
+            background: #f0f0f0;
+        }
+        .language-selector button:focus {
+            outline: 2px solid #007AFF;
+            outline-offset: 2px;
+        }
+        .language-selector button[aria-current="true"] {
+            background: #007AFF;
+            color: #fff;
+            border-color: #007AFF;
+        }
+        /* Fallback for no-JS */
+        .ko, .en { display: block; }
     </style>
 </head>
 <body>
-    <div class="language-selector">
-        <button onclick="setLanguage('ko')">한국어</button>
-        <button onclick="setLanguage('en')">English</button>
+    <div class="language-selector" role="group" aria-label="Language selection">
+        <button id="btn-ko" type="button" aria-label="한국어로 보기">한국어</button>
+        <button id="btn-en" type="button" aria-label="View in English">English</button>
     </div>
 
     <div class="header">
@@ -137,24 +173,101 @@
     </div>
 
     <script>
-        function setLanguage(lang) {
-            const elements = {
-                ko: document.querySelectorAll('.ko'),
-                en: document.querySelectorAll('.en')
-            };
-            
-            if (lang === 'ko') {
-                elements.ko.forEach(el => el.style.display = 'block');
-                elements.en.forEach(el => el.style.display = 'none');
-            } else {
-                elements.ko.forEach(el => el.style.display = 'none');
-                elements.en.forEach(el => el.style.display = 'block');
-            }
-        }
+        (function() {
+            'use strict';
 
-        // Set initial language based on browser settings
-        const userLang = navigator.language || navigator.userLanguage;
-        setLanguage(userLang.startsWith('ko') ? 'ko' : 'en');
+            var STORAGE_KEY = 'cropper-lang';
+            var TITLES = {
+                ko: 'Cropper for PDF - PDF와 이미지를 위한 영역 복사 도구',
+                en: 'Cropper for PDF - Powerful Area Copy Tool'
+            };
+
+            function setLanguage(lang) {
+                try {
+                    // Validate language
+                    if (lang !== 'ko' && lang !== 'en') {
+                        lang = 'en';
+                    }
+
+                    var koElements = document.querySelectorAll('.ko');
+                    var enElements = document.querySelectorAll('.en');
+                    var btnKo = document.getElementById('btn-ko');
+                    var btnEn = document.getElementById('btn-en');
+
+                    // Update content visibility
+                    if (koElements && koElements.length > 0) {
+                        koElements.forEach(function(el) {
+                            el.style.display = lang === 'ko' ? 'block' : 'none';
+                        });
+                    }
+                    if (enElements && enElements.length > 0) {
+                        enElements.forEach(function(el) {
+                            el.style.display = lang === 'en' ? 'block' : 'none';
+                        });
+                    }
+
+                    // Update button states
+                    if (btnKo) {
+                        btnKo.setAttribute('aria-current', lang === 'ko' ? 'true' : 'false');
+                    }
+                    if (btnEn) {
+                        btnEn.setAttribute('aria-current', lang === 'en' ? 'true' : 'false');
+                    }
+
+                    // Update page title and lang attribute
+                    document.title = TITLES[lang] || TITLES.en;
+                    document.documentElement.lang = lang;
+
+                    // Save preference
+                    try {
+                        localStorage.setItem(STORAGE_KEY, lang);
+                    } catch (e) {
+                        // localStorage not available
+                    }
+                } catch (error) {
+                    console.error('Error setting language:', error);
+                }
+            }
+
+            function getInitialLanguage() {
+                try {
+                    // Check saved preference first
+                    var saved = localStorage.getItem(STORAGE_KEY);
+                    if (saved === 'ko' || saved === 'en') {
+                        return saved;
+                    }
+                } catch (e) {
+                    // localStorage not available
+                }
+
+                // Fall back to browser language
+                var browserLang = navigator.language || navigator.userLanguage || 'en';
+                return browserLang.toLowerCase().startsWith('ko') ? 'ko' : 'en';
+            }
+
+            // Initialize when DOM is ready
+            function init() {
+                var btnKo = document.getElementById('btn-ko');
+                var btnEn = document.getElementById('btn-en');
+
+                // Add event listeners
+                if (btnKo) {
+                    btnKo.addEventListener('click', function() { setLanguage('ko'); });
+                }
+                if (btnEn) {
+                    btnEn.addEventListener('click', function() { setLanguage('en'); });
+                }
+
+                // Set initial language
+                setLanguage(getInitialLanguage());
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+        })();
     </script>
 </body>
 </html>

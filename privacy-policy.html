@@ -1,8 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy Policy for Cropper for PDF - Learn how we protect your data and privacy.">
+
+    <!-- OpenGraph Meta Tags -->
+    <meta property="og:title" content="Cropper for PDF - Privacy Policy">
+    <meta property="og:description" content="Privacy Policy for Cropper for PDF - Learn how we protect your data and privacy.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cksw.pe.kr/privacy-policy.html">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Cropper for PDF - Privacy Policy">
+    <meta name="twitter:description" content="Privacy Policy for Cropper for PDF - Learn how we protect your data and privacy.">
+
     <title>Cropper for PDF - Privacy Policy</title>
     <style>
         body {
@@ -173,28 +186,78 @@
     </div>
 
     <script>
-        // 브라우저 언어 설정 확인
-        function getBrowserLanguage() {
-            return (navigator.language || navigator.userLanguage).toLowerCase();
-        }
+        (function() {
+            'use strict';
 
-        // 언어에 따라 컨텐츠 표시
-        function showContent() {
-            const lang = getBrowserLanguage();
-            const koContent = document.getElementById('ko');
-            const enContent = document.getElementById('en');
+            var STORAGE_KEY = 'cropper-lang';
+            var TITLES = {
+                ko: 'Cropper for PDF 개인정보처리방침',
+                en: 'Cropper for PDF - Privacy Policy'
+            };
 
-            if (lang.startsWith('ko')) {
-                koContent.classList.add('active');
-                enContent.classList.remove('active');
-            } else {
-                enContent.classList.add('active');
-                koContent.classList.remove('active');
+            // 브라우저 언어 설정 확인
+            function getBrowserLanguage() {
+                try {
+                    return (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+                } catch (e) {
+                    return 'en';
+                }
             }
-        }
 
-        // 페이지 로드 시 실행
-        document.addEventListener('DOMContentLoaded', showContent);
+            // Get initial language from storage or browser
+            function getInitialLanguage() {
+                try {
+                    var saved = localStorage.getItem(STORAGE_KEY);
+                    if (saved === 'ko' || saved === 'en') {
+                        return saved;
+                    }
+                } catch (e) {
+                    // localStorage not available
+                }
+                return getBrowserLanguage().startsWith('ko') ? 'ko' : 'en';
+            }
+
+            // 언어에 따라 컨텐츠 표시
+            function showContent() {
+                try {
+                    var lang = getInitialLanguage();
+                    var koContent = document.getElementById('ko');
+                    var enContent = document.getElementById('en');
+
+                    // Null checks before accessing classList
+                    if (!koContent || !enContent) {
+                        console.error('Language content elements not found');
+                        return;
+                    }
+
+                    if (lang === 'ko') {
+                        koContent.classList.add('active');
+                        enContent.classList.remove('active');
+                    } else {
+                        enContent.classList.add('active');
+                        koContent.classList.remove('active');
+                    }
+
+                    // Update page title and lang attribute
+                    document.title = TITLES[lang] || TITLES.en;
+                    document.documentElement.lang = lang;
+                } catch (error) {
+                    console.error('Error showing content:', error);
+                    // Fallback: show English content
+                    var enContent = document.getElementById('en');
+                    if (enContent) {
+                        enContent.classList.add('active');
+                    }
+                }
+            }
+
+            // 페이지 로드 시 실행
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', showContent);
+            } else {
+                showContent();
+            }
+        })();
     </script>
 </body>
 </html>
