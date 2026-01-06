@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Stellar Voyage</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        .lang-selector {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        .lang-selector a {
+            color: #666;
+            text-decoration: none;
+            margin-left: 15px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        .lang-selector a:hover,
+        .lang-selector a.active {
+            background: #4a90d9;
+            color: white;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 18px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+        h1 {
+            color: #1a1a2e;
+            margin-bottom: 5px;
+            font-size: 2em;
+        }
+        .app-name {
+            color: #888;
+            font-size: 1em;
+        }
+        h2 {
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        h2 .icon {
+            font-size: 1.2em;
+        }
+        p, li {
+            margin-bottom: 12px;
+            color: #555;
+        }
+        .faq-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .faq-item h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        .contact-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 30px;
+            text-align: center;
+            color: white;
+        }
+        .contact-box h2 {
+            color: white;
+            justify-content: center;
+            margin-top: 0;
+        }
+        .contact-box p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        .contact-box a {
+            color: white;
+            font-weight: bold;
+        }
+        .email-btn {
+            display: inline-block;
+            background: white;
+            color: #764ba2;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: transform 0.3s;
+        }
+        .email-btn:hover {
+            transform: scale(1.05);
+        }
+        .tips {
+            background: #e8f4fd;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #4a90d9;
+        }
+        .tips ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="lang-selector">
+                <a href="?lang=ko" data-lang="ko">한국어</a>
+                <a href="?lang=en" data-lang="en">English</a>
+                <a href="?lang=jp" data-lang="jp">日本語</a>
+            </div>
+
+            <div class="header">
+                <div class="app-icon">🚀</div>
+                <h1>Support</h1>
+                <p class="app-name">Stellar Voyage</p>
+            </div>
+
+            <!-- Korean -->
+            <div id="content-ko" class="content">
+                <h2><span class="icon">❓</span> 자주 묻는 질문</h2>
+
+                <div class="faq-item">
+                    <h3>Q: 게임이 저장되지 않아요</h3>
+                    <p>A: 게임 데이터는 자동으로 저장됩니다. 앱을 삭제하면 로컬 데이터가 삭제됩니다. Game Center에 연결하면 리더보드 점수는 유지됩니다.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Q: Game Center 리더보드가 보이지 않아요</h3>
+                    <p>A: iOS 설정 > Game Center에서 로그인되어 있는지 확인해 주세요. 로그인 후 앱을 재시작해 보세요.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Q: 광고를 제거할 수 있나요?</h3>
+                    <p>A: 현재 버전에서는 광고 제거 옵션이 없습니다. 향후 업데이트에서 추가될 수 있습니다.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Q: 게임이 갑자기 종료돼요</h3>
+                    <p>A: 기기를 재시작하고 앱을 최신 버전으로 업데이트해 주세요. 문제가 지속되면 문의해 주세요.</p>
+                </div>
+
+                <h2><span class="icon">🎮</span> 게임 팁</h2>
+                <div class="tips">
+                    <ul>
+                        <li>화면을 탭하면 로켓이 위로 올라갑니다.</li>
+                        <li>탭하지 않으면 로켓이 아래로 떨어집니다.</li>
+                        <li>운석 사이를 통과할 때마다 1점을 얻습니다.</li>
+                        <li>Easy 모드에서 연습한 후 어려운 난이도에 도전하세요!</li>
+                        <li>높은 점수를 달성하면 새로운 로켓 스킨을 잠금 해제할 수 있습니다.</li>
+                    </ul>
+                </div>
+
+                <div class="contact-box">
+                    <h2><span class="icon">📧</span> 문의하기</h2>
+                    <p>문제가 해결되지 않았거나 다른 문의사항이 있으신가요?</p>
+                    <p>아래 이메일로 연락해 주세요.</p>
+                    <a href="mailto:support@cksw.kr?subject=[Stellar Voyage] 문의" class="email-btn">support@cksw.kr</a>
+                </div>
+            </div>
+
+            <!-- English -->
+            <div id="content-en" class="content" style="display: none;">
+                <h2><span class="icon">❓</span> FAQ</h2>
+
+                <div class="faq-item">
+                    <h3>Q: My game progress is not saved</h3>
+                    <p>A: Game data is automatically saved. If you delete the app, local data will be deleted. Connect to Game Center to keep your leaderboard scores.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Q: I can't see Game Center leaderboard</h3>
+                    <p>A: Please check if you're signed in at iOS Settings > Game Center. Try restarting the app after signing in.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Q: Can I remove ads?</h3>
+                    <p>A: The current version doesn't have an ad removal option. It may be added in future updates.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Q: The game crashes unexpectedly</h3>
+                    <p>A: Please restart your device and update the app to the latest version. Contact us if the issue persists.</p>
+                </div>
+
+                <h2><span class="icon">🎮</span> Game Tips</h2>
+                <div class="tips">
+                    <ul>
+                        <li>Tap the screen to make the rocket go up.</li>
+                        <li>The rocket falls down when you don't tap.</li>
+                        <li>You earn 1 point each time you pass through asteroids.</li>
+                        <li>Practice on Easy mode before challenging harder difficulties!</li>
+                        <li>Achieve high scores to unlock new rocket skins.</li>
+                    </ul>
+                </div>
+
+                <div class="contact-box">
+                    <h2><span class="icon">📧</span> Contact Us</h2>
+                    <p>Couldn't find a solution or have other questions?</p>
+                    <p>Please contact us via email below.</p>
+                    <a href="mailto:support@cksw.kr?subject=[Stellar Voyage] Support" class="email-btn">support@cksw.kr</a>
+                </div>
+            </div>
+
+            <!-- Japanese -->
+            <div id="content-jp" class="content" style="display: none;">
+                <h2><span class="icon">❓</span> よくある質問</h2>
+
+                <div class="faq-item">
+                    <h3>Q: ゲームが保存されません</h3>
+                    <p>A: ゲームデータは自動的に保存されます。アプリを削除するとローカルデータは削除されます。Game Centerに接続すると、リーダーボードのスコアは保持されます。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Q: Game Centerリーダーボードが表示されません</h3>
+                    <p>A: iOS設定 > Game Centerでサインインしているか確認してください。サインイン後、アプリを再起動してみてください。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Q: 広告を削除できますか？</h3>
+                    <p>A: 現在のバージョンには広告削除オプションがありません。今後のアップデートで追加される可能性があります。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Q: ゲームが突然終了します</h3>
+                    <p>A: デバイスを再起動し、アプリを最新バージョンにアップデートしてください。問題が続く場合はお問い合わせください。</p>
+                </div>
+
+                <h2><span class="icon">🎮</span> ゲームのヒント</h2>
+                <div class="tips">
+                    <ul>
+                        <li>画面をタップするとロケットが上昇します。</li>
+                        <li>タップしないとロケットは落下します。</li>
+                        <li>隕石の間を通過するたびに1ポイント獲得します。</li>
+                        <li>Easyモードで練習してから難しいモードに挑戦しましょう！</li>
+                        <li>ハイスコアを達成すると新しいロケットスキンがアンロックされます。</li>
+                    </ul>
+                </div>
+
+                <div class="contact-box">
+                    <h2><span class="icon">📧</span> お問い合わせ</h2>
+                    <p>問題が解決しない、または他にご質問がありますか？</p>
+                    <p>以下のメールアドレスまでご連絡ください。</p>
+                    <a href="mailto:support@cksw.kr?subject=[Stellar Voyage] お問い合わせ" class="email-btn">support@cksw.kr</a>
+                </div>
+            </div>
+        </div>
+        <p class="footer">&copy; 2025 CKSW. All rights reserved.</p>
+    </div>
+
+    <script>
+        function getLanguage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const langParam = urlParams.get('lang');
+            if (langParam && ['ko', 'en', 'jp'].includes(langParam)) {
+                return langParam;
+            }
+            const browserLang = navigator.language || navigator.userLanguage;
+            if (browserLang.startsWith('ko')) return 'ko';
+            if (browserLang.startsWith('ja')) return 'jp';
+            return 'en';
+        }
+
+        function setLanguage(lang) {
+            document.querySelectorAll('.content').forEach(el => el.style.display = 'none');
+            document.getElementById('content-' + lang).style.display = 'block';
+            document.querySelectorAll('.lang-selector a').forEach(el => {
+                el.classList.toggle('active', el.dataset.lang === lang);
+            });
+            document.documentElement.lang = lang === 'jp' ? 'ja' : lang;
+        }
+
+        setLanguage(getLanguage());
+    </script>
+</body>
+</html>
