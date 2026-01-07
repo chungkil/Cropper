@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heliosphere - Support</title>
+    <style>
+        :root {
+            --bg-color: #0a0a1a;
+            --card-bg: #12122a;
+            --text-color: #e0e0e0;
+            --text-secondary: #a0a0b0;
+            --accent-color: #4a9eff;
+            --accent-secondary: #ff9f4a;
+            --border-color: #2a2a4a;
+            --success-color: #4aff9f;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #1a1a3a, #2a2a5a);
+            border-radius: 18px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            box-shadow: 0 4px 20px rgba(74, 158, 255, 0.2);
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        .language-selector {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 30px 0;
+        }
+
+        .lang-btn {
+            padding: 10px 24px;
+            border: 1px solid var(--border-color);
+            background: var(--card-bg);
+            color: var(--text-secondary);
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .lang-btn.active {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+            color: #fff;
+        }
+
+        .support-content {
+            display: none;
+        }
+
+        .support-content.active {
+            display: block;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 30px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(74, 158, 255, 0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #fff;
+            margin: 25px 0 15px;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        ul {
+            margin: 15px 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+        }
+
+        li::before {
+            content: "•";
+            position: absolute;
+            left: 8px;
+            color: var(--accent-color);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .faq-item:first-child {
+            padding-top: 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .faq-question::before {
+            content: "Q";
+            background: var(--accent-color);
+            color: #fff;
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            padding-left: 34px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .feature-item {
+            background: rgba(74, 158, 255, 0.08);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .feature-item .icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .feature-item .label {
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, rgba(74, 158, 255, 0.15), rgba(255, 159, 74, 0.1));
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .contact-box a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-box p {
+            margin-bottom: 10px;
+        }
+
+        .tip-box {
+            background: rgba(74, 255, 159, 0.1);
+            border-left: 3px solid var(--success-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 15px 0;
+        }
+
+        .tip-box p {
+            margin: 0;
+            color: var(--text-color);
+        }
+
+        .tip-label {
+            color: var(--success-color);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .version-info {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .language-selector {
+                flex-wrap: wrap;
+            }
+
+            .lang-btn {
+                padding: 8px 20px;
+                font-size: 13px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="app-icon">☀️</div>
+            <h1>Heliosphere</h1>
+            <p class="subtitle" id="app-subtitle">고객 지원</p>
+        </header>
+
+        <div class="language-selector">
+            <button class="lang-btn active" onclick="setLanguage('ko')">한국어</button>
+            <button class="lang-btn" onclick="setLanguage('en')">English</button>
+            <button class="lang-btn" onclick="setLanguage('ja')">日本語</button>
+        </div>
+
+        <!-- Korean -->
+        <div id="support-ko" class="support-content active">
+            <!-- 앱 소개 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🪐</div>
+                    <div class="card-title">앱 소개</div>
+                </div>
+                <p>Heliosphere는 실제 천문학 데이터를 기반으로 태양계를 3D로 시뮬레이션하는 교육용 앱입니다. NASA의 J2000 에포크 데이터를 사용하여 1900년부터 2100년까지 행성들의 정확한 위치를 확인할 수 있습니다.</p>
+
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <div class="icon">🌍</div>
+                        <div class="label">8개 행성</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon">⏰</div>
+                        <div class="label">시간 여행</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon">📊</div>
+                        <div class="label">상세 정보</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon">🎮</div>
+                        <div class="label">3D 조작</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 사용 방법 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">📖</div>
+                    <div class="card-title">사용 방법</div>
+                </div>
+
+                <h2>기본 조작</h2>
+                <ul>
+                    <li><strong>드래그:</strong> 화면을 드래그하여 태양계를 회전시킬 수 있습니다</li>
+                    <li><strong>핀치 줌:</strong> 두 손가락으로 확대/축소할 수 있습니다</li>
+                    <li><strong>행성 선택:</strong> 하단의 행성 아이콘을 탭하면 해당 행성으로 카메라가 이동합니다</li>
+                </ul>
+
+                <h2>시간 조절</h2>
+                <ul>
+                    <li><strong>날짜 슬라이더:</strong> 상단의 슬라이더로 1900년~2100년 사이의 날짜를 선택합니다</li>
+                    <li><strong>시간 배율:</strong> 시뮬레이션 속도를 0.1x ~ 10x로 조절합니다</li>
+                    <li><strong>재생/일시정지:</strong> 시뮬레이션을 멈추거나 재개합니다</li>
+                    <li><strong>현재 버튼:</strong> 오늘 날짜로 즉시 이동합니다</li>
+                </ul>
+
+                <h2>표시 옵션</h2>
+                <ul>
+                    <li><strong>궤도 표시:</strong> 행성 궤도선을 켜거나 끕니다</li>
+                    <li><strong>자전축 표시:</strong> 각 행성의 자전축을 표시합니다</li>
+                    <li><strong>정보 패널:</strong> 선택한 행성의 상세 정보를 표시합니다</li>
+                </ul>
+
+                <div class="tip-box">
+                    <p class="tip-label">💡 팁</p>
+                    <p>토성을 선택하면 D, C, B, 카시니 간극, A, F 고리를 실제 비율로 볼 수 있습니다!</p>
+                </div>
+            </div>
+
+            <!-- FAQ -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">❓</div>
+                    <div class="card-title">자주 묻는 질문</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">행성 위치가 실제와 정확히 일치하나요?</div>
+                    <div class="faq-answer">네, NASA의 J2000 에포크 데이터(평균 경도, 궤도 주기, 궤도 경사)를 기반으로 계산됩니다. 다만 시각화를 위해 행성 크기와 궤도 간격은 조정되어 있습니다.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">인터넷 연결이 필요한가요?</div>
+                    <div class="faq-answer">아니요, 모든 데이터가 앱에 내장되어 있어 오프라인에서도 완벽하게 작동합니다.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">왜 명왕성이 없나요?</div>
+                    <div class="faq-answer">2006년 국제천문연맹(IAU)의 결정에 따라 명왕성은 왜소행성으로 재분류되었습니다. 본 앱은 공식적인 8개 행성만 포함합니다.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">금성과 천왕성은 왜 반대로 자전하나요?</div>
+                    <div class="faq-answer">이를 '역행 자전'이라고 합니다. 금성은 자전축이 177.4° 기울어져 있고, 천왕성은 97.77° 기울어져 있어 다른 행성과 반대 방향으로 자전합니다.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">달이나 다른 위성도 볼 수 있나요?</div>
+                    <div class="faq-answer">현재 버전에서는 태양과 8개 행성만 지원합니다. 위성 기능은 향후 업데이트에서 추가될 예정입니다.</div>
+                </div>
+            </div>
+
+            <!-- 문의 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">✉️</div>
+                    <div class="card-title">문의하기</div>
+                </div>
+                <p>버그 신고, 기능 제안, 또는 기타 문의사항이 있으시면 언제든지 연락해 주세요.</p>
+
+                <div class="contact-box">
+                    <p>📧 이메일로 문의</p>
+                    <a href="mailto:chungkil.kim@gmail.com">chungkil.kim@gmail.com</a>
+                </div>
+
+                <p class="version-info">현재 버전: 1.0.0</p>
+            </div>
+        </div>
+
+        <!-- English -->
+        <div id="support-en" class="support-content">
+            <!-- App Overview -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🪐</div>
+                    <div class="card-title">About the App</div>
+                </div>
+                <p>Heliosphere is an educational app that simulates the solar system in 3D based on real astronomical data. Using NASA's J2000 epoch data, you can view the precise positions of planets from 1900 to 2100.</p>
+
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <div class="icon">🌍</div>
+                        <div class="label">8 Planets</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon">⏰</div>
+                        <div class="label">Time Travel</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon">📊</div>
+                        <div class="label">Detailed Info</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon">🎮</div>
+                        <div class="label">3D Controls</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How to Use -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">📖</div>
+                    <div class="card-title">How to Use</div>
+                </div>
+
+                <h2>Basic Controls</h2>
+                <ul>
+                    <li><strong>Drag:</strong> Drag the screen to rotate the solar system view</li>
+                    <li><strong>Pinch Zoom:</strong> Use two fingers to zoom in/out</li>
+                    <li><strong>Planet Selection:</strong> Tap a planet icon at the bottom to focus the camera on it</li>
+                </ul>
+
+                <h2>Time Controls</h2>
+                <ul>
+                    <li><strong>Date Slider:</strong> Use the top slider to select dates between 1900-2100</li>
+                    <li><strong>Time Scale:</strong> Adjust simulation speed from 0.1x to 10x</li>
+                    <li><strong>Play/Pause:</strong> Stop or resume the simulation</li>
+                    <li><strong>Now Button:</strong> Jump instantly to today's date</li>
+                </ul>
+
+                <h2>Display Options</h2>
+                <ul>
+                    <li><strong>Show Orbits:</strong> Toggle planetary orbit lines on/off</li>
+                    <li><strong>Show Axes:</strong> Display each planet's rotation axis</li>
+                    <li><strong>Info Panel:</strong> Show detailed information about the selected planet</li>
+                </ul>
+
+                <div class="tip-box">
+                    <p class="tip-label">💡 Tip</p>
+                    <p>Select Saturn to see its D, C, B, Cassini Division, A, and F rings rendered to scale!</p>
+                </div>
+            </div>
+
+            <!-- FAQ -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">❓</div>
+                    <div class="card-title">Frequently Asked Questions</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Are the planet positions accurate?</div>
+                    <div class="faq-answer">Yes, positions are calculated using NASA's J2000 epoch data (mean longitude, orbital period, inclination). However, planet sizes and orbital spacing are adjusted for visualization.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Is an internet connection required?</div>
+                    <div class="faq-answer">No, all data is built into the app, so it works perfectly offline.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Why isn't Pluto included?</div>
+                    <div class="faq-answer">In 2006, the International Astronomical Union (IAU) reclassified Pluto as a dwarf planet. This app includes only the 8 official planets.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Why do Venus and Uranus rotate backwards?</div>
+                    <div class="faq-answer">This is called "retrograde rotation." Venus has an axial tilt of 177.4°, and Uranus is tilted 97.77°, causing them to rotate in the opposite direction to other planets.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Can I see moons or other satellites?</div>
+                    <div class="faq-answer">The current version supports only the Sun and 8 planets. Moon features are planned for future updates.</div>
+                </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">✉️</div>
+                    <div class="card-title">Contact Us</div>
+                </div>
+                <p>For bug reports, feature suggestions, or any other inquiries, please feel free to contact us.</p>
+
+                <div class="contact-box">
+                    <p>📧 Contact via Email</p>
+                    <a href="mailto:chungkil.kim@gmail.com">chungkil.kim@gmail.com</a>
+                </div>
+
+                <p class="version-info">Current Version: 1.0.0</p>
+            </div>
+        </div>
+
+        <!-- Japanese -->
+        <div id="support-ja" class="support-content">
+            <!-- アプリ紹介 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">🪐</div>
+                    <div class="card-title">アプリについて</div>
+                </div>
+                <p>Heliosphereは、実際の天文学データに基づいて太陽系を3Dでシミュレーションする教育アプリです。NASAのJ2000エポックデータを使用して、1900年から2100年までの惑星の正確な位置を確認できます。</p>
+
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <div class="icon">🌍</div>
+                        <div class="label">8つの惑星</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon">⏰</div>
+                        <div class="label">時間旅行</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon">📊</div>
+                        <div class="label">詳細情報</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon">🎮</div>
+                        <div class="label">3D操作</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 使い方 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">📖</div>
+                    <div class="card-title">使い方</div>
+                </div>
+
+                <h2>基本操作</h2>
+                <ul>
+                    <li><strong>ドラッグ:</strong> 画面をドラッグして太陽系を回転させます</li>
+                    <li><strong>ピンチズーム:</strong> 2本指で拡大/縮小できます</li>
+                    <li><strong>惑星選択:</strong> 下部の惑星アイコンをタップすると、カメラがその惑星に移動します</li>
+                </ul>
+
+                <h2>時間操作</h2>
+                <ul>
+                    <li><strong>日付スライダー:</strong> 上部のスライダーで1900年〜2100年の日付を選択します</li>
+                    <li><strong>時間倍率:</strong> シミュレーション速度を0.1x〜10xで調整します</li>
+                    <li><strong>再生/一時停止:</strong> シミュレーションを停止または再開します</li>
+                    <li><strong>現在ボタン:</strong> 今日の日付に即座に移動します</li>
+                </ul>
+
+                <h2>表示オプション</h2>
+                <ul>
+                    <li><strong>軌道表示:</strong> 惑星の軌道線をオン/オフします</li>
+                    <li><strong>自転軸表示:</strong> 各惑星の自転軸を表示します</li>
+                    <li><strong>情報パネル:</strong> 選択した惑星の詳細情報を表示します</li>
+                </ul>
+
+                <div class="tip-box">
+                    <p class="tip-label">💡 ヒント</p>
+                    <p>土星を選択すると、D環、C環、B環、カッシーニの間隙、A環、F環を実際の比率で見ることができます！</p>
+                </div>
+            </div>
+
+            <!-- FAQ -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">❓</div>
+                    <div class="card-title">よくある質問</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">惑星の位置は正確ですか？</div>
+                    <div class="faq-answer">はい、NASAのJ2000エポックデータ（平均経度、軌道周期、軌道傾斜角）に基づいて計算されています。ただし、視覚化のため、惑星のサイズと軌道間隔は調整されています。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">インターネット接続は必要ですか？</div>
+                    <div class="faq-answer">いいえ、すべてのデータがアプリに内蔵されているため、オフラインでも完璧に動作します。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">なぜ冥王星がないのですか？</div>
+                    <div class="faq-answer">2006年、国際天文学連合（IAU）の決定により、冥王星は矮小惑星に再分類されました。本アプリは公式の8つの惑星のみを含んでいます。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">金星と天王星はなぜ逆回転するのですか？</div>
+                    <div class="faq-answer">これは「逆行自転」と呼ばれます。金星は自転軸が177.4°傾いており、天王星は97.77°傾いているため、他の惑星と反対方向に自転します。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">月や他の衛星も見られますか？</div>
+                    <div class="faq-answer">現在のバージョンでは、太陽と8つの惑星のみをサポートしています。衛星機能は今後のアップデートで追加される予定です。</div>
+                </div>
+            </div>
+
+            <!-- お問い合わせ -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">✉️</div>
+                    <div class="card-title">お問い合わせ</div>
+                </div>
+                <p>バグ報告、機能提案、その他のお問い合わせは、お気軽にご連絡ください。</p>
+
+                <div class="contact-box">
+                    <p>📧 メールでお問い合わせ</p>
+                    <a href="mailto:chungkil.kim@gmail.com">chungkil.kim@gmail.com</a>
+                </div>
+
+                <p class="version-info">現在のバージョン: 1.0.0</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 Heliosphere. All rights reserved.</p>
+            <p><a href="privacy_policy.html" id="privacy-link">개인정보 처리방침</a></p>
+        </footer>
+    </div>
+
+    <script>
+        const subtitles = {
+            ko: '고객 지원',
+            en: 'Support',
+            ja: 'サポート'
+        };
+
+        const privacyLinks = {
+            ko: '개인정보 처리방침',
+            en: 'Privacy Policy',
+            ja: 'プライバシーポリシー'
+        };
+
+        function setLanguage(lang) {
+            // Update active button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Update active support section
+            document.querySelectorAll('.support-content').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById('support-' + lang).classList.add('active');
+
+            // Update subtitle
+            document.getElementById('app-subtitle').textContent = subtitles[lang];
+
+            // Update privacy link
+            document.getElementById('privacy-link').textContent = privacyLinks[lang];
+
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+        }
+
+        // Detect browser language on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const browserLang = navigator.language.slice(0, 2);
+            if (['ko', 'en', 'ja'].includes(browserLang)) {
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                document.querySelector(`.lang-btn[onclick="setLanguage('${browserLang}')"]`).classList.add('active');
+
+                document.querySelectorAll('.support-content').forEach(section => {
+                    section.classList.remove('active');
+                });
+                document.getElementById('support-' + browserLang).classList.add('active');
+                document.getElementById('app-subtitle').textContent = subtitles[browserLang];
+                document.getElementById('privacy-link').textContent = privacyLinks[browserLang];
+                document.documentElement.lang = browserLang;
+            }
+        });
+    </script>
+</body>
+</html>

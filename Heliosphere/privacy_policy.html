@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heliosphere - Privacy Policy</title>
+    <style>
+        :root {
+            --bg-color: #0a0a1a;
+            --card-bg: #12122a;
+            --text-color: #e0e0e0;
+            --text-secondary: #a0a0b0;
+            --accent-color: #4a9eff;
+            --border-color: #2a2a4a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #1a1a3a, #2a2a5a);
+            border-radius: 18px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            box-shadow: 0 4px 20px rgba(74, 158, 255, 0.2);
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        .language-selector {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 30px 0;
+        }
+
+        .lang-btn {
+            padding: 10px 24px;
+            border: 1px solid var(--border-color);
+            background: var(--card-bg);
+            color: var(--text-secondary);
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .lang-btn.active {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+            color: #fff;
+        }
+
+        .policy-content {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 40px;
+            border: 1px solid var(--border-color);
+        }
+
+        .policy-section {
+            display: none;
+        }
+
+        .policy-section.active {
+            display: block;
+        }
+
+        .last-updated {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #fff;
+            margin: 30px 0 15px;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        ul {
+            margin: 15px 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 10px;
+            color: var(--text-secondary);
+        }
+
+        li::before {
+            content: "•";
+            position: absolute;
+            left: 8px;
+            color: var(--accent-color);
+        }
+
+        .highlight-box {
+            background: rgba(74, 158, 255, 0.1);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            color: var(--text-color);
+        }
+
+        .contact-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .contact-section a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .contact-section a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            .policy-content {
+                padding: 25px 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .language-selector {
+                flex-wrap: wrap;
+            }
+
+            .lang-btn {
+                padding: 8px 20px;
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="app-icon">☀️</div>
+            <h1>Heliosphere</h1>
+            <p class="subtitle" id="app-subtitle">태양계 시뮬레이션</p>
+        </header>
+
+        <div class="language-selector">
+            <button class="lang-btn active" onclick="setLanguage('ko')">한국어</button>
+            <button class="lang-btn" onclick="setLanguage('en')">English</button>
+            <button class="lang-btn" onclick="setLanguage('ja')">日本語</button>
+        </div>
+
+        <div class="policy-content">
+            <!-- Korean -->
+            <div id="policy-ko" class="policy-section active">
+                <p class="last-updated">최종 수정일: 2026년 1월 8일</p>
+
+                <p>본 개인정보 처리방침은 Heliosphere 앱(이하 "앱")의 개인정보 수집 및 이용에 관한 정책을 설명합니다.</p>
+
+                <h2>1. 수집하는 개인정보</h2>
+                <p>본 앱은 사용자의 개인정보를 수집하지 않습니다.</p>
+                <ul>
+                    <li>계정 생성이 필요하지 않습니다</li>
+                    <li>로그인이 필요하지 않습니다</li>
+                    <li>개인 식별 정보를 요청하지 않습니다</li>
+                    <li>위치 정보를 수집하지 않습니다</li>
+                    <li>연락처, 사진, 파일에 접근하지 않습니다</li>
+                </ul>
+
+                <h2>2. 데이터 저장</h2>
+                <p>본 앱은 모든 데이터를 사용자의 기기에서만 처리합니다.</p>
+                <ul>
+                    <li>외부 서버로 데이터를 전송하지 않습니다</li>
+                    <li>클라우드 서비스를 사용하지 않습니다</li>
+                    <li>앱 사용 기록을 저장하지 않습니다</li>
+                </ul>
+
+                <h2>3. 제3자 서비스</h2>
+                <p>본 앱은 제3자 분석 도구, 광고 네트워크, 또는 추적 서비스를 사용하지 않습니다.</p>
+                <ul>
+                    <li>광고가 없습니다</li>
+                    <li>분석 SDK가 없습니다</li>
+                    <li>소셜 미디어 통합이 없습니다</li>
+                </ul>
+
+                <h2>4. 아동 개인정보 보호</h2>
+                <p>본 앱은 어떠한 연령대의 사용자로부터도 개인정보를 수집하지 않으므로, 아동 개인정보 보호법(COPPA) 및 관련 법규를 준수합니다.</p>
+
+                <h2>5. 개인정보 처리방침 변경</h2>
+                <p>본 개인정보 처리방침은 변경될 수 있습니다. 변경 사항이 있을 경우 본 페이지에 업데이트됩니다. 중요한 변경 사항은 앱 업데이트를 통해 안내됩니다.</p>
+
+                <div class="highlight-box">
+                    <p>본 앱은 순수한 교육 목적의 오프라인 시뮬레이션 앱으로, 사용자의 프라이버시를 최우선으로 생각합니다.</p>
+                </div>
+
+                <div class="contact-section">
+                    <h2>6. 문의</h2>
+                    <p>본 개인정보 처리방침에 대한 질문이나 의견이 있으시면 아래로 연락해 주시기 바랍니다.</p>
+                    <p>이메일: <a href="mailto:chungkil.kim@gmail.com">chungkil.kim@gmail.com</a></p>
+                </div>
+            </div>
+
+            <!-- English -->
+            <div id="policy-en" class="policy-section">
+                <p class="last-updated">Last Updated: January 8, 2026</p>
+
+                <p>This Privacy Policy describes how Heliosphere app ("App") collects and uses personal information.</p>
+
+                <h2>1. Information We Collect</h2>
+                <p>This App does not collect any personal information.</p>
+                <ul>
+                    <li>No account creation required</li>
+                    <li>No login required</li>
+                    <li>No personal identification information requested</li>
+                    <li>No location data collected</li>
+                    <li>No access to contacts, photos, or files</li>
+                </ul>
+
+                <h2>2. Data Storage</h2>
+                <p>This App processes all data locally on your device only.</p>
+                <ul>
+                    <li>No data is transmitted to external servers</li>
+                    <li>No cloud services are used</li>
+                    <li>No app usage history is stored</li>
+                </ul>
+
+                <h2>3. Third-Party Services</h2>
+                <p>This App does not use any third-party analytics tools, advertising networks, or tracking services.</p>
+                <ul>
+                    <li>No advertisements</li>
+                    <li>No analytics SDKs</li>
+                    <li>No social media integrations</li>
+                </ul>
+
+                <h2>4. Children's Privacy</h2>
+                <p>This App does not collect personal information from users of any age, and therefore complies with the Children's Online Privacy Protection Act (COPPA) and related regulations.</p>
+
+                <h2>5. Changes to This Privacy Policy</h2>
+                <p>This Privacy Policy may be updated from time to time. Any changes will be posted on this page. Significant changes will be communicated through app updates.</p>
+
+                <div class="highlight-box">
+                    <p>This App is a purely educational offline simulation app that prioritizes user privacy.</p>
+                </div>
+
+                <div class="contact-section">
+                    <h2>6. Contact Us</h2>
+                    <p>If you have any questions or comments about this Privacy Policy, please contact us at:</p>
+                    <p>Email: <a href="mailto:chungkil.kim@gmail.com">chungkil.kim@gmail.com</a></p>
+                </div>
+            </div>
+
+            <!-- Japanese -->
+            <div id="policy-ja" class="policy-section">
+                <p class="last-updated">最終更新日: 2026年1月8日</p>
+
+                <p>本プライバシーポリシーは、Heliosphereアプリ（以下「本アプリ」）における個人情報の収集および利用に関する方針を説明します。</p>
+
+                <h2>1. 収集する個人情報</h2>
+                <p>本アプリは、ユーザーの個人情報を収集しません。</p>
+                <ul>
+                    <li>アカウント作成は不要です</li>
+                    <li>ログインは不要です</li>
+                    <li>個人を特定できる情報を要求しません</li>
+                    <li>位置情報を収集しません</li>
+                    <li>連絡先、写真、ファイルにアクセスしません</li>
+                </ul>
+
+                <h2>2. データの保存</h2>
+                <p>本アプリは、すべてのデータをユーザーのデバイス上でのみ処理します。</p>
+                <ul>
+                    <li>外部サーバーにデータを送信しません</li>
+                    <li>クラウドサービスを使用しません</li>
+                    <li>アプリの使用履歴を保存しません</li>
+                </ul>
+
+                <h2>3. 第三者サービス</h2>
+                <p>本アプリは、第三者の分析ツール、広告ネットワーク、またはトラッキングサービスを使用しません。</p>
+                <ul>
+                    <li>広告はありません</li>
+                    <li>分析SDKはありません</li>
+                    <li>ソーシャルメディア統合はありません</li>
+                </ul>
+
+                <h2>4. 児童のプライバシー保護</h2>
+                <p>本アプリは、いかなる年齢のユーザーからも個人情報を収集しないため、児童オンラインプライバシー保護法（COPPA）および関連法規を遵守しています。</p>
+
+                <h2>5. プライバシーポリシーの変更</h2>
+                <p>本プライバシーポリシーは変更される場合があります。変更がある場合は、このページで更新されます。重要な変更については、アプリのアップデートを通じてお知らせします。</p>
+
+                <div class="highlight-box">
+                    <p>本アプリは、純粋に教育目的のオフラインシミュレーションアプリであり、ユーザーのプライバシーを最優先に考えています。</p>
+                </div>
+
+                <div class="contact-section">
+                    <h2>6. お問い合わせ</h2>
+                    <p>本プライバシーポリシーに関するご質問やご意見がございましたら、以下までご連絡ください。</p>
+                    <p>メール: <a href="mailto:chungkil.kim@gmail.com">chungkil.kim@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 Heliosphere. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        const subtitles = {
+            ko: '태양계 시뮬레이션',
+            en: 'Solar System Simulator',
+            ja: '太陽系シミュレーション'
+        };
+
+        function setLanguage(lang) {
+            // Update active button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Update active policy section
+            document.querySelectorAll('.policy-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById('policy-' + lang).classList.add('active');
+
+            // Update subtitle
+            document.getElementById('app-subtitle').textContent = subtitles[lang];
+
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+        }
+
+        // Detect browser language on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const browserLang = navigator.language.slice(0, 2);
+            if (['ko', 'en', 'ja'].includes(browserLang)) {
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                document.querySelector(`.lang-btn[onclick="setLanguage('${browserLang}')"]`).classList.add('active');
+
+                document.querySelectorAll('.policy-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                document.getElementById('policy-' + browserLang).classList.add('active');
+                document.getElementById('app-subtitle').textContent = subtitles[browserLang];
+                document.documentElement.lang = browserLang;
+            }
+        });
+    </script>
+</body>
+</html>
