@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heliosphere - Privacy Choices</title>
+    <style>
+        :root {
+            --bg-color: #0a0a1a;
+            --card-bg: #12122a;
+            --text-color: #e0e0e0;
+            --text-secondary: #a0a0b0;
+            --accent-color: #4a9eff;
+            --border-color: #2a2a4a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #1a1a3a, #2a2a5a);
+            border-radius: 18px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            box-shadow: 0 4px 20px rgba(74, 158, 255, 0.2);
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        .language-selector {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 30px 0;
+        }
+
+        .lang-btn {
+            padding: 10px 24px;
+            border: 1px solid var(--border-color);
+            background: var(--card-bg);
+            color: var(--text-secondary);
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .lang-btn.active {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+            color: #fff;
+        }
+
+        .policy-content {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 40px;
+            border: 1px solid var(--border-color);
+        }
+
+        .policy-section {
+            display: none;
+        }
+
+        .policy-section.active {
+            display: block;
+        }
+
+        .last-updated {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #fff;
+            margin: 30px 0 15px;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        ul {
+            margin: 15px 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 10px;
+            color: var(--text-secondary);
+        }
+
+        li::before {
+            content: "•";
+            position: absolute;
+            left: 8px;
+            color: var(--accent-color);
+        }
+
+        .highlight-box {
+            background: rgba(74, 158, 255, 0.1);
+            border-left: 3px solid var(--accent-color);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            color: var(--text-color);
+        }
+
+        .data-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .data-item h3 {
+            color: #fff;
+            font-size: 16px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .data-item h3::before {
+            content: "📊";
+        }
+
+        .data-item.crash h3::before {
+            content: "🔧";
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(74, 158, 255, 0.2);
+            color: var(--accent-color);
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .contact-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .contact-section a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .contact-section a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            .policy-content {
+                padding: 25px 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .language-selector {
+                flex-wrap: wrap;
+            }
+
+            .lang-btn {
+                padding: 8px 20px;
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="app-icon">☀️</div>
+            <h1>Heliosphere</h1>
+            <p class="subtitle" id="app-subtitle">개인정보 선택 사항</p>
+        </header>
+
+        <div class="language-selector">
+            <button class="lang-btn active" onclick="setLanguage('ko')">한국어</button>
+            <button class="lang-btn" onclick="setLanguage('en')">English</button>
+            <button class="lang-btn" onclick="setLanguage('ja')">日本語</button>
+        </div>
+
+        <div class="policy-content">
+            <!-- Korean -->
+            <div id="policy-ko" class="policy-section active">
+                <p class="last-updated">최종 수정일: 2026년 1월 8일</p>
+
+                <h2>수집하는 데이터</h2>
+                <p>Heliosphere는 앱 품질 개선을 위해 다음의 데이터를 수집할 수 있습니다.</p>
+
+                <div class="data-item">
+                    <h3>진단 데이터 <span class="badge">익명</span></h3>
+                    <p>앱 성능 및 사용 패턴에 관한 익명화된 정보입니다.</p>
+                    <ul>
+                        <li>앱 실행 시간 및 성능 지표</li>
+                        <li>기기 모델 및 운영체제 버전</li>
+                        <li>앱 기능 사용 빈도</li>
+                    </ul>
+                </div>
+
+                <div class="data-item crash">
+                    <h3>충돌 데이터 <span class="badge">익명</span></h3>
+                    <p>앱 충돌 시 자동으로 수집되는 기술 정보입니다.</p>
+                    <ul>
+                        <li>충돌 로그 및 스택 트레이스</li>
+                        <li>충돌 시점의 기기 상태</li>
+                        <li>앱 버전 정보</li>
+                    </ul>
+                </div>
+
+                <h2>데이터 수집 방법</h2>
+                <p>이 데이터는 Apple의 표준 분석 프레임워크를 통해 수집됩니다. 사용자는 iOS/iPadOS 설정에서 분석 데이터 공유를 언제든지 비활성화할 수 있습니다.</p>
+
+                <div class="highlight-box">
+                    <p><strong>설정 방법:</strong> 설정 → 개인정보 보호 및 보안 → 분석 및 개선 → "앱 분석 공유" 끄기</p>
+                </div>
+
+                <h2>데이터 연결</h2>
+                <p>수집되는 모든 데이터는 사용자의 신원과 연결되지 않습니다.</p>
+                <ul>
+                    <li>개인 식별 정보를 수집하지 않습니다</li>
+                    <li>Apple ID나 기기 고유 식별자와 연결하지 않습니다</li>
+                    <li>데이터 추적에 사용되지 않습니다</li>
+                </ul>
+
+                <h2>데이터 활용 목적</h2>
+                <ul>
+                    <li>앱 안정성 향상</li>
+                    <li>성능 최적화</li>
+                    <li>사용자 경험 개선</li>
+                    <li>버그 수정</li>
+                </ul>
+
+                <div class="contact-section">
+                    <h2>문의</h2>
+                    <p>개인정보 처리에 관한 질문이 있으시면 연락해 주세요.</p>
+                    <p>이메일: <a href="mailto:chungkil.kim@gmail.com">chungkil.kim@gmail.com</a></p>
+                </div>
+            </div>
+
+            <!-- English -->
+            <div id="policy-en" class="policy-section">
+                <p class="last-updated">Last Updated: January 8, 2026</p>
+
+                <h2>Data We Collect</h2>
+                <p>Heliosphere may collect the following data to improve app quality.</p>
+
+                <div class="data-item">
+                    <h3>Diagnostics <span class="badge">Anonymous</span></h3>
+                    <p>Anonymized information about app performance and usage patterns.</p>
+                    <ul>
+                        <li>App launch time and performance metrics</li>
+                        <li>Device model and OS version</li>
+                        <li>Feature usage frequency</li>
+                    </ul>
+                </div>
+
+                <div class="data-item crash">
+                    <h3>Crash Data <span class="badge">Anonymous</span></h3>
+                    <p>Technical information automatically collected when the app crashes.</p>
+                    <ul>
+                        <li>Crash logs and stack traces</li>
+                        <li>Device state at time of crash</li>
+                        <li>App version information</li>
+                    </ul>
+                </div>
+
+                <h2>How Data Is Collected</h2>
+                <p>This data is collected through Apple's standard analytics framework. Users can disable analytics data sharing at any time in iOS/iPadOS settings.</p>
+
+                <div class="highlight-box">
+                    <p><strong>How to disable:</strong> Settings → Privacy & Security → Analytics & Improvements → Turn off "Share App Analytics"</p>
+                </div>
+
+                <h2>Data Linkage</h2>
+                <p>All collected data is not linked to your identity.</p>
+                <ul>
+                    <li>No personally identifiable information is collected</li>
+                    <li>Not linked to Apple ID or device identifiers</li>
+                    <li>Not used for tracking purposes</li>
+                </ul>
+
+                <h2>Purpose of Data Collection</h2>
+                <ul>
+                    <li>Improve app stability</li>
+                    <li>Optimize performance</li>
+                    <li>Enhance user experience</li>
+                    <li>Fix bugs</li>
+                </ul>
+
+                <div class="contact-section">
+                    <h2>Contact Us</h2>
+                    <p>If you have questions about data handling, please contact us.</p>
+                    <p>Email: <a href="mailto:chungkil.kim@gmail.com">chungkil.kim@gmail.com</a></p>
+                </div>
+            </div>
+
+            <!-- Japanese -->
+            <div id="policy-ja" class="policy-section">
+                <p class="last-updated">最終更新日: 2026年1月8日</p>
+
+                <h2>収集するデータ</h2>
+                <p>Heliosphereは、アプリの品質向上のために以下のデータを収集する場合があります。</p>
+
+                <div class="data-item">
+                    <h3>診断データ <span class="badge">匿名</span></h3>
+                    <p>アプリのパフォーマンスと使用パターンに関する匿名化された情報です。</p>
+                    <ul>
+                        <li>アプリの起動時間とパフォーマンス指標</li>
+                        <li>デバイスモデルとOSバージョン</li>
+                        <li>機能の使用頻度</li>
+                    </ul>
+                </div>
+
+                <div class="data-item crash">
+                    <h3>クラッシュデータ <span class="badge">匿名</span></h3>
+                    <p>アプリがクラッシュした際に自動的に収集される技術情報です。</p>
+                    <ul>
+                        <li>クラッシュログとスタックトレース</li>
+                        <li>クラッシュ時のデバイス状態</li>
+                        <li>アプリのバージョン情報</li>
+                    </ul>
+                </div>
+
+                <h2>データ収集方法</h2>
+                <p>このデータはAppleの標準分析フレームワークを通じて収集されます。ユーザーはいつでもiOS/iPadOSの設定で分析データの共有を無効にできます。</p>
+
+                <div class="highlight-box">
+                    <p><strong>無効化の方法:</strong> 設定 → プライバシーとセキュリティ → 解析および改善 → 「Appデベロッパと共有」をオフ</p>
+                </div>
+
+                <h2>データの関連付け</h2>
+                <p>収集されるすべてのデータは、ユーザーのIDに関連付けられません。</p>
+                <ul>
+                    <li>個人を特定できる情報は収集しません</li>
+                    <li>Apple IDやデバイス識別子に関連付けません</li>
+                    <li>トラッキング目的で使用しません</li>
+                </ul>
+
+                <h2>データ収集の目的</h2>
+                <ul>
+                    <li>アプリの安定性向上</li>
+                    <li>パフォーマンスの最適化</li>
+                    <li>ユーザー体験の改善</li>
+                    <li>バグの修正</li>
+                </ul>
+
+                <div class="contact-section">
+                    <h2>お問い合わせ</h2>
+                    <p>データ処理に関するご質問がございましたら、お問い合わせください。</p>
+                    <p>メール: <a href="mailto:chungkil.kim@gmail.com">chungkil.kim@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 Heliosphere. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        const subtitles = {
+            ko: '개인정보 선택 사항',
+            en: 'Privacy Choices',
+            ja: 'プライバシーの選択'
+        };
+
+        function setLanguage(lang) {
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            document.querySelectorAll('.policy-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById('policy-' + lang).classList.add('active');
+
+            document.getElementById('app-subtitle').textContent = subtitles[lang];
+            document.documentElement.lang = lang;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const browserLang = navigator.language.slice(0, 2);
+            if (['ko', 'en', 'ja'].includes(browserLang)) {
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                document.querySelector(`.lang-btn[onclick="setLanguage('${browserLang}')"]`).classList.add('active');
+
+                document.querySelectorAll('.policy-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                document.getElementById('policy-' + browserLang).classList.add('active');
+                document.getElementById('app-subtitle').textContent = subtitles[browserLang];
+                document.documentElement.lang = browserLang;
+            }
+        });
+    </script>
+</body>
+</html>
