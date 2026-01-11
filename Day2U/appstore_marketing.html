@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day2U - D-Day Countdown App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Hiragino Sans', 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Language Selector */
+        .lang-selector {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .lang-btn {
+            background: rgba(255,255,255,0.2);
+            border: 2px solid rgba(255,255,255,0.5);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+        }
+        .lang-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        .lang-btn.active {
+            background: white;
+            color: #667eea;
+            border-color: white;
+        }
+
+        .hero {
+            text-align: center;
+            color: white;
+            padding: 60px 20px;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .hero .tagline {
+            font-size: 1.4em;
+            opacity: 0.95;
+            margin-bottom: 30px;
+        }
+        .hero .subtitle {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+        .card h2 {
+            color: #667eea;
+            font-size: 1.6em;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .feature-item {
+            padding: 25px;
+            background: linear-gradient(135deg, #f8f9ff 0%, #f0f2ff 100%);
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+        }
+        .feature-item h3 {
+            color: #4a5568;
+            margin-bottom: 12px;
+            font-size: 1.2em;
+        }
+        .feature-item p {
+            color: #666;
+            font-size: 0.95em;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 25px 0;
+            border-left: 4px solid #e53e3e;
+        }
+        .highlight-box h3 {
+            color: #e53e3e;
+            margin-bottom: 15px;
+        }
+        .category-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .category-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-size: 0.9em;
+        }
+        .widget-section {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 25px 0;
+        }
+        .widget-section h3 {
+            color: #2e7d32;
+            margin-bottom: 15px;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        ul li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        .region-feature {
+            background: linear-gradient(135deg, #fff0f5 0%, #ffe4ec 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 25px 0;
+            border: 2px solid #ff6b9d;
+        }
+        .region-feature h3 {
+            color: #d63384;
+            margin-bottom: 15px;
+        }
+        .cta-section {
+            text-align: center;
+            padding: 50px 20px;
+            color: white;
+        }
+        .cta-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 18px 50px;
+            border-radius: 35px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9em;
+        }
+
+        /* Language visibility */
+        [data-lang] {
+            display: none;
+        }
+        [data-lang="ko"] {
+            display: block;
+        }
+        .feature-grid [data-lang="ko"],
+        .category-list [data-lang="ko"] {
+            display: flex;
+        }
+        .feature-grid [data-lang] {
+            display: none;
+        }
+        .category-list [data-lang] {
+            display: none;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2.2em;
+            }
+            .card {
+                padding: 25px;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            .lang-btn {
+                padding: 8px 16px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Language Selector -->
+        <div class="lang-selector">
+            <button class="lang-btn active" onclick="setLanguage('ko')">한국어</button>
+            <button class="lang-btn" onclick="setLanguage('en')">English</button>
+            <button class="lang-btn" onclick="setLanguage('ja')">日本語</button>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Day2U</h1>
+            <!-- Korean -->
+            <p class="tagline" data-lang="ko">소중한 그 날까지, 며칠 남았을까?</p>
+            <p class="subtitle" data-lang="ko">심플하고 아름다운 D-Day 카운트다운 앱</p>
+            <!-- English -->
+            <p class="tagline" data-lang="en">How many days until your special day?</p>
+            <p class="subtitle" data-lang="en">Simple and beautiful D-Day countdown app</p>
+            <!-- Japanese -->
+            <p class="tagline" data-lang="ja">大切な日まで、あと何日？</p>
+            <p class="subtitle" data-lang="ja">シンプルで美しいD-Dayカウントダウンアプリ</p>
+        </section>
+
+        <!-- Main Features -->
+        <section class="card">
+            <!-- Korean -->
+            <h2 data-lang="ko">주요 기능</h2>
+            <div class="feature-grid" data-lang="ko">
+                <div class="feature-item">
+                    <h3>D-Day 카운트다운</h3>
+                    <p>생일, 기념일, 시험일, 여행 등 소중한 날까지 남은 일수를 한눈에 확인하세요. 지난 일수 카운트도 가능합니다.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>다양한 표시 스타일</h3>
+                    <p>막대 그래프, 원형 그래프, 카운트다운 타이머 3가지 중 원하는 표시 방식을 선택할 수 있습니다.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>스마트 알림</h3>
+                    <p>당일, 1일 전, 3일 전, 7일 전 등 원하는 시점에 알림을 받을 수 있습니다. 소중한 날을 놓치지 마세요.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>매년 반복</h3>
+                    <p>생일이나 기념일처럼 매년 돌아오는 소중한 날을 자동으로 업데이트합니다. 주년 기념도 자동 계산됩니다.</p>
+                </div>
+            </div>
+
+            <!-- English -->
+            <h2 data-lang="en">Key Features</h2>
+            <div class="feature-grid" data-lang="en">
+                <div class="feature-item">
+                    <h3>D-Day Countdown</h3>
+                    <p>Check the remaining days until your important dates - birthdays, anniversaries, exams, trips, and more. Count elapsed days too.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Multiple Display Styles</h3>
+                    <p>Choose from three display options: bar graph, circle graph, or countdown timer to visualize your D-Days.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Smart Notifications</h3>
+                    <p>Get reminders on the day, 1 day before, 3 days before, or 7 days before. Never miss an important date.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Yearly Repeat</h3>
+                    <p>Automatically updates recurring events like birthdays and anniversaries. Anniversary counts are calculated automatically.</p>
+                </div>
+            </div>
+
+            <!-- Japanese -->
+            <h2 data-lang="ja">主な機能</h2>
+            <div class="feature-grid" data-lang="ja">
+                <div class="feature-item">
+                    <h3>D-Day カウントダウン</h3>
+                    <p>誕生日、記念日、試験日、旅行など、大切な日までの残り日数を一目で確認できます。過ぎた日数のカウントも可能です。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>多彩な表示スタイル</h3>
+                    <p>バーグラフ、サークルグラフ、カウントダウンタイマーの3種類から、お好みの表示方法を選べます。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>スマート通知</h3>
+                    <p>当日、1日前、3日前、7日前など、お好みのタイミングで通知を受け取れます。大切な日を見逃しません。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>毎年繰り返し</h3>
+                    <p>誕生日や記念日など、毎年やってくる大切な日を自動で更新。周年記念も自動計算されます。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Region-specific Features -->
+        <section class="card">
+            <!-- Korean -->
+            <h2 data-lang="ko">한국 사용자를 위한 기능</h2>
+            <div class="region-feature" data-lang="ko">
+                <h3>한국 공휴일/기념일 원터치 추가</h3>
+                <p>설날, 삼일절, 어린이날, 광복절, 추석, 개천절, 한글날, 크리스마스 등 한국의 공휴일을 쉽게 추가할 수 있습니다.</p>
+                <p style="margin-top: 15px;">발렌타인데이, 화이트데이, 빼빼로데이, 크리스마스 등 기념일도 프리셋으로 제공됩니다.</p>
+            </div>
+            <div class="highlight-box" data-lang="ko">
+                <h3>음력 날짜 지원</h3>
+                <p>음력 날짜를 완벽 지원합니다. 설날, 추석, 생일 등 음력 기반의 기념일도 정확하게 관리할 수 있습니다. 윤달도 지원합니다.</p>
+            </div>
+
+            <!-- English -->
+            <h2 data-lang="en">Regional Features</h2>
+            <div class="region-feature" data-lang="en">
+                <h3>Quick Add Holidays & Events</h3>
+                <p>Easily add holidays from multiple regions: Korea, Japan, USA, and Europe. New Year's Day, Christmas, Independence Day, and more are just one tap away.</p>
+                <p style="margin-top: 15px;">Popular events like Valentine's Day, Halloween, Thanksgiving, and more are also available as presets.</p>
+            </div>
+            <div class="highlight-box" data-lang="en">
+                <h3>Lunar Calendar Support</h3>
+                <p>Full support for lunar calendar dates. Manage lunar-based celebrations like Lunar New Year, Mid-Autumn Festival, and birthdays accurately. Leap months are also supported.</p>
+            </div>
+
+            <!-- Japanese -->
+            <h2 data-lang="ja">日本のユーザー向け機能</h2>
+            <div class="region-feature" data-lang="ja">
+                <h3>日本の祝日・記念日をワンタップで追加</h3>
+                <p>元日、成人の日、建国記念の日、春分の日、昭和の日、憲法記念日、こどもの日、海の日、山の日、敬老の日、秋分の日、スポーツの日、文化の日、勤労感謝の日、天皇誕生日など、日本の祝日を簡単に追加できます。</p>
+                <p style="margin-top: 15px;">クリスマス、バレンタインデー、ホワイトデー、ハロウィン、七夕、ひな祭りなどの記念日もプリセットで用意しています。</p>
+            </div>
+            <div class="highlight-box" data-lang="ja">
+                <h3>旧暦（太陰暦）対応</h3>
+                <p>旧暦の日付にも対応。旧正月や中秋節など、旧暦に基づく記念日も正確に管理できます。閏月にも対応しています。</p>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="card">
+            <!-- Korean -->
+            <h2 data-lang="ko">카테고리로 깔끔하게 정리</h2>
+            <p data-lang="ko">다양한 이벤트를 카테고리별로 관리할 수 있습니다.</p>
+            <div class="category-list" data-lang="ko">
+                <span class="category-tag">생일</span>
+                <span class="category-tag">시험</span>
+                <span class="category-tag">여행</span>
+                <span class="category-tag">기념일</span>
+                <span class="category-tag">프로젝트</span>
+                <span class="category-tag">행사</span>
+                <span class="category-tag">건강</span>
+                <span class="category-tag">계약</span>
+                <span class="category-tag">기타</span>
+            </div>
+
+            <!-- English -->
+            <h2 data-lang="en">Organize with Categories</h2>
+            <p data-lang="en">Manage various events by categories.</p>
+            <div class="category-list" data-lang="en">
+                <span class="category-tag">Birthday</span>
+                <span class="category-tag">Exam</span>
+                <span class="category-tag">Travel</span>
+                <span class="category-tag">Anniversary</span>
+                <span class="category-tag">Project</span>
+                <span class="category-tag">Event</span>
+                <span class="category-tag">Health</span>
+                <span class="category-tag">Contract</span>
+                <span class="category-tag">Other</span>
+            </div>
+
+            <!-- Japanese -->
+            <h2 data-lang="ja">カテゴリで整理整頓</h2>
+            <p data-lang="ja">様々なイベントをカテゴリ別に管理できます。</p>
+            <div class="category-list" data-lang="ja">
+                <span class="category-tag">誕生日</span>
+                <span class="category-tag">試験</span>
+                <span class="category-tag">旅行</span>
+                <span class="category-tag">記念日</span>
+                <span class="category-tag">プロジェクト</span>
+                <span class="category-tag">イベント</span>
+                <span class="category-tag">健康</span>
+                <span class="category-tag">契約</span>
+                <span class="category-tag">その他</span>
+            </div>
+        </section>
+
+        <!-- Widgets -->
+        <section class="card">
+            <!-- Korean -->
+            <h2 data-lang="ko">편리한 위젯</h2>
+            <div data-lang="ko">
+                <div class="widget-section">
+                    <h3>홈 화면 위젯</h3>
+                    <p>홈 화면에 추가하여 앱을 열지 않고도 소중한 날까지 남은 일수를 바로 확인할 수 있습니다.</p>
+                </div>
+                <div class="widget-section">
+                    <h3>잠금 화면 위젯</h3>
+                    <p>잠금 화면에서도 D-Day를 확인하세요. 언제 어디서나 소중한 날을 기억할 수 있습니다.</p>
+                </div>
+                <ul style="margin-top: 20px;">
+                    <li>표시할 D-Day 항목을 자유롭게 선택 가능</li>
+                    <li>그래프 타입도 선택할 수 있는 설정 가능 위젯</li>
+                    <li>다양한 위젯 사이즈 지원</li>
+                </ul>
+            </div>
+
+            <!-- English -->
+            <h2 data-lang="en">Convenient Widgets</h2>
+            <div data-lang="en">
+                <div class="widget-section">
+                    <h3>Home Screen Widget</h3>
+                    <p>Add to your home screen to check remaining days at a glance without opening the app.</p>
+                </div>
+                <div class="widget-section">
+                    <h3>Lock Screen Widget</h3>
+                    <p>Check your D-Days right from the lock screen. Keep important dates in mind wherever you are.</p>
+                </div>
+                <ul style="margin-top: 20px;">
+                    <li>Choose which D-Day items to display</li>
+                    <li>Configurable widgets with graph type selection</li>
+                    <li>Multiple widget sizes available</li>
+                </ul>
+            </div>
+
+            <!-- Japanese -->
+            <h2 data-lang="ja">便利なウィジェット</h2>
+            <div data-lang="ja">
+                <div class="widget-section">
+                    <h3>ホーム画面ウィジェット</h3>
+                    <p>ホーム画面に追加して、アプリを開かずに大切な日までの残り日数をすぐに確認できます。</p>
+                </div>
+                <div class="widget-section">
+                    <h3>ロック画面ウィジェット</h3>
+                    <p>ロック画面からもD-Dayを確認。いつでもどこでも、大切な日を意識できます。</p>
+                </div>
+                <ul style="margin-top: 20px;">
+                    <li>表示するD-Day項目を自由に選択可能</li>
+                    <li>グラフタイプも選択できる設定可能なウィジェット</li>
+                    <li>複数のウィジェットサイズに対応</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Data Management -->
+        <section class="card">
+            <!-- Korean -->
+            <h2 data-lang="ko">안심 데이터 관리</h2>
+            <ul data-lang="ko">
+                <li>iCloud 동기화로 여러 기기에서 데이터 공유</li>
+                <li>자동 백업 기능으로 소중한 데이터 보호</li>
+                <li>수동 백업 및 복원도 간단하게</li>
+                <li>데이터 내보내기/가져오기 지원</li>
+            </ul>
+
+            <!-- English -->
+            <h2 data-lang="en">Secure Data Management</h2>
+            <ul data-lang="en">
+                <li>iCloud sync to share data across multiple devices</li>
+                <li>Automatic backup to protect your precious data</li>
+                <li>Easy manual backup and restore</li>
+                <li>Data export and import support</li>
+            </ul>
+
+            <!-- Japanese -->
+            <h2 data-lang="ja">安心のデータ管理</h2>
+            <ul data-lang="ja">
+                <li>iCloud同期で複数デバイス間でデータを共有</li>
+                <li>自動バックアップ機能で大切なデータを保護</li>
+                <li>手動バックアップ・復元も簡単操作</li>
+                <li>データのエクスポート・インポートに対応</li>
+            </ul>
+        </section>
+
+        <!-- Global Support -->
+        <section class="card">
+            <!-- Korean -->
+            <h2 data-lang="ko">글로벌 지원</h2>
+            <div class="feature-grid" data-lang="ko">
+                <div class="feature-item">
+                    <h3>다국어 지원</h3>
+                    <p>한국어, 영어, 일본어를 지원합니다. 기기 언어 설정에 따라 자동으로 전환됩니다.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>여러 지역 공휴일</h3>
+                    <p>한국, 일본, 미국, 유럽의 공휴일과 기념일을 프리셋으로 제공합니다.</p>
+                </div>
+            </div>
+
+            <!-- English -->
+            <h2 data-lang="en">Global Support</h2>
+            <div class="feature-grid" data-lang="en">
+                <div class="feature-item">
+                    <h3>Multi-language Support</h3>
+                    <p>Available in Korean, English, and Japanese. Automatically switches based on your device language settings.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Multiple Region Holidays</h3>
+                    <p>Preset holidays and events for Korea, Japan, USA, and Europe are available.</p>
+                </div>
+            </div>
+
+            <!-- Japanese -->
+            <h2 data-lang="ja">グローバル対応</h2>
+            <div class="feature-grid" data-lang="ja">
+                <div class="feature-item">
+                    <h3>多言語サポート</h3>
+                    <p>日本語、韓国語、英語に対応。デバイスの言語設定に自動で切り替わります。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>複数地域の祝日</h3>
+                    <p>日本、韓国、アメリカ、ヨーロッパの祝日・記念日をプリセットで用意しています。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <!-- Korean -->
+            <h2 data-lang="ko">지금 바로 다운로드</h2>
+            <p data-lang="ko" style="margin-bottom: 30px; opacity: 0.9;">소중한 날을, 더 소중하게.</p>
+
+            <!-- English -->
+            <h2 data-lang="en">Download Now</h2>
+            <p data-lang="en" style="margin-bottom: 30px; opacity: 0.9;">Make every moment count.</p>
+
+            <!-- Japanese -->
+            <h2 data-lang="ja">今すぐダウンロード</h2>
+            <p data-lang="ja" style="margin-bottom: 30px; opacity: 0.9;">大切な日を、もっと大切に。</p>
+
+            <a href="#" class="cta-button" data-lang="ko">App Store에서 다운로드</a>
+            <a href="#" class="cta-button" data-lang="en">Download on the App Store</a>
+            <a href="#" class="cta-button" data-lang="ja">App Storeで入手</a>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2026 CKSW. All rights reserved.</p>
+            <p style="margin-top: 10px;">Day2U - Your D-Day Companion</p>
+        </footer>
+    </div>
+
+    <script>
+        function setLanguage(lang) {
+            // Update button states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Hide all language content
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.style.display = 'none';
+            });
+
+            // Show selected language content
+            document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                // Check parent element type for proper display style
+                const parent = el.parentElement;
+                if (el.classList.contains('feature-grid') || el.classList.contains('category-list')) {
+                    el.style.display = 'flex';
+                } else if (parent && parent.classList.contains('feature-grid')) {
+                    el.style.display = 'flex';
+                } else {
+                    el.style.display = 'block';
+                }
+            });
+
+            // Update html lang attribute
+            document.documentElement.lang = lang;
+
+            // Save preference
+            localStorage.setItem('day2u-lang', lang);
+        }
+
+        // Initialize with saved language or browser language
+        document.addEventListener('DOMContentLoaded', function() {
+            let savedLang = localStorage.getItem('day2u-lang');
+            if (!savedLang) {
+                const browserLang = navigator.language.slice(0, 2);
+                savedLang = ['ko', 'en', 'ja'].includes(browserLang) ? browserLang : 'ko';
+            }
+
+            // Find and click the appropriate button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                if ((savedLang === 'ko' && btn.textContent === '한국어') ||
+                    (savedLang === 'en' && btn.textContent === 'English') ||
+                    (savedLang === 'ja' && btn.textContent === '日本語')) {
+                    btn.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
