@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brick Rogue - Roguelike Brick Breaker</title>
+    <style>
+        :root {
+            --primary: #FF6B35;
+            --secondary: #004E89;
+            --dark: #1A1A2E;
+            --light: #EAEAEA;
+            --accent: #FFD700;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, var(--dark) 0%, #16213E 100%);
+            color: var(--light);
+            min-height: 100vh;
+        }
+
+        /* Language Switcher */
+        .lang-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 8px;
+            z-index: 1000;
+            background: rgba(0,0,0,0.5);
+            padding: 8px 12px;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 2px solid var(--light);
+            color: var(--light);
+            padding: 6px 12px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .lang-btn:hover, .lang-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            background: rgba(0,0,0,0.3);
+        }
+
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            background: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: radial-gradient(ellipse at center, rgba(255,107,53,0.2) 0%, transparent 70%);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 30px var(--primary);
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 30px;
+        }
+
+        .hero .description {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--accent);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .feature-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .feature-card ul {
+            list-style: none;
+        }
+
+        .feature-card li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .feature-card li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0,0,0,0.3);
+            margin-top: 60px;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Language content */
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .lang-switcher {
+                top: auto;
+                bottom: 20px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+
+            nav {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <button class="lang-btn active" onclick="switchLang('en')">EN</button>
+        <button class="lang-btn" onclick="switchLang('ko')">한국어</button>
+        <button class="lang-btn" onclick="switchLang('ja')">日本語</button>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="active" data-i18n="nav.home">Home</a>
+        <a href="support.html" data-i18n="nav.support">Support</a>
+        <a href="privacy.html" data-i18n="nav.privacy">Privacy Policy</a>
+    </nav>
+
+    <!-- English Content -->
+    <div class="lang-content active" id="content-en">
+        <section class="hero">
+            <h1>Brick Rogue</h1>
+            <p class="subtitle">Roguelike Brick Breaker Action</p>
+            <p class="description">
+                Classic brick breaking meets roguelike progression! Choose power-ups after each stage and conquer all 20 stages. No two runs are ever the same.
+            </p>
+        </section>
+
+        <section class="features">
+            <h2>Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🎲 Roguelike Power-Ups</h3>
+                    <ul>
+                        <li>Pick 1 of 3 power-ups after every stage</li>
+                        <li>8 unique upgrades to choose from</li>
+                        <li>Multi-Ball, Piercing Shot, Explosive Ball</li>
+                        <li>Build your perfect combo each run</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>🧱 Diverse Bricks</h3>
+                    <ul>
+                        <li>Normal - One hit destroy</li>
+                        <li>Reinforced - Takes 3 hits</li>
+                        <li>Explosive - Area damage</li>
+                        <li>Shooter - Fires projectiles</li>
+                        <li>Support - Chain collapse</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>🎯 Strategic Gameplay</h3>
+                    <ul>
+                        <li>20 stages + Boss battles</li>
+                        <li>3 enemy attack patterns</li>
+                        <li>Combo system for high scores</li>
+                        <li>Special stage patterns</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>🎮 Simple Controls</h3>
+                    <ul>
+                        <li>Drag to move paddle</li>
+                        <li>Tap to launch ball</li>
+                        <li>Easy to learn</li>
+                        <li>Hard to master</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Korean Content -->
+    <div class="lang-content" id="content-ko">
+        <section class="hero">
+            <h1>Brick Rogue</h1>
+            <p class="subtitle">로그라이크 벽돌깨기 액션</p>
+            <p class="description">
+                클래식 벽돌깨기에 로그라이크의 긴장감을 더하다! 매 스테이지마다 성장하는 파워업을 선택하고, 20개의 스테이지를 돌파하세요. 같은 게임은 두 번 없습니다.
+            </p>
+        </section>
+
+        <section class="features">
+            <h2>게임 특징</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🎲 로그라이크 파워업</h3>
+                    <ul>
+                        <li>스테이지 클리어마다 3가지 중 선택</li>
+                        <li>8종의 다양한 파워업</li>
+                        <li>멀티볼, 관통탄, 폭발공</li>
+                        <li>나만의 빌드 완성</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>🧱 다양한 벽돌</h3>
+                    <ul>
+                        <li>일반 - 한 방에 파괴</li>
+                        <li>강화 - 3번 타격 필요</li>
+                        <li>폭발 - 범위 피해</li>
+                        <li>슈터 - 탄막 발사</li>
+                        <li>서포트 - 연쇄 붕괴</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>🎯 전략적 플레이</h3>
+                    <ul>
+                        <li>20개 스테이지 + 보스전</li>
+                        <li>3가지 적 공격 패턴</li>
+                        <li>콤보 시스템</li>
+                        <li>특수 스테이지 패턴</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>🎮 심플한 조작</h3>
+                    <ul>
+                        <li>드래그로 패들 이동</li>
+                        <li>탭으로 공 발사</li>
+                        <li>누구나 쉽게</li>
+                        <li>마스터는 어렵게</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Japanese Content -->
+    <div class="lang-content" id="content-ja">
+        <section class="hero">
+            <h1>Brick Rogue</h1>
+            <p class="subtitle">ローグライク×ブロック崩し</p>
+            <p class="description">
+                クラシックなブロック崩しにローグライク要素が融合！ステージクリアごとにパワーアップを選択し、全20ステージを突破せよ。同じプレイは二度とない。
+            </p>
+        </section>
+
+        <section class="features">
+            <h2>ゲームの特徴</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🎲 ローグライクパワーアップ</h3>
+                    <ul>
+                        <li>ステージクリアごとに3つから選択</li>
+                        <li>8種類のパワーアップ</li>
+                        <li>マルチボール、貫通弾、爆発ボール</li>
+                        <li>自分だけのビルドを完成</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>🧱 多彩なブロック</h3>
+                    <ul>
+                        <li>ノーマル - 一撃で破壊</li>
+                        <li>強化 - 3回打撃が必要</li>
+                        <li>爆発 - 範囲ダメージ</li>
+                        <li>シューター - 弾幕発射</li>
+                        <li>サポート - 連鎖崩壊</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>🎯 戦略的プレイ</h3>
+                    <ul>
+                        <li>全20ステージ + ボス戦</li>
+                        <li>3種類の敵攻撃パターン</li>
+                        <li>コンボシステム</li>
+                        <li>特殊ステージパターン</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>🎮 シンプル操作</h3>
+                    <ul>
+                        <li>ドラッグでパドル移動</li>
+                        <li>タップでボール発射</li>
+                        <li>誰でも簡単</li>
+                        <li>マスターは難しい</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer (shared) -->
+    <footer>
+        <div class="footer-links">
+            <a href="support.html">Support</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="mailto:chungkil.kim@gmail.com">Contact</a>
+        </div>
+        <p>&copy; 2025 Brick Rogue. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function switchLang(lang) {
+            // Update buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Update content
+            document.querySelectorAll('.lang-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById('content-' + lang).classList.add('active');
+
+            // Update nav links
+            const navTexts = {
+                en: { home: 'Home', support: 'Support', privacy: 'Privacy Policy' },
+                ko: { home: '홈', support: '고객지원', privacy: '개인정보처리방침' },
+                ja: { home: 'ホーム', support: 'サポート', privacy: 'プライバシーポリシー' }
+            };
+
+            document.querySelectorAll('nav a').forEach(link => {
+                const key = link.getAttribute('data-i18n').split('.')[1];
+                link.textContent = navTexts[lang][key];
+            });
+
+            // Save preference
+            localStorage.setItem('preferred-lang', lang);
+
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+        }
+
+        // Load preferred language on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferred-lang');
+            const browserLang = navigator.language.substring(0, 2);
+            const supportedLangs = ['en', 'ko', 'ja'];
+
+            let lang = 'en';
+            if (savedLang && supportedLangs.includes(savedLang)) {
+                lang = savedLang;
+            } else if (supportedLangs.includes(browserLang)) {
+                lang = browserLang;
+            }
+
+            // Simulate click on the appropriate language button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                if ((lang === 'en' && btn.textContent === 'EN') ||
+                    (lang === 'ko' && btn.textContent === '한국어') ||
+                    (lang === 'ja' && btn.textContent === '日本語')) {
+                    btn.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

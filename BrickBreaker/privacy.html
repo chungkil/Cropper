@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Brick Rogue</title>
+    <style>
+        :root {
+            --primary: #FF6B35;
+            --secondary: #004E89;
+            --dark: #1A1A2E;
+            --light: #EAEAEA;
+            --accent: #FFD700;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, var(--dark) 0%, #16213E 100%);
+            color: var(--light);
+            min-height: 100vh;
+        }
+
+        /* Language Switcher */
+        .lang-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 8px;
+            z-index: 1000;
+            background: rgba(0,0,0,0.5);
+            padding: 8px 12px;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 2px solid var(--light);
+            color: var(--light);
+            padding: 6px 12px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .lang-btn:hover, .lang-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            background: rgba(0,0,0,0.3);
+        }
+
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            background: var(--primary);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--accent);
+        }
+
+        .last-updated {
+            text-align: center;
+            margin-bottom: 40px;
+            opacity: 0.7;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            margin: 35px 0 15px;
+            color: var(--primary);
+        }
+
+        p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            margin: 15px 0 15px 30px;
+            line-height: 1.8;
+        }
+
+        .highlight-box {
+            background: rgba(255,107,53,0.1);
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        /* Language content */
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0,0,0,0.3);
+            margin-top: 60px;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .lang-switcher {
+                top: auto;
+                bottom: 20px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+
+            nav {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <button class="lang-btn active" onclick="switchLang('en')">EN</button>
+        <button class="lang-btn" onclick="switchLang('ko')">한국어</button>
+        <button class="lang-btn" onclick="switchLang('ja')">日本語</button>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <a href="support.html" data-i18n="nav.support">Support</a>
+        <a href="privacy.html" class="active" data-i18n="nav.privacy">Privacy Policy</a>
+    </nav>
+
+    <!-- English Content -->
+    <div class="lang-content active" id="content-en">
+        <div class="container">
+            <h1>Privacy Policy</h1>
+            <p class="last-updated">Last Updated: January 2025</p>
+
+            <div class="highlight-box">
+                <strong>Summary:</strong> Brick Rogue uses Google AdMob to display advertisements. AdMob may collect certain information to provide personalized ads. We do not collect any other personal information directly.
+            </div>
+
+            <h2>1. Information We Collect</h2>
+            <p>Brick Rogue itself does not collect any personal information from users. We do not require account creation, login, or any form of registration to use our app.</p>
+            <p>However, our app uses Google AdMob for advertising, which may collect:</p>
+            <ul>
+                <li>Device advertising identifier (IDFA on iOS)</li>
+                <li>IP address</li>
+                <li>Device information (model, OS version)</li>
+                <li>Ad interaction data</li>
+            </ul>
+
+            <h2>2. Data Storage</h2>
+            <p>All game data (such as settings and high scores) is stored locally on your device only. This data is not transmitted to any external servers.</p>
+
+            <h2>3. Third-Party Services (Google AdMob)</h2>
+            <p>Brick Rogue uses Google AdMob to display advertisements. AdMob is a mobile advertising platform operated by Google.</p>
+            <p>AdMob may use the collected information to:</p>
+            <ul>
+                <li>Display personalized advertisements based on your interests</li>
+                <li>Measure ad performance and analytics</li>
+                <li>Prevent fraud and abuse</li>
+            </ul>
+            <p>For more information about how Google handles your data, please visit:</p>
+            <ul>
+                <li><a href="https://policies.google.com/privacy" style="color: var(--primary);">Google Privacy Policy</a></li>
+                <li><a href="https://support.google.com/admob/answer/6128543" style="color: var(--primary);">How Google uses information from apps</a></li>
+            </ul>
+
+            <h2>4. Your Choices</h2>
+            <p>You can control personalized advertising through your device settings:</p>
+            <ul>
+                <li><strong>iOS:</strong> Go to Settings → Privacy & Security → Tracking, and disable "Allow Apps to Request to Track"</li>
+                <li>You can also reset your advertising identifier or enable "Limit Ad Tracking" in Settings → Privacy & Security → Apple Advertising</li>
+            </ul>
+
+            <h2>5. Children's Privacy</h2>
+            <p>Our app is designed for general audiences. We do not knowingly collect personal information from children under 13. AdMob may serve contextual (non-personalized) ads to comply with children's privacy regulations.</p>
+
+            <h2>6. Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date.</p>
+
+            <h2>7. Contact Us</h2>
+            <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+            <p><a href="mailto:chungkil.kim@gmail.com" style="color: var(--primary);">chungkil.kim@gmail.com</a></p>
+        </div>
+    </div>
+
+    <!-- Korean Content -->
+    <div class="lang-content" id="content-ko">
+        <div class="container">
+            <h1>개인정보처리방침</h1>
+            <p class="last-updated">최종 수정일: 2025년 1월</p>
+
+            <div class="highlight-box">
+                <strong>요약:</strong> Brick Rogue는 광고 표시를 위해 Google AdMob을 사용합니다. AdMob은 맞춤 광고 제공을 위해 일부 정보를 수집할 수 있습니다. 그 외에 저희가 직접 수집하는 개인정보는 없습니다.
+            </div>
+
+            <h2>1. 수집하는 정보</h2>
+            <p>Brick Rogue 자체는 사용자로부터 어떠한 개인정보도 수집하지 않습니다. 앱 사용을 위해 계정 생성, 로그인 또는 어떠한 형태의 등록도 필요하지 않습니다.</p>
+            <p>다만, 본 앱은 광고를 위해 Google AdMob을 사용하며, AdMob은 다음 정보를 수집할 수 있습니다:</p>
+            <ul>
+                <li>기기 광고 식별자 (iOS의 IDFA)</li>
+                <li>IP 주소</li>
+                <li>기기 정보 (모델명, OS 버전)</li>
+                <li>광고 상호작용 데이터</li>
+            </ul>
+
+            <h2>2. 데이터 저장</h2>
+            <p>모든 게임 데이터(설정, 최고 점수 등)는 사용자의 기기에만 로컬로 저장됩니다. 이 데이터는 외부 서버로 전송되지 않습니다.</p>
+
+            <h2>3. 제3자 서비스 (Google AdMob)</h2>
+            <p>Brick Rogue는 광고 표시를 위해 Google AdMob을 사용합니다. AdMob은 Google이 운영하는 모바일 광고 플랫폼입니다.</p>
+            <p>AdMob은 수집한 정보를 다음 목적으로 사용할 수 있습니다:</p>
+            <ul>
+                <li>사용자의 관심사에 기반한 맞춤 광고 표시</li>
+                <li>광고 성과 측정 및 분석</li>
+                <li>부정행위 및 악용 방지</li>
+            </ul>
+            <p>Google의 데이터 처리 방식에 대한 자세한 내용은 아래를 참조하세요:</p>
+            <ul>
+                <li><a href="https://policies.google.com/privacy" style="color: var(--primary);">Google 개인정보처리방침</a></li>
+                <li><a href="https://support.google.com/admob/answer/6128543" style="color: var(--primary);">Google이 앱 정보를 사용하는 방법</a></li>
+            </ul>
+
+            <h2>4. 사용자 선택권</h2>
+            <p>기기 설정을 통해 맞춤 광고를 제어할 수 있습니다:</p>
+            <ul>
+                <li><strong>iOS:</strong> 설정 → 개인정보 보호 및 보안 → 추적에서 "앱이 추적을 요청하도록 허용" 비활성화</li>
+                <li>설정 → 개인정보 보호 및 보안 → Apple 광고에서 광고 식별자를 재설정하거나 "광고 추적 제한"을 활성화할 수 있습니다</li>
+            </ul>
+
+            <h2>5. 아동 개인정보 보호</h2>
+            <p>본 앱은 일반 사용자를 대상으로 합니다. 13세 미만 아동의 개인정보를 고의로 수집하지 않습니다. AdMob은 아동 개인정보 보호 규정 준수를 위해 문맥 기반(비맞춤형) 광고를 제공할 수 있습니다.</p>
+
+            <h2>6. 방침 변경</h2>
+            <p>본 개인정보처리방침은 수시로 업데이트될 수 있습니다. 변경 사항이 있을 경우 수정된 날짜와 함께 이 페이지에 게시됩니다.</p>
+
+            <h2>7. 문의하기</h2>
+            <p>본 개인정보처리방침에 대한 질문이 있으시면 아래로 연락해 주세요:</p>
+            <p><a href="mailto:chungkil.kim@gmail.com" style="color: var(--primary);">chungkil.kim@gmail.com</a></p>
+        </div>
+    </div>
+
+    <!-- Japanese Content -->
+    <div class="lang-content" id="content-ja">
+        <div class="container">
+            <h1>プライバシーポリシー</h1>
+            <p class="last-updated">最終更新日：2025年1月</p>
+
+            <div class="highlight-box">
+                <strong>概要：</strong> Brick Rogueは広告表示のためにGoogle AdMobを使用しています。AdMobはパーソナライズド広告を提供するために一部の情報を収集する場合があります。それ以外に当社が直接収集する個人情報はありません。
+            </div>
+
+            <h2>1. 収集する情報</h2>
+            <p>Brick Rogue自体は、ユーザーから個人情報を一切収集しません。アプリの使用にあたり、アカウント作成、ログイン、その他いかなる形式の登録も必要ありません。</p>
+            <p>ただし、本アプリは広告のためにGoogle AdMobを使用しており、AdMobは以下の情報を収集する場合があります：</p>
+            <ul>
+                <li>デバイス広告識別子（iOSのIDFA）</li>
+                <li>IPアドレス</li>
+                <li>デバイス情報（モデル、OSバージョン）</li>
+                <li>広告インタラクションデータ</li>
+            </ul>
+
+            <h2>2. データの保存</h2>
+            <p>すべてのゲームデータ（設定やハイスコアなど）は、お客様のデバイスにのみローカルで保存されます。このデータは外部サーバーに送信されません。</p>
+
+            <h2>3. 第三者サービス（Google AdMob）</h2>
+            <p>Brick Rogueは広告表示のためにGoogle AdMobを使用しています。AdMobはGoogleが運営するモバイル広告プラットフォームです。</p>
+            <p>AdMobは収集した情報を以下の目的で使用する場合があります：</p>
+            <ul>
+                <li>ユーザーの興味に基づいたパーソナライズド広告の表示</li>
+                <li>広告パフォーマンスの測定と分析</li>
+                <li>不正行為や悪用の防止</li>
+            </ul>
+            <p>Googleのデータ取り扱いについての詳細は、以下をご参照ください：</p>
+            <ul>
+                <li><a href="https://policies.google.com/privacy" style="color: var(--primary);">Googleプライバシーポリシー</a></li>
+                <li><a href="https://support.google.com/admob/answer/6128543" style="color: var(--primary);">Googleがアプリの情報を使用する方法</a></li>
+            </ul>
+
+            <h2>4. ユーザーの選択肢</h2>
+            <p>デバイスの設定からパーソナライズド広告を制御できます：</p>
+            <ul>
+                <li><strong>iOS:</strong> 設定 → プライバシーとセキュリティ → トラッキングで「Appからのトラッキング要求を許可」を無効化</li>
+                <li>設定 → プライバシーとセキュリティ → Apple広告で広告識別子をリセットするか、「追跡型広告を制限」を有効にできます</li>
+            </ul>
+
+            <h2>5. 子供のプライバシー</h2>
+            <p>本アプリは一般ユーザー向けに設計されています。13歳未満の子供から故意に個人情報を収集することはありません。AdMobは子供のプライバシー規制に準拠するため、コンテキスト（非パーソナライズド）広告を配信する場合があります。</p>
+
+            <h2>6. ポリシーの変更</h2>
+            <p>本プライバシーポリシーは随時更新される場合があります。変更がある場合は、更新日とともにこのページに掲載されます。</p>
+
+            <h2>7. お問い合わせ</h2>
+            <p>本プライバシーポリシーに関するご質問は、以下までご連絡ください：</p>
+            <p><a href="mailto:chungkil.kim@gmail.com" style="color: var(--primary);">chungkil.kim@gmail.com</a></p>
+        </div>
+    </div>
+
+    <!-- Footer (shared) -->
+    <footer>
+        <div class="footer-links">
+            <a href="support.html">Support</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="mailto:chungkil.kim@gmail.com">Contact</a>
+        </div>
+        <p>&copy; 2025 Brick Rogue. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function switchLang(lang) {
+            // Update buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Update content
+            document.querySelectorAll('.lang-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById('content-' + lang).classList.add('active');
+
+            // Update nav links
+            const navTexts = {
+                en: { home: 'Home', support: 'Support', privacy: 'Privacy Policy' },
+                ko: { home: '홈', support: '고객지원', privacy: '개인정보처리방침' },
+                ja: { home: 'ホーム', support: 'サポート', privacy: 'プライバシーポリシー' }
+            };
+
+            document.querySelectorAll('nav a').forEach(link => {
+                const key = link.getAttribute('data-i18n').split('.')[1];
+                link.textContent = navTexts[lang][key];
+            });
+
+            // Save preference
+            localStorage.setItem('preferred-lang', lang);
+
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+        }
+
+        // Load preferred language on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferred-lang');
+            const browserLang = navigator.language.substring(0, 2);
+            const supportedLangs = ['en', 'ko', 'ja'];
+
+            let lang = 'en';
+            if (savedLang && supportedLangs.includes(savedLang)) {
+                lang = savedLang;
+            } else if (supportedLangs.includes(browserLang)) {
+                lang = browserLang;
+            }
+
+            // Simulate click on the appropriate language button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                if ((lang === 'en' && btn.textContent === 'EN') ||
+                    (lang === 'ko' && btn.textContent === '한국어') ||
+                    (lang === 'ja' && btn.textContent === '日本語')) {
+                    btn.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

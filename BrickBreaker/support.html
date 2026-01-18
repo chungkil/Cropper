@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Brick Rogue</title>
+    <style>
+        :root {
+            --primary: #FF6B35;
+            --secondary: #004E89;
+            --dark: #1A1A2E;
+            --light: #EAEAEA;
+            --accent: #FFD700;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, var(--dark) 0%, #16213E 100%);
+            color: var(--light);
+            min-height: 100vh;
+        }
+
+        /* Language Switcher */
+        .lang-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 8px;
+            z-index: 1000;
+            background: rgba(0,0,0,0.5);
+            padding: 8px 12px;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 2px solid var(--light);
+            color: var(--light);
+            padding: 6px 12px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .lang-btn:hover, .lang-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            background: rgba(0,0,0,0.3);
+        }
+
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            background: var(--primary);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--accent);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin: 40px 0 20px;
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+        }
+
+        /* Contact Section */
+        .contact-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .contact-card p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .contact-email {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .contact-email:hover {
+            transform: scale(1.05);
+            background: #ff8555;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-question:hover {
+            background: rgba(255,255,255,0.05);
+        }
+
+        .faq-question::after {
+            content: "+";
+            font-size: 1.5rem;
+            color: var(--primary);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+            line-height: 1.6;
+        }
+
+        .faq-item.open .faq-answer {
+            padding: 0 20px 20px;
+            max-height: 300px;
+        }
+
+        /* Language content */
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0,0,0,0.3);
+            margin-top: 60px;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .lang-switcher {
+                top: auto;
+                bottom: 20px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+
+            nav {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <button class="lang-btn active" onclick="switchLang('en')">EN</button>
+        <button class="lang-btn" onclick="switchLang('ko')">한국어</button>
+        <button class="lang-btn" onclick="switchLang('ja')">日本語</button>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <a href="support.html" class="active" data-i18n="nav.support">Support</a>
+        <a href="privacy.html" data-i18n="nav.privacy">Privacy Policy</a>
+    </nav>
+
+    <!-- English Content -->
+    <div class="lang-content active" id="content-en">
+        <div class="container">
+            <h1>Support</h1>
+
+            <div class="contact-card">
+                <p>Having trouble with Brick Rogue? We're here to help! Please send us an email describing your issue, and we'll get back to you as soon as possible.</p>
+                <a href="mailto:chungkil.kim@gmail.com" class="contact-email">Contact Support</a>
+            </div>
+
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">How do I control the paddle?</div>
+                <div class="faq-answer">Simply drag your finger left or right on the screen to move the paddle. The paddle will follow your finger movement.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How do power-ups work?</div>
+                <div class="faq-answer">After clearing each stage, you'll be presented with 3 random power-ups to choose from. Select one to enhance your abilities. Power-ups stack throughout your run, allowing you to create unique builds.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What do the different brick types do?</div>
+                <div class="faq-answer">
+                    • Normal (Gray): Destroyed in one hit<br>
+                    • Reinforced (Silver): Requires 3 hits<br>
+                    • Explosive (Red): Explodes and damages nearby bricks<br>
+                    • Shooter (Purple): Fires projectiles at your paddle<br>
+                    • Support (Blue): Causes chain collapse when destroyed
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How do I pause the game?</div>
+                <div class="faq-answer">Tap the pause button in the top-right corner of the screen during gameplay. From there, you can access settings, resume the game, or quit to the main menu.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">My progress isn't saving. What should I do?</div>
+                <div class="faq-answer">Please ensure you have enough storage space on your device. If the problem persists, try restarting the app. Note that progress within a single run is not saved if you close the app.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How can I restore sound?</div>
+                <div class="faq-answer">Go to Settings from the main menu or pause menu. Check if the Mute toggle is off and adjust the SFX and Music volume sliders.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Korean Content -->
+    <div class="lang-content" id="content-ko">
+        <div class="container">
+            <h1>고객지원</h1>
+
+            <div class="contact-card">
+                <p>Brick Rogue 이용 중 문제가 발생하셨나요? 문의 사항을 이메일로 보내주시면 최대한 빠르게 답변 드리겠습니다.</p>
+                <a href="mailto:chungkil.kim@gmail.com" class="contact-email">문의하기</a>
+            </div>
+
+            <h2>자주 묻는 질문</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">패들은 어떻게 조작하나요?</div>
+                <div class="faq-answer">화면에서 손가락을 좌우로 드래그하면 패들이 따라 움직입니다.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">파워업은 어떻게 작동하나요?</div>
+                <div class="faq-answer">각 스테이지 클리어 후 3가지 랜덤 파워업 중 하나를 선택할 수 있습니다. 파워업은 해당 런 동안 누적되어 나만의 빌드를 만들 수 있습니다.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">벽돌 종류별 특징은 무엇인가요?</div>
+                <div class="faq-answer">
+                    • 일반 (회색): 한 번에 파괴<br>
+                    • 강화 (은색): 3번 타격 필요<br>
+                    • 폭발 (빨간색): 폭발하며 주변 벽돌 피해<br>
+                    • 슈터 (보라색): 패들을 향해 탄막 발사<br>
+                    • 서포트 (파란색): 파괴 시 연쇄 붕괴
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">게임을 어떻게 일시정지하나요?</div>
+                <div class="faq-answer">게임 플레이 중 화면 우측 상단의 일시정지 버튼을 탭하세요. 설정 접근, 게임 재개, 메인 메뉴로 나가기를 선택할 수 있습니다.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">진행 상황이 저장되지 않아요.</div>
+                <div class="faq-answer">기기의 저장 공간이 충분한지 확인해 주세요. 문제가 지속되면 앱을 재시작해 보세요. 참고로 게임 진행 중 앱을 종료하면 해당 런의 진행 상황은 저장되지 않습니다.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">소리가 안 나요.</div>
+                <div class="faq-answer">메인 메뉴 또는 일시정지 메뉴에서 설정으로 이동하세요. 음소거 토글이 꺼져 있는지 확인하고, 효과음과 음악 볼륨 슬라이더를 조절해 보세요.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Japanese Content -->
+    <div class="lang-content" id="content-ja">
+        <div class="container">
+            <h1>サポート</h1>
+
+            <div class="contact-card">
+                <p>Brick Rogueでお困りですか？問題の詳細をメールでお送りください。できるだけ早くご返信いたします。</p>
+                <a href="mailto:chungkil.kim@gmail.com" class="contact-email">お問い合わせ</a>
+            </div>
+
+            <h2>よくある質問</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">パドルの操作方法は？</div>
+                <div class="faq-answer">画面上で指を左右にドラッグするとパドルが移動します。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">パワーアップはどのように機能しますか？</div>
+                <div class="faq-answer">各ステージクリア後、3つのランダムなパワーアップから1つを選択できます。パワーアップはラン中に蓄積され、独自のビルドを作成できます。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">ブロックの種類と特徴は？</div>
+                <div class="faq-answer">
+                    • ノーマル（グレー）：一撃で破壊<br>
+                    • 強化（シルバー）：3回の打撃が必要<br>
+                    • 爆発（レッド）：爆発して周囲のブロックにダメージ<br>
+                    • シューター（パープル）：パドルに向けて弾幕を発射<br>
+                    • サポート（ブルー）：破壊時に連鎖崩壊
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">ゲームを一時停止するには？</div>
+                <div class="faq-answer">ゲームプレイ中に画面右上の一時停止ボタンをタップしてください。設定へのアクセス、ゲーム再開、メインメニューへの移動が選択できます。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">進行状況が保存されません。</div>
+                <div class="faq-answer">デバイスのストレージ容量が十分かご確認ください。問題が続く場合は、アプリを再起動してみてください。なお、プレイ中にアプリを終了すると、そのランの進行状況は保存されません。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">音が出ません。</div>
+                <div class="faq-answer">メインメニューまたは一時停止メニューから設定に移動してください。ミュートトグルがオフになっていることを確認し、効果音と音楽のボリュームスライダーを調整してください。</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer (shared) -->
+    <footer>
+        <div class="footer-links">
+            <a href="support.html">Support</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="mailto:chungkil.kim@gmail.com">Contact</a>
+        </div>
+        <p>&copy; 2025 Brick Rogue. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('open');
+            });
+        });
+
+        function switchLang(lang) {
+            // Update buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Update content
+            document.querySelectorAll('.lang-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById('content-' + lang).classList.add('active');
+
+            // Update nav links
+            const navTexts = {
+                en: { home: 'Home', support: 'Support', privacy: 'Privacy Policy' },
+                ko: { home: '홈', support: '고객지원', privacy: '개인정보처리방침' },
+                ja: { home: 'ホーム', support: 'サポート', privacy: 'プライバシーポリシー' }
+            };
+
+            document.querySelectorAll('nav a').forEach(link => {
+                const key = link.getAttribute('data-i18n').split('.')[1];
+                link.textContent = navTexts[lang][key];
+            });
+
+            // Save preference
+            localStorage.setItem('preferred-lang', lang);
+
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+        }
+
+        // Load preferred language on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferred-lang');
+            const browserLang = navigator.language.substring(0, 2);
+            const supportedLangs = ['en', 'ko', 'ja'];
+
+            let lang = 'en';
+            if (savedLang && supportedLangs.includes(savedLang)) {
+                lang = savedLang;
+            } else if (supportedLangs.includes(browserLang)) {
+                lang = browserLang;
+            }
+
+            // Simulate click on the appropriate language button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                if ((lang === 'en' && btn.textContent === 'EN') ||
+                    (lang === 'ko' && btn.textContent === '한국어') ||
+                    (lang === 'ja' && btn.textContent === '日本語')) {
+                    btn.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
