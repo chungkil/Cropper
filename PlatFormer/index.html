@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlatFormer - Roguelike Platformer Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .lang-selector {
+            text-align: right;
+            padding: 20px;
+        }
+        .lang-selector select {
+            padding: 8px 16px;
+            border-radius: 8px;
+            border: none;
+            background: #4a4a6a;
+            color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .hero h1 {
+            font-size: 4em;
+            color: #ffd700;
+            text-shadow: 4px 4px 0 #ff6b6b;
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+        }
+        .hero .tagline {
+            font-size: 1.5em;
+            color: #aaa;
+            margin-bottom: 30px;
+        }
+        .hero .description {
+            font-size: 1.1em;
+            color: #ddd;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+        .app-store-badge {
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .app-store-badge img {
+            height: 50px;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 40px 20px;
+        }
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .feature-card .icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        .feature-card h3 {
+            color: #ffd700;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        .feature-card p {
+            color: #bbb;
+            line-height: 1.6;
+        }
+        .screenshots {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .screenshots h2 {
+            color: #ffd700;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+        .screenshot-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .screenshot-placeholder {
+            width: 200px;
+            height: 400px;
+            background: linear-gradient(180deg, #2a2a4a 0%, #1a1a2e 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            border: 2px solid #4a4a6a;
+        }
+        .upgrades {
+            padding: 40px 20px;
+        }
+        .upgrades h2 {
+            color: #ffd700;
+            margin-bottom: 30px;
+            font-size: 2em;
+            text-align: center;
+        }
+        .upgrade-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .upgrade-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .upgrade-item .icon {
+            font-size: 1.5em;
+        }
+        .upgrade-item span {
+            color: #ddd;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+        }
+        .footer a {
+            color: #ffd700;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .pixel-art {
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-selector">
+        <select id="langSelect" onchange="changeLanguage()">
+            <option value="ko">한국어</option>
+            <option value="en">English</option>
+            <option value="ja">日本語</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <section class="hero">
+            <h1>PlatFormer</h1>
+            <p class="tagline" id="tagline">로그라이크 플랫포머 어드벤처</p>
+            <p class="description" id="description">
+                끝없이 생성되는 스테이지를 달리고, 점프하고, 싸우세요!
+                9가지 업그레이드로 캐릭터를 강화하고, 다양한 적과 보스를 물리치세요.
+                매번 다른 도전이 기다리는 로그라이크 플랫포머 게임입니다.
+            </p>
+            <a href="https://apps.apple.com/app/platformer" class="app-store-badge">
+                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+            </a>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <div class="icon">🏃</div>
+                <h3 id="feature1Title">자동 전진 액션</h3>
+                <p id="feature1Desc">플레이어가 자동으로 달리며, 터치 한 번으로 점프! 간단하지만 중독성 있는 게임플레이를 즐기세요.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🎲</div>
+                <h3 id="feature2Title">무한 랜덤 스테이지</h3>
+                <p id="feature2Desc">매번 새롭게 생성되는 레벨! 플랫폼, 장애물, 적의 배치가 매 플레이마다 달라집니다.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">⚔️</div>
+                <h3 id="feature3Title">칼 공격 시스템</h3>
+                <p id="feature3Desc">스와이프로 적을 공격하세요! 슬라임, 박쥐, 해골, 유령 등 다양한 적을 물리치세요.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">👹</div>
+                <h3 id="feature4Title">강력한 보스</h3>
+                <p id="feature4Desc">골렘, 드래곤, 다크나이트! 각 스테이지 끝에서 만나는 보스를 처치하세요.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">⬆️</div>
+                <h3 id="feature5Title">9가지 업그레이드</h3>
+                <p id="feature5Desc">체력, 점프력, 이동속도, 더블점프, 방어력 등 다양한 업그레이드로 강해지세요!</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🎨</div>
+                <h3 id="feature6Title">레트로 픽셀아트</h3>
+                <p id="feature6Desc">36가지 픽셀아트 스프라이트와 8비트 사운드로 복고풍 감성을 느껴보세요.</p>
+            </div>
+        </section>
+
+        <section class="upgrades">
+            <h2 id="upgradeTitle">업그레이드 시스템</h2>
+            <div class="upgrade-list">
+                <div class="upgrade-item"><span class="icon">❤️</span><span id="upg1">최대 체력 +1</span></div>
+                <div class="upgrade-item"><span class="icon">🪙</span><span id="upg2">시작 코인 +10</span></div>
+                <div class="upgrade-item"><span class="icon">🦘</span><span id="upg3">더블점프 해금</span></div>
+                <div class="upgrade-item"><span class="icon">🛡️</span><span id="upg4">방어력 +1</span></div>
+                <div class="upgrade-item"><span class="icon">💰</span><span id="upg5">코인 보너스 +10%</span></div>
+                <div class="upgrade-item"><span class="icon">🚀</span><span id="upg6">점프력 증가</span></div>
+                <div class="upgrade-item"><span class="icon">👟</span><span id="upg7">이동속도 증가</span></div>
+                <div class="upgrade-item"><span class="icon">💫</span><span id="upg8">부활 확률 +15%</span></div>
+                <div class="upgrade-item"><span class="icon">⚔️</span><span id="upg9">공격력 +1</span></div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>
+                <a href="support.html" id="linkSupport">고객 지원</a>
+                <a href="privacy.html" id="linkPrivacy">개인정보처리방침</a>
+            </p>
+            <p style="margin-top: 20px;">&copy; 2026 CKSW Games. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        const translations = {
+            ko: {
+                tagline: "로그라이크 플랫포머 어드벤처",
+                description: "끝없이 생성되는 스테이지를 달리고, 점프하고, 싸우세요! 9가지 업그레이드로 캐릭터를 강화하고, 다양한 적과 보스를 물리치세요. 매번 다른 도전이 기다리는 로그라이크 플랫포머 게임입니다.",
+                feature1Title: "자동 전진 액션",
+                feature1Desc: "플레이어가 자동으로 달리며, 터치 한 번으로 점프! 간단하지만 중독성 있는 게임플레이를 즐기세요.",
+                feature2Title: "무한 랜덤 스테이지",
+                feature2Desc: "매번 새롭게 생성되는 레벨! 플랫폼, 장애물, 적의 배치가 매 플레이마다 달라집니다.",
+                feature3Title: "칼 공격 시스템",
+                feature3Desc: "스와이프로 적을 공격하세요! 슬라임, 박쥐, 해골, 유령 등 다양한 적을 물리치세요.",
+                feature4Title: "강력한 보스",
+                feature4Desc: "골렘, 드래곤, 다크나이트! 각 스테이지 끝에서 만나는 보스를 처치하세요.",
+                feature5Title: "9가지 업그레이드",
+                feature5Desc: "체력, 점프력, 이동속도, 더블점프, 방어력 등 다양한 업그레이드로 강해지세요!",
+                feature6Title: "레트로 픽셀아트",
+                feature6Desc: "36가지 픽셀아트 스프라이트와 8비트 사운드로 복고풍 감성을 느껴보세요.",
+                upgradeTitle: "업그레이드 시스템",
+                upg1: "최대 체력 +1",
+                upg2: "시작 코인 +10",
+                upg3: "더블점프 해금",
+                upg4: "방어력 +1",
+                upg5: "코인 보너스 +10%",
+                upg6: "점프력 증가",
+                upg7: "이동속도 증가",
+                upg8: "부활 확률 +15%",
+                upg9: "공격력 +1",
+                linkSupport: "고객 지원",
+                linkPrivacy: "개인정보처리방침"
+            },
+            en: {
+                tagline: "Roguelike Platformer Adventure",
+                description: "Run, jump, and fight through endless procedurally generated stages! Upgrade your character with 9 different abilities and defeat various enemies and bosses. A roguelike platformer with unique challenges every run.",
+                feature1Title: "Auto-Run Action",
+                feature1Desc: "Your character runs automatically - just tap to jump! Simple yet addictive gameplay you can enjoy anywhere.",
+                feature2Title: "Infinite Random Stages",
+                feature2Desc: "Every run is unique! Platform layouts, obstacles, and enemy placements change with each playthrough.",
+                feature3Title: "Sword Attack System",
+                feature3Desc: "Swipe to attack enemies! Defeat slimes, bats, skeletons, ghosts and more.",
+                feature4Title: "Epic Boss Battles",
+                feature4Desc: "Golem, Dragon, Dark Knight! Face powerful bosses at the end of each stage.",
+                feature5Title: "9 Upgrades",
+                feature5Desc: "Health, jump power, move speed, double jump, armor and more - get stronger with every upgrade!",
+                feature6Title: "Retro Pixel Art",
+                feature6Desc: "Experience nostalgic vibes with 36 pixel art sprites and 8-bit sound effects.",
+                upgradeTitle: "Upgrade System",
+                upg1: "Max Health +1",
+                upg2: "Starting Coins +10",
+                upg3: "Unlock Double Jump",
+                upg4: "Armor +1",
+                upg5: "Coin Bonus +10%",
+                upg6: "Jump Power Up",
+                upg7: "Move Speed Up",
+                upg8: "Revival Chance +15%",
+                upg9: "Attack Power +1",
+                linkSupport: "Support",
+                linkPrivacy: "Privacy Policy"
+            },
+            ja: {
+                tagline: "ローグライク プラットフォーマー アドベンチャー",
+                description: "無限に生成されるステージを走り、跳び、戦え！9種類のアップグレードでキャラクターを強化し、様々な敵とボスを倒しましょう。毎回異なる挑戦が待っているローグライクプラットフォーマーゲームです。",
+                feature1Title: "オートラン アクション",
+                feature1Desc: "プレイヤーは自動で走り、タップ一つでジャンプ！シンプルだけど病みつきになるゲームプレイをお楽しみください。",
+                feature2Title: "無限ランダムステージ",
+                feature2Desc: "毎回新しく生成されるレベル！プラットフォーム、障害物、敵の配置がプレイ毎に変わります。",
+                feature3Title: "剣攻撃システム",
+                feature3Desc: "スワイプで敵を攻撃！スライム、コウモリ、スケルトン、ゴーストなど様々な敵を倒しましょう。",
+                feature4Title: "強力なボス",
+                feature4Desc: "ゴーレム、ドラゴン、ダークナイト！各ステージの終わりで待ち受けるボスを撃破しよう。",
+                feature5Title: "9種類のアップグレード",
+                feature5Desc: "体力、ジャンプ力、移動速度、二段ジャンプ、防御力など様々なアップグレードで強くなろう！",
+                feature6Title: "レトロ ピクセルアート",
+                feature6Desc: "36種類のピクセルアートスプライトと8ビットサウンドでレトロな雰囲気を感じてください。",
+                upgradeTitle: "アップグレードシステム",
+                upg1: "最大体力 +1",
+                upg2: "初期コイン +10",
+                upg3: "二段ジャンプ解放",
+                upg4: "防御力 +1",
+                upg5: "コインボーナス +10%",
+                upg6: "ジャンプ力アップ",
+                upg7: "移動速度アップ",
+                upg8: "復活確率 +15%",
+                upg9: "攻撃力 +1",
+                linkSupport: "サポート",
+                linkPrivacy: "プライバシーポリシー"
+            }
+        };
+
+        function changeLanguage() {
+            const lang = document.getElementById('langSelect').value;
+            const t = translations[lang];
+
+            document.getElementById('tagline').textContent = t.tagline;
+            document.getElementById('description').textContent = t.description;
+            document.getElementById('feature1Title').textContent = t.feature1Title;
+            document.getElementById('feature1Desc').textContent = t.feature1Desc;
+            document.getElementById('feature2Title').textContent = t.feature2Title;
+            document.getElementById('feature2Desc').textContent = t.feature2Desc;
+            document.getElementById('feature3Title').textContent = t.feature3Title;
+            document.getElementById('feature3Desc').textContent = t.feature3Desc;
+            document.getElementById('feature4Title').textContent = t.feature4Title;
+            document.getElementById('feature4Desc').textContent = t.feature4Desc;
+            document.getElementById('feature5Title').textContent = t.feature5Title;
+            document.getElementById('feature5Desc').textContent = t.feature5Desc;
+            document.getElementById('feature6Title').textContent = t.feature6Title;
+            document.getElementById('feature6Desc').textContent = t.feature6Desc;
+            document.getElementById('upgradeTitle').textContent = t.upgradeTitle;
+            document.getElementById('upg1').textContent = t.upg1;
+            document.getElementById('upg2').textContent = t.upg2;
+            document.getElementById('upg3').textContent = t.upg3;
+            document.getElementById('upg4').textContent = t.upg4;
+            document.getElementById('upg5').textContent = t.upg5;
+            document.getElementById('upg6').textContent = t.upg6;
+            document.getElementById('upg7').textContent = t.upg7;
+            document.getElementById('upg8').textContent = t.upg8;
+            document.getElementById('upg9').textContent = t.upg9;
+            document.getElementById('linkSupport').textContent = t.linkSupport;
+            document.getElementById('linkPrivacy').textContent = t.linkPrivacy;
+
+            document.documentElement.lang = lang;
+            localStorage.setItem('preferredLang', lang);
+        }
+
+        window.onload = function() {
+            const savedLang = localStorage.getItem('preferredLang');
+            if (savedLang) {
+                document.getElementById('langSelect').value = savedLang;
+                changeLanguage();
+            }
+        };
+    </script>
+</body>
+</html>
