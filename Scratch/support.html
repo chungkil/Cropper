@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Scratch Art</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --bg-dark: #0f0f0f;
+            --bg-card: #1a1a1a;
+            --text: #ffffff;
+            --text-muted: #a1a1aa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .lang-selector {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 8px;
+            background: var(--bg-card);
+            padding: 8px;
+            border-radius: 12px;
+            border: 1px solid #333;
+        }
+
+        .lang-btn {
+            padding: 8px 16px;
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .lang-btn:hover:not(.active) {
+            background: #333;
+        }
+
+        header {
+            padding: 80px 20px 40px;
+            text-align: center;
+            border-bottom: 1px solid #333;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--primary);
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .support-section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .contact-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid #333;
+            text-align: center;
+        }
+
+        .contact-card p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .email-link {
+            display: inline-block;
+            padding: 16px 32px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .email-link:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid #333;
+            margin-bottom: 16px;
+        }
+
+        .faq-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .faq-item h3::before {
+            content: 'Q';
+            background: var(--primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .faq-item p {
+            color: var(--text-muted);
+            padding-left: 38px;
+        }
+
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #333;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .copyright {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        [data-lang] { display: none; }
+        [data-lang].active { display: block; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .lang-selector {
+                top: 10px;
+                right: 10px;
+                padding: 6px;
+            }
+            .lang-btn {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-selector">
+        <button class="lang-btn active" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" onclick="setLang('ko')">KO</button>
+        <button class="lang-btn" onclick="setLang('ja')">JA</button>
+        <button class="lang-btn" onclick="setLang('zh')">ZH</button>
+    </div>
+
+    <header>
+        <a href="index.html" class="back-link">&larr;
+            <span data-lang="en" class="active">Back to Home</span>
+            <span data-lang="ko">홈으로 돌아가기</span>
+            <span data-lang="ja">ホームに戻る</span>
+            <span data-lang="zh">返回首页</span>
+        </a>
+
+        <div data-lang="en" class="active">
+            <h1>Support</h1>
+            <p class="subtitle">We're here to help</p>
+        </div>
+        <div data-lang="ko">
+            <h1>지원</h1>
+            <p class="subtitle">도움이 필요하시면 연락주세요</p>
+        </div>
+        <div data-lang="ja">
+            <h1>サポート</h1>
+            <p class="subtitle">お困りの際はご連絡ください</p>
+        </div>
+        <div data-lang="zh">
+            <h1>支持</h1>
+            <p class="subtitle">我们随时为您提供帮助</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- Contact Section -->
+        <section class="support-section">
+            <div data-lang="en" class="active">
+                <h2>Contact Us</h2>
+                <div class="contact-card">
+                    <p>Have questions, feedback, or need assistance?<br>Send us an email and we'll get back to you as soon as possible.</p>
+                    <a href="mailto:chungkil.kim@gmail.com" class="email-link">chungkil.kim@gmail.com</a>
+                </div>
+            </div>
+            <div data-lang="ko">
+                <h2>문의하기</h2>
+                <div class="contact-card">
+                    <p>질문, 피드백 또는 도움이 필요하신가요?<br>이메일을 보내주시면 최대한 빨리 답변드리겠습니다.</p>
+                    <a href="mailto:chungkil.kim@gmail.com" class="email-link">chungkil.kim@gmail.com</a>
+                </div>
+            </div>
+            <div data-lang="ja">
+                <h2>お問い合わせ</h2>
+                <div class="contact-card">
+                    <p>ご質問、フィードバック、またはサポートが必要ですか？<br>メールでお問い合わせください。できるだけ早くお返事いたします。</p>
+                    <a href="mailto:chungkil.kim@gmail.com" class="email-link">chungkil.kim@gmail.com</a>
+                </div>
+            </div>
+            <div data-lang="zh">
+                <h2>联系我们</h2>
+                <div class="contact-card">
+                    <p>有问题、反馈或需要帮助？<br>请发送邮件，我们会尽快回复您。</p>
+                    <a href="mailto:chungkil.kim@gmail.com" class="email-link">chungkil.kim@gmail.com</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="support-section">
+            <div data-lang="en" class="active">
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="faq-item">
+                    <h3>How do I scratch the canvas?</h3>
+                    <p>Simply touch and drag your finger across the screen. The black layer will be removed, revealing the colorful pattern underneath.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Can I use my own photos as backgrounds?</h3>
+                    <p>Yes! Tap the background (BG) button in the toolbar, then select "Create New" to import your own image as a background pattern.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How do I export my artwork?</h3>
+                    <p>Tap the share button in the toolbar. You can choose the export quality and save the image to your Photos or share it directly.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What is the timelapse feature?</h3>
+                    <p>The timelapse feature records your drawing process and creates a video showing your artwork being created. Tap the replay button to access this feature.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How do I change the brush size?</h3>
+                    <p>Long press the brush button in the toolbar to quickly adjust the size, or tap it once to access full brush settings including size, hardness, and opacity.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Can I undo my strokes?</h3>
+                    <p>Yes! Tap the undo button in the toolbar, or use a two-finger tap gesture anywhere on the canvas to undo.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How do I switch the toolbar position?</h3>
+                    <p>Go to Settings and change the "Dominant Hand" option. Right-handed places the toolbar on the left, and left-handed places it on the right.</p>
+                </div>
+            </div>
+
+            <div data-lang="ko">
+                <h2>자주 묻는 질문</h2>
+
+                <div class="faq-item">
+                    <h3>어떻게 캔버스를 긁나요?</h3>
+                    <p>화면을 터치하고 드래그하면 됩니다. 검은 레이어가 지워지면서 아래의 아름다운 패턴이 나타납니다.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>내 사진을 배경으로 사용할 수 있나요?</h3>
+                    <p>네! 도구바에서 배경(BG) 버튼을 탭한 후 "새로 만들기"를 선택하여 원하는 이미지를 배경 패턴으로 가져올 수 있습니다.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>작품을 어떻게 내보내나요?</h3>
+                    <p>도구바에서 공유 버튼을 탭하세요. 내보내기 품질을 선택하고 사진 앱에 저장하거나 바로 공유할 수 있습니다.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>타임랩스 기능이 무엇인가요?</h3>
+                    <p>타임랩스 기능은 그림 그리는 과정을 녹화하여 작품이 만들어지는 과정을 영상으로 만들어줍니다. 재생 버튼을 탭하여 이 기능에 접근하세요.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>브러시 크기는 어떻게 바꾸나요?</h3>
+                    <p>도구바의 브러시 버튼을 길게 누르면 빠르게 크기를 조절할 수 있고, 한 번 탭하면 크기, 경도, 투명도 등 전체 브러시 설정에 접근할 수 있습니다.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>그린 것을 취소할 수 있나요?</h3>
+                    <p>네! 도구바의 실행 취소 버튼을 탭하거나, 캔버스 아무 곳에서나 두 손가락으로 탭하면 실행 취소됩니다.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>도구바 위치를 어떻게 바꾸나요?</h3>
+                    <p>설정에서 "주로 쓰는 손" 옵션을 변경하세요. 오른손잡이는 도구바가 왼쪽에, 왼손잡이는 오른쪽에 배치됩니다.</p>
+                </div>
+            </div>
+
+            <div data-lang="ja">
+                <h2>よくある質問</h2>
+
+                <div class="faq-item">
+                    <h3>キャンバスをどうやって削りますか？</h3>
+                    <p>画面をタッチしてドラッグするだけです。黒いレイヤーが削られ、下のカラフルなパターンが現れます。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>自分の写真を背景に使えますか？</h3>
+                    <p>はい！ツールバーの背景（BG）ボタンをタップし、「新規作成」を選択して、お好みの画像を背景パターンとしてインポートできます。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>作品をどうやって書き出しますか？</h3>
+                    <p>ツールバーの共有ボタンをタップしてください。書き出し品質を選択し、写真に保存したり、直接共有したりできます。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>タイムラプス機能とは何ですか？</h3>
+                    <p>タイムラプス機能は、描画過程を録画し、作品が作られる様子を動画にします。再生ボタンをタップしてこの機能にアクセスしてください。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>ブラシサイズはどうやって変えますか？</h3>
+                    <p>ツールバーのブラシボタンを長押しすると素早くサイズを調整でき、一度タップするとサイズ、硬さ、透明度などの全ブラシ設定にアクセスできます。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>描いたものを元に戻せますか？</h3>
+                    <p>はい！ツールバーの元に戻すボタンをタップするか、キャンバスのどこかで2本指でタップすると元に戻せます。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>ツールバーの位置はどうやって変えますか？</h3>
+                    <p>設定で「利き手」オプションを変更してください。右利きはツールバーが左側に、左利きは右側に配置されます。</p>
+                </div>
+            </div>
+
+            <div data-lang="zh">
+                <h2>常见问题</h2>
+
+                <div class="faq-item">
+                    <h3>如何在画布上刮画？</h3>
+                    <p>只需用手指触摸并在屏幕上拖动即可。黑色图层会被刮掉，露出下面的彩色图案。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>可以使用自己的照片作为背景吗？</h3>
+                    <p>可以！点击工具栏中的背景（BG）按钮，然后选择"新建"来导入您自己的图片作为背景图案。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>如何导出我的作品？</h3>
+                    <p>点击工具栏中的分享按钮。您可以选择导出质量，然后保存到相册或直接分享。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>延时功能是什么？</h3>
+                    <p>延时功能会记录您的绘画过程，并创建一个展示作品创作过程的视频。点击播放按钮访问此功能。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>如何更改画笔大小？</h3>
+                    <p>长按工具栏中的画笔按钮可快速调整大小，单击则可访问完整的画笔设置，包括大小、硬度和透明度。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>可以撤销我的笔画吗？</h3>
+                    <p>可以！点击工具栏中的撤销按钮，或在画布任意位置双指点击即可撤销。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>如何切换工具栏位置？</h3>
+                    <p>进入设置，更改"惯用手"选项。右手模式下工具栏在左侧，左手模式下工具栏在右侧。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">
+                <span data-lang="en" class="active">Home</span>
+                <span data-lang="ko">홈</span>
+                <span data-lang="ja">ホーム</span>
+                <span data-lang="zh">首页</span>
+            </a>
+            <a href="privacy.html">
+                <span data-lang="en" class="active">Privacy Policy</span>
+                <span data-lang="ko">개인정보처리방침</span>
+                <span data-lang="ja">プライバシーポリシー</span>
+                <span data-lang="zh">隐私政策</span>
+            </a>
+            <a href="mailto:chungkil.kim@gmail.com">
+                <span data-lang="en" class="active">Contact</span>
+                <span data-lang="ko">문의</span>
+                <span data-lang="ja">お問い合わせ</span>
+                <span data-lang="zh">联系我们</span>
+            </a>
+        </div>
+        <p class="copyright">&copy; 2025 Scratch Art. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function setLang(lang) {
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent === lang.toUpperCase()) {
+                    btn.classList.add('active');
+                }
+            });
+
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.classList.remove('active');
+                if (el.getAttribute('data-lang') === lang) {
+                    el.classList.add('active');
+                }
+            });
+
+            localStorage.setItem('preferred-lang', lang);
+        }
+
+        const savedLang = localStorage.getItem('preferred-lang');
+        if (savedLang) {
+            setLang(savedLang);
+        }
+    </script>
+</body>
+</html>

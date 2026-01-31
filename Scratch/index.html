@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scratch Art - Rainbow Drawing</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --bg-dark: #0f0f0f;
+            --bg-card: #1a1a1a;
+            --text: #ffffff;
+            --text-muted: #a1a1aa;
+            --gradient-1: #ff6b6b;
+            --gradient-2: #feca57;
+            --gradient-3: #48dbfb;
+            --gradient-4: #ff9ff3;
+            --gradient-5: #54a0ff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .lang-selector {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 8px;
+            background: var(--bg-card);
+            padding: 8px;
+            border-radius: 12px;
+            border: 1px solid #333;
+        }
+
+        .lang-btn {
+            padding: 8px 16px;
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .lang-btn:hover:not(.active) {
+            background: #333;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f0f 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, var(--gradient-1), transparent, var(--gradient-2), transparent, var(--gradient-3), transparent, var(--gradient-4), transparent, var(--gradient-5), transparent);
+            animation: rotate 20s linear infinite;
+            opacity: 0.1;
+        }
+
+        @keyframes rotate {
+            100% { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 28px;
+            background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2), var(--gradient-3), var(--gradient-4), var(--gradient-5));
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            box-shadow: 0 20px 60px rgba(99, 102, 241, 0.3);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2), var(--gradient-3));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 32px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 16px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.4);
+        }
+
+        .download-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 15px 50px rgba(99, 102, 241, 0.5);
+        }
+
+        .features {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid #333;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 60px rgba(99, 102, 241, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+        }
+
+        .patterns {
+            padding: 100px 20px;
+            background: linear-gradient(180deg, var(--bg-dark) 0%, #1a1a2e 100%);
+        }
+
+        .patterns-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pattern-showcase {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .pattern-item {
+            width: 150px;
+            height: 150px;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+        }
+
+        .pattern-item:hover {
+            transform: scale(1.05);
+        }
+
+        .pattern-rainbow { background: linear-gradient(135deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #54a0ff); }
+        .pattern-aurora { background: linear-gradient(180deg, #1a8068, #3282b8, #9b59b6); }
+        .pattern-sunset { background: linear-gradient(180deg, #ff5f6d, #ffc371, #c55a8e, #4a3b6e); }
+        .pattern-ocean { background: linear-gradient(180deg, #005577, #0077b3, #33b3e6, #99e6ff); }
+        .pattern-neon { background: linear-gradient(135deg, #ff0080, #00ffff, #ffff00); }
+        .pattern-galaxy { background: linear-gradient(135deg, #0d0d26, #1a1a66, #331a4d); }
+
+        .cta {
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-size: 1.2rem;
+        }
+
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #333;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .copyright {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        [data-lang] { display: none; }
+        [data-lang].active { display: block; }
+        .features-grid [data-lang].active { display: block; }
+        .pattern-showcase [data-lang].active { display: flex; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .subtitle { font-size: 1.2rem; }
+            .section-title { font-size: 2rem; }
+            .lang-selector {
+                top: 10px;
+                right: 10px;
+                padding: 6px;
+            }
+            .lang-btn {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="lang-selector">
+        <button class="lang-btn active" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" onclick="setLang('ko')">KO</button>
+        <button class="lang-btn" onclick="setLang('ja')">JA</button>
+        <button class="lang-btn" onclick="setLang('zh')">ZH</button>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="app-icon">&#10024;</div>
+
+            <div data-lang="en" class="active">
+                <h1>Scratch Art</h1>
+                <p class="subtitle">Reveal colorful art with your fingertip</p>
+            </div>
+            <div data-lang="ko">
+                <h1>Scratch Art</h1>
+                <p class="subtitle">손끝으로 빛나는 무지개 아트</p>
+            </div>
+            <div data-lang="ja">
+                <h1>Scratch Art</h1>
+                <p class="subtitle">指先で輝くレインボーアート</p>
+            </div>
+            <div data-lang="zh">
+                <h1>Scratch Art</h1>
+                <p class="subtitle">指尖绽放的彩虹艺术</p>
+            </div>
+
+            <a href="#" class="download-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                </svg>
+                <span data-lang="en" class="active">Download on App Store</span>
+                <span data-lang="ko">App Store에서 다운로드</span>
+                <span data-lang="ja">App Storeでダウンロード</span>
+                <span data-lang="zh">在 App Store 下载</span>
+            </a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div data-lang="en" class="active">
+            <h2 class="section-title">Features</h2>
+        </div>
+        <div data-lang="ko">
+            <h2 class="section-title">주요 기능</h2>
+        </div>
+        <div data-lang="ja">
+            <h2 class="section-title">主な機能</h2>
+        </div>
+        <div data-lang="zh">
+            <h2 class="section-title">主要功能</h2>
+        </div>
+
+        <div class="features-grid">
+            <!-- English Features -->
+            <div data-lang="en" class="feature-card active">
+                <div class="feature-icon">&#127752;</div>
+                <h3>Beautiful Patterns</h3>
+                <p>Choose from 12 stunning patterns including Rainbow, Aurora, Sunset, Ocean, Starry Night, and more.</p>
+            </div>
+            <div data-lang="en" class="feature-card active">
+                <div class="feature-icon">&#127912;</div>
+                <h3>Custom Patterns</h3>
+                <p>Create your own gradients or use photos as backgrounds for unlimited creativity.</p>
+            </div>
+            <div data-lang="en" class="feature-card active">
+                <div class="feature-icon">&#128396;</div>
+                <h3>Customizable Brush</h3>
+                <p>Adjust brush size, hardness, and opacity to match your artistic vision.</p>
+            </div>
+            <div data-lang="en" class="feature-card active">
+                <div class="feature-icon">&#127916;</div>
+                <h3>Timelapse Export</h3>
+                <p>Record your drawing process and share amazing timelapse videos.</p>
+            </div>
+            <div data-lang="en" class="feature-card active">
+                <div class="feature-icon">&#128444;</div>
+                <h3>Gallery</h3>
+                <p>Save your artwork and continue working on it anytime you want.</p>
+            </div>
+            <div data-lang="en" class="feature-card active">
+                <div class="feature-icon">&#9194;</div>
+                <h3>Undo & Redo</h3>
+                <p>Made a mistake? No problem! Easily undo and redo your strokes.</p>
+            </div>
+
+            <!-- Korean Features -->
+            <div data-lang="ko" class="feature-card">
+                <div class="feature-icon">&#127752;</div>
+                <h3>다양한 배경 패턴</h3>
+                <p>레인보우, 오로라, 석양, 바다, 별밤 등 12가지 아름다운 패턴을 제공합니다.</p>
+            </div>
+            <div data-lang="ko" class="feature-card">
+                <div class="feature-icon">&#127912;</div>
+                <h3>나만의 패턴</h3>
+                <p>원하는 색상으로 그라데이션을 만들거나 사진을 배경으로 사용할 수 있습니다.</p>
+            </div>
+            <div data-lang="ko" class="feature-card">
+                <div class="feature-icon">&#128396;</div>
+                <h3>브러시 커스터마이징</h3>
+                <p>굵기, 경도, 투명도를 자유롭게 조절하여 나만의 브러시를 만드세요.</p>
+            </div>
+            <div data-lang="ko" class="feature-card">
+                <div class="feature-icon">&#127916;</div>
+                <h3>타임랩스 내보내기</h3>
+                <p>그림 그리는 과정을 녹화하여 멋진 타임랩스 영상으로 공유하세요.</p>
+            </div>
+            <div data-lang="ko" class="feature-card">
+                <div class="feature-icon">&#128444;</div>
+                <h3>갤러리</h3>
+                <p>작품을 저장하고 언제든지 이어서 그릴 수 있습니다.</p>
+            </div>
+            <div data-lang="ko" class="feature-card">
+                <div class="feature-icon">&#9194;</div>
+                <h3>실행 취소 & 다시 실행</h3>
+                <p>실수해도 괜찮아요! Undo/Redo 기능으로 쉽게 수정하세요.</p>
+            </div>
+
+            <!-- Japanese Features -->
+            <div data-lang="ja" class="feature-card">
+                <div class="feature-icon">&#127752;</div>
+                <h3>豊富な背景パターン</h3>
+                <p>レインボー、オーロラ、夕焼け、海、星空など12種類の美しいパターン。</p>
+            </div>
+            <div data-lang="ja" class="feature-card">
+                <div class="feature-icon">&#127912;</div>
+                <h3>オリジナルパターン</h3>
+                <p>お好みの色でグラデーションを作成したり、写真を背景として使用できます。</p>
+            </div>
+            <div data-lang="ja" class="feature-card">
+                <div class="feature-icon">&#128396;</div>
+                <h3>ブラシカスタマイズ</h3>
+                <p>太さ、硬さ、透明度を自由に調整して、自分だけのブラシを作りましょう。</p>
+            </div>
+            <div data-lang="ja" class="feature-card">
+                <div class="feature-icon">&#127916;</div>
+                <h3>タイムラプス書き出し</h3>
+                <p>描く過程を録画し、素敵なタイムラプス動画として共有できます。</p>
+            </div>
+            <div data-lang="ja" class="feature-card">
+                <div class="feature-icon">&#128444;</div>
+                <h3>ギャラリー</h3>
+                <p>作品を保存して、いつでも続きから描けます。</p>
+            </div>
+            <div data-lang="ja" class="feature-card">
+                <div class="feature-icon">&#9194;</div>
+                <h3>元に戻す・やり直し</h3>
+                <p>失敗しても大丈夫！Undo/Redo機能で簡単に修正できます。</p>
+            </div>
+
+            <!-- Chinese Features -->
+            <div data-lang="zh" class="feature-card">
+                <div class="feature-icon">&#127752;</div>
+                <h3>丰富的背景图案</h3>
+                <p>彩虹、极光、日落、海洋、星空等12种精美图案供您选择。</p>
+            </div>
+            <div data-lang="zh" class="feature-card">
+                <div class="feature-icon">&#127912;</div>
+                <h3>创建专属图案</h3>
+                <p>使用您喜欢的颜色创建渐变，或使用自己的照片作为背景。</p>
+            </div>
+            <div data-lang="zh" class="feature-card">
+                <div class="feature-icon">&#128396;</div>
+                <h3>自定义画笔</h3>
+                <p>自由调整大小、硬度和透明度，打造您专属的画笔。</p>
+            </div>
+            <div data-lang="zh" class="feature-card">
+                <div class="feature-icon">&#127916;</div>
+                <h3>延时视频导出</h3>
+                <p>自动记录绘画过程，导出精彩的延时视频进行分享。</p>
+            </div>
+            <div data-lang="zh" class="feature-card">
+                <div class="feature-icon">&#128444;</div>
+                <h3>画廊</h3>
+                <p>保存您的作品，随时继续创作。</p>
+            </div>
+            <div data-lang="zh" class="feature-card">
+                <div class="feature-icon">&#9194;</div>
+                <h3>撤销与重做</h3>
+                <p>画错了？没关系！轻松撤销和重做您的笔画。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="patterns">
+        <div class="patterns-inner">
+            <div data-lang="en" class="active">
+                <h2 class="section-title">Stunning Patterns</h2>
+            </div>
+            <div data-lang="ko">
+                <h2 class="section-title">아름다운 패턴</h2>
+            </div>
+            <div data-lang="ja">
+                <h2 class="section-title">美しいパターン</h2>
+            </div>
+            <div data-lang="zh">
+                <h2 class="section-title">精美图案</h2>
+            </div>
+
+            <div class="pattern-showcase">
+                <div class="pattern-item pattern-rainbow"></div>
+                <div class="pattern-item pattern-aurora"></div>
+                <div class="pattern-item pattern-sunset"></div>
+                <div class="pattern-item pattern-ocean"></div>
+                <div class="pattern-item pattern-neon"></div>
+                <div class="pattern-item pattern-galaxy"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div data-lang="en" class="active">
+            <h2>Start Creating Today</h2>
+            <p>Download Scratch Art and unleash your creativity</p>
+        </div>
+        <div data-lang="ko">
+            <h2>지금 바로 시작하세요</h2>
+            <p>Scratch Art를 다운로드하고 창의력을 발휘해보세요</p>
+        </div>
+        <div data-lang="ja">
+            <h2>今すぐ始めましょう</h2>
+            <p>Scratch Artをダウンロードして、創造性を解き放ちましょう</p>
+        </div>
+        <div data-lang="zh">
+            <h2>立即开始创作</h2>
+            <p>下载 Scratch Art，释放您的创造力</p>
+        </div>
+
+        <a href="#" class="download-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            </svg>
+            <span data-lang="en" class="active">Download on App Store</span>
+            <span data-lang="ko">App Store에서 다운로드</span>
+            <span data-lang="ja">App Storeでダウンロード</span>
+            <span data-lang="zh">在 App Store 下载</span>
+        </a>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="support.html">
+                <span data-lang="en" class="active">Support</span>
+                <span data-lang="ko">지원</span>
+                <span data-lang="ja">サポート</span>
+                <span data-lang="zh">支持</span>
+            </a>
+            <a href="privacy.html">
+                <span data-lang="en" class="active">Privacy Policy</span>
+                <span data-lang="ko">개인정보처리방침</span>
+                <span data-lang="ja">プライバシーポリシー</span>
+                <span data-lang="zh">隐私政策</span>
+            </a>
+            <a href="mailto:chungkil.kim@gmail.com">
+                <span data-lang="en" class="active">Contact</span>
+                <span data-lang="ko">문의</span>
+                <span data-lang="ja">お問い合わせ</span>
+                <span data-lang="zh">联系我们</span>
+            </a>
+        </div>
+        <p class="copyright">&copy; 2025 Scratch Art. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function setLang(lang) {
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent === lang.toUpperCase()) {
+                    btn.classList.add('active');
+                }
+            });
+
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.classList.remove('active');
+                if (el.getAttribute('data-lang') === lang) {
+                    el.classList.add('active');
+                }
+            });
+
+            localStorage.setItem('preferred-lang', lang);
+        }
+
+        // Load saved language preference
+        const savedLang = localStorage.getItem('preferred-lang');
+        if (savedLang) {
+            setLang(savedLang);
+        }
+    </script>
+</body>
+</html>
