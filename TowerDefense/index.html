@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tower Defense - Strategic Tower Defense Game</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #eee; min-height: 100vh; }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .lang-switch { text-align: right; margin-bottom: 20px; }
+        .lang-switch button { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 8px 16px; margin-left: 8px; border-radius: 20px; cursor: pointer; transition: all 0.3s; }
+        .lang-switch button:hover, .lang-switch button.active { background: #4a90d9; border-color: #4a90d9; }
+        .hero { text-align: center; padding: 60px 0; }
+        .hero h1 { font-size: 3em; margin-bottom: 20px; background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: gradient 3s ease infinite; background-size: 200% 200%; }
+        @keyframes gradient { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+        .hero .tagline { font-size: 1.4em; color: #aaa; margin-bottom: 40px; }
+        .app-store-btn { display: inline-block; padding: 15px 40px; background: linear-gradient(90deg, #4a90d9, #67b26f); border-radius: 30px; color: #fff; text-decoration: none; font-weight: bold; font-size: 1.1em; transition: transform 0.3s, box-shadow 0.3s; }
+        .app-store-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(74, 144, 217, 0.4); text-decoration: none; }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin: 60px 0; }
+        .feature { background: rgba(255,255,255,0.05); border-radius: 16px; padding: 30px; border: 1px solid rgba(255,255,255,0.1); text-align: center; transition: transform 0.3s; }
+        .feature:hover { transform: translateY(-5px); }
+        .feature-icon { font-size: 3em; margin-bottom: 15px; }
+        .feature h3 { color: #4a90d9; margin-bottom: 10px; }
+        .feature p { color: #aaa; }
+        .section { background: rgba(255,255,255,0.05); border-radius: 16px; padding: 40px; margin-bottom: 30px; border: 1px solid rgba(255,255,255,0.1); }
+        .section h2 { color: #4a90d9; margin-bottom: 20px; text-align: center; }
+        .section p { color: #ccc; text-align: center; }
+        .screenshots { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
+        .screenshot-placeholder { width: 200px; height: 400px; background: linear-gradient(135deg, #2a2a4e 0%, #1a1a3e 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; color: #555; border: 2px dashed #333; }
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
+        footer { text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); color: #666; }
+        footer a { color: #4a90d9; text-decoration: none; margin: 0 15px; }
+        footer a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lang-switch">
+            <button onclick="switchLang('en')" id="btn-en" class="active">English</button>
+            <button onclick="switchLang('ko')" id="btn-ko">한국어</button>
+            <button onclick="switchLang('ja')" id="btn-ja">日本語</button>
+        </div>
+
+        <!-- English -->
+        <div id="lang-en" class="lang-content active">
+            <div class="hero">
+                <h1>Tower Defense</h1>
+                <p class="tagline">Build. Defend. Conquer.</p>
+            </div>
+
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🤖</div>
+                    <h3>Strategic Robots</h3>
+                    <p>Deploy powerful robots with unique abilities to defend your base against waves of enemies.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Challenging Stages</h3>
+                    <p>Progress through increasingly difficult stages that test your strategic thinking.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Upgrade System</h3>
+                    <p>Enhance your robots and unlock new abilities to become unstoppable.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Epic Battles</h3>
+                    <p>Face off against powerful enemies and epic bosses in intense combat.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>About the Game</h2>
+                <p>Tower Defense is an exciting strategic game where you command a squad of powerful robots to defend against endless waves of enemies. Plan your strategy, position your defenses wisely, and upgrade your robots to become the ultimate defender!</p>
+            </div>
+
+        </div>
+
+        <!-- Korean -->
+        <div id="lang-ko" class="lang-content">
+            <div class="hero">
+                <h1>타워 디펜스</h1>
+                <p class="tagline">건설하고. 방어하고. 정복하라.</p>
+            </div>
+
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🤖</div>
+                    <h3>전략적인 로봇</h3>
+                    <p>고유한 능력을 가진 강력한 로봇을 배치하여 적의 물결로부터 기지를 방어하세요.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎯</div>
+                    <h3>도전적인 스테이지</h3>
+                    <p>전략적 사고력을 시험하는 점점 어려워지는 스테이지를 진행하세요.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>업그레이드 시스템</h3>
+                    <p>로봇을 강화하고 새로운 능력을 해금하여 무적이 되세요.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🏆</div>
+                    <h3>에픽 배틀</h3>
+                    <p>강력한 적과 에픽 보스와의 치열한 전투에서 맞서세요.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>게임 소개</h2>
+                <p>타워 디펜스는 강력한 로봇 분대를 지휘하여 끝없는 적의 물결에 맞서 방어하는 흥미진진한 전략 게임입니다. 전략을 세우고, 방어선을 현명하게 배치하며, 로봇을 업그레이드하여 최고의 수비수가 되세요!</p>
+            </div>
+
+        </div>
+
+        <!-- Japanese -->
+        <div id="lang-ja" class="lang-content">
+            <div class="hero">
+                <h1>タワーディフェンス</h1>
+                <p class="tagline">建設せよ。守り抜け。制覇せよ。</p>
+            </div>
+
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🤖</div>
+                    <h3>戦略的なロボット</h3>
+                    <p>ユニークな能力を持つ強力なロボットを配置して、敵の波から基地を守りましょう。</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎯</div>
+                    <h3>チャレンジングなステージ</h3>
+                    <p>戦略的思考を試す、難易度が上がるステージを進めましょう。</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>アップグレードシステム</h3>
+                    <p>ロボットを強化し、新しい能力を解放して無敵になりましょう。</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🏆</div>
+                    <h3>エピックバトル</h3>
+                    <p>強力な敵とエピックボスとの激しい戦闘に挑みましょう。</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>ゲーム紹介</h2>
+                <p>タワーディフェンスは、強力なロボット部隊を指揮して終わりなき敵の波から守る、エキサイティングな戦略ゲームです。戦略を練り、防御を賢く配置し、ロボットをアップグレードして究極のディフェンダーになりましょう！</p>
+            </div>
+
+        </div>
+
+        <footer>
+            <p>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="support.html">Support</a>
+            </p>
+            <p style="margin-top: 20px;">&copy; 2025 Tower Defense. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function switchLang(lang) {
+            document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.lang-switch button').forEach(el => el.classList.remove('active'));
+            document.getElementById('lang-' + lang).classList.add('active');
+            document.getElementById('btn-' + lang).classList.add('active');
+        }
+    </script>
+</body>
+</html>
