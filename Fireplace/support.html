@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>멍타임 - Support</title>
+    <style>
+        :root {
+            --bg-color: #1a1a1a;
+            --card-bg: #2a2a2a;
+            --text-color: #f5f5f5;
+            --text-secondary: #a0a0a0;
+            --accent: #ff6b35;
+            --accent-light: #ff8c5a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Language Selector */
+        .lang-selector {
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+            margin-bottom: 40px;
+        }
+
+        .lang-btn {
+            background: var(--card-bg);
+            border: none;
+            color: var(--text-secondary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .lang-btn:hover {
+            background: #3a3a3a;
+        }
+
+        .lang-btn.active {
+            background: var(--accent);
+            color: white;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .app-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #ff6b35, #ff4500);
+            border-radius: 22px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            color: var(--text-secondary);
+            font-size: 18px;
+        }
+
+        /* Sections */
+        .section {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 24px;
+        }
+
+        .section h2 {
+            font-size: 20px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section h2 .icon {
+            font-size: 24px;
+        }
+
+        .section p, .section li {
+            color: var(--text-secondary);
+        }
+
+        .section ul {
+            list-style: none;
+            margin-top: 12px;
+        }
+
+        .section li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .section li::before {
+            content: "•";
+            color: var(--accent);
+            position: absolute;
+            left: 8px;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .feature-item {
+            background: rgba(255, 107, 53, 0.1);
+            padding: 16px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .feature-item .icon {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .feature-item h3 {
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .feature-item p {
+            font-size: 12px;
+        }
+
+        /* Pricing */
+        .pricing-box {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.2), rgba(255, 69, 0, 0.1));
+            border: 1px solid var(--accent);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 16px;
+        }
+
+        .pricing-box h3 {
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .no-ads {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #2d5a2d;
+            color: #7dd87d;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin-top: 12px;
+        }
+
+        /* Contact */
+        .contact-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            padding: 14px 32px;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-top: 16px;
+            transition: background 0.2s;
+        }
+
+        .contact-btn:hover {
+            background: var(--accent-light);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* Hide inactive languages */
+        [data-lang] {
+            display: none;
+        }
+
+        [data-lang].active {
+            display: block;
+        }
+
+        .features-grid[data-lang].active {
+            display: grid;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Language Selector -->
+        <div class="lang-selector">
+            <button class="lang-btn active" onclick="setLang('ko')">한국어</button>
+            <button class="lang-btn" onclick="setLang('en')">English</button>
+            <button class="lang-btn" onclick="setLang('ja')">日本語</button>
+        </div>
+
+        <!-- Header -->
+        <div class="header">
+            <div class="app-icon">🔥</div>
+            <h1 data-lang="ko" class="active">멍타임</h1>
+            <h1 data-lang="en">Fireside</h1>
+            <h1 data-lang="ja">焚き火タイム</h1>
+            <p data-lang="ko" class="active">불멍으로 마음의 휴식을</p>
+            <p data-lang="en">Relaxing Virtual Fireplace</p>
+            <p data-lang="ja">癒しの焚き火アプリ</p>
+        </div>
+
+        <!-- About Section -->
+        <div class="section">
+            <h2><span class="icon">ℹ️</span> <span data-lang="ko" class="active">앱 소개</span><span data-lang="en">About</span><span data-lang="ja">アプリについて</span></h2>
+            <p data-lang="ko" class="active">멍타임은 바쁜 일상 속에서 잠시 쉬어갈 수 있는 디지털 벽난로 앱입니다. 따뜻한 불꽃을 바라보며 마음의 평화를 찾아보세요.</p>
+            <p data-lang="en">Fireside is a digital fireplace app that helps you find peace in your busy life. Watch the warm flames and relax your mind.</p>
+            <p data-lang="ja">焚き火タイムは、忙しい日常の中で一息つけるデジタル暖炉アプリです。暖かい炎を眺めながら心の平和を見つけましょう。</p>
+
+            <div class="features-grid" data-lang="ko" class="active">
+                <div class="feature-item">
+                    <div class="icon">🔥</div>
+                    <h3>4가지 불 종류</h3>
+                    <p>캠프파이어, 벽난로, 촛불, 모닥불</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">🎬</div>
+                    <h3>3가지 모드</h3>
+                    <p>실제 영상, SpriteKit, SwiftUI</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">🎵</div>
+                    <h3>배경음</h3>
+                    <p>장작소리, 빗소리, 바람소리</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">⏰</div>
+                    <h3>타이머</h3>
+                    <p>알람, 잠자기 타이머</p>
+                </div>
+            </div>
+            <div class="features-grid" data-lang="en">
+                <div class="feature-item">
+                    <div class="icon">🔥</div>
+                    <h3>4 Fire Types</h3>
+                    <p>Campfire, Fireplace, Candle, Bonfire</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">🎬</div>
+                    <h3>3 Modes</h3>
+                    <p>Real Video, SpriteKit, SwiftUI</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">🎵</div>
+                    <h3>Ambient Sound</h3>
+                    <p>Crackling, Rain, Wind</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">⏰</div>
+                    <h3>Timers</h3>
+                    <p>Alarm, Sleep Timer</p>
+                </div>
+            </div>
+            <div class="features-grid" data-lang="ja">
+                <div class="feature-item">
+                    <div class="icon">🔥</div>
+                    <h3>4種類の炎</h3>
+                    <p>キャンプファイヤー、暖炉、キャンドル、焚き火</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">🎬</div>
+                    <h3>3つのモード</h3>
+                    <p>実写映像、SpriteKit、SwiftUI</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">🎵</div>
+                    <h3>環境音</h3>
+                    <p>薪の音、雨、風</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">⏰</div>
+                    <h3>タイマー</h3>
+                    <p>アラーム、スリープタイマー</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pricing Section -->
+        <div class="section">
+            <h2><span class="icon">💰</span> <span data-lang="ko" class="active">가격 정책</span><span data-lang="en">Pricing</span><span data-lang="ja">価格</span></h2>
+            <p data-lang="ko" class="active">멍타임은 유료 앱이며, 추가 콘텐츠를 위한 인앱 구매가 있습니다.</p>
+            <p data-lang="en">Fireside is a paid app with optional in-app purchases for additional content.</p>
+            <p data-lang="ja">焚き火タイムは有料アプリで、追加コンテンツのためのアプリ内課金があります。</p>
+
+            <div class="pricing-box">
+                <h3 data-lang="ko" class="active">포함된 기능</h3>
+                <h3 data-lang="en">Included Features</h3>
+                <h3 data-lang="ja">含まれる機能</h3>
+                <ul>
+                    <li data-lang="ko" class="active">모든 불 종류 (캠프파이어, 벽난로, 촛불, 모닥불)</li>
+                    <li data-lang="ko" class="active">3가지 렌더링 모드</li>
+                    <li data-lang="ko" class="active">기본 배경음</li>
+                    <li data-lang="ko" class="active">알람 및 타이머 기능</li>
+                    <li data-lang="ko" class="active">멍타임 기록</li>
+                    <li data-lang="en">All fire types (Campfire, Fireplace, Candle, Bonfire)</li>
+                    <li data-lang="en">3 rendering modes</li>
+                    <li data-lang="en">Basic ambient sounds</li>
+                    <li data-lang="en">Alarm and timer features</li>
+                    <li data-lang="en">Usage tracking</li>
+                    <li data-lang="ja">すべての炎タイプ（キャンプファイヤー、暖炉、キャンドル、焚き火）</li>
+                    <li data-lang="ja">3つのレンダリングモード</li>
+                    <li data-lang="ja">基本環境音</li>
+                    <li data-lang="ja">アラームとタイマー機能</li>
+                    <li data-lang="ja">使用記録</li>
+                </ul>
+                <div class="no-ads">
+                    <span>✓</span>
+                    <span data-lang="ko" class="active">광고 없음</span>
+                    <span data-lang="en">No Ads</span>
+                    <span data-lang="ja">広告なし</span>
+                </div>
+            </div>
+
+            <div class="pricing-box" style="margin-top: 16px; border-color: #666;">
+                <h3 data-lang="ko" class="active" style="color: #ccc;">인앱 구매 (선택)</h3>
+                <h3 data-lang="en" style="color: #ccc;">In-App Purchases (Optional)</h3>
+                <h3 data-lang="ja" style="color: #ccc;">アプリ内課金（オプション）</h3>
+                <ul>
+                    <li data-lang="ko" class="active">프리미엄 배경음 팩</li>
+                    <li data-lang="ko" class="active">추가 앱 아이콘</li>
+                    <li data-lang="ko" class="active">프리미엄 영상 팩</li>
+                    <li data-lang="en">Premium sound pack</li>
+                    <li data-lang="en">Additional app icons</li>
+                    <li data-lang="en">Premium video pack</li>
+                    <li data-lang="ja">プレミアムサウンドパック</li>
+                    <li data-lang="ja">追加アプリアイコン</li>
+                    <li data-lang="ja">プレミアム映像パック</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="section">
+            <h2><span class="icon">❓</span> <span data-lang="ko" class="active">자주 묻는 질문</span><span data-lang="en">FAQ</span><span data-lang="ja">よくある質問</span></h2>
+
+            <div style="margin-top: 20px;">
+                <h3 style="font-size: 16px; margin-bottom: 8px;" data-lang="ko" class="active">Q. 화면이 자동으로 꺼지지 않나요?</h3>
+                <h3 style="font-size: 16px; margin-bottom: 8px;" data-lang="en">Q. Does the screen stay on?</h3>
+                <h3 style="font-size: 16px; margin-bottom: 8px;" data-lang="ja">Q. 画面は自動でオフになりますか？</h3>
+                <p data-lang="ko" class="active">네, 앱 사용 중에는 화면이 자동으로 꺼지지 않습니다.</p>
+                <p data-lang="en">Yes, the screen stays on while using the app.</p>
+                <p data-lang="ja">いいえ、アプリ使用中は画面が自動でオフになりません。</p>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <h3 style="font-size: 16px; margin-bottom: 8px;" data-lang="ko" class="active">Q. 배터리 소모가 심한가요?</h3>
+                <h3 style="font-size: 16px; margin-bottom: 8px;" data-lang="en">Q. Does it drain battery?</h3>
+                <h3 style="font-size: 16px; margin-bottom: 8px;" data-lang="ja">Q. バッテリー消費は激しいですか？</h3>
+                <p data-lang="ko" class="active">SwiftUI 모드를 사용하면 배터리 소모를 최소화할 수 있습니다. 장시간 사용 시에는 충전기 연결을 권장합니다.</p>
+                <p data-lang="en">Using SwiftUI mode minimizes battery consumption. For extended use, we recommend connecting to a charger.</p>
+                <p data-lang="ja">SwiftUIモードを使用するとバッテリー消費を最小限に抑えられます。長時間使用する場合は充電器への接続をお勧めします。</p>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <h3 style="font-size: 16px; margin-bottom: 8px;" data-lang="ko" class="active">Q. 잠자기 기능은 어떻게 작동하나요?</h3>
+                <h3 style="font-size: 16px; margin-bottom: 8px;" data-lang="en">Q. How does the sleep timer work?</h3>
+                <h3 style="font-size: 16px; margin-bottom: 8px;" data-lang="ja">Q. スリープタイマーはどのように動作しますか？</h3>
+                <p data-lang="ko" class="active">설정한 시간이 지나면 자동으로 앱이 종료됩니다. 잠들기 전 사용하기 좋습니다.</p>
+                <p data-lang="en">The app automatically closes after the set time. Great for use before sleep.</p>
+                <p data-lang="ja">設定した時間が経過すると自動的にアプリが終了します。就寝前の使用に最適です。</p>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="section">
+            <h2><span class="icon">📧</span> <span data-lang="ko" class="active">문의하기</span><span data-lang="en">Contact Us</span><span data-lang="ja">お問い合わせ</span></h2>
+            <p data-lang="ko" class="active">버그 신고, 기능 제안, 또는 기타 문의사항이 있으시면 이메일로 연락해 주세요.</p>
+            <p data-lang="en">For bug reports, feature suggestions, or any other inquiries, please contact us via email.</p>
+            <p data-lang="ja">バグ報告、機能提案、その他のお問い合わせはメールでご連絡ください。</p>
+            <a href="mailto:chungkil.kim@gmail.com" class="contact-btn">
+                <span data-lang="ko" class="active">이메일 보내기</span>
+                <span data-lang="en">Send Email</span>
+                <span data-lang="ja">メールを送る</span>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2025 멍타임. All rights reserved.</p>
+            <p style="margin-top: 8px;">
+                <a href="privacy.html">
+                    <span data-lang="ko" class="active">개인정보 처리방침</span>
+                    <span data-lang="en">Privacy Policy</span>
+                    <span data-lang="ja">プライバシーポリシー</span>
+                </a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function setLang(lang) {
+            // Update buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.includes(lang === 'ko' ? '한국어' : lang === 'en' ? 'English' : '日本語')) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Update content
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                if (el.getAttribute('data-lang') === lang) {
+                    el.classList.add('active');
+                } else {
+                    el.classList.remove('active');
+                }
+            });
+
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+
+            // Save preference
+            localStorage.setItem('preferred-lang', lang);
+        }
+
+        // Load saved preference or detect browser language
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('preferred-lang');
+            if (saved) {
+                setLang(saved);
+            } else {
+                const browserLang = navigator.language.substring(0, 2);
+                if (['ko', 'en', 'ja'].includes(browserLang)) {
+                    setLang(browserLang);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

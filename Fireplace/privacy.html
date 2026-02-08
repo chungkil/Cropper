@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>멍타임 - Privacy Policy</title>
+    <style>
+        :root {
+            --bg-color: #1a1a1a;
+            --card-bg: #2a2a2a;
+            --text-color: #f5f5f5;
+            --text-secondary: #a0a0a0;
+            --accent: #ff6b35;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .lang-selector {
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+            margin-bottom: 40px;
+        }
+
+        .lang-btn {
+            background: var(--card-bg);
+            border: none;
+            color: var(--text-secondary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .lang-btn:hover {
+            background: #3a3a3a;
+        }
+
+        .lang-btn.active {
+            background: var(--accent);
+            color: white;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            color: var(--text-secondary);
+        }
+
+        .section {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 24px;
+        }
+
+        .section h2 {
+            font-size: 18px;
+            margin-bottom: 16px;
+            color: var(--accent);
+        }
+
+        .section p {
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .section ul {
+            color: var(--text-secondary);
+            margin-left: 20px;
+            margin-top: 12px;
+        }
+
+        .section li {
+            margin-bottom: 8px;
+        }
+
+        .highlight-box {
+            background: rgba(255, 107, 53, 0.1);
+            border-left: 4px solid var(--accent);
+            padding: 16px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            color: var(--text-color);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+
+        [data-lang] {
+            display: none;
+        }
+
+        [data-lang].active {
+            display: block;
+        }
+
+        span[data-lang].active {
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Language Selector -->
+        <div class="lang-selector">
+            <button class="lang-btn active" onclick="setLang('ko')">한국어</button>
+            <button class="lang-btn" onclick="setLang('en')">English</button>
+            <button class="lang-btn" onclick="setLang('ja')">日本語</button>
+        </div>
+
+        <a href="support.html" class="back-link">
+            ← <span data-lang="ko" class="active">지원 페이지로 돌아가기</span><span data-lang="en">Back to Support</span><span data-lang="ja">サポートページに戻る</span>
+        </a>
+
+        <!-- Header -->
+        <div class="header">
+            <h1 data-lang="ko" class="active">개인정보 처리방침</h1>
+            <h1 data-lang="en">Privacy Policy</h1>
+            <h1 data-lang="ja">プライバシーポリシー</h1>
+            <p data-lang="ko" class="active">최종 업데이트: 2025년 1월</p>
+            <p data-lang="en">Last updated: January 2025</p>
+            <p data-lang="ja">最終更新: 2025年1月</p>
+        </div>
+
+        <!-- Korean Content -->
+        <div data-lang="ko" class="active">
+            <div class="section">
+                <div class="highlight-box">
+                    <p><strong>멍타임은 사용자의 개인정보를 수집하지 않습니다.</strong></p>
+                </div>
+                <p>본 개인정보 처리방침은 멍타임 앱(이하 "앱")의 개인정보 처리에 관한 정책을 설명합니다.</p>
+            </div>
+
+            <div class="section">
+                <h2>1. 수집하는 정보</h2>
+                <p>멍타임은 어떠한 개인정보도 수집, 저장, 또는 전송하지 않습니다.</p>
+                <ul>
+                    <li>개인 식별 정보를 수집하지 않습니다</li>
+                    <li>위치 정보를 수집하지 않습니다</li>
+                    <li>사용 분석 데이터를 수집하지 않습니다</li>
+                    <li>서버로 데이터를 전송하지 않습니다</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>2. 로컬 데이터 저장</h2>
+                <p>앱은 다음 데이터를 기기 내에만 저장합니다:</p>
+                <ul>
+                    <li>앱 설정 (불 종류, 렌더링 모드, 소리 설정 등)</li>
+                    <li>멍타임 기록 (오늘/이번 주 사용 시간)</li>
+                    <li>타이머 및 알람 설정</li>
+                </ul>
+                <p>이 데이터는 사용자의 기기에만 저장되며, 외부로 전송되지 않습니다. 앱을 삭제하면 모든 데이터가 함께 삭제됩니다.</p>
+            </div>
+
+            <div class="section">
+                <h2>3. 인앱 구매</h2>
+                <p>인앱 구매는 Apple의 App Store를 통해 처리됩니다. 결제 정보는 Apple에서 관리하며, 멍타임은 결제 정보에 접근하지 않습니다.</p>
+            </div>
+
+            <div class="section">
+                <h2>4. 제3자 서비스</h2>
+                <p>멍타임은 제3자 분석 도구, 광고 네트워크, 또는 추적 서비스를 사용하지 않습니다.</p>
+            </div>
+
+            <div class="section">
+                <h2>5. 아동 개인정보</h2>
+                <p>멍타임은 아동을 포함한 모든 연령대가 안전하게 사용할 수 있습니다. 어떠한 개인정보도 수집하지 않으므로 아동 개인정보 보호에 관한 특별한 조치가 필요하지 않습니다.</p>
+            </div>
+
+            <div class="section">
+                <h2>6. 정책 변경</h2>
+                <p>본 개인정보 처리방침은 변경될 수 있습니다. 중요한 변경 사항이 있을 경우 앱 업데이트 또는 본 페이지를 통해 알려드립니다.</p>
+            </div>
+
+            <div class="section">
+                <h2>7. 문의</h2>
+                <p>개인정보 처리방침에 관한 문의사항이 있으시면 아래 이메일로 연락해 주세요.</p>
+                <p><a href="mailto:chungkil.kim@gmail.com" style="color: var(--accent);">support@example.com</a></p>
+            </div>
+        </div>
+
+        <!-- English Content -->
+        <div data-lang="en">
+            <div class="section">
+                <div class="highlight-box">
+                    <p><strong>Fireside does not collect any personal information.</strong></p>
+                </div>
+                <p>This Privacy Policy explains how Fireside app ("the App") handles your privacy.</p>
+            </div>
+
+            <div class="section">
+                <h2>1. Information We Collect</h2>
+                <p>Fireside does not collect, store, or transmit any personal information.</p>
+                <ul>
+                    <li>We do not collect personal identification information</li>
+                    <li>We do not collect location data</li>
+                    <li>We do not collect usage analytics</li>
+                    <li>We do not transmit data to servers</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>2. Local Data Storage</h2>
+                <p>The app stores the following data locally on your device only:</p>
+                <ul>
+                    <li>App settings (fire type, rendering mode, sound settings, etc.)</li>
+                    <li>Usage records (today/weekly usage time)</li>
+                    <li>Timer and alarm settings</li>
+                </ul>
+                <p>This data is stored only on your device and is not transmitted externally. Deleting the app will delete all associated data.</p>
+            </div>
+
+            <div class="section">
+                <h2>3. In-App Purchases</h2>
+                <p>In-app purchases are processed through Apple's App Store. Payment information is managed by Apple, and Fireside does not have access to your payment details.</p>
+            </div>
+
+            <div class="section">
+                <h2>4. Third-Party Services</h2>
+                <p>Fireside does not use any third-party analytics tools, advertising networks, or tracking services.</p>
+            </div>
+
+            <div class="section">
+                <h2>5. Children's Privacy</h2>
+                <p>Fireside is safe for users of all ages, including children. Since we do not collect any personal information, no special measures for children's privacy are required.</p>
+            </div>
+
+            <div class="section">
+                <h2>6. Policy Changes</h2>
+                <p>This Privacy Policy may be updated from time to time. We will notify you of any significant changes through app updates or this page.</p>
+            </div>
+
+            <div class="section">
+                <h2>7. Contact Us</h2>
+                <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+                <p><a href="mailto:chungkil.kim@gmail.com" style="color: var(--accent);">support@example.com</a></p>
+            </div>
+        </div>
+
+        <!-- Japanese Content -->
+        <div data-lang="ja">
+            <div class="section">
+                <div class="highlight-box">
+                    <p><strong>焚き火タイムは個人情報を収集しません。</strong></p>
+                </div>
+                <p>このプライバシーポリシーは、焚き火タイムアプリ（以下「アプリ」）における個人情報の取り扱いについて説明します。</p>
+            </div>
+
+            <div class="section">
+                <h2>1. 収集する情報</h2>
+                <p>焚き火タイムは、いかなる個人情報も収集、保存、送信しません。</p>
+                <ul>
+                    <li>個人識別情報を収集しません</li>
+                    <li>位置情報を収集しません</li>
+                    <li>利用分析データを収集しません</li>
+                    <li>サーバーへデータを送信しません</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>2. ローカルデータの保存</h2>
+                <p>アプリは以下のデータをデバイス内にのみ保存します：</p>
+                <ul>
+                    <li>アプリ設定（炎の種類、レンダリングモード、サウンド設定など）</li>
+                    <li>使用記録（今日/今週の使用時間）</li>
+                    <li>タイマーとアラームの設定</li>
+                </ul>
+                <p>このデータはお客様のデバイスにのみ保存され、外部に送信されることはありません。アプリを削除すると、すべてのデータも削除されます。</p>
+            </div>
+
+            <div class="section">
+                <h2>3. アプリ内課金</h2>
+                <p>アプリ内課金はAppleのApp Storeを通じて処理されます。支払い情報はAppleが管理し、焚き火タイムは支払い情報にアクセスしません。</p>
+            </div>
+
+            <div class="section">
+                <h2>4. サードパーティサービス</h2>
+                <p>焚き火タイムは、サードパーティの分析ツール、広告ネットワーク、トラッキングサービスを使用しません。</p>
+            </div>
+
+            <div class="section">
+                <h2>5. 子どものプライバシー</h2>
+                <p>焚き火タイムは、子どもを含むすべての年齢のユーザーが安全に使用できます。個人情報を収集しないため、子どものプライバシーに関する特別な対策は必要ありません。</p>
+            </div>
+
+            <div class="section">
+                <h2>6. ポリシーの変更</h2>
+                <p>このプライバシーポリシーは変更される場合があります。重要な変更がある場合は、アプリのアップデートまたはこのページでお知らせします。</p>
+            </div>
+
+            <div class="section">
+                <h2>7. お問い合わせ</h2>
+                <p>このプライバシーポリシーに関するご質問は、以下のメールアドレスまでご連絡ください。</p>
+                <p><a href="mailto:chungkil.kim@gmail.com" style="color: var(--accent);">support@example.com</a></p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2025 멍타임. All rights reserved.</p>
+            <p style="margin-top: 8px;">
+                <a href="support.html">
+                    <span data-lang="ko" class="active">지원 페이지</span>
+                    <span data-lang="en">Support</span>
+                    <span data-lang="ja">サポート</span>
+                </a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function setLang(lang) {
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.includes(lang === 'ko' ? '한국어' : lang === 'en' ? 'English' : '日本語')) {
+                    btn.classList.add('active');
+                }
+            });
+
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                if (el.getAttribute('data-lang') === lang) {
+                    el.classList.add('active');
+                } else {
+                    el.classList.remove('active');
+                }
+            });
+
+            document.documentElement.lang = lang;
+            localStorage.setItem('preferred-lang', lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('preferred-lang');
+            if (saved) {
+                setLang(saved);
+            } else {
+                const browserLang = navigator.language.substring(0, 2);
+                if (['ko', 'en', 'ja'].includes(browserLang)) {
+                    setLang(browserLang);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
