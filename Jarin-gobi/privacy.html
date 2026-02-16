@@ -50,52 +50,86 @@
 <body>
     <div class="container">
         <h1>개인정보처리방침</h1>
-        <p class="updated">시행일: 2025년 2월 14일</p>
+        <p class="updated">시행일: 2026년 2월 16일 (iOS 내용 추가)</p>
 
         <p>자린고비(이하 "앱")는 이용자의 개인정보를 중요시하며, 관련 법령을 준수합니다. 본 개인정보처리방침은 앱이 수집하는 정보와 그 이용 방법을 설명합니다.</p>
 
         <h2>1. 수집하는 개인정보</h2>
         <p>앱은 다음과 같은 정보를 수집할 수 있습니다.</p>
+
+        <p><strong>[Android]</strong></p>
         <ul>
             <li><strong>Google 계정 정보</strong>: Google 로그인 시 이메일 주소, 표시 이름, 프로필 사진 URL (클라우드 동기화 기능 이용 시)</li>
-            <li><strong>절약 기록 데이터</strong>: 사용자가 입력한 절약 내역, 금액, 날짜 (클라우드 동기화 이용 시 서버에 저장)</li>
+            <li><strong>절약 기록 데이터</strong>: 사용자가 입력한 절약 내역, 금액, 날짜 (클라우드 동기화 이용 시 Firebase 서버에 저장)</li>
         </ul>
         <p>Google 로그인을 사용하지 않는 경우, 모든 데이터는 사용자 기기에만 저장되며 외부로 전송되지 않습니다.</p>
+
+        <p><strong>[iOS]</strong></p>
+        <ul>
+            <li><strong>iCloud 계정</strong>: iCloud 동기화 시 기기에 로그인된 Apple ID를 사용합니다. 앱은 Apple ID 정보에 직접 접근하지 않습니다.</li>
+            <li><strong>절약 기록 데이터</strong>: 사용자가 입력한 절약 내역, 금액, 날짜 (iCloud 동기화 이용 시 사용자의 개인 iCloud 저장소에 저장)</li>
+        </ul>
+        <p>iOS 앱의 모든 데이터는 사용자의 개인 iCloud 계정에만 저장되며, 개발자는 이 데이터에 접근할 수 없습니다.</p>
 
         <h2>2. 개인정보의 이용 목적</h2>
         <p>수집된 정보는 다음 목적으로만 이용됩니다.</p>
         <ul>
-            <li>사용자 식별 및 로그인 처리</li>
+            <li>사용자 식별 및 로그인 처리 (Android)</li>
             <li>기기 간 데이터 동기화 및 백업</li>
             <li>앱 서비스 제공 및 개선</li>
         </ul>
 
         <h2>3. 개인정보의 보관 및 파기</h2>
+        <p><strong>[Android]</strong></p>
         <ul>
             <li>로컬 데이터는 앱 삭제 시 함께 삭제됩니다.</li>
-            <li>클라우드에 저장된 데이터는 사용자가 계정을 삭제하거나 데이터 삭제를 요청할 경우 파기됩니다.</li>
+            <li>Firebase에 저장된 데이터는 사용자가 계정을 삭제하거나 데이터 삭제를 요청할 경우 파기됩니다.</li>
             <li>데이터 삭제를 원하시면 아래 연락처로 요청해 주세요.</li>
+        </ul>
+        <p><strong>[iOS]</strong></p>
+        <ul>
+            <li>로컬 데이터는 앱 삭제 시 함께 삭제됩니다.</li>
+            <li>iCloud에 저장된 데이터는 사용자가 직접 관리합니다. 설정 > Apple ID > iCloud > 저장 공간 관리에서 삭제할 수 있습니다.</li>
+            <li>개발자는 사용자의 iCloud 데이터에 접근하거나 삭제할 수 없습니다.</li>
         </ul>
 
         <h2>4. 개인정보의 제3자 제공</h2>
         <p>앱은 이용자의 개인정보를 제3자에게 제공하지 않습니다. 다만, 다음의 서비스를 이용하며 해당 서비스의 개인정보처리방침이 적용됩니다.</p>
+        <p><strong>[Android]</strong></p>
         <ul>
             <li><strong>Google Firebase</strong> (인증, 데이터 저장): <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase 개인정보처리방침</a></li>
             <li><strong>Google AdMob</strong> (광고): <a href="https://policies.google.com/privacy" target="_blank">Google 개인정보처리방침</a></li>
         </ul>
+        <p><strong>[iOS]</strong></p>
+        <ul>
+            <li><strong>Apple iCloud</strong> (데이터 동기화): <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple 개인정보처리방침</a></li>
+            <li><strong>Google AdMob</strong> (광고): <a href="https://policies.google.com/privacy" target="_blank">Google 개인정보처리방침</a></li>
+        </ul>
 
         <h2>5. 광고</h2>
-        <p>앱은 Google AdMob을 통해 광고를 표시합니다. AdMob은 맞춤 광고 제공을 위해 광고 식별자 및 기기 정보를 수집할 수 있습니다. 사용자는 기기 설정에서 맞춤 광고를 비활성화할 수 있습니다.</p>
+        <p>앱은 Google AdMob을 통해 광고를 표시합니다. AdMob은 맞춤 광고 제공을 위해 광고 식별자 및 기기 정보를 수집할 수 있습니다.</p>
+        <ul>
+            <li><strong>Android</strong>: 기기 설정 > Google > 광고에서 맞춤 광고를 비활성화할 수 있습니다.</li>
+            <li><strong>iOS</strong>: 설정 > 개인 정보 보호 및 보안 > 추적에서 앱 추적을 관리할 수 있습니다.</li>
+        </ul>
 
         <h2>6. 아동의 개인정보</h2>
         <p>앱은 만 14세 미만 아동의 개인정보를 의도적으로 수집하지 않습니다. 만 14세 미만 아동의 개인정보가 수집된 것을 발견한 경우 즉시 삭제 조치합니다.</p>
 
         <h2>7. 이용자의 권리</h2>
         <p>이용자는 언제든지 다음 권리를 행사할 수 있습니다.</p>
+        <p><strong>[Android]</strong></p>
         <ul>
             <li>개인정보 열람, 수정, 삭제 요청</li>
             <li>Google 로그인 해제 (앱 내 설정에서 가능)</li>
             <li>앱 삭제를 통한 로컬 데이터 삭제</li>
+        </ul>
+        <p><strong>[iOS]</strong></p>
+        <ul>
+            <li>앱 내에서 데이터 열람, 수정, 삭제</li>
+            <li>iCloud 설정에서 동기화 비활성화</li>
+            <li>앱 삭제를 통한 로컬 데이터 삭제</li>
+            <li>iCloud 저장 공간 관리에서 클라우드 데이터 삭제</li>
         </ul>
 
         <h2>8. 개인정보처리방침의 변경</h2>
