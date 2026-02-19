@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>방주인 - 고객 지원</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif;
+            color: #333;
+            line-height: 1.8;
+            background: #f8f9fa;
+        }
+        .hero {
+            background: linear-gradient(135deg, #3F51B5, #5C6BC0);
+            color: #fff;
+            text-align: center;
+            padding: 60px 20px 48px;
+        }
+        .hero h1 { font-size: 2.2rem; margin-bottom: 8px; }
+        .hero p { font-size: 1.1rem; opacity: 0.9; }
+        .container { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+        .section { padding: 32px 0; }
+        .section + .section { border-top: 1px solid #e0e0e0; }
+        .section h2 {
+            font-size: 1.3rem;
+            color: #3F51B5;
+            margin-bottom: 16px;
+        }
+        .contact-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .contact-card h3 {
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+        }
+        .contact-card p {
+            font-size: 0.95rem;
+            color: #555;
+        }
+        .contact-card a {
+            color: #3F51B5;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .faq-item {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .faq-item strong {
+            display: block;
+            color: #333;
+            margin-bottom: 6px;
+            font-size: 1rem;
+        }
+        .faq-item p {
+            font-size: 0.93rem;
+            color: #555;
+        }
+        .links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+        .links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #E8EAF6;
+            color: #3F51B5;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+        .links a:hover { background: #C5CAE9; }
+        footer {
+            text-align: center;
+            padding: 32px 20px;
+            color: #999;
+            font-size: 0.85rem;
+        }
+        footer a { color: #3F51B5; text-decoration: none; }
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.6rem; }
+            .section h2 { font-size: 1.15rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <h1>방주인</h1>
+    <p>고객 지원</p>
+</div>
+
+<div class="container">
+
+    <div class="section">
+        <h2>문의하기</h2>
+        <div class="contact-card">
+            <h3>이메일 문의</h3>
+            <p>앱 사용 중 문제가 발생하거나 건의사항이 있으시면 이메일로 문의해 주세요.</p>
+            <p style="margin-top: 12px;"><a href="mailto:chungkil.kim@gmail.com">chungkil.kim@gmail.com</a></p>
+        </div>
+        <div class="contact-card">
+            <h3>문의 시 포함해 주시면 좋은 정보</h3>
+            <p>
+                &bull; 사용 기기 및 OS 버전 (예: iPhone 15, iOS 17.2)<br>
+                &bull; 앱 버전 (설정 화면 하단에서 확인 가능)<br>
+                &bull; 문제 상황에 대한 상세 설명<br>
+                &bull; 스크린샷 (가능한 경우)
+            </p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>자주 묻는 질문</h2>
+
+        <div class="faq-item">
+            <strong>Q. 다른 기기에서 로그인해도 데이터가 유지되나요?</strong>
+            <p>네. 같은 Apple 또는 Google 계정으로 로그인하면 모든 데이터가 자동으로 동기화됩니다. Android와 iOS 간에도 동일한 계정으로 데이터를 공유할 수 있습니다.</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>Q. 방을 실수로 삭제했어요. 복구할 수 있나요?</strong>
+            <p>삭제된 방은 복구할 수 없습니다. 삭제 전 확인 대화상자를 반드시 확인해 주세요.</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>Q. 구독을 해지하면 데이터가 사라지나요?</strong>
+            <p>아닙니다. 데이터는 그대로 유지됩니다. 무료 플랜의 방 개수 제한(5개)을 초과하는 방만 잠금 처리되며, 구독을 재개하면 다시 이용할 수 있습니다.</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>Q. 직원을 초대하려면 어떻게 하나요?</strong>
+            <p>설정 &rarr; 고시원 관리에서 초대 코드를 확인할 수 있습니다. 이 코드를 직원에게 공유하면, 직원이 앱에서 코드를 입력하여 팀에 참여할 수 있습니다.</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>Q. 팀 소유자를 변경할 수 있나요?</strong>
+            <p>현재는 소유자 변경이 지원되지 않습니다. 새 고시원을 만들어 이전해 주세요.</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>Q. 무료 체험은 어떻게 작동하나요?</strong>
+            <p>가입 즉시 60일간 프로 플랜(방 60개, 시설 무제한)을 무료로 이용할 수 있습니다. 체험 종료 후 무료 플랜(방 5개, 시설 1개)으로 자동 전환됩니다.</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>Q. 구독은 어떻게 관리하나요?</strong>
+            <p>앱 내 설정 또는 iPhone 설정 &rarr; Apple ID &rarr; 구독에서 구독 플랜을 변경하거나 해지할 수 있습니다.</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>Q. 데이터를 내보낼 수 있나요?</strong>
+            <p>네. 방 현황, 결제 이력, 월별 리포트를 CSV 파일로 내보낼 수 있습니다. 메인 화면의 리포트 또는 결제 이력 화면에서 내보내기 버튼을 이용하세요.</p>
+        </div>
+
+        <div class="faq-item">
+            <strong>Q. 계정을 삭제하고 싶어요.</strong>
+            <p>계정 삭제를 원하시면 <a href="mailto:chungkil.kim@gmail.com" style="color: #3F51B5;">chungkil.kim@gmail.com</a>으로 요청해 주세요. 계정 삭제 시 모든 개인정보와 데이터가 영구적으로 삭제됩니다.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>관련 페이지</h2>
+        <div class="links">
+            <a href="index.html">사용 가이드</a>
+            <a href="privacy.html">개인정보 처리방침</a>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    &copy; 2026 방주인 &mdash; <a href="mailto:chungkil.kim@gmail.com">문의하기</a>
+</footer>
+
+</body>
+</html>

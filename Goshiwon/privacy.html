@@ -1,397 +1,228 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>방주인 - 개인정보처리방침</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --primary: #1B3A5C;
-    --accent: #2E75B6;
-    --text: #333;
-    --text-light: #666;
-    --bg: #FAFBFC;
-    --card: #FFFFFF;
-    --border: #E8ECF0;
-    --section-bg: #F4F7FA;
-    --mint: #4ECDC4;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    font-family: 'Noto Sans KR', sans-serif;
-    color: var(--text);
-    background: var(--bg);
-    line-height: 1.8;
-    font-size: 15px;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  header {
-    background: var(--primary);
-    color: #fff;
-    padding: 48px 24px 40px;
-    text-align: center;
-  }
-
-  header .logo {
-    font-size: 14px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    opacity: 0.7;
-    margin-bottom: 12px;
-  }
-
-  header h1 {
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 8px;
-  }
-
-  header .date {
-    font-size: 13px;
-    opacity: 0.6;
-  }
-
-  .container {
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 40px 24px 80px;
-  }
-
-  .intro {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 28px 32px;
-    margin-bottom: 36px;
-    font-size: 14.5px;
-    color: var(--text-light);
-    line-height: 1.9;
-  }
-
-  .highlight-banner {
-    background: linear-gradient(135deg, rgba(78,205,196,0.08), rgba(78,205,196,0.15));
-    border: 1.5px solid rgba(78,205,196,0.3);
-    border-radius: 12px;
-    padding: 24px 28px;
-    margin-bottom: 36px;
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-  }
-
-  .highlight-banner .icon {
-    width: 44px;
-    height: 44px;
-    background: var(--mint);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    flex-shrink: 0;
-  }
-
-  .highlight-banner .banner-text h3 {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--primary);
-    margin-bottom: 4px;
-  }
-
-  .highlight-banner .banner-text p {
-    font-size: 14px;
-    color: var(--text-light);
-    line-height: 1.7;
-  }
-
-  .section {
-    margin-bottom: 36px;
-  }
-
-  .section-number {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    background: var(--accent);
-    color: #fff;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 700;
-    margin-right: 10px;
-    flex-shrink: 0;
-  }
-
-  .section h2 {
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--primary);
-    margin-bottom: 16px;
-    padding-bottom: 12px;
-    border-bottom: 2px solid var(--border);
-  }
-
-  .section p {
-    margin-bottom: 12px;
-    color: var(--text);
-    font-size: 14.5px;
-  }
-
-  .section ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 12px;
-  }
-
-  .section ul li {
-    position: relative;
-    padding-left: 20px;
-    margin-bottom: 6px;
-    font-size: 14.5px;
-  }
-
-  .section ul li::before {
-    content: '•';
-    position: absolute;
-    left: 4px;
-    color: var(--accent);
-    font-weight: 700;
-  }
-
-  .highlight-box {
-    background: var(--section-bg);
-    border-left: 4px solid var(--accent);
-    padding: 16px 20px;
-    border-radius: 0 8px 8px 0;
-    margin: 16px 0;
-    font-size: 14px;
-    color: var(--text-light);
-  }
-
-  .contact-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 24px 28px;
-    margin-top: 16px;
-  }
-
-  .contact-card dl {
-    display: grid;
-    grid-template-columns: 100px 1fr;
-    gap: 8px 16px;
-    font-size: 14.5px;
-  }
-
-  .contact-card dt {
-    font-weight: 700;
-    color: var(--primary);
-  }
-
-  .contact-card dd { color: var(--text); }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 16px 0;
-    font-size: 14px;
-  }
-
-  table thead th {
-    background: var(--primary);
-    color: #fff;
-    padding: 12px 16px;
-    text-align: left;
-    font-weight: 500;
-    font-size: 13.5px;
-  }
-
-  table thead th:first-child { border-radius: 8px 0 0 0; }
-  table thead th:last-child { border-radius: 0 8px 0 0; }
-
-  table tbody td {
-    padding: 12px 16px;
-    border-bottom: 1px solid var(--border);
-    vertical-align: top;
-  }
-
-  table tbody tr:nth-child(even) { background: var(--section-bg); }
-  table tbody tr:last-child td:first-child { border-radius: 0 0 0 8px; }
-  table tbody tr:last-child td:last-child { border-radius: 0 0 8px 0; }
-
-  footer {
-    text-align: center;
-    padding: 32px 24px;
-    font-size: 13px;
-    color: var(--text-light);
-    border-top: 1px solid var(--border);
-    background: var(--card);
-  }
-
-  @media (max-width: 600px) {
-    header { padding: 36px 20px 32px; }
-    header h1 { font-size: 22px; }
-    .container { padding: 28px 16px 60px; }
-    .intro { padding: 20px; }
-    .highlight-banner { flex-direction: column; }
-    .contact-card dl { grid-template-columns: 1fr; }
-    .contact-card dt { margin-top: 8px; }
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>방주인 - 개인정보 처리방침</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif;
+            color: #333;
+            line-height: 1.8;
+            background: #f8f9fa;
+        }
+        .hero {
+            background: linear-gradient(135deg, #3F51B5, #5C6BC0);
+            color: #fff;
+            text-align: center;
+            padding: 60px 20px 48px;
+        }
+        .hero h1 { font-size: 2.2rem; margin-bottom: 8px; }
+        .hero p { font-size: 1.1rem; opacity: 0.9; }
+        .container { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+        .section { padding: 32px 0; }
+        .section + .section { border-top: 1px solid #e0e0e0; }
+        .section h2 {
+            font-size: 1.3rem;
+            color: #3F51B5;
+            margin-bottom: 16px;
+        }
+        .section h3 {
+            font-size: 1.05rem;
+            color: #333;
+            margin: 16px 0 8px;
+        }
+        .section p, .section li {
+            font-size: 0.95rem;
+            color: #555;
+        }
+        .section ul, .section ol {
+            padding-left: 20px;
+            margin-bottom: 12px;
+        }
+        .section li { margin-bottom: 4px; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            font-size: 0.9rem;
+        }
+        th, td {
+            padding: 10px 12px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        th {
+            background: #E8EAF6;
+            color: #3F51B5;
+            font-weight: 600;
+        }
+        .updated {
+            text-align: center;
+            padding: 20px;
+            color: #999;
+            font-size: 0.85rem;
+        }
+        footer {
+            text-align: center;
+            padding: 32px 20px;
+            color: #999;
+            font-size: 0.85rem;
+        }
+        footer a { color: #3F51B5; text-decoration: none; }
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.6rem; }
+            .section h2 { font-size: 1.15rem; }
+        }
+    </style>
 </head>
 <body>
 
-<header>
-  <div class="logo">방주인 BangJuin</div>
-  <h1>개인정보처리방침</h1>
-  <div class="date">시행일: 2026년 2월 15일 | 최종 수정일: 2026년 2월 15일</div>
-</header>
+<div class="hero">
+    <h1>방주인</h1>
+    <p>개인정보 처리방침</p>
+</div>
 
 <div class="container">
 
-  <div class="intro">
-    <strong>방주인</strong>(이하 "앱")은 「개인정보 보호법」 및 관련 법령에 따라 이용자의 개인정보를 보호하고, 이와 관련된 고충을 신속하고 원활하게 처리하기 위하여 다음과 같이 개인정보처리방침을 수립·공개합니다.
-  </div>
-
-  <div class="highlight-banner">
-    <div class="icon">🔒</div>
-    <div class="banner-text">
-      <h3>방주인은 개인정보를 수집하지 않습니다</h3>
-      <p>본 앱은 서버를 통해 이용자의 개인정보를 수집, 저장, 전송하지 않습니다. 앱 내에서 관리자가 입력하는 모든 데이터는 이용자의 기기 내에만 저장되며, 외부 서버로 전송되지 않습니다.</p>
+    <div class="updated">
+        <p>시행일: 2026년 2월 19일 | 최종 수정일: 2026년 2월 19일</p>
     </div>
-  </div>
 
-  <!-- 제1조 -->
-  <div class="section">
-    <h2><span class="section-number">1</span>개인정보 수집 여부</h2>
-    <p>본 앱은 이용자로부터 어떠한 개인정보도 수집하지 않습니다.</p>
-    <p>앱 내에서 관리자가 입력하는 데이터(시설명, 룸 번호, 입실자 이름, 전화번호, 계약 정보, 납부 정보, 비품 지급 내역 등)는 모두 이용자의 기기(스마트폰, 태블릿 등) 로컬 저장소에만 보관되며, 앱 개발사 또는 제3자의 서버로 전송되거나 수집되지 않습니다.</p>
-    <div class="highlight-box">
-      앱이 수집하지 않는 정보: 이름, 전화번호, 위치 정보, 사진, 계약 정보, 납부 정보, 기기 정보, 사용 로그 등 일체의 개인정보
+    <div class="section">
+        <h2>1. 개인정보의 수집 항목 및 수집 방법</h2>
+        <p>"방주인"(이하 "앱")은 서비스 제공을 위해 아래와 같은 개인정보를 수집합니다.</p>
+
+        <h3>가. 회원가입 및 로그인</h3>
+        <table>
+            <tr><th>수집 항목</th><th>수집 방법</th></tr>
+            <tr><td>이름(표시 이름)</td><td>Apple/Google 로그인 시 제공</td></tr>
+            <tr><td>이메일 주소</td><td>Apple/Google 로그인 시 제공</td></tr>
+            <tr><td>고유 사용자 식별자(UID)</td><td>Firebase Authentication 자동 생성</td></tr>
+        </table>
+        <p>Apple 로그인 시 사용자가 "이메일 숨기기"를 선택하면 Apple이 제공하는 릴레이 이메일 주소가 수집됩니다.</p>
+
+        <h3>나. 서비스 이용 과정에서 입력하는 정보</h3>
+        <table>
+            <tr><th>수집 항목</th><th>용도</th></tr>
+            <tr><td>시설 정보 (시설명)</td><td>고시원 시설 관리</td></tr>
+            <tr><td>방 정보 (방번호, 방세, 보증금, 옵션, 상태 등)</td><td>방 관리</td></tr>
+            <tr><td>입실자 정보 (이름, 전화번호, 입금자명)</td><td>입실자 관리 및 연락</td></tr>
+            <tr><td>계약 정보 (입실일, 계약만료일)</td><td>계약 기간 관리</td></tr>
+            <tr><td>납부 정보 (납부 상태, 수납 금액, 결제 이력)</td><td>납부 현황 관리</td></tr>
+            <tr><td>수입/지출 장부 내역</td><td>수입·지출 관리</td></tr>
+            <tr><td>팀(고시원) 이름, 초대 코드</td><td>팀 협업 기능</td></tr>
+        </table>
+        <p>위 정보는 사용자가 앱 내에서 직접 입력하며, 서비스 제공 목적으로만 사용됩니다.</p>
+
+        <h3>다. 자동으로 수집되는 정보</h3>
+        <table>
+            <tr><th>수집 항목</th><th>수집 주체</th><th>용도</th></tr>
+            <tr><td>앱 사용 이벤트 (화면 조회, 기능 사용 등)</td><td>Firebase Analytics</td><td>서비스 개선</td></tr>
+            <tr><td>앱 오류 정보 (크래시 로그)</td><td>Firebase Crashlytics</td><td>오류 수정 및 안정성 개선</td></tr>
+            <tr><td>기기 정보, IP 주소</td><td>Firebase / Google AdMob</td><td>서비스 운영 및 광고 표시</td></tr>
+            <tr><td>광고 식별자</td><td>Google AdMob</td><td>맞춤형 광고 표시 (무료 플랜)</td></tr>
+        </table>
     </div>
-  </div>
 
-  <!-- 제2조 -->
-  <div class="section">
-    <h2><span class="section-number">2</span>데이터 저장 방식</h2>
-    <p>관리자가 앱 내에서 입력한 모든 데이터는 다음과 같이 처리됩니다.</p>
-    <ul>
-      <li><strong>저장 위치:</strong> 이용자의 기기 내 로컬 저장소에만 저장됩니다.</li>
-      <li><strong>외부 전송:</strong> 어떠한 데이터도 외부 서버, 클라우드, 또는 제3자에게 전송되지 않습니다.</li>
-      <li><strong>데이터 관리 주체:</strong> 모든 데이터의 입력, 수정, 삭제는 이용자 본인이 직접 관리합니다.</li>
-      <li><strong>데이터 삭제:</strong> 앱을 삭제하면 기기에 저장된 모든 데이터가 함께 삭제됩니다.</li>
-    </ul>
-  </div>
-
-  <!-- 제3조 -->
-  <div class="section">
-    <h2><span class="section-number">3</span>제3자 제공</h2>
-    <p>본 앱은 이용자의 데이터를 제3자에게 제공하지 않습니다. 앱 내 데이터는 기기 로컬에만 존재하므로, 앱 개발사를 포함한 어떠한 외부 주체도 해당 데이터에 접근할 수 없습니다.</p>
-  </div>
-
-  <!-- 제4조 -->
-  <div class="section">
-    <h2><span class="section-number">4</span>광고 및 분석 도구</h2>
-    <p>본 앱은 다음과 같은 서비스를 사용하지 않습니다.</p>
-    <ul>
-      <li>광고 SDK (Google AdMob, Facebook Ads 등)</li>
-      <li>분석 도구 (Google Analytics, Firebase Analytics 등)</li>
-      <li>사용자 추적 도구 (트래킹 SDK 등)</li>
-    </ul>
-    <p>따라서 앱 사용과 관련된 행동 데이터, 사용 통계, 광고 식별자 등이 수집되거나 외부로 전송되는 일이 없습니다.</p>
-  </div>
-
-  <!-- 제5조 -->
-  <div class="section">
-    <h2><span class="section-number">5</span>이용자의 책임</h2>
-    <p>앱 내에서 관리자가 입력하는 데이터(입실자 이름, 전화번호 등)는 이용자의 기기에만 저장되므로, 해당 데이터의 관리 및 보호 책임은 이용자 본인에게 있습니다.</p>
-    <p>이용자는 다음 사항에 유의하시기 바랍니다.</p>
-    <ul>
-      <li>기기의 잠금 설정(비밀번호, 생체 인증 등)을 통해 타인의 무단 접근을 방지해 주세요.</li>
-      <li>기기 분실 시 저장된 데이터가 노출될 수 있으므로 기기 관리에 주의해 주세요.</li>
-      <li>앱 삭제 시 모든 데이터가 영구 삭제되므로, 필요한 경우 사전에 백업해 주세요.</li>
-      <li>입실자 등 제3자의 개인정보를 앱에 입력하여 관리하는 경우, 관련 법령에 따른 개인정보 처리 책임은 이용자 본인에게 있습니다.</li>
-    </ul>
-  </div>
-
-  <!-- 제6조 -->
-  <div class="section">
-    <h2><span class="section-number">6</span>아동의 개인정보 보호</h2>
-    <p>본 앱은 만 14세 미만 아동의 개인정보를 수집하지 않으며, 아동을 대상으로 한 서비스를 제공하지 않습니다. 본 앱은 개인정보를 일체 수집하지 않으므로 아동의 개인정보가 처리되는 경우는 없습니다.</p>
-  </div>
-
-  <!-- 제7조 -->
-  <div class="section">
-    <h2><span class="section-number">7</span>개인정보처리방침의 변경</h2>
-    <p>이 개인정보처리방침은 시행일로부터 적용되며, 향후 법령 변경이나 앱 기능 변경에 따라 내용이 추가, 삭제 또는 수정될 수 있습니다.</p>
-    <p>변경사항이 있는 경우에는 시행 7일 전부터 앱 내 공지사항 또는 본 페이지를 통하여 고지할 것입니다.</p>
-    <div class="highlight-box">
-      본 방침은 <strong>2026년 2월 15일</strong>부터 시행됩니다.
+    <div class="section">
+        <h2>2. 개인정보의 수집 및 이용 목적</h2>
+        <ul>
+            <li><strong>서비스 제공:</strong> 고시원 시설·방·입실자·납부 관리 기능 제공</li>
+            <li><strong>회원 관리:</strong> 로그인, 본인 확인, 팀 멤버 관리</li>
+            <li><strong>구독 관리:</strong> 구독 플랜 확인 및 결제 처리 (Apple App Store를 통해 처리)</li>
+            <li><strong>알림 서비스:</strong> 납부일 및 계약 만료 사전 알림</li>
+            <li><strong>서비스 개선:</strong> 사용 통계 분석, 오류 수정</li>
+            <li><strong>광고 표시:</strong> 무료 플랜 사용자에게 배너/전면 광고 표시</li>
+        </ul>
     </div>
-  </div>
 
-  <!-- 제8조 -->
-  <div class="section">
-    <h2><span class="section-number">8</span>문의처</h2>
-    <p>본 개인정보처리방침에 관한 문의사항이 있으시면 아래로 연락해 주시기 바랍니다.</p>
-    <div class="contact-card">
-      <dl>
-        <dt>앱 이름</dt>
-        <dd>방주인 (BangJuin)</dd>
-        <dt>이메일</dt>
-        <dd>chungkil.kim@gmail.com</dd>
-      </dl>
+    <div class="section">
+        <h2>3. 개인정보의 보유 및 이용 기간</h2>
+        <ul>
+            <li>회원 탈퇴 시까지 보유하며, 탈퇴 요청 시 지체 없이 파기합니다.</li>
+            <li>팀(고시원) 데이터는 팀 소유자가 삭제할 때까지 보유됩니다.</li>
+            <li>관련 법령에 따라 보존이 필요한 경우 해당 기간 동안 보관합니다.</li>
+        </ul>
     </div>
-  </div>
 
-  <!-- 제9조 -->
-  <div class="section">
-    <h2><span class="section-number">9</span>개인정보 관련 고충 처리 기관</h2>
-    <p>개인정보 침해에 대한 피해 구제, 상담 등이 필요하신 경우 아래 기관에 문의하실 수 있습니다.</p>
-    <table>
-      <thead>
-        <tr>
-          <th>기관</th>
-          <th>연락처</th>
-          <th>웹사이트</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>개인정보침해신고센터</td>
-          <td>(국번없이) 118</td>
-          <td>privacy.kisa.or.kr</td>
-        </tr>
-        <tr>
-          <td>개인정보분쟁조정위원회</td>
-          <td>(국번없이) 1833-6972</td>
-          <td>kopico.go.kr</td>
-        </tr>
-        <tr>
-          <td>대검찰청 사이버수사과</td>
-          <td>(국번없이) 1301</td>
-          <td>spo.go.kr</td>
-        </tr>
-        <tr>
-          <td>경찰청 사이버수사국</td>
-          <td>(국번없이) 182</td>
-          <td>ecrm.cyber.go.kr</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+    <div class="section">
+        <h2>4. 개인정보의 제3자 제공</h2>
+        <p>앱은 사용자의 개인정보를 원칙적으로 제3자에게 제공하지 않습니다. 다만, 다음의 경우에는 예외로 합니다.</p>
+        <ul>
+            <li>사용자가 사전에 동의한 경우</li>
+            <li>법령에 따라 요구되는 경우</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>5. 개인정보 처리 위탁</h2>
+        <p>앱은 서비스 운영을 위해 다음과 같이 개인정보 처리를 위탁하고 있습니다.</p>
+        <table>
+            <tr><th>수탁업체</th><th>위탁 업무</th></tr>
+            <tr><td>Google LLC (Firebase)</td><td>인증, 데이터 저장, 분석, 오류 수집</td></tr>
+            <tr><td>Google LLC (AdMob)</td><td>광고 표시 (무료 플랜)</td></tr>
+            <tr><td>Apple Inc.</td><td>로그인 인증, 구독 결제 처리</td></tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>6. 개인정보의 파기 절차 및 방법</h2>
+        <ul>
+            <li><strong>파기 절차:</strong> 보유 기간이 만료되거나 처리 목적이 달성된 개인정보는 지체 없이 파기합니다.</li>
+            <li><strong>파기 방법:</strong> 전자적 파일 형태의 정보는 기록을 재생할 수 없는 기술적 방법을 사용하여 삭제합니다.</li>
+            <li><strong>계정 삭제:</strong> 앱 내 설정 또는 아래 연락처로 계정 삭제를 요청할 수 있습니다.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>7. 이용자의 권리와 행사 방법</h2>
+        <ul>
+            <li>사용자는 언제든지 자신의 개인정보를 조회, 수정, 삭제할 수 있습니다.</li>
+            <li>앱 내에서 입력한 시설, 방, 입실자 정보는 직접 수정 및 삭제가 가능합니다.</li>
+            <li>계정 삭제를 원하시면 아래 연락처로 요청해 주세요.</li>
+            <li>개인정보 관련 불만 처리 및 피해 구제를 위해 아래 담당자에게 연락할 수 있습니다.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>8. 개인정보의 안전성 확보 조치</h2>
+        <ul>
+            <li><strong>데이터 암호화:</strong> 모든 데이터는 Firebase(Google Cloud)에 저장되며, 전송 시 TLS/SSL 암호화가 적용됩니다.</li>
+            <li><strong>접근 제한:</strong> 팀 기반 데이터 접근 제어를 통해 권한이 있는 사용자만 데이터에 접근할 수 있습니다.</li>
+            <li><strong>인증 보안:</strong> Apple/Google의 OAuth 2.0 인증 프로토콜을 사용합니다.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>9. 광고 및 추적</h2>
+        <ul>
+            <li>무료 플랜 사용자에게 Google AdMob을 통한 배너 및 전면 광고가 표시됩니다.</li>
+            <li>유료 구독 사용자에게는 광고가 표시되지 않습니다.</li>
+            <li>광고 표시를 위해 기기의 광고 식별자가 사용될 수 있으며, iOS 설정에서 추적을 제한할 수 있습니다.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>10. 개인정보 보호 책임자</h2>
+        <table>
+            <tr><th>항목</th><th>내용</th></tr>
+            <tr><td>이름</td><td>김창기</td></tr>
+            <tr><td>이메일</td><td><a href="mailto:chungkil.kim@gmail.com" style="color: #3F51B5;">chungkil.kim@gmail.com</a></td></tr>
+        </table>
+        <p style="margin-top: 12px;">개인정보 처리와 관련하여 불만이 있으시면 위 연락처로 문의해 주시기 바랍니다.</p>
+    </div>
+
+    <div class="section">
+        <h2>11. 개인정보 처리방침의 변경</h2>
+        <p>이 개인정보 처리방침은 법령 또는 서비스 변경에 따라 수정될 수 있으며, 변경 시 앱 내 공지 또는 본 페이지를 통해 안내합니다.</p>
+    </div>
 
 </div>
 
 <footer>
-  &copy; 2026 방주인(BangJuin). All rights reserved.
+    &copy; 2026 방주인 &mdash; <a href="mailto:chungkil.kim@gmail.com">문의하기</a> | <a href="index.html">사용 가이드</a>
 </footer>
 
 </body>
