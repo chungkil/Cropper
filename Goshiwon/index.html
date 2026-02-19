@@ -20,6 +20,27 @@
         }
         .hero h1 { font-size: 2.2rem; margin-bottom: 8px; }
         .hero p { font-size: 1.1rem; opacity: 0.9; }
+        .store-links {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .store-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,255,255,0.15);
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        .store-links a:hover { background: rgba(255,255,255,0.25); }
         .container { max-width: 720px; margin: 0 auto; padding: 0 20px; }
         .section { padding: 40px 0; }
         .section + .section { border-top: 1px solid #e0e0e0; }
@@ -107,6 +128,10 @@
 <div class="hero">
     <h1>방주인</h1>
     <p>고시원 통합 관리 앱 사용 가이드</p>
+    <div class="store-links">
+        <a href="https://play.google.com/store/apps/details?id=kr.cksw.goshiwon">Google Play</a>
+        <a href="https://apps.apple.com/us/app/id6759336330">App Store</a>
+    </div>
 </div>
 
 <div class="container">
@@ -115,10 +140,12 @@
     <div class="section">
         <h2><span class="num">1</span> 시작하기</h2>
         <ol class="steps">
-            <li>Google Play에서 <strong>방주인</strong>을 설치하고 <strong>Google 계정으로 로그인</strong>합니다.</li>
-            <li>첫 로그인 시 자동으로 <strong>팀이 생성</strong>됩니다. 팀 이름은 설정에서 변경할 수 있습니다.</li>
+            <li>Google Play 또는 App Store에서 <strong>방주인</strong>을 설치합니다.</li>
+            <li><strong>Apple 계정</strong>(iOS) 또는 <strong>Google 계정</strong>(Android/iOS)으로 로그인합니다.</li>
+            <li>첫 로그인 시 <strong>고시원을 생성</strong>하거나, 기존 고시원의 <strong>초대 코드</strong>를 입력하여 참여합니다.</li>
             <li>메인 화면 우측 하단 <strong>+ 버튼</strong>을 눌러 첫 번째 시설을 등록하세요.</li>
         </ol>
+        <div class="tip">가입 즉시 60일간 프로 플랜(방 60개, 시설 무제한)을 무료로 체험할 수 있습니다.</div>
     </div>
 
     <!-- 2. 시설 관리 -->
@@ -127,7 +154,7 @@
         <ol class="steps">
             <li><strong>시설 추가</strong> &mdash; 메인 화면 + 버튼 &rarr; 시설 이름 입력 &rarr; 저장. 방을 개별 추가하거나 <strong>일괄 등록</strong>(시작~끝 번호)으로 한 번에 만들 수 있습니다.</li>
             <li><strong>시설 수정/삭제</strong> &mdash; 시설 카드를 <strong>길게 누르면</strong> 수정 또는 삭제 메뉴가 나타납니다. 삭제 시 하위 방도 함께 삭제됩니다.</li>
-            <li><strong>빈방 모아보기</strong> &mdash; 메인 화면 상단의 초록색 카드를 누르면 모든 시설의 빈방을 방 타입별로 한 눈에 확인할 수 있습니다.</li>
+            <li><strong>빈방 모아보기</strong> &mdash; 메인 화면의 빈방 카드를 누르면 모든 시설의 빈방을 방 타입별로 한 눈에 확인할 수 있습니다.</li>
         </ol>
     </div>
 
@@ -138,7 +165,8 @@
             <li><strong>방 목록</strong> &mdash; 시설 카드를 눌러 방 목록으로 이동합니다. 상단 필터(전체/사용중/빈방/예약/방타입)로 원하는 방만 볼 수 있습니다.</li>
             <li><strong>방 추가</strong> &mdash; 방 목록 우측 하단 + 버튼을 누르면 새 방을 추가합니다.</li>
             <li><strong>방 상태 변경</strong> &mdash; 방 상세에서 <strong>사용중 / 빈방</strong> 버튼으로 상태를 전환합니다. 사용중 &rarr; 빈방 전환 시 입실자 정보 초기화 여부를 선택할 수 있습니다.</li>
-            <li><strong>방 검색</strong> &mdash; 메인 화면의 검색 버튼(돋보기)으로 방 번호 또는 입실자 이름을 검색합니다.</li>
+            <li><strong>방 찾기</strong> &mdash; 기간과 옵션 조건을 설정하여 전체 시설에서 빈방을 검색할 수 있습니다.</li>
+            <li><strong>입실자 검색</strong> &mdash; 메인 화면의 검색 버튼으로 입실자 이름을 검색합니다.</li>
         </ol>
     </div>
 
@@ -147,9 +175,9 @@
         <h2><span class="num">4</span> 입실자 & 계약 정보</h2>
         <ol class="steps">
             <li><strong>기본 정보</strong> &mdash; 방 상세에서 표준방세, 보증금, 입실일, 계약만료일을 입력합니다.</li>
-            <li><strong>인원 정보</strong> &mdash; 입실자 이름, 연락처, 입금자명을 기록합니다.</li>
+            <li><strong>인원 정보</strong> &mdash; 입실자 이름, 연락처, 입금자명을 기록합니다. 전화번호를 누르면 바로 전화를 걸 수 있습니다.</li>
             <li><strong>계약 캘린더</strong> &mdash; 계약 기간이 월별 캘린더로 표시됩니다. 파란색은 사용중, 주황색은 예약 상태입니다.</li>
-            <li><strong>예약</strong> &mdash; 빈방 상태에서 예약 시작일을 설정하면 해당 월이 주황색으로 표시됩니다.</li>
+            <li><strong>예약</strong> &mdash; 빈방 상태에서 예약 시작일과 종료일을 설정하면 해당 기간이 캘린더에 주황색으로 표시됩니다.</li>
         </ol>
     </div>
 
@@ -157,9 +185,11 @@
     <div class="section">
         <h2><span class="num">5</span> 납부 관리</h2>
         <ol class="steps">
-            <li><strong>납부 상태</strong> &mdash; 방 상세 하단에서 납부완료 / 미납을 기록합니다.</li>
-            <li><strong>미납 대시보드</strong> &mdash; 메인 화면에서 미납 방 목록이 표시됩니다.</li>
-            <li><strong>입금 예정</strong> &mdash; 다음 납부일이 가까운 방을 미리 확인할 수 있습니다. 표시 기간은 설정에서 변경합니다(기본 3일).</li>
+            <li><strong>납부 상태</strong> &mdash; 방 상세에서 완납 / 부분납 / 미납을 기록합니다. 수납 금액도 입력할 수 있습니다.</li>
+            <li><strong>매출 현황</strong> &mdash; 메인 화면에서 전체 매출, 미납/부분납/완납 현황을 바 그래프로 확인합니다.</li>
+            <li><strong>미납 대시보드</strong> &mdash; 메인 화면에서 미납 방 목록과 입금 예정 목록이 표시됩니다.</li>
+            <li><strong>월초 리셋</strong> &mdash; 매출 현황 카드에서 전체 납부 상태를 일괄 초기화할 수 있습니다. (소유자 전용)</li>
+            <li><strong>결제 이력</strong> &mdash; 납부 상태 변경 내역이 자동으로 기록되며, CSV로 내보낼 수 있습니다.</li>
         </ol>
     </div>
 
@@ -167,7 +197,7 @@
     <div class="section">
         <h2><span class="num">6</span> 지급사항 & 옵션</h2>
         <ol class="steps">
-            <li><strong>지급사항 미리값</strong> &mdash; 설정 화면에서 이불, 배개, 티비 등 자주 사용하는 지급사항을 등록해두면 방 상세에서 빠르게 선택할 수 있습니다.</li>
+            <li><strong>지급사항 미리값</strong> &mdash; 설정 화면에서 이불, 베개, TV 등 자주 사용하는 지급사항을 등록해두면 방 상세에서 빠르게 선택할 수 있습니다.</li>
             <li><strong>옵션 미리값</strong> &mdash; 미니외창, 미니내창, 원룸 등 방 타입/옵션도 미리 등록합니다.</li>
             <li><strong>방에 적용</strong> &mdash; 방 상세의 지급사항/옵션 영역에서 등록된 항목을 체크하여 적용합니다.</li>
         </ol>
@@ -177,18 +207,36 @@
     <div class="section">
         <h2><span class="num">7</span> 팀 협업</h2>
         <ol class="steps">
-            <li><strong>팀 생성</strong> &mdash; 첫 로그인 시 자동 생성됩니다. 설정 &rarr; 팀 관리에서 팀 이름을 변경하세요.</li>
-            <li><strong>멤버 초대</strong> &mdash; 팀 관리 화면의 <strong>초대 코드</strong>를 직원에게 공유하세요. 직원이 앱에서 코드를 입력하면 같은 팀에 합류합니다.</li>
-            <li><strong>팀 전환</strong> &mdash; 여러 팀에 소속된 경우, 메인 화면 좌측 상단의 팀 이름을 눌러 전환합니다.</li>
-            <li><strong>권한</strong> &mdash; 팀 소유자만 시설/방 추가, 멤버 관리, 구독 변경이 가능합니다. 일반 멤버는 조회 및 수정만 할 수 있습니다.</li>
+            <li><strong>고시원 생성</strong> &mdash; 로그인 후 "고시원 만들기"를 선택하여 새 고시원을 생성합니다.</li>
+            <li><strong>멤버 초대</strong> &mdash; 설정 &rarr; 고시원 관리 화면의 <strong>초대 코드</strong>를 직원에게 공유하세요. 직원이 앱에서 코드를 입력하면 같은 고시원에 합류합니다.</li>
+            <li><strong>고시원 전환</strong> &mdash; 여러 고시원에 소속된 경우, 메인 화면 좌측 상단의 고시원 이름을 눌러 전환합니다.</li>
+            <li><strong>권한</strong> &mdash; 소유자는 시설/방 추가, 멤버 관리, 구독 변경, 월초 리셋이 가능합니다. 멤버는 조회 및 수정만 할 수 있습니다.</li>
         </ol>
-        <div class="tip">팀 소유자가 월 1회 이상 로그인해야 팀의 구독이 갱신됩니다. 30일 이상 미로그인 시 팀 기능이 잠깁니다.</div>
     </div>
 
-    <!-- 8. 구독 플랜 -->
+    <!-- 8. 리포트 & 장부 -->
     <div class="section">
-        <h2><span class="num">8</span> 구독 플랜</h2>
-        <p style="margin-bottom:12px;">메인 화면 상단의 별 아이콘을 눌러 구독 플랜을 확인하고 변경할 수 있습니다.</p>
+        <h2><span class="num">8</span> 리포트 & 장부</h2>
+        <ol class="steps">
+            <li><strong>월별 리포트</strong> &mdash; 매출 현황 카드의 "리포트" 버튼으로 월별 마감 리포트를 생성하고 조회합니다.</li>
+            <li><strong>수입/지출 장부</strong> &mdash; 매출 현황 카드의 "장부" 버튼으로 월별 수입·지출 내역을 관리합니다.</li>
+            <li><strong>CSV 내보내기</strong> &mdash; 방 현황, 결제 이력, 월별 리포트를 CSV 파일로 내보내 공유할 수 있습니다.</li>
+        </ol>
+    </div>
+
+    <!-- 9. 알림 -->
+    <div class="section">
+        <h2><span class="num">9</span> 알림 설정</h2>
+        <ol class="steps">
+            <li><strong>납부일 알림</strong> &mdash; 설정에서 납부 예정일 며칠 전에 알림을 받을지 설정합니다. (기본 3일 전)</li>
+            <li><strong>계약 만료 알림</strong> &mdash; 계약 만료일이 다가오면 사전에 알림을 받을 수 있습니다.</li>
+        </ol>
+    </div>
+
+    <!-- 10. 구독 플랜 -->
+    <div class="section">
+        <h2><span class="num">10</span> 구독 플랜</h2>
+        <p style="margin-bottom:12px;">메인 화면 메뉴에서 "프리미엄"을 눌러 구독 플랜을 확인하고 변경할 수 있습니다.</p>
         <table class="plan-table">
             <tr><th>플랜</th><th>방 수</th><th>시설 수</th><th>월 요금</th></tr>
             <tr><td>무료</td><td>5개</td><td>1개</td><td>무료</td></tr>
@@ -198,24 +246,25 @@
             <tr><td>비즈니스</td><td>100개</td><td>무제한</td><td>&#8361;15,900</td></tr>
             <tr><td>무제한</td><td>무제한</td><td>무제한</td><td>&#8361;30,000</td></tr>
         </table>
-        <div class="tip">플랜 제한을 초과한 방은 자동으로 잠금 처리됩니다. 방을 삭제하거나 상위 플랜으로 업그레이드하면 잠금이 해제됩니다.</div>
+        <div class="tip">가입 즉시 60일간 프로 플랜을 무료로 체험할 수 있습니다. 체험 종료 후 무료 플랜으로 자동 전환됩니다. 유료 플랜은 광고가 표시되지 않습니다.</div>
     </div>
 
     <!-- FAQ -->
     <div class="section">
         <h2><span class="num">?</span> 자주 묻는 질문</h2>
         <ol class="steps">
+            <li><strong>Android와 iOS에서 같은 데이터를 사용할 수 있나요?</strong> &mdash; 네. 같은 Google 계정으로 로그인하면 Android와 iOS 간 모든 데이터가 동기화됩니다.</li>
             <li><strong>방을 실수로 삭제했어요</strong> &mdash; 삭제된 방은 복구할 수 없습니다. 삭제 전 확인 대화상자를 꼭 확인해주세요.</li>
-            <li><strong>다른 기기에서 로그인해도 되나요?</strong> &mdash; 네. 같은 Google 계정으로 로그인하면 모든 데이터가 동기화됩니다.</li>
             <li><strong>구독을 해지하면 데이터가 사라지나요?</strong> &mdash; 아닙니다. 데이터는 그대로 유지되며, 무료 플랜 제한을 초과하는 방만 잠금 처리됩니다.</li>
-            <li><strong>팀 소유자를 변경할 수 있나요?</strong> &mdash; 현재는 소유자 변경이 지원되지 않습니다. 새 팀을 만들어 이전해주세요.</li>
+            <li><strong>고시원 소유자를 변경할 수 있나요?</strong> &mdash; 현재는 소유자 변경이 지원되지 않습니다. 새 고시원을 만들어 이전해주세요.</li>
+            <li><strong>구독은 어떻게 관리하나요?</strong> &mdash; Android는 Google Play 스토어 &rarr; 구독, iOS는 설정 &rarr; Apple ID &rarr; 구독에서 관리할 수 있습니다.</li>
         </ol>
     </div>
 
 </div>
 
 <footer>
-    &copy; 2026 방주인 &mdash; <a href="mailto:chungkil.kim@gmail.com">문의하기</a>
+    &copy; 2026 방주인 &mdash; <a href="mailto:chungkil.kim@gmail.com">문의하기</a> | <a href="privacy.html">개인정보 처리방침</a> | <a href="support.html">고객 지원</a>
 </footer>
 
 </body>
