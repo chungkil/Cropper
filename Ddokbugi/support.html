@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>똑부기 - 고객지원</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f8f9fa;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        header h1 {
+            font-size: 28px;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+        header p {
+            color: #666;
+            font-size: 15px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        h2 {
+            font-size: 20px;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #4CAF50;
+            display: inline-block;
+        }
+        h3 {
+            font-size: 16px;
+            color: #333;
+            margin: 20px 0 8px;
+        }
+        p, li {
+            font-size: 15px;
+            color: #555;
+        }
+        ul {
+            padding-left: 20px;
+            margin: 8px 0;
+        }
+        li { margin-bottom: 6px; }
+        .contact-box {
+            background: #e8f5e9;
+            border-radius: 12px;
+            padding: 28px;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .contact-box h2 {
+            border-bottom: none;
+            display: block;
+            margin-bottom: 12px;
+        }
+        .contact-box .email {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2e7d32;
+            margin: 12px 0;
+        }
+        .contact-box p {
+            color: #666;
+            font-size: 14px;
+        }
+        .faq-item {
+            border-bottom: 1px solid #f0f0f0;
+            padding: 16px 0;
+        }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-q {
+            font-weight: 600;
+            color: #1a1a1a;
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+        .faq-q::before {
+            content: "Q. ";
+            color: #4CAF50;
+            font-weight: 700;
+        }
+        .faq-a {
+            color: #555;
+            font-size: 14px;
+            padding-left: 24px;
+        }
+        .faq-a::before {
+            content: "A. ";
+            color: #999;
+            font-weight: 600;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .info-item {
+            background: #fafafa;
+            border-radius: 8px;
+            padding: 16px;
+        }
+        .info-item h4 {
+            font-size: 13px;
+            color: #999;
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+        .info-item p {
+            font-size: 15px;
+            color: #333;
+            font-weight: 600;
+        }
+        footer {
+            text-align: center;
+            padding: 32px 0;
+            color: #999;
+            font-size: 13px;
+        }
+        a { color: #4CAF50; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        @media (max-width: 480px) {
+            .info-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>고객지원</h1>
+            <p>똑부기 사용 중 궁금한 점이 있으신가요?</p>
+        </header>
+
+        <div class="contact-box">
+            <h2>문의하기</h2>
+            <p>아래 이메일로 문의 주시면 빠르게 답변 드리겠습니다.</p>
+            <div class="email">
+                <a href="mailto:chungkil.kim@gmail.com">chungkil.kim@gmail.com</a>
+            </div>
+            <p>담당자: 김충길</p>
+            <p style="margin-top: 8px; font-size: 13px; color: #999;">영업일 기준 1~2일 이내 답변</p>
+        </div>
+
+        <div class="card">
+            <h2>자주 묻는 질문 (FAQ)</h2>
+
+            <div class="faq-item">
+                <div class="faq-q">똑부기는 어떤 앱인가요?</div>
+                <div class="faq-a">똑부기는 개인사업자를 위한 복식부기 간편 처리 앱입니다. AI가 거래를 자동으로 분개하여 복잡한 회계 지식 없이도 손쉽게 장부를 관리할 수 있습니다.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">회원가입은 어떻게 하나요?</div>
+                <div class="faq-a">Apple 로그인 또는 Google 로그인으로 간편하게 가입할 수 있습니다. 별도의 회원가입 절차 없이 기존 계정으로 바로 시작하세요.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">거래를 어떻게 입력하나요?</div>
+                <div class="faq-a">세 가지 방법으로 입력할 수 있습니다: (1) 텍스트로 자연어 입력 (예: "카페 재료 구입 15만원"), (2) 자주 쓰는 템플릿 선택, (3) 영수증 촬영(OCR). AI가 자동으로 차변/대변 분개를 생성합니다.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">무료로 사용할 수 있나요?</div>
+                <div class="faq-a">네, 무료 플랜으로 월 30건의 거래를 입력할 수 있습니다. 더 많은 거래와 추가 기능이 필요하시면 Basic 또는 Premium 플랜을 이용해 주세요.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">구독을 해지하려면 어떻게 하나요?</div>
+                <div class="faq-a">iPhone 설정 > Apple ID > 구독에서 관리할 수 있습니다. 또는 앱 내 설정 > 구독 관리에서 Apple 구독 관리 화면으로 이동할 수 있습니다. 해지는 현재 결제 기간 종료 후 적용됩니다.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">데이터가 안전하게 보관되나요?</div>
+                <div class="faq-a">사용자가 입력한 데이터(분개 내역, 템플릿 등)는 Cloud Firestore에 안전하게 저장됩니다. 모든 서버 통신은 TLS 1.3으로 암호화되며, 인증 정보는 iOS Keychain에 안전하게 보관됩니다.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">여러 기기에서 사용할 수 있나요?</div>
+                <div class="faq-a">네, 입력 데이터가 Cloud Firestore에 저장되므로 같은 Apple 또는 Google 계정으로 로그인하면 여러 기기에서 동일한 데이터를 이용할 수 있습니다.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">계정을 삭제하고 싶어요.</div>
+                <div class="faq-a">앱 내 설정 > 계정 관리에서 계정 삭제(회원 탈퇴)를 요청할 수 있습니다. 탈퇴 시 서버에 저장된 모든 데이터(이메일, 이름, 설정 정보, 입력 데이터)가 즉시 삭제되며 복구할 수 없습니다. 기기 내 로컬 데이터는 앱을 삭제하면 함께 제거됩니다.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">세무 상담도 받을 수 있나요?</div>
+                <div class="faq-a">똑부기는 복식부기 장부 작성을 돕는 도구이며, 전문 세무 상담을 대체하지 않습니다. 정확한 세무 처리를 위해 세무사와 상담하시기 바랍니다.</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>구독 플랜 안내</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <h4>무료 플랜</h4>
+                    <p>월 30건 거래</p>
+                </div>
+                <div class="info-item">
+                    <h4>Basic 플랜</h4>
+                    <p>월 150건, 광고 제거, PDF 내보내기</p>
+                </div>
+                <div class="info-item">
+                    <h4>Premium 플랜</h4>
+                    <p>무제한, 광고 제거, PDF, 영수증 OCR</p>
+                </div>
+                <div class="info-item">
+                    <h4>결제 방법</h4>
+                    <p>App Store 인앱 구독</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>문의 시 포함해 주세요</h2>
+            <ul>
+                <li>사용 중인 기기 모델 (예: iPhone 16)</li>
+                <li>iOS 버전 (예: iOS 18.3)</li>
+                <li>앱 버전 (설정 > 앱 정보에서 확인)</li>
+                <li>문제 상황에 대한 상세 설명</li>
+                <li>가능하다면 스크린샷</li>
+            </ul>
+        </div>
+
+        <footer>
+            &copy; 2026 똑부기 (DdokBugi). All rights reserved.<br>
+            <a href="index.html">홈</a> &middot; <a href="support.html">고객지원</a> &middot; <a href="privacy.html">개인정보처리방침</a>
+        </footer>
+    </div>
+</body>
+</html>
