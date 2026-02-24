@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>새싹 레벨업 - SproutLevelUp</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.7; color: #333; background: #f9fafb; }
+
+        .hero { text-align: center; padding: 80px 20px 48px; background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #a5d6a7 100%); }
+        .hero h1 { font-size: 2.6rem; color: #1b5e20; margin-bottom: 4px; }
+        .hero .en { font-size: 1rem; color: #4caf50; font-weight: 500; margin-bottom: 12px; }
+        .hero .subtitle { font-size: 1.15rem; color: #444; margin-bottom: 8px; }
+        .hero .desc { font-size: 0.95rem; color: #666; max-width: 520px; margin: 0 auto; }
+
+        section { max-width: 800px; margin: 0 auto; padding: 48px 20px; }
+        section h2 { font-size: 1.5rem; text-align: center; margin-bottom: 28px; color: #1a1a1a; }
+        section h2 span { color: #4caf50; }
+
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .feature-card { background: #fff; border: 1px solid #e0e0e0; border-radius: 12px; padding: 24px; text-align: center; transition: transform 0.2s, box-shadow 0.2s; }
+        .feature-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+        .feature-card .icon { font-size: 2.2rem; margin-bottom: 10px; }
+        .feature-card h3 { font-size: 1.05rem; margin-bottom: 6px; color: #1a1a1a; }
+        .feature-card p { font-size: 0.9rem; color: #666; }
+
+        .plant-section { background: #f1f8e9; border-radius: 16px; padding: 36px 24px; margin-top: 48px; }
+        .plant-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-top: 20px; }
+        .plant-item { background: #fff; border-radius: 10px; padding: 14px 8px; text-align: center; border: 1px solid #dcedc8; }
+        .plant-item .emoji { font-size: 1.6rem; }
+        .plant-item .name { font-size: 0.85rem; color: #333; margin-top: 4px; font-weight: 500; }
+
+        .highlight-section { background: linear-gradient(135deg, #e3f2fd, #e8eaf6); border-radius: 16px; padding: 36px 24px; margin-top: 48px; }
+        .highlight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 20px; }
+        .highlight-item { display: flex; align-items: flex-start; gap: 12px; }
+        .highlight-item .badge { font-size: 1.4rem; flex-shrink: 0; width: 36px; text-align: center; }
+        .highlight-item .text h4 { font-size: 0.95rem; color: #1a1a1a; margin-bottom: 2px; }
+        .highlight-item .text p { font-size: 0.85rem; color: #666; }
+
+        .stages { margin-top: 48px; }
+        .stage-flow { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+        .stage-step { background: #fff; border: 1px solid #c8e6c9; border-radius: 10px; padding: 14px 16px; text-align: center; min-width: 100px; }
+        .stage-step .emoji { font-size: 1.8rem; }
+        .stage-step .label { font-size: 0.8rem; color: #555; margin-top: 4px; }
+        .stage-arrow { font-size: 1.2rem; color: #aaa; }
+
+        .links { max-width: 800px; margin: 0 auto; padding: 32px 20px; text-align: center; }
+        .links a { display: inline-block; margin: 0 14px; color: #4caf50; text-decoration: none; font-size: 1rem; font-weight: 500; }
+        .links a:hover { text-decoration: underline; }
+        .footer { text-align: center; padding: 24px 20px; border-top: 1px solid #e0e0e0; font-size: 0.85rem; color: #888; }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <h1>새싹 레벨업</h1>
+    <p class="en">SproutLevelUp</p>
+    <p class="subtitle">나만의 정원에서 식물을 키우며 함께 성장하는 힐링 시뮬레이션</p>
+    <p class="desc">15종의 개성 있는 식물을 돌보고, 퀘스트를 수행하며, 정원사로 레벨업하세요.</p>
+</div>
+
+<!-- 핵심 기능 -->
+<section>
+    <h2><span>핵심</span> 기능</h2>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <div class="icon">🌱</div>
+            <h3>5단계 식물 성장</h3>
+            <p>삽목에서 성숙까지, 각 식물의 고유한 성장 과정을 지켜보세요</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">💧</div>
+            <h3>9가지 돌보기 액션</h3>
+            <p>물주기, 분무, 비료, 가지치기, 분갈이, 환기 등 세심한 관리</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">🌤️</div>
+            <h3>실시간 주야간 전환</h3>
+            <p>게임 시간에 따라 해, 달, 별이 변하는 동적 하늘 배경</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">📍</div>
+            <h3>배치 위치 시스템</h3>
+            <p>창가, 실내, 욕실, 베란다 — 위치에 따라 빛, 습도, 온도가 달라져요</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">📋</div>
+            <h3>일일/주간 퀘스트</h3>
+            <p>매일 6개, 매주 3개 퀘스트를 완료하고 보상을 받으세요</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">📖</div>
+            <h3>식물 도감</h3>
+            <p>Tier 1~3, 15종 식물 도감을 완성해 나가세요</p>
+        </div>
+    </div>
+</section>
+
+<!-- 성장 단계 -->
+<section class="stages">
+    <h2>식물 <span>성장 단계</span></h2>
+    <div class="stage-flow">
+        <div class="stage-step"><div class="emoji">🌱</div><div class="label">삽목</div></div>
+        <div class="stage-arrow">→</div>
+        <div class="stage-step"><div class="emoji">🌿</div><div class="label">발근</div></div>
+        <div class="stage-arrow">→</div>
+        <div class="stage-step"><div class="emoji">🪴</div><div class="label">초기 성장</div></div>
+        <div class="stage-arrow">→</div>
+        <div class="stage-step"><div class="emoji">🌿</div><div class="label">본격 성장</div></div>
+        <div class="stage-arrow">→</div>
+        <div class="stage-step"><div class="emoji">🌳</div><div class="label">성숙</div></div>
+    </div>
+</section>
+
+<!-- 식물 목록 -->
+<section>
+    <div class="plant-section">
+        <h2><span>15종</span>의 개성 있는 식물</h2>
+        <div class="plant-grid">
+            <div class="plant-item"><div class="emoji">🪴</div><div class="name">스킨답서스</div></div>
+            <div class="plant-item"><div class="emoji">🌿</div><div class="name">산세베리아</div></div>
+            <div class="plant-item"><div class="emoji">🌵</div><div class="name">다육식물</div></div>
+            <div class="plant-item"><div class="emoji">🌸</div><div class="name">스파티필름</div></div>
+            <div class="plant-item"><div class="emoji">🌱</div><div class="name">금전수</div></div>
+            <div class="plant-item"><div class="emoji">🍃</div><div class="name">몬스테라</div></div>
+            <div class="plant-item"><div class="emoji">🌳</div><div class="name">고무나무</div></div>
+            <div class="plant-item"><div class="emoji">🪴</div><div class="name">필레아</div></div>
+            <div class="plant-item"><div class="emoji">🌴</div><div class="name">아레카야자</div></div>
+            <div class="plant-item"><div class="emoji">🌿</div><div class="name">아이비</div></div>
+            <div class="plant-item"><div class="emoji">🍃</div><div class="name">칼라테아</div></div>
+            <div class="plant-item"><div class="emoji">🌳</div><div class="name">피들리프 피그</div></div>
+            <div class="plant-item"><div class="emoji">🌺</div><div class="name">호접란</div></div>
+            <div class="plant-item"><div class="emoji">🌱</div><div class="name">알로카시아</div></div>
+            <div class="plant-item"><div class="emoji">🌿</div><div class="name">아디안텀</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- 게임 시스템 -->
+<section>
+    <div class="highlight-section">
+        <h2>정원사로 <span>레벨업</span></h2>
+        <div class="highlight-grid">
+            <div class="highlight-item">
+                <div class="badge">⭐</div>
+                <div class="text"><h4>XP & 레벨 시스템</h4><p>돌보기, 퀘스트, 업적으로 경험치를 모아 레벨을 올리세요</p></div>
+            </div>
+            <div class="highlight-item">
+                <div class="badge">🏅</div>
+                <div class="text"><h4>칭호 시스템</h4><p>새싹 정원사에서 초록 마스터까지 6단계 칭호 획득</p></div>
+            </div>
+            <div class="highlight-item">
+                <div class="badge">🔥</div>
+                <div class="text"><h4>출석 스트릭</h4><p>매일 접속하면 연속 출석 기록이 쌓여요</p></div>
+            </div>
+            <div class="highlight-item">
+                <div class="badge">🏆</div>
+                <div class="text"><h4>업적 달성</h4><p>다양한 도전 과제를 클리어하고 보상을 받으세요</p></div>
+            </div>
+            <div class="highlight-item">
+                <div class="badge">🔓</div>
+                <div class="text"><h4>슬롯 해금</h4><p>레벨이 오르면 새 슬롯이 열려 더 많은 식물을 키울 수 있어요</p></div>
+            </div>
+            <div class="highlight-item">
+                <div class="badge">🏖️</div>
+                <div class="text"><h4>휴가 모드</h4><p>바쁠 때 식물을 휴면시켜 안전하게 보호하세요</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 시뮬레이션 특징 -->
+<section>
+    <h2>리얼한 <span>시뮬레이션</span></h2>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <div class="icon">⏱️</div>
+            <h3>6배속 시간</h3>
+            <p>현실 4시간이 게임 속 하루. 앱을 닫아도 식물은 계속 자라요</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">❤️</div>
+            <h3>건강도 시스템</h3>
+            <p>수분, 빛, 습도, 온도를 최적으로 유지해 건강하게 키우세요</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">🐛</div>
+            <h3>병충해 이벤트</h3>
+            <p>갑작스런 병충해 발생! 빠르게 퇴치하지 않으면 건강이 나빠져요</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">💬</div>
+            <h3>식물 대사</h3>
+            <p>상태, 시간대, 건강도에 따라 식물이 21가지 말을 건네요</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">📌</div>
+            <h3>마일스톤 기록</h3>
+            <p>첫 뿌리, 첫 잎, 개화 — 소중한 성장 순간을 기록해요</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">⚡</div>
+            <h3>부스트</h3>
+            <p>부스트를 사용해 성장 속도를 일시적으로 높여보세요</p>
+        </div>
+    </div>
+</section>
+
+<div class="links">
+    <a href="privacy.html">개인정보 처리방침</a>
+    <a href="support.html">고객 지원</a>
+    <a href="mailto:chungkil.kim@gmail.com">이메일 문의</a>
+</div>
+
+<div class="footer">
+    <p>&copy; 2026 새싹 레벨업. All rights reserved.</p>
+</div>
+</body>
+</html>
