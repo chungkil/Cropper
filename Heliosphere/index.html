@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heliosphere - Solar System</title>
+    <meta name="description" content="Explore the solar system in stunning 3D. Planets, moons, comets, and spacecraft with real astronomical data.">
+    <style>
+        :root {
+            --bg-color: #0a0a1a;
+            --card-bg: #12122a;
+            --text-color: #e0e0e0;
+            --text-secondary: #a0a0b0;
+            --accent-color: #4a9eff;
+            --accent-secondary: #ff9f4a;
+            --border-color: #2a2a4a;
+            --success-color: #4aff9f;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        /* Stars background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.4), transparent),
+                radial-gradient(1px 1px at 30% 65%, rgba(255,255,255,0.3), transparent),
+                radial-gradient(1px 1px at 50% 10%, rgba(255,255,255,0.5), transparent),
+                radial-gradient(1px 1px at 70% 40%, rgba(255,255,255,0.2), transparent),
+                radial-gradient(1px 1px at 85% 75%, rgba(255,255,255,0.4), transparent),
+                radial-gradient(1px 1px at 15% 80%, rgba(255,255,255,0.3), transparent),
+                radial-gradient(1px 1px at 95% 15%, rgba(255,255,255,0.3), transparent),
+                radial-gradient(1px 1px at 40% 90%, rgba(255,255,255,0.2), transparent),
+                radial-gradient(1px 1px at 60% 55%, rgba(255,255,255,0.4), transparent),
+                radial-gradient(1.5px 1.5px at 25% 35%, rgba(74,158,255,0.5), transparent),
+                radial-gradient(1.5px 1.5px at 75% 85%, rgba(255,159,74,0.4), transparent);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 60px 0 40px;
+        }
+
+        .app-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #1a1a3a, #2a2a5a);
+            border-radius: 22px;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 52px;
+            box-shadow: 0 8px 32px rgba(74, 158, 255, 0.25);
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .tagline {
+            font-size: 20px;
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .hero-desc {
+            font-size: 17px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        /* Download badges */
+        .download-badges {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 28px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .badge-ios {
+            background: #fff;
+            color: #000;
+        }
+
+        .badge-ios:hover {
+            background: #e8e8e8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(255,255,255,0.15);
+        }
+
+        .badge-visionos {
+            background: linear-gradient(135deg, #4a9eff, #7b61ff);
+            color: #fff;
+        }
+
+        .badge-visionos:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(74,158,255,0.3);
+        }
+
+        .badge-icon {
+            font-size: 22px;
+        }
+
+        .platforms-note {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-top: 8px;
+        }
+
+        /* Language selector */
+        .language-selector {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 40px 0 30px;
+        }
+
+        .lang-btn {
+            padding: 8px 22px;
+            border: 1px solid var(--border-color);
+            background: var(--card-bg);
+            color: var(--text-secondary);
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .lang-btn.active {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+            color: #fff;
+        }
+
+        /* Content sections */
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
+
+        /* Section */
+        .section {
+            margin-bottom: 32px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        /* Feature cards */
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 28px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+
+        .card-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+
+        .card-icon-blue { background: rgba(74, 158, 255, 0.15); }
+        .card-icon-orange { background: rgba(255, 159, 74, 0.15); }
+        .card-icon-green { background: rgba(74, 255, 159, 0.15); }
+        .card-icon-purple { background: rgba(123, 97, 255, 0.15); }
+        .card-icon-pink { background: rgba(255, 100, 130, 0.15); }
+
+        .card-title {
+            font-size: 19px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+
+        ul {
+            margin: 12px 0 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        li {
+            position: relative;
+            padding-left: 22px;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+
+        li::before {
+            content: "·";
+            position: absolute;
+            left: 8px;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* Feature grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        /* Highlight card */
+        .highlight-card {
+            background: linear-gradient(135deg, rgba(74, 158, 255, 0.1), rgba(123, 97, 255, 0.08));
+            border-color: rgba(74, 158, 255, 0.2);
+        }
+
+        /* Stats row */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 20px 12px;
+        }
+
+        .stat-number {
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        /* What's new */
+        .whats-new {
+            background: linear-gradient(135deg, rgba(74, 255, 159, 0.08), rgba(74, 158, 255, 0.06));
+            border-color: rgba(74, 255, 159, 0.15);
+        }
+
+        .version-badge {
+            display: inline-block;
+            background: var(--success-color);
+            color: #0a0a1a;
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            color: #555;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container { padding: 20px 15px; }
+            .hero { padding: 30px 0 20px; }
+            h1 { font-size: 32px; }
+            .tagline { font-size: 17px; }
+            .hero-desc { font-size: 15px; }
+            .section-title { font-size: 20px; }
+            .card { padding: 20px; }
+            .feature-grid { grid-template-columns: 1fr; }
+            .stats-row { grid-template-columns: repeat(3, 1fr); }
+            .stat-number { font-size: 22px; }
+            .language-selector { flex-wrap: wrap; }
+            .download-badges { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero -->
+        <div class="hero">
+            <div class="app-icon">&#x2600;&#xFE0F;</div>
+            <h1>Heliosphere</h1>
+            <p class="tagline" id="hero-tagline">내 공간에서 우주를 탐험하세요</p>
+            <p class="hero-desc" id="hero-desc">실제 천문학 데이터 기반의 3D 태양계 시뮬레이터. 행성, 위성, 혜성, 우주 탐사선을 눈앞에서 경험하세요.</p>
+
+            <div class="download-badges">
+                <a href="https://apps.apple.com/app/heliosphere-solar-system/id6743432402" class="badge badge-ios">
+                    <span class="badge-icon">&#xF8FF;</span>
+                    App Store
+                </a>
+                <a href="https://apps.apple.com/app/heliosphere-solar-system/id6743432402" class="badge badge-visionos">
+                    <span class="badge-icon">&#x1F453;</span>
+                    <span id="badge-visionos-text">Apple Vision Pro</span>
+                </a>
+            </div>
+            <p class="platforms-note" id="platforms-note">iPhone &middot; iPad &middot; Apple Vision Pro</p>
+        </div>
+
+        <!-- Language -->
+        <div class="language-selector">
+            <button class="lang-btn active" onclick="setLanguage('ko')">한국어</button>
+            <button class="lang-btn" onclick="setLanguage('en')">English</button>
+            <button class="lang-btn" onclick="setLanguage('ja')">日本語</button>
+        </div>
+
+        <!-- ==================== Korean ==================== -->
+        <div id="content-ko" class="lang-content active">
+            <!-- Stats -->
+            <div class="stats-row">
+                <div class="stat-item"><div class="stat-number">8</div><div class="stat-label">행성</div></div>
+                <div class="stat-item"><div class="stat-number">5</div><div class="stat-label">왜소행성</div></div>
+                <div class="stat-item"><div class="stat-number">13</div><div class="stat-label">위성</div></div>
+                <div class="stat-item"><div class="stat-number">4</div><div class="stat-label">혜성</div></div>
+                <div class="stat-item"><div class="stat-number">8</div><div class="stat-label">탐사선</div></div>
+                <div class="stat-item"><div class="stat-number">3000+</div><div class="stat-label">별</div></div>
+            </div>
+
+            <!-- What's New -->
+            <div class="section">
+                <div class="section-title">새로운 기능</div>
+                <div class="card whats-new">
+                    <span class="version-badge">v1.10</span>
+                    <ul>
+                        <li>사실적인 별하늘: 3,000개 이상의 별, 은하수, 성운, 은하 등 심우주 천체를 실제 천문 데이터 기반으로 표현</li>
+                        <li>은하수 글로우: Full Immersion 모드에서 은하수 띠가 은은하게 빛나는 효과 추가</li>
+                        <li>Mixed/Full 몰입 모드 자동 전환: 모드에 따라 별 밝기와 은하수 글로우가 자동 조절</li>
+                        <li>아키텍처 개선: UI 코드 모듈화, 렌더링 성능 최적화, 메모리 관리 강화</li>
+                        <li>안정성 향상: 애니메이션 라이프사이클 정리, 리소스 정리 개선</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <div class="section">
+                <div class="section-title">주요 기능</div>
+                <div class="feature-grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon card-icon-blue">&#x1FA90;</div>
+                            <div class="card-title">몰입형 태양계</div>
+                        </div>
+                        <p>방 전체를 채우는 인터랙티브 태양계. 핀치로 확대, 드래그로 이동, 천체를 탭하면 상세 정보를 확인할 수 있습니다.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon card-icon-orange">&#x1F680;</div>
+                            <div class="card-title">우주선 추적</div>
+                        </div>
+                        <p>보이저, 파커, 주노, 뉴호라이즌스 등 실제 탐사선 8기의 궤적을 궤도 역학 기반으로 추적합니다.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon card-icon-green">&#x1F4DA;</div>
+                            <div class="card-title">천문학 학습</div>
+                        </div>
+                        <p>초급부터 대학원 수준까지 단계별 교육 허브, 인터랙티브 퀴즈, 25개 업적을 제공합니다.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon card-icon-purple">&#x2728;</div>
+                            <div class="card-title">사실적인 별하늘</div>
+                        </div>
+                        <p>3,000개 이상의 별, 은하수 분포, 성운, 은하 등 심우주 천체를 실제 천문 데이터 기반으로 렌더링합니다.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon card-icon-pink">&#x23F0;</div>
+                            <div class="card-title">시간 여행</div>
+                        </div>
+                        <p>1900년부터 2100년까지 시간을 자유롭게 이동하며 행성의 위치 변화를 관찰하세요.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon card-icon-blue">&#x1F310;</div>
+                            <div class="card-title">매일의 우주</div>
+                        </div>
+                        <p>매일의 천문 사실, 다가오는 천문 이벤트 알림, 심우주 검색 기능을 제공합니다.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- visionOS -->
+            <div class="section">
+                <div class="section-title">Apple Vision Pro</div>
+                <div class="card highlight-card">
+                    <div class="card-header">
+                        <div class="card-icon card-icon-purple">&#x1F453;</div>
+                        <div class="card-title">공간 컴퓨팅 최적화</div>
+                    </div>
+                    <ul>
+                        <li>글래스 패널 컨트롤의 몰입형 3D 환경</li>
+                        <li>Mixed / Full 몰입 모드 전환</li>
+                        <li>Full Immersion에서 은하수 글로우 효과</li>
+                        <li>천체 선택 시 부드러운 플라이투 애니메이션</li>
+                        <li>항상 사용자를 향하는 행성 라벨과 정보 패널</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== English ==================== -->
+        <div id="content-en" class="lang-content">
+            <!-- Stats -->
+            <div class="stats-row">
+                <div class="stat-item"><div class="stat-number">8</div><div class="stat-label">Planets</div></div>
+                <div class="stat-item"><div class="stat-number">5</div><div class="stat-label">Dwarf Planets</div></div>
+                <div class="stat-item"><div class="stat-number">13</div><div class="stat-label">Moons</div></div>
+                <div class="stat-item"><div class="stat-number">4</div><div class="stat-label">Comets</div></div>
+                <div class="stat-item"><div class="stat-number">8</div><div class="stat-label">Spacecraft</div></div>
+                <div class="stat-item"><div class="stat-number">3000+</div><div class="stat-label">Stars</div></div>
+            </div>
+
+            <!-- What's New -->
+            <div class="section">
+                <div class="section-title">What's New</div>
+                <div class="card whats-new">
+                    <span class="version-badge">v1.10</span>
+                    <ul>
+                        <li>Realistic starfield: Over 3,000 stars, the Milky Way, nebulae, and galaxies rendered from real astronomical data</li>
+                        <li>Milky Way glow: A subtle glow along the galactic plane in Full Immersion mode</li>
+                        <li>Adaptive immersion modes: Star brightness and Milky Way glow adjust automatically between Mixed and Full modes</li>
+                        <li>Architecture improvements: Modularized UI, optimized rendering performance, and better memory management</li>
+                        <li>Stability fixes: Improved animation lifecycle and resource cleanup</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <div class="section">
+                <div class="section-title">Key Features</div>
+                <div class="feature-grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon card-icon-blue">&#x1FA90;</div>
+                            <div class="card-title">Immersive Solar System</div>
+                        </div>
+                        <p>An interactive solar system that fills your room. Pinch to zoom, drag to move, and tap any body to see detailed information.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon card-icon-orange">&#x1F680;</div>
+                            <div class="card-title">Spacecraft Tracking</div>
+                        </div>
+                        <p>Track 8 real missions including Voyager, Parker Solar Probe, Juno, and New Horizons with accurate orbital mechanics.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon card-icon-green">&#x1F4DA;</div>
+                            <div class="card-title">Learn Astronomy</div>
+                        </div>
+                        <p>Education hub from beginner to graduate level, interactive quizzes, and 25 achievements to unlock.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon card-icon-purple">&#x2728;</div>
+                            <div class="card-title">Realistic Starfield</div>
+                        </div>
+                        <p>Over 3,000 stars, Milky Way distribution, nebulae, and galaxies rendered from real astronomical data.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon card-icon-pink">&#x23F0;</div>
+                            <div class="card-title">Time Travel</div>
+                        </div>
+                        <p>Travel freely from 1900 to 2100 and observe how planetary positions change over time.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon card-icon-blue">&#x1F310;</div>
+                            <div class="card-title">Daily Space</div>
+                        </div>
+                        <p>Daily astronomy facts, upcoming event notifications, and deep sky search for stars, galaxies, and nebulae.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- visionOS -->
+            <div class="section">
+                <div class="section-title">Apple Vision Pro</div>
+                <div class="card highlight-card">
+                    <div class="card-header">
+                        <div class="card-icon card-icon-purple">&#x1F453;</div>
+                        <div class="card-title">Designed for Spatial Computing</div>
+                    </div>
+                    <ul>
+                        <li>Immersive 3D environment with glass-panel controls</li>
+                        <li>Switch between Mixed and Full immersion modes</li>
+                        <li>Milky Way glow effect in Full Immersion</li>
+                        <li>Smooth fly-to animations when selecting celestial bodies</li>
+                        <li>Billboard planet labels and information panels always facing you</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== Japanese ==================== -->
+        <div id="content-ja" class="lang-content">
+            <!-- Stats -->
+            <div class="stats-row">
+                <div class="stat-item"><div class="stat-number">8</div><div class="stat-label">惑星</div></div>
+                <div class="stat-item"><div class="stat-number">5</div><div class="stat-label">準惑星</div></div>
+                <div class="stat-item"><div class="stat-number">13</div><div class="stat-label">衛星</div></div>
+                <div class="stat-item"><div class="stat-number">4</div><div class="stat-label">彗星</div></div>
+                <div class="stat-item"><div class="stat-number">8</div><div class="stat-label">探査機</div></div>
+                <div class="stat-item"><div class="stat-number">3000+</div><div class="stat-label">恒星</div></div>
+            </div>
+
+            <!-- What's New -->
+            <div class="section">
+                <div class="section-title">新機能</div>
+                <div class="card whats-new">
+                    <span class="version-badge">v1.10</span>
+                    <ul>
+                        <li>リアルな星空：実際の天文データに基づき、3,000以上の恒星、天の川、星雲、銀河などの深宇宙天体を再現</li>
+                        <li>天の川グロー：フルイマージョンモードで天の川の帯がほのかに輝くエフェクトを追加</li>
+                        <li>Mixed/Full没入モード自動切替：モードに応じて星の明るさと天の川グローが自動調整</li>
+                        <li>アーキテクチャ改善：UIコードのモジュール化、レンダリング性能の最適化、メモリ管理の強化</li>
+                        <li>安定性向上：アニメーションライフサイクルの整理、リソース解放の改善</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Features -->
+            <div class="section">
+                <div class="section-title">主な機能</div>
+                <div class="feature-grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon card-icon-blue">&#x1FA90;</div>
+                            <div class="card-title">没入型太陽系</div>
+                        </div>
+                        <p>部屋全体に広がるインタラクティブな太陽系。ピンチで拡大、ドラッグで移動、天体をタップして詳細情報を確認できます。</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon card-icon-orange">&#x1F680;</div>
+                            <div class="card-title">探査機追跡</div>
+                        </div>
+                        <p>ボイジャー、パーカー・ソーラー・プローブ、ジュノー、ニューホライズンズなど実際のミッション8機を追跡します。</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon card-icon-green">&#x1F4DA;</div>
+                            <div class="card-title">天文学を学ぶ</div>
+                        </div>
+                        <p>初級から大学院レベルまでの教育ハブ、インタラクティブクイズ、25の実績をアンロック。</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon card-icon-purple">&#x2728;</div>
+                            <div class="card-title">リアルな星空</div>
+                        </div>
+                        <p>3,000以上の恒星、天の川の分布、星雲、銀河を実際の天文データに基づいてレンダリングします。</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon card-icon-pink">&#x23F0;</div>
+                            <div class="card-title">時間旅行</div>
+                        </div>
+                        <p>1900年から2100年まで自由に時間を移動し、惑星の位置変化を観察しましょう。</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon card-icon-blue">&#x1F310;</div>
+                            <div class="card-title">毎日の宇宙</div>
+                        </div>
+                        <p>毎日の天文トリビア、今後の天文イベント通知、恒星・銀河・星雲のディープスカイ検索。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- visionOS -->
+            <div class="section">
+                <div class="section-title">Apple Vision Pro</div>
+                <div class="card highlight-card">
+                    <div class="card-header">
+                        <div class="card-icon card-icon-purple">&#x1F453;</div>
+                        <div class="card-title">空間コンピューティング最適化</div>
+                    </div>
+                    <ul>
+                        <li>ガラスパネルコントロールの没入型3D環境</li>
+                        <li>Mixed / Full 没入モードの切り替え</li>
+                        <li>フルイマージョンでの天の川グローエフェクト</li>
+                        <li>天体選択時のスムーズなフライトゥアニメーション</li>
+                        <li>常にユーザーの方を向く惑星ラベルと情報パネル</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-links">
+                <a href="support.html" id="link-support">고객 지원</a>
+                <a href="privacy_policy.html" id="link-privacy">개인정보 처리방침</a>
+                <a href="privacy_choices.html" id="link-choices">개인정보 보호 선택</a>
+            </div>
+            <p class="copyright">&copy; 2026 CKSW. All rights reserved.</p>
+            <p class="copyright" style="margin-top:4px">All astronomical data based on real scientific sources. Planet imagery: NASA.</p>
+        </footer>
+    </div>
+
+    <script>
+        const i18n = {
+            ko: {
+                tagline: '내 공간에서 우주를 탐험하세요',
+                desc: '실제 천문학 데이터 기반의 3D 태양계 시뮬레이터. 행성, 위성, 혜성, 우주 탐사선을 눈앞에서 경험하세요.',
+                visionos: 'Apple Vision Pro',
+                platforms: 'iPhone · iPad · Apple Vision Pro',
+                support: '고객 지원',
+                privacy: '개인정보 처리방침',
+                choices: '개인정보 보호 선택'
+            },
+            en: {
+                tagline: 'Explore Space Around You',
+                desc: 'A 3D solar system simulator based on real astronomical data. Experience planets, moons, comets, and spacecraft up close.',
+                visionos: 'Apple Vision Pro',
+                platforms: 'iPhone · iPad · Apple Vision Pro',
+                support: 'Support',
+                privacy: 'Privacy Policy',
+                choices: 'Privacy Choices'
+            },
+            ja: {
+                tagline: 'あなたの空間で宇宙を探検',
+                desc: '実際の天文学データに基づく3D太陽系シミュレーター。惑星、衛星、彗星、探査機を目の前で体験しましょう。',
+                visionos: 'Apple Vision Pro',
+                platforms: 'iPhone · iPad · Apple Vision Pro',
+                support: 'サポート',
+                privacy: 'プライバシーポリシー',
+                choices: 'プライバシーの選択'
+            }
+        };
+
+        function setLanguage(lang) {
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            document.querySelectorAll('.lang-content').forEach(s => s.classList.remove('active'));
+            document.getElementById('content-' + lang).classList.add('active');
+
+            const t = i18n[lang];
+            document.getElementById('hero-tagline').textContent = t.tagline;
+            document.getElementById('hero-desc').textContent = t.desc;
+            document.getElementById('badge-visionos-text').textContent = t.visionos;
+            document.getElementById('platforms-note').textContent = t.platforms;
+            document.getElementById('link-support').textContent = t.support;
+            document.getElementById('link-privacy').textContent = t.privacy;
+            document.getElementById('link-choices').textContent = t.choices;
+            document.documentElement.lang = lang;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const browserLang = navigator.language.slice(0, 2);
+            if (['ko', 'en', 'ja'].includes(browserLang)) {
+                document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelector(`.lang-btn[onclick="setLanguage('${browserLang}')"]`).classList.add('active');
+                document.querySelectorAll('.lang-content').forEach(s => s.classList.remove('active'));
+                document.getElementById('content-' + browserLang).classList.add('active');
+
+                const t = i18n[browserLang];
+                document.getElementById('hero-tagline').textContent = t.tagline;
+                document.getElementById('hero-desc').textContent = t.desc;
+                document.getElementById('badge-visionos-text').textContent = t.visionos;
+                document.getElementById('platforms-note').textContent = t.platforms;
+                document.getElementById('link-support').textContent = t.support;
+                document.getElementById('link-privacy').textContent = t.privacy;
+                document.getElementById('link-choices').textContent = t.choices;
+                document.documentElement.lang = browserLang;
+            }
+        });
+    </script>
+</body>
+</html>
