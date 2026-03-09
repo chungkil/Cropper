@@ -8,6 +8,11 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.7; color: #333; background: #f9fafb; }
 
+        .lang-switcher { position: fixed; top: 12px; right: 16px; z-index: 1000; display: flex; gap: 4px; background: rgba(255,255,255,0.85); backdrop-filter: blur(8px); border-radius: 8px; padding: 4px; border: 1px solid #e0e0e0; }
+        .lang-switcher button { background: transparent; border: none; border-radius: 6px; padding: 4px 12px; font-size: 0.8rem; cursor: pointer; font-weight: 500; color: #666; transition: all 0.2s; }
+        .lang-switcher button.active { background: #4caf50; color: #fff; }
+        .lang-switcher button:hover:not(.active) { background: #f0f0f0; }
+
         .hero { text-align: center; padding: 80px 20px 48px; background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #a5d6a7 100%); }
         .hero h1 { font-size: 2.6rem; color: #1b5e20; margin-bottom: 4px; }
         .hero .en { font-size: 1rem; color: #4caf50; font-weight: 500; margin-bottom: 12px; }
@@ -53,101 +58,107 @@
 </head>
 <body>
 
+<div class="lang-switcher">
+    <button onclick="switchLang('ko')" class="active">KO</button>
+    <button onclick="switchLang('en')">EN</button>
+    <button onclick="switchLang('ja')">JA</button>
+</div>
+
 <div class="hero">
-    <h1>새싹 레벨업</h1>
+    <h1 data-i18n="heroTitle">새싹 레벨업</h1>
     <p class="en">SproutLevelUp</p>
-    <p class="subtitle">나만의 정원에서 식물을 키우며 함께 성장하는 힐링 시뮬레이션</p>
-    <p class="desc">15종의 개성 있는 식물을 돌보고, 시나리오를 플레이하며, 계절 이벤트와 함께 정원사로 레벨업하세요.</p>
+    <p class="subtitle" data-i18n="heroSubtitle">나만의 정원에서 식물을 키우며 함께 성장하는 힐링 시뮬레이션</p>
+    <p class="desc" data-i18n="heroDesc">59종의 개성 있는 식물을 돌보고, 시나리오를 플레이하며, 계절 이벤트와 함께 정원사로 레벨업하세요.</p>
 </div>
 
 <!-- 핵심 기능 -->
 <section>
-    <h2><span>핵심</span> 기능</h2>
+    <h2 data-i18n-html="sectionFeatures"><span>핵심</span> 기능</h2>
     <div class="feature-grid">
         <div class="feature-card">
             <div class="icon">🌱</div>
-            <h3>5단계 식물 성장</h3>
-            <p>삽목에서 성숙까지, 각 식물의 고유한 성장 과정을 지켜보세요</p>
+            <h3 data-i18n="f1Title">5단계 식물 성장</h3>
+            <p data-i18n="f1Desc">삽목에서 성숙까지, 각 식물의 고유한 성장 과정을 지켜보세요</p>
         </div>
         <div class="feature-card">
             <div class="icon">💧</div>
-            <h3>9가지 돌보기 액션</h3>
-            <p>물주기, 분무, 비료, 가지치기, 분갈이, 환기 등 세심한 관리</p>
+            <h3 data-i18n="f2Title">9가지 돌보기 액션</h3>
+            <p data-i18n="f2Desc">물주기, 분무, 비료, 가지치기, 분갈이, 환기 등 세심한 관리</p>
         </div>
         <div class="feature-card">
             <div class="icon">🌤️</div>
-            <h3>실시간 주야간 전환</h3>
-            <p>게임 시간에 따라 해, 달, 별이 변하는 동적 하늘 배경</p>
+            <h3 data-i18n="f3Title">실시간 주야간 전환</h3>
+            <p data-i18n="f3Desc">게임 시간에 따라 해, 달, 별이 변하는 동적 하늘 배경</p>
         </div>
         <div class="feature-card">
             <div class="icon">📍</div>
-            <h3>배치 위치 시스템</h3>
-            <p>창가, 실내, 욕실, 베란다 — 위치에 따라 빛, 습도, 온도가 달라져요</p>
+            <h3 data-i18n="f4Title">배치 위치 시스템</h3>
+            <p data-i18n="f4Desc">창가, 실내, 욕실, 베란다 — 위치에 따라 빛, 습도, 온도가 달라져요</p>
         </div>
         <div class="feature-card">
             <div class="icon">📋</div>
-            <h3>일일/주간 퀘스트</h3>
-            <p>매일 6개, 매주 3개 퀘스트를 완료하고 보상을 받으세요</p>
+            <h3 data-i18n="f5Title">일일/주간 퀘스트</h3>
+            <p data-i18n="f5Desc">매일 6개, 매주 3개 퀘스트를 완료하고 보상을 받으세요</p>
         </div>
         <div class="feature-card">
             <div class="icon">📖</div>
-            <h3>식물 도감</h3>
-            <p>Tier 1~3, 15종 식물 도감을 완성해 나가세요</p>
+            <h3 data-i18n="f6Title">식물 도감</h3>
+            <p data-i18n="f6Desc">Tier 1~5, 59종 식물 도감을 완성해 나가세요</p>
         </div>
         <div class="feature-card">
             <div class="icon">🎭</div>
-            <h3>시나리오 모드</h3>
-            <p>다양한 스토리 시나리오를 플레이하며 특별한 보상을 획득하세요</p>
+            <h3 data-i18n="f7Title">시나리오 모드</h3>
+            <p data-i18n="f7Desc">다양한 스토리 시나리오를 플레이하며 특별한 보상을 획득하세요</p>
         </div>
         <div class="feature-card">
             <div class="icon">🎄</div>
-            <h3>계절 이벤트</h3>
-            <p>봄, 여름, 가을, 겨울 — 계절마다 찾아오는 특별 이벤트와 한정 보상</p>
+            <h3 data-i18n="f8Title">계절 이벤트</h3>
+            <p data-i18n="f8Desc">봄, 여름, 가을, 겨울 — 계절마다 찾아오는 특별 이벤트와 한정 보상</p>
         </div>
         <div class="feature-card">
             <div class="icon">🎨</div>
-            <h3>일러스트 팩</h3>
-            <p>아름다운 일러스트 팩으로 정원을 더욱 개성 있게 꾸며보세요</p>
+            <h3 data-i18n="f9Title">일러스트 팩</h3>
+            <p data-i18n="f9Desc">아름다운 일러스트 팩으로 정원을 더욱 개성 있게 꾸며보세요</p>
         </div>
     </div>
 </section>
 
 <!-- 성장 단계 -->
 <section class="stages">
-    <h2>식물 <span>성장 단계</span></h2>
+    <h2 data-i18n-html="sectionStages">식물 <span>성장 단계</span></h2>
     <div class="stage-flow">
-        <div class="stage-step"><div class="emoji">🌱</div><div class="label">삽목</div></div>
+        <div class="stage-step"><div class="emoji">🌱</div><div class="label" data-i18n="stage1">삽목</div></div>
         <div class="stage-arrow">→</div>
-        <div class="stage-step"><div class="emoji">🌿</div><div class="label">발근</div></div>
+        <div class="stage-step"><div class="emoji">🌿</div><div class="label" data-i18n="stage2">발근</div></div>
         <div class="stage-arrow">→</div>
-        <div class="stage-step"><div class="emoji">🪴</div><div class="label">초기 성장</div></div>
+        <div class="stage-step"><div class="emoji">🪴</div><div class="label" data-i18n="stage3">초기 성장</div></div>
         <div class="stage-arrow">→</div>
-        <div class="stage-step"><div class="emoji">🌿</div><div class="label">본격 성장</div></div>
+        <div class="stage-step"><div class="emoji">🌿</div><div class="label" data-i18n="stage4">본격 성장</div></div>
         <div class="stage-arrow">→</div>
-        <div class="stage-step"><div class="emoji">🌳</div><div class="label">성숙</div></div>
+        <div class="stage-step"><div class="emoji">🌳</div><div class="label" data-i18n="stage5">성숙</div></div>
     </div>
 </section>
 
 <!-- 식물 목록 -->
 <section>
     <div class="plant-section">
-        <h2><span>15종</span>의 개성 있는 식물</h2>
+        <h2 data-i18n-html="sectionPlants"><span>59종</span>의 개성 있는 식물</h2>
         <div class="plant-grid">
-            <div class="plant-item"><div class="emoji">🪴</div><div class="name">스킨답서스</div></div>
-            <div class="plant-item"><div class="emoji">🌿</div><div class="name">산세베리아</div></div>
-            <div class="plant-item"><div class="emoji">🌵</div><div class="name">다육식물</div></div>
-            <div class="plant-item"><div class="emoji">🌸</div><div class="name">스파티필름</div></div>
-            <div class="plant-item"><div class="emoji">🌱</div><div class="name">금전수</div></div>
-            <div class="plant-item"><div class="emoji">🍃</div><div class="name">몬스테라</div></div>
-            <div class="plant-item"><div class="emoji">🌳</div><div class="name">고무나무</div></div>
-            <div class="plant-item"><div class="emoji">🪴</div><div class="name">필레아</div></div>
-            <div class="plant-item"><div class="emoji">🌴</div><div class="name">아레카야자</div></div>
-            <div class="plant-item"><div class="emoji">🌿</div><div class="name">아이비</div></div>
-            <div class="plant-item"><div class="emoji">🍃</div><div class="name">칼라테아</div></div>
-            <div class="plant-item"><div class="emoji">🌳</div><div class="name">피들리프 피그</div></div>
-            <div class="plant-item"><div class="emoji">🌺</div><div class="name">호접란</div></div>
-            <div class="plant-item"><div class="emoji">🌱</div><div class="name">알로카시아</div></div>
-            <div class="plant-item"><div class="emoji">🌿</div><div class="name">아디안텀</div></div>
+            <div class="plant-item"><div class="emoji">🪴</div><div class="name" data-i18n="p1">스킨답서스</div></div>
+            <div class="plant-item"><div class="emoji">🌿</div><div class="name" data-i18n="p2">산세베리아</div></div>
+            <div class="plant-item"><div class="emoji">🌵</div><div class="name" data-i18n="p3">다육식물</div></div>
+            <div class="plant-item"><div class="emoji">🌸</div><div class="name" data-i18n="p4">스파티필름</div></div>
+            <div class="plant-item"><div class="emoji">🌱</div><div class="name" data-i18n="p5">금전수</div></div>
+            <div class="plant-item"><div class="emoji">🍃</div><div class="name" data-i18n="p6">몬스테라</div></div>
+            <div class="plant-item"><div class="emoji">🌳</div><div class="name" data-i18n="p7">고무나무</div></div>
+            <div class="plant-item"><div class="emoji">🪴</div><div class="name" data-i18n="p8">필레아</div></div>
+            <div class="plant-item"><div class="emoji">🌴</div><div class="name" data-i18n="p9">아레카야자</div></div>
+            <div class="plant-item"><div class="emoji">🌿</div><div class="name" data-i18n="p10">아이비</div></div>
+            <div class="plant-item"><div class="emoji">🍃</div><div class="name" data-i18n="p11">칼라테아</div></div>
+            <div class="plant-item"><div class="emoji">🌳</div><div class="name" data-i18n="p12">피들리프 피그</div></div>
+            <div class="plant-item"><div class="emoji">🌺</div><div class="name" data-i18n="p13">호접란</div></div>
+            <div class="plant-item"><div class="emoji">🌱</div><div class="name" data-i18n="p14">알로카시아</div></div>
+            <div class="plant-item"><div class="emoji">🌿</div><div class="name" data-i18n="p15">아디안텀</div></div>
         </div>
     </div>
 </section>
@@ -155,39 +166,39 @@
 <!-- 게임 시스템 -->
 <section>
     <div class="highlight-section">
-        <h2>정원사로 <span>레벨업</span></h2>
+        <h2 data-i18n-html="sectionLevelUp">정원사로 <span>레벨업</span></h2>
         <div class="highlight-grid">
             <div class="highlight-item">
                 <div class="badge">⭐</div>
-                <div class="text"><h4>XP & 레벨 시스템</h4><p>돌보기, 퀘스트, 업적으로 경험치를 모아 레벨을 올리세요</p></div>
+                <div class="text"><h4 data-i18n="h1Title">XP & 레벨 시스템</h4><p data-i18n="h1Desc">돌보기, 퀘스트, 업적으로 경험치를 모아 레벨을 올리세요</p></div>
             </div>
             <div class="highlight-item">
                 <div class="badge">🏅</div>
-                <div class="text"><h4>칭호 시스템</h4><p>새싹 정원사에서 초록 마스터까지 6단계 칭호 획득</p></div>
+                <div class="text"><h4 data-i18n="h2Title">칭호 시스템</h4><p data-i18n="h2Desc">새싹 정원사에서 초록 마스터까지 6단계 칭호 획득</p></div>
             </div>
             <div class="highlight-item">
                 <div class="badge">🔥</div>
-                <div class="text"><h4>출석 스트릭</h4><p>매일 접속하면 연속 출석 기록이 쌓여요</p></div>
+                <div class="text"><h4 data-i18n="h3Title">출석 스트릭</h4><p data-i18n="h3Desc">매일 접속하면 연속 출석 기록이 쌓여요</p></div>
             </div>
             <div class="highlight-item">
                 <div class="badge">🏆</div>
-                <div class="text"><h4>업적 달성</h4><p>다양한 도전 과제를 클리어하고 보상을 받으세요</p></div>
+                <div class="text"><h4 data-i18n="h4Title">업적 달성</h4><p data-i18n="h4Desc">다양한 도전 과제를 클리어하고 보상을 받으세요</p></div>
             </div>
             <div class="highlight-item">
                 <div class="badge">🔓</div>
-                <div class="text"><h4>슬롯 해금</h4><p>레벨이 오르면 새 슬롯이 열려 더 많은 식물을 키울 수 있어요</p></div>
+                <div class="text"><h4 data-i18n="h5Title">슬롯 해금</h4><p data-i18n="h5Desc">레벨이 오르면 새 슬롯이 열려 더 많은 식물을 키울 수 있어요</p></div>
             </div>
             <div class="highlight-item">
                 <div class="badge">🏖️</div>
-                <div class="text"><h4>휴가 모드</h4><p>바쁠 때 식물을 휴면시켜 안전하게 보호하세요</p></div>
+                <div class="text"><h4 data-i18n="h6Title">휴가 모드</h4><p data-i18n="h6Desc">바쁠 때 식물을 휴면시켜 안전하게 보호하세요</p></div>
             </div>
             <div class="highlight-item">
                 <div class="badge">☁️</div>
-                <div class="text"><h4>iCloud 동기화</h4><p>소모품 거래 이력이 iCloud를 통해 자동으로 동기화됩니다</p></div>
+                <div class="text"><h4 data-i18n="h7Title">iCloud 동기화</h4><p data-i18n="h7Desc">소모품 거래 이력이 iCloud를 통해 자동으로 동기화됩니다</p></div>
             </div>
             <div class="highlight-item">
                 <div class="badge">👑</div>
-                <div class="text"><h4>프리미엄 구독</h4><p>구독으로 광고 제거, 일러스트 팩 등 프리미엄 혜택을 누리세요</p></div>
+                <div class="text"><h4 data-i18n="h8Title">프리미엄 구독</h4><p data-i18n="h8Desc">구독으로 광고 제거, 일러스트 팩 등 프리미엄 혜택을 누리세요</p></div>
             </div>
         </div>
     </div>
@@ -195,49 +206,191 @@
 
 <!-- 시뮬레이션 특징 -->
 <section>
-    <h2>리얼한 <span>시뮬레이션</span></h2>
+    <h2 data-i18n-html="sectionSim">리얼한 <span>시뮬레이션</span></h2>
     <div class="feature-grid">
         <div class="feature-card">
             <div class="icon">⏱️</div>
-            <h3>6배속 시간</h3>
-            <p>현실 4시간이 게임 속 하루. 앱을 닫아도 식물은 계속 자라요</p>
+            <h3 data-i18n="s1Title">6배속 시간</h3>
+            <p data-i18n="s1Desc">현실 4시간이 게임 속 하루. 앱을 닫아도 식물은 계속 자라요</p>
         </div>
         <div class="feature-card">
             <div class="icon">❤️</div>
-            <h3>건강도 시스템</h3>
-            <p>수분, 빛, 습도, 온도를 최적으로 유지해 건강하게 키우세요</p>
+            <h3 data-i18n="s2Title">건강도 시스템</h3>
+            <p data-i18n="s2Desc">수분, 빛, 습도, 온도를 최적으로 유지해 건강하게 키우세요</p>
         </div>
         <div class="feature-card">
             <div class="icon">🐛</div>
-            <h3>병충해 이벤트</h3>
-            <p>갑작스런 병충해 발생! 빠르게 퇴치하지 않으면 건강이 나빠져요</p>
+            <h3 data-i18n="s3Title">병충해 이벤트</h3>
+            <p data-i18n="s3Desc">갑작스런 병충해 발생! 빠르게 퇴치하지 않으면 건강이 나빠져요</p>
         </div>
         <div class="feature-card">
             <div class="icon">💬</div>
-            <h3>식물 대사</h3>
-            <p>상태, 시간대, 건강도에 따라 식물이 21가지 말을 건네요</p>
+            <h3 data-i18n="s4Title">식물 대사</h3>
+            <p data-i18n="s4Desc">상태, 시간대, 건강도에 따라 식물이 21가지 말을 건네요</p>
         </div>
         <div class="feature-card">
             <div class="icon">📌</div>
-            <h3>마일스톤 기록</h3>
-            <p>첫 뿌리, 첫 잎, 개화 — 소중한 성장 순간을 기록해요</p>
+            <h3 data-i18n="s5Title">마일스톤 기록</h3>
+            <p data-i18n="s5Desc">첫 뿌리, 첫 잎, 개화 — 소중한 성장 순간을 기록해요</p>
         </div>
         <div class="feature-card">
             <div class="icon">⚡</div>
-            <h3>부스트</h3>
-            <p>부스트를 사용해 성장 속도를 일시적으로 높여보세요</p>
+            <h3 data-i18n="s6Title">부스트</h3>
+            <p data-i18n="s6Desc">부스트를 사용해 성장 속도를 일시적으로 높여보세요</p>
         </div>
     </div>
 </section>
 
 <div class="links">
-    <a href="privacy.html">개인정보 처리방침</a>
-    <a href="support.html">고객 지원</a>
-    <a href="mailto:chungkil.kim@gmail.com">이메일 문의</a>
+    <a href="privacy.html" data-i18n="linkPrivacy">개인정보 처리방침</a>
+    <a href="support.html" data-i18n="linkSupport">고객 지원</a>
+    <a href="mailto:chungkil.kim@gmail.com" data-i18n="linkEmail">이메일 문의</a>
 </div>
 
 <div class="footer">
     <p>&copy; 2026 새싹 레벨업. All rights reserved.</p>
 </div>
+
+<script>
+const T = {
+    ko: {
+        pageTitle: '새싹 레벨업 - SproutLevelUp',
+        heroTitle: '새싹 레벨업',
+        heroSubtitle: '나만의 정원에서 식물을 키우며 함께 성장하는 힐링 시뮬레이션',
+        heroDesc: '59종의 개성 있는 식물을 돌보고, 시나리오를 플레이하며, 계절 이벤트와 함께 정원사로 레벨업하세요.',
+        sectionFeatures: '<span>핵심</span> 기능',
+        f1Title: '5단계 식물 성장', f1Desc: '삽목에서 성숙까지, 각 식물의 고유한 성장 과정을 지켜보세요',
+        f2Title: '9가지 돌보기 액션', f2Desc: '물주기, 분무, 비료, 가지치기, 분갈이, 환기 등 세심한 관리',
+        f3Title: '실시간 주야간 전환', f3Desc: '게임 시간에 따라 해, 달, 별이 변하는 동적 하늘 배경',
+        f4Title: '배치 위치 시스템', f4Desc: '창가, 실내, 욕실, 베란다 — 위치에 따라 빛, 습도, 온도가 달라져요',
+        f5Title: '일일/주간 퀘스트', f5Desc: '매일 6개, 매주 3개 퀘스트를 완료하고 보상을 받으세요',
+        f6Title: '식물 도감', f6Desc: 'Tier 1~5, 59종 식물 도감을 완성해 나가세요',
+        f7Title: '시나리오 모드', f7Desc: '다양한 스토리 시나리오를 플레이하며 특별한 보상을 획득하세요',
+        f8Title: '계절 이벤트', f8Desc: '봄, 여름, 가을, 겨울 — 계절마다 찾아오는 특별 이벤트와 한정 보상',
+        f9Title: '일러스트 팩', f9Desc: '아름다운 일러스트 팩으로 정원을 더욱 개성 있게 꾸며보세요',
+        sectionStages: '식물 <span>성장 단계</span>',
+        stage1: '삽목', stage2: '발근', stage3: '초기 성장', stage4: '본격 성장', stage5: '성숙',
+        sectionPlants: '<span>59종</span>의 개성 있는 식물',
+        p1: '스킨답서스', p2: '산세베리아', p3: '다육식물', p4: '스파티필름', p5: '금전수',
+        p6: '몬스테라', p7: '고무나무', p8: '필레아', p9: '아레카야자', p10: '아이비',
+        p11: '칼라테아', p12: '피들리프 피그', p13: '호접란', p14: '알로카시아', p15: '아디안텀',
+        sectionLevelUp: '정원사로 <span>레벨업</span>',
+        h1Title: 'XP & 레벨 시스템', h1Desc: '돌보기, 퀘스트, 업적으로 경험치를 모아 레벨을 올리세요',
+        h2Title: '칭호 시스템', h2Desc: '새싹 정원사에서 초록 마스터까지 6단계 칭호 획득',
+        h3Title: '출석 스트릭', h3Desc: '매일 접속하면 연속 출석 기록이 쌓여요',
+        h4Title: '업적 달성', h4Desc: '다양한 도전 과제를 클리어하고 보상을 받으세요',
+        h5Title: '슬롯 해금', h5Desc: '레벨이 오르면 새 슬롯이 열려 더 많은 식물을 키울 수 있어요',
+        h6Title: '휴가 모드', h6Desc: '바쁠 때 식물을 휴면시켜 안전하게 보호하세요',
+        h7Title: 'iCloud 동기화', h7Desc: '소모품 거래 이력이 iCloud를 통해 자동으로 동기화됩니다',
+        h8Title: '프리미엄 구독', h8Desc: '구독으로 광고 제거, 일러스트 팩 등 프리미엄 혜택을 누리세요',
+        sectionSim: '리얼한 <span>시뮬레이션</span>',
+        s1Title: '6배속 시간', s1Desc: '현실 4시간이 게임 속 하루. 앱을 닫아도 식물은 계속 자라요',
+        s2Title: '건강도 시스템', s2Desc: '수분, 빛, 습도, 온도를 최적으로 유지해 건강하게 키우세요',
+        s3Title: '병충해 이벤트', s3Desc: '갑작스런 병충해 발생! 빠르게 퇴치하지 않으면 건강이 나빠져요',
+        s4Title: '식물 대사', s4Desc: '상태, 시간대, 건강도에 따라 식물이 21가지 말을 건네요',
+        s5Title: '마일스톤 기록', s5Desc: '첫 뿌리, 첫 잎, 개화 — 소중한 성장 순간을 기록해요',
+        s6Title: '부스트', s6Desc: '부스트를 사용해 성장 속도를 일시적으로 높여보세요',
+        linkPrivacy: '개인정보 처리방침', linkSupport: '고객 지원', linkEmail: '이메일 문의'
+    },
+    en: {
+        pageTitle: 'Sprout Level Up - SproutLevelUp',
+        heroTitle: 'Sprout Level Up',
+        heroSubtitle: 'A healing simulation where you grow plants in your own garden',
+        heroDesc: 'Care for 59 unique plants, play scenarios, and level up as a gardener with seasonal events.',
+        sectionFeatures: '<span>Core</span> Features',
+        f1Title: '5-Stage Plant Growth', f1Desc: 'Watch each plant\'s unique growth journey from cutting to maturity',
+        f2Title: '9 Care Actions', f2Desc: 'Watering, misting, fertilizing, pruning, repotting, ventilation and more',
+        f3Title: 'Real-time Day/Night', f3Desc: 'Dynamic sky with sun, moon, and stars changing with game time',
+        f4Title: 'Placement System', f4Desc: 'Window, indoor, bathroom, balcony \u2014 light, humidity, and temperature vary by location',
+        f5Title: 'Daily/Weekly Quests', f5Desc: 'Complete 6 daily and 3 weekly quests to earn rewards',
+        f6Title: 'Plant Encyclopedia', f6Desc: 'Complete the encyclopedia of 59 plants across Tier 1\u20135',
+        f7Title: 'Scenario Mode', f7Desc: 'Play various story scenarios and earn special rewards',
+        f8Title: 'Seasonal Events', f8Desc: 'Spring, summer, fall, winter \u2014 special events and limited rewards each season',
+        f9Title: 'Illustration Packs', f9Desc: 'Customize your garden with beautiful illustration packs',
+        sectionStages: 'Plant <span>Growth Stages</span>',
+        stage1: 'Cutting', stage2: 'Rooting', stage3: 'Early Growth', stage4: 'Active Growth', stage5: 'Mature',
+        sectionPlants: '<span>59</span> Unique Plants',
+        p1: 'Pothos', p2: 'Snake Plant', p3: 'Succulent', p4: 'Peace Lily', p5: 'ZZ Plant',
+        p6: 'Monstera', p7: 'Rubber Plant', p8: 'Pilea', p9: 'Areca Palm', p10: 'Ivy',
+        p11: 'Calathea', p12: 'Fiddle Leaf Fig', p13: 'Orchid', p14: 'Alocasia', p15: 'Maidenhair Fern',
+        sectionLevelUp: 'Level Up as a <span>Gardener</span>',
+        h1Title: 'XP & Level System', h1Desc: 'Earn XP from care, quests, and achievements to level up',
+        h2Title: 'Title System', h2Desc: 'Earn 6 titles from Sprout Gardener to Green Master',
+        h3Title: 'Attendance Streak', h3Desc: 'Build your consecutive attendance record by logging in daily',
+        h4Title: 'Achievements', h4Desc: 'Clear various challenges and earn rewards',
+        h5Title: 'Slot Unlock', h5Desc: 'New slots open as you level up, letting you grow more plants',
+        h6Title: 'Vacation Mode', h6Desc: 'Put plants on hold to keep them safe when you\'re busy',
+        h7Title: 'iCloud Sync', h7Desc: 'Consumable transaction history syncs automatically via iCloud',
+        h8Title: 'Premium Subscription', h8Desc: 'Remove ads, unlock illustration packs and more with a subscription',
+        sectionSim: 'Realistic <span>Simulation</span>',
+        s1Title: '6x Speed', s1Desc: '4 real hours = 1 game day. Plants keep growing even when the app is closed',
+        s2Title: 'Health System', s2Desc: 'Maintain optimal moisture, light, humidity, and temperature',
+        s3Title: 'Pest Events', s3Desc: 'Sudden pest attacks! Health declines if not treated quickly',
+        s4Title: 'Plant Dialogue', s4Desc: 'Plants say 21 different things based on status, time, and health',
+        s5Title: 'Milestone Records', s5Desc: 'Record precious growth moments \u2014 first root, first leaf, flowering',
+        s6Title: 'Boost', s6Desc: 'Temporarily speed up growth with boosts',
+        linkPrivacy: 'Privacy Policy', linkSupport: 'Support', linkEmail: 'Email Inquiry'
+    },
+    ja: {
+        pageTitle: 'スプラウトレベルアップ - SproutLevelUp',
+        heroTitle: 'スプラウトレベルアップ',
+        heroSubtitle: '自分だけの庭で植物を育てながら一緒に成長するヒーリングシミュレーション',
+        heroDesc: '59種の個性ある植物を育て、シナリオをプレイし、季節イベントと一緒にガーデナーとしてレベルアップしましょう。',
+        sectionFeatures: '<span>主要</span>機能',
+        f1Title: '5段階の植物成長', f1Desc: '挿し木から成熟まで、各植物固有の成長過程を見守りましょう',
+        f2Title: '9種のケアアクション', f2Desc: '水やり、霧吹き、肥料、剪定、植え替え、換気など丁寧なケア',
+        f3Title: 'リアルタイム昼夜切替', f3Desc: 'ゲーム時間に合わせて太陽、月、星が変わるダイナミックな空',
+        f4Title: '配置システム', f4Desc: '窓際、室内、バスルーム、ベランダ \u2014 場所により光、湿度、温度が変わります',
+        f5Title: 'デイリー/ウィークリークエスト', f5Desc: '毎日6個、毎週3個のクエストをクリアして報酬をもらいましょう',
+        f6Title: '植物図鑑', f6Desc: 'Tier 1〜5、59種の植物図鑑を完成させましょう',
+        f7Title: 'シナリオモード', f7Desc: '様々なストーリーシナリオをプレイして特別な報酬を獲得しましょう',
+        f8Title: '季節イベント', f8Desc: '春、夏、秋、冬 \u2014 季節ごとの特別イベントと限定報酬',
+        f9Title: 'イラストパック', f9Desc: '美しいイラストパックで庭をもっと個性的に飾りましょう',
+        sectionStages: '植物の<span>成長段階</span>',
+        stage1: '挿し木', stage2: '発根', stage3: '初期成長', stage4: '本格成長', stage5: '成熟',
+        sectionPlants: '<span>59種</span>の個性ある植物',
+        p1: 'ポトス', p2: 'サンスベリア', p3: '多肉植物', p4: 'スパティフィラム', p5: 'ザミオクルカス',
+        p6: 'モンステラ', p7: 'ゴムの木', p8: 'ピレア', p9: 'アレカヤシ', p10: 'アイビー',
+        p11: 'カラテア', p12: 'フィドルリーフフィグ', p13: '胡蝶蘭', p14: 'アロカシア', p15: 'アジアンタム',
+        sectionLevelUp: 'ガーデナーとして<span>レベルアップ</span>',
+        h1Title: 'XP＆レベルシステム', h1Desc: 'ケア、クエスト、実績で経験値を貯めてレベルアップ',
+        h2Title: '称号システム', h2Desc: '新芽ガーデナーからグリーンマスターまで6段階の称号獲得',
+        h3Title: '出席ストリーク', h3Desc: '毎日ログインで連続出席記録を積み上げよう',
+        h4Title: '実績達成', h4Desc: '様々なチャレンジをクリアして報酬をもらいましょう',
+        h5Title: 'スロット解放', h5Desc: 'レベルが上がると新しいスロットが開き、もっと多くの植物を育てられます',
+        h6Title: 'バケーションモード', h6Desc: '忙しい時は植物を休眠させて安全に保護しましょう',
+        h7Title: 'iCloud同期', h7Desc: '消耗品の取引履歴がiCloudで自動的に同期されます',
+        h8Title: 'プレミアムサブスク', h8Desc: 'サブスクで広告除去、イラストパックなどプレミアム特典を楽しもう',
+        sectionSim: 'リアルな<span>シミュレーション</span>',
+        s1Title: '6倍速', s1Desc: '現実の4時間がゲーム内の1日。アプリを閉じても植物は成長し続けます',
+        s2Title: '健康度システム', s2Desc: '水分、光、湿度、温度を最適に維持して健康に育てましょう',
+        s3Title: '病害虫イベント', s3Desc: '突然の病害虫発生！素早く駆除しないと健康が悪化します',
+        s4Title: '植物のセリフ', s4Desc: '状態、時間帯、健康度に応じて植物が21種類の言葉をかけます',
+        s5Title: 'マイルストーン記録', s5Desc: '初めての根、初めての葉、開花 \u2014 大切な成長の瞬間を記録',
+        s6Title: 'ブースト', s6Desc: 'ブーストを使って成長速度を一時的にアップしましょう',
+        linkPrivacy: 'プライバシーポリシー', linkSupport: 'カスタマーサポート', linkEmail: 'メールお問い合わせ'
+    }
+};
+
+function switchLang(lang) {
+    document.documentElement.lang = lang;
+    document.title = T[lang].pageTitle;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        el.textContent = T[lang][el.dataset.i18n];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        el.innerHTML = T[lang][el.dataset.i18nHtml];
+    });
+    document.querySelectorAll('.lang-switcher button').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent === lang.toUpperCase());
+    });
+    localStorage.setItem('sprout-lang', lang);
+}
+
+(function() {
+    const saved = localStorage.getItem('sprout-lang');
+    if (saved && T[saved]) switchLang(saved);
+})();
+</script>
 </body>
 </html>
