@@ -18,63 +18,216 @@
         a { color: #4a9; text-decoration: none; }
         a:hover { text-decoration: underline; }
         .footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid #e0e0e0; font-size: 0.85rem; color: #888; }
+        .lang-switcher { position: fixed; top: 12px; right: 16px; z-index: 1000; display: flex; gap: 4px; background: rgba(255,255,255,0.85); backdrop-filter: blur(8px); border-radius: 8px; padding: 4px; border: 1px solid #e0e0e0; }
+        .lang-switcher button { background: transparent; border: none; border-radius: 6px; padding: 4px 12px; font-size: 0.8rem; cursor: pointer; font-weight: 500; color: #666; transition: all 0.2s; }
+        .lang-switcher button.active { background: #4a9; color: #fff; }
+        .lang-switcher button:hover:not(.active) { background: #f0f0f0; }
     </style>
 </head>
 <body>
+
+<div class="lang-switcher">
+    <button onclick="switchLang('ko')" class="active">KO</button>
+    <button onclick="switchLang('en')">EN</button>
+    <button onclick="switchLang('ja')">JA</button>
+    <button onclick="switchLang('zh')">ZH</button>
+</div>
+
 <div class="container">
-    <h1>개인정보 처리방침</h1>
-    <p class="app-name">새싹 레벨업 (SproutLevelUp)</p>
-    <p class="updated">최종 업데이트: 2026년 3월 9일</p>
+    <h1 data-i18n="title">개인정보 처리방침</h1>
+    <p class="app-name" data-i18n="appName">새싹 레벨업 (SproutLevelUp)</p>
+    <p class="updated" data-i18n="updated">최종 업데이트: 2026년 3월 9일</p>
 
-    <h2>1. 개인정보 수집 항목</h2>
-    <p>본 앱은 사용자로부터 어떠한 개인정보도 직접 수집하지 않습니다.</p>
+    <h2 data-i18n="s1Title">1. 개인정보 수집 항목</h2>
+    <p data-i18n="s1Desc">본 앱은 사용자로부터 어떠한 개인정보도 직접 수집하지 않습니다.</p>
 
-    <h2>2. 광고 및 제3자 서비스</h2>
-    <p>본 앱은 Google AdMob을 통해 광고를 제공합니다. AdMob은 광고 개인화 및 성과 측정을 위해 다음 정보를 자동으로 수집할 수 있습니다.</p>
+    <h2 data-i18n="s2Title">2. 광고 및 제3자 서비스</h2>
+    <p data-i18n="s2Desc">본 앱은 Google AdMob을 통해 광고를 제공합니다. AdMob은 광고 개인화 및 성과 측정을 위해 다음 정보를 자동으로 수집할 수 있습니다.</p>
     <ul>
-        <li>광고 식별자 (IDFA)</li>
-        <li>기기 정보 (모델, OS 버전)</li>
-        <li>IP 주소 (대략적 위치 추정)</li>
-        <li>앱 사용 데이터 (광고 상호작용)</li>
+        <li data-i18n="s2L1">광고 식별자 (IDFA)</li>
+        <li data-i18n="s2L2">기기 정보 (모델, OS 버전)</li>
+        <li data-i18n="s2L3">IP 주소 (대략적 위치 추정)</li>
+        <li data-i18n="s2L4">앱 사용 데이터 (광고 상호작용)</li>
     </ul>
-    <p>자세한 내용은 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 개인정보처리방침</a>을 참고하시기 바랍니다.</p>
+    <p data-i18n-html="s2Link">자세한 내용은 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 개인정보처리방침</a>을 참고하시기 바랍니다.</p>
 
-    <h2>3. 앱 추적 투명성 (ATT)</h2>
-    <p>iOS 14.5 이상에서는 앱 실행 시 추적 허용 여부를 묻는 팝업이 표시됩니다. 사용자가 추적을 거부하면 개인화 광고 대신 일반 광고가 표시되며, IDFA는 수집되지 않습니다.</p>
+    <h2 data-i18n="s3Title">3. 앱 추적 투명성 (ATT)</h2>
+    <p data-i18n="s3Desc">iOS 14.5 이상에서는 앱 실행 시 추적 허용 여부를 묻는 팝업이 표시됩니다. 사용자가 추적을 거부하면 개인화 광고 대신 일반 광고가 표시되며, IDFA는 수집되지 않습니다.</p>
 
-    <h2>4. 데이터 저장 및 iCloud 동기화</h2>
-    <p>앱의 게임 데이터(식물 성장 기록 등)는 사용자 기기에 저장됩니다. 소모품 거래 이력은 Apple CloudKit을 통해 동일 Apple ID로 로그인한 기기 간에 자동으로 동기화됩니다.</p>
+    <h2 data-i18n="s4Title">4. 데이터 저장 및 iCloud 동기화</h2>
+    <p data-i18n="s4Desc">앱의 게임 데이터(식물 성장 기록 등)는 사용자 기기에 저장됩니다. 소모품 거래 이력은 Apple CloudKit을 통해 동일 Apple ID로 로그인한 기기 간에 자동으로 동기화됩니다.</p>
     <ul>
-        <li>동기화 데이터: 소모품 거래 이력</li>
-        <li>저장 위치: Apple iCloud (CloudKit)</li>
-        <li>본 앱은 자체 서버를 운영하지 않으며, Apple의 iCloud 인프라만 사용합니다</li>
+        <li data-i18n="s4L1">동기화 데이터: 소모품 거래 이력</li>
+        <li data-i18n="s4L2">저장 위치: Apple iCloud (CloudKit)</li>
+        <li data-i18n="s4L3">본 앱은 자체 서버를 운영하지 않으며, Apple의 iCloud 인프라만 사용합니다</li>
     </ul>
-    <p>iCloud 데이터 처리에 대한 자세한 내용은 <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple 개인정보처리방침</a>을 참고하시기 바랍니다.</p>
+    <p data-i18n-html="s4Link">iCloud 데이터 처리에 대한 자세한 내용은 <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple 개인정보처리방침</a>을 참고하시기 바랍니다.</p>
 
-    <h2>5. 인앱 구독 (StoreKit 2)</h2>
-    <p>본 앱은 Apple StoreKit 2를 통해 인앱 구독을 제공합니다. 구독 결제 및 관리는 전적으로 Apple을 통해 처리되며, 본 앱은 결제 정보(신용카드 번호 등)를 직접 수집하거나 저장하지 않습니다.</p>
+    <h2 data-i18n="s5Title">5. 인앱 구독 (StoreKit 2)</h2>
+    <p data-i18n="s5Desc">본 앱은 Apple StoreKit 2를 통해 인앱 구독을 제공합니다. 구독 결제 및 관리는 전적으로 Apple을 통해 처리되며, 본 앱은 결제 정보(신용카드 번호 등)를 직접 수집하거나 저장하지 않습니다.</p>
     <ul>
-        <li>구독 상태 확인: Apple의 거래 검증 시스템을 통해 확인</li>
-        <li>결제 처리: Apple App Store에서 처리</li>
-        <li>구독 관리: 설정 > Apple ID > 구독에서 관리</li>
+        <li data-i18n="s5L1">구독 상태 확인: Apple의 거래 검증 시스템을 통해 확인</li>
+        <li data-i18n="s5L2">결제 처리: Apple App Store에서 처리</li>
+        <li data-i18n="s5L3">구독 관리: 설정 > Apple ID > 구독에서 관리</li>
     </ul>
 
-    <h2>6. 로컬 알림</h2>
-    <p>본 앱은 식물 돌보기 알림 등을 위해 로컬 알림(Local Notification)을 사용합니다. 알림은 기기에서 로컬로 처리되며, 외부 서버로 전송되지 않습니다. 알림 수신 여부는 iOS 설정에서 언제든지 변경할 수 있습니다.</p>
+    <h2 data-i18n="s6Title">6. 로컬 알림</h2>
+    <p data-i18n="s6Desc">본 앱은 식물 돌보기 알림 등을 위해 로컬 알림(Local Notification)을 사용합니다. 알림은 기기에서 로컬로 처리되며, 외부 서버로 전송되지 않습니다. 알림 수신 여부는 iOS 설정에서 언제든지 변경할 수 있습니다.</p>
 
-    <h2>7. 아동 개인정보</h2>
-    <p>본 앱은 만 14세 미만 아동의 개인정보를 의도적으로 수집하지 않습니다.</p>
+    <h2 data-i18n="s7Title">7. 아동 개인정보</h2>
+    <p data-i18n="s7Desc">본 앱은 만 14세 미만 아동의 개인정보를 의도적으로 수집하지 않습니다.</p>
 
-    <h2>8. 개인정보처리방침 변경</h2>
-    <p>본 방침이 변경될 경우 이 페이지를 통해 공지합니다.</p>
+    <h2 data-i18n="s8Title">8. 개인정보처리방침 변경</h2>
+    <p data-i18n="s8Desc">본 방침이 변경될 경우 이 페이지를 통해 공지합니다.</p>
 
-    <h2>9. 문의</h2>
-    <p>개인정보 관련 문의는 아래 이메일로 연락해 주세요.</p>
+    <h2 data-i18n="s9Title">9. 문의</h2>
+    <p data-i18n="s9Desc">개인정보 관련 문의는 아래 이메일로 연락해 주세요.</p>
     <p><a href="mailto:chungkil.kim@gmail.com">chungkil.kim@gmail.com</a></p>
 
     <div class="footer">
         <p>&copy; 2026 새싹 레벨업. All rights reserved.</p>
     </div>
 </div>
+
+<script>
+const T = {
+    ko: {
+        pageTitle: '개인정보 처리방침 - 새싹 레벨업',
+        title: '개인정보 처리방침',
+        appName: '새싹 레벨업 (SproutLevelUp)',
+        updated: '최종 업데이트: 2026년 3월 9일',
+        s1Title: '1. 개인정보 수집 항목',
+        s1Desc: '본 앱은 사용자로부터 어떠한 개인정보도 직접 수집하지 않습니다.',
+        s2Title: '2. 광고 및 제3자 서비스',
+        s2Desc: '본 앱은 Google AdMob을 통해 광고를 제공합니다. AdMob은 광고 개인화 및 성과 측정을 위해 다음 정보를 자동으로 수집할 수 있습니다.',
+        s2L1: '광고 식별자 (IDFA)', s2L2: '기기 정보 (모델, OS 버전)', s2L3: 'IP 주소 (대략적 위치 추정)', s2L4: '앱 사용 데이터 (광고 상호작용)',
+        s2Link: '자세한 내용은 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 개인정보처리방침</a>을 참고하시기 바랍니다.',
+        s3Title: '3. 앱 추적 투명성 (ATT)',
+        s3Desc: 'iOS 14.5 이상에서는 앱 실행 시 추적 허용 여부를 묻는 팝업이 표시됩니다. 사용자가 추적을 거부하면 개인화 광고 대신 일반 광고가 표시되며, IDFA는 수집되지 않습니다.',
+        s4Title: '4. 데이터 저장 및 iCloud 동기화',
+        s4Desc: '앱의 게임 데이터(식물 성장 기록 등)는 사용자 기기에 저장됩니다. 소모품 거래 이력은 Apple CloudKit을 통해 동일 Apple ID로 로그인한 기기 간에 자동으로 동기화됩니다.',
+        s4L1: '동기화 데이터: 소모품 거래 이력', s4L2: '저장 위치: Apple iCloud (CloudKit)', s4L3: '본 앱은 자체 서버를 운영하지 않으며, Apple의 iCloud 인프라만 사용합니다',
+        s4Link: 'iCloud 데이터 처리에 대한 자세한 내용은 <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple 개인정보처리방침</a>을 참고하시기 바랍니다.',
+        s5Title: '5. 인앱 구독 (StoreKit 2)',
+        s5Desc: '본 앱은 Apple StoreKit 2를 통해 인앱 구독을 제공합니다. 구독 결제 및 관리는 전적으로 Apple을 통해 처리되며, 본 앱은 결제 정보(신용카드 번호 등)를 직접 수집하거나 저장하지 않습니다.',
+        s5L1: '구독 상태 확인: Apple의 거래 검증 시스템을 통해 확인', s5L2: '결제 처리: Apple App Store에서 처리', s5L3: '구독 관리: 설정 > Apple ID > 구독에서 관리',
+        s6Title: '6. 로컬 알림',
+        s6Desc: '본 앱은 식물 돌보기 알림 등을 위해 로컬 알림(Local Notification)을 사용합니다. 알림은 기기에서 로컬로 처리되며, 외부 서버로 전송되지 않습니다. 알림 수신 여부는 iOS 설정에서 언제든지 변경할 수 있습니다.',
+        s7Title: '7. 아동 개인정보',
+        s7Desc: '본 앱은 만 14세 미만 아동의 개인정보를 의도적으로 수집하지 않습니다.',
+        s8Title: '8. 개인정보처리방침 변경',
+        s8Desc: '본 방침이 변경될 경우 이 페이지를 통해 공지합니다.',
+        s9Title: '9. 문의',
+        s9Desc: '개인정보 관련 문의는 아래 이메일로 연락해 주세요.'
+    },
+    en: {
+        pageTitle: 'Privacy Policy - Sprout Level Up',
+        title: 'Privacy Policy',
+        appName: 'Sprout Level Up (SproutLevelUp)',
+        updated: 'Last updated: March 9, 2026',
+        s1Title: '1. Personal Information Collected',
+        s1Desc: 'This app does not directly collect any personal information from users.',
+        s2Title: '2. Advertising & Third-Party Services',
+        s2Desc: 'This app serves ads through Google AdMob. AdMob may automatically collect the following information for ad personalization and performance measurement.',
+        s2L1: 'Advertising Identifier (IDFA)', s2L2: 'Device information (model, OS version)', s2L3: 'IP address (approximate location)', s2L4: 'App usage data (ad interactions)',
+        s2Link: 'For more details, please refer to the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.',
+        s3Title: '3. App Tracking Transparency (ATT)',
+        s3Desc: 'On iOS 14.5 and later, a pop-up asking for tracking permission is displayed when the app launches. If the user declines tracking, non-personalized ads will be shown and IDFA will not be collected.',
+        s4Title: '4. Data Storage & iCloud Sync',
+        s4Desc: 'Game data (plant growth records, etc.) is stored on the user\'s device. Consumable transaction history is automatically synced between devices signed in with the same Apple ID via Apple CloudKit.',
+        s4L1: 'Synced data: Consumable transaction history', s4L2: 'Storage location: Apple iCloud (CloudKit)', s4L3: 'This app does not operate its own servers and only uses Apple\'s iCloud infrastructure',
+        s4Link: 'For more details on iCloud data processing, please refer to the <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple Privacy Policy</a>.',
+        s5Title: '5. In-App Subscription (StoreKit 2)',
+        s5Desc: 'This app offers in-app subscriptions through Apple StoreKit 2. Subscription billing and management are handled entirely by Apple. This app does not directly collect or store payment information (such as credit card numbers).',
+        s5L1: 'Subscription status: Verified through Apple\'s transaction verification system', s5L2: 'Payment processing: Handled by Apple App Store', s5L3: 'Subscription management: Settings > Apple ID > Subscriptions',
+        s6Title: '6. Local Notifications',
+        s6Desc: 'This app uses local notifications for plant care reminders. Notifications are processed locally on the device and are not sent to external servers. You can change notification settings at any time in iOS Settings.',
+        s7Title: '7. Children\'s Privacy',
+        s7Desc: 'This app does not intentionally collect personal information from children under the age of 14.',
+        s8Title: '8. Changes to This Policy',
+        s8Desc: 'Any changes to this policy will be announced on this page.',
+        s9Title: '9. Contact',
+        s9Desc: 'For privacy-related inquiries, please contact us at the email below.'
+    },
+    ja: {
+        pageTitle: 'プライバシーポリシー - スプラウトレベルアップ',
+        title: 'プライバシーポリシー',
+        appName: 'スプラウトレベルアップ (SproutLevelUp)',
+        updated: '最終更新日: 2026年3月9日',
+        s1Title: '1. 個人情報の収集項目',
+        s1Desc: '本アプリはユーザーからいかなる個人情報も直接収集しません。',
+        s2Title: '2. 広告および第三者サービス',
+        s2Desc: '本アプリはGoogle AdMobを通じて広告を提供しています。AdMobは広告のパーソナライズおよびパフォーマンス測定のために、以下の情報を自動的に収集する場合があります。',
+        s2L1: '広告識別子（IDFA）', s2L2: '端末情報（モデル、OSバージョン）', s2L3: 'IPアドレス（おおよその位置推定）', s2L4: 'アプリ使用データ（広告インタラクション）',
+        s2Link: '詳細については<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Googleプライバシーポリシー</a>をご参照ください。',
+        s3Title: '3. アプリトラッキング透明性（ATT）',
+        s3Desc: 'iOS 14.5以降では、アプリ起動時にトラッキング許可を求めるポップアップが表示されます。ユーザーがトラッキングを拒否した場合、パーソナライズ広告の代わりに一般広告が表示され、IDFAは収集されません。',
+        s4Title: '4. データ保存およびiCloud同期',
+        s4Desc: 'アプリのゲームデータ（植物の成長記録など）はユーザーの端末に保存されます。消耗品の取引履歴はApple CloudKitを通じて、同じApple IDでログインした端末間で自動的に同期されます。',
+        s4L1: '同期データ: 消耗品の取引履歴', s4L2: '保存場所: Apple iCloud（CloudKit）', s4L3: '本アプリは独自のサーバーを運営しておらず、AppleのiCloudインフラのみを使用しています',
+        s4Link: 'iCloudのデータ処理の詳細については<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Appleプライバシーポリシー</a>をご参照ください。',
+        s5Title: '5. アプリ内サブスクリプション（StoreKit 2）',
+        s5Desc: '本アプリはApple StoreKit 2を通じてアプリ内サブスクリプションを提供しています。サブスクリプションの課金と管理はすべてAppleを通じて処理され、本アプリは決済情報（クレジットカード番号など）を直接収集または保存しません。',
+        s5L1: 'サブスクリプション状態確認: Appleの取引検証システムで確認', s5L2: '決済処理: Apple App Storeで処理', s5L3: 'サブスクリプション管理: 設定 > Apple ID > サブスクリプションで管理',
+        s6Title: '6. ローカル通知',
+        s6Desc: '本アプリは植物のケアリマインダーなどのためにローカル通知を使用しています。通知は端末上でローカルに処理され、外部サーバーに送信されません。通知の受信設定はiOSの設定からいつでも変更できます。',
+        s7Title: '7. 児童の個人情報',
+        s7Desc: '本アプリは14歳未満の児童の個人情報を意図的に収集しません。',
+        s8Title: '8. プライバシーポリシーの変更',
+        s8Desc: '本ポリシーが変更される場合、このページを通じてお知らせします。',
+        s9Title: '9. お問い合わせ',
+        s9Desc: 'プライバシーに関するお問い合わせは、以下のメールアドレスまでご連絡ください。'
+    },
+    zh: {
+        pageTitle: '隐私政策 - 新芽升级',
+        title: '隐私政策',
+        appName: '新芽升级 (SproutLevelUp)',
+        updated: '最后更新：2026年3月9日',
+        s1Title: '1. 个人信息收集项目',
+        s1Desc: '本应用不会直接向用户收集任何个人信息。',
+        s2Title: '2. 广告及第三方服务',
+        s2Desc: '本应用通过Google AdMob提供广告。AdMob可能会为广告个性化和效果衡量自动收集以下信息。',
+        s2L1: '广告标识符（IDFA）', s2L2: '设备信息（型号、操作系统版本）', s2L3: 'IP地址（大致位置推测）', s2L4: '应用使用数据（广告互动）',
+        s2Link: '详情请参阅<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google隐私政策</a>。',
+        s3Title: '3. 应用追踪透明度（ATT）',
+        s3Desc: '在iOS 14.5及以上版本中，应用启动时会弹出询问是否允许追踪的提示。如果用户拒绝追踪，将显示非个性化广告，且不会收集IDFA。',
+        s4Title: '4. 数据存储及iCloud同步',
+        s4Desc: '应用的游戏数据（植物生长记录等）存储在用户设备上。消耗品交易记录通过Apple CloudKit在使用相同Apple ID登录的设备间自动同步。',
+        s4L1: '同步数据：消耗品交易记录', s4L2: '存储位置：Apple iCloud（CloudKit）', s4L3: '本应用不运营自有服务器，仅使用Apple的iCloud基础设施',
+        s4Link: '有关iCloud数据处理的详情，请参阅<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple隐私政策</a>。',
+        s5Title: '5. 应用内订阅（StoreKit 2）',
+        s5Desc: '本应用通过Apple StoreKit 2提供应用内订阅。订阅计费和管理完全由Apple处理，本应用不直接收集或存储支付信息（如信用卡号）。',
+        s5L1: '订阅状态确认：通过Apple的交易验证系统确认', s5L2: '支付处理：由Apple App Store处理', s5L3: '订阅管理：设置 > Apple ID > 订阅中管理',
+        s6Title: '6. 本地通知',
+        s6Desc: '本应用使用本地通知进行植物养护提醒等。通知在设备上本地处理，不会发送到外部服务器。您可以随时在iOS设置中更改通知设置。',
+        s7Title: '7. 儿童隐私',
+        s7Desc: '本应用不会故意收集14岁以下儿童的个人信息。',
+        s8Title: '8. 隐私政策变更',
+        s8Desc: '本政策如有变更，将通过本页面予以通知。',
+        s9Title: '9. 联系方式',
+        s9Desc: '如有隐私相关问题，请通过以下邮箱联系我们。'
+    }
+};
+
+function switchLang(lang) {
+    document.documentElement.lang = lang;
+    document.title = T[lang].pageTitle;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        el.textContent = T[lang][el.dataset.i18n];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        el.innerHTML = T[lang][el.dataset.i18nHtml];
+    });
+    document.querySelectorAll('.lang-switcher button').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent === lang.toUpperCase());
+    });
+    localStorage.setItem('sprout-lang', lang);
+}
+
+(function() {
+    const saved = localStorage.getItem('sprout-lang');
+    if (saved && T[saved]) switchLang(saved);
+})();
+</script>
 </body>
 </html>

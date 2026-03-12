@@ -23,52 +23,178 @@
         .faq dt { font-weight: 600; color: #1a1a1a; margin-top: 16px; }
         .faq dd { margin-left: 0; margin-top: 4px; }
         .footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid #e0e0e0; font-size: 0.85rem; color: #888; }
+        .lang-switcher { position: fixed; top: 12px; right: 16px; z-index: 1000; display: flex; gap: 4px; background: rgba(255,255,255,0.85); backdrop-filter: blur(8px); border-radius: 8px; padding: 4px; border: 1px solid #e0e0e0; }
+        .lang-switcher button { background: transparent; border: none; border-radius: 6px; padding: 4px 12px; font-size: 0.8rem; cursor: pointer; font-weight: 500; color: #666; transition: all 0.2s; }
+        .lang-switcher button.active { background: #4a9; color: #fff; }
+        .lang-switcher button:hover:not(.active) { background: #f0f0f0; }
     </style>
 </head>
 <body>
-<div class="container">
-    <h1>고객 지원</h1>
-    <p class="app-name">새싹 레벨업 (SproutLevelUp)</p>
-    <p class="updated">최종 업데이트: 2026년 3월 9일</p>
 
-    <h2>문의하기</h2>
-    <p>앱 사용 중 문제가 발생하거나 건의사항이 있으시면 이메일로 연락해 주세요. 빠른 시일 내에 답변드리겠습니다.</p>
+<div class="lang-switcher">
+    <button onclick="switchLang('ko')" class="active">KO</button>
+    <button onclick="switchLang('en')">EN</button>
+    <button onclick="switchLang('ja')">JA</button>
+    <button onclick="switchLang('zh')">ZH</button>
+</div>
+
+<div class="container">
+    <h1 data-i18n="title">고객 지원</h1>
+    <p class="app-name" data-i18n="appName">새싹 레벨업 (SproutLevelUp)</p>
+    <p class="updated" data-i18n="updated">최종 업데이트: 2026년 3월 9일</p>
+
+    <h2 data-i18n="contactTitle">문의하기</h2>
+    <p data-i18n="contactDesc">앱 사용 중 문제가 발생하거나 건의사항이 있으시면 이메일로 연락해 주세요. 빠른 시일 내에 답변드리겠습니다.</p>
     <div class="email-box">
         <a href="mailto:chungkil.kim@gmail.com">chungkil.kim@gmail.com</a>
     </div>
 
-    <p style="margin-top: 12px;">문의 시 다음 정보를 함께 보내주시면 더 빠르게 도움을 드릴 수 있습니다.</p>
+    <p style="margin-top: 12px;" data-i18n="contactTip">문의 시 다음 정보를 함께 보내주시면 더 빠르게 도움을 드릴 수 있습니다.</p>
     <ul>
-        <li>기기 모델 (예: iPhone 15)</li>
-        <li>iOS 버전</li>
-        <li>앱 버전</li>
-        <li>문제 상황 설명</li>
+        <li data-i18n="tip1">기기 모델 (예: iPhone 15)</li>
+        <li data-i18n="tip2">iOS 버전</li>
+        <li data-i18n="tip3">앱 버전</li>
+        <li data-i18n="tip4">문제 상황 설명</li>
     </ul>
 
-    <h2>자주 묻는 질문</h2>
+    <h2 data-i18n="faqTitle">자주 묻는 질문</h2>
     <dl class="faq">
-        <dt>Q. 앱 데이터가 사라졌어요.</dt>
-        <dd>앱을 삭제하면 기기에 저장된 데이터가 함께 삭제됩니다. 단, 소모품 거래 이력은 iCloud를 통해 동기화되므로 동일 Apple ID로 로그인한 기기에서 복원됩니다.</dd>
+        <dt data-i18n="q1">Q. 앱 데이터가 사라졌어요.</dt>
+        <dd data-i18n="a1">앱을 삭제하면 기기에 저장된 데이터가 함께 삭제됩니다. 단, 소모품 거래 이력은 iCloud를 통해 동기화되므로 동일 Apple ID로 로그인한 기기에서 복원됩니다.</dd>
 
-        <dt>Q. 광고를 제거할 수 있나요?</dt>
-        <dd>프리미엄 구독을 통해 광고를 제거할 수 있습니다. 설정 화면에서 구독 정보를 확인하세요.</dd>
+        <dt data-i18n="q2">Q. 광고를 제거할 수 있나요?</dt>
+        <dd data-i18n="a2">프리미엄 구독을 통해 광고를 제거할 수 있습니다. 설정 화면에서 구독 정보를 확인하세요.</dd>
 
-        <dt>Q. 다른 기기로 데이터를 옮길 수 있나요?</dt>
-        <dd>소모품 거래 이력은 iCloud(CloudKit)를 통해 동일 Apple ID의 다른 기기에 자동으로 동기화됩니다. iCloud 설정에서 본 앱의 동기화가 켜져 있는지 확인해 주세요.</dd>
+        <dt data-i18n="q3">Q. 다른 기기로 데이터를 옮길 수 있나요?</dt>
+        <dd data-i18n="a3">소모품 거래 이력은 iCloud(CloudKit)를 통해 동일 Apple ID의 다른 기기에 자동으로 동기화됩니다. iCloud 설정에서 본 앱의 동기화가 켜져 있는지 확인해 주세요.</dd>
 
-        <dt>Q. iCloud 동기화가 안 돼요.</dt>
-        <dd>설정 > Apple ID > iCloud에서 '새싹 레벨업'의 iCloud 사용이 켜져 있는지 확인해 주세요. 또한 기기가 인터넷에 연결되어 있어야 합니다. 동기화는 소모품 거래 이력에 적용됩니다.</dd>
+        <dt data-i18n="q4">Q. iCloud 동기화가 안 돼요.</dt>
+        <dd data-i18n="a4">설정 > Apple ID > iCloud에서 '새싹 레벨업'의 iCloud 사용이 켜져 있는지 확인해 주세요. 또한 기기가 인터넷에 연결되어 있어야 합니다. 동기화는 소모품 거래 이력에 적용됩니다.</dd>
 
-        <dt>Q. 구독을 해지하고 싶어요.</dt>
-        <dd>구독은 앱 내에서 직접 해지할 수 없습니다. 설정 > Apple ID > 구독에서 관리하거나, 앱 내 설정에서 '구독 관리' 버튼을 탭하세요. 구독 해지는 현재 결제 기간 종료 후 적용됩니다.</dd>
+        <dt data-i18n="q5">Q. 구독을 해지하고 싶어요.</dt>
+        <dd data-i18n="a5">구독은 앱 내에서 직접 해지할 수 없습니다. 설정 > Apple ID > 구독에서 관리하거나, 앱 내 설정에서 '구독 관리' 버튼을 탭하세요. 구독 해지는 현재 결제 기간 종료 후 적용됩니다.</dd>
 
-        <dt>Q. 구독을 해지하면 어떻게 되나요?</dt>
-        <dd>구독 기간이 만료되면 프리미엄 혜택(광고 제거, 일러스트 팩 등)이 해제됩니다. 기존에 획득한 게임 데이터는 유지됩니다.</dd>
+        <dt data-i18n="q6">Q. 구독을 해지하면 어떻게 되나요?</dt>
+        <dd data-i18n="a6">구독 기간이 만료되면 프리미엄 혜택(광고 제거, 일러스트 팩 등)이 해제됩니다. 기존에 획득한 게임 데이터는 유지됩니다.</dd>
     </dl>
 
     <div class="footer">
         <p>&copy; 2026 새싹 레벨업. All rights reserved.</p>
     </div>
 </div>
+
+<script>
+const T = {
+    ko: {
+        pageTitle: '고객 지원 - 새싹 레벨업',
+        title: '고객 지원',
+        appName: '새싹 레벨업 (SproutLevelUp)',
+        updated: '최종 업데이트: 2026년 3월 9일',
+        contactTitle: '문의하기',
+        contactDesc: '앱 사용 중 문제가 발생하거나 건의사항이 있으시면 이메일로 연락해 주세요. 빠른 시일 내에 답변드리겠습니다.',
+        contactTip: '문의 시 다음 정보를 함께 보내주시면 더 빠르게 도움을 드릴 수 있습니다.',
+        tip1: '기기 모델 (예: iPhone 15)', tip2: 'iOS 버전', tip3: '앱 버전', tip4: '문제 상황 설명',
+        faqTitle: '자주 묻는 질문',
+        q1: 'Q. 앱 데이터가 사라졌어요.',
+        a1: '앱을 삭제하면 기기에 저장된 데이터가 함께 삭제됩니다. 단, 소모품 거래 이력은 iCloud를 통해 동기화되므로 동일 Apple ID로 로그인한 기기에서 복원됩니다.',
+        q2: 'Q. 광고를 제거할 수 있나요?',
+        a2: '프리미엄 구독을 통해 광고를 제거할 수 있습니다. 설정 화면에서 구독 정보를 확인하세요.',
+        q3: 'Q. 다른 기기로 데이터를 옮길 수 있나요?',
+        a3: '소모품 거래 이력은 iCloud(CloudKit)를 통해 동일 Apple ID의 다른 기기에 자동으로 동기화됩니다. iCloud 설정에서 본 앱의 동기화가 켜져 있는지 확인해 주세요.',
+        q4: 'Q. iCloud 동기화가 안 돼요.',
+        a4: '설정 > Apple ID > iCloud에서 \'새싹 레벨업\'의 iCloud 사용이 켜져 있는지 확인해 주세요. 또한 기기가 인터넷에 연결되어 있어야 합니다. 동기화는 소모품 거래 이력에 적용됩니다.',
+        q5: 'Q. 구독을 해지하고 싶어요.',
+        a5: '구독은 앱 내에서 직접 해지할 수 없습니다. 설정 > Apple ID > 구독에서 관리하거나, 앱 내 설정에서 \'구독 관리\' 버튼을 탭하세요. 구독 해지는 현재 결제 기간 종료 후 적용됩니다.',
+        q6: 'Q. 구독을 해지하면 어떻게 되나요?',
+        a6: '구독 기간이 만료되면 프리미엄 혜택(광고 제거, 일러스트 팩 등)이 해제됩니다. 기존에 획득한 게임 데이터는 유지됩니다.'
+    },
+    en: {
+        pageTitle: 'Support - Sprout Level Up',
+        title: 'Customer Support',
+        appName: 'Sprout Level Up (SproutLevelUp)',
+        updated: 'Last updated: March 9, 2026',
+        contactTitle: 'Contact Us',
+        contactDesc: 'If you experience any issues or have suggestions while using the app, please contact us by email. We will respond as soon as possible.',
+        contactTip: 'Including the following information will help us assist you faster.',
+        tip1: 'Device model (e.g., iPhone 15)', tip2: 'iOS version', tip3: 'App version', tip4: 'Description of the issue',
+        faqTitle: 'Frequently Asked Questions',
+        q1: 'Q. My app data is gone.',
+        a1: 'Deleting the app will also delete data stored on the device. However, consumable transaction history is synced via iCloud and can be restored on devices signed in with the same Apple ID.',
+        q2: 'Q. Can I remove ads?',
+        a2: 'You can remove ads with a premium subscription. Check the subscription info in the Settings screen.',
+        q3: 'Q. Can I transfer data to another device?',
+        a3: 'Consumable transaction history is automatically synced to other devices with the same Apple ID via iCloud (CloudKit). Please make sure iCloud sync for this app is enabled in your iCloud settings.',
+        q4: 'Q. iCloud sync is not working.',
+        a4: 'Please check that iCloud is enabled for "Sprout Level Up" in Settings > Apple ID > iCloud. Your device must also be connected to the internet. Sync applies to consumable transaction history.',
+        q5: 'Q. I want to cancel my subscription.',
+        a5: 'Subscriptions cannot be canceled directly within the app. Go to Settings > Apple ID > Subscriptions, or tap the "Manage Subscription" button in the app settings. Cancellation takes effect at the end of the current billing period.',
+        q6: 'Q. What happens if I cancel my subscription?',
+        a6: 'When the subscription period expires, premium benefits (ad removal, illustration packs, etc.) will be deactivated. Your existing game data will be retained.'
+    },
+    ja: {
+        pageTitle: 'カスタマーサポート - スプラウトレベルアップ',
+        title: 'カスタマーサポート',
+        appName: 'スプラウトレベルアップ (SproutLevelUp)',
+        updated: '最終更新日: 2026年3月9日',
+        contactTitle: 'お問い合わせ',
+        contactDesc: 'アプリの使用中に問題が発生した場合やご提案がございましたら、メールでご連絡ください。できるだけ早くご返答いたします。',
+        contactTip: 'お問い合わせの際、以下の情報を一緒にお送りいただくとより迅速に対応できます。',
+        tip1: '端末モデル（例：iPhone 15）', tip2: 'iOSバージョン', tip3: 'アプリバージョン', tip4: '問題の説明',
+        faqTitle: 'よくある質問',
+        q1: 'Q. アプリのデータが消えました。',
+        a1: 'アプリを削除すると、端末に保存されたデータも一緒に削除されます。ただし、消耗品の取引履歴はiCloudで同期されるため、同じApple IDでログインした端末で復元されます。',
+        q2: 'Q. 広告を消すことはできますか？',
+        a2: 'プレミアムサブスクリプションで広告を除去できます。設定画面でサブスク情報をご確認ください。',
+        q3: 'Q. 他のデバイスにデータを移行できますか？',
+        a3: '消耗品の取引履歴はiCloud（CloudKit）を通じて同じApple IDの他のデバイスに自動的に同期されます。iCloud設定でこのアプリの同期がオンになっていることをご確認ください。',
+        q4: 'Q. iCloud同期ができません。',
+        a4: '設定 > Apple ID > iCloudで「スプラウトレベルアップ」のiCloud使用がオンになっていることをご確認ください。また、端末がインターネットに接続されている必要があります。同期は消耗品の取引履歴に適用されます。',
+        q5: 'Q. サブスクリプションを解約したいです。',
+        a5: 'サブスクリプションはアプリ内で直接解約することはできません。設定 > Apple ID > サブスクリプションで管理するか、アプリ内設定の「サブスク管理」ボタンをタップしてください。解約は現在の課金期間終了後に適用されます。',
+        q6: 'Q. サブスクリプションを解約するとどうなりますか？',
+        a6: 'サブスクリプション期間が終了すると、プレミアム特典（広告除去、イラストパックなど）が解除されます。既に獲得したゲームデータは保持されます。'
+    },
+    zh: {
+        pageTitle: '客户支持 - 新芽升级',
+        title: '客户支持',
+        appName: '新芽升级 (SproutLevelUp)',
+        updated: '最后更新：2026年3月9日',
+        contactTitle: '联系我们',
+        contactDesc: '如果您在使用应用时遇到问题或有建议，请通过电子邮件联系我们。我们将尽快回复。',
+        contactTip: '咨询时提供以下信息可以帮助我们更快地为您解决问题。',
+        tip1: '设备型号（例：iPhone 15）', tip2: 'iOS版本', tip3: '应用版本', tip4: '问题描述',
+        faqTitle: '常见问题',
+        q1: 'Q. 我的应用数据丢失了。',
+        a1: '删除应用会同时删除存储在设备上的数据。但消耗品交易记录通过iCloud同步，可在使用相同Apple ID登录的设备上恢复。',
+        q2: 'Q. 可以去除广告吗？',
+        a2: '通过高级订阅可以去除广告。请在设置页面查看订阅信息。',
+        q3: 'Q. 可以将数据转移到其他设备吗？',
+        a3: '消耗品交易记录通过iCloud（CloudKit）自动同步到使用相同Apple ID的其他设备。请确认iCloud设置中已开启本应用的同步功能。',
+        q4: 'Q. iCloud同步不工作。',
+        a4: '请在设置 > Apple ID > iCloud中确认"新芽升级"的iCloud已开启。此外，设备需要连接到互联网。同步适用于消耗品交易记录。',
+        q5: 'Q. 我想取消订阅。',
+        a5: '无法在应用内直接取消订阅。请前往设置 > Apple ID > 订阅进行管理，或点击应用内设置中的"管理订阅"按钮。取消将在当前计费周期结束后生效。',
+        q6: 'Q. 取消订阅后会怎样？',
+        a6: '订阅期到期后，高级权益（去除广告、插画包等）将被取消。已获得的游戏数据将保留。'
+    }
+};
+
+function switchLang(lang) {
+    document.documentElement.lang = lang;
+    document.title = T[lang].pageTitle;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        el.textContent = T[lang][el.dataset.i18n];
+    });
+    document.querySelectorAll('.lang-switcher button').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent === lang.toUpperCase());
+    });
+    localStorage.setItem('sprout-lang', lang);
+}
+
+(function() {
+    const saved = localStorage.getItem('sprout-lang');
+    if (saved && T[saved]) switchLang(saved);
+})();
+</script>
 </body>
 </html>
