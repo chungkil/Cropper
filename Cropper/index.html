@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cropper for PDF</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            background: #f8f9fa;
+        }
+        .content {
+            padding: 40px 0;
+        }
+        .feature {
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .footer {
+            background: #f8f9fa;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .hidden {
+            display: none;
+        }
+        .app-store-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+        .language-selector {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+        .privacy-policy {
+            margin-top: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="language-selector">
+        <button onclick="setLanguage('ko')">한국어</button>
+        <button onclick="setLanguage('en')">English</button>
+    </div>
+
+    <div class="header">
+        <div class="container">
+            <h1>Cropper for PDF</h1>
+            <div class="ko">PDF와 이미지를 위한 강력한 영역 복사 도구</div>
+            <div class="en">Powerful Area Copy Tool for PDF and Images</div>
+        </div>
+    </div>
+
+    <div class="container content">
+        <div class="feature">
+            <div class="ko">
+                <h2>간편한 사용법</h2>
+                <p>원하는 영역을 더블 터치하여 선택하고, 모서리를 조절한 후 내부를 터치하면 클립보드에 복사됩니다. 필요한 곳에 붙여넣기만 하면 됩니다.</p>
+            </div>
+            <div class="en">
+                <h2>Easy to Use</h2>
+                <p>Double-tap to select your desired area, adjust the corners, and touch inside to copy to clipboard. Simply paste wherever you need it.</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <div class="ko">
+                <h2>주요 기능</h2>
+                <ul>
+                    <li>PDF와 이미지 파일 지원</li>
+                    <li>다중 영역 복사 가능</li>
+                    <li>Apple Pencil 지원</li>
+                    <li>페이지 스크롤 네비게이션</li>
+                    <li>원본 해상도 유지</li>
+                </ul>
+            </div>
+            <div class="en">
+                <h2>Key Features</h2>
+                <ul>
+                    <li>Support for PDF and image files</li>
+                    <li>Multiple area selection</li>
+                    <li>Apple Pencil support</li>
+                    <li>Page scroll navigation</li>
+                    <li>Original resolution preservation</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="feature">
+            <div class="ko">
+                <h2>활용 사례</h2>
+                <p>문제지에서 특정 문제만 추출하거나, 이미지에서 원하는 부분만 선택적으로 저장할 때 유용합니다. 여러 페이지의 문서에서도 손쉽게 원하는 부분을 추출할 수 있습니다.</p>
+            </div>
+            <div class="en">
+                <h2>Use Cases</h2>
+                <p>Perfect for extracting specific questions from worksheets or selecting particular areas from images. Easily extract content from multi-page documents with precision.</p>
+            </div>
+        </div>
+
+        <a href="https://apps.apple.com/us/app/cropper-for-pdf/id1450818202" class="app-store-button" target="_blank">
+            <span class="ko">App Store에서 다운로드</span>
+            <span class="en">Download on App Store</span>
+        </a>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="privacy-policy">
+                <a href="privacy-policy.html" class="ko">개인정보 처리방침</a>
+                <a href="privacy-policy.html" class="en">Privacy Policy</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function setLanguage(lang) {
+            const elements = {
+                ko: document.querySelectorAll('.ko'),
+                en: document.querySelectorAll('.en')
+            };
+            
+            if (lang === 'ko') {
+                elements.ko.forEach(el => el.style.display = 'block');
+                elements.en.forEach(el => el.style.display = 'none');
+            } else {
+                elements.ko.forEach(el => el.style.display = 'none');
+                elements.en.forEach(el => el.style.display = 'block');
+            }
+        }
+
+        // Set initial language based on browser settings
+        const userLang = navigator.language || navigator.userLanguage;
+        setLanguage(userLang.startsWith('ko') ? 'ko' : 'en');
+    </script>
+</body>
+</html>
