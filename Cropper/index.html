@@ -65,6 +65,7 @@
     <div class="language-selector">
         <button onclick="setLanguage('ko')">한국어</button>
         <button onclick="setLanguage('en')">English</button>
+        <button onclick="setLanguage('ja')">日本語</button>
     </div>
 
     <div class="header">
@@ -72,6 +73,7 @@
             <h1>Cropper for PDF</h1>
             <div class="ko">PDF와 이미지를 위한 강력한 영역 복사 도구</div>
             <div class="en">Powerful Area Copy Tool for PDF and Images</div>
+            <div class="ja">PDFと画像のための強力な領域コピーツール</div>
         </div>
     </div>
 
@@ -84,6 +86,10 @@
             <div class="en">
                 <h2>Easy to Use</h2>
                 <p>Double-tap to select your desired area, adjust the corners, and touch inside to copy to clipboard. Simply paste wherever you need it.</p>
+            </div>
+            <div class="ja">
+                <h2>かんたん操作</h2>
+                <p>ダブルタップで領域を選択し、角を調整してから内側をタッチするとクリップボードにコピーされます。あとは必要な場所に貼り付けるだけです。</p>
             </div>
         </div>
 
@@ -108,6 +114,16 @@
                     <li>Original resolution preservation</li>
                 </ul>
             </div>
+            <div class="ja">
+                <h2>主な機能</h2>
+                <ul>
+                    <li>PDFと画像ファイルに対応</li>
+                    <li>複数領域の選択・コピー</li>
+                    <li>Apple Pencil対応</li>
+                    <li>ページスクロールナビゲーション</li>
+                    <li>元の解像度を維持</li>
+                </ul>
+            </div>
         </div>
 
         <div class="feature">
@@ -119,11 +135,16 @@
                 <h2>Use Cases</h2>
                 <p>Perfect for extracting specific questions from worksheets or selecting particular areas from images. Easily extract content from multi-page documents with precision.</p>
             </div>
+            <div class="ja">
+                <h2>活用例</h2>
+                <p>問題用紙から特定の問題だけを抽出したり、画像から必要な部分だけを選択して保存するのに便利です。複数ページの文書からも簡単に必要な部分を抽出できます。</p>
+            </div>
         </div>
 
         <a href="https://apps.apple.com/us/app/cropper-for-pdf/id1450818202" class="app-store-button" target="_blank">
             <span class="ko">App Store에서 다운로드</span>
             <span class="en">Download on App Store</span>
+            <span class="ja">App Storeでダウンロード</span>
         </a>
     </div>
 
@@ -132,29 +153,26 @@
             <div class="privacy-policy">
                 <a href="privacy-policy.html" class="ko">개인정보 처리방침</a>
                 <a href="privacy-policy.html" class="en">Privacy Policy</a>
+                <a href="privacy-policy.html" class="ja">プライバシーポリシー</a>
             </div>
         </div>
     </div>
 
     <script>
         function setLanguage(lang) {
-            const elements = {
-                ko: document.querySelectorAll('.ko'),
-                en: document.querySelectorAll('.en')
-            };
-            
-            if (lang === 'ko') {
-                elements.ko.forEach(el => el.style.display = 'block');
-                elements.en.forEach(el => el.style.display = 'none');
-            } else {
-                elements.ko.forEach(el => el.style.display = 'none');
-                elements.en.forEach(el => el.style.display = 'block');
-            }
+            const langs = ['ko', 'en', 'ja'];
+            langs.forEach(l => {
+                document.querySelectorAll('.' + l).forEach(el => {
+                    el.style.display = (l === lang) ? 'block' : 'none';
+                });
+            });
         }
 
         // Set initial language based on browser settings
         const userLang = navigator.language || navigator.userLanguage;
-        setLanguage(userLang.startsWith('ko') ? 'ko' : 'en');
+        if (userLang.startsWith('ko')) setLanguage('ko');
+        else if (userLang.startsWith('ja')) setLanguage('ja');
+        else setLanguage('en');
     </script>
 </body>
 </html>
