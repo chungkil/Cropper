@@ -1,6 +1,6 @@
 {
-  "version": "2.4.0",
-  "lastUpdated": "2026-02-13",
+  "version": "2.5.0",
+  "lastUpdated": "2026-03-21",
   "artists": [
     {
       "id": "bts",
@@ -2518,6 +2518,95 @@
       "venue": "Empire Polo Club",
       "city": "인디오",
       "country": "미국",
+      "isOfficial": true
+    },
+    {
+      "id": "bts-tour-lasvegas",
+      "artistId": "bts",
+      "artistName": "방탄소년단",
+      "artistEmoji": "💜",
+      "title": "BTS WORLD TOUR 'ARIRANG' IN LAS VEGAS",
+      "eventType": "concert",
+      "eventDate": "2026-05-23",
+      "endDate": "2026-05-28",
+      "venue": "Allegiant Stadium",
+      "city": "Las Vegas",
+      "country": "USA",
+      "isOfficial": true
+    },
+    {
+      "id": "enhypen-eclipse-madrid2",
+      "artistId": "enhypen",
+      "artistName": "ENHYPEN",
+      "artistEmoji": "🦇",
+      "title": "ENHYPEN WORLD TOUR 'ECLIPSE' IN MADRID",
+      "eventType": "concert",
+      "eventDate": "2026-06-18",
+      "venue": "WiZink Center",
+      "city": "Madrid",
+      "country": "Spain",
+      "isOfficial": true
+    },
+    {
+      "id": "bigbang-coachella-w1",
+      "artistId": "gdragon",
+      "artistName": "G-Dragon",
+      "artistEmoji": "👑",
+      "title": "BIGBANG @ Coachella 2026 (Weekend 1)",
+      "eventType": "concert",
+      "eventDate": "2026-04-12",
+      "venue": "Empire Polo Club",
+      "city": "Indio",
+      "country": "USA",
+      "isOfficial": true
+    },
+    {
+      "id": "bigbang-coachella-w2",
+      "artistId": "gdragon",
+      "artistName": "G-Dragon",
+      "artistEmoji": "👑",
+      "title": "BIGBANG @ Coachella 2026 (Weekend 2)",
+      "eventType": "concert",
+      "eventDate": "2026-04-19",
+      "venue": "Empire Polo Club",
+      "city": "Indio",
+      "country": "USA",
+      "isOfficial": true
+    },
+    {
+      "id": "skz-dominate-broadcast",
+      "artistId": "straykids",
+      "artistName": "Stray Kids",
+      "artistEmoji": "🖤",
+      "title": "Stray Kids 'dominATE Experience' Broadcast Premiere",
+      "eventType": "concert",
+      "eventDate": "2026-03-21",
+      "venue": "SoFi Stadium",
+      "city": "Inglewood",
+      "country": "USA",
+      "isOfficial": true
+    },
+    {
+      "id": "skz-govball-2026",
+      "artistId": "straykids",
+      "artistName": "Stray Kids",
+      "artistEmoji": "🖤",
+      "title": "Stray Kids @ Governors Ball 2026",
+      "eventType": "concert",
+      "eventDate": "2026-06-06",
+      "venue": "Flushing Meadows Park",
+      "city": "Queens, NY",
+      "country": "USA",
+      "isOfficial": true
+    },
+    {
+      "id": "bp-deadline-album",
+      "artistId": "blackpink",
+      "artistName": "블랙핑크",
+      "artistEmoji": "🖤",
+      "title": "BLACKPINK 3rd Mini Album 'Deadline' Release",
+      "eventType": "albumRelease",
+      "eventDate": "2026-02-27",
       "isOfficial": true
     }
   ]
