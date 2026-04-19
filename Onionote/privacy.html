@@ -14,16 +14,36 @@
   li { margin-bottom: 0.3rem; }
   code { background: #f4f4f4; padding: 1px 6px; border-radius: 3px; font-size: 0.9em; }
   .meta { color: #888; font-size: 0.9rem; }
-  .lang-switch { text-align: right; font-size: 0.9rem; }
-  hr { border: 0; border-top: 1px solid #ddd; margin: 3rem 0; }
+  .tabs { display: flex; gap: 4px; border-bottom: 1px solid #ddd; margin-bottom: 1.5rem; }
+  .tab-btn { background: none; border: 0; padding: 10px 18px; font-size: 0.95rem; cursor: pointer;
+             color: #888; border-bottom: 2px solid transparent; margin-bottom: -1px;
+             font-family: inherit; }
+  .tab-btn.active { color: #1F1F22; border-bottom-color: #3E5BA9; font-weight: 600; }
+  .tab-btn:hover { color: #1F1F22; }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #EFEFF2; background: #0F0F11; }
+    h2 { border-bottom-color: #2A2A2E; }
+    code { background: #1A1A1D; }
+    .tabs { border-bottom-color: #2A2A2E; }
+    .tab-btn { color: #9A9AA1; }
+    .tab-btn.active { color: #EFEFF2; border-bottom-color: #8FAEFF; }
+    .tab-btn:hover { color: #EFEFF2; }
+  }
 </style>
 </head>
 <body>
 
-<div class="lang-switch"><a href="#en">English</a></div>
+<div class="tabs" role="tablist">
+  <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-ko" id="tab-ko">한국어</button>
+  <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-en" id="tab-en">English</button>
+</div>
+
+<div class="tab-panel active" role="tabpanel" id="panel-ko" aria-labelledby="tab-ko">
 
 <h1>Onionote 개인정보 처리방침</h1>
-<p class="meta">최종 수정: 2026-04-19 · 버전 1.0 · 연락처: chungkil.kim@gmail.com</p>
+<p class="meta">최종 수정: 2026-04-19 · 버전 1.0 · 연락처: chungkil.cksw@gmail.com</p>
 
 <h2>1. 수집하는 정보</h2>
 <p>Onionote(이하 "앱")는 사용자의 개인을 식별할 수 있는 정보를 <strong>직접 수집하지 않습니다</strong>. 앱은 사용자의 필기 내용, 문서, 계정 정보, 연락처, 위치를 서버에 업로드하거나 저장하지 않습니다.</p>
@@ -74,12 +94,14 @@
 <p>본 방침이 변경될 경우 이 페이지를 업데이트하고 "최종 수정" 일자를 갱신합니다. 중요한 변경이 있는 경우 앱 내 공지로 알립니다.</p>
 
 <h2>8. 연락처</h2>
-<p>개인정보 관련 문의: <a href="mailto:chungkil.kim@gmail.com">chungkil.kim@gmail.com</a></p>
+<p>개인정보 관련 문의: <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a></p>
 
-<hr>
+</div>
 
-<h1 id="en">Onionote Privacy Policy</h1>
-<p class="meta">Last updated: 2026-04-19 · Version 1.0 · Contact: chungkil.kim@gmail.com</p>
+<div class="tab-panel" role="tabpanel" id="panel-en" aria-labelledby="tab-en">
+
+<h1>Onionote Privacy Policy</h1>
+<p class="meta">Last updated: 2026-04-19 · Version 1.0 · Contact: chungkil.cksw@gmail.com</p>
 
 <h2>1. Information We Collect</h2>
 <p>Onionote (the "App") does <strong>not directly collect personally identifiable information</strong>. The App does not upload your notes, documents, account info, contacts, or location to any server.</p>
@@ -130,7 +152,40 @@
 <p>When this policy changes, we update this page and the "Last updated" date. Significant changes will be announced in-app.</p>
 
 <h2>8. Contact</h2>
-<p>Privacy questions: <a href="mailto:chungkil.kim@gmail.com">chungkil.kim@gmail.com</a></p>
+<p>Privacy questions: <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a></p>
+
+</div>
+
+<script>
+(function () {
+  const tabs = document.querySelectorAll('.tab-btn');
+  const panels = document.querySelectorAll('.tab-panel');
+
+  function activate(tabId) {
+    tabs.forEach(function (t) {
+      const match = t.id === 'tab-' + tabId;
+      t.classList.toggle('active', match);
+      t.setAttribute('aria-selected', match ? 'true' : 'false');
+    });
+    panels.forEach(function (p) {
+      p.classList.toggle('active', p.id === 'panel-' + tabId);
+    });
+    try { history.replaceState(null, '', '#' + tabId); } catch (e) {}
+  }
+
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () {
+      activate(t.id.replace('tab-', ''));
+    });
+  });
+
+  // Deep-link support: ?lang=en, #en, #panel-en, or #en legacy anchor
+  const hash = (location.hash || '').replace('#', '').replace('panel-', '');
+  const params = new URLSearchParams(location.search);
+  const lang = params.get('lang');
+  if (lang === 'en' || hash === 'en') activate('en');
+})();
+</script>
 
 </body>
 </html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Onionote — 원본은 그대로, 필기는 레이어로</title>
+<meta name="description" content="PDF 원본을 건드리지 않고 필기하세요. 포토샵처럼 레이어를 쌓고 끄고 내보내세요. Apple Pencil 최적화, iCloud 동기화.">
+<meta property="og:title" content="Onionote — Keep PDFs pristine. Layer notes.">
+<meta property="og:description" content="Annotate PDFs without touching the original. Stack Photoshop-style layers, toggle them off, export any subset.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cksw.pe.kr/Onionote/">
+<link rel="canonical" href="https://cksw.pe.kr/Onionote/">
+<style>
+  :root { --accent: #3E5BA9; --bg: #FAFAFA; --fg: #1F1F22; --muted: #6A6A72; --card: #FFFFFF; --border: #E5E5EA; }
+  @media (prefers-color-scheme: dark) {
+    :root { --accent: #8FAEFF; --bg: #0F0F11; --fg: #EFEFF2; --muted: #9A9AA1; --card: #1A1A1D; --border: #2A2A2E; }
+  }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", sans-serif;
+         margin: 0; color: var(--fg); background: var(--bg); line-height: 1.6; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 48px 24px; }
+  header { text-align: center; padding: 64px 24px 32px; }
+  header .logo { font-size: 2.5rem; font-weight: 800; color: var(--accent); letter-spacing: -0.02em; }
+  header .tagline { font-size: 1.3rem; margin-top: 8px; color: var(--muted); }
+  header .tagline-en { font-size: 0.95rem; margin-top: 4px; color: var(--muted); opacity: 0.75; }
+  .cta { margin-top: 28px; }
+  .cta a { display: inline-block; background: var(--accent); color: white; text-decoration: none;
+           padding: 12px 24px; border-radius: 10px; font-weight: 600; font-size: 1rem; }
+  .cta a:hover { opacity: 0.9; }
+  .cta .note { display: block; margin-top: 10px; font-size: 0.85rem; color: var(--muted); }
+  section { padding: 40px 0; border-top: 1px solid var(--border); }
+  h2 { font-size: 1.5rem; margin-top: 0; }
+  h3 { font-size: 1.05rem; margin-bottom: 4px; }
+  .features { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 24px; }
+  .feat { background: var(--card); border: 1px solid var(--border); padding: 18px; border-radius: 12px; }
+  .feat .icon { font-size: 1.6rem; color: var(--accent); margin-bottom: 4px; }
+  .plans { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-top: 24px; }
+  .plan { background: var(--card); border: 1px solid var(--border); padding: 24px; border-radius: 12px; }
+  .plan.pro { border-color: var(--accent); }
+  .plan .price { font-size: 1.6rem; font-weight: 700; margin: 8px 0 16px; }
+  .plan ul { padding-left: 18px; margin: 0; }
+  .plan li { margin: 6px 0; }
+  footer { padding: 40px 24px; text-align: center; color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--border); }
+  footer a { color: var(--muted); margin: 0 8px; }
+  .lang-switch { text-align: right; font-size: 0.9rem; padding: 0 24px; }
+  .lang-switch a { color: var(--muted); }
+</style>
+</head>
+<body>
+
+<div class="lang-switch"><a href="#en">English</a></div>
+
+<header>
+  <div class="logo">Onionote</div>
+  <div class="tagline">원본은 그대로, 필기는 레이어로</div>
+  <div class="tagline-en">Keep PDFs pristine. Layer your notes.</div>
+  <div class="note" style="margin-top: 20px; color: var(--muted); font-size: 0.9rem;">iPad · iPhone · iOS 17+ 필요</div>
+</header>
+
+<div class="wrap">
+
+<section>
+  <h2>Onionote 가 뭔가요?</h2>
+  <p>중요한 PDF 에 필기하고 싶은데 원본이 덮어써지는 게 싫을 때, Onionote 는 <strong>원본을 그대로 보존</strong>하고 필기를 별도 레이어에 기록합니다. 포토샵의 레이어처럼, 필요 없는 레이어는 끄거나 <strong>원하는 것만 골라 내보낼 수 있어요.</strong></p>
+</section>
+
+<section>
+  <h2>주요 기능</h2>
+  <div class="features">
+    <div class="feat"><div class="icon">■</div><h3>레이어 시스템</h3><p>원본 PDF 는 그대로. 각 레이어에 따로 필기 → 끄거나, 일부만 내보내기.</p></div>
+    <div class="feat"><div class="icon">◆</div><h3>Apple Pencil 최적화</h3><p>Metal 기반 지연 없는 필기. 필압·기울기 대응. Pencil Pro 제스처 지원.</p></div>
+    <div class="feat"><div class="icon">☁</div><h3>iCloud 동기화</h3><p>모든 기기에서 문서가 같은 상태. Files 앱에서도 관리 가능.</p></div>
+    <div class="feat"><div class="icon">⇪</div><h3>유연한 Export</h3><p>레이어 합쳐진 PDF · 필기만 투명 PNG · 레이어별 선택 Export.</p></div>
+    <div class="feat"><div class="icon">✎</div><h3>6 종 브러시</h3><p>Pen · Pencil · Marker · Eraser 기본 + Pro 전용 Fountain Pen · Brush · Highlighter.</p></div>
+    <div class="feat"><div class="icon">★</div><h3>접근성 완비</h3><p>Dark Mode · Dynamic Type · VoiceOver · Reduce Motion 대응.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>요금</h2>
+  <div class="plans">
+    <div class="plan">
+      <h3>Free</h3>
+      <div class="price">₩0</div>
+      <ul>
+        <li>PDF 가져오기 · 필기 · 내보내기</li>
+        <li>레이어 최대 3개</li>
+        <li>월 10회 Export</li>
+        <li>iCloud 동기화</li>
+        <li>Library 에 광고 표시</li>
+      </ul>
+    </div>
+    <div class="plan pro">
+      <h3>Onionote Pro</h3>
+      <div class="price">월 $2.99 · 연 $9.99</div>
+      <ul>
+        <li>무제한 레이어</li>
+        <li>무제한 Export</li>
+        <li>레이어별 선택 Export</li>
+        <li>광고 제거</li>
+        <li>연간 72% 할인</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>도움이 필요하신가요?</h2>
+  <p><a href="support.html">지원 · 자주 묻는 질문 →</a></p>
+  <p><a href="privacy.html">개인정보 처리방침 →</a></p>
+  <p>문의: <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a></p>
+</section>
+
+<hr>
+
+<header id="en">
+  <div class="logo">Onionote</div>
+  <div class="tagline">Keep PDFs pristine. Layer your notes.</div>
+  <div class="note" style="margin-top: 20px; color: var(--muted); font-size: 0.9rem;">iPad · iPhone · Requires iOS 17+</div>
+</header>
+
+<div class="wrap">
+
+<section>
+  <h2>What is Onionote?</h2>
+  <p>When you want to annotate an important PDF without overwriting the original, Onionote <strong>keeps the source untouched</strong> and records your notes on separate layers. Like Photoshop layers — toggle them off when you don't need them, or <strong>export only the ones you want.</strong></p>
+</section>
+
+<section>
+  <h2>Features</h2>
+  <div class="features">
+    <div class="feat"><div class="icon">■</div><h3>Layer System</h3><p>The PDF stays untouched. Each layer records notes independently — toggle or export any subset.</p></div>
+    <div class="feat"><div class="icon">◆</div><h3>Apple Pencil-Optimized</h3><p>Zero-lag Metal strokes. Pressure · tilt aware. Pencil Pro gestures supported.</p></div>
+    <div class="feat"><div class="icon">☁</div><h3>iCloud Sync</h3><p>Same document state on every device. Manageable via the Files app.</p></div>
+    <div class="feat"><div class="icon">⇪</div><h3>Flexible Export</h3><p>Flattened PDF · transparent ink PNG · per-layer export selection.</p></div>
+    <div class="feat"><div class="icon">✎</div><h3>6 Brushes</h3><p>Pen · Pencil · Marker · Eraser free + Pro-only Fountain Pen · Brush · Highlighter.</p></div>
+    <div class="feat"><div class="icon">★</div><h3>Accessible</h3><p>Dark Mode · Dynamic Type · VoiceOver · Reduce Motion.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Pricing</h2>
+  <div class="plans">
+    <div class="plan">
+      <h3>Free</h3>
+      <div class="price">$0</div>
+      <ul>
+        <li>Import · annotate · export PDFs</li>
+        <li>Up to 3 layers</li>
+        <li>10 exports per month</li>
+        <li>iCloud sync</li>
+        <li>Ads in Library</li>
+      </ul>
+    </div>
+    <div class="plan pro">
+      <h3>Onionote Pro</h3>
+      <div class="price">$2.99/mo · $9.99/yr</div>
+      <ul>
+        <li>Unlimited layers</li>
+        <li>Unlimited exports</li>
+        <li>Per-layer export selection</li>
+        <li>No ads</li>
+        <li>Annual — 72% off</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Need help?</h2>
+  <p><a href="support.html">Support · FAQ →</a></p>
+  <p><a href="privacy.html#en">Privacy Policy →</a></p>
+  <p>Contact: <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a></p>
+</section>
+
+</div>
+
+<footer>
+  Onionote © 2026 chungkil kim ·
+  <a href="privacy.html">Privacy</a> ·
+  <a href="support.html">Support</a> ·
+  <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms (Apple Standard EULA)</a>
+</footer>
+
+</body>
+</html>
