@@ -23,6 +23,7 @@
     -webkit-font-smoothing: antialiased;
   }
   .hero {
+    position: relative;
     background: linear-gradient(135deg, var(--bg-from), var(--bg-to));
     color: white;
     padding: 96px 24px 80px;
@@ -95,6 +96,8 @@
     padding: 28px;
   }
   .privacy-note p { color: var(--muted); }
+  .privacy-note a { color: var(--bg-to); text-decoration: none; }
+  .privacy-note a:hover { text-decoration: underline; }
   footer {
     border-top: 1px solid var(--hairline);
     padding: 32px 24px;
@@ -108,23 +111,58 @@
     text-decoration: none;
   }
   footer a:hover { color: var(--text); }
-  .lang {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 13px;
-    color: var(--muted);
+  .lang-toggle {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    gap: 2px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 999px;
+    padding: 3px;
+    backdrop-filter: blur(8px);
   }
+  .lang-toggle button {
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 500;
+    opacity: 0.75;
+    transition: opacity .15s, background .15s, color .15s;
+  }
+  .lang-toggle button:hover { opacity: 1; }
+  .lang-toggle button.active {
+    background: rgba(255,255,255,0.9);
+    color: var(--bg-from);
+    opacity: 1;
+  }
+  body[data-lang="en"] .lang-ko { display: none; }
+  body[data-lang="ko"] .lang-en { display: none; }
 </style>
 </head>
-<body>
+<body data-lang="en">
 
 <header class="hero">
+  <div class="lang-toggle">
+    <button data-lang="en">EN</button>
+    <button data-lang="ko">한국어</button>
+  </div>
   <h1>AlbumLens</h1>
-  <p class="tagline">See, understand, and export your photo albums — all on-device.</p>
-  <span class="badge-store">Coming soon to the App Store</span>
+  <p class="tagline lang-en">See, understand, and export your photo albums — all on-device.</p>
+  <p class="tagline lang-ko">보고, 이해하고, 꺼내고 — 모두 기기 안에서.</p>
+  <span class="badge-store lang-en">Coming soon to the App Store</span>
+  <span class="badge-store lang-ko">App Store 출시 예정</span>
 </header>
 
 <main>
+
+<!-- ENGLISH -->
+<div class="lang-en">
 
 <section>
   <h2>What it does</h2>
@@ -164,15 +202,93 @@
   </div>
 </section>
 
+</div>
+
+<!-- KOREAN -->
+<div class="lang-ko" lang="ko">
+
+<section>
+  <h2>주요 기능</h2>
+  <div class="features">
+    <div class="feature">
+      <div class="icon">📚</div>
+      <h3>앨범 중심 갤러리</h3>
+      <p>iCloud Photos 의 모든 앨범을 4장 콜라주 표지가 있는 깔끔한 카드 그리드로 한눈에.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">📊</div>
+      <h3>통계</h3>
+      <p>연도별 분포, 장소 클러스터, 미디어 종류 비율 — 모두 기기 내에서 계산.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">📤</div>
+      <h3>내보내기</h3>
+      <p>앨범 전체를 Files 폴더로. 포맷 변환, GPS 제거, 파일명 규칙까지 지원.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">🏠</div>
+      <h3>위젯</h3>
+      <p>좋아하는 앨범을 홈 화면에 핀하여 한 번에 접근.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>처음부터 프라이버시 우선</h2>
+  <div class="privacy-note">
+    <p>
+      AlbumLens 는 Apple PhotoKit 으로 사진을 <strong>기기 내에서만</strong> 읽습니다.
+      사진과 메타데이터는 iPhone/iPad 밖으로 절대 나가지 않습니다.
+      Firebase Analytics 를 통한 익명·집계 사용 이벤트와 Google AdMob 광고만 사용하며 —
+      자세한 내용은 <a href="privacy.html">개인정보처리방침</a> 페이지에서 확인할 수 있습니다.
+    </p>
+  </div>
+</section>
+
+</div>
+
 </main>
 
 <footer>
-  <a href="privacy.html">Privacy</a>
-  <a href="support.html">Support</a>
-  <a href="mailto:chungkil.cksw@gmail.com">Contact</a>
-  <p class="lang">한국어 사용자: <a href="privacy.html">개인정보처리방침</a> · <a href="support.html">고객 지원</a></p>
+  <span class="lang-en">
+    <a href="privacy.html">Privacy</a>
+    <a href="support.html">Support</a>
+    <a href="terms.html">Terms</a>
+    <a href="mailto:chungkil.cksw@gmail.com">Contact</a>
+  </span>
+  <span class="lang-ko">
+    <a href="privacy.html">개인정보처리방침</a>
+    <a href="support.html">고객 지원</a>
+    <a href="terms.html">이용약관</a>
+    <a href="mailto:chungkil.cksw@gmail.com">문의</a>
+  </span>
   <p style="margin-top: 16px;">© 2026 AlbumLens. All rights reserved.</p>
 </footer>
+
+<script>
+(function() {
+  var KEY = 'albumlens.lang';
+  function setLang(lang) {
+    document.body.setAttribute('data-lang', lang);
+    document.documentElement.setAttribute('lang', lang);
+    try { localStorage.setItem(KEY, lang); } catch (e) {}
+    var buttons = document.querySelectorAll('.lang-toggle button');
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].classList.toggle('active', buttons[i].getAttribute('data-lang') === lang);
+    }
+  }
+  var saved = null;
+  try { saved = localStorage.getItem(KEY); } catch (e) {}
+  var initial = saved || ((navigator.language || '').toLowerCase().indexOf('ko') === 0 ? 'ko' : 'en');
+  setLang(initial);
+  var buttons = document.querySelectorAll('.lang-toggle button');
+  for (var i = 0; i < buttons.length; i++) {
+    (function(btn) {
+      btn.addEventListener('click', function() { setLang(btn.getAttribute('data-lang')); });
+    })(buttons[i]);
+  }
+})();
+</script>
 
 </body>
 </html>
