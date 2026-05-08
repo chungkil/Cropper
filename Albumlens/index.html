@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AlbumLens — See your photo albums in a new light</title>
+<meta name="description" content="AlbumLens helps you browse, understand, and export your iCloud Photos albums on iPhone and iPad.">
+<style>
+  :root {
+    --bg-from: #7B5BFF;
+    --bg-to: #4A90FF;
+    --text: #1a1a1a;
+    --muted: #666;
+    --card: #ffffff;
+    --hairline: rgba(0,0,0,0.08);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, "Apple SD Gothic Neo", sans-serif;
+    color: var(--text);
+    background: #fafafa;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .hero {
+    background: linear-gradient(135deg, var(--bg-from), var(--bg-to));
+    color: white;
+    padding: 96px 24px 80px;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+  .hero p.tagline {
+    font-size: 20px;
+    opacity: 0.92;
+    max-width: 640px;
+    margin: 0 auto 32px;
+  }
+  .badge-store {
+    display: inline-block;
+    background: rgba(0,0,0,0.18);
+    color: white;
+    padding: 12px 22px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+  main {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 80px 24px;
+  }
+  section + section { margin-top: 80px; }
+  h2 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+  }
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  .feature {
+    background: var(--card);
+    border: 1px solid var(--hairline);
+    border-radius: 16px;
+    padding: 24px;
+  }
+  .feature .icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+  .feature h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .feature p {
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .privacy-note {
+    background: var(--card);
+    border: 1px solid var(--hairline);
+    border-radius: 16px;
+    padding: 28px;
+  }
+  .privacy-note p { color: var(--muted); }
+  footer {
+    border-top: 1px solid var(--hairline);
+    padding: 32px 24px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+  }
+  footer a {
+    color: var(--muted);
+    margin: 0 12px;
+    text-decoration: none;
+  }
+  footer a:hover { color: var(--text); }
+  .lang {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <h1>AlbumLens</h1>
+  <p class="tagline">See, understand, and export your photo albums — all on-device.</p>
+  <span class="badge-store">Coming soon to the App Store</span>
+</header>
+
+<main>
+
+<section>
+  <h2>What it does</h2>
+  <div class="features">
+    <div class="feature">
+      <div class="icon">📚</div>
+      <h3>Album-first gallery</h3>
+      <p>Browse all your iCloud Photos albums in a clean, card-based grid with 4-photo collage covers.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">📊</div>
+      <h3>Insights</h3>
+      <p>Year breakdowns, location clusters, and media type ratios — all computed on your device.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">📤</div>
+      <h3>Export</h3>
+      <p>Send entire albums to a Files folder with format conversion, GPS stripping, and naming policies.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">🏠</div>
+      <h3>Widgets</h3>
+      <p>Pin a favorite album to your Home Screen for one-tap access.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Privacy by design</h2>
+  <div class="privacy-note">
+    <p>
+      AlbumLens reads your photos through Apple's PhotoKit framework <strong>on your device only</strong>.
+      Your photos and metadata never leave your iPhone or iPad.
+      We collect anonymous, aggregated usage events through Firebase Analytics and serve ads through Google AdMob — full details on the
+      <a href="privacy.html">Privacy</a> page.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <a href="privacy.html">Privacy</a>
+  <a href="support.html">Support</a>
+  <a href="mailto:chungkil.cksw@gmail.com">Contact</a>
+  <p class="lang">한국어 사용자: <a href="privacy.html">개인정보처리방침</a> · <a href="support.html">고객 지원</a></p>
+  <p style="margin-top: 16px;">© 2026 AlbumLens. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
