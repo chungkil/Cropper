@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>라이브포토 변환기 — Live Photo를 APNG·GIF·WebP·동영상으로</title>
-<meta name="description" content="아이폰 Live Photo를 APNG, GIF, WebP, 동영상(mp4)으로 변환하는 iOS 앱.">
+<title>Live Photo Converter — to APNG, GIF, WebP and video</title>
+<meta name="description" content="An iOS app that converts iPhone Live Photos into APNG, GIF, WebP, or video (mp4).">
 <style>
   :root { color-scheme: light dark; }
   * { box-sizing: border-box; }
@@ -17,11 +17,13 @@
   }
   @media (prefers-color-scheme: dark) {
     body { color: #f5f5f7; background: #111; }
-    .card { background: #1c1c1e !important; }
-    .feature { background: #1c1c1e !important; }
+    .card, .feature { background: #1c1c1e !important; }
     a { color: #5ac8fa; }
   }
-  .lang-switch { position: absolute; top: 16px; right: 20px; z-index: 10; font-size: 0.9rem; }
+  .lang-switch {
+    position: absolute; top: 16px; right: 20px; z-index: 10;
+    font-size: 0.9rem;
+  }
   .lang-switch a {
     color: #fff; text-decoration: none; opacity: 0.85;
     padding: 4px 10px; border: 1px solid rgba(255,255,255,0.6); border-radius: 999px;
@@ -61,42 +63,41 @@
 </head>
 <body>
 <header>
-  <div class="lang-switch"><a href="en/index.html" hreflang="en">English</a></div>
-  <h1>라이브포토 변환기</h1>
-  <p>Live Photo를 APNG · GIF · WebP · 동영상으로</p>
+  <div class="lang-switch"><a href="../index.html" hreflang="ko">한국어</a></div>
+  <h1>Live Photo Converter</h1>
+  <p>Turn Live Photos into APNG, GIF, WebP, or video</p>
 </header>
 <main>
   <section>
-    <h2>소개</h2>
+    <h2>About</h2>
     <div class="card">
-      <p>라이브포토 변환기는 아이폰의 <strong>Live Photo</strong>를 APNG, GIF, WebP, 동영상(mp4)으로 변환하는 가장 간단한 방법입니다.
-      사진 라이브러리에서 Live Photo를 선택하고 원하는 포맷만 고르면 자동으로 변환합니다.
-      변환된 파일은 앱 안에서 바로 재생해보고, 다른 앱으로 공유하거나 파일 앱에 저장할 수 있습니다.</p>
+      <p>Live Photo Converter is the simplest way to turn your iPhone <strong>Live Photos</strong> into APNG, GIF, WebP, or video (mp4).
+      Pick a Live Photo from your library, choose a format, and the app converts it automatically.
+      You can preview the result in the app, share it, or save it to Photos and Files.</p>
     </div>
   </section>
 
   <section>
-    <h2>주요 기능</h2>
+    <h2>Features</h2>
     <div class="features">
-      <div class="feature"><h3>4가지 포맷 변환</h3><p>APNG(고화질·투명), GIF(범용), WebP(고효율), 동영상(mp4, 소리 포함) 중 선택합니다.</p></div>
-      <div class="feature"><h3>소리까지 보존</h3><p>동영상(mp4)으로 변환하면 Live Photo의 오디오를 그대로 담습니다.</p></div>
-      <div class="feature"><h3>앱 내 미리보기</h3><p>변환 결과를 앱 안에서 바로 재생해 확인할 수 있습니다.</p></div>
-      <div class="feature"><h3>파일 관리</h3><p>변환한 결과를 내 파일 목록에서 다시 보고 공유·삭제할 수 있습니다.</p></div>
+      <div class="feature"><h3>Four output formats</h3><p>APNG (high quality, transparent), GIF (universal), WebP (efficient), and video (mp4, with sound).</p></div>
+      <div class="feature"><h3>Keeps the sound</h3><p>Export to video (mp4) to preserve the audio from your Live Photo.</p></div>
+      <div class="feature"><h3>In-app preview</h3><p>Play back the converted result right inside the app.</p></div>
+      <div class="feature"><h3>File management</h3><p>Revisit, share, and delete your conversions from My Files.</p></div>
     </div>
   </section>
 
   <section>
-    <h2>사용 방법</h2>
+    <h2>How to use</h2>
     <div class="card">
       <ol>
-        <li>앱을 실행하고 <strong>라이브 포토 선택하기</strong>를 탭합니다.</li>
-        <li>사진 라이브러리에서 변환할 Live Photo를 한 장 선택합니다.</li>
-        <li>APNG · GIF · WebP · 동영상 중 원하는 포맷을 선택합니다.</li>
-        <li>변환이 끝나면 미리보기에서 확인하고 공유하거나 <strong>내 파일</strong>에서 다시 봅니다.</li>
+        <li>Launch the app and tap <strong>Select Live Photo</strong>.</li>
+        <li>Pick a Live Photo from your library.</li>
+        <li>Choose APNG, GIF, WebP, or video as the output format.</li>
+        <li>Preview the result, then share it or revisit it from <strong>My Files</strong>.</li>
       </ol>
     </div>
   </section>
-
 </main>
 <footer>
   <a href="support.html">Support</a>·
