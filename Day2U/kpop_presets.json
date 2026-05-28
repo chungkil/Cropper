@@ -1,6 +1,6 @@
 {
-  "version": "2.5.1",
-  "lastUpdated": "2026-04-28",
+  "version": "2.5.2",
+  "lastUpdated": "2026-05-28",
   "artists": [
     {
       "id": "bts",
@@ -3429,6 +3429,105 @@
       "venue": "교세라 돔 오사카",
       "city": "오사카",
       "country": "일본",
+      "isOfficial": true
+    },
+    {
+      "id": "twice-this-is-for-amsterdam",
+      "artistId": "twice",
+      "artistName": "트와이스",
+      "artistEmoji": "🍭",
+      "title": "TWICE [THIS IS FOR] World Tour - 암스테르담",
+      "eventType": "concert",
+      "eventDate": "2026-05-30",
+      "venue": "Ziggo Dome",
+      "city": "암스테르담",
+      "country": "네덜란드",
+      "isOfficial": true
+    },
+    {
+      "id": "twice-this-is-for-london",
+      "artistId": "twice",
+      "artistName": "트와이스",
+      "artistEmoji": "🍭",
+      "title": "TWICE [THIS IS FOR] World Tour - 런던",
+      "eventType": "concert",
+      "eventDate": "2026-06-03",
+      "endDate": "2026-06-04",
+      "venue": "The O2 Arena",
+      "city": "런던",
+      "country": "영국",
+      "isOfficial": true
+    },
+    {
+      "id": "treasure-newwav-album",
+      "artistId": "treasure",
+      "artistName": "트레저",
+      "artistEmoji": "💎",
+      "title": "TREASURE 4th Mini Album 'NEW WAV' 발매",
+      "eventType": "albumRelease",
+      "eventDate": "2026-06-01",
+      "isOfficial": true
+    },
+    {
+      "id": "ateez-goldenhour-part5-album",
+      "artistId": "ateez",
+      "artistName": "에이티즈",
+      "artistEmoji": "🏴‍☠️",
+      "title": "ATEEZ 'GOLDEN HOUR : Part.5' 발매",
+      "eventType": "albumRelease",
+      "eventDate": "2026-06-26",
+      "isOfficial": true
+    },
+    {
+      "id": "ateez-bst-london",
+      "artistId": "ateez",
+      "artistName": "에이티즈",
+      "artistEmoji": "🏴‍☠️",
+      "title": "ATEEZ @ BST Hyde Park 2026 - 런던",
+      "eventType": "concert",
+      "eventDate": "2026-06-28",
+      "venue": "Hyde Park",
+      "city": "런던",
+      "country": "영국",
+      "isOfficial": true
+    },
+    {
+      "id": "stray-kids-straycity-bogota",
+      "artistId": "stray-kids",
+      "artistName": "스트레이 키즈",
+      "artistEmoji": "🖤",
+      "title": "Stray Kids STRAYCITY - 보고타",
+      "eventType": "concert",
+      "eventDate": "2026-09-09",
+      "venue": "Vive Claro Distrito Cultural",
+      "city": "보고타",
+      "country": "콜롬비아",
+      "isOfficial": true
+    },
+    {
+      "id": "stray-kids-straycity-buenosaires",
+      "artistId": "stray-kids",
+      "artistName": "스트레이 키즈",
+      "artistEmoji": "🖤",
+      "title": "Stray Kids STRAYCITY - 부에노스아이레스",
+      "eventType": "concert",
+      "eventDate": "2026-09-14",
+      "venue": "Hipódromo de San Isidro",
+      "city": "부에노스아이레스",
+      "country": "아르헨티나",
+      "isOfficial": true
+    },
+    {
+      "id": "stray-kids-straycity-mexicocity",
+      "artistId": "stray-kids",
+      "artistName": "스트레이 키즈",
+      "artistEmoji": "🖤",
+      "title": "Stray Kids STRAYCITY - 멕시코시티",
+      "eventType": "concert",
+      "eventDate": "2026-09-25",
+      "venue": "Estadio GNP Seguros",
+      "city": "멕시코시티",
+      "country": "멕시코",
       "isOfficial": true
     }
   ]
