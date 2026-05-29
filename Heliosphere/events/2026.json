@@ -13,7 +13,10 @@
       "peakDate": "2026-01-03T21:00:00Z",
       "endDate": "2026-01-04",
       "source": "remote",
-      "extraInfo": { "zhr": 120, "moonIllumination": 1.0 }
+      "extraInfo": {
+        "zhr": 120,
+        "moonIllumination": 1.0
+      }
     },
     {
       "id": "earth_perihelion_2026",
@@ -35,17 +38,50 @@
       "date": "2026-01-10",
       "source": "remote",
       "localizedStrings": {
-        "en": { "title": "Jupiter at Opposition", "description": "Jupiter is at its closest to Earth and fully illuminated by the Sun. The giant planet will be brighter than any other time of the year in the constellation Gemini." },
-        "ko": { "title": "목성 충", "description": "목성이 지구에 가장 가까워지며 태양에 의해 완전히 밝혀집니다. 쌍둥이자리에서 올해 가장 밝게 빛나는 거대한 행성을 관측하세요." },
-        "ja": { "title": "木星の衝", "description": "木星が地球に最も近づき、太陽の光を完全に受けます。ふたご座で今年最も明るく輝く巨大惑星を観測できます。" },
-        "zh-Hans": { "title": "木星冲日", "description": "木星距离地球最近,被太阳完全照亮。这颗巨行星在双子座中全年最亮。" },
-        "zh-Hant": { "title": "木星衝", "description": "木星距離地球最近,被太陽完全照亮。這顆巨行星在雙子座中全年最亮。" },
-        "de": { "title": "Jupiter in Opposition", "description": "Jupiter steht der Erde am nächsten und wird von der Sonne voll beleuchtet. Der Riesenplanet erstrahlt im Sternbild Zwillinge am hellsten des Jahres." },
-        "es": { "title": "Oposición de Júpiter", "description": "Júpiter está en su punto más cercano a la Tierra e iluminado completamente por el Sol. El planeta gigante brillará más que nunca en la constelación de Géminis." },
-        "fr": { "title": "Jupiter en opposition", "description": "Jupiter est au plus proche de la Terre et entièrement éclairée par le Soleil. La planète géante brille au maximum dans la constellation des Gémeaux." },
-        "it": { "title": "Opposizione di Giove", "description": "Giove è nel punto più vicino alla Terra e completamente illuminato dal Sole. Il pianeta gigante brilla al massimo nella costellazione dei Gemelli." },
-        "pt-BR": { "title": "Oposição de Júpiter", "description": "Júpiter está no ponto mais próximo da Terra e totalmente iluminado pelo Sol. O planeta gigante brilhará ao máximo na constelação de Gêmeos." },
-        "ru": { "title": "Противостояние Юпитера", "description": "Юпитер находится ближе всего к Земле и полностью освещён Солнцем. Гигантская планета сияет ярче всего в созвездии Близнецов." }
+        "en": {
+          "title": "Jupiter at Opposition",
+          "description": "Jupiter is at its closest to Earth and fully illuminated by the Sun. The giant planet will be brighter than any other time of the year in the constellation Gemini."
+        },
+        "ko": {
+          "title": "목성 충",
+          "description": "목성이 지구에 가장 가까워지며 태양에 의해 완전히 밝혀집니다. 쌍둥이자리에서 올해 가장 밝게 빛나는 거대한 행성을 관측하세요."
+        },
+        "ja": {
+          "title": "木星の衝",
+          "description": "木星が地球に最も近づき、太陽の光を完全に受けます。ふたご座で今年最も明るく輝く巨大惑星を観測できます。"
+        },
+        "zh-Hans": {
+          "title": "木星冲日",
+          "description": "木星距离地球最近,被太阳完全照亮。这颗巨行星在双子座中全年最亮。"
+        },
+        "zh-Hant": {
+          "title": "木星衝",
+          "description": "木星距離地球最近,被太陽完全照亮。這顆巨行星在雙子座中全年最亮。"
+        },
+        "de": {
+          "title": "Jupiter in Opposition",
+          "description": "Jupiter steht der Erde am nächsten und wird von der Sonne voll beleuchtet. Der Riesenplanet erstrahlt im Sternbild Zwillinge am hellsten des Jahres."
+        },
+        "es": {
+          "title": "Oposición de Júpiter",
+          "description": "Júpiter está en su punto más cercano a la Tierra e iluminado completamente por el Sol. El planeta gigante brillará más que nunca en la constelación de Géminis."
+        },
+        "fr": {
+          "title": "Jupiter en opposition",
+          "description": "Jupiter est au plus proche de la Terre et entièrement éclairée par le Soleil. La planète géante brille au maximum dans la constellation des Gémeaux."
+        },
+        "it": {
+          "title": "Opposizione di Giove",
+          "description": "Giove è nel punto più vicino alla Terra e completamente illuminato dal Sole. Il pianeta gigante brilla al massimo nella costellazione dei Gemelli."
+        },
+        "pt-BR": {
+          "title": "Oposição de Júpiter",
+          "description": "Júpiter está no ponto mais próximo da Terra e totalmente iluminado pelo Sol. O planeta gigante brilhará ao máximo na constelação de Gêmeos."
+        },
+        "ru": {
+          "title": "Противостояние Юпитера",
+          "description": "Юпитер находится ближе всего к Земле и полностью освещён Солнцем. Гигантская планета сияет ярче всего в созвездии Близнецов."
+        }
       }
     },
     {
@@ -57,19 +93,56 @@
       "icon": "sun.max.fill",
       "date": "2026-02-17T12:12:00Z",
       "source": "remote",
-      "visibility": ["Antarctica", "South America", "Southern Africa"],
+      "visibility": [
+        "Antarctica",
+        "South America",
+        "Southern Africa"
+      ],
       "localizedStrings": {
-        "en": { "title": "Annular Solar Eclipse", "description": "A 'ring of fire' solar eclipse with annularity visible from Antarctica. Partial eclipse visible from southern South America and southern Africa." },
-        "ko": { "title": "금환 일식", "description": "남극에서 '불의 고리' 금환 일식이 관측됩니다. 남미 남부와 남아프리카에서 부분 일식을 볼 수 있습니다." },
-        "ja": { "title": "金環日食", "description": "南極で「火の輪」金環日食が観測されます。南米南部と南アフリカでは部分日食が見られます。" },
-        "zh-Hans": { "title": "日环食", "description": "南极洲可观测到「火环」日环食。南美洲南部和南非可见日偏食。" },
-        "zh-Hant": { "title": "日環食", "description": "南極洲可觀測到「火環」日環食。南美洲南部和南非可見日偏食。" },
-        "de": { "title": "Ringförmige Sonnenfinsternis", "description": "Eine ringförmige Sonnenfinsternis ('Feuerring') ist von der Antarktis aus sichtbar. Partielle Finsternis in Südamerika und Südafrika." },
-        "es": { "title": "Eclipse solar anular", "description": "Un eclipse solar de 'anillo de fuego' visible desde la Antártida. Eclipse parcial visible desde el sur de Sudamérica y el sur de África." },
-        "fr": { "title": "Éclipse solaire annulaire", "description": "Une éclipse solaire en « anneau de feu » visible depuis l'Antarctique. Éclipse partielle visible depuis le sud de l'Amérique du Sud et le sud de l'Afrique." },
-        "it": { "title": "Eclissi solare anulare", "description": "Un'eclissi solare ad 'anello di fuoco' visibile dall'Antartide. Eclissi parziale visibile dal Sud America e dal Sudafrica." },
-        "pt-BR": { "title": "Eclipse solar anular", "description": "Um eclipse solar em 'anel de fogo' visível da Antártida. Eclipse parcial visível do sul da América do Sul e da África." },
-        "ru": { "title": "Кольцевое солнечное затмение", "description": "Кольцевое «огненное кольцо» солнечное затмение, видимое из Антарктиды. Частичное затмение видно из южной части Южной Америки и южной Африки." }
+        "en": {
+          "title": "Annular Solar Eclipse",
+          "description": "A 'ring of fire' solar eclipse with annularity visible from Antarctica. Partial eclipse visible from southern South America and southern Africa."
+        },
+        "ko": {
+          "title": "금환 일식",
+          "description": "남극에서 '불의 고리' 금환 일식이 관측됩니다. 남미 남부와 남아프리카에서 부분 일식을 볼 수 있습니다."
+        },
+        "ja": {
+          "title": "金環日食",
+          "description": "南極で「火の輪」金環日食が観測されます。南米南部と南アフリカでは部分日食が見られます。"
+        },
+        "zh-Hans": {
+          "title": "日环食",
+          "description": "南极洲可观测到「火环」日环食。南美洲南部和南非可见日偏食。"
+        },
+        "zh-Hant": {
+          "title": "日環食",
+          "description": "南極洲可觀測到「火環」日環食。南美洲南部和南非可見日偏食。"
+        },
+        "de": {
+          "title": "Ringförmige Sonnenfinsternis",
+          "description": "Eine ringförmige Sonnenfinsternis ('Feuerring') ist von der Antarktis aus sichtbar. Partielle Finsternis in Südamerika und Südafrika."
+        },
+        "es": {
+          "title": "Eclipse solar anular",
+          "description": "Un eclipse solar de 'anillo de fuego' visible desde la Antártida. Eclipse parcial visible desde el sur de Sudamérica y el sur de África."
+        },
+        "fr": {
+          "title": "Éclipse solaire annulaire",
+          "description": "Une éclipse solaire en « anneau de feu » visible depuis l'Antarctique. Éclipse partielle visible depuis le sud de l'Amérique du Sud et le sud de l'Afrique."
+        },
+        "it": {
+          "title": "Eclissi solare anulare",
+          "description": "Un'eclissi solare ad 'anello di fuoco' visibile dall'Antartide. Eclissi parziale visibile dal Sud America e dal Sudafrica."
+        },
+        "pt-BR": {
+          "title": "Eclipse solar anular",
+          "description": "Um eclipse solar em 'anel de fogo' visível da Antártida. Eclipse parcial visível do sul da América do Sul e da África."
+        },
+        "ru": {
+          "title": "Кольцевое солнечное затмение",
+          "description": "Кольцевое «огненное кольцо» солнечное затмение, видимое из Антарктиды. Частичное затмение видно из южной части Южной Америки и южной Африки."
+        }
       }
     },
     {
@@ -81,19 +154,57 @@
       "icon": "moon.fill",
       "date": "2026-03-03T11:33:00Z",
       "source": "remote",
-      "visibility": ["East Asia", "Australia", "Pacific", "North America"],
+      "visibility": [
+        "East Asia",
+        "Australia",
+        "Pacific",
+        "North America"
+      ],
       "localizedStrings": {
-        "en": { "title": "Total Lunar Eclipse", "description": "A total lunar eclipse (Blood Moon) with 58 minutes of totality. Visible from East Asia, Australia, the Pacific, and western North America." },
-        "ko": { "title": "개기 월식", "description": "58분간의 개기 상태를 가진 개기 월식(블러드 문)입니다. 동아시아, 호주, 태평양, 북미 서부에서 관측 가능합니다." },
-        "ja": { "title": "皆既月食", "description": "58分間の皆既月食（ブラッドムーン）。東アジア、オーストラリア、太平洋、北米西部で観測可能です。" },
-        "zh-Hans": { "title": "月全食", "description": "全食持续58分钟（血月）。东亚、澳大利亚、太平洋和北美西部可观测。" },
-        "zh-Hant": { "title": "月全食", "description": "全食持續58分鐘（血月）。東亞、澳洲、太平洋和北美西部可觀測。" },
-        "de": { "title": "Totale Mondfinsternis", "description": "Eine totale Mondfinsternis (Blutmond) mit 58 Minuten Totalität. Sichtbar aus Ostasien, Australien, dem Pazifik und Westnordamerika." },
-        "es": { "title": "Eclipse lunar total", "description": "Un eclipse lunar total (Luna de Sangre) con 58 minutos de totalidad. Visible desde Asia Oriental, Australia, el Pacífico y el oeste de Norteamérica." },
-        "fr": { "title": "Éclipse lunaire totale", "description": "Une éclipse lunaire totale (Lune de sang) de 58 minutes de totalité. Visible depuis l'Asie de l'Est, l'Australie, le Pacifique et l'ouest de l'Amérique du Nord." },
-        "it": { "title": "Eclissi lunare totale", "description": "Un'eclissi lunare totale (Luna di sangue) con 58 minuti di totalità. Visibile dall'Asia orientale, Australia, Pacifico e Nord America occidentale." },
-        "pt-BR": { "title": "Eclipse lunar total", "description": "Um eclipse lunar total (Lua de Sangue) com 58 minutos de totalidade. Visível do Leste Asiático, Austrália, Pacífico e oeste da América do Norte." },
-        "ru": { "title": "Полное лунное затмение", "description": "Полное лунное затмение (Кровавая Луна) продолжительностью 58 минут. Видимо из Восточной Азии, Австралии, Тихого океана и западной части Северной Америки." }
+        "en": {
+          "title": "Total Lunar Eclipse",
+          "description": "A total lunar eclipse (Blood Moon) with 58 minutes of totality. Visible from East Asia, Australia, the Pacific, and western North America."
+        },
+        "ko": {
+          "title": "개기 월식",
+          "description": "58분간의 개기 상태를 가진 개기 월식(블러드 문)입니다. 동아시아, 호주, 태평양, 북미 서부에서 관측 가능합니다."
+        },
+        "ja": {
+          "title": "皆既月食",
+          "description": "58分間の皆既月食（ブラッドムーン）。東アジア、オーストラリア、太平洋、北米西部で観測可能です。"
+        },
+        "zh-Hans": {
+          "title": "月全食",
+          "description": "全食持续58分钟（血月）。东亚、澳大利亚、太平洋和北美西部可观测。"
+        },
+        "zh-Hant": {
+          "title": "月全食",
+          "description": "全食持續58分鐘（血月）。東亞、澳洲、太平洋和北美西部可觀測。"
+        },
+        "de": {
+          "title": "Totale Mondfinsternis",
+          "description": "Eine totale Mondfinsternis (Blutmond) mit 58 Minuten Totalität. Sichtbar aus Ostasien, Australien, dem Pazifik und Westnordamerika."
+        },
+        "es": {
+          "title": "Eclipse lunar total",
+          "description": "Un eclipse lunar total (Luna de Sangre) con 58 minutos de totalidad. Visible desde Asia Oriental, Australia, el Pacífico y el oeste de Norteamérica."
+        },
+        "fr": {
+          "title": "Éclipse lunaire totale",
+          "description": "Une éclipse lunaire totale (Lune de sang) de 58 minutes de totalité. Visible depuis l'Asie de l'Est, l'Australie, le Pacifique et l'ouest de l'Amérique du Nord."
+        },
+        "it": {
+          "title": "Eclissi lunare totale",
+          "description": "Un'eclissi lunare totale (Luna di sangue) con 58 minuti di totalità. Visibile dall'Asia orientale, Australia, Pacifico e Nord America occidentale."
+        },
+        "pt-BR": {
+          "title": "Eclipse lunar total",
+          "description": "Um eclipse lunar total (Lua de Sangue) com 58 minutos de totalidade. Visível do Leste Asiático, Austrália, Pacífico e oeste da América do Norte."
+        },
+        "ru": {
+          "title": "Полное лунное затмение",
+          "description": "Полное лунное затмение (Кровавая Луна) продолжительностью 58 минут. Видимо из Восточной Азии, Австралии, Тихого океана и западной части Северной Америки."
+        }
       }
     },
     {
@@ -117,7 +228,10 @@
       "peakDate": "2026-04-22T19:15:00Z",
       "endDate": "2026-04-23",
       "source": "remote",
-      "extraInfo": { "zhr": 18, "moonIllumination": 0.27 }
+      "extraInfo": {
+        "zhr": 18,
+        "moonIllumination": 0.27
+      }
     },
     {
       "id": "eta_aquariids_2026",
@@ -130,7 +244,122 @@
       "peakDate": "2026-05-05T03:51:00Z",
       "endDate": "2026-05-06",
       "source": "remote",
-      "extraInfo": { "zhr": 50, "moonIllumination": 0.84 }
+      "extraInfo": {
+        "zhr": 50,
+        "moonIllumination": 0.84
+      }
+    },
+    {
+      "id": "venus_jupiter_conjunction_2026_06",
+      "baseId": "venus_jupiter_conjunction",
+      "titleKey": "event_venus_jupiter_2026_06",
+      "descriptionKey": "event_venus_jupiter_2026_06_desc",
+      "category": "planetaryEvent",
+      "icon": "circle.circle",
+      "date": "2026-06-09",
+      "source": "remote",
+      "localizedStrings": {
+        "en": {
+          "title": "Venus–Jupiter Conjunction",
+          "description": "The two brightest planets pass within ~1° of each other in the evening sky — a striking, easy-to-spot pairing."
+        },
+        "ko": {
+          "title": "금성-목성 합",
+          "description": "가장 밝은 두 행성이 저녁 하늘에서 약 1° 이내로 근접합니다. 맨눈으로도 쉽게 찾을 수 있는 인상적인 만남입니다."
+        },
+        "ja": {
+          "title": "金星と木星の合",
+          "description": "最も明るい2つの惑星が夕方の空で約1°以内に接近します。肉眼でも簡単に見つけられる印象的な共演です。"
+        },
+        "zh-Hans": {
+          "title": "金星木星合",
+          "description": "两颗最亮的行星在傍晚天空中相距约1°以内,肉眼即可轻松找到的醒目景象。"
+        },
+        "zh-Hant": {
+          "title": "金星木星合",
+          "description": "兩顆最亮的行星在傍晚天空中相距約1°以內,肉眼即可輕鬆找到的醒目景象。"
+        },
+        "de": {
+          "title": "Venus-Jupiter-Konjunktion",
+          "description": "Die beiden hellsten Planeten nähern sich am Abendhimmel auf etwa 1° — ein auffälliges, leicht zu findendes Paar."
+        },
+        "es": {
+          "title": "Conjunción Venus-Júpiter",
+          "description": "Los dos planetas más brillantes se acercan a ~1° en el cielo vespertino, un encuentro llamativo y fácil de ver."
+        },
+        "fr": {
+          "title": "Conjonction Vénus-Jupiter",
+          "description": "Les deux planètes les plus brillantes se rapprochent à ~1° dans le ciel du soir — un duo frappant et facile à repérer."
+        },
+        "it": {
+          "title": "Congiunzione Venere-Giove",
+          "description": "I due pianeti più luminosi si avvicinano a ~1° nel cielo serale: un incontro spettacolare e facile da individuare."
+        },
+        "pt-BR": {
+          "title": "Conjunção Vênus-Júpiter",
+          "description": "Os dois planetas mais brilhantes se aproximam a ~1° no céu vespertino — um par marcante e fácil de avistar."
+        },
+        "ru": {
+          "title": "Соединение Венеры и Юпитера",
+          "description": "Две самые яркие планеты сближаются до ~1° на вечернем небе — заметная и легко находимая пара."
+        }
+      }
+    },
+    {
+      "id": "triple_alignment_2026_06",
+      "baseId": "triple_planet_alignment",
+      "titleKey": "event_triple_alignment_2026_06",
+      "descriptionKey": "event_triple_alignment_2026_06_desc",
+      "category": "planetaryEvent",
+      "icon": "circle.circle",
+      "date": "2026-06-12",
+      "source": "remote",
+      "localizedStrings": {
+        "en": {
+          "title": "Mercury–Venus–Jupiter Alignment",
+          "description": "Three planets gather low in the western evening sky — a rare and photogenic grouping just after sunset."
+        },
+        "ko": {
+          "title": "수성-금성-목성 정렬",
+          "description": "세 행성이 서쪽 저녁 하늘 낮은 곳에 모입니다. 일몰 직후 보이는 희귀하고 사진 찍기 좋은 배열입니다."
+        },
+        "ja": {
+          "title": "水星・金星・木星の整列",
+          "description": "3つの惑星が西の夕空の低い位置に集まります。日没直後に見える希少でフォトジェニックな配列です。"
+        },
+        "zh-Hans": {
+          "title": "水星金星木星连珠",
+          "description": "三颗行星聚集在西方傍晚低空,日落后不久出现的罕见且适合拍摄的排列。"
+        },
+        "zh-Hant": {
+          "title": "水星金星木星連珠",
+          "description": "三顆行星聚集在西方傍晚低空,日落後不久出現的罕見且適合拍攝的排列。"
+        },
+        "de": {
+          "title": "Merkur-Venus-Jupiter-Ausrichtung",
+          "description": "Drei Planeten versammeln sich tief am westlichen Abendhimmel — eine seltene, fotogene Gruppierung kurz nach Sonnenuntergang."
+        },
+        "es": {
+          "title": "Alineación Mercurio-Venus-Júpiter",
+          "description": "Tres planetas se reúnen bajos en el cielo vespertino del oeste, una agrupación rara y fotogénica justo tras el atardecer."
+        },
+        "fr": {
+          "title": "Alignement Mercure-Vénus-Jupiter",
+          "description": "Trois planètes se rassemblent bas dans le ciel du soir à l'ouest — un regroupement rare et photogénique juste après le coucher du soleil."
+        },
+        "it": {
+          "title": "Allineamento Mercurio-Venere-Giove",
+          "description": "Tre pianeti si riuniscono bassi nel cielo serale a ovest: un raggruppamento raro e fotogenico subito dopo il tramonto."
+        },
+        "pt-BR": {
+          "title": "Alinhamento Mercúrio-Vênus-Júpiter",
+          "description": "Três planetas se reúnem baixos no céu vespertino a oeste — um agrupamento raro e fotogênico logo após o pôr do sol."
+        },
+        "ru": {
+          "title": "Выстраивание Меркурия, Венеры и Юпитера",
+          "description": "Три планеты собираются низко на западном вечернем небе — редкое и фотогеничное скопление сразу после заката."
+        }
+      }
     },
     {
       "id": "summer_solstice_2026",
@@ -143,6 +372,122 @@
       "source": "remote"
     },
     {
+      "id": "june_bootids_2026",
+      "baseId": "june_bootids",
+      "titleKey": "event_june_bootids",
+      "descriptionKey": "event_june_bootids_desc",
+      "category": "meteorShower",
+      "icon": "sparkles",
+      "date": "2026-06-27",
+      "peakDate": "2026-06-27T12:00:00Z",
+      "source": "remote",
+      "extraInfo": {
+        "zhr": 2
+      },
+      "localizedStrings": {
+        "en": {
+          "title": "June Bootids",
+          "description": "A highly variable shower from comet 7P/Pons-Winnecke. Usually just a few meteors per hour, but capable of rare outbursts of dozens."
+        },
+        "ko": {
+          "title": "6월 목동자리 유성우",
+          "description": "혜성 7P/폰스-빈네케에서 비롯된 변덕스러운 유성우. 보통 시간당 몇 개뿐이지만 드물게 수십 개의 폭발적 출현이 있습니다."
+        },
+        "ja": {
+          "title": "6月うしかい座流星群",
+          "description": "彗星7P/ポンス・ウィンネッケ由来の変動の大きい流星群。通常は1時間に数個ですが、まれに数十個の突発出現があります。"
+        },
+        "zh-Hans": {
+          "title": "六月牧夫座流星雨",
+          "description": "源自7P/庞斯-温内克彗星的高度不稳定流星雨。通常每小时仅数颗,但偶有数十颗的罕见爆发。"
+        },
+        "zh-Hant": {
+          "title": "六月牧夫座流星雨",
+          "description": "源自7P/龐斯-溫內克彗星的高度不穩定流星雨。通常每小時僅數顆,但偶有數十顆的罕見爆發。"
+        },
+        "de": {
+          "title": "Juni-Bootiden",
+          "description": "Ein stark variabler Strom vom Kometen 7P/Pons-Winnecke. Meist nur wenige Meteore pro Stunde, selten Ausbrüche mit Dutzenden."
+        },
+        "es": {
+          "title": "Bootidas de junio",
+          "description": "Una lluvia muy variable del cometa 7P/Pons-Winnecke. Suele dar pocos meteoros por hora, pero puede tener raros estallidos de docenas."
+        },
+        "fr": {
+          "title": "Bootides de juin",
+          "description": "Une pluie très variable issue de la comète 7P/Pons-Winnecke. Généralement quelques météores par heure, mais de rares sursauts de dizaines."
+        },
+        "it": {
+          "title": "Bootidi di giugno",
+          "description": "Uno sciame molto variabile dalla cometa 7P/Pons-Winnecke. Di solito pochi meteore all'ora, ma con rari picchi di decine."
+        },
+        "pt-BR": {
+          "title": "Bootídeos de junho",
+          "description": "Uma chuva muito variável do cometa 7P/Pons-Winnecke. Normalmente poucos meteoros por hora, mas com raros surtos de dezenas."
+        },
+        "ru": {
+          "title": "Июньские Боотиды",
+          "description": "Очень переменный поток от кометы 7P/Понса-Виннеке. Обычно несколько метеоров в час, но возможны редкие всплески до десятков."
+        }
+      }
+    },
+    {
+      "id": "mars_uranus_conjunction_2026_07",
+      "baseId": "mars_uranus_conjunction",
+      "titleKey": "event_mars_uranus_2026_07",
+      "descriptionKey": "event_mars_uranus_2026_07_desc",
+      "category": "planetaryEvent",
+      "icon": "circle.circle",
+      "date": "2026-07-04",
+      "source": "remote",
+      "localizedStrings": {
+        "en": {
+          "title": "Mars–Uranus Conjunction",
+          "description": "Mars passes extremely close to fainter Uranus — under 0.1° apart before dawn. Binoculars reveal both in one field of view."
+        },
+        "ko": {
+          "title": "화성-천왕성 합",
+          "description": "화성이 더 어두운 천왕성에 매우 가깝게 지나갑니다. 새벽 전 0.1° 미만 간격이며, 쌍안경 한 시야에 둘 다 들어옵니다."
+        },
+        "ja": {
+          "title": "火星と天王星の合",
+          "description": "火星がより暗い天王星に極めて接近します。夜明け前に0.1°未満まで近づき、双眼鏡の一視野に両方が収まります。"
+        },
+        "zh-Hans": {
+          "title": "火星天王星合",
+          "description": "火星极其接近较暗的天王星,黎明前相距不到0.1°,双筒望远镜一个视场即可看到两者。"
+        },
+        "zh-Hant": {
+          "title": "火星天王星合",
+          "description": "火星極其接近較暗的天王星,黎明前相距不到0.1°,雙筒望遠鏡一個視場即可看到兩者。"
+        },
+        "de": {
+          "title": "Mars-Uranus-Konjunktion",
+          "description": "Mars zieht extrem nah am lichtschwächeren Uranus vorbei — vor Sonnenaufgang unter 0,1°. Im Fernglas in einem Gesichtsfeld."
+        },
+        "es": {
+          "title": "Conjunción Marte-Urano",
+          "description": "Marte pasa extremadamente cerca del tenue Urano, a menos de 0,1° antes del amanecer. Con prismáticos ambos caben en un campo."
+        },
+        "fr": {
+          "title": "Conjonction Mars-Uranus",
+          "description": "Mars passe extrêmement près de la faible Uranus — à moins de 0,1° avant l'aube. Jumelles : les deux dans un même champ."
+        },
+        "it": {
+          "title": "Congiunzione Marte-Urano",
+          "description": "Marte passa estremamente vicino al più debole Urano — a meno di 0,1° prima dell'alba. Col binocolo entrambi in un campo."
+        },
+        "pt-BR": {
+          "title": "Conjunção Marte-Urano",
+          "description": "Marte passa extremamente perto do tênue Urano — a menos de 0,1° antes do amanhecer. Com binóculos, ambos no mesmo campo."
+        },
+        "ru": {
+          "title": "Соединение Марса и Урана",
+          "description": "Марс проходит крайне близко к более тусклому Урану — менее 0,1° перед рассветом. В бинокль оба в одном поле зрения."
+        }
+      }
+    },
+    {
       "id": "earth_aphelion_2026",
       "baseId": "earth_aphelion",
       "titleKey": "event_earth_aphelion",
@@ -153,6 +498,67 @@
       "source": "remote"
     },
     {
+      "id": "delta_aquariids_2026",
+      "baseId": "delta_aquariids",
+      "titleKey": "event_delta_aquariids",
+      "descriptionKey": "event_delta_aquariids_desc",
+      "category": "meteorShower",
+      "icon": "sparkles",
+      "date": "2026-07-29",
+      "peakDate": "2026-07-30T12:00:00Z",
+      "endDate": "2026-07-31",
+      "source": "remote",
+      "extraInfo": {
+        "zhr": 25
+      },
+      "localizedStrings": {
+        "en": {
+          "title": "Southern Delta Aquariids",
+          "description": "A steady shower peaking around July 30 (~25 meteors/hour), best from the Southern Hemisphere. Coincides with the minor Alpha Capricornids."
+        },
+        "ko": {
+          "title": "남쪽 물병자리 델타 유성우",
+          "description": "7월 30일경 극대(시간당 ~25개)에 이르는 꾸준한 유성우로 남반구에서 관측이 가장 좋습니다. 마이너한 염소자리 알파 유성우와 겹칩니다."
+        },
+        "ja": {
+          "title": "みずがめ座δ南流星群",
+          "description": "7月30日頃に極大(1時間に約25個)を迎える安定した流星群で、南半球で最もよく見えます。小規模なやぎ座α流星群と重なります。"
+        },
+        "zh-Hans": {
+          "title": "南宝瓶座δ流星雨",
+          "description": "在7月30日左右达到极大(每小时约25颗)的稳定流星雨,南半球观测最佳。与小型摩羯座α流星雨重叠。"
+        },
+        "zh-Hant": {
+          "title": "南寶瓶座δ流星雨",
+          "description": "在7月30日左右達到極大(每小時約25顆)的穩定流星雨,南半球觀測最佳。與小型摩羯座α流星雨重疊。"
+        },
+        "de": {
+          "title": "Südliche Delta-Aquariiden",
+          "description": "Ein gleichmäßiger Strom mit Maximum um den 30. Juli (~25 Meteore/Stunde), am besten von der Südhalbkugel. Fällt mit den schwachen Alpha-Capricorniden zusammen."
+        },
+        "es": {
+          "title": "Delta Acuáridas del Sur",
+          "description": "Una lluvia constante con máximo hacia el 30 de julio (~25 meteoros/hora), mejor desde el hemisferio sur. Coincide con las menores Alfa Capricórnidas."
+        },
+        "fr": {
+          "title": "Delta Aquarides du Sud",
+          "description": "Une pluie régulière culminant vers le 30 juillet (~25 météores/heure), idéale depuis l'hémisphère sud. Coïncide avec les faibles Alpha Capricornides."
+        },
+        "it": {
+          "title": "Delta Aquaridi del Sud",
+          "description": "Uno sciame costante con picco intorno al 30 luglio (~25 meteore/ora), migliore dall'emisfero sud. Coincide con le minori Alfa Capricornidi."
+        },
+        "pt-BR": {
+          "title": "Delta Aquáridas do Sul",
+          "description": "Uma chuva constante com pico por volta de 30 de julho (~25 meteoros/hora), melhor do hemisfério sul. Coincide com as menores Alfa Capricornídeas."
+        },
+        "ru": {
+          "title": "Южные дельта-Аквариды",
+          "description": "Стабильный поток с максимумом около 30 июля (~25 метеоров/час), лучше виден в Южном полушарии. Совпадает со слабыми Альфа-Каприкорнидами."
+        }
+      }
+    },
+    {
       "id": "total_solar_eclipse_2026_08",
       "baseId": "total_solar_eclipse",
       "titleKey": "event_total_solar_eclipse",
@@ -161,19 +567,61 @@
       "icon": "sun.max.fill",
       "date": "2026-08-12T17:46:00Z",
       "source": "remote",
-      "visibility": ["Arctic Russia", "Greenland", "Iceland", "Spain", "Portugal", "Europe", "North Africa", "North America"],
+      "visibility": [
+        "Arctic Russia",
+        "Greenland",
+        "Iceland",
+        "Spain",
+        "Portugal",
+        "Europe",
+        "North Africa",
+        "North America"
+      ],
       "localizedStrings": {
-        "en": { "title": "Total Solar Eclipse", "description": "A total solar eclipse with up to 2m 18s of totality. The path crosses Arctic Russia, Greenland, Iceland, and northern Spain/Portugal. Partial eclipse visible across Europe, North Africa, and North America." },
-        "ko": { "title": "개기 일식", "description": "최대 2분 18초의 개기 일식입니다. 개기 경로는 러시아 북극, 그린란드, 아이슬란드, 스페인/포르투갈 북부를 지나갑니다. 유럽, 북아프리카, 북미에서 부분 일식 관측 가능합니다." },
-        "ja": { "title": "皆既日食", "description": "最大2分18秒の皆既日食。皆既帯はロシア北極圏、グリーンランド、アイスランド、スペイン/ポルトガル北部を通過。ヨーロッパ、北アフリカ、北米で部分日食が見られます。" },
-        "zh-Hans": { "title": "日全食", "description": "最长2分18秒的日全食。全食带经过俄罗斯北极地区、格陵兰、冰岛和西班牙/葡萄牙北部。欧洲、北非和北美可见日偏食。" },
-        "zh-Hant": { "title": "日全食", "description": "最長2分18秒的日全食。全食帶經過俄羅斯北極地區、格陵蘭、冰島和西班牙/葡萄牙北部。歐洲、北非和北美可見日偏食。" },
-        "de": { "title": "Totale Sonnenfinsternis", "description": "Eine totale Sonnenfinsternis mit bis zu 2 Min. 18 Sek. Totalität. Der Pfad überquert das arktische Russland, Grönland, Island und Nordspanien/Portugal. Partielle Finsternis in Europa, Nordafrika und Nordamerika." },
-        "es": { "title": "Eclipse solar total", "description": "Un eclipse solar total con hasta 2 min 18 s de totalidad. La trayectoria cruza el Ártico ruso, Groenlandia, Islandia y el norte de España/Portugal. Eclipse parcial visible en Europa, Norte de África y Norteamérica." },
-        "fr": { "title": "Éclipse solaire totale", "description": "Une éclipse solaire totale avec jusqu'à 2 min 18 s de totalité. Le chemin traverse l'Arctique russe, le Groenland, l'Islande et le nord de l'Espagne/Portugal. Éclipse partielle visible en Europe, Afrique du Nord et Amérique du Nord." },
-        "it": { "title": "Eclissi solare totale", "description": "Un'eclissi solare totale con fino a 2 min 18 s di totalità. Il percorso attraversa l'Artico russo, la Groenlandia, l'Islanda e la Spagna/Portogallo settentrionale. Eclissi parziale visibile in Europa, Nord Africa e Nord America." },
-        "pt-BR": { "title": "Eclipse solar total", "description": "Um eclipse solar total com até 2 min 18 s de totalidade. O caminho cruza o Ártico russo, Groenlândia, Islândia e norte da Espanha/Portugal. Eclipse parcial visível na Europa, Norte da África e América do Norte." },
-        "ru": { "title": "Полное солнечное затмение", "description": "Полное солнечное затмение продолжительностью до 2 мин 18 с. Путь проходит через Арктическую Россию, Гренландию, Исландию и северную Испанию/Португалию. Частичное затмение видно в Европе, Северной Африке и Северной Америке." }
+        "en": {
+          "title": "Total Solar Eclipse",
+          "description": "A total solar eclipse with up to 2m 18s of totality. The path crosses Arctic Russia, Greenland, Iceland, and northern Spain/Portugal. Partial eclipse visible across Europe, North Africa, and North America."
+        },
+        "ko": {
+          "title": "개기 일식",
+          "description": "최대 2분 18초의 개기 일식입니다. 개기 경로는 러시아 북극, 그린란드, 아이슬란드, 스페인/포르투갈 북부를 지나갑니다. 유럽, 북아프리카, 북미에서 부분 일식 관측 가능합니다."
+        },
+        "ja": {
+          "title": "皆既日食",
+          "description": "最大2分18秒の皆既日食。皆既帯はロシア北極圏、グリーンランド、アイスランド、スペイン/ポルトガル北部を通過。ヨーロッパ、北アフリカ、北米で部分日食が見られます。"
+        },
+        "zh-Hans": {
+          "title": "日全食",
+          "description": "最长2分18秒的日全食。全食带经过俄罗斯北极地区、格陵兰、冰岛和西班牙/葡萄牙北部。欧洲、北非和北美可见日偏食。"
+        },
+        "zh-Hant": {
+          "title": "日全食",
+          "description": "最長2分18秒的日全食。全食帶經過俄羅斯北極地區、格陵蘭、冰島和西班牙/葡萄牙北部。歐洲、北非和北美可見日偏食。"
+        },
+        "de": {
+          "title": "Totale Sonnenfinsternis",
+          "description": "Eine totale Sonnenfinsternis mit bis zu 2 Min. 18 Sek. Totalität. Der Pfad überquert das arktische Russland, Grönland, Island und Nordspanien/Portugal. Partielle Finsternis in Europa, Nordafrika und Nordamerika."
+        },
+        "es": {
+          "title": "Eclipse solar total",
+          "description": "Un eclipse solar total con hasta 2 min 18 s de totalidad. La trayectoria cruza el Ártico ruso, Groenlandia, Islandia y el norte de España/Portugal. Eclipse parcial visible en Europa, Norte de África y Norteamérica."
+        },
+        "fr": {
+          "title": "Éclipse solaire totale",
+          "description": "Une éclipse solaire totale avec jusqu'à 2 min 18 s de totalité. Le chemin traverse l'Arctique russe, le Groenland, l'Islande et le nord de l'Espagne/Portugal. Éclipse partielle visible en Europe, Afrique du Nord et Amérique du Nord."
+        },
+        "it": {
+          "title": "Eclissi solare totale",
+          "description": "Un'eclissi solare totale con fino a 2 min 18 s di totalità. Il percorso attraversa l'Artico russo, la Groenlandia, l'Islanda e la Spagna/Portogallo settentrionale. Eclissi parziale visibile in Europa, Nord Africa e Nord America."
+        },
+        "pt-BR": {
+          "title": "Eclipse solar total",
+          "description": "Um eclipse solar total com até 2 min 18 s de totalidade. O caminho cruza o Ártico russo, Groenlândia, Islândia e norte da Espanha/Portugal. Eclipse parcial visível na Europa, Norte da África e América do Norte."
+        },
+        "ru": {
+          "title": "Полное солнечное затмение",
+          "description": "Полное солнечное затмение продолжительностью до 2 мин 18 с. Путь проходит через Арктическую Россию, Гренландию, Исландию и северную Испанию/Португалию. Частичное затмение видно в Европе, Северной Африке и Северной Америке."
+        }
       }
     },
     {
@@ -187,7 +635,10 @@
       "peakDate": "2026-08-13T14:53:00Z",
       "endDate": "2026-08-14",
       "source": "remote",
-      "extraInfo": { "zhr": 100, "moonIllumination": 0.0 }
+      "extraInfo": {
+        "zhr": 100,
+        "moonIllumination": 0.0
+      }
     },
     {
       "id": "partial_lunar_eclipse_2026_08",
@@ -198,19 +649,57 @@
       "icon": "moon.fill",
       "date": "2026-08-28T04:13:00Z",
       "source": "remote",
-      "visibility": ["Americas", "Europe", "Africa", "Western Asia"],
+      "visibility": [
+        "Americas",
+        "Europe",
+        "Africa",
+        "Western Asia"
+      ],
       "localizedStrings": {
-        "en": { "title": "Partial Lunar Eclipse", "description": "A deep partial lunar eclipse with 93% of the Moon in Earth's shadow. Visible from the Americas, Europe, Africa, and western Asia." },
-        "ko": { "title": "부분 월식", "description": "달의 93%가 지구 그림자에 들어가는 깊은 부분 월식입니다. 아메리카, 유럽, 아프리카, 서아시아에서 관측 가능합니다." },
-        "ja": { "title": "部分月食", "description": "月の93%が地球の影に入る深い部分月食。南北アメリカ、ヨーロッパ、アフリカ、西アジアで観測可能です。" },
-        "zh-Hans": { "title": "月偏食", "description": "月球93%进入地球本影的深度月偏食。美洲、欧洲、非洲和西亚可观测。" },
-        "zh-Hant": { "title": "月偏食", "description": "月球93%進入地球本影的深度月偏食。美洲、歐洲、非洲和西亞可觀測。" },
-        "de": { "title": "Partielle Mondfinsternis", "description": "Eine tiefe partielle Mondfinsternis mit 93 % des Mondes im Erdschatten. Sichtbar aus Amerika, Europa, Afrika und Westasien." },
-        "es": { "title": "Eclipse lunar parcial", "description": "Un eclipse lunar parcial profundo con el 93 % de la Luna en la sombra terrestre. Visible desde América, Europa, África y Asia occidental." },
-        "fr": { "title": "Éclipse lunaire partielle", "description": "Une éclipse lunaire partielle profonde avec 93 % de la Lune dans l'ombre de la Terre. Visible depuis les Amériques, l'Europe, l'Afrique et l'Asie occidentale." },
-        "it": { "title": "Eclissi lunare parziale", "description": "Un'eclissi lunare parziale profonda con il 93 % della Luna nell'ombra terrestre. Visibile dalle Americhe, Europa, Africa e Asia occidentale." },
-        "pt-BR": { "title": "Eclipse lunar parcial", "description": "Um eclipse lunar parcial profundo com 93% da Lua na sombra da Terra. Visível das Américas, Europa, África e Ásia ocidental." },
-        "ru": { "title": "Частичное лунное затмение", "description": "Глубокое частичное лунное затмение: 93% Луны в тени Земли. Видимо из Америки, Европы, Африки и Западной Азии." }
+        "en": {
+          "title": "Partial Lunar Eclipse",
+          "description": "A deep partial lunar eclipse with 93% of the Moon in Earth's shadow. Visible from the Americas, Europe, Africa, and western Asia."
+        },
+        "ko": {
+          "title": "부분 월식",
+          "description": "달의 93%가 지구 그림자에 들어가는 깊은 부분 월식입니다. 아메리카, 유럽, 아프리카, 서아시아에서 관측 가능합니다."
+        },
+        "ja": {
+          "title": "部分月食",
+          "description": "月の93%が地球の影に入る深い部分月食。南北アメリカ、ヨーロッパ、アフリカ、西アジアで観測可能です。"
+        },
+        "zh-Hans": {
+          "title": "月偏食",
+          "description": "月球93%进入地球本影的深度月偏食。美洲、欧洲、非洲和西亚可观测。"
+        },
+        "zh-Hant": {
+          "title": "月偏食",
+          "description": "月球93%進入地球本影的深度月偏食。美洲、歐洲、非洲和西亞可觀測。"
+        },
+        "de": {
+          "title": "Partielle Mondfinsternis",
+          "description": "Eine tiefe partielle Mondfinsternis mit 93 % des Mondes im Erdschatten. Sichtbar aus Amerika, Europa, Afrika und Westasien."
+        },
+        "es": {
+          "title": "Eclipse lunar parcial",
+          "description": "Un eclipse lunar parcial profundo con el 93 % de la Luna en la sombra terrestre. Visible desde América, Europa, África y Asia occidental."
+        },
+        "fr": {
+          "title": "Éclipse lunaire partielle",
+          "description": "Une éclipse lunaire partielle profonde avec 93 % de la Lune dans l'ombre de la Terre. Visible depuis les Amériques, l'Europe, l'Afrique et l'Asie occidentale."
+        },
+        "it": {
+          "title": "Eclissi lunare parziale",
+          "description": "Un'eclissi lunare parziale profonda con il 93 % della Luna nell'ombra terrestre. Visibile dalle Americhe, Europa, Africa e Asia occidentale."
+        },
+        "pt-BR": {
+          "title": "Eclipse lunar parcial",
+          "description": "Um eclipse lunar parcial profundo com 93% da Lua na sombra da Terra. Visível das Américas, Europa, África e Ásia ocidental."
+        },
+        "ru": {
+          "title": "Частичное лунное затмение",
+          "description": "Глубокое частичное лунное затмение: 93% Луны в тени Земли. Видимо из Америки, Европы, Африки и Западной Азии."
+        }
       }
     },
     {
@@ -233,17 +722,50 @@
       "date": "2026-10-04",
       "source": "remote",
       "localizedStrings": {
-        "en": { "title": "Saturn at Opposition", "description": "Saturn is at its closest to Earth and fully illuminated by the Sun. An excellent opportunity to view and photograph Saturn's rings." },
-        "ko": { "title": "토성 충", "description": "토성이 지구에 가장 가까워지며 태양에 의해 완전히 밝혀집니다. 토성의 고리를 관측하고 촬영하기에 최적의 시기입니다." },
-        "ja": { "title": "土星の衝", "description": "土星が地球に最も近づき、太陽に完全に照らされます。土星の環を観測・撮影する絶好の機会です。" },
-        "zh-Hans": { "title": "土星冲日", "description": "土星距离地球最近,被太阳完全照亮。观测和拍摄土星环的绝佳机会。" },
-        "zh-Hant": { "title": "土星衝", "description": "土星距離地球最近,被太陽完全照亮。觀測和拍攝土星環的絕佳機會。" },
-        "de": { "title": "Saturn in Opposition", "description": "Saturn steht der Erde am nächsten und wird von der Sonne voll beleuchtet. Eine hervorragende Gelegenheit, Saturns Ringe zu beobachten und zu fotografieren." },
-        "es": { "title": "Oposición de Saturno", "description": "Saturno está en su punto más cercano a la Tierra e iluminado completamente por el Sol. Excelente oportunidad para observar y fotografiar los anillos de Saturno." },
-        "fr": { "title": "Saturne en opposition", "description": "Saturne est au plus proche de la Terre et entièrement éclairée par le Soleil. Excellente occasion d'observer et photographier les anneaux de Saturne." },
-        "it": { "title": "Opposizione di Saturno", "description": "Saturno è nel punto più vicino alla Terra e completamente illuminato dal Sole. Un'ottima occasione per osservare e fotografare gli anelli di Saturno." },
-        "pt-BR": { "title": "Oposição de Saturno", "description": "Saturno está no ponto mais próximo da Terra e totalmente iluminado pelo Sol. Excelente oportunidade para observar e fotografar os anéis de Saturno." },
-        "ru": { "title": "Противостояние Сатурна", "description": "Сатурн находится ближе всего к Земле и полностью освещён Солнцем. Отличная возможность наблюдать и фотографировать кольца Сатурна." }
+        "en": {
+          "title": "Saturn at Opposition",
+          "description": "Saturn is at its closest to Earth and fully illuminated by the Sun. An excellent opportunity to view and photograph Saturn's rings."
+        },
+        "ko": {
+          "title": "토성 충",
+          "description": "토성이 지구에 가장 가까워지며 태양에 의해 완전히 밝혀집니다. 토성의 고리를 관측하고 촬영하기에 최적의 시기입니다."
+        },
+        "ja": {
+          "title": "土星の衝",
+          "description": "土星が地球に最も近づき、太陽に完全に照らされます。土星の環を観測・撮影する絶好の機会です。"
+        },
+        "zh-Hans": {
+          "title": "土星冲日",
+          "description": "土星距离地球最近,被太阳完全照亮。观测和拍摄土星环的绝佳机会。"
+        },
+        "zh-Hant": {
+          "title": "土星衝",
+          "description": "土星距離地球最近,被太陽完全照亮。觀測和拍攝土星環的絕佳機會。"
+        },
+        "de": {
+          "title": "Saturn in Opposition",
+          "description": "Saturn steht der Erde am nächsten und wird von der Sonne voll beleuchtet. Eine hervorragende Gelegenheit, Saturns Ringe zu beobachten und zu fotografieren."
+        },
+        "es": {
+          "title": "Oposición de Saturno",
+          "description": "Saturno está en su punto más cercano a la Tierra e iluminado completamente por el Sol. Excelente oportunidad para observar y fotografiar los anillos de Saturno."
+        },
+        "fr": {
+          "title": "Saturne en opposition",
+          "description": "Saturne est au plus proche de la Terre et entièrement éclairée par le Soleil. Excellente occasion d'observer et photographier les anneaux de Saturne."
+        },
+        "it": {
+          "title": "Opposizione di Saturno",
+          "description": "Saturno è nel punto più vicino alla Terra e completamente illuminato dal Sole. Un'ottima occasione per osservare e fotografare gli anelli di Saturno."
+        },
+        "pt-BR": {
+          "title": "Oposição de Saturno",
+          "description": "Saturno está no ponto mais próximo da Terra e totalmente iluminado pelo Sol. Excelente oportunidade para observar e fotografar os anéis de Saturno."
+        },
+        "ru": {
+          "title": "Противостояние Сатурна",
+          "description": "Сатурн находится ближе всего к Земле и полностью освещён Солнцем. Отличная возможность наблюдать и фотографировать кольца Сатурна."
+        }
       }
     },
     {
@@ -257,7 +779,10 @@
       "peakDate": "2026-10-23T06:54:00Z",
       "endDate": "2026-10-24",
       "source": "remote",
-      "extraInfo": { "zhr": 20, "moonIllumination": 0.8 }
+      "extraInfo": {
+        "zhr": 20,
+        "moonIllumination": 0.8
+      }
     },
     {
       "id": "leonids_2026",
@@ -270,7 +795,10 @@
       "peakDate": "2026-11-18T00:00:00Z",
       "endDate": "2026-11-19",
       "source": "remote",
-      "extraInfo": { "zhr": 15, "moonIllumination": 0.5 }
+      "extraInfo": {
+        "zhr": 15,
+        "moonIllumination": 0.5
+      }
     },
     {
       "id": "geminids_2026",
@@ -283,7 +811,10 @@
       "peakDate": "2026-12-14T05:44:00Z",
       "endDate": "2026-12-15",
       "source": "remote",
-      "extraInfo": { "zhr": 150, "moonIllumination": 0.21 }
+      "extraInfo": {
+        "zhr": 150,
+        "moonIllumination": 0.21
+      }
     },
     {
       "id": "winter_solstice_2026",
