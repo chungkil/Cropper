@@ -1,0 +1,680 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-05-31",
+  "regions": {
+    "korea": {
+      "solarHoliday": [
+        {
+          "name": "신정",
+          "emoji": "🎊",
+          "month": 1,
+          "day": 1,
+          "category": "event"
+        },
+        {
+          "name": "삼일절",
+          "emoji": "🇰🇷",
+          "month": 3,
+          "day": 1,
+          "category": "event"
+        },
+        {
+          "name": "어린이날",
+          "emoji": "🎈",
+          "month": 5,
+          "day": 5,
+          "category": "event"
+        },
+        {
+          "name": "현충일",
+          "emoji": "🪖",
+          "month": 6,
+          "day": 6,
+          "category": "event"
+        },
+        {
+          "name": "광복절",
+          "emoji": "🇰🇷",
+          "month": 8,
+          "day": 15,
+          "category": "event"
+        },
+        {
+          "name": "개천절",
+          "emoji": "🇰🇷",
+          "month": 10,
+          "day": 3,
+          "category": "event"
+        },
+        {
+          "name": "한글날",
+          "emoji": "🇰🇷",
+          "month": 10,
+          "day": 9,
+          "category": "event"
+        },
+        {
+          "name": "크리스마스",
+          "emoji": "🎄",
+          "month": 12,
+          "day": 25,
+          "category": "event"
+        }
+      ],
+      "lunarHoliday": [
+        {
+          "name": "설날",
+          "emoji": "🧧",
+          "month": 1,
+          "day": 1,
+          "isLunar": true,
+          "category": "event"
+        },
+        {
+          "name": "추석",
+          "emoji": "🌕",
+          "month": 8,
+          "day": 15,
+          "isLunar": true,
+          "category": "event"
+        },
+        {
+          "name": "부처님오신날",
+          "emoji": "🪷",
+          "month": 4,
+          "day": 8,
+          "isLunar": true,
+          "category": "event"
+        }
+      ],
+      "anniversary": [
+        {
+          "name": "발렌타인데이",
+          "emoji": "💝",
+          "month": 2,
+          "day": 14,
+          "category": "anniversary"
+        },
+        {
+          "name": "화이트데이",
+          "emoji": "🍬",
+          "month": 3,
+          "day": 14,
+          "category": "anniversary"
+        },
+        {
+          "name": "블랙데이",
+          "emoji": "🍜",
+          "month": 4,
+          "day": 14,
+          "category": "anniversary"
+        },
+        {
+          "name": "어버이날",
+          "emoji": "🌹",
+          "month": 5,
+          "day": 8,
+          "category": "anniversary"
+        },
+        {
+          "name": "스승의날",
+          "emoji": "📚",
+          "month": 5,
+          "day": 15,
+          "category": "anniversary"
+        },
+        {
+          "name": "성년의날",
+          "emoji": "🎓",
+          "month": 5,
+          "weekOfMonth": 3,
+          "dayOfWeek": 2,
+          "category": "anniversary"
+        },
+        {
+          "name": "빼빼로데이",
+          "emoji": "🍫",
+          "month": 11,
+          "day": 11,
+          "category": "anniversary"
+        }
+      ],
+      "exam": [
+        {
+          "name": "대학수학능력시험",
+          "emoji": "📝",
+          "month": 11,
+          "weekOfMonth": 3,
+          "dayOfWeek": 5,
+          "category": "exam"
+        },
+        {
+          "name": "6월 모의평가",
+          "emoji": "✏️",
+          "month": 6,
+          "weekOfMonth": 1,
+          "dayOfWeek": 5,
+          "category": "exam"
+        },
+        {
+          "name": "9월 모의평가",
+          "emoji": "✏️",
+          "month": 9,
+          "weekOfMonth": 1,
+          "dayOfWeek": 5,
+          "category": "exam"
+        },
+        {
+          "name": "국가직 9급 공무원",
+          "emoji": "🏛️",
+          "month": 4,
+          "weekOfMonth": 1,
+          "dayOfWeek": 7,
+          "category": "exam"
+        }
+      ]
+    },
+    "japan": {
+      "solarHoliday": [
+        {
+          "name": "元日",
+          "emoji": "🎍",
+          "month": 1,
+          "day": 1,
+          "category": "event"
+        },
+        {
+          "name": "成人の日",
+          "emoji": "👘",
+          "month": 1,
+          "weekOfMonth": 2,
+          "dayOfWeek": 2,
+          "category": "event"
+        },
+        {
+          "name": "建国記念の日",
+          "emoji": "🇯🇵",
+          "month": 2,
+          "day": 11,
+          "category": "event"
+        },
+        {
+          "name": "天皇誕生日",
+          "emoji": "👑",
+          "month": 2,
+          "day": 23,
+          "category": "event"
+        },
+        {
+          "name": "春分の日",
+          "emoji": "🌸",
+          "month": 3,
+          "day": 20,
+          "category": "event"
+        },
+        {
+          "name": "昭和の日",
+          "emoji": "🇯🇵",
+          "month": 4,
+          "day": 29,
+          "category": "event"
+        },
+        {
+          "name": "憲法記念日",
+          "emoji": "📜",
+          "month": 5,
+          "day": 3,
+          "category": "event"
+        },
+        {
+          "name": "みどりの日",
+          "emoji": "🌿",
+          "month": 5,
+          "day": 4,
+          "category": "event"
+        },
+        {
+          "name": "こどもの日",
+          "emoji": "🎏",
+          "month": 5,
+          "day": 5,
+          "category": "event"
+        },
+        {
+          "name": "海の日",
+          "emoji": "🌊",
+          "month": 7,
+          "weekOfMonth": 3,
+          "dayOfWeek": 2,
+          "category": "event"
+        },
+        {
+          "name": "山の日",
+          "emoji": "⛰️",
+          "month": 8,
+          "day": 11,
+          "category": "event"
+        },
+        {
+          "name": "敬老の日",
+          "emoji": "👴",
+          "month": 9,
+          "weekOfMonth": 3,
+          "dayOfWeek": 2,
+          "category": "event"
+        },
+        {
+          "name": "秋分の日",
+          "emoji": "🍂",
+          "month": 9,
+          "day": 23,
+          "category": "event"
+        },
+        {
+          "name": "スポーツの日",
+          "emoji": "🏃",
+          "month": 10,
+          "weekOfMonth": 2,
+          "dayOfWeek": 2,
+          "category": "event"
+        },
+        {
+          "name": "文化の日",
+          "emoji": "🎨",
+          "month": 11,
+          "day": 3,
+          "category": "event"
+        },
+        {
+          "name": "勤労感謝の日",
+          "emoji": "💼",
+          "month": 11,
+          "day": 23,
+          "category": "event"
+        }
+      ],
+      "anniversary": [
+        {
+          "name": "バレンタインデー",
+          "emoji": "💝",
+          "month": 2,
+          "day": 14,
+          "category": "anniversary"
+        },
+        {
+          "name": "ホワイトデー",
+          "emoji": "🍬",
+          "month": 3,
+          "day": 14,
+          "category": "anniversary"
+        },
+        {
+          "name": "ひな祭り",
+          "emoji": "🎎",
+          "month": 3,
+          "day": 3,
+          "category": "anniversary"
+        },
+        {
+          "name": "母の日",
+          "emoji": "👩",
+          "month": 5,
+          "weekOfMonth": 2,
+          "dayOfWeek": 1,
+          "category": "anniversary"
+        },
+        {
+          "name": "父の日",
+          "emoji": "👨",
+          "month": 6,
+          "weekOfMonth": 3,
+          "dayOfWeek": 1,
+          "category": "anniversary"
+        },
+        {
+          "name": "七夕",
+          "emoji": "🎋",
+          "month": 7,
+          "day": 7,
+          "category": "anniversary"
+        },
+        {
+          "name": "お盆",
+          "emoji": "🏮",
+          "month": 8,
+          "day": 15,
+          "category": "anniversary"
+        },
+        {
+          "name": "七五三",
+          "emoji": "👧",
+          "month": 11,
+          "day": 15,
+          "category": "anniversary"
+        },
+        {
+          "name": "クリスマス",
+          "emoji": "🎄",
+          "month": 12,
+          "day": 25,
+          "category": "anniversary"
+        },
+        {
+          "name": "大晦日",
+          "emoji": "🔔",
+          "month": 12,
+          "day": 31,
+          "category": "anniversary"
+        }
+      ],
+      "exam": [
+        {
+          "name": "大学入学共通テスト",
+          "emoji": "📝",
+          "month": 1,
+          "weekOfMonth": 3,
+          "dayOfWeek": 7,
+          "category": "exam"
+        }
+      ]
+    },
+    "usa": {
+      "solarHoliday": [
+        {
+          "name": "New Year's Day",
+          "emoji": "🎊",
+          "month": 1,
+          "day": 1,
+          "category": "event"
+        },
+        {
+          "name": "Martin Luther King Jr. Day",
+          "emoji": "✊",
+          "month": 1,
+          "weekOfMonth": 3,
+          "dayOfWeek": 2,
+          "category": "event"
+        },
+        {
+          "name": "Presidents' Day",
+          "emoji": "🇺🇸",
+          "month": 2,
+          "weekOfMonth": 3,
+          "dayOfWeek": 2,
+          "category": "event"
+        },
+        {
+          "name": "Memorial Day",
+          "emoji": "🪖",
+          "month": 5,
+          "weekOfMonth": 5,
+          "dayOfWeek": 2,
+          "category": "event"
+        },
+        {
+          "name": "Independence Day",
+          "emoji": "🇺🇸",
+          "month": 7,
+          "day": 4,
+          "category": "event"
+        },
+        {
+          "name": "Labor Day",
+          "emoji": "👷",
+          "month": 9,
+          "weekOfMonth": 1,
+          "dayOfWeek": 2,
+          "category": "event"
+        },
+        {
+          "name": "Columbus Day",
+          "emoji": "⛵",
+          "month": 10,
+          "weekOfMonth": 2,
+          "dayOfWeek": 2,
+          "category": "event"
+        },
+        {
+          "name": "Veterans Day",
+          "emoji": "🎖️",
+          "month": 11,
+          "day": 11,
+          "category": "event"
+        },
+        {
+          "name": "Thanksgiving Day",
+          "emoji": "🦃",
+          "month": 11,
+          "weekOfMonth": 4,
+          "dayOfWeek": 5,
+          "category": "event"
+        },
+        {
+          "name": "Christmas Day",
+          "emoji": "🎄",
+          "month": 12,
+          "day": 25,
+          "category": "event"
+        }
+      ],
+      "anniversary": [
+        {
+          "name": "Valentine's Day",
+          "emoji": "💝",
+          "month": 2,
+          "day": 14,
+          "category": "anniversary"
+        },
+        {
+          "name": "St. Patrick's Day",
+          "emoji": "☘️",
+          "month": 3,
+          "day": 17,
+          "category": "anniversary"
+        },
+        {
+          "name": "Mother's Day",
+          "emoji": "👩",
+          "month": 5,
+          "weekOfMonth": 2,
+          "dayOfWeek": 1,
+          "category": "anniversary"
+        },
+        {
+          "name": "Father's Day",
+          "emoji": "👨",
+          "month": 6,
+          "weekOfMonth": 3,
+          "dayOfWeek": 1,
+          "category": "anniversary"
+        },
+        {
+          "name": "Halloween",
+          "emoji": "🎃",
+          "month": 10,
+          "day": 31,
+          "category": "anniversary"
+        },
+        {
+          "name": "Black Friday",
+          "emoji": "🛒",
+          "month": 11,
+          "weekOfMonth": 4,
+          "dayOfWeek": 6,
+          "category": "anniversary"
+        }
+      ],
+      "exam": [
+        {
+          "name": "SAT (Fall)",
+          "emoji": "📝",
+          "month": 10,
+          "weekOfMonth": 1,
+          "dayOfWeek": 7,
+          "category": "exam"
+        },
+        {
+          "name": "SAT (Spring)",
+          "emoji": "📝",
+          "month": 3,
+          "weekOfMonth": 2,
+          "dayOfWeek": 7,
+          "category": "exam"
+        },
+        {
+          "name": "ACT",
+          "emoji": "✏️",
+          "month": 10,
+          "weekOfMonth": 4,
+          "dayOfWeek": 7,
+          "category": "exam"
+        }
+      ]
+    },
+    "europe": {
+      "solarHoliday": [
+        {
+          "name": "New Year's Day",
+          "emoji": "🎊",
+          "month": 1,
+          "day": 1,
+          "category": "event"
+        },
+        {
+          "name": "Epiphany",
+          "emoji": "👑",
+          "month": 1,
+          "day": 6,
+          "category": "event"
+        },
+        {
+          "name": "Labour Day",
+          "emoji": "👷",
+          "month": 5,
+          "day": 1,
+          "category": "event"
+        },
+        {
+          "name": "Assumption Day",
+          "emoji": "⛪",
+          "month": 8,
+          "day": 15,
+          "category": "event"
+        },
+        {
+          "name": "All Saints' Day",
+          "emoji": "🕯️",
+          "month": 11,
+          "day": 1,
+          "category": "event"
+        },
+        {
+          "name": "Christmas Eve",
+          "emoji": "🌟",
+          "month": 12,
+          "day": 24,
+          "category": "event"
+        },
+        {
+          "name": "Christmas Day",
+          "emoji": "🎄",
+          "month": 12,
+          "day": 25,
+          "category": "event"
+        },
+        {
+          "name": "Boxing Day",
+          "emoji": "🎁",
+          "month": 12,
+          "day": 26,
+          "category": "event"
+        },
+        {
+          "name": "New Year's Eve",
+          "emoji": "🎆",
+          "month": 12,
+          "day": 31,
+          "category": "event"
+        }
+      ],
+      "anniversary": [
+        {
+          "name": "Valentine's Day",
+          "emoji": "💝",
+          "month": 2,
+          "day": 14,
+          "category": "anniversary"
+        },
+        {
+          "name": "St. Patrick's Day",
+          "emoji": "☘️",
+          "month": 3,
+          "day": 17,
+          "category": "anniversary"
+        },
+        {
+          "name": "April Fools' Day",
+          "emoji": "🃏",
+          "month": 4,
+          "day": 1,
+          "category": "anniversary"
+        },
+        {
+          "name": "Mother's Day",
+          "emoji": "👩",
+          "month": 5,
+          "weekOfMonth": 2,
+          "dayOfWeek": 1,
+          "category": "anniversary"
+        },
+        {
+          "name": "Father's Day",
+          "emoji": "👨",
+          "month": 6,
+          "weekOfMonth": 3,
+          "dayOfWeek": 1,
+          "category": "anniversary"
+        },
+        {
+          "name": "Halloween",
+          "emoji": "🎃",
+          "month": 10,
+          "day": 31,
+          "category": "anniversary"
+        },
+        {
+          "name": "Guy Fawkes Night",
+          "emoji": "🔥",
+          "month": 11,
+          "day": 5,
+          "category": "anniversary"
+        },
+        {
+          "name": "St. Nicholas Day",
+          "emoji": "🎅",
+          "month": 12,
+          "day": 6,
+          "category": "anniversary"
+        }
+      ],
+      "exam": [
+        {
+          "name": "IB Exams",
+          "emoji": "✏️",
+          "month": 5,
+          "weekOfMonth": 1,
+          "dayOfWeek": 2,
+          "category": "exam"
+        },
+        {
+          "name": "A-Level Exams",
+          "emoji": "📝",
+          "month": 5,
+          "weekOfMonth": 2,
+          "dayOfWeek": 2,
+          "category": "exam"
+        }
+      ]
+    }
+  }
+}
