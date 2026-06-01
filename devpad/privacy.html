@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DevPad — 개인정보처리방침 · Privacy Policy</title>
+<meta name="description" content="DevPad 개인정보처리방침. 데이터 미수집, 100% 오프라인, 입력 디스크 미기록. / DevPad Privacy Policy: no data collection, 100% offline.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="glyph">D</span> DevPad</a>
+    <nav class="nav">
+      <a href="index.html#features"><span data-ko>기능</span><span data-en>Features</span></a>
+      <a href="index.html#privacy"><span data-ko>프라이버시</span><span data-en>Privacy</span></a>
+      <a href="support.html"><span data-ko>지원</span><span data-en>Support</span></a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button data-set="ko" aria-pressed="true">KO</button><button data-set="en" aria-pressed="false">EN</button>
+    </div>
+    <a class="nav-cta" href="index.html"><span data-ko>홈</span><span data-en>Home</span></a>
+  </div>
+</header>
+
+<section>
+  <div class="wrap doc">
+    <h1><span data-ko>개인정보처리방침</span><span data-en>Privacy Policy</span></h1>
+    <p class="updated"><span data-ko>최종 수정일: 2026-06-01</span><span data-en>Last updated: 2026-06-01</span></p>
+
+    <div class="callout">
+      <span data-ko>DevPad는 <strong>설계 단계부터 프라이버시를 우선</strong>합니다. 아래는 약속이 아니라 앱의 실제 구조입니다.</span>
+      <span data-en>DevPad is <strong>private by design</strong>. The points below aren't promises — they describe how the app is actually built.</span>
+    </div>
+
+    <h2><span data-ko>데이터 미수집</span><span data-en>No data collection</span></h2>
+    <p>
+      <span data-ko>앱은 어떠한 개인정보도 <strong>수집·전송·판매·공유하지 않습니다.</strong> 개발자는 서버를 운영하지 않으며, 앱에는 분석 도구·광고 SDK·제3자 트래커가 전혀 없습니다. 개발자는 사용자가 앱에서 무엇을 하는지 알 수 없습니다.</span>
+      <span data-en>The app does <strong>not</strong> collect, transmit, sell, or share any personal data. We operate no servers, and the app contains no analytics, no advertising SDKs, and no third-party trackers. We cannot see what you do in the app.</span>
+    </p>
+
+    <h2><span data-ko>100% 오프라인</span><span data-en>100% offline</span></h2>
+    <p>
+      <span data-ko>앱은 macOS 앱 샌드박스에서 <strong>네트워크 entitlement 없이</strong> 배포되어, 기술적으로 어떠한 네트워크 연결도 할 수 없습니다. 붙여넣거나 입력하는 모든 값은 전적으로 기기 내에서 처리됩니다.</span>
+      <span data-en>The app ships <strong>without the network entitlement</strong> under the macOS App Sandbox. It is technically incapable of making any network connection. Every value you paste or type is processed entirely on your device.</span>
+    </p>
+
+    <h2><span data-ko>입력값은 디스크에 저장되지 않음</span><span data-en>Your input is never written to disk</span></h2>
+    <p>
+      <span data-ko>변환하는 텍스트(JSON·JWT·Base64·URL·타임스탬프·색상·cron·정규식·UUID·해시)는 앱이 실행되는 동안 <strong>메모리에만</strong> 존재합니다. 선택적 변환 이력은 메모리 전용이며 앱 종료 시 사라집니다. 입력값은 파일·데이터베이스·iCloud 어디에도 기록되지 않습니다.</span>
+      <span data-en>Text you convert (JSON, JWT, Base64, URL, timestamps, colors, cron, regex, UUID, hashes) is held <strong>only in memory</strong> while the app is open. The optional conversion history is in-memory only and is discarded when the app quits. Nothing you input is written to a file, a database, or iCloud.</span>
+    </p>
+
+    <h2><span data-ko>로컬 앱 설정</span><span data-en>Local app settings</span></h2>
+    <p>
+      <span data-ko>기기에 저장되는 유일한 데이터는 로컬 환경설정과 무료 사용량 카운터(선택한 단축키/들여쓰기, 무료 일일 한도 적용을 위한 당일 변환 횟수)뿐입니다. 이 데이터는 기기를 떠나지 않으며 개인정보를 포함하지 않습니다.</span>
+      <span data-en>The only data stored on your device is a small set of local preferences and a free-tier usage counter (your chosen hotkey/indentation, and a per-day conversion count used to enforce the free daily limit). These never leave your device and contain no personal information.</span>
+    </p>
+
+    <h2><span data-ko>결제</span><span data-en>Purchases</span></h2>
+    <p>
+      <span data-ko><strong>DevPad Pro</strong>는 Apple의 StoreKit을 통해 처리되는 일회성 인앱 결제입니다. 모든 결제 정보는 Apple이 처리하며, 개발자는 결제 수단·이름·이메일·Apple ID를 받지도 저장하지도 않습니다. 앱은 구매 활성 여부를 판단하기 위해 기기에 저장된 Apple 서명 영수증만 읽습니다.</span>
+      <span data-en><strong>DevPad Pro</strong> is a one-time in-app purchase processed by Apple via StoreKit. Apple handles all payment information; we never receive or store your payment details, name, email, or Apple ID. The app only reads a locally stored, Apple-signed receipt to determine whether the purchase is active.</span>
+    </p>
+
+    <h2><span data-ko>계정 없음 · 권한 없음</span><span data-en>No account, no permissions</span></h2>
+    <p>
+      <span data-ko>앱은 로그인이 필요 없으며, 사용자가 직접 붙여넣거나 입력하는 텍스트 외에 카메라·마이크·위치·연락처·사진·파일에 대한 어떠한 접근도 요청하지 않습니다.</span>
+      <span data-en>The app requires no sign-in and requests no access to your camera, microphone, location, contacts, photos, or files beyond the text you explicitly paste or type.</span>
+    </p>
+
+    <h2><span data-ko>아동</span><span data-en>Children</span></h2>
+    <p>
+      <span data-ko>앱 등급은 4+이며, 아동을 포함한 누구의 데이터도 수집하지 않습니다.</span>
+      <span data-en>The app is rated 4+ and collects no data from anyone, including children.</span>
+    </p>
+
+    <h2><span data-ko>정책 변경</span><span data-en>Changes to this policy</span></h2>
+    <p>
+      <span data-ko>정책이 변경되면 갱신본을 이 페이지에 게시하고 "최종 수정일"을 갱신합니다.</span>
+      <span data-en>If this policy changes, the updated version will be posted on this page with a new "Last updated" date.</span>
+    </p>
+
+    <h2><span data-ko>문의</span><span data-en>Contact</span></h2>
+    <p>
+      <span data-ko>프라이버시 관련 문의: </span><span data-en>Questions about privacy: </span>
+      <a class="mono" href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a>
+    </p>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span class="fine">© 2026 DevPad · kr.cksw.devpad</span>
+    <div class="links">
+      <a href="index.html"><span data-ko>홈</span><span data-en>Home</span></a>
+      <a href="support.html"><span data-ko>지원</span><span data-en>Support</span></a>
+      <a href="mailto:chungkil.cksw@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
