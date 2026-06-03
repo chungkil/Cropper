@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tallybox - Support</title>
+    <style>
+        :root {
+            --bg-color: #16181d;
+            --card-bg: #21242b;
+            --text-color: #f3f4f6;
+            --text-secondary: #9aa3af;
+            --accent: #34c08a;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        .lang-selector { display: flex; justify-content: flex-end; gap: 8px; margin-bottom: 32px; }
+        .lang-btn {
+            background: var(--card-bg); border: none; color: var(--text-secondary);
+            padding: 8px 16px; border-radius: 20px; cursor: pointer; font-size: 14px; transition: all 0.2s;
+        }
+        .lang-btn:hover { background: #2c303a; }
+        .lang-btn.active { background: var(--accent); color: #08130d; font-weight: 600; }
+        .header { text-align: center; margin-bottom: 44px; }
+        .header h1 { font-size: 28px; margin-bottom: 8px; }
+        .header p { color: var(--text-secondary); }
+        .contact-cta {
+            display: inline-block; background: var(--accent); color: #08130d; font-weight: 600;
+            padding: 12px 24px; border-radius: 24px; text-decoration: none; margin-top: 8px;
+        }
+        .section { background: var(--card-bg); border-radius: 16px; padding: 28px 30px; margin-bottom: 22px; }
+        .section h2 { font-size: 18px; margin-bottom: 14px; color: var(--accent); }
+        .section h3 { font-size: 16px; margin: 18px 0 6px; color: var(--text-color); }
+        .section p { color: var(--text-secondary); margin-bottom: 12px; }
+        .section ul { color: var(--text-secondary); margin-left: 20px; margin-top: 10px; }
+        .section li { margin-bottom: 8px; }
+        .section a { color: var(--accent); text-decoration: none; }
+        .footer {
+            text-align: center; margin-top: 44px; padding-top: 28px;
+            border-top: 1px solid #2c303a; color: var(--text-secondary); font-size: 14px;
+        }
+        .footer a { color: var(--accent); text-decoration: none; }
+        [data-lang] { display: none; }
+        [data-lang].active { display: block; }
+        span[data-lang].active, a[data-lang].active { display: inline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lang-selector">
+            <button class="lang-btn" onclick="setLang('ko')">한국어</button>
+            <button class="lang-btn active" onclick="setLang('en')">English</button>
+        </div>
+
+        <div class="header">
+            <h1>Tallybox</h1>
+            <p data-lang="ko">지원 센터</p>
+            <p data-lang="en" class="active">Support</p>
+        </div>
+
+        <!-- Korean -->
+        <div data-lang="ko">
+            <div class="section">
+                <p>Tallybox는 인기 보드게임의 실제 점수 규칙을 내장한 점수판 앱입니다. 입력만 하면 자동 합산·순위, 모든 판이 누적되어 전적이 쌓입니다. 궁금한 점은 아래 FAQ를 확인하시거나 이메일로 문의해 주세요.</p>
+                <p style="text-align:center; margin-top:18px;"><a class="contact-cta" href="mailto:chungkil.cksw@gmail.com?subject=Tallybox%20문의">이메일 문의</a></p>
+            </div>
+
+            <div class="section">
+                <h2>자주 묻는 질문</h2>
+
+                <h3>게임은 어떻게 잠금 해제하나요?</h3>
+                <p>범용 모드 <strong>Custom (High)/(Low) 2종은 항상 무료</strong>라 어떤 게임이든 점수를 기록할 수 있습니다. 그 외 인기 게임은 <strong>원하는 3개까지 무료로 직접 선택</strong>(잠긴 게임 카드 → "무료로 열기")할 수 있고, 더 필요하면 <strong>Tallybox Pro</strong> 1회 결제로 현재·향후 모든 게임이 잠금 해제됩니다.</p>
+
+                <h3 id="restore">구매를 복원하려면?</h3>
+                <p>설정 탭 → "구매 복원"을 누르면 됩니다. Tallybox Pro는 같은 Apple 계정에서 무료로 복원됩니다. (무료로 선택한 게임은 기기 로컬 상태라 복원 대상이 아니며, 재설치 시 다시 선택할 수 있습니다.)</p>
+
+                <h3 id="rules">점수 규칙이 잘못된 것 같아요</h3>
+                <p>규칙 정확성을 최우선으로 관리합니다. 게임명·항목·올바른 점수를 적어 <a href="mailto:chungkil.cksw@gmail.com?subject=Tallybox%20규칙%20오류%20신고">chungkil.cksw@gmail.com</a> 으로 보내주시면 빠르게 수정하겠습니다.</p>
+
+                <h3 id="feedback">의견이나 추가 게임을 요청하고 싶어요</h3>
+                <p>원하는 게임이나 기능을 <a href="mailto:chungkil.cksw@gmail.com?subject=Tallybox%20의견·게임%20요청">chungkil.cksw@gmail.com</a> 으로 보내주세요. 다음 업데이트 우선순위에 반영합니다.</p>
+
+                <h3>인터넷 없이 쓸 수 있나요?</h3>
+                <p>네. 모든 점수 기록·통계 기능은 오프라인에서 동작합니다. 결제와 구매 복원만 인터넷 연결이 필요합니다.</p>
+
+                <h3>데이터는 어디에 저장되나요?</h3>
+                <p>모든 플레이어·게임 기록은 기기 안에만 저장됩니다(외부 전송 없음). 앱을 삭제하면 데이터가 함께 삭제됩니다.</p>
+            </div>
+
+            <div class="section">
+                <h2>문의</h2>
+                <p><a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a> · 보통 2–3일 내 답변드립니다.</p>
+            </div>
+        </div>
+
+        <!-- English -->
+        <div data-lang="en" class="active">
+            <div class="section">
+                <p>Tallybox is a scorepad with the real scoring rules of popular board games built in — just enter values and it totals and ranks automatically, and every match builds your stats. Check the FAQ below or email us anytime.</p>
+                <p style="text-align:center; margin-top:18px;"><a class="contact-cta" href="mailto:chungkil.cksw@gmail.com?subject=Tallybox%20Support">Email Support</a></p>
+            </div>
+
+            <div class="section">
+                <h2>Frequently Asked Questions</h2>
+
+                <h3>How do I unlock games?</h3>
+                <p>The universal <strong>Custom (High)/(Low) modes are always free</strong>, so you can score any game. For the popular titles, you can <strong>pick up to 3 to unlock for free</strong> (tap a locked game card → "Unlock free"), and <strong>Tallybox Pro</strong> is a one-time purchase that unlocks every current and future game.</p>
+
+                <h3>How do I restore purchases?</h3>
+                <p>Go to the Settings tab → "Restore Purchases". Tallybox Pro restores for free on the same Apple account. (Free game selections are local to the device and aren't part of restore — you can pick them again after reinstalling.)</p>
+
+                <h3>A scoring rule looks wrong</h3>
+                <p>Rule accuracy is our top priority. Email the game name, the category, and the correct scoring to <a href="mailto:chungkil.cksw@gmail.com?subject=Tallybox%20Rule%20Report">chungkil.cksw@gmail.com</a> and we'll fix it quickly.</p>
+
+                <h3>Feedback or game requests</h3>
+                <p>Send the games or features you'd like to <a href="mailto:chungkil.cksw@gmail.com?subject=Tallybox%20Feedback">chungkil.cksw@gmail.com</a>. We use it to prioritize updates.</p>
+
+                <h3>Does it work offline?</h3>
+                <p>Yes. All scoring and stats work offline. Only purchasing and restoring purchases require an internet connection.</p>
+
+                <h3>Where is my data stored?</h3>
+                <p>All players and game records are stored only on your device (never transmitted). Deleting the app deletes this data.</p>
+            </div>
+
+            <div class="section">
+                <h2>Contact</h2>
+                <p><a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a> · We usually reply within 2–3 days.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2026 Tallybox. All rights reserved.</p>
+            <p style="margin-top: 8px;">
+                <a href="index.html"><span data-lang="ko">홈</span><span data-lang="en" class="active">Home</span></a>
+                &nbsp;·&nbsp;
+                <a href="privacy.html"><span data-lang="ko">개인정보 처리방침</span><span data-lang="en" class="active">Privacy Policy</span></a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function setLang(lang) {
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.textContent.includes(lang === 'ko' ? '한국어' : 'English'));
+            });
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.classList.toggle('active', el.getAttribute('data-lang') === lang);
+            });
+            document.documentElement.lang = lang;
+            localStorage.setItem('preferred-lang', lang);
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('preferred-lang');
+            if (saved === 'ko' || saved === 'en') { setLang(saved); }
+            else if (navigator.language.substring(0, 2) === 'ko') { setLang('ko'); }
+        });
+    </script>
+</body>
+</html>

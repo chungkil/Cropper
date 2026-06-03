@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tallybox - Privacy Policy</title>
+    <style>
+        :root {
+            --bg-color: #16181d;
+            --card-bg: #21242b;
+            --text-color: #f3f4f6;
+            --text-secondary: #9aa3af;
+            --accent: #34c08a;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        .lang-selector { display: flex; justify-content: flex-end; gap: 8px; margin-bottom: 32px; }
+        .lang-btn {
+            background: var(--card-bg); border: none; color: var(--text-secondary);
+            padding: 8px 16px; border-radius: 20px; cursor: pointer; font-size: 14px; transition: all 0.2s;
+        }
+        .lang-btn:hover { background: #2c303a; }
+        .lang-btn.active { background: var(--accent); color: #08130d; font-weight: 600; }
+        .header { text-align: center; margin-bottom: 44px; }
+        .header h1 { font-size: 28px; margin-bottom: 8px; }
+        .header p { color: var(--text-secondary); }
+        .section { background: var(--card-bg); border-radius: 16px; padding: 28px 30px; margin-bottom: 22px; }
+        .section h2 { font-size: 18px; margin-bottom: 14px; color: var(--accent); }
+        .section p { color: var(--text-secondary); margin-bottom: 12px; }
+        .section ul { color: var(--text-secondary); margin-left: 20px; margin-top: 10px; }
+        .section li { margin-bottom: 8px; }
+        .section a { color: var(--accent); text-decoration: none; }
+        .highlight-box {
+            background: rgba(52, 192, 138, 0.12); border-left: 4px solid var(--accent);
+            padding: 16px 20px; margin: 0 0 4px; border-radius: 0 8px 8px 0;
+        }
+        .highlight-box p { margin: 0; color: var(--text-color); }
+        .footer {
+            text-align: center; margin-top: 44px; padding-top: 28px;
+            border-top: 1px solid #2c303a; color: var(--text-secondary); font-size: 14px;
+        }
+        .footer a { color: var(--accent); text-decoration: none; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--accent); text-decoration: none; margin-bottom: 20px;
+        }
+        [data-lang] { display: none; }
+        [data-lang].active { display: block; }
+        span[data-lang].active, a[data-lang].active { display: inline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lang-selector">
+            <button class="lang-btn" onclick="setLang('ko')">한국어</button>
+            <button class="lang-btn active" onclick="setLang('en')">English</button>
+        </div>
+
+        <a href="support.html" class="back-link">
+            ← <span data-lang="ko">지원 페이지로</span><span data-lang="en" class="active">Back to Support</span>
+        </a>
+
+        <div class="header">
+            <h1 data-lang="ko">개인정보 처리방침</h1>
+            <h1 data-lang="en" class="active">Privacy Policy</h1>
+            <p data-lang="ko">Tallybox · 최종 업데이트: 2026년 6월</p>
+            <p data-lang="en" class="active">Tallybox · Last updated: June 2026</p>
+        </div>
+
+        <!-- Korean -->
+        <div data-lang="ko">
+            <div class="section">
+                <div class="highlight-box">
+                    <p><strong>Tallybox는 게임/플레이어 데이터를 기기 안에만 저장하며, 익명의 비식별 사용 통계만 수집합니다. 이름·사진·위치 같은 개인 식별 정보는 수집하지 않습니다.</strong></p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>1. 수집하는 정보</h2>
+                <p>Tallybox는 앱 개선을 위해 <strong>익명의 사용 통계</strong>만 수집합니다(Google Firebase Analytics 사용):</p>
+                <ul>
+                    <li>기능 사용 이벤트 — 어떤 게임을 시작/종료했는지(게임 식별자), 결제 화면 조회, 구매 완료 등</li>
+                    <li>세션 정보, 대략적 지역·기기 모델·OS 버전 등 표준 분석 데이터</li>
+                    <li>Firebase가 생성하는 앱 인스턴스 식별자(기기 단위)</li>
+                </ul>
+                <p>이 데이터는 <strong>특정 개인과 연결되지 않으며</strong>, 다른 앱·웹사이트에 걸친 추적에 사용되지 않습니다. 광고 식별자(IDFA)는 사용하지 않습니다.</p>
+            </div>
+
+            <div class="section">
+                <h2>2. 수집하지 않는 정보</h2>
+                <p>이름, 이메일, 연락처, 정확한 위치, 사진은 수집하지 않습니다. 앱에서 입력한 <strong>플레이어 이름·사진과 모든 게임 기록은 기기 안에만</strong> 저장되며 외부로 전송되지 않습니다.</p>
+            </div>
+
+            <div class="section">
+                <h2>3. 기기 내 데이터</h2>
+                <p>플레이어, 모임(그룹), 게임 세션, 점수는 Apple SwiftData로 <strong>기기에만</strong> 저장되고 당사 서버로 전송되지 않습니다. 앱을 삭제하면 이 데이터도 함께 삭제됩니다.</p>
+            </div>
+
+            <div class="section">
+                <h2>4. 인앱 구입</h2>
+                <p>인앱 구입(Tallybox Pro)은 Apple App Store를 통해 처리됩니다. 결제 정보는 Apple이 관리하며 Tallybox는 결제 수단 정보에 접근하지 않습니다. 무료 게임 선택(무료 슬롯) 상태는 기기에만 저장됩니다.</p>
+            </div>
+
+            <div class="section">
+                <h2>5. 제3자 서비스</h2>
+                <p>분석에 <strong>Google Firebase Analytics</strong>를 사용합니다. Google의 데이터 처리에 관한 내용은 아래를 참고하세요.</p>
+                <ul>
+                    <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase 개인정보 및 보안</a></li>
+                    <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 개인정보처리방침</a></li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>6. 추적 및 ATT</h2>
+                <p>Tallybox는 광고 네트워크나 IDFA를 사용하지 않고 앱·웹 간 추적을 하지 않으므로, App Tracking Transparency(ATT) 추적 동의 요청을 표시하지 않습니다.</p>
+            </div>
+
+            <div class="section">
+                <h2>7. 아동 개인정보</h2>
+                <p>Tallybox는 4+ 등급으로 모든 연령이 사용할 수 있습니다. 개인 식별 정보를 수집하지 않으며, 수집되는 사용 통계는 비식별 정보입니다.</p>
+            </div>
+
+            <div class="section">
+                <h2>8. 선택권</h2>
+                <p>앱을 삭제하면 기기 내 데이터 삭제와 함께 추가적인 사용 통계 수집도 중단됩니다.</p>
+            </div>
+
+            <div class="section">
+                <h2>9. 정책 변경</h2>
+                <p>본 방침은 변경될 수 있으며, 중요한 변경은 본 페이지를 통해 공지합니다.</p>
+            </div>
+
+            <div class="section">
+                <h2>10. 문의</h2>
+                <p>개인정보 처리방침 관련 문의는 아래 이메일로 연락해 주세요.</p>
+                <p><a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a></p>
+            </div>
+        </div>
+
+        <!-- English -->
+        <div data-lang="en" class="active">
+            <div class="section">
+                <div class="highlight-box">
+                    <p><strong>Tallybox stores your game and player data only on your device, and collects anonymous, non-identifying usage statistics only. We do not collect personal identifying information such as your name, photos, or location.</strong></p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>1. Information We Collect</h2>
+                <p>To improve the app, Tallybox collects <strong>anonymous usage statistics only</strong>, using Google Firebase Analytics:</p>
+                <ul>
+                    <li>Feature-usage events — which games you start/finish (the game identifier), paywall views, completed purchases, etc.</li>
+                    <li>Session info and standard analytics data such as approximate region, device model, and OS version</li>
+                    <li>A Firebase-generated app instance identifier (device level)</li>
+                </ul>
+                <p>This data is <strong>not linked to your identity</strong> and is not used to track you across other apps or websites. No advertising identifier (IDFA) is used.</p>
+            </div>
+
+            <div class="section">
+                <h2>2. Information We Do Not Collect</h2>
+                <p>We do not collect your name, email, contacts, precise location, or photos. The <strong>player names/photos and all game records</strong> you create are stored only on your device and are never transmitted.</p>
+            </div>
+
+            <div class="section">
+                <h2>3. On-Device Data</h2>
+                <p>Players, groups, game sessions, and scores are stored <strong>only on your device</strong> via Apple SwiftData and are never sent to our servers. Deleting the app deletes this data.</p>
+            </div>
+
+            <div class="section">
+                <h2>4. In-App Purchases</h2>
+                <p>In-app purchases (Tallybox Pro) are processed through the Apple App Store. Payment information is managed by Apple, and Tallybox does not have access to your payment details. Your free game selections (free slots) are stored only on your device.</p>
+            </div>
+
+            <div class="section">
+                <h2>5. Third-Party Services</h2>
+                <p>We use <strong>Google Firebase Analytics</strong> for analytics. For how Google processes data, see:</p>
+                <ul>
+                    <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy and Security</a></li>
+                    <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>6. Tracking &amp; ATT</h2>
+                <p>Tallybox does not use ad networks or the IDFA and does not track you across apps or websites, so it does not display the App Tracking Transparency (ATT) prompt.</p>
+            </div>
+
+            <div class="section">
+                <h2>7. Children's Privacy</h2>
+                <p>Tallybox is rated 4+ and safe for all ages. We do not collect personal identifying information, and the usage statistics collected are non-identifying.</p>
+            </div>
+
+            <div class="section">
+                <h2>8. Your Choices</h2>
+                <p>Deleting the app removes on-device data and stops any further usage-statistics collection.</p>
+            </div>
+
+            <div class="section">
+                <h2>9. Policy Changes</h2>
+                <p>This policy may be updated from time to time. Significant changes will be announced on this page.</p>
+            </div>
+
+            <div class="section">
+                <h2>10. Contact Us</h2>
+                <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+                <p><a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a></p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2026 Tallybox. All rights reserved.</p>
+            <p style="margin-top: 8px;">
+                <a href="index.html"><span data-lang="ko">홈</span><span data-lang="en" class="active">Home</span></a>
+                &nbsp;·&nbsp;
+                <a href="support.html"><span data-lang="ko">지원</span><span data-lang="en" class="active">Support</span></a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function setLang(lang) {
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.textContent.includes(lang === 'ko' ? '한국어' : 'English'));
+            });
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.classList.toggle('active', el.getAttribute('data-lang') === lang);
+            });
+            document.documentElement.lang = lang;
+            localStorage.setItem('preferred-lang', lang);
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('preferred-lang');
+            if (saved === 'ko' || saved === 'en') { setLang(saved); }
+            else if (navigator.language.substring(0, 2) === 'ko') { setLang('ko'); }
+        });
+    </script>
+</body>
+</html>

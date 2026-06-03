@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tallybox — Board Game Scores</title>
+    <meta name="description" content="A board game scorepad with built-in scoring rules. Enter in seconds, and every match builds your group's stats.">
+    <style>
+        :root {
+            --bg-color: #16181d;
+            --card-bg: #21242b;
+            --text-color: #f3f4f6;
+            --text-secondary: #9aa3af;
+            --accent: #34c08a;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        .container { max-width: 860px; margin: 0 auto; padding: 40px 20px 20px; }
+        .lang-selector { display: flex; justify-content: flex-end; gap: 8px; margin-bottom: 24px; }
+        .lang-btn {
+            background: var(--card-bg); border: none; color: var(--text-secondary);
+            padding: 8px 16px; border-radius: 20px; cursor: pointer; font-size: 14px; transition: all 0.2s;
+        }
+        .lang-btn:hover { background: #2c303a; }
+        .lang-btn.active { background: var(--accent); color: #08130d; font-weight: 600; }
+        .hero { text-align: center; padding: 24px 0 40px; }
+        .logo {
+            width: 92px; height: 92px; border-radius: 22px; margin: 0 auto 22px;
+            background: linear-gradient(160deg, #34c08a, #1f8f63);
+            display: flex; align-items: center; justify-content: center; font-size: 46px;
+        }
+        .hero h1 { font-size: 40px; letter-spacing: -0.5px; margin-bottom: 12px; }
+        .tagline { font-size: 19px; color: var(--text-secondary); max-width: 560px; margin: 0 auto; }
+        .badge {
+            display: inline-block; margin-top: 22px; padding: 10px 20px; border-radius: 24px;
+            background: var(--card-bg); color: var(--text-secondary); font-size: 14px; border: 1px solid #2c303a;
+        }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin: 16px 0 8px; }
+        .feature { background: var(--card-bg); border-radius: 16px; padding: 24px; }
+        .feature .icon { font-size: 26px; margin-bottom: 10px; }
+        .feature h3 { font-size: 16px; margin-bottom: 6px; }
+        .feature p { color: var(--text-secondary); font-size: 14px; }
+        .pricing { background: var(--card-bg); border-radius: 16px; padding: 26px 30px; margin: 24px 0; }
+        .pricing h2 { font-size: 18px; color: var(--accent); margin-bottom: 12px; }
+        .pricing p { color: var(--text-secondary); margin-bottom: 10px; }
+        .disclaimer { color: var(--text-secondary); font-size: 13px; text-align: center; margin: 28px auto 0; max-width: 620px; }
+        .footer {
+            text-align: center; margin-top: 36px; padding-top: 26px;
+            border-top: 1px solid #2c303a; color: var(--text-secondary); font-size: 14px;
+        }
+        .footer a { color: var(--accent); text-decoration: none; margin: 0 8px; }
+        [data-lang] { display: none; }
+        [data-lang].active { display: block; }
+        span[data-lang].active, a[data-lang].active { display: inline; }
+        h1 span[data-lang], .tagline span[data-lang] { display: none; }
+        h1 span[data-lang].active, .tagline span[data-lang].active { display: inline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lang-selector">
+            <button class="lang-btn" onclick="setLang('ko')">한국어</button>
+            <button class="lang-btn active" onclick="setLang('en')">English</button>
+        </div>
+
+        <div class="hero">
+            <div class="logo">🎲</div>
+            <h1>Tallybox</h1>
+            <p class="tagline">
+                <span data-lang="ko">게임 규칙이 내장된 보드게임 점수판. 5초 만에 입력하고, 모든 판이 누적되어 우리 모임의 전적이 자동으로 쌓입니다.</span>
+                <span data-lang="en" class="active">A board game scorepad with built-in scoring rules. Enter in seconds, and every match builds your group's stats automatically.</span>
+            </p>
+            <div class="badge">
+                <span data-lang="ko">📱 iPhone · iPad · 곧 App Store에서</span>
+                <span data-lang="en" class="active">📱 iPhone · iPad · Coming to the App Store</span>
+            </div>
+        </div>
+
+        <!-- Korean -->
+        <div data-lang="ko">
+            <div class="features">
+                <div class="feature"><div class="icon">🎯</div><h3>게임 규칙 내장</h3><p>도시·마을·보너스 같은 항목만 입력하면 자동 합산·순위. 목표 점수/고정 라운드/즉시 승리 등 게임별 종료 조건 반영.</p></div>
+                <div class="feature"><div class="icon">⚡</div><h3>5초 빠른 입력</h3><p>큰 터치 버튼과 ± 입력으로 한 손 조작, 실시간 합계와 1위 강조.</p></div>
+                <div class="feature"><div class="icon">📈</div><h3>평생 누적 전적</h3><p>플레이어별 승률·평균·최고 점수, 게임별 통계, 모임 단위 라이벌 전적.</p></div>
+                <div class="feature"><div class="icon">🎲</div><h3>보조 도구</h3><p>주사위 통계, 경과 타이머, 라운드 카운터.</p></div>
+                <div class="feature"><div class="icon">✈️</div><h3>오프라인 동작</h3><p>인터넷 없이 보드게임 카페·모임 현장에서 그대로.</p></div>
+                <div class="feature"><div class="icon">🔒</div><h3>프라이버시</h3><p>게임 데이터는 기기 안에만 저장. 비식별 사용 통계만 수집.</p></div>
+            </div>
+            <div class="pricing">
+                <h2>무료로 시작</h2>
+                <p>범용 점수 모드 2종(Custom High/Low)은 항상 무료라 <strong>어떤 게임이든 무료</strong>로 기록할 수 있습니다.</p>
+                <p>인기 게임 중 <strong>원하는 3개까지 무료로 직접 선택</strong>하고, 더 필요하면 <strong>Tallybox Pro</strong> 1회 결제로 현재·향후 모든 게임을 평생 잠금 해제합니다.</p>
+            </div>
+        </div>
+
+        <!-- English -->
+        <div data-lang="en" class="active">
+            <div class="features">
+                <div class="feature"><div class="icon">🎯</div><h3>Built-in rules</h3><p>Enter categories like cities, settlements, and bonuses — it totals and ranks automatically. Per-game endings: target score, fixed rounds, instant win.</p></div>
+                <div class="feature"><div class="icon">⚡</div><h3>5-second input</h3><p>Big touch targets and +/- controls, one-handed, with live totals and the leader highlighted.</p></div>
+                <div class="feature"><div class="icon">📈</div><h3>Lifetime stats</h3><p>Win rate, average and best score per player, per-game stats, and group rivalry records.</p></div>
+                <div class="feature"><div class="icon">🎲</div><h3>Tools</h3><p>Dice frequency tracker, elapsed timer, round counter.</p></div>
+                <div class="feature"><div class="icon">✈️</div><h3>Works offline</h3><p>No internet needed — use it right at the table or in a board game cafe.</p></div>
+                <div class="feature"><div class="icon">🔒</div><h3>Privacy</h3><p>Game data stays on your device. Only anonymous, non-identifying usage stats are collected.</p></div>
+            </div>
+            <div class="pricing">
+                <h2>Start for free</h2>
+                <p>The two universal Custom modes (High/Low) are always free, so you can score <strong>any game for free</strong>.</p>
+                <p>Among the popular titles you can <strong>pick up to 3 to unlock for free</strong>, and <strong>Tallybox Pro</strong> is a one-time purchase that unlocks every current and future game, for life.</p>
+            </div>
+        </div>
+
+        <p class="disclaimer">
+            <span data-lang="ko">Tallybox는 비공식 점수 기록 도우미입니다. 언급되는 게임 명칭은 각 권리자의 상표이며, 본 앱은 해당 게임사와 제휴·후원 관계가 없습니다.</span>
+            <span data-lang="en" class="active">Tallybox is an unofficial score-keeping companion. Game names mentioned are trademarks of their respective owners; this app is not affiliated with or endorsed by the publishers.</span>
+        </p>
+
+        <div class="footer">
+            <p>© 2026 Tallybox. All rights reserved.</p>
+            <p style="margin-top: 8px;">
+                <a href="support.html"><span data-lang="ko">지원</span><span data-lang="en" class="active">Support</span></a>
+                <a href="privacy.html"><span data-lang="ko">개인정보 처리방침</span><span data-lang="en" class="active">Privacy Policy</span></a>
+                <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function setLang(lang) {
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.textContent.includes(lang === 'ko' ? '한국어' : 'English'));
+            });
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.classList.toggle('active', el.getAttribute('data-lang') === lang);
+            });
+            document.documentElement.lang = lang;
+            localStorage.setItem('preferred-lang', lang);
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const saved = localStorage.getItem('preferred-lang');
+            if (saved === 'ko' || saved === 'en') { setLang(saved); }
+            else if (navigator.language.substring(0, 2) === 'ko') { setLang('ko'); }
+        });
+    </script>
+</body>
+</html>
