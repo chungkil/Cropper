@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TalkScript 개인정보처리방침</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    max-width: 720px; margin: 0 auto; padding: 24px 20px 60px;
+    line-height: 1.7; font-size: 16px;
+  }
+  h1 { font-size: 1.6em; margin-bottom: 4px; }
+  h2 { font-size: 1.2em; margin-top: 2em; border-bottom: 1px solid rgba(128,128,128,.35); padding-bottom: 6px; }
+  .meta { color: gray; font-size: .9em; margin-bottom: 2em; }
+  table { border-collapse: collapse; width: 100%; font-size: .92em; }
+  th, td { border: 1px solid rgba(128,128,128,.4); padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: rgba(128,128,128,.12); }
+  ul { padding-left: 1.3em; }
+  .highlight {
+    background: rgba(50,130,240,.10); border: 1px solid rgba(50,130,240,.35);
+    border-radius: 10px; padding: 14px 16px; margin: 1.2em 0;
+  }
+  a { color: #2066e0; }
+</style>
+</head>
+<body>
+
+<h1>TalkScript 개인정보처리방침</h1>
+<p class="meta">시행일: 2026년 6월 11일</p>
+
+<p>TalkScript(이하 "앱")는 기기에서 직접(온디바이스) 동작하는 녹음·화자 분리 전사 앱입니다.
+본 방침은 앱이 어떤 정보를 다루는지, 어떤 정보가 수집되는지, 이용자가 이를 어떻게 통제할 수
+있는지를 설명합니다.</p>
+
+<div class="highlight">
+<strong>핵심 요약</strong>
+<ul>
+  <li>녹음 파일·전사 텍스트는 <strong>기기 안에서만 처리·저장</strong>되며, 당사 서버를 포함한 외부로 전송되지 않습니다.</li>
+  <li>앱 개선을 위한 <strong>익명 사용 통계</strong>(Firebase Analytics)와 <strong>광고 제공</strong>(Google AdMob)을 위한 데이터만 제3자 SDK를 통해 수집됩니다.</li>
+  <li>맞춤 광고 추적은 iOS의 <strong>앱 추적 투명성(ATT)</strong> 동의가 있을 때만 이루어집니다.</li>
+</ul>
+</div>
+
+<h2>1. 기기에서만 처리되는 정보 (수집하지 않음)</h2>
+<p>다음 정보는 모두 이용자의 기기에서만 처리·보관되며 외부로 전송되지 않습니다.</p>
+<ul>
+  <li><strong>녹음 오디오</strong> — 마이크로 녹음하거나 가져온 오디오 파일</li>
+  <li><strong>전사 결과</strong> — 화자 분리·음성 인식으로 생성된 텍스트, 화자 이름 라벨, 편집 내용</li>
+  <li><strong>처리 중간 산출물</strong> — 체크포인트 등 작업 파일</li>
+</ul>
+<p>음성 인식과 화자 분리는 기기에 다운로드된 AI 모델로 수행됩니다. 모델 파일을 내려받기 위한
+네트워크 통신(모델 배포 서버로부터의 다운로드)이 발생하지만, 이 과정에서 이용자의 오디오나
+텍스트가 업로드되지는 않습니다.</p>
+
+<h2>2. 수집하는 정보</h2>
+<table>
+  <tr><th>구분</th><th>항목</th><th>목적</th><th>수집 주체</th></tr>
+  <tr>
+    <td>사용 통계</td>
+    <td>앱 실행·화면 조회·기능 사용 이벤트, 기기 모델·OS 버전 등 비식별 정보</td>
+    <td>앱 품질 개선, 오류 분석</td>
+    <td>Google Firebase Analytics</td>
+  </tr>
+  <tr>
+    <td>광고</td>
+    <td>광고 식별자(IDFA, ATT 동의 시), 광고 상호작용 데이터, 대략적 기기 정보</td>
+    <td>광고 게재·측정, (동의 시) 맞춤 광고</td>
+    <td>Google AdMob</td>
+  </tr>
+</table>
+<p>위 정보는 이용자의 이름·연락처 등 직접 식별 정보와 연결되지 않습니다. 앱은 회원가입이나
+계정을 요구하지 않습니다.</p>
+
+<h2>3. 제3자 서비스</h2>
+<p>앱은 다음 Google 서비스 SDK를 포함하며, 각 서비스의 개인정보 처리에 대해서는 해당
+정책이 적용됩니다.</p>
+<ul>
+  <li>Google AdMob — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 개인정보처리방침</a>, <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">AdMob 데이터 안내</a></li>
+  <li>Google Firebase Analytics — <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase 개인정보 및 보안</a></li>
+</ul>
+
+<h2>4. 앱 추적 투명성(ATT)과 맞춤 광고</h2>
+<p>앱은 최초 실행 시 iOS의 앱 추적 투명성(App Tracking Transparency) 권한을 요청합니다.</p>
+<ul>
+  <li><strong>허용</strong> 시: 광고 식별자(IDFA)를 활용한 맞춤 광고가 제공될 수 있습니다.</li>
+  <li><strong>거부</strong> 시: 추적 없이 비맞춤(문맥) 광고만 표시되며, 앱의 모든 기능은 동일하게 이용할 수 있습니다.</li>
+</ul>
+<p>설정은 iOS의 <em>설정 &gt; 개인정보 보호 및 보안 &gt; 추적</em>에서 언제든 변경할 수 있습니다.</p>
+
+<h2>5. 유럽경제지역(EEA)·영국 이용자 — GDPR 동의</h2>
+<p>EEA·영국 등 해당 지역 이용자에게는 Google의 사용자 메시지 플랫폼(UMP)을 통한 동의 양식이
+표시됩니다. 동의 내용은 앱의 <em>설정 &gt; 개인정보 보호 옵션</em>에서 언제든 확인·변경·철회할 수
+있습니다.</p>
+
+<h2>6. 앱 권한</h2>
+<table>
+  <tr><th>권한</th><th>용도</th><th>필수 여부</th></tr>
+  <tr><td>마이크</td><td>회의·인터뷰 등 음성 녹음</td><td>선택 — 거부 시 녹음 기능만 제한되며 파일 가져오기 전사는 가능</td></tr>
+</table>
+
+<h2>7. 데이터 보관 및 삭제</h2>
+<ul>
+  <li>녹음·전사 기록은 기기 내부 저장소에만 보관되며, 앱의 <em>기록</em> 화면에서 항목별로 삭제할 수 있습니다. 삭제 시 연결된 오디오 파일도 함께 제거됩니다.</li>
+  <li>앱을 삭제하면 기기에 저장된 모든 녹음·전사 데이터가 함께 삭제됩니다.</li>
+  <li>Firebase Analytics·AdMob이 수집한 데이터의 보관 기간은 Google의 정책을 따릅니다.</li>
+</ul>
+
+<h2>8. 아동의 개인정보</h2>
+<p>앱은 만 14세 미만 아동을 대상으로 하지 않으며, 아동의 개인정보를 의도적으로 수집하지
+않습니다.</p>
+
+<h2>9. 방침의 변경</h2>
+<p>본 방침이 변경되는 경우 이 페이지를 통해 갱신된 내용과 시행일을 공지합니다.</p>
+
+<h2>10. 문의</h2>
+<p>개인정보 처리에 관한 문의는 아래로 연락해 주세요.</p>
+<p>이메일: <a href="mailto:chungkil.kim@gmail.com">chungkil.kim@gmail.com</a></p>
+
+</body>
+</html>
