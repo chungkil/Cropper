@@ -183,3 +183,17 @@ ul.clean li { margin: 6px 0; }
   }
   .shot { scroll-snap-align: center; }
 }
+
+/* 제목 줄바꿈 균형 — 모바일에서 외톨이 단어 방지 */
+.header h1, .section h2, .cta-band h2, .feature h4 { text-wrap: balance; }
+
+/* 모바일 폴리시 — 여백 정리 + 탭 타깃 확대(Apple HIG 44px 권장) */
+@media (max-width: 560px) {
+  .header { padding: 44px 18px 38px; }
+  .header p { font-size: 16.5px; }
+  .section { padding: 30px 0; }
+  .section h2 { font-size: 22px; }
+  .nav { padding: 12px 14px; gap: 8px; }
+  .nav a { padding: 6px 10px; }
+  .langbar button { padding: 8px 16px; }
+}
