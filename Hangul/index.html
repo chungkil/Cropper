@@ -3,107 +3,514 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hangul - Learn Korean</title>
-    <meta name="description" content="Learn Korean from zero — 975 words, 30 dialogues, handwriting, pronunciation practice & TOPIK mock tests.">
-    <meta property="og:title" content="Hangul - Learn Korean">
-    <meta property="og:description" content="All-in-one Korean learning app. Letters, vocabulary, conversations, pronunciation, and TOPIK preparation.">
+    <title>Hangul — Learn Korean from Zero</title>
+    <meta name="description" content="Learn Korean from zero: read Hangul in a day, 975 TOPIK words, 30 real dialogues, handwriting, pronunciation practice & a TOPIK mock test. Free to start, works offline.">
+    <meta name="theme-color" content="#3366cc">
+    <meta property="og:title" content="Hangul — Learn Korean from Zero">
+    <meta property="og:description" content="Read Hangul in a day, master 975 words, practice speaking & writing. K-Pop, travel & TOPIK paths. Free to start.">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="shots/02_Learn_Levels.png">
+    <meta name="twitter:card" content="summary_large_image">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #333; background: linear-gradient(135deg, #3366cc 0%, #764ba2 100%); min-height: 100vh; }
-        .hero { text-align: center; padding: 80px 24px 40px; color: #fff; }
-        .hero h1 { font-size: 48px; font-weight: 800; margin-bottom: 8px; letter-spacing: -1px; }
-        .hero p { font-size: 20px; opacity: 0.9; margin-bottom: 32px; }
-        .badge { display: inline-block; margin-bottom: 16px; }
-        .badge img { height: 54px; border-radius: 12px; }
-        .container { max-width: 720px; margin: 0 auto; padding: 0 24px 60px; }
-        .card { background: #fff; border-radius: 16px; padding: 32px; margin-bottom: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
-        .card h2 { font-size: 22px; margin-bottom: 16px; color: #1a1a1a; }
-        .features { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-        @media (max-width: 480px) { .features { grid-template-columns: 1fr; } .hero h1 { font-size: 36px; } }
-        .feature { display: flex; align-items: flex-start; gap: 12px; }
-        .feature-icon { font-size: 28px; flex-shrink: 0; width: 36px; text-align: center; }
-        .feature h3 { font-size: 15px; font-weight: 600; color: #1a1a1a; margin-bottom: 2px; }
-        .feature p { font-size: 13px; color: #777; margin: 0; }
-        .stats { display: flex; justify-content: space-around; text-align: center; padding: 20px 0; }
-        .stat-num { font-size: 32px; font-weight: 800; color: #3366cc; }
-        .stat-label { font-size: 13px; color: #888; }
-        .screenshots { text-align: center; padding: 16px 0; color: #aaa; font-size: 14px; border: 2px dashed #e0e0e0; border-radius: 12px; min-height: 200px; display: flex; align-items: center; justify-content: center; }
-        .links { text-align: center; padding: 24px 0 0; }
-        .links a { color: #3366cc; margin: 0 12px; font-size: 14px; text-decoration: none; }
-        .links a:hover { text-decoration: underline; }
-        .footer { text-align: center; color: rgba(255,255,255,0.6); font-size: 13px; padding: 40px 24px; }
+        :root {
+            --blue: #3366cc;
+            --blue-2: #4f7bff;
+            --purple: #764ba2;
+            --ink: #1a1a2e;
+            --muted: #6b7280;
+            --bg: #f4f6fc;
+            --card: #ffffff;
+            --line: #e8ebf3;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.65; color: var(--ink); background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+        }
+        a { color: var(--blue); text-decoration: none; }
+        .wrap { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        /* ---------- Hero ---------- */
+        .hero {
+            position: relative; overflow: hidden;
+            background: linear-gradient(135deg, #3366cc 0%, #5a4bd0 55%, #764ba2 100%);
+            color: #fff; text-align: center;
+            padding: 72px 20px 88px;
+        }
+        .hero::after {
+            content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 48px;
+            background: var(--bg);
+            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+        }
+        .app-mark {
+            width: 84px; height: 84px; border-radius: 20px; margin: 0 auto 20px;
+            background: linear-gradient(135deg, #ff9a3c, #ff6a3d);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 44px; font-weight: 800; color: #fff;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+        }
+        .hero h1 { font-size: 52px; font-weight: 800; letter-spacing: -1.5px; line-height: 1.05; }
+        .hero .tag { font-size: 21px; opacity: 0.95; margin-top: 12px; font-weight: 500; }
+        .hero .sub { font-size: 15px; opacity: 0.8; margin-top: 14px; }
+        .cta-row { margin-top: 30px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+        /* App Store button */
+        .appstore-btn {
+            display: inline-flex; align-items: center; gap: 12px;
+            background: #000; color: #fff; padding: 12px 22px 12px 18px;
+            border-radius: 14px; transition: transform .15s ease, box-shadow .15s ease;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.22);
+        }
+        .appstore-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(0,0,0,0.3); }
+        .appstore-btn svg { width: 28px; height: 28px; fill: #fff; }
+        .appstore-btn .lbl { text-align: left; line-height: 1.15; }
+        .appstore-btn .lbl small { display: block; font-size: 11px; opacity: .85; font-weight: 500; }
+        .appstore-btn .lbl b { font-size: 20px; font-weight: 600; letter-spacing: .2px; }
+        .ghost-btn {
+            display: inline-flex; align-items: center;
+            border: 1.5px solid rgba(255,255,255,0.6); color: #fff;
+            padding: 13px 22px; border-radius: 14px; font-weight: 600; font-size: 15px;
+            transition: background .15s ease;
+        }
+        .ghost-btn:hover { background: rgba(255,255,255,0.14); }
+
+        /* ---------- Stats ---------- */
+        .stats {
+            display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px;
+            background: var(--card); border-radius: 18px; padding: 24px 12px;
+            box-shadow: 0 8px 30px rgba(40,50,90,0.08);
+            margin-top: -48px; position: relative; z-index: 2;
+        }
+        .stat { text-align: center; padding: 4px; }
+        .stat-num { font-size: 30px; font-weight: 800; color: var(--blue); line-height: 1; }
+        .stat-label { font-size: 12px; color: var(--muted); margin-top: 6px; }
+
+        /* ---------- Sections ---------- */
+        section { padding: 56px 0 8px; }
+        .sec-head { text-align: center; max-width: 620px; margin: 0 auto 32px; }
+        .sec-head h2 { font-size: 30px; font-weight: 800; letter-spacing: -0.5px; }
+        .sec-head p { color: var(--muted); font-size: 16px; margin-top: 10px; }
+        .kicker { display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: .8px;
+            text-transform: uppercase; color: var(--blue); margin-bottom: 8px; }
+
+        /* ---------- Personas / scenarios ---------- */
+        .personas { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+        .persona {
+            background: var(--card); border-radius: 18px; padding: 26px 24px;
+            border: 1px solid var(--line); box-shadow: 0 4px 16px rgba(40,50,90,0.05);
+            transition: transform .15s ease, box-shadow .15s ease;
+        }
+        .persona:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(40,50,90,0.12); }
+        .persona .emoji { font-size: 34px; }
+        .persona h3 { font-size: 19px; margin: 12px 0 6px; }
+        .persona .quote { color: var(--muted); font-size: 14px; font-style: italic; margin-bottom: 14px; }
+        .persona .path {
+            display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 700;
+            color: var(--blue); background: #eef2ff; padding: 7px 13px; border-radius: 999px;
+        }
+        .persona ul { margin: 14px 0 0; padding-left: 18px; }
+        .persona li { font-size: 13.5px; color: #4b5563; margin-bottom: 4px; }
+
+        /* ---------- How it works ---------- */
+        .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .step {
+            background: var(--card); border-radius: 18px; padding: 28px 24px; text-align: center;
+            border: 1px solid var(--line); position: relative;
+        }
+        .step-n {
+            width: 40px; height: 40px; border-radius: 50%; margin: 0 auto 14px;
+            background: linear-gradient(135deg, var(--blue), var(--blue-2));
+            color: #fff; font-weight: 800; font-size: 18px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .step h3 { font-size: 18px; margin-bottom: 6px; }
+        .step p { font-size: 14px; color: var(--muted); }
+        .lego {
+            margin-top: 26px; background: linear-gradient(135deg,#eef2ff,#f6f0ff);
+            border-radius: 18px; padding: 24px; text-align: center; border: 1px solid var(--line);
+        }
+        .lego .tiles { font-size: 30px; font-weight: 800; letter-spacing: 2px; }
+        .lego .tiles span { display: inline-block; padding: 6px 12px; border-radius: 10px; margin: 0 2px; }
+        .lego .t1 { background:#dbe4ff; color:#2b50c9; } .lego .t2 { background:#d7f0e0; color:#1f8a4c; }
+        .lego .t3 { background:#fdeccb; color:#c98a16; }
+        .lego p { color: var(--muted); font-size: 14px; margin-top: 12px; }
+
+        /* ---------- Screenshot gallery ---------- */
+        .gallery {
+            display: flex; gap: 16px; overflow-x: auto; padding: 8px 20px 24px;
+            scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+        }
+        .gallery::-webkit-scrollbar { height: 8px; }
+        .gallery::-webkit-scrollbar-thumb { background: #c7cfe2; border-radius: 4px; }
+        .shot {
+            flex: 0 0 auto; width: 248px; scroll-snap-align: center;
+            border-radius: 22px; overflow: hidden;
+            box-shadow: 0 12px 34px rgba(40,50,90,0.18);
+        }
+        .shot img { width: 100%; display: block; }
+        .gallery-hint { text-align: center; color: var(--muted); font-size: 13px; margin-top: 2px; }
+
+        /* ---------- Features ---------- */
+        .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+        .feature {
+            background: var(--card); border-radius: 16px; padding: 22px;
+            border: 1px solid var(--line); display: flex; gap: 14px; align-items: flex-start;
+        }
+        .feature .fi { font-size: 26px; flex-shrink: 0; }
+        .feature h3 { font-size: 15.5px; margin-bottom: 3px; }
+        .feature p { font-size: 13px; color: var(--muted); }
+
+        /* ---------- Practice chips ---------- */
+        .practice-card {
+            background: var(--card); border-radius: 18px; border: 1px solid var(--line);
+            padding: 28px 24px; box-shadow: 0 4px 16px rgba(40,50,90,0.05);
+        }
+        .chips { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 6px; }
+        .chip {
+            display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600;
+            background: #f1f4fb; color: #33405e; padding: 10px 16px; border-radius: 999px;
+            border: 1px solid var(--line);
+        }
+
+        /* ---------- Free vs Premium ---------- */
+        .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .plan {
+            background: var(--card); border-radius: 18px; padding: 28px 26px;
+            border: 1px solid var(--line);
+        }
+        .plan.pro { border: 2px solid var(--blue); position: relative; box-shadow: 0 12px 30px rgba(51,102,204,0.14); }
+        .plan .tier { font-size: 13px; font-weight: 800; letter-spacing: .6px; text-transform: uppercase; }
+        .plan.free .tier { color: #1f8a4c; }
+        .plan.pro .tier { color: var(--blue); }
+        .plan h3 { font-size: 22px; margin: 6px 0 16px; }
+        .plan ul { list-style: none; }
+        .plan li { font-size: 14px; color: #41506b; padding: 7px 0 7px 28px; position: relative; }
+        .plan li::before {
+            content: "✓"; position: absolute; left: 0; top: 6px;
+            color: #1f8a4c; font-weight: 800;
+        }
+        .plan.pro li::before { color: var(--blue); }
+        .ribbon {
+            position: absolute; top: 16px; right: 16px; font-size: 11px; font-weight: 800;
+            background: var(--blue); color: #fff; padding: 4px 10px; border-radius: 999px; letter-spacing: .5px;
+        }
+
+        /* ---------- FAQ ---------- */
+        .faq { max-width: 720px; margin: 0 auto; }
+        details {
+            background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+            padding: 4px 20px; margin-bottom: 12px;
+        }
+        details summary {
+            cursor: pointer; font-weight: 600; font-size: 15.5px; padding: 14px 0;
+            list-style: none; display: flex; justify-content: space-between; align-items: center;
+        }
+        details summary::-webkit-details-marker { display: none; }
+        details summary::after { content: "+"; font-size: 22px; color: var(--blue); font-weight: 400; }
+        details[open] summary::after { content: "−"; }
+        details p { font-size: 14px; color: #4b5563; padding: 0 0 16px; }
+
+        /* ---------- Final CTA ---------- */
+        .final {
+            margin: 56px 0 0; padding: 52px 24px; text-align: center; color: #fff;
+            background: linear-gradient(135deg, #3366cc 0%, #5a4bd0 55%, #764ba2 100%);
+            border-radius: 26px;
+        }
+        .final h2 { font-size: 30px; font-weight: 800; letter-spacing: -.5px; }
+        .final p { opacity: .9; margin: 10px 0 26px; font-size: 16px; }
+
+        /* ---------- Footer ---------- */
+        .footer { text-align: center; padding: 44px 24px 56px; color: var(--muted); font-size: 13px; }
+        .footer .links { margin-bottom: 16px; }
+        .footer .links a { color: #55607a; margin: 0 12px; font-weight: 500; }
+
+        /* ---------- Responsive ---------- */
+        @media (max-width: 760px) {
+            .features { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .hero { padding: 56px 20px 80px; }
+            .hero h1 { font-size: 40px; }
+            .hero .tag { font-size: 18px; }
+            .stats { grid-template-columns: repeat(3, 1fr); gap: 14px 4px; margin-top: -42px; }
+            .personas, .steps, .plans { grid-template-columns: 1fr; }
+            .sec-head h2 { font-size: 25px; }
+            section { padding: 44px 0 4px; }
+        }
+        @media (max-width: 420px) {
+            .features { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
-    <div class="hero">
+
+    <!-- ================= HERO ================= -->
+    <header class="hero">
+        <div class="app-mark">한</div>
         <h1>Hangul</h1>
-        <p>Learn Korean from Zero to Fluent</p>
-    </div>
+        <p class="tag">Learn Korean from zero — read, write &amp; speak</p>
+        <p class="sub">iOS 17+ · Free to start · Works offline · English · 日本語 · 中文</p>
+        <div class="cta-row">
+            <a class="appstore-btn" href="https://apps.apple.com/app/id6760618886" aria-label="Download on the App Store">
+                <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+                <span class="lbl"><small>Download on the</small><b>App Store</b></span>
+            </a>
+            <a class="ghost-btn" href="#who">See if it's for you ↓</a>
+        </div>
+    </header>
 
-    <div class="container">
-        <div class="card">
-            <div class="stats">
-                <div><div class="stat-num">975</div><div class="stat-label">Words</div></div>
-                <div><div class="stat-num">30</div><div class="stat-label">Dialogues</div></div>
-                <div><div class="stat-num">7</div><div class="stat-label">Practice Modes</div></div>
-                <div><div class="stat-num">3</div><div class="stat-label">Languages</div></div>
-            </div>
+    <div class="wrap">
+
+        <!-- ================= STATS ================= -->
+        <div class="stats">
+            <div class="stat"><div class="stat-num">40</div><div class="stat-label">Letters</div></div>
+            <div class="stat"><div class="stat-num">975</div><div class="stat-label">Words</div></div>
+            <div class="stat"><div class="stat-num">30</div><div class="stat-label">Dialogues</div></div>
+            <div class="stat"><div class="stat-num">7</div><div class="stat-label">Practice modes</div></div>
+            <div class="stat"><div class="stat-num">3</div><div class="stat-label">Languages</div></div>
         </div>
 
-        <div class="card">
-            <h2>Everything You Need to Learn Korean</h2>
+        <!-- ================= WHO IS IT FOR (scenarios) ================= -->
+        <section id="who">
+            <div class="sec-head">
+                <span class="kicker">Pick your path</span>
+                <h2>Which learner are you?</h2>
+                <p>Hangul meets you where you are. Choose a starting point and the app builds your route from there.</p>
+            </div>
+            <div class="personas">
+                <div class="persona">
+                    <div class="emoji">🔤</div>
+                    <h3>“I can’t read Korean yet”</h3>
+                    <p class="quote">Total beginner — those characters look like a wall.</p>
+                    <span class="path">▶ Read Hangul in 1 Day</span>
+                    <ul>
+                        <li>40 letters with memory tricks &amp; audio</li>
+                        <li>See how 2 letters snap into a syllable</li>
+                        <li>4 guided steps to read any Korean text</li>
+                    </ul>
+                </div>
+                <div class="persona">
+                    <div class="emoji">🎤</div>
+                    <h3>“I’m here for K-Pop &amp; K-Drama”</h3>
+                    <p class="quote">I want to understand lyrics and lines, not just sing along.</p>
+                    <span class="path">▶ K-Pop Korean path</span>
+                    <ul>
+                        <li>Phrases pulled from songs &amp; shows</li>
+                        <li>Pronunciation practice that scores you</li>
+                        <li>Listen-and-type dictation for the ear</li>
+                    </ul>
+                </div>
+                <div class="persona">
+                    <div class="emoji">✈️</div>
+                    <h3>“I’m traveling to Korea”</h3>
+                    <p class="quote">I need to order, ask directions and not get lost.</p>
+                    <span class="path">▶ Travel Korean path</span>
+                    <ul>
+                        <li>Essential phrases for real situations</li>
+                        <li>30 dialogues: café, taxi, shopping &amp; more</li>
+                        <li>Everything works offline on the plane</li>
+                    </ul>
+                </div>
+                <div class="persona">
+                    <div class="emoji">🎓</div>
+                    <h3>“I’m preparing for TOPIK”</h3>
+                    <p class="quote">I need structure and to know where I’m weak.</p>
+                    <span class="path">▶ TOPIK Prep path</span>
+                    <ul>
+                        <li>975 words covering TOPIK Level 1 &amp; 2</li>
+                        <li>Smart Quiz drills the words you miss</li>
+                        <li>Full TOPIK-style mock test</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= HOW IT WORKS ================= -->
+        <section>
+            <div class="sec-head">
+                <span class="kicker">How it works</span>
+                <h2>Korean is like LEGO</h2>
+                <p>Letters snap together into syllables. Learn the pieces, and you can read anything.</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-n">1</div>
+                    <h3>Learn the pieces</h3>
+                    <p>Master the 40 letters with mnemonics, stroke order and native audio.</p>
+                </div>
+                <div class="step">
+                    <div class="step-n">2</div>
+                    <h3>Build &amp; practice</h3>
+                    <p>Combine letters into syllables and words, then drill with quizzes, writing and speaking.</p>
+                </div>
+                <div class="step">
+                    <div class="step-n">3</div>
+                    <h3>Read &amp; speak</h3>
+                    <p>Work through real dialogues and grammar, and track your streak every day.</p>
+                </div>
+            </div>
+            <div class="lego">
+                <div class="tiles"><span class="t1">ㄱ</span> + <span class="t2">ㅏ</span> = <span class="t3">가</span></div>
+                <p><b>g</b> + <b>a</b> = <b>ga</b> — that’s the whole idea. The rest is just more pieces.</p>
+            </div>
+        </section>
+
+    </div><!-- /wrap -->
+
+    <!-- ================= SCREENSHOTS ================= -->
+    <section>
+        <div class="wrap">
+            <div class="sec-head">
+                <span class="kicker">A look inside</span>
+                <h2>See it in action</h2>
+                <p>A clean, dark interface that keeps you focused on learning.</p>
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="shot"><img loading="lazy" src="shots/02_Learn_Levels.png" alt="Choose your learning path — K-Pop, Travel, TOPIK and more"></div>
+            <div class="shot"><img loading="lazy" src="shots/03_Jamo_List.png" alt="Learn the 40 Korean letters with mnemonics and audio"></div>
+            <div class="shot"><img loading="lazy" src="shots/04_Jamo_Detail.png" alt="Letter quiz with stroke order and pronunciation"></div>
+            <div class="shot"><img loading="lazy" src="shots/06_Word_Categories.png" alt="975 essential words across 15 categories"></div>
+            <div class="shot"><img loading="lazy" src="shots/05_Grammar_List.png" alt="Grammar made simple — particles, word order, verb endings"></div>
+            <div class="shot"><img loading="lazy" src="shots/07_Practice.png" alt="Practice your way — handwriting, quizzes, dictation and more"></div>
+            <div class="shot"><img loading="lazy" src="shots/01_Home.png" alt="Your learning dashboard with streaks, goals and daily quests"></div>
+            <div class="shot"><img loading="lazy" src="shots/09_Profile.png" alt="Track your progress — statistics, achievements and settings"></div>
+        </div>
+        <p class="gallery-hint">← swipe to explore →</p>
+    </section>
+
+    <div class="wrap">
+
+        <!-- ================= FEATURES ================= -->
+        <section>
+            <div class="sec-head">
+                <span class="kicker">Everything in one app</span>
+                <h2>From first letter to fluent</h2>
+                <p>No more juggling five different apps. Reading, listening, writing and speaking — all here.</p>
+            </div>
             <div class="features">
-                <div class="feature">
-                    <div class="feature-icon">&#12593;</div>
-                    <div><h3>Hangul Letters</h3><p>40 letters with mnemonics &amp; stroke order</p></div>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">&#128218;</div>
-                    <div><h3>TOPIK Vocabulary</h3><p>975 words covering Level 1 &amp; 2</p></div>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">&#128172;</div>
-                    <div><h3>Real Conversations</h3><p>30 scenarios with grammar tips</p></div>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">&#127908;</div>
-                    <div><h3>Pronunciation</h3><p>Speech recognition evaluation</p></div>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">&#9997;&#65039;</div>
-                    <div><h3>Handwriting</h3><p>Write Korean with stroke recognition</p></div>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">&#129504;</div>
-                    <div><h3>Smart Quiz</h3><p>Adaptive learning with TOPIK mock test</p></div>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">&#128483;&#65039;</div>
-                    <div><h3>Dictation</h3><p>Listen and type what you hear</p></div>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">&#127760;</div>
-                    <div><h3>Multi-Language</h3><p>English, Japanese &amp; Chinese support</p></div>
+                <div class="feature"><div class="fi">ㄱ</div><div><h3>Hangul Letters</h3><p>40 letters with mnemonics &amp; stroke order</p></div></div>
+                <div class="feature"><div class="fi">📚</div><div><h3>TOPIK Vocabulary</h3><p>975 words across Level 1 &amp; 2</p></div></div>
+                <div class="feature"><div class="fi">💬</div><div><h3>Real Conversations</h3><p>30 scenarios with grammar tips</p></div></div>
+                <div class="feature"><div class="fi">🎤</div><div><h3>Pronunciation</h3><p>Speech recognition scores your speaking</p></div></div>
+                <div class="feature"><div class="fi">✍️</div><div><h3>Handwriting</h3><p>Write Korean with stroke recognition</p></div></div>
+                <div class="feature"><div class="fi">🧠</div><div><h3>Smart Quiz</h3><p>Adaptive drills + TOPIK mock test</p></div></div>
+                <div class="feature"><div class="fi">🗣️</div><div><h3>Dictation</h3><p>Listen and type what you hear</p></div></div>
+                <div class="feature"><div class="fi">🌐</div><div><h3>Multi-Language</h3><p>English, Japanese &amp; Chinese support</p></div></div>
+                <div class="feature"><div class="fi">🔥</div><div><h3>Stay Motivated</h3><p>Streaks, daily goals &amp; quests</p></div></div>
+            </div>
+        </section>
+
+        <!-- ================= PRACTICE MODES ================= -->
+        <section>
+            <div class="sec-head">
+                <span class="kicker">7 ways to practice</span>
+                <h2>Practice your way</h2>
+                <p>Different days call for different practice. Pick whatever fits the moment.</p>
+            </div>
+            <div class="practice-card">
+                <div class="chips">
+                    <span class="chip">📖 Study Session</span>
+                    <span class="chip">✍️ Handwriting</span>
+                    <span class="chip">🗂️ Flashcard Review</span>
+                    <span class="chip">❓ Quiz</span>
+                    <span class="chip">🎤 Pronunciation</span>
+                    <span class="chip">⌨️ Dictation</span>
+                    <span class="chip">📄 Reading</span>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="card">
-            <h2>Screenshots</h2>
-            <div class="screenshots">App screenshots coming soon</div>
-        </div>
-
-        <div class="card">
-            <div class="links">
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="support.html">Support</a>
-                <a href="terms.html">Terms of Use</a>
-                <a href="mailto:chungkil.cksw@gmail.com">Contact</a>
+        <!-- ================= PLANS ================= -->
+        <section>
+            <div class="sec-head">
+                <span class="kicker">Pricing</span>
+                <h2>Start free, upgrade when ready</h2>
+                <p>A genuinely useful free tier. Premium unlocks the full library when you’re hooked.</p>
             </div>
-        </div>
-    </div>
+            <div class="plans">
+                <div class="plan free">
+                    <div class="tier">Free</div>
+                    <h3>Everything to get started</h3>
+                    <ul>
+                        <li>All 40 Hangul letters + stroke order</li>
+                        <li>Syllable builder &amp; 8 pronunciation rules</li>
+                        <li>8 word categories (400+ words)</li>
+                        <li>Essential travel phrases + 3 dialogues</li>
+                        <li>Handwriting practice</li>
+                        <li>Daily quizzes &amp; flashcards + goal tracking</li>
+                    </ul>
+                </div>
+                <div class="plan pro">
+                    <div class="ribbon">PREMIUM</div>
+                    <div class="tier">Premium</div>
+                    <h3>The full Korean course</h3>
+                    <ul>
+                        <li>All 15 categories — full 975 words</li>
+                        <li>All 30 dialogues</li>
+                        <li>Unlimited Smart Quiz + TOPIK mock test</li>
+                        <li>Pronunciation &amp; dictation practice</li>
+                        <li>Reading comprehension &amp; unlimited flashcards</li>
+                        <li>Ad-free experience</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-    <div class="footer">&copy; 2026 CKSW Games. All rights reserved.</div>
+        <!-- ================= FAQ ================= -->
+        <section>
+            <div class="sec-head">
+                <span class="kicker">Good to know</span>
+                <h2>Frequently asked</h2>
+            </div>
+            <div class="faq">
+                <details open>
+                    <summary>Do I need any Korean to start?</summary>
+                    <p>None at all. The app is built for absolute beginners — you’ll learn to read Hangul from the very first letter, with mnemonics and audio for every character.</p>
+                </details>
+                <details>
+                    <summary>Does it work offline?</summary>
+                    <p>Yes. All learning content — 975 words, 30 dialogues, quizzes, flashcards, handwriting and pronunciation rules — works fully offline. Only ads and subscription checks need a connection.</p>
+                </details>
+                <details>
+                    <summary>What languages does the app support?</summary>
+                    <p>The interface and all translations are available in English, Japanese and Chinese (Simplified). The app follows your device language automatically.</p>
+                </details>
+                <details>
+                    <summary>How does the Smart Quiz work?</summary>
+                    <p>It analyzes your quiz history to spot the words you struggle with, then prioritizes those in future quizzes — so you spend your time on exactly what you need.</p>
+                </details>
+                <details>
+                    <summary>Is it really free to start?</summary>
+                    <p>Yes. The free tier includes all 40 letters, 400+ words, handwriting, daily quizzes and flashcards. Premium unlocks the full 975-word library, all dialogues, advanced practice and an ad-free experience.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- ================= FINAL CTA ================= -->
+        <div class="final">
+            <h2>Read your first Korean word today</h2>
+            <p>Free to start · Works offline · iOS 17+</p>
+            <a class="appstore-btn" href="https://apps.apple.com/app/id6760618886" aria-label="Download on the App Store">
+                <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+                <span class="lbl"><small>Download on the</small><b>App Store</b></span>
+            </a>
+        </div>
+
+    </div><!-- /wrap -->
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="support.html">Support</a>
+            <a href="terms.html">Terms of Use</a>
+            <a href="mailto:chungkil.kim@gmail.com">Contact</a>
+        </div>
+        &copy; 2026 CKSW Games. All rights reserved.
+    </footer>
+
 </body>
 </html>
