@@ -4,44 +4,148 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TalkScript — 온디바이스 화자 분리 전사 · On-Device Speaker Transcription</title>
-<meta name="description" content="녹음부터 화자 분리 전사까지, 모든 처리가 기기 안에서. TalkScript for iPhone, iPad, and Mac.">
+<meta name="description" content="회의·인터뷰·강의 녹음을 화자별로 구분된 텍스트로. 음성 인식과 화자 분리가 전부 기기 안에서 동작하는 iPhone·iPad·Mac 앱 TalkScript.">
 <style>
-  :root { color-scheme: light dark; }
+  :root {
+    color-scheme: light dark;
+    --blue: #2066e0; --navy: #10184E; --mint: #7DE2C8;
+    --line: rgba(128,128,128,.28); --muted: #82828c;
+  }
+  * { box-sizing: border-box; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
-    max-width: 720px; margin: 0 auto; padding: 24px 20px 60px;
+    max-width: 760px; margin: 0 auto; padding: 24px 20px 72px;
     line-height: 1.7; font-size: 16px;
+    overflow-wrap: break-word;
   }
-  a { color: #2066e0; }
+  a { color: var(--blue); }
+  /* grid/flex 자식이 콘텐츠 min-width로 트랙을 넓혀 가로 오버플로우 내는 것 방지 */
+  .scn, .step, .feature, .plan { min-width: 0; }
+  img, svg { max-width: 100%; }
+
   .lang-switch { display: flex; gap: 8px; margin: 0 0 1.4em; }
   .lang-switch button {
     font: inherit; font-size: .9em; padding: 6px 16px; border-radius: 999px;
     border: 1px solid rgba(128,128,128,.45); background: transparent; cursor: pointer; color: inherit;
   }
-  .lang-switch button.active { background: #2066e0; border-color: #2066e0; color: #fff; }
+  .lang-switch button.active { background: var(--blue); border-color: var(--blue); color: #fff; }
 
+  /* ---- hero ---- */
   .hero {
     background: linear-gradient(180deg, #10184E 0%, #2066E0 100%);
-    color: #fff; border-radius: 24px; padding: 40px 28px 36px; text-align: center;
-    margin-bottom: 2em;
+    color: #fff; border-radius: 24px; padding: 40px 28px 38px; text-align: center;
+    margin-bottom: 1.8em;
   }
-  .hero .bars { display: flex; gap: 9px; justify-content: center; align-items: center; height: 96px; margin-bottom: 18px; }
+  .hero .bars { display: flex; gap: 9px; justify-content: center; align-items: center; height: 88px; margin-bottom: 16px; }
   .hero .bars span { width: 11px; border-radius: 999px; background: #fff; display: inline-block; }
-  .hero .bars span.mint { background: #7DE2C8; }
-  .hero h1 { font-size: 2em; margin: 0 0 6px; }
-  .hero p { margin: 0; opacity: .92; }
-  .features { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 1.4em 0; }
-  @media (max-width: 540px) { .features { grid-template-columns: 1fr; } }
-  .feature {
-    border: 1px solid rgba(128,128,128,.3); border-radius: 14px; padding: 14px 16px;
+  .hero .bars span.mint { background: var(--mint); }
+  .hero h1 { font-size: 2em; margin: 0 0 10px; letter-spacing: -.01em; }
+  .hero .tagline { font-size: 1.16em; font-weight: 600; margin: 0 auto 8px; max-width: 22em; }
+  .hero .platforms { margin: 0 0 18px; opacity: .85; font-size: .92em; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 0 0 22px; }
+  .chip {
+    font-size: .84em; padding: 6px 13px; border-radius: 999px; white-space: nowrap;
+    background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.28); color: #fff;
   }
+
+  /* ---- App Store button ---- */
+  .appstore {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: #000; color: #fff; text-decoration: none;
+    padding: 12px 22px; border-radius: 14px; font-weight: 600; font-size: .98em;
+    border: 1px solid rgba(255,255,255,.18);
+  }
+  .appstore svg { flex: none; }
+  .appstore:hover { opacity: .9; }
+  .hero .appstore { box-shadow: 0 8px 22px rgba(0,0,0,.28); }
+
+  /* ---- headings ---- */
+  h2.section { font-size: 1.32em; margin: 2.4em 0 .15em; letter-spacing: -.01em; }
+  .section-sub { color: var(--muted); margin: 0 0 1.1em; font-size: .95em; }
+  .intro { margin: 0 0 .4em; }
+
+  /* ---- scenarios ---- */
+  .scenarios { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 1em 0; }
+  @media (max-width: 600px) { .scenarios { grid-template-columns: 1fr; } }
+  .scn {
+    border: 1px solid var(--line); border-radius: 16px; padding: 18px;
+    background: rgba(128,128,128,.04);
+  }
+  .scn .ic { font-size: 1.5em; line-height: 1; }
+  .scn h3 { margin: 10px 0 6px; font-size: 1.05em; }
+  .scn p { margin: 0; color: var(--muted); font-size: .93em; }
+
+  /* ---- flow (3 steps w/ screenshots) ---- */
+  .flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin: 1.2em 0 0; }
+  @media (max-width: 600px) { .flow { grid-template-columns: 1fr; max-width: 320px; margin-inline: auto; } }
+  .step { text-align: center; }
+  .shot-frame {
+    border: 1px solid var(--line); border-radius: 22px; overflow: hidden;
+    box-shadow: 0 12px 32px rgba(16,24,78,.14); background: #fff;
+  }
+  .shot-frame img { display: block; width: 100%; height: auto; }
+  .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 24px; height: 24px; border-radius: 50%; background: var(--blue);
+    color: #fff; font-size: .82em; font-weight: 700; margin-right: 8px; vertical-align: middle;
+  }
+  .step h3 { margin: 14px 0 4px; font-size: 1.02em; }
+  .step p { margin: 0; color: var(--muted); font-size: .9em; }
+
+  /* ---- privacy spotlight ---- */
+  .spotlight { display: grid; grid-template-columns: 220px 1fr; gap: 28px; align-items: center; margin: 1.2em 0; }
+  @media (max-width: 600px) { .spotlight { grid-template-columns: 1fr; max-width: 300px; margin-inline: auto; text-align: center; } }
+  .spotlight .shot-frame { margin: 0 auto; }
+  .checks { margin: .2em 0 0; padding: 0; list-style: none; }
+  .checks li { position: relative; padding-left: 28px; margin: .6em 0; }
+  .checks li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--blue); font-weight: 800; }
+  @media (max-width: 600px) { .checks { text-align: left; display: inline-block; } }
+
+  /* ---- supporting features ---- */
+  .features { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 1em 0; }
+  @media (max-width: 600px) { .features { grid-template-columns: 1fr; } }
+  .feature { border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
   .feature h3 { margin: 0 0 4px; font-size: 1em; }
-  .feature p { margin: 0; font-size: .92em; color: gray; }
+  .feature p { margin: 0; font-size: .9em; color: var(--muted); }
+
   .privacy-note {
     background: rgba(50,130,240,.10); border: 1px solid rgba(50,130,240,.35);
-    border-radius: 10px; padding: 14px 16px; margin: 1.4em 0;
+    border-radius: 12px; padding: 16px 18px; margin: 1.6em 0;
   }
-  footer { margin-top: 3em; padding-top: 1.2em; border-top: 1px solid rgba(128,128,128,.3); font-size: .9em; color: gray; }
+
+  /* ---- plans (free / pro) ---- */
+  .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 1em 0; }
+  @media (max-width: 600px) { .plans { grid-template-columns: 1fr; } }
+  .plan { border: 1px solid var(--line); border-radius: 16px; padding: 20px; }
+  .plan.pro { border-color: rgba(32,102,224,.55); background: rgba(32,102,224,.05); }
+  .plan-name { font-weight: 700; font-size: 1.05em; margin: 0 0 3px; }
+  .plan-tag { color: var(--muted); font-size: .85em; margin: 0 0 12px; }
+  .plan ul { margin: 0; padding: 0; list-style: none; font-size: .93em; }
+  .plan li { position: relative; padding-left: 22px; margin: .5em 0; }
+  .plan li::before { content: "✓"; position: absolute; left: 0; color: var(--blue); font-weight: 700; }
+  .plan.free li::before { color: var(--muted); }
+
+  /* ---- faq ---- */
+  .faq { border-bottom: 1px solid var(--line); }
+  .faq summary {
+    cursor: pointer; padding: 14px 26px 14px 2px; font-weight: 600;
+    list-style: none; position: relative;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; position: absolute; right: 4px; top: 11px; color: var(--muted); font-size: 1.25em; }
+  .faq[open] summary::after { content: "\2013"; }
+  .faq .ans { padding: 0 2px 16px; color: var(--muted); font-size: .94em; }
+
+  /* ---- bottom CTA ---- */
+  .cta {
+    text-align: center; border: 1px solid var(--line); border-radius: 20px;
+    padding: 32px 24px; margin: 2.4em 0 0;
+    background: linear-gradient(180deg, rgba(32,102,224,.07), rgba(32,102,224,.02));
+  }
+  .cta h2 { margin: 0 0 6px; font-size: 1.3em; }
+  .cta p { margin: 0 0 18px; color: var(--muted); font-size: .95em; }
+
+  footer { margin-top: 3em; padding-top: 1.2em; border-top: 1px solid var(--line); font-size: .9em; color: var(--muted); }
   footer a { margin-right: 14px; }
 </style>
 </head>
@@ -52,6 +156,7 @@
   <button type="button" data-lang="en">English</button>
 </nav>
 
+<!-- ====================== Hero ====================== -->
 <div class="hero">
   <div class="bars" aria-hidden="true">
     <span style="height:28%"></span>
@@ -65,55 +170,260 @@
     <span style="height:28%"></span>
   </div>
   <h1>TalkScript</h1>
-  <p class="lang-ko">녹음부터 화자 분리 전사까지, 모든 처리가 기기 안에서</p>
-  <p class="lang-en">From recording to speaker-separated transcripts — all on your device</p>
+  <p class="tagline">
+    <span class="lang-ko">녹음·파일을 넣으면, 누가 말했는지까지 구분된 텍스트로 정리됩니다</span>
+    <span class="lang-en">Drop in a recording — get back a transcript that knows who said what</span>
+  </p>
+  <p class="platforms">
+    <span class="lang-ko">음성 인식도 화자 분리도, 전부 기기 안에서 · iPhone · iPad · Mac</span>
+    <span class="lang-en">Recognition and speaker diarization, all on-device · iPhone · iPad · Mac</span>
+  </p>
+  <div class="chips" aria-hidden="false">
+    <span class="chip"><span class="lang-ko">🔒 100% 온디바이스</span><span class="lang-en">🔒 100% on-device</span></span>
+    <span class="chip"><span class="lang-ko">🌐 약 99개 언어</span><span class="lang-en">🌐 ~99 languages</span></span>
+    <span class="chip"><span class="lang-ko">⏱️ 최대 3시간</span><span class="lang-en">⏱️ Up to 3 hours</span></span>
+  </div>
+  <a class="appstore" href="https://apps.apple.com/app/id6778779268" target="_blank" rel="noopener">
+    <svg viewBox="0 0 384 512" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+    <span><span class="lang-ko">App Store에서 다운로드</span><span class="lang-en">Download on the App Store</span></span>
+  </a>
 </div>
 
-<!-- ====================== 한국어 ====================== -->
-<section class="lang-ko">
+<!-- ====================== Intro ====================== -->
+<p class="intro">
+  <span class="lang-ko">TalkScript는 회의·인터뷰·강의 녹음을 <strong>화자별로 구분된 텍스트</strong>로 바꿔 주는
+  iPhone·iPad·Mac 앱입니다. 음성 인식과 화자 분리가 전부 기기 위에서 동작해, 녹음 내용이 외부로 나가지 않습니다.</span>
+  <span class="lang-en">TalkScript turns meeting, interview, and lecture recordings into
+  <strong>speaker-separated transcripts</strong> on iPhone, iPad, and Mac. Recognition and diarization
+  run entirely on your device — your audio never leaves it.</span>
+</p>
 
-<p>TalkScript는 회의·인터뷰·강의 녹음을 <strong>화자별로 구분된 텍스트</strong>로 바꿔 주는
-iPhone·iPad·Mac 앱입니다. 음성 인식과 화자 분리가 전부 기기 위에서 동작해, 녹음 내용이
-외부로 나가지 않습니다.</p>
+<!-- ====================== Scenarios ====================== -->
+<h2 class="section"><span class="lang-ko">이럴 때 켜세요</span><span class="lang-en">When you'd reach for it</span></h2>
+<p class="section-sub">
+  <span class="lang-ko">받아쓰기에 쓰던 시간을, 결과를 다듬는 시간으로.</span>
+  <span class="lang-en">Spend less time typing it up, more time using the result.</span>
+</p>
 
+<div class="scenarios">
+  <div class="scn">
+    <div class="ic" aria-hidden="true">📋</div>
+    <h3><span class="lang-ko">회의가 끝나면 회의록이 남습니다</span><span class="lang-en">Leave meetings with notes already written</span></h3>
+    <p><span class="lang-ko">회의를 녹음만 해두면 화자별로 정리된 텍스트가 만들어집니다. 받아쓰던 시간을 공유 한 번으로 줄이세요.</span>
+       <span class="lang-en">Just record the meeting — get a transcript organized by speaker, ready to share in one tap.</span></p>
+  </div>
+  <div class="scn">
+    <div class="ic" aria-hidden="true">🎙️</div>
+    <h3><span class="lang-ko">'누가 한 말'인지 헷갈리지 않게</span><span class="lang-en">Never lose track of who said what</span></h3>
+    <p><span class="lang-ko">인터뷰·대담을 화자가 구분된 채로 전사합니다. 문장을 탭하면 그 대목부터 다시 들을 수 있어요.</span>
+       <span class="lang-en">Interviews and panels are transcribed with speakers separated. Tap any line to replay that exact moment.</span></p>
+  </div>
+  <div class="scn">
+    <div class="ic" aria-hidden="true">🎓</div>
+    <h3><span class="lang-ko">긴 강의도 텍스트로 다시</span><span class="lang-en">Turn long lectures back into text</span></h3>
+    <p><span class="lang-ko">최대 3시간 녹음을 전사하고, 필요한 대목은 검색으로 바로 찾습니다. 다시 듣기 부담을 덜어줍니다.</span>
+       <span class="lang-en">Transcribe up to 3 hours and search straight to the part you need — no re-listening to the whole thing.</span></p>
+  </div>
+  <div class="scn">
+    <div class="ic" aria-hidden="true">🔒</div>
+    <h3><span class="lang-ko">민감한 대화는 기기 밖으로 나가지 않게</span><span class="lang-en">Keep sensitive talks off the cloud</span></h3>
+    <p><span class="lang-ko">상담·진료·법률 같은 기록도 안심하고. 음성 인식과 화자 분리가 전부 기기 안에서 끝납니다.</span>
+       <span class="lang-en">Counseling, medical, legal — recognition and diarization all finish on your device. Nothing is uploaded.</span></p>
+  </div>
+</div>
+
+<!-- ====================== Flow (with screenshots) ====================== -->
+<h2 class="section"><span class="lang-ko">넣으면, 이렇게 정리됩니다</span><span class="lang-en">Drop it in — here's what you get back</span></h2>
+<p class="section-sub">
+  <span class="lang-ko">녹음·가져오기부터 내보내기까지 세 단계.</span>
+  <span class="lang-en">Three steps, from recording to export.</span>
+</p>
+
+<div class="flow">
+  <div class="step">
+    <div class="shot-frame">
+      <img class="shot" data-shot="transcript" src="images/ko/transcript.png" loading="lazy" decoding="async"
+           width="640" height="1390"
+           data-alt-ko="화자별로 자동 구분된 전사 결과 화면" data-alt-en="Transcript with speakers automatically separated"
+           alt="화자별로 자동 구분된 전사 결과 화면">
+    </div>
+    <h3><span class="num">1</span><span class="lang-ko">화자별로 자동 구분</span><span class="lang-en">Speakers, split automatically</span></h3>
+    <p><span class="lang-ko">앱에서 녹음하거나 m4a·wav·mp3를 가져오면, 말한 사람이 S1·S2…로 나뉘어 전사됩니다.</span>
+       <span class="lang-en">Record in-app or import m4a, wav, or mp3 — each voice is transcribed as S1, S2, and so on.</span></p>
+  </div>
+  <div class="step">
+    <div class="shot-frame">
+      <img class="shot" data-shot="labels" src="images/ko/labels.png" loading="lazy" decoding="async"
+           width="640" height="1390"
+           data-alt-ko="S1·S2를 실제 이름으로 바꾸는 화자 이름 편집 화면" data-alt-en="Editor for renaming S1, S2 to real names"
+           alt="S1·S2를 실제 이름으로 바꾸는 화자 이름 편집 화면">
+    </div>
+    <h3><span class="num">2</span><span class="lang-ko">이름 붙이고 정리</span><span class="lang-en">Name them, tidy up</span></h3>
+    <p><span class="lang-ko">S1·S2를 실제 이름으로 바꾸고, 잘못 나뉜 화자는 하나로 합칠 수 있습니다.</span>
+       <span class="lang-en">Rename S1, S2 to real names, and merge any speaker that got split by mistake.</span></p>
+  </div>
+  <div class="step">
+    <div class="shot-frame">
+      <img class="shot" data-shot="saved" src="images/ko/saved.png" loading="lazy" decoding="async"
+           width="640" height="1390"
+           data-alt-ko="이름이 붙은 전사 결과와 내용 검색 화면" data-alt-en="Named transcript with in-text search"
+           alt="이름이 붙은 전사 결과와 내용 검색 화면">
+    </div>
+    <h3><span class="num">3</span><span class="lang-ko">검색하고 내보내기</span><span class="lang-en">Search and export</span></h3>
+    <p><span class="lang-ko">전사 내용을 검색해 원하는 대목을 찾고, TXT·Markdown·SRT·PDF로 내보내 공유합니다.</span>
+       <span class="lang-en">Search the transcript to find a moment, then export as TXT, Markdown, SRT, or PDF to share.</span></p>
+  </div>
+</div>
+
+<!-- ====================== Privacy spotlight ====================== -->
+<h2 class="section"><span class="lang-ko">왜 전부 기기 안에서일까요</span><span class="lang-en">Why everything stays on your device</span></h2>
+<p class="section-sub">
+  <span class="lang-ko">민감한 대화일수록, 어디서 처리되는지가 더 중요합니다.</span>
+  <span class="lang-en">The more sensitive the conversation, the more it matters where it's processed.</span>
+</p>
+<div class="spotlight">
+  <div class="shot-frame">
+    <img class="shot" data-shot="privacy" src="images/ko/privacy.png" loading="lazy" decoding="async"
+         width="640" height="1390"
+         data-alt-ko="모든 처리는 기기 안에서 — 온디바이스 안내 화면" data-alt-en="On-device privacy screen — all processing stays on device"
+         alt="모든 처리는 기기 안에서 — 온디바이스 안내 화면">
+  </div>
+  <ul class="checks">
+    <li><span class="lang-ko">오디오와 전사 결과가 기기 밖으로 전송되지 않습니다.</span>
+        <span class="lang-en">Your audio and transcripts never leave your device.</span></li>
+    <li><span class="lang-ko">계정도 로그인도 없이, 열면 바로 씁니다.</span>
+        <span class="lang-en">No account, no sign-in — just open and go.</span></li>
+    <li><span class="lang-ko">모델만 최초 한 번 내려받으면, 이후엔 비행기 모드에서도 전사됩니다.</span>
+        <span class="lang-en">Models download once; after that it transcribes even in airplane mode.</span></li>
+    <li><span class="lang-ko">기록은 내 기기에만 남고, 클라우드 비용도 없습니다.</span>
+        <span class="lang-en">Recordings stay only on your device — and there's no cloud bill.</span></li>
+  </ul>
+</div>
+
+<!-- ====================== Supporting features ====================== -->
+<h2 class="section"><span class="lang-ko">꼼꼼한 부분까지</span><span class="lang-en">Down to the details</span></h2>
 <div class="features">
-  <div class="feature"><h3>🎙️ 녹음 + 가져오기</h3><p>앱에서 바로 녹음하거나 m4a·wav·mp3 파일을 가져와 전사 (최대 3시간)</p></div>
-  <div class="feature"><h3>👥 화자 분리</h3><p>누가 말했는지 자동 구분 (S1, S2…). 화자 수 직접 지정·이름 라벨링·병합 지원</p></div>
-  <div class="feature"><h3>🌐 다국어 음성 인식</h3><p>Whisper 기반 — 한국어 포함 약 99개 언어. 기기 사양에 맞는 모델 자동 선택</p></div>
-  <div class="feature"><h3>🔒 온디바이스 처리</h3><p>오디오·전사 텍스트는 기기 밖으로 전송되지 않음</p></div>
-  <div class="feature"><h3>▶️ 싱크 재생 + 편집</h3><p>문장을 탭하면 해당 구간 재생. 텍스트·화자 수정 가능</p></div>
-  <div class="feature"><h3>📤 내보내기</h3><p>TXT · Markdown · SRT 자막으로 공유</p></div>
+  <div class="feature">
+    <h3>🌐 <span class="lang-ko">다국어 음성 인식</span><span class="lang-en">Multilingual recognition</span></h3>
+    <p><span class="lang-ko">Whisper 기반 약 99개 언어. 기기 사양에 맞는 모델을 자동으로 선택합니다.</span>
+       <span class="lang-en">Whisper-based, about 99 languages. The right model is picked for your device automatically.</span></p>
+  </div>
+  <div class="feature">
+    <h3>👥 <span class="lang-ko">화자 수 지정·병합</span><span class="lang-en">Speaker count &amp; merge</span></h3>
+    <p><span class="lang-ko">자동 감지에 더해 화자 수를 직접 정하고, 잘못 나뉜 화자는 하나로 합칩니다.</span>
+       <span class="lang-en">Beyond auto-detect: set the speaker count yourself and merge any that got split.</span></p>
+  </div>
+  <div class="feature">
+    <h3>▶️ <span class="lang-ko">싱크 재생·편집</span><span class="lang-en">Synced playback &amp; editing</span></h3>
+    <p><span class="lang-ko">문장을 탭하면 그 구간이 재생됩니다. 텍스트와 화자를 직접 고칠 수 있어요.</span>
+       <span class="lang-en">Tap a sentence to play that moment. Edit the text and speakers yourself.</span></p>
+  </div>
+  <div class="feature">
+    <h3>📊 <span class="lang-ko">화자별 발언 통계</span><span class="lang-en">Speaker stats</span></h3>
+    <p><span class="lang-ko">누가 얼마나 말했는지 한눈에 봅니다.</span>
+       <span class="lang-en">See who spoke how much, at a glance.</span></p>
+  </div>
+  <div class="feature">
+    <h3>📤 <span class="lang-ko">4가지 포맷 내보내기</span><span class="lang-en">Export in 4 formats</span></h3>
+    <p><span class="lang-ko">TXT·Markdown·SRT 자막·PDF로, 회의록부터 자막까지 바로.</span>
+       <span class="lang-en">TXT, Markdown, SRT subtitles, and PDF — from meeting notes to captions.</span></p>
+  </div>
+  <div class="feature">
+    <h3>🖥️ <span class="lang-ko">iPhone · iPad · Mac</span><span class="lang-en">iPhone, iPad &amp; Mac</span></h3>
+    <p><span class="lang-ko">한 앱으로 어디서나. 스플릿 뷰로 기록과 결과를 나란히 봅니다.</span>
+       <span class="lang-en">One app everywhere. Split view shows your history and result side by side.</span></p>
+  </div>
 </div>
 
 <div class="privacy-note">
-긴 녹음도 안심 — 처리 중 중단되면 <strong>마지막 진행 지점부터 자동 재개</strong>됩니다.
-발열·저장 공간도 스스로 관리합니다.
+  <span class="lang-ko">긴 녹음도 안심하세요 — 처리가 중단돼도 <strong>마지막 진행 지점부터 자동으로 이어서</strong> 전사합니다.
+  발열과 저장 공간도 앱이 알아서 관리합니다.</span>
+  <span class="lang-en">Long recordings are safe — if processing is interrupted, it <strong>resumes automatically from the
+  last checkpoint</strong>. Thermal and storage conditions are handled for you.</span>
 </div>
 
-</section>
-
-<!-- ====================== English ====================== -->
-<section class="lang-en">
-
-<p>TalkScript turns meeting, interview, and lecture recordings into
-<strong>speaker-separated transcripts</strong> on iPhone, iPad, and Mac. Speech recognition and
-speaker diarization run entirely on your device — your audio never leaves it.</p>
-
-<div class="features">
-  <div class="feature"><h3>🎙️ Record &amp; Import</h3><p>Record in-app or import m4a, wav, and mp3 files (up to 3 hours)</p></div>
-  <div class="feature"><h3>👥 Speaker Diarization</h3><p>Automatically tells who said what (S1, S2…). Speaker-count hints, name labels, and merging</p></div>
-  <div class="feature"><h3>🌐 Multilingual Recognition</h3><p>Whisper-based — about 99 languages including Korean. Model auto-selected for your device</p></div>
-  <div class="feature"><h3>🔒 On-Device Processing</h3><p>Audio and transcripts are never sent off your device</p></div>
-  <div class="feature"><h3>▶️ Synced Playback &amp; Editing</h3><p>Tap a sentence to play that moment. Edit text and speakers</p></div>
-  <div class="feature"><h3>📤 Export</h3><p>Share as TXT, Markdown, or SRT subtitles</p></div>
+<!-- ====================== Plans ====================== -->
+<h2 class="section"><span class="lang-ko">무료로 시작, 필요하면 Pro</span><span class="lang-en">Start free, go Pro when you need to</span></h2>
+<p class="section-sub">
+  <span class="lang-ko">핵심 기능은 무료입니다. 더 길게, 광고 없이 쓰고 싶을 때만 Pro로.</span>
+  <span class="lang-en">The core is free. Go Pro only when you want it longer and ad-free.</span>
+</p>
+<div class="plans">
+  <div class="plan free">
+    <p class="plan-name"><span class="lang-ko">무료</span><span class="lang-en">Free</span></p>
+    <p class="plan-tag"><span class="lang-ko">핵심 기능 그대로</span><span class="lang-en">All the core features</span></p>
+    <ul>
+      <li><span class="lang-ko">화자 분리 전사 · 편집 · 검색</span><span class="lang-en">Speaker transcription, editing, search</span></li>
+      <li><span class="lang-ko">TXT · Markdown · SRT · PDF 내보내기</span><span class="lang-en">Export to TXT, Markdown, SRT, PDF</span></li>
+      <li><span class="lang-ko">한 번에 20분까지 전사</span><span class="lang-en">Up to 20 minutes per transcription</span></li>
+      <li><span class="lang-ko">광고 포함</span><span class="lang-en">Includes ads</span></li>
+    </ul>
+  </div>
+  <div class="plan pro">
+    <p class="plan-name"><span class="lang-ko">Pro · 월 구독</span><span class="lang-en">Pro · Monthly</span></p>
+    <p class="plan-tag"><span class="lang-ko">더 길게, 광고 없이</span><span class="lang-en">Longer, and ad-free</span></p>
+    <ul>
+      <li><span class="lang-ko">무료의 모든 기능 포함</span><span class="lang-en">Everything in Free</span></li>
+      <li><span class="lang-ko">한 번에 최대 3시간 전사</span><span class="lang-en">Up to 3 hours per transcription</span></li>
+      <li><span class="lang-ko">광고 제거</span><span class="lang-en">No ads</span></li>
+      <li><span class="lang-ko">길이 제한 해제</span><span class="lang-en">Length limit lifted</span></li>
+    </ul>
+  </div>
 </div>
 
-<div class="privacy-note">
-Long recordings are safe — if processing is interrupted, it <strong>resumes automatically from
-the last checkpoint</strong>. Thermal and storage conditions are managed for you.
-</div>
+<!-- ====================== FAQ ====================== -->
+<h2 class="section"><span class="lang-ko">자주 묻는 질문</span><span class="lang-en">Frequently asked questions</span></h2>
 
-</section>
+<details class="faq">
+  <summary><span class="lang-ko">인터넷 연결이 필요한가요?</span><span class="lang-en">Do I need an internet connection?</span></summary>
+  <div class="ans"><span class="lang-ko">전사와 화자 분리는 오프라인에서 동작합니다. 음성 인식 모델만 최초 한 번 내려받으면, 이후에는 비행기 모드에서도 전사할 수 있습니다.</span>
+    <span class="lang-en">Transcription and diarization run offline. The speech model downloads once; after that you can transcribe even in airplane mode.</span></div>
+</details>
+<details class="faq">
+  <summary><span class="lang-ko">녹음이 서버로 전송되나요?</span><span class="lang-en">Is my recording sent to a server?</span></summary>
+  <div class="ans"><span class="lang-ko">아니요. 오디오와 전사 결과는 기기를 떠나지 않습니다. 별도 계정이나 로그인도 없습니다.</span>
+    <span class="lang-en">No. Audio and transcripts never leave your device, and there's no account or sign-in.</span></div>
+</details>
+<details class="faq">
+  <summary><span class="lang-ko">어떤 파일을 가져올 수 있나요?</span><span class="lang-en">What files can I import?</span></summary>
+  <div class="ans"><span class="lang-ko">m4a·wav·mp3 오디오를 가져오거나 앱에서 바로 녹음할 수 있고, 한 번에 최대 3시간까지 처리합니다.</span>
+    <span class="lang-en">Import m4a, wav, or mp3 — or record in-app — up to 3 hours at a time.</span></div>
+</details>
+<details class="faq">
+  <summary><span class="lang-ko">어떤 언어를 지원하나요?</span><span class="lang-en">Which languages are supported?</span></summary>
+  <div class="ans"><span class="lang-ko">Whisper 기반으로 한국어를 포함해 약 99개 언어를 인식하며, 기기 사양에 맞는 모델이 자동으로 선택됩니다.</span>
+    <span class="lang-en">Whisper-based recognition covers about 99 languages including Korean, with the model auto-selected for your device.</span></div>
+</details>
+<details class="faq">
+  <summary><span class="lang-ko">화자 구분이 틀리면 고칠 수 있나요?</span><span class="lang-en">Can I fix speaker mistakes?</span></summary>
+  <div class="ans"><span class="lang-ko">네. 화자 수를 직접 지정하거나, 잘못 나뉜 화자를 병합하고, 각 화자에 이름을 붙일 수 있습니다.</span>
+    <span class="lang-en">Yes. Set the speaker count yourself, merge speakers that were split by mistake, and name each one.</span></div>
+</details>
+<details class="faq">
+  <summary><span class="lang-ko">결과를 어떻게 내보내나요?</span><span class="lang-en">How do I export the result?</span></summary>
+  <div class="ans"><span class="lang-ko">TXT·Markdown·SRT 자막·PDF로 내보내 공유할 수 있습니다.</span>
+    <span class="lang-en">Export and share as TXT, Markdown, SRT subtitles, or PDF.</span></div>
+</details>
+<details class="faq">
+  <summary><span class="lang-ko">무료로 어디까지 쓸 수 있나요?</span><span class="lang-en">How far does the free version go?</span></summary>
+  <div class="ans"><span class="lang-ko">무료로 한 번에 20분까지 전사할 수 있고, Pro 월 구독으로 길이 제한을 최대 3시간까지 풀고 광고를 제거합니다.</span>
+    <span class="lang-en">Free transcribes up to 20 minutes at a time; the Pro monthly subscription lifts the limit to 3 hours and removes ads.</span></div>
+</details>
+<details class="faq">
+  <summary><span class="lang-ko">어떤 기기에서 쓸 수 있나요?</span><span class="lang-en">What devices does it run on?</span></summary>
+  <div class="ans"><span class="lang-ko">iPhone·iPad·Mac에서 하나의 앱으로 동작합니다.</span>
+    <span class="lang-en">It runs on iPhone, iPad, and Mac from a single app.</span></div>
+</details>
+
+<!-- ====================== Bottom CTA ====================== -->
+<div class="cta">
+  <h2><span class="lang-ko">지금 시작하기</span><span class="lang-en">Get started</span></h2>
+  <p><span class="lang-ko">iPhone · iPad · Mac · 무료로 시작</span><span class="lang-en">iPhone · iPad · Mac · Free to start</span></p>
+  <a class="appstore" href="https://apps.apple.com/app/id6778779268" target="_blank" rel="noopener">
+    <svg viewBox="0 0 384 512" width="18" height="18" aria-hidden="true" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+    <span><span class="lang-ko">App Store에서 다운로드</span><span class="lang-en">Download on the App Store</span></span>
+  </a>
+</div>
 
 <footer>
   <a href="support.html"><span class="lang-ko">지원</span><span class="lang-en">Support</span></a>
@@ -125,10 +435,16 @@ the last checkpoint</strong>. Thermal and storage conditions are managed for you
 (function () {
   var nav = document.getElementById("langSwitch");
   var buttons = nav.querySelectorAll("button");
+  var shots = document.querySelectorAll("img.shot");
 
   function show(lang) {
     document.querySelectorAll(".lang-ko").forEach(function (el) { el.hidden = lang !== "ko"; });
     document.querySelectorAll(".lang-en").forEach(function (el) { el.hidden = lang !== "en"; });
+    shots.forEach(function (img) {
+      img.src = "images/" + lang + "/" + img.dataset.shot + ".png";
+      var a = img.getAttribute("data-alt-" + lang);
+      if (a) img.alt = a;
+    });
     buttons.forEach(function (b) { b.classList.toggle("active", b.dataset.lang === lang); });
     document.documentElement.lang = lang;
   }
