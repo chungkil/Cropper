@@ -106,3 +106,80 @@ ul.clean li { margin: 6px 0; }
 .footer a { color: var(--muted); }
 
 .updated { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+/* 히어로 액션(다운로드 배지 + 보조 버튼) */
+.hero-actions {
+  display: flex; gap: 12px; justify-content: center; align-items: center;
+  flex-wrap: wrap; margin-top: 26px;
+}
+.btn-ghost {
+  display: inline-block; padding: 11px 20px; border-radius: 999px;
+  font-weight: 700; color: #fff; border: 1px solid rgba(255,255,255,.55);
+}
+.btn-ghost:hover { text-decoration: none; background: rgba(255,255,255,.12); }
+
+/* App Store 다운로드 배지 */
+.appstore {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: #000; color: #fff;
+  border: 1px solid rgba(255,255,255,.22);
+  padding: 9px 18px; border-radius: 14px; line-height: 1;
+}
+.appstore:hover { text-decoration: none; opacity: .92; }
+.appstore svg { width: 24px; height: 28px; flex: 0 0 auto; }
+.appstore .t { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; }
+.appstore .t small { font-size: 10px; opacity: .92; letter-spacing: .01em; }
+.appstore .t b { font-size: 18px; font-weight: 600; letter-spacing: -.01em; }
+
+/* 신뢰 칩 */
+.trust { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+.trust .pill {
+  font-size: 13px; font-weight: 600;
+  background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.28);
+  padding: 5px 12px; border-radius: 999px;
+}
+
+/* How it works 단계 */
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 22px; }
+@media (max-width: 560px) { .steps { grid-template-columns: 1fr; } }
+.step {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 18px;
+}
+.step .n {
+  width: 30px; height: 30px; border-radius: 999px;
+  display: grid; place-items: center; color: #fff; font-weight: 800; font-size: 14px;
+  background: linear-gradient(135deg, var(--grad-a), var(--grad-b));
+}
+.step h4 { margin: 12px 0 4px; font-size: 16px; }
+.step p { margin: 0; color: var(--muted); font-size: 14px; }
+
+/* 하단 다운로드 CTA 밴드 */
+.cta-band {
+  margin: 34px 0 6px;
+  background: linear-gradient(135deg, var(--grad-a), var(--grad-b));
+  color: #fff; border-radius: 20px; padding: 34px 24px; text-align: center;
+}
+.cta-band h2 { color: #fff; margin: 0 0 8px; font-size: 24px; letter-spacing: -0.02em; }
+.cta-band p { margin: 0 auto 20px; max-width: 520px; opacity: .92; }
+
+/* sticky 내비가 앵커 점프 시 제목을 가리지 않도록 */
+.section[id], .cta-band[id] { scroll-margin-top: 72px; }
+
+/* 스크린샷 갤러리 */
+.shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 22px; }
+.shot { margin: 0; }
+.shot img {
+  width: 100%; height: auto; display: block;
+  border-radius: 22px; border: 1px solid var(--line);
+  box-shadow: 0 14px 34px rgba(28,28,46,.16);
+}
+@media (max-width: 560px) {
+  .shots {
+    grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 74%;
+    overflow-x: auto; scroll-snap-type: x mandatory;
+    margin: 22px -20px 0; padding: 0 20px 8px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .shot { scroll-snap-align: center; }
+}
