@@ -8,22 +8,26 @@
 <style>
   :root {
     --navy: #1a365d;
-    --navy-deep: #0f2942;
+    --navy-deep: #0a1c30;
     --blue: #2b6cb0;
-    --blue-light: #4a90d9;
-    --ink: #1a202c;
-    --gray: #4a5568;
-    --gray-soft: #718096;
-    --bg-tint: #eef4fb;
-    --bg-soft: #f7fafc;
-    --line: #e2e8f0;
+    --blue-light: #5b9bd5;
+    --accent: #6aa9e4;
+    --heading: #eaf2fb;
+    --ink: #d7e3f1;
+    --gray: #a7b9cd;
+    --gray-soft: #8296ac;
+    --bg: #0a1929;
+    --bg-tint: #0d2338;
+    --bg-soft: #112a45;
+    --card-hover: #16324f;
+    --line: #21384f;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Segoe UI', 'Malgun Gothic', sans-serif;
     color: var(--ink); line-height: 1.7; -webkit-font-smoothing: antialiased;
-    background: #fff;
+    background: var(--bg);
   }
   img { max-width: 100%; display: block; }
   .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
@@ -31,11 +35,11 @@
   /* ---------- header ---------- */
   header {
     position: sticky; top: 0; z-index: 50;
-    background: rgba(255,255,255,0.82); backdrop-filter: saturate(180%) blur(12px);
+    background: rgba(10,22,38,0.82); backdrop-filter: saturate(180%) blur(12px);
     border-bottom: 1px solid var(--line);
   }
   .nav { display: flex; align-items: center; justify-content: space-between; height: 60px; }
-  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; color: var(--navy); font-size: 18px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; color: var(--heading); font-size: 18px; }
   .brand .logo {
     width: 32px; height: 32px; border-radius: 9px; flex: none;
     background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
@@ -46,7 +50,7 @@
     background: var(--blue); padding: 9px 16px; border-radius: 999px;
     transition: background .15s ease;
   }
-  .nav-cta:hover { background: var(--navy); }
+  .nav-cta:hover { background: var(--blue-light); }
 
   /* ---------- hero ---------- */
   .hero {
@@ -74,21 +78,21 @@
   /* ---------- stats strip ---------- */
   .stats {
     max-width: 880px; margin: -64px auto 0; position: relative; z-index: 2;
-    background: #fff; border: 1px solid var(--line); border-radius: 18px;
+    background: var(--bg-soft); border: 1px solid var(--line); border-radius: 18px;
     box-shadow: 0 24px 60px -28px rgba(26,54,93,0.45);
     display: grid; grid-template-columns: repeat(4, 1fr);
     padding: 28px 16px;
   }
   .stat { text-align: center; padding: 6px 8px; }
   .stat + .stat { border-left: 1px solid var(--line); }
-  .stat b { display: block; font-size: 30px; color: var(--blue); line-height: 1.1; letter-spacing: -0.02em; }
+  .stat b { display: block; font-size: 30px; color: var(--blue-light); line-height: 1.1; letter-spacing: -0.02em; }
   .stat span { font-size: 13px; color: var(--gray-soft); }
 
   /* ---------- section heading ---------- */
   .section { padding: 84px 0 24px; }
   .section-head { text-align: center; max-width: 620px; margin: 0 auto 8px; }
-  .section-head .kicker { font-size: 14px; font-weight: 700; color: var(--blue); letter-spacing: .06em; text-transform: uppercase; }
-  .section-head h2 { font-size: 32px; color: var(--navy); margin: 10px 0 12px; letter-spacing: -0.02em; }
+  .section-head .kicker { font-size: 14px; font-weight: 700; color: var(--accent); letter-spacing: .06em; text-transform: uppercase; }
+  .section-head h2 { font-size: 32px; color: var(--heading); margin: 10px 0 12px; letter-spacing: -0.02em; }
   .section-head p { font-size: 16px; color: var(--gray); }
 
   /* ---------- story rows ---------- */
@@ -106,13 +110,13 @@
     background: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%);
     margin-bottom: 18px; box-shadow: 0 8px 20px -8px rgba(43,108,176,0.7);
   }
-  .story h3 { font-size: 25px; color: var(--navy); margin-bottom: 12px; letter-spacing: -0.01em; }
+  .story h3 { font-size: 25px; color: var(--heading); margin-bottom: 12px; letter-spacing: -0.01em; }
   .story p.lead { font-size: 16.5px; color: var(--gray); margin-bottom: 18px; }
   .story ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
   .story li { font-size: 15px; color: var(--ink); padding-left: 26px; position: relative; }
   .story li::before {
     content: "✓"; position: absolute; left: 0; top: 0;
-    color: var(--blue); font-weight: 700;
+    color: var(--accent); font-weight: 700;
   }
   .story .shot { flex: none; width: 290px; }
   .story .shot img {
@@ -124,12 +128,12 @@
   .tint { background: var(--bg-tint); }
   .cards3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 44px; }
   .persona {
-    background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 30px 26px;
+    background: var(--bg-soft); border: 1px solid var(--line); border-radius: 16px; padding: 30px 26px;
     transition: transform .15s ease, box-shadow .15s ease;
   }
   .persona:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -24px rgba(26,54,93,0.4); }
   .persona .emoji { font-size: 34px; margin-bottom: 14px; }
-  .persona h3 { font-size: 18px; color: var(--navy); margin-bottom: 8px; }
+  .persona h3 { font-size: 18px; color: var(--heading); margin-bottom: 8px; }
   .persona p { font-size: 14.5px; color: var(--gray); }
 
   /* ---------- feature grid ---------- */
@@ -138,9 +142,9 @@
     background: var(--bg-soft); border: 1px solid var(--line); border-radius: 14px; padding: 26px;
     transition: background .15s ease, border-color .15s ease;
   }
-  .card:hover { background: #fff; border-color: #cdddee; }
+  .card:hover { background: var(--card-hover); border-color: #2f5478; }
   .card .icon { font-size: 30px; margin-bottom: 12px; }
-  .card h3 { font-size: 16.5px; color: var(--navy); margin-bottom: 6px; }
+  .card h3 { font-size: 16.5px; color: var(--heading); margin-bottom: 6px; }
   .card p { font-size: 14px; color: var(--gray); }
 
   /* ---------- CTA ---------- */
@@ -154,7 +158,7 @@
 
   /* ---------- footer ---------- */
   footer { text-align: center; padding: 44px 20px; border-top: 1px solid var(--line); font-size: 14px; color: var(--gray-soft); }
-  footer a { color: var(--blue); text-decoration: none; margin: 0 12px; }
+  footer a { color: var(--accent); text-decoration: none; margin: 0 12px; }
   footer a:hover { text-decoration: underline; }
   footer .copy { margin-top: 14px; }
 
@@ -282,10 +286,11 @@
         <div class="text">
           <span class="num">05</span>
           <h3>9,000자, 급수별로 한눈에</h3>
-          <p class="lead">8급부터 1급까지 9,000자 이상을 급수별로 정리했어요. 음·훈·획수로 정렬하고, 자주 보는 한자는 즐겨찾기 해두면 나만의 단어장이 됩니다.</p>
+          <p class="lead">8급부터 1급까지 9,000자 이상을 급수별로 정리했어요. 한 글자마다 정확한 대표훈음은 물론, 여러 갈래의 음·뜻(다의어)까지 꼼꼼히 담았습니다.</p>
           <ul>
-            <li>급수순 · 획수순 · 음순 정렬</li>
-            <li>음/훈 검색과 즐겨찾기 지원</li>
+            <li>급수순 · 획수순 · 음순 정렬, 음/훈 검색</li>
+            <li>대표훈음 + 다의어(여러 음·뜻) 표시</li>
+            <li>자주 보는 한자는 즐겨찾기로 단어장처럼</li>
           </ul>
         </div>
         <div class="shot"><img src="shots/shot-dict.png" alt="급수별 한자 사전 화면"></div>
@@ -396,6 +401,21 @@
         <div class="icon">⚡</div>
         <h3>데일리 챌린지</h3>
         <p>하루 한 번, 60초 미니 게임으로 가볍게 실력을 겨뤄요.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon">🔤</div>
+        <h3>대표훈음 · 다의어</h3>
+        <p>한 글자의 정확한 대표훈음과 여러 음·뜻을 한눈에 비교해요.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon">🗂️</div>
+        <h3>나만의 학습카드</h3>
+        <p>원하는 한자만 모아 나만의 학습 세트를 만들 수 있어요.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon">✏️</div>
+        <h3>반복 쓰기 연습</h3>
+        <p>원고지처럼 같은 글자를 반복해 쓰며 손에 익혀요.</p>
       </div>
       <div class="card reveal">
         <div class="icon">✈️</div>
