@@ -1,137 +1,852 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ClipStitch — Auto-stitch screenshots from your clipboard</title>
-<meta property="og:title" content="ClipStitch">
-<meta property="og:description" content="Copy a screenshot and ClipStitch stitches it automatically. macOS and iOS.">
+<title>ClipStitch — Copy a screenshot and it stitches automatically</title>
+<meta name="description" content="ClipStitch auto-stitches your clipboard screenshots into one tall image. macOS menu-bar app and iPhone + iPad. On-device, no tracking. One-time Pro upgrade.">
 <style>
-  :root { --primary: #2f6bf0; }
-  * { box-sizing: border-box; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', Roboto, sans-serif;
-         margin: 0; background: #f8f9fa; color: #1d1d1f; line-height: 1.7; }
-  .wrap { max-width: 720px; margin: 0 auto; padding: 28px 20px 48px; }
-  header { text-align: center; }
-  .icon { width: 96px; height: 96px; border-radius: 22px;
-          background: linear-gradient(160deg, #5b4fe0, #2f6bf0); display: inline-block; }
-  h1 { font-size: 40px; margin: 20px 0 6px; }
-  .tag { font-size: 19px; color: #555; margin: 0 0 24px; }
-  .badge { display: inline-block; margin: 8px 0 4px; padding: 12px 20px; border-radius: 12px;
-           background: #000; color: #fff; text-decoration: none; font-weight: 600; }
-  .note { font-size: 13px; color: #888; }
-  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 40px 0; }
-  .card { background: #fff; border-radius: 14px; padding: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
-  .card h3 { margin: 0 0 6px; font-size: 17px; }
-  .card p { margin: 0; font-size: 15px; color: #555; }
-  .privacy { background: #fff; border-radius: 16px; padding: 24px; margin: 32px 0;
-             box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
-  footer { text-align: center; color: #888; font-size: 14px; margin-top: 48px; }
-  footer a { color: var(--primary); text-decoration: none; margin: 0 8px; }
-  .lang-switch { display: flex; gap: 8px; justify-content: flex-end; margin-bottom: 8px; }
-  .lang-switch button { font: inherit; font-size: 13px; padding: 6px 14px; border-radius: 999px;
-    border: 1px solid rgba(0,0,0,0.15); background: #fff; cursor: pointer; color: #1d1d1f; }
-  .lang-switch button.active { background: var(--primary); border-color: var(--primary); color: #fff; }
-  @media (max-width: 480px) { .grid { grid-template-columns: 1fr; } h1 { font-size: 32px; } }
+  :root{
+    --accent:#2f6bf0;
+    --accent-2:#5b4fe0;
+    --ink:#1d1d1f;
+    --muted:#5b6170;
+    --bg:#f8f9fa;
+    --line:#e6e8ee;
+    --card:#ffffff;
+    --radius:18px;
+    --maxw:1100px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Apple SD Gothic Neo','Noto Sans KR',Roboto,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{display:block;max-width:100%;height:auto;}
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  h1,h2,h3{line-height:1.2;letter-spacing:-0.02em;margin:0;}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px;}
+
+  /* Language toggle */
+  #langSwitch{
+    position:fixed;top:12px;right:12px;z-index:50;
+    display:inline-flex;gap:4px;padding:4px;
+    background:rgba(20,22,30,.72);backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,.18);border-radius:999px;
+  }
+  #langSwitch button{
+    appearance:none;border:0;cursor:pointer;
+    min-height:36px;padding:0 14px;border-radius:999px;
+    font:inherit;font-size:14px;font-weight:600;
+    color:#e9ebf2;background:transparent;
+  }
+  #langSwitch button.active{background:#fff;color:#15151a;}
+
+  /* Hero */
+  .hero{
+    background:
+      radial-gradient(1100px 500px at 80% -10%, rgba(91,79,224,.55), transparent 60%),
+      radial-gradient(900px 500px at 0% 10%, rgba(47,107,240,.45), transparent 55%),
+      linear-gradient(160deg,#10131d,#171a28 55%,#0e1019);
+    color:#f4f6fb;
+    padding:84px 0 56px;
+    overflow:hidden;
+  }
+  .brand{display:flex;align-items:center;gap:12px;margin-bottom:34px;}
+  .brand .mark{
+    width:40px;height:40px;border-radius:11px;flex:0 0 auto;
+    background:linear-gradient(160deg,#5b4fe0,#2f6bf0);
+    box-shadow:0 6px 18px rgba(47,107,240,.45);
+    display:grid;place-items:center;
+  }
+  .brand .name{font-weight:700;font-size:19px;letter-spacing:-0.01em;}
+  .hero h1{
+    font-size:clamp(30px,7vw,52px);font-weight:800;
+    max-width:16ch;margin-bottom:18px;
+  }
+  .hero .lede{
+    font-size:clamp(17px,2.4vw,20px);color:#c4c9d8;
+    max-width:46ch;margin:0 0 28px;
+  }
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;}
+  .badge{
+    display:inline-flex;align-items:center;gap:11px;
+    background:#000;color:#fff;
+    border:1px solid rgba(255,255,255,.22);
+    padding:11px 20px;border-radius:14px;min-height:54px;
+    font-weight:600;
+  }
+  .badge:hover{text-decoration:none;background:#0a0a0a;}
+  .badge svg{flex:0 0 auto;}
+  .badge .b1{display:block;font-size:11px;font-weight:500;opacity:.8;line-height:1.1;}
+  .badge .b2{display:block;font-size:19px;font-weight:700;line-height:1.15;letter-spacing:-0.01em;}
+  .badge-note{font-size:13px;color:#9aa2b6;margin:12px 0 0;}
+
+  .hero-shot{margin-top:46px;position:relative;}
+  .hero-shot img{
+    width:100%;border-radius:14px;
+    border:1px solid rgba(255,255,255,.10);
+    box-shadow:0 30px 70px rgba(0,0,0,.55);
+    aspect-ratio:1400/875;
+  }
+  .pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px;}
+  .pill{
+    font-size:13.5px;font-weight:600;color:#dfe3ef;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.12);
+    padding:7px 13px;border-radius:999px;
+    display:inline-flex;align-items:center;gap:7px;
+  }
+  .pill svg{color:#8fd1a6;}
+
+  /* Sections */
+  section.block{padding:64px 0;}
+  .eyebrow{
+    font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--accent);margin:0 0 12px;
+  }
+  .sec-h{font-size:clamp(24px,4vw,34px);font-weight:800;margin-bottom:14px;}
+  .sec-sub{font-size:18px;color:var(--muted);max-width:54ch;margin:0 0 8px;}
+
+  /* How it works */
+  .steps{display:grid;gap:18px;margin-top:36px;}
+  .step{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;
+  }
+  .step .num{
+    width:34px;height:34px;border-radius:10px;
+    background:linear-gradient(160deg,#5b4fe0,#2f6bf0);color:#fff;
+    display:grid;place-items:center;font-weight:700;font-size:15px;margin-bottom:14px;
+  }
+  .step h3{font-size:19px;margin-bottom:7px;}
+  .step p{margin:0;color:var(--muted);font-size:15.5px;}
+
+  /* Feature grid */
+  .grid{display:grid;gap:18px;margin-top:36px;}
+  .feat{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px;
+  }
+  .feat .ic{
+    width:42px;height:42px;border-radius:12px;
+    background:rgba(47,107,240,.10);color:var(--accent);
+    display:grid;place-items:center;margin-bottom:14px;
+  }
+  .feat h3{font-size:17px;margin-bottom:6px;}
+  .feat p{margin:0;color:var(--muted);font-size:15px;}
+
+  /* Showcase (platform shots) */
+  .showcase{padding:64px 0;background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .show-grid{display:grid;gap:30px;margin-top:36px;}
+  .show-card{display:flex;flex-direction:column;}
+  .show-card.mac{max-width:920px;margin:0 auto;width:100%;}
+  .show-card figcaption{margin-top:14px;font-size:15px;color:var(--muted);}
+  .show-card strong{display:block;color:var(--ink);font-size:16px;font-weight:700;margin-bottom:3px;}
+  .frame{
+    background:var(--bg);border:1px solid var(--line);border-radius:16px;
+    padding:14px;overflow:hidden;
+  }
+  .frame.mac img{aspect-ratio:1400/875;border-radius:8px;border:1px solid var(--line);}
+  .mobile-pair{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;align-items:start;max-width:560px;margin:0 auto;}
+  .frame.phone img{aspect-ratio:1320/2868;border-radius:14px;border:1px solid var(--line);}
+  .frame.pad img{aspect-ratio:1200/1600;border-radius:10px;border:1px solid var(--line);}
+
+  /* Pro */
+  .pro-wrap{padding:64px 0;}
+  .pro-card{
+    background:linear-gradient(165deg,#171a28,#0f1119);
+    color:#f3f5fb;border-radius:24px;padding:36px 26px;
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 24px 60px rgba(16,18,28,.25);
+  }
+  .pro-tag{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(255,200,80,.14);color:#ffd27a;
+    border:1px solid rgba(255,200,80,.28);
+    font-size:13px;font-weight:700;letter-spacing:.04em;
+    padding:6px 13px;border-radius:999px;margin-bottom:18px;
+  }
+  .pro-card h2{font-size:clamp(24px,4vw,32px);font-weight:800;margin-bottom:12px;}
+  .pro-card .pro-lede{color:#c4c9d8;font-size:17px;max-width:52ch;margin:0 0 8px;}
+  .pro-once{
+    display:inline-block;margin:14px 0 4px;font-size:14px;font-weight:600;
+    color:#9fe3b6;background:rgba(60,180,110,.12);
+    border:1px solid rgba(60,180,110,.28);padding:6px 12px;border-radius:999px;
+  }
+  .pro-grid{display:grid;gap:14px;margin-top:28px;}
+  .pro-item{
+    background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);
+    border-radius:14px;padding:18px;
+  }
+  .pro-item .ic{
+    width:38px;height:38px;border-radius:10px;margin-bottom:12px;
+    background:linear-gradient(160deg,#5b4fe0,#2f6bf0);color:#fff;
+    display:grid;place-items:center;
+  }
+  .pro-item h3{font-size:16px;margin-bottom:5px;}
+  .pro-item p{margin:0;color:#b9bfd0;font-size:14.5px;}
+  .pro-foot{margin-top:24px;color:#aeb5c8;font-size:14.5px;}
+
+  /* FAQ */
+  .faq{display:grid;gap:14px;margin-top:34px;}
+  .faq details{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:0 20px;
+  }
+  .faq summary{
+    cursor:pointer;list-style:none;padding:18px 0;
+    font-weight:700;font-size:17px;
+    display:flex;justify-content:space-between;align-items:center;gap:14px;
+  }
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary .chev{flex:0 0 auto;transition:transform .2s;color:var(--muted);}
+  .faq details[open] summary .chev{transform:rotate(180deg);}
+  .faq p{margin:0 0 18px;color:var(--muted);font-size:15.5px;}
+
+  /* Privacy band */
+  .privacy{
+    background:
+      radial-gradient(700px 380px at 85% 0%, rgba(47,107,240,.30), transparent 60%),
+      linear-gradient(160deg,#11131c,#171a28);
+    color:#eef1f8;padding:60px 0;
+  }
+  .privacy .sec-h{margin-bottom:14px;}
+  .privacy .sec-sub{color:#c1c7d6;}
+  .priv-grid{display:grid;gap:14px;margin-top:30px;}
+  .priv-item{
+    display:flex;gap:14px;align-items:flex-start;
+    background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);
+    border-radius:14px;padding:18px;
+  }
+  .priv-item .ic{color:#8fd1a6;flex:0 0 auto;margin-top:1px;}
+  .priv-item h3{font-size:16px;margin-bottom:4px;}
+  .priv-item p{margin:0;color:#b9bfd0;font-size:14.5px;}
+  .priv-label{
+    margin-top:26px;display:inline-flex;align-items:center;gap:9px;
+    background:rgba(143,209,166,.12);border:1px solid rgba(143,209,166,.30);
+    color:#bfe9cd;font-weight:700;font-size:14px;padding:9px 15px;border-radius:999px;
+  }
+
+  /* Final CTA */
+  .final{text-align:center;padding:64px 0;}
+  .final h2{font-size:clamp(24px,4vw,34px);font-weight:800;margin-bottom:14px;}
+  .final p{color:var(--muted);font-size:18px;max-width:46ch;margin:0 auto 26px;}
+  .final .cta-row{justify-content:center;}
+
+  /* Footer */
+  footer{background:#fff;border-top:1px solid var(--line);padding:40px 0;}
+  .foot-in{display:flex;flex-direction:column;gap:18px;}
+  .foot-brand{display:flex;align-items:center;gap:11px;font-weight:700;}
+  .foot-brand .mark{width:30px;height:30px;border-radius:9px;background:linear-gradient(160deg,#5b4fe0,#2f6bf0);display:grid;place-items:center;}
+  .foot-links{display:flex;flex-wrap:wrap;gap:18px;font-size:15px;}
+  .foot-links a{color:var(--muted);font-weight:600;}
+  .foot-copy{font-size:13.5px;color:#8a90a0;}
+
+  /* No-JS fallback divider between the two language blocks */
+  [hidden]{display:none !important;}
+  .nojs-divider{border:0;border-top:1px solid var(--line);margin:0;}
+
+  @media (min-width:680px){
+    .steps{grid-template-columns:repeat(3,1fr);}
+    .grid{grid-template-columns:repeat(2,1fr);}
+    .pro-grid{grid-template-columns:repeat(2,1fr);}
+    .priv-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (min-width:920px){
+    .grid{grid-template-columns:repeat(3,1fr);}
+    .pro-grid{grid-template-columns:repeat(3,1fr);}
+    .pro-card{padding:48px 44px;}
+  }
+
+  /* Mobile: move the language toggle to a thumb-reachable bottom-center pill */
+  @media (max-width:680px){
+    #langSwitch{top:auto;bottom:16px;left:50%;right:auto;transform:translateX(-50%);box-shadow:0 8px 24px rgba(0,0,0,.30);}
+    footer{padding-bottom:92px;}
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
 
-  <!-- JS 비활성 시 두 언어가 모두 표시된다(안전 폴백). -->
-  <nav class="lang-switch" id="langSwitch" hidden>
-    <button type="button" data-lang="ko">한국어</button>
-    <button type="button" data-lang="en">English</button>
-  </nav>
+<nav id="langSwitch" hidden aria-label="Language">
+  <button type="button" data-lang="ko">한국어</button>
+  <button type="button" data-lang="en">English</button>
+</nav>
 
-  <!-- ====================== 한국어 ====================== -->
-  <section class="lang-ko">
-    <header>
-      <span class="icon"></span>
-      <h1>ClipStitch</h1>
-      <p class="tag">스크린샷을 복사하면 자동으로 이어붙입니다.</p>
-      <a class="badge" href="#">App Store에서 다운로드</a>
-      <p class="note">App Store 링크는 곧 제공됩니다.</p>
-    </header>
+<!-- ============ KOREAN ============ -->
+<section class="lang-ko">
+  <header class="hero">
+    <div class="wrap">
+      <div class="brand">
+        <span class="mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="7" rx="1.6"/><rect x="4" y="14" width="16" height="7" rx="1.6"/></svg>
+        </span>
+        <span class="name">ClipStitch</span>
+      </div>
+      <h1>스크린샷을 복사하면 자동으로 이어붙입니다.</h1>
+      <p class="lede">한 화면에 안 들어가는 긴 웹페이지·채팅·문서·코드를 여러 번 캡처하면, ClipStitch가 클립보드를 감시해 하나의 긴 이미지로 자동 이어붙입니다. 앱을 열고 사진을 고를 필요 없이요.</p>
+      <div class="cta-row">
+        <a class="badge" href="#" aria-label="App Store에서 다운로드 (곧 제공)">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.1 12.7c0-1.8 1.4-2.7 1.5-2.8-.8-1.2-2.1-1.4-2.5-1.4-1.1-.1-2.1.6-2.6.6-.5 0-1.4-.6-2.3-.6-1.2 0-2.3.7-2.9 1.8-1.2 2.2-.3 5.4.9 7.1.6.9 1.3 1.8 2.2 1.8.9 0 1.2-.6 2.3-.6 1.1 0 1.4.6 2.3.6.9 0 1.6-.9 2.2-1.8.4-.6.6-1.2.8-1.8-1.7-.7-1.9-2.4-1.9-2.7zM15.3 6.6c.5-.6.8-1.4.7-2.2-.7 0-1.5.5-2 1.1-.4.5-.8 1.3-.7 2.1.8.1 1.5-.4 2-1z"/></svg>
+          <span><span class="b1">곧 출시 예정</span><span class="b2">App Store</span></span>
+        </a>
+      </div>
+      <p class="badge-note">App Store 링크는 곧 제공됩니다.</p>
 
-    <div class="grid">
-      <div class="card"><h3>자동 캡처</h3><p>스크린샷을 복사하면 세로로 이어붙습니다. macOS는 백그라운드에서 감시하고, iOS는 돌아올 때 감지합니다.</p></div>
-      <div class="card"><h3>실시간 미리보기</h3><p>이어붙인 결과를 즉시 확인하세요. 썸네일로 조각을 재배열하거나 삭제할 수 있습니다.</p></div>
-      <div class="card"><h3>정렬과 트림</h3><p>왼쪽·가운데·오른쪽 정렬 또는 최대 너비에 맞추기. 위아래를 잘라 겹침을 정리합니다.</p></div>
-      <div class="card"><h3>중복 방지</h3><p>같은 화면을 두 번 복사해도 자동으로 걸러냅니다.</p></div>
-      <div class="card"><h3>드래그 앤 드롭</h3><p>이미 가진 이미지 파일을 추가하세요. 모든 변경은 실행 취소·다시 실행할 수 있습니다.</p></div>
-      <div class="card"><h3>어디로든 내보내기</h3><p>PNG·JPEG로 저장하거나, 클립보드로 복사하거나, 사진 앱에 저장합니다.</p></div>
+      <figure class="hero-shot">
+        <img src="shots/mac-result-ko.png" width="1400" height="875" alt="ClipStitch macOS 앱 창. 왼쪽 사이드바에 이어붙인 조각 3개의 썸네일, 가운데 캔버스에 채팅 형태로 이어붙인 결과, 상단에 '감시 중' 표시와 '자동 추가' 토글, 하단에 정렬·클립보드로 복사·내보내기 버튼이 보입니다.">
+      </figure>
+
+      <div class="pill-row">
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>macOS 메뉴바 앱</span>
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>iPhone · iPad</span>
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>전부 기기 안에서 처리</span>
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>광고·추적 없음</span>
+      </div>
     </div>
+  </header>
 
-    <div class="privacy">
-      <h3>설계부터 사생활 보호</h3>
-      <p>클립보드는 기기에만 머물고 어디로도 전송되지 않습니다. 네트워크 코드가 전혀 없고, 클립보드는 감시 중일 때만 읽습니다. 광고·추적·계정이 없습니다.</p>
+  <!-- How it works -->
+  <section class="block">
+    <div class="wrap">
+      <p class="eyebrow">동작 방식</p>
+      <h2 class="sec-h">복사 · 이어붙이기 · 내보내기</h2>
+      <p class="sec-sub">세 단계가 전부입니다. 캡처한 순서대로 알아서 붙고, 필요하면 썸네일로 순서를 바꾸면 됩니다.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>복사</h3>
+          <p>긴 화면을 위에서 아래로 나눠 캡처해 클립보드에 복사합니다. macOS는 ⌃⌘A 단축키 한 번이면 됩니다.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>이어붙이기</h3>
+          <p>ClipStitch가 클립보드를 감시하다 새 스크린샷을 자동으로 추가하고 하나의 긴 이미지로 이어 붙입니다. 같은 화면이 두 번 들어와도 자동으로 걸러냅니다.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>내보내기</h3>
+          <p>PNG·JPEG·PDF로 저장하거나 클립보드로 복사, 사진 앱에 저장까지. 정렬과 순서는 미리보기에서 바로 확인합니다.</p>
+        </div>
+      </div>
     </div>
-
-    <footer>
-      <a href="privacy.html">개인정보 처리방침</a>
-      <a href="support.html">기술 지원</a>
-      <a href="mailto:chungkil.cksw@gmail.com">문의</a>
-      <p>© 2026 CHUNGKIL KIM. All rights reserved.</p>
-    </footer>
   </section>
 
-  <!-- ====================== English ====================== -->
-  <section class="lang-en">
-    <header>
-      <span class="icon"></span>
-      <h1>ClipStitch</h1>
-      <p class="tag">Copy a screenshot and it stitches automatically.</p>
-      <a class="badge" href="#">Download on the App Store</a>
-      <p class="note">App Store link coming soon.</p>
-    </header>
-
-    <div class="grid">
-      <div class="card"><h3>Automatic capture</h3><p>Copy a screenshot and it is stitched vertically. macOS watches in the background; iOS detects on return.</p></div>
-      <div class="card"><h3>Live preview</h3><p>See the stitched result instantly. Reorder or delete pieces with thumbnails.</p></div>
-      <div class="card"><h3>Alignment and trim</h3><p>Left, center, right, or scale to widest. Trim the top or bottom to clean up overlaps.</p></div>
-      <div class="card"><h3>Duplicate guard</h3><p>Copying the same shot twice is filtered out automatically.</p></div>
-      <div class="card"><h3>Drag and drop</h3><p>Add image files you already have. Undo and redo any change.</p></div>
-      <div class="card"><h3>Export anywhere</h3><p>Save as PNG or JPEG, copy to the clipboard, or save to Photos.</p></div>
+  <!-- Free features -->
+  <section class="block" style="padding-top:0;">
+    <div class="wrap">
+      <p class="eyebrow">무료 기능</p>
+      <h2 class="sec-h">핵심 기능은 전부 무료입니다</h2>
+      <p class="sec-sub">매일 쓰는 데 필요한 기능은 처음부터 다 들어 있습니다.</p>
+      <div class="grid">
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="4" rx="1"/><path d="M9 4H6a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-3"/></svg></div>
+          <h3>자동 클립보드 캡처</h3>
+          <p>macOS는 백그라운드에서 감시하고, iOS는 앱으로 돌아오면 새 스크린샷을 감지합니다.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+          <h3>미리보기 · 순서 변경</h3>
+          <p>썸네일로 조각을 끌어 순서를 바꾸거나 삭제하고, 결과를 실시간으로 확인합니다.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="6" x2="3" y2="6"/><line x1="15" y1="12" x2="3" y2="12"/><line x1="17" y1="18" x2="3" y2="18"/></svg></div>
+          <h3>정렬</h3>
+          <p>왼쪽 · 가운데 · 오른쪽 정렬, 또는 가장 넓은 폭에 맞추기를 선택합니다.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+          <h3>중복 방지</h3>
+          <p>같은 스크린샷을 두 번 복사해도 자동으로 걸러내 깔끔하게 유지합니다.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+          <h3>드래그 앤 드롭</h3>
+          <p>이미 가지고 있는 이미지 파일을 끌어다 놓아 바로 이어붙일 수 있습니다.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v6h6"/><path d="M3 13a9 9 0 1 0 3-7.7L3 8"/></svg></div>
+          <h3>실행 취소 · 다시 실행</h3>
+          <p>어떤 변경이든 되돌리거나 다시 적용할 수 있어 마음 편히 시도합니다.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><polyline points="8 7 12 3 16 7"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
+          <h3>어디로든 내보내기</h3>
+          <p>PNG · JPEG · PDF로 저장하거나 클립보드로 복사, 사진 앱에 저장까지 한 번에.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="2" y1="8" x2="22" y2="8"/><circle cx="18" cy="5.5" r="1"/></svg></div>
+          <h3>macOS 메뉴바</h3>
+          <p>메뉴바에 상주하며 전역 단축키와 로그인 시 자동 실행을 지원합니다.</p>
+        </div>
+      </div>
     </div>
-
-    <div class="privacy">
-      <h3>Private by design</h3>
-      <p>Your clipboard stays on your device and is never sent anywhere. There is no network code at all, and the clipboard is read only while watching. No ads, no tracking, no account.</p>
-    </div>
-
-    <footer>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="support.html">Support</a>
-      <a href="mailto:chungkil.cksw@gmail.com">Contact</a>
-      <p>© 2026 CHUNGKIL KIM. All rights reserved.</p>
-    </footer>
   </section>
 
-</div>
+  <!-- Showcase -->
+  <section class="showcase">
+    <div class="wrap">
+      <p class="eyebrow">모든 기기에서</p>
+      <h2 class="sec-h">맥에서도, 아이폰·아이패드에서도</h2>
+      <p class="sec-sub">메뉴바에서 빠르게, 손안에서 자유롭게. 같은 흐름이 어디서나 이어집니다.</p>
+      <div class="show-grid">
+        <figure class="show-card mac">
+          <div class="frame mac">
+            <img src="shots/mac-empty-ko.png" width="1400" height="875" loading="lazy" alt="ClipStitch macOS 빈 화면. '화면을 캡처하면 자동으로 이어붙입니다'라는 안내와 ⌃⌘A로 클립보드에 복사하라는 힌트, 사이드바에는 '조각 없음'이 표시됩니다.">
+          </div>
+          <figcaption><strong>macOS 메뉴바 앱</strong>전역 단축키와 로그인 시 자동 실행으로, 복사하는 순간 바로 이어붙입니다.</figcaption>
+        </figure>
+        <div class="mobile-pair">
+          <figure class="show-card">
+            <div class="frame phone">
+              <img src="shots/iphone-result-ko.png" width="1320" height="2868" loading="lazy" alt="ClipStitch iPhone 화면. 상단에 조각 수·자동 추가 토글, 길게 이어붙인 채팅 형태 결과, 하단에 1·2·3 썸네일 스트립과 정렬·내보내기 바가 보입니다.">
+            </div>
+            <figcaption><strong>iPhone</strong>돌아오면 자동 감지.</figcaption>
+          </figure>
+          <figure class="show-card">
+            <div class="frame pad">
+              <img src="shots/ipad-result-ko.png" width="1200" height="1600" loading="lazy" alt="ClipStitch iPad 화면. 이어붙인 결과가 넓은 화면에 표시됩니다.">
+            </div>
+            <figcaption><strong>iPad</strong>큰 화면으로 편집.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pro -->
+  <section class="pro-wrap">
+    <div class="wrap">
+      <div class="pro-card">
+        <span class="pro-tag">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 7l4 4 5-6 5 6 4-4v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>
+          ClipStitch Pro
+        </span>
+        <h2>더 깊게 다루고 싶을 때, Pro</h2>
+        <p class="pro-lede">필요한 사람을 위한 강력한 기능을 한 번에. 핵심 기능은 계속 무료로 남습니다.</p>
+        <span class="pro-once">한 번 구매하면 평생 — 구독 아님</span>
+        <div class="pro-grid">
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v4M3 5h4M6 17v4M4 19h4"/><path d="M13 3l2.5 6.5L22 12l-6.5 2.5L13 21l-2.5-6.5L4 12l6.5-2.5z"/></svg></div>
+            <h3>스마트 스티치</h3>
+            <p>조각 사이 겹치는 영역을 자동으로 찾아 없애 자연스럽게 이어 붙입니다.</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V5a1 1 0 0 1 1-1h2M20 7V5a1 1 0 0 0-1-1h-2M4 17v2a1 1 0 0 0 1 1h2M20 17v2a1 1 0 0 1-1 1h-2"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="14" y2="13"/></svg></div>
+            <h3>텍스트 추출</h3>
+            <p>기기 내 OCR로 글자를 인식해 복사하거나 검색 가능한 PDF로 내보냅니다.</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><line x1="3" y1="3" x2="21" y2="21"/></svg></div>
+            <h3>가리기</h3>
+            <p>공유 전에 민감한 영역을 단색이나 모자이크로 가립니다.</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg></div>
+            <h3>레이아웃 · 잘라내기</h3>
+            <p>가로 모드, 간격, 배경색, 위·아래 잘라내기까지 자유롭게 조정합니다.</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+            <h3>프로 내보내기</h3>
+            <p>여백·그라데이션·그림자를 더한 스타일 이미지, 멀티페이지 PDF, 드래그 앤 드롭까지.</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+            <h3>프로젝트</h3>
+            <p>여러 프로젝트를 저장하고 자유롭게 오가며 작업합니다.</p>
+          </div>
+        </div>
+        <p class="pro-foot">Pro는 한 번 구매하면 그대로 내 것 — 월 결제도, 연 결제도 없습니다. 무료 기능은 앞으로도 무료입니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block" style="padding-top:0;">
+    <div class="wrap">
+      <p class="eyebrow">자주 묻는 질문</p>
+      <h2 class="sec-h">궁금한 점</h2>
+      <div class="faq">
+        <details>
+          <summary>구독인가요?<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>아닙니다. ClipStitch Pro는 한 번만 구매하면 평생 사용하는 일회성 구매입니다. 정기 결제가 없습니다.</p>
+        </details>
+        <details>
+          <summary>오프라인에서도 되나요?<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>네. 모든 처리가 기기 안에서 이뤄지며 네트워크 코드 자체가 없습니다. 인터넷 없이도 그대로 동작합니다.</p>
+        </details>
+        <details>
+          <summary>제 데이터는 안전한가요?<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>클립보드는 기기를 벗어나지 않고 어디에도 전송되지 않습니다. 클립보드는 감시 중일 때만 읽으며, 광고·추적·계정이 없습니다. App Store 개인정보 라벨은 '데이터가 수집되지 않음'입니다.</p>
+        </details>
+        <details>
+          <summary>어떤 기기에서 쓸 수 있나요?<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>macOS(메뉴바 앱, 전역 단축키, 로그인 시 자동 실행)와 iOS(iPhone·iPad)에서 모두 사용할 수 있습니다.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy -->
+  <section class="privacy">
+    <div class="wrap">
+      <p class="eyebrow" style="color:#8fd1a6;">개인정보</p>
+      <h2 class="sec-h">클립보드는 기기 안에 머뭅니다</h2>
+      <p class="sec-sub">개인정보 보호는 부가 기능이 아니라 설계 그 자체입니다.</p>
+      <div class="priv-grid">
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+          <div><h3>네트워크 코드 없음</h3><p>앱에 통신 코드가 전혀 없어 클립보드가 어디로도 전송되지 않습니다.</p></div>
+        </div>
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
+          <div><h3>감시 중일 때만 읽기</h3><p>클립보드는 감시가 켜져 있을 때만 읽고, 그 외에는 손대지 않습니다.</p></div>
+        </div>
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="5" y1="5" x2="19" y2="19"/></svg></span>
+          <div><h3>광고·추적 없음</h3><p>광고도, 추적도, 계정도 없습니다. 그냥 도구입니다.</p></div>
+        </div>
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+          <div><h3>기기 내 처리</h3><p>OCR을 포함한 모든 작업이 기기 안에서 끝납니다.</p></div>
+        </div>
+      </div>
+      <span class="priv-label">App Store 개인정보: 데이터가 수집되지 않음</span>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final">
+    <div class="wrap">
+      <h2>한번 써보세요</h2>
+      <p>복사하면 이어붙고, 내보내면 끝. 핵심 기능은 무료입니다.</p>
+      <div class="cta-row">
+        <a class="badge" href="#" aria-label="App Store에서 다운로드 (곧 제공)">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.1 12.7c0-1.8 1.4-2.7 1.5-2.8-.8-1.2-2.1-1.4-2.5-1.4-1.1-.1-2.1.6-2.6.6-.5 0-1.4-.6-2.3-.6-1.2 0-2.3.7-2.9 1.8-1.2 2.2-.3 5.4.9 7.1.6.9 1.3 1.8 2.2 1.8.9 0 1.2-.6 2.3-.6 1.1 0 1.4.6 2.3.6.9 0 1.6-.9 2.2-1.8.4-.6.6-1.2.8-1.8-1.7-.7-1.9-2.4-1.9-2.7zM15.3 6.6c.5-.6.8-1.4.7-2.2-.7 0-1.5.5-2 1.1-.4.5-.8 1.3-.7 2.1.8.1 1.5-.4 2-1z"/></svg>
+          <span><span class="b1">곧 출시 예정</span><span class="b2">App Store</span></span>
+        </a>
+      </div>
+      <p class="badge-note" style="color:#8a90a0;">App Store 링크는 곧 제공됩니다.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap foot-in">
+      <div class="foot-brand">
+        <span class="mark" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="7" rx="1.6"/><rect x="4" y="14" width="16" height="7" rx="1.6"/></svg></span>
+        ClipStitch
+      </div>
+      <nav class="foot-links" aria-label="바닥글">
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="support.html">지원</a>
+        <a href="mailto:chungkil.cksw@gmail.com">문의하기</a>
+      </nav>
+      <p class="foot-copy">© 2026 CHUNGKIL KIM. 모든 권리 보유.</p>
+    </div>
+  </footer>
+</section>
+
+<hr class="nojs-divider">
+
+<!-- ============ ENGLISH ============ -->
+<section class="lang-en">
+  <header class="hero">
+    <div class="wrap">
+      <div class="brand">
+        <span class="mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="7" rx="1.6"/><rect x="4" y="14" width="16" height="7" rx="1.6"/></svg>
+        </span>
+        <span class="name">ClipStitch</span>
+      </div>
+      <h1>Copy a screenshot and it stitches automatically.</h1>
+      <p class="lede">Long web pages, chat threads, documents, and code that don't fit one screen — capture them in pieces and ClipStitch watches your clipboard and stitches them into one tall image. No opening an app and picking photos.</p>
+      <div class="cta-row">
+        <a class="badge" href="#" aria-label="Download on the App Store (coming soon)">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.1 12.7c0-1.8 1.4-2.7 1.5-2.8-.8-1.2-2.1-1.4-2.5-1.4-1.1-.1-2.1.6-2.6.6-.5 0-1.4-.6-2.3-.6-1.2 0-2.3.7-2.9 1.8-1.2 2.2-.3 5.4.9 7.1.6.9 1.3 1.8 2.2 1.8.9 0 1.2-.6 2.3-.6 1.1 0 1.4.6 2.3.6.9 0 1.6-.9 2.2-1.8.4-.6.6-1.2.8-1.8-1.7-.7-1.9-2.4-1.9-2.7zM15.3 6.6c.5-.6.8-1.4.7-2.2-.7 0-1.5.5-2 1.1-.4.5-.8 1.3-.7 2.1.8.1 1.5-.4 2-1z"/></svg>
+          <span><span class="b1">Coming soon</span><span class="b2">App Store</span></span>
+        </a>
+      </div>
+      <p class="badge-note">App Store link coming soon.</p>
+
+      <figure class="hero-shot">
+        <img src="shots/mac-result-en.png" width="1400" height="875" alt="ClipStitch macOS app window. A left sidebar shows three stitched-piece thumbnails, the main canvas shows a stitched chat-style result, the toolbar shows a 'Watching' indicator and an 'Auto-add' toggle, and the bottom bar has alignment, Copy to Clipboard, and Export controls.">
+      </figure>
+
+      <div class="pill-row">
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>macOS menu-bar app</span>
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>iPhone &amp; iPad</span>
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Runs entirely on device</span>
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>No ads, no tracking</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- How it works -->
+  <section class="block">
+    <div class="wrap">
+      <p class="eyebrow">How it works</p>
+      <h2 class="sec-h">Copy, stitch, export</h2>
+      <p class="sec-sub">Three steps, that's it. Pieces stitch in the order you captured them, and you can reorder with thumbnails any time.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Copy</h3>
+          <p>Capture a long screen in pieces, top to bottom, and copy each to the clipboard. On macOS it's one shortcut: ⌃⌘A.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>Stitch</h3>
+          <p>ClipStitch watches the clipboard, adds each new screenshot, and stitches them into one tall image. Copy the same shot twice and the duplicate is filtered out.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Export</h3>
+          <p>Save as PNG, JPEG, or PDF, copy to the clipboard, or save to Photos. Check alignment and order right in the live preview.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Free features -->
+  <section class="block" style="padding-top:0;">
+    <div class="wrap">
+      <p class="eyebrow">Free features</p>
+      <h2 class="sec-h">The core features stay free</h2>
+      <p class="sec-sub">Everything you need for everyday use is here from the start.</p>
+      <div class="grid">
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="4" rx="1"/><path d="M9 4H6a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-3"/></svg></div>
+          <h3>Automatic clipboard capture</h3>
+          <p>macOS watches in the background; iOS detects new screenshots the moment you return.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+          <h3>Live preview &amp; reorder</h3>
+          <p>Drag thumbnails to reorder or delete pieces, and see the result update in real time.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="6" x2="3" y2="6"/><line x1="15" y1="12" x2="3" y2="12"/><line x1="17" y1="18" x2="3" y2="18"/></svg></div>
+          <h3>Alignment</h3>
+          <p>Align left, center, or right — or scale every piece to the widest one.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+          <h3>Duplicate guard</h3>
+          <p>Copy the same shot twice and ClipStitch filters it out so the stitch stays clean.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+          <h3>Drag and drop</h3>
+          <p>Drop in image files you already have and stitch them right alongside your captures.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v6h6"/><path d="M3 13a9 9 0 1 0 3-7.7L3 8"/></svg></div>
+          <h3>Undo &amp; redo</h3>
+          <p>Undo or redo any change, so you can experiment without worrying.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><polyline points="8 7 12 3 16 7"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
+          <h3>Export anywhere</h3>
+          <p>Save as PNG, JPEG, or PDF, copy to the clipboard, or save to Photos.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="2" y1="8" x2="22" y2="8"/><circle cx="18" cy="5.5" r="1"/></svg></div>
+          <h3>macOS menu bar</h3>
+          <p>Lives in the menu bar with a global shortcut and launch at login.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showcase -->
+  <section class="showcase">
+    <div class="wrap">
+      <p class="eyebrow">Every device</p>
+      <h2 class="sec-h">On your Mac, iPhone, and iPad</h2>
+      <p class="sec-sub">Fast from the menu bar, free in your hand. The same flow follows you everywhere.</p>
+      <div class="show-grid">
+        <figure class="show-card mac">
+          <div class="frame mac">
+            <img src="shots/mac-empty-en.png" width="1400" height="875" loading="lazy" alt="ClipStitch macOS empty state. A centered message reads 'Capture your screen and it's stitched automatically,' with a hint to copy to the clipboard with Control-Command-A; the sidebar shows 'No pieces.'">
+          </div>
+          <figcaption><strong>macOS menu-bar app</strong>A global shortcut and launch at login mean it's stitching the moment you copy.</figcaption>
+        </figure>
+        <div class="mobile-pair">
+          <figure class="show-card">
+            <div class="frame phone">
+              <img src="shots/iphone-result-en.png" width="1320" height="2868" loading="lazy" alt="ClipStitch on iPhone. A top control row shows the pieces count and an Auto-add toggle, a long stitched chat-style result fills the screen, and a bottom thumbnail strip with an alignment and Export bar sits below.">
+            </div>
+            <figcaption><strong>iPhone</strong>Auto-detect on return.</figcaption>
+          </figure>
+          <figure class="show-card">
+            <div class="frame pad">
+              <img src="shots/ipad-result-en.png" width="1200" height="1600" loading="lazy" alt="ClipStitch on iPad showing a stitched result on a larger canvas.">
+            </div>
+            <figcaption><strong>iPad</strong>Edit on a big canvas.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pro -->
+  <section class="pro-wrap">
+    <div class="wrap">
+      <div class="pro-card">
+        <span class="pro-tag">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 7l4 4 5-6 5 6 4-4v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>
+          ClipStitch Pro
+        </span>
+        <h2>Go deeper with Pro</h2>
+        <p class="pro-lede">Powerful tools for when you need them, all in one upgrade. The core features stay free.</p>
+        <span class="pro-once">One-time purchase, yours forever — not a subscription</span>
+        <div class="pro-grid">
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v4M3 5h4M6 17v4M4 19h4"/><path d="M13 3l2.5 6.5L22 12l-6.5 2.5L13 21l-2.5-6.5L4 12l6.5-2.5z"/></svg></div>
+            <h3>Smart stitch</h3>
+            <p>Automatically detects and removes overlapping areas between pieces for a seamless join.</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V5a1 1 0 0 1 1-1h2M20 7V5a1 1 0 0 0-1-1h-2M4 17v2a1 1 0 0 0 1 1h2M20 17v2a1 1 0 0 1-1 1h-2"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="14" y2="13"/></svg></div>
+            <h3>Extract text</h3>
+            <p>On-device OCR reads the text so you can copy it or export a searchable PDF.</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><line x1="3" y1="3" x2="21" y2="21"/></svg></div>
+            <h3>Redact</h3>
+            <p>Hide sensitive areas before sharing with a solid fill or pixelate.</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg></div>
+            <h3>Layout and trim</h3>
+            <p>Switch to horizontal mode and adjust spacing, background color, and top/bottom trim.</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+            <h3>Pro export</h3>
+            <p>Styled image with padding, gradient, and shadow, plus multi-page PDF and drag and drop.</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+            <h3>Projects</h3>
+            <p>Save and switch between multiple projects whenever you like.</p>
+          </div>
+        </div>
+        <p class="pro-foot">Pro is a one-time purchase — no monthly or yearly fees. And the free features stay free, always.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block" style="padding-top:0;">
+    <div class="wrap">
+      <p class="eyebrow">FAQ</p>
+      <h2 class="sec-h">Good questions</h2>
+      <div class="faq">
+        <details>
+          <summary>Is it a subscription?<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>No. ClipStitch Pro is a one-time purchase that's yours forever. There are no recurring charges.</p>
+        </details>
+        <details>
+          <summary>Does it work offline?<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>Yes. Everything happens on your device — there's no network code at all — so it works exactly the same with no internet.</p>
+        </details>
+        <details>
+          <summary>Is my data safe?<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>Your clipboard stays on your device and is never sent anywhere. It's read only while watching, and there are no ads, tracking, or accounts. The App Store privacy label is "Data Not Collected."</p>
+        </details>
+        <details>
+          <summary>Which platforms?<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>macOS (menu-bar app, global shortcut, launch at login) and iOS (iPhone and iPad).</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy -->
+  <section class="privacy">
+    <div class="wrap">
+      <p class="eyebrow" style="color:#8fd1a6;">Privacy</p>
+      <h2 class="sec-h">Your clipboard stays on your device</h2>
+      <p class="sec-sub">Privacy isn't a feature bolted on — it's how ClipStitch is built.</p>
+      <div class="priv-grid">
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+          <div><h3>No network code</h3><p>There is no networking code at all, so your clipboard is never sent anywhere.</p></div>
+        </div>
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
+          <div><h3>Read only while watching</h3><p>The clipboard is read only when watching is on, and left alone otherwise.</p></div>
+        </div>
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="5" y1="5" x2="19" y2="19"/></svg></span>
+          <div><h3>No ads or tracking</h3><p>No ads, no tracking, no account. It's just a tool.</p></div>
+        </div>
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+          <div><h3>On-device processing</h3><p>Everything, including OCR, finishes on your device.</p></div>
+        </div>
+      </div>
+      <span class="priv-label">App Store privacy: Data Not Collected</span>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final">
+    <div class="wrap">
+      <h2>Give it a try</h2>
+      <p>Copy and it stitches, export and you're done. The core features are free.</p>
+      <div class="cta-row">
+        <a class="badge" href="#" aria-label="Download on the App Store (coming soon)">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.1 12.7c0-1.8 1.4-2.7 1.5-2.8-.8-1.2-2.1-1.4-2.5-1.4-1.1-.1-2.1.6-2.6.6-.5 0-1.4-.6-2.3-.6-1.2 0-2.3.7-2.9 1.8-1.2 2.2-.3 5.4.9 7.1.6.9 1.3 1.8 2.2 1.8.9 0 1.2-.6 2.3-.6 1.1 0 1.4.6 2.3.6.9 0 1.6-.9 2.2-1.8.4-.6.6-1.2.8-1.8-1.7-.7-1.9-2.4-1.9-2.7zM15.3 6.6c.5-.6.8-1.4.7-2.2-.7 0-1.5.5-2 1.1-.4.5-.8 1.3-.7 2.1.8.1 1.5-.4 2-1z"/></svg>
+          <span><span class="b1">Coming soon</span><span class="b2">App Store</span></span>
+        </a>
+      </div>
+      <p class="badge-note" style="color:#8a90a0;">App Store link coming soon.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap foot-in">
+      <div class="foot-brand">
+        <span class="mark" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="7" rx="1.6"/><rect x="4" y="14" width="16" height="7" rx="1.6"/></svg></span>
+        ClipStitch
+      </div>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="support.html">Support</a>
+        <a href="mailto:chungkil.cksw@gmail.com">Contact</a>
+      </nav>
+      <p class="foot-copy">© 2026 CHUNGKIL KIM. All rights reserved.</p>
+    </div>
+  </footer>
+</section>
 
 <script>
 (function () {
   var sections = { ko: document.querySelector(".lang-ko"), en: document.querySelector(".lang-en") };
   var nav = document.getElementById("langSwitch");
   var buttons = nav.querySelectorAll("button");
-
   function show(lang) {
     sections.ko.hidden = lang !== "ko";
     sections.en.hidden = lang !== "en";
     buttons.forEach(function (b) { b.classList.toggle("active", b.dataset.lang === lang); });
     document.documentElement.lang = lang;
   }
-
-  nav.hidden = false;  // JS 동작 시에만 토글 노출 (비활성 시 두 언어 모두 표시)
+  nav.hidden = false;
   buttons.forEach(function (b) { b.addEventListener("click", function () { show(b.dataset.lang); }); });
-
-  // 초기 언어: #en 해시 → 영어, 그 외 브라우저 언어 기준 (한국어 외 → 영어)
-  var initial = location.hash === "#en" ? "en"
-    : (navigator.language || "").toLowerCase().indexOf("ko") === 0 ? "ko" : "en";
+  var initial = location.hash === "#en" ? "en" : (navigator.language || "").toLowerCase().indexOf("ko") === 0 ? "ko" : "en";
   show(initial);
 })();
 </script>
-
 </body>
 </html>
