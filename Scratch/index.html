@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scratch Art — Reveal Rainbow Color · 손끝으로 빛나는 무지개 아트</title>
-    <meta name="description" content="Scratch the black surface to reveal beautiful rainbows, auroras and galaxies. 27 patterns, 5 foil effects, photo-to-line-art tracing, timelapse export and more. · 검은 표면을 긁어 무지개·오로라·은하수를 드러내세요.">
+    <title>Scratch Art — Reveal Rainbow Color</title>
+    <meta name="description" content="Scratch the black surface to reveal beautiful rainbows, auroras and galaxies. 27 patterns, 5 foil effects, photo-to-line-art tracing, timelapse export and more.">
     <meta name="theme-color" content="#0f0f0f">
 
     <!-- Open Graph / Twitter — public URL: https://cksw.pe.kr/Scratch/ -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://cksw.pe.kr/Scratch/">
-    <meta property="og:title" content="Scratch Art — Reveal Rainbow Color · 손끝으로 빛나는 무지개 아트">
-    <meta property="og:description" content="Scratch to reveal hidden rainbows, auroras and galaxies. Now with photo-to-line-art tracing. · 사진을 라인아트 가이드로 바꿔 따라 긁으세요.">
+    <meta property="og:title" content="Scratch Art — Reveal Rainbow Color">
+    <meta property="og:description" content="Scratch to reveal hidden rainbows, auroras and galaxies. Now with photo-to-line-art tracing.">
     <meta property="og:image" content="https://cksw.pe.kr/Scratch/img/shot-canvas.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Scratch Art — Reveal Rainbow Color · 손끝으로 빛나는 무지개 아트">
+    <meta name="twitter:title" content="Scratch Art — Reveal Rainbow Color">
     <meta name="twitter:description" content="Scratch to reveal hidden rainbows, auroras and galaxies. Now with photo-to-line-art tracing.">
     <meta name="twitter:image" content="https://cksw.pe.kr/Scratch/img/shot-canvas.png">
 
@@ -44,7 +44,10 @@
         html { scroll-behavior: smooth; scroll-padding-top: 76px; -webkit-text-size-adjust: 100%; }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+                'Apple SD Gothic Neo', 'Noto Sans KR',
+                'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', Meiryo,
+                'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
             background: var(--bg-dark);
             color: var(--text);
             line-height: 1.55;
@@ -59,14 +62,6 @@
             border-radius: 6px;
         }
 
-        /* ---- Bilingual helpers ---- */
-        .ko {
-            color: var(--text-muted);
-            font-weight: 400;
-        }
-        .en { display: block; }
-        h1 .ko, h2 .ko, h3 .ko, .subtitle .ko { display: block; }
-
         /* ---------- Top bar ---------- */
         .topbar {
             position: sticky;
@@ -74,8 +69,8 @@
             z-index: 100;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            padding: 14px 22px;
+            gap: 12px;
+            padding: 12px 22px;
             background: rgba(11, 11, 15, 0.72);
             backdrop-filter: saturate(160%) blur(14px);
             -webkit-backdrop-filter: saturate(160%) blur(14px);
@@ -88,6 +83,7 @@
             font-weight: 700;
             font-size: 1.05rem;
             text-decoration: none;
+            margin-right: auto;
         }
         .brand-icon {
             width: 34px;
@@ -98,6 +94,7 @@
             align-items: center;
             justify-content: center;
             font-size: 19px;
+            flex: 0 0 auto;
             box-shadow: 0 4px 14px rgba(255, 110, 199, 0.35);
         }
         .brand small {
@@ -107,7 +104,33 @@
             color: var(--text-muted);
             margin-top: -2px;
         }
-        .topbar .nav-cta {
+
+        /* language selector */
+        .lang-selector {
+            display: flex;
+            gap: 3px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            padding: 4px;
+            flex: 0 0 auto;
+        }
+        .lang-btn {
+            padding: 6px 11px;
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background .2s, color .2s;
+            line-height: 1;
+        }
+        .lang-btn.active { background: var(--primary); color: #fff; }
+        .lang-btn:hover:not(.active) { background: rgba(255,255,255,0.08); color: var(--text); }
+
+        .nav-cta {
             display: inline-flex;
             align-items: center;
             gap: 8px;
@@ -118,10 +141,11 @@
             border-radius: 999px;
             font-size: 0.9rem;
             font-weight: 700;
+            flex: 0 0 auto;
             transition: transform .25s, box-shadow .25s;
             white-space: nowrap;
         }
-        .topbar .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(255,255,255,0.18); }
+        .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(255,255,255,0.18); }
 
         /* ---------- Hero ---------- */
         .hero {
@@ -173,26 +197,17 @@
             color: #ffd5f0;
             margin-bottom: 22px;
         }
-        .badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--pink); box-shadow: 0 0 10px var(--pink); }
+        .badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--pink); box-shadow: 0 0 10px var(--pink); flex: 0 0 auto; }
 
         h1 {
             font-size: clamp(2.3rem, 6vw, 3.6rem);
-            line-height: 1.1;
+            line-height: 1.12;
             letter-spacing: -0.02em;
             margin-bottom: 8px;
-        }
-        h1 .grad {
             background: var(--rainbow);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-        }
-        h1 .ko {
-            font-size: clamp(1.15rem, 3.4vw, 1.6rem);
-            color: var(--text-muted);
-            font-weight: 600;
-            margin-top: 10px;
-            letter-spacing: -0.01em;
         }
         .subtitle {
             font-size: clamp(1rem, 2.4vw, 1.18rem);
@@ -200,7 +215,6 @@
             margin: 22px 0 32px;
             max-width: 520px;
         }
-        .subtitle .ko { font-size: 0.95em; margin-top: 6px; color: var(--text-dim); }
 
         .cta-row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
 
@@ -288,7 +302,6 @@
             line-height: 1;
         }
         .stat .label { font-size: 0.82rem; color: var(--text-muted); margin-top: 8px; }
-        .stat .label .ko { font-size: 0.78rem; display: block; color: var(--text-dim); }
 
         /* ---------- Section shells ---------- */
         section.block { padding: 90px 22px; }
@@ -299,7 +312,6 @@
             letter-spacing: -0.02em;
             line-height: 1.15;
         }
-        .section-head h2 .ko { font-size: 0.55em; color: var(--text-muted); font-weight: 600; margin-top: 8px; }
         .section-head p {
             color: var(--text-muted);
             margin-top: 16px;
@@ -307,7 +319,6 @@
             margin-left: auto;
             margin-right: auto;
         }
-        .section-head p .ko { display: block; font-size: 0.92em; color: var(--text-dim); margin-top: 4px; }
 
         /* ---------- Features grid ---------- */
         .features-grid {
@@ -339,9 +350,7 @@
             margin-bottom: 18px;
         }
         .feature-card h3 { font-size: 1.15rem; margin-bottom: 4px; letter-spacing: -0.01em; }
-        .feature-card h3 .ko { font-size: 0.82rem; font-weight: 500; }
         .feature-card p { color: var(--text-muted); font-size: 0.95rem; margin-top: 10px; }
-        .feature-card p .ko { display: block; font-size: 0.86rem; color: var(--text-dim); margin-top: 6px; }
         .feature-card .new-tag {
             position: absolute;
             top: 18px; right: 18px;
@@ -400,8 +409,7 @@
             z-index: -1;
             filter: blur(18px);
         }
-        .shot .cap { font-weight: 700; font-size: 1rem; }
-        .shot .cap .ko { font-size: 0.82rem; font-weight: 500; color: var(--text-muted); }
+        .shot .cap { font-weight: 700; font-size: 0.98rem; }
         .scroll-hint { text-align: center; color: var(--text-dim); font-size: 0.85rem; margin-top: 6px; }
 
         /* ---------- Patterns ---------- */
@@ -431,7 +439,6 @@
             font-weight: 700;
             text-shadow: 0 1px 6px rgba(0,0,0,0.6);
         }
-        .pattern-item span .ko { display: block; font-size: 0.72rem; font-weight: 500; opacity: 0.92; }
         .p-rainbow { background: linear-gradient(135deg, #ff6b6b, #feca57, #1dd1a1, #48dbfb, #5f27cd); }
         .p-aurora  { background: linear-gradient(160deg, #1dd1a1, #48dbfb, #5f27cd, #9b59b6); }
         .p-sunset  { background: linear-gradient(180deg, #ff5f6d, #ffc371, #c55a8e, #4a3b6e); }
@@ -465,7 +472,6 @@
         }
         .for-chip:hover { border-color: rgba(255,110,199,0.4); transform: translateY(-2px); }
         .for-chip .emo { font-size: 1.4rem; }
-        .for-chip .ko { display: block; font-size: 0.8rem; font-weight: 500; color: var(--text-muted); }
 
         /* ---------- CTA ---------- */
         .cta {
@@ -473,9 +479,7 @@
             background: radial-gradient(900px 400px at 50% 120%, #2a1840 0%, transparent 60%), var(--bg-dark);
         }
         .cta h2 { font-size: clamp(1.9rem, 5vw, 2.8rem); letter-spacing: -0.02em; }
-        .cta h2 .ko { font-size: 0.5em; color: var(--text-muted); font-weight: 600; margin-top: 8px; }
         .cta p { color: var(--text-muted); margin: 18px auto 34px; max-width: 540px; }
-        .cta p .ko { display: block; color: var(--text-dim); font-size: 0.92em; margin-top: 4px; }
         .cta .download-btn { margin: 0 auto; }
 
         /* ---------- Footer ---------- */
@@ -491,7 +495,6 @@
         }
         .footer-links a { display: inline-block; padding: 10px 8px; color: var(--text-muted); text-decoration: none; transition: color .25s; font-size: 0.95rem; }
         .footer-links a:hover { color: var(--text); }
-        .footer-links .ko { color: var(--text-dim); font-size: 0.82em; }
         .copyright { color: var(--text-dim); font-size: 0.82rem; }
 
         /* ---------- Responsive ---------- */
@@ -508,9 +511,11 @@
             section.block { padding: 64px 18px; }
             .stats { grid-template-columns: repeat(2, 1fr); }
             .stat .num { font-size: 1.55rem; }
-            .topbar { padding: 12px 16px; }
-            .topbar .nav-cta { padding: 10px 16px; font-size: 0.85rem; min-height: 40px; }
+            .topbar { padding: 10px 14px; gap: 8px; }
             .brand small { display: none; }
+            .brand span.name { display: none; }
+            .lang-btn { padding: 6px 8px; font-size: 0.74rem; }
+            .nav-cta { padding: 9px 13px; font-size: 0.82rem; min-height: 40px; }
             .download-btn { width: 100%; justify-content: center; }
             .secondary-link { width: 100%; justify-content: center; }
             .pattern-showcase { grid-template-columns: repeat(2, 1fr); gap: 14px; }
@@ -531,11 +536,17 @@
     <header class="topbar">
         <a class="brand" href="#top">
             <span class="brand-icon">&#10024;</span>
-            <span>Scratch Art<small lang="ko">스크래치 아트</small></span>
+            <span class="name">Scratch Art<small data-i18n="brandTag">Rainbow scratch art</small></span>
         </a>
+        <div class="lang-selector" role="group" aria-label="Language">
+            <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+            <button class="lang-btn" data-lang="ko" onclick="setLang('ko')">KO</button>
+            <button class="lang-btn" data-lang="ja" onclick="setLang('ja')">JA</button>
+            <button class="lang-btn" data-lang="zh" onclick="setLang('zh')">ZH</button>
+        </div>
         <a class="nav-cta" data-appstore href="#">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-            <span>Download<span class="ko" lang="ko" style="display:inline; margin-left:4px;">다운로드</span></span>
+            <span data-i18n="navDownload">Download</span>
         </a>
     </header>
 
@@ -543,24 +554,15 @@
     <section class="hero" id="top">
         <div class="hero-grid">
             <div class="hero-copy">
-                <span class="badge"><span class="dot"></span> NEW · Photo → Line-Art Tracing · <span lang="ko">사진을 라인아트로</span></span>
-                <h1>
-                    <span class="en">Scratch to reveal <span class="grad">rainbow color</span></span>
-                    <span class="ko" lang="ko">손끝으로 빛나는 무지개 아트</span>
-                </h1>
-                <p class="subtitle">
-                    <span class="en">Drag your finger or Apple Pencil across the black surface and watch hidden rainbows, auroras and galaxies appear. Relaxing, satisfying, and endlessly creative.</span>
-                    <span class="ko" lang="ko">검은 표면을 긁으면 숨겨진 무지개·오로라·은하수가 드러납니다. 힐링되고 만족스러운, 무한한 창작의 즐거움.</span>
-                </p>
+                <span class="badge"><span class="dot"></span> <span data-i18n="badge">NEW · Photo → Line-Art Tracing</span></span>
+                <h1 data-i18n="h1">Scratch to reveal rainbow color</h1>
+                <p class="subtitle" data-i18n="subtitle">Drag your finger or Apple Pencil across the black surface and watch hidden rainbows, auroras and galaxies appear. Relaxing, satisfying, and endlessly creative.</p>
                 <div class="cta-row">
                     <a class="download-btn" data-appstore href="#">
                         <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                        <span><small>Download on the</small><span class="big">App Store</span></span>
+                        <span><small data-i18n="dlSmall">Download on the</small><span class="big">App Store</span></span>
                     </a>
-                    <a class="secondary-link" href="#features">
-                        <span>See features</span>
-                        <span class="ko" lang="ko" style="display:inline;">· 기능 보기</span>
-                    </a>
+                    <a class="secondary-link" href="#features" data-i18n="seeFeatures">See features</a>
                 </div>
             </div>
             <div class="hero-visual">
@@ -572,116 +574,74 @@
     </section>
 
     <!-- ===== Stats ===== -->
-    <section class="stats" aria-label="At a glance · 한눈에 보기">
-        <div class="stat"><div class="num">27</div><div class="label">Patterns<span class="ko" lang="ko">배경 패턴</span></div></div>
-        <div class="stat"><div class="num">5</div><div class="label">Foil Effects<span class="ko" lang="ko">포일 효과</span></div></div>
-        <div class="stat"><div class="num">8</div><div class="label">Stamps<span class="ko" lang="ko">스탬프</span></div></div>
-        <div class="stat"><div class="num">6</div><div class="label">Canvas Sizes<span class="ko" lang="ko">캔버스 크기</span></div></div>
-        <div class="stat"><div class="num">600</div><div class="label">Max DPI<span class="ko" lang="ko">최대 해상도</span></div></div>
-        <div class="stat"><div class="num">11</div><div class="label">Languages<span class="ko" lang="ko">지원 언어</span></div></div>
+    <section class="stats" aria-label="At a glance">
+        <div class="stat"><div class="num">27</div><div class="label" data-i18n="statPatterns">Patterns</div></div>
+        <div class="stat"><div class="num">5</div><div class="label" data-i18n="statFoil">Foil Effects</div></div>
+        <div class="stat"><div class="num">8</div><div class="label" data-i18n="statStamps">Stamps</div></div>
+        <div class="stat"><div class="num">6</div><div class="label" data-i18n="statCanvas">Canvas Sizes</div></div>
+        <div class="stat"><div class="num">600</div><div class="label" data-i18n="statDpi">Max DPI</div></div>
+        <div class="stat"><div class="num">11</div><div class="label" data-i18n="statLang">Languages</div></div>
     </section>
 
     <!-- ===== Features ===== -->
     <section class="block" id="features">
         <div class="inner">
             <div class="section-head">
-                <h2>Everything to scratch, reveal &amp; share<span class="ko" lang="ko">긁고, 드러내고, 공유하는 모든 것</span></h2>
-                <p>
-                    <span class="en">A full creative studio in your pocket — from one-tap patterns to print-quality export.</span>
-                    <span class="ko" lang="ko">원탭 패턴부터 인쇄 품질 내보내기까지, 주머니 속 창작 스튜디오.</span>
-                </p>
+                <h2 data-i18n="featHead">Everything to scratch, reveal &amp; share</h2>
+                <p data-i18n="featSub">A full creative studio in your pocket — from one-tap patterns to print-quality export.</p>
             </div>
 
             <div class="features-grid">
                 <div class="feature-card highlight">
                     <span class="new-tag">NEW</span>
                     <div class="icon">&#128444;&#65039;</div>
-                    <h3>Photo → Line-Art Tracing<span class="ko" lang="ko">사진을 라인아트 가이드로</span></h3>
-                    <p>
-                        <span class="en">Turn any photo into a clean outline guide and scratch along it. The main subject is isolated automatically, so busy backgrounds stay tidy.</span>
-                        <span class="ko" lang="ko">사진을 깔끔한 윤곽선 가이드로 변환해 따라 긁으세요. 주제를 자동 분리해 복잡한 배경도 깔끔합니다.</span>
-                    </p>
+                    <h3 data-i18n="f1t">Photo → Line-Art Tracing</h3>
+                    <p data-i18n="f1d">Turn any photo into a clean outline guide and scratch along it. The main subject is isolated automatically, so busy backgrounds stay tidy.</p>
                 </div>
-
                 <div class="feature-card">
                     <div class="icon">&#127752;</div>
-                    <h3>27 Background Patterns<span class="ko" lang="ko">27가지 배경 패턴</span></h3>
-                    <p>
-                        <span class="en">Rainbow, Aurora, Sunset, Ocean, Galaxy, Neon City and seasonal themes like Christmas and Spring Blossom.</span>
-                        <span class="ko" lang="ko">무지개·오로라·석양·바다·은하수·네온 시티, 그리고 크리스마스·봄꽃 같은 계절 테마까지.</span>
-                    </p>
+                    <h3 data-i18n="f2t">27 Background Patterns</h3>
+                    <p data-i18n="f2d">Rainbow, Aurora, Sunset, Ocean, Galaxy, Neon City and seasonal themes like Christmas and Spring Blossom.</p>
                 </div>
-
                 <div class="feature-card highlight">
                     <div class="icon foil-icon">&#10024;</div>
-                    <h3>Premium Foil Effects<span class="ko" lang="ko">프리미엄 포일 효과</span></h3>
-                    <p>
-                        <span class="en">5 holographic patterns — Rainbow, Gold, Silver, Holographic and Oil Slick — that shimmer and shift as you tilt your device.</span>
-                        <span class="ko" lang="ko">레인보우·골드·실버·홀로그래픽·오일 슬릭 5종. 기기를 기울이면 반짝이며 변합니다.</span>
-                    </p>
+                    <h3 data-i18n="f3t">Premium Foil Effects</h3>
+                    <p data-i18n="f3d">5 holographic patterns — Rainbow, Gold, Silver, Holographic and Oil Slick — that shimmer and shift as you tilt your device.</p>
                 </div>
-
                 <div class="feature-card">
                     <div class="icon">&#127912;</div>
-                    <h3>Custom Patterns &amp; Photos<span class="ko" lang="ko">나만의 패턴 · 사진 배경</span></h3>
-                    <p>
-                        <span class="en">Design your own gradients with favorite colors, or use your own photos as the hidden background.</span>
-                        <span class="ko" lang="ko">좋아하는 색으로 그라데이션을 만들거나, 직접 찍은 사진을 숨은 배경으로 사용하세요.</span>
-                    </p>
+                    <h3 data-i18n="f4t">Custom Patterns &amp; Photos</h3>
+                    <p data-i18n="f4d">Design your own gradients with favorite colors, or use your own photos as the hidden background.</p>
                 </div>
-
                 <div class="feature-card">
                     <div class="icon">&#9999;&#65039;</div>
-                    <h3>Apple Pencil &amp; Brushes<span class="ko" lang="ko">Apple Pencil · 맞춤 브러시</span></h3>
-                    <p>
-                        <span class="en">4 brush presets with adjustable size, hardness and opacity. Full pressure and tilt support with Apple Pencil.</span>
-                        <span class="ko" lang="ko">크기·경도·투명도를 조절하는 4가지 브러시. Apple Pencil 필압·기울기 완벽 지원.</span>
-                    </p>
+                    <h3 data-i18n="f5t">Apple Pencil &amp; Brushes</h3>
+                    <p data-i18n="f5d">4 brush presets with adjustable size, hardness and opacity. Full pressure and tilt support with Apple Pencil.</p>
                 </div>
-
                 <div class="feature-card">
                     <div class="icon">&#11088;</div>
-                    <h3>Stamps &amp; Mirror Drawing<span class="ko" lang="ko">스탬프 · 미러 드로잉</span></h3>
-                    <p>
-                        <span class="en">8 stamp shapes plus 3 symmetry modes for perfectly balanced mandalas and decorations.</span>
-                        <span class="ko" lang="ko">8가지 스탬프와 3가지 대칭 모드로 균형 잡힌 만다라와 장식을 만드세요.</span>
-                    </p>
+                    <h3 data-i18n="f6t">Stamps &amp; Mirror Drawing</h3>
+                    <p data-i18n="f6d">8 stamp shapes plus 3 symmetry modes for perfectly balanced mandalas and decorations.</p>
                 </div>
-
                 <div class="feature-card">
                     <div class="icon">&#127916;</div>
-                    <h3>Timelapse Export<span class="ko" lang="ko">타임랩스 내보내기</span></h3>
-                    <p>
-                        <span class="en">Your drawing is recorded automatically. Export a satisfying timelapse video — perfect for Reels, Shorts and TikTok.</span>
-                        <span class="ko" lang="ko">그리는 과정이 자동 녹화됩니다. 릴스·쇼츠·틱톡에 딱 맞는 타임랩스 영상으로 내보내세요.</span>
-                    </p>
+                    <h3 data-i18n="f7t">Timelapse Export</h3>
+                    <p data-i18n="f7d">Your drawing is recorded automatically. Export a satisfying timelapse video — perfect for Reels, Shorts and TikTok.</p>
                 </div>
-
                 <div class="feature-card">
                     <div class="icon">&#128193;</div>
-                    <h3>Gallery &amp; iCloud Sync<span class="ko" lang="ko">갤러리 · iCloud 동기화</span></h3>
-                    <p>
-                        <span class="en">Organize artwork in groups with foil-effect thumbnails. Everything syncs across iPhone and iPad.</span>
-                        <span class="ko" lang="ko">포일 썸네일과 함께 그룹으로 정리하세요. iPhone·iPad 간 자동 동기화됩니다.</span>
-                    </p>
+                    <h3 data-i18n="f8t">Gallery &amp; iCloud Sync</h3>
+                    <p data-i18n="f8d">Organize artwork in groups with foil-effect thumbnails. Everything syncs across iPhone and iPad.</p>
                 </div>
-
                 <div class="feature-card">
                     <div class="icon">&#128208;</div>
-                    <h3>Print-Quality Canvas<span class="ko" lang="ko">인쇄 품질 캔버스</span></h3>
-                    <p>
-                        <span class="en">6 paper sizes (A3, A4, B5, Letter and more) with up to 600 DPI — ready for screen or print.</span>
-                        <span class="ko" lang="ko">A3·A4·B5·Letter 등 6가지 용지와 최대 600 DPI. 화면용·인쇄용 모두 대응.</span>
-                    </p>
+                    <h3 data-i18n="f9t">Print-Quality Canvas</h3>
+                    <p data-i18n="f9d">6 paper sizes (A3, A4, B5, Letter and more) with up to 600 DPI — ready for screen or print.</p>
                 </div>
-
                 <div class="feature-card">
                     <div class="icon">&#128241;</div>
-                    <h3>Widgets, Minimap &amp; Lefty<span class="ko" lang="ko">위젯 · 미니맵 · 왼손잡이</span></h3>
-                    <p>
-                        <span class="en">Show artwork on your home screen, navigate big canvases with the minimap, and place the toolbar on either side.</span>
-                        <span class="ko" lang="ko">홈 화면 위젯, 큰 캔버스용 미니맵, 좌우 어디든 둘 수 있는 도구 모음.</span>
-                    </p>
+                    <h3 data-i18n="f10t">Widgets, Minimap &amp; Lefty</h3>
+                    <p data-i18n="f10d">Show artwork on your home screen, navigate big canvases with the minimap, and place the toolbar on either side.</p>
                 </div>
             </div>
         </div>
@@ -691,71 +651,65 @@
     <section class="block shots">
         <div class="inner">
             <div class="section-head">
-                <h2>See it in action<span class="ko" lang="ko">실제 화면으로 만나보세요</span></h2>
-                <p>
-                    <span class="en">A peek inside the app.</span>
-                    <span class="ko" lang="ko">앱 속을 미리 둘러보세요.</span>
-                </p>
+                <h2 data-i18n="shotsHead">See it in action</h2>
+                <p data-i18n="shotsSub">A peek inside the app.</p>
             </div>
         </div>
         <div class="shot-scroller">
             <div class="shot">
                 <div class="device"><img loading="lazy" src="img/shot-canvas.png" width="640" height="1385" alt="Drawing canvas with rainbow line art and side toolbar"></div>
-                <div class="cap">Scratch &amp; reveal<span class="ko" lang="ko">긁어서 색을 드러내기</span></div>
+                <div class="cap" data-i18n="cap1">Scratch &amp; reveal</div>
             </div>
             <div class="shot">
                 <div class="device"><img loading="lazy" src="img/shot-patterns.png" width="640" height="1385" alt="Background pattern picker with Aurora, Sunset, Ocean and more"></div>
-                <div class="cap">27 patterns<span class="ko" lang="ko">27가지 배경 패턴</span></div>
+                <div class="cap" data-i18n="cap2">27 patterns</div>
             </div>
             <div class="shot">
                 <div class="device"><img loading="lazy" src="img/shot-tracing.png" width="640" height="1385" alt="Tracing screen importing a photo to use as a line-art guide"></div>
-                <div class="cap">Photo → line art<span class="ko" lang="ko">사진을 라인아트로</span></div>
+                <div class="cap" data-i18n="cap3">Photo → line art</div>
             </div>
             <div class="shot">
-                <div class="device"><img loading="lazy" src="img/shot-share.png" width="640" height="1385" alt="Share sheet with High quality export and no watermark option"></div>
-                <div class="cap">High-quality export<span class="ko" lang="ko">고품질 내보내기</span></div>
+                <div class="device"><img loading="lazy" src="img/shot-share.png" width="640" height="1385" alt="Share sheet with High quality export option"></div>
+                <div class="cap" data-i18n="cap4">High-quality export</div>
             </div>
             <div class="shot">
                 <div class="device"><img loading="lazy" src="img/shot-timelapse.png" width="640" height="1385" alt="Timelapse export screen with playback speed options"></div>
-                <div class="cap">Timelapse video<span class="ko" lang="ko">타임랩스 영상</span></div>
+                <div class="cap" data-i18n="cap5">Timelapse video</div>
             </div>
             <div class="shot">
                 <div class="device"><img loading="lazy" src="img/shot-canvas-size.png" width="640" height="1385" alt="Canvas size screen with paper sizes and DPI options"></div>
-                <div class="cap">Print quality<span class="ko" lang="ko">인쇄 품질 캔버스</span></div>
+                <div class="cap" data-i18n="cap6">Print quality</div>
             </div>
             <div class="shot">
                 <div class="device"><img loading="lazy" src="img/shot-widget.png" width="640" height="1385" alt="Home screen widget showing recent scratch art creations"></div>
-                <div class="cap">Home widgets<span class="ko" lang="ko">홈 화면 위젯</span></div>
+                <div class="cap" data-i18n="cap7">Home widgets</div>
             </div>
             <div class="shot">
                 <div class="device"><img loading="lazy" src="img/shot-settings.png" width="640" height="1385" alt="Settings screen with left-handed toolbar and gesture options"></div>
-                <div class="cap">Lefty &amp; gestures<span class="ko" lang="ko">왼손잡이 · 제스처</span></div>
+                <div class="cap" data-i18n="cap8">Lefty &amp; gestures</div>
             </div>
         </div>
-        <p class="scroll-hint">&#8592; Swipe to explore · <span lang="ko">좌우로 넘겨보세요</span> &#8594;</p>
+        <p class="scroll-hint" data-i18n="scrollHint">&#8592; Swipe to explore &#8594;</p>
     </section>
 
     <!-- ===== Patterns ===== -->
     <section class="block">
         <div class="inner">
             <div class="section-head">
-                <h2>Stunning patterns &amp; foils<span class="ko" lang="ko">아름다운 패턴과 포일</span></h2>
-                <p>
-                    <span class="en">Every stroke uncovers a different world of color.</span>
-                    <span class="ko" lang="ko">긁을 때마다 새로운 색의 세계가 펼쳐집니다.</span>
-                </p>
+                <h2 data-i18n="patHead">Stunning patterns &amp; foils</h2>
+                <p data-i18n="patSub">Every stroke uncovers a different world of color.</p>
             </div>
             <div class="pattern-showcase">
-                <div class="pattern-item p-rainbow"><span>Rainbow<span class="ko" lang="ko">무지개</span></span></div>
-                <div class="pattern-item p-aurora"><span>Aurora<span class="ko" lang="ko">오로라</span></span></div>
-                <div class="pattern-item p-sunset"><span>Sunset<span class="ko" lang="ko">석양</span></span></div>
-                <div class="pattern-item p-ocean"><span>Ocean<span class="ko" lang="ko">바다</span></span></div>
-                <div class="pattern-item p-galaxy"><span>Galaxy<span class="ko" lang="ko">은하수</span></span></div>
-                <div class="pattern-item p-gold foil-shimmer"><span>Gold Foil<span class="ko" lang="ko">골드 포일</span></span></div>
-                <div class="pattern-item p-mermaid"><span>Mermaid<span class="ko" lang="ko">인어</span></span></div>
-                <div class="pattern-item p-neon foil-shimmer"><span>Holographic Foil<span class="ko" lang="ko">홀로그래픽 포일</span></span></div>
+                <div class="pattern-item p-rainbow"><span data-i18n="pat1">Rainbow</span></div>
+                <div class="pattern-item p-aurora"><span data-i18n="pat2">Aurora</span></div>
+                <div class="pattern-item p-sunset"><span data-i18n="pat3">Sunset</span></div>
+                <div class="pattern-item p-ocean"><span data-i18n="pat4">Ocean</span></div>
+                <div class="pattern-item p-galaxy"><span data-i18n="pat5">Galaxy</span></div>
+                <div class="pattern-item p-gold foil-shimmer"><span data-i18n="pat6">Gold Foil</span></div>
+                <div class="pattern-item p-mermaid"><span data-i18n="pat7">Mermaid</span></div>
+                <div class="pattern-item p-neon foil-shimmer"><span data-i18n="pat8">Holographic Foil</span></div>
             </div>
-            <p class="pattern-note">+ 19 more patterns inside · <span lang="ko">앱 안에 19가지가 더 있습니다</span></p>
+            <p class="pattern-note" data-i18n="patNote">+ 19 more patterns inside</p>
         </div>
     </section>
 
@@ -763,14 +717,14 @@
     <section class="block">
         <div class="inner">
             <div class="section-head">
-                <h2>Perfect for...<span class="ko" lang="ko">이런 순간에 좋아요</span></h2>
+                <h2 data-i18n="forHead">Perfect for...</h2>
             </div>
             <div class="for-grid">
-                <div class="for-chip"><span class="emo">&#129496;</span><span>Relaxation &amp; mindfulness<span class="ko" lang="ko">휴식과 마음챙김</span></span></div>
-                <div class="for-chip"><span class="emo">&#128118;</span><span>Creative time with kids<span class="ko" lang="ko">아이와의 창의 시간</span></span></div>
-                <div class="for-chip"><span class="emo">&#128241;</span><span>Social-media-ready art<span class="ko" lang="ko">SNS용 아트 콘텐츠</span></span></div>
-                <div class="for-chip"><span class="emo">&#128524;</span><span>Stress relief<span class="ko" lang="ko">스트레스 해소</span></span></div>
-                <div class="for-chip"><span class="emo">&#127911;</span><span>ASMR satisfying content<span class="ko" lang="ko">ASMR 힐링 콘텐츠</span></span></div>
+                <div class="for-chip"><span class="emo">&#129496;</span><span data-i18n="for1">Relaxation &amp; mindfulness</span></div>
+                <div class="for-chip"><span class="emo">&#128118;</span><span data-i18n="for2">Creative time with kids</span></div>
+                <div class="for-chip"><span class="emo">&#128241;</span><span data-i18n="for3">Social-media-ready art</span></div>
+                <div class="for-chip"><span class="emo">&#128524;</span><span data-i18n="for4">Stress relief</span></div>
+                <div class="for-chip"><span class="emo">&#127911;</span><span data-i18n="for5">ASMR satisfying content</span></div>
             </div>
         </div>
     </section>
@@ -778,14 +732,11 @@
     <!-- ===== CTA ===== -->
     <section class="block cta">
         <div class="inner">
-            <h2>Start creating magic today<span class="ko" lang="ko">지금 바로 마법을 시작하세요</span></h2>
-            <p>
-                <span class="en">Download Scratch Art and reveal the colors hidden beneath the black.</span>
-                <span class="ko" lang="ko">스크래치 아트를 받고, 검은 표면 아래 숨겨진 색을 드러내세요.</span>
-            </p>
+            <h2 data-i18n="ctaHead">Start creating magic today</h2>
+            <p data-i18n="ctaSub">Download Scratch Art and reveal the colors hidden beneath the black.</p>
             <a class="download-btn" data-appstore href="#">
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                <span><small>Download on the</small><span class="big">App Store</span></span>
+                <span><small data-i18n="dlSmall">Download on the</small><span class="big">App Store</span></span>
             </a>
         </div>
     </section>
@@ -794,9 +745,9 @@
     <footer>
         <div class="footer-brand"><span class="brand-icon">&#10024;</span> Scratch Art</div>
         <div class="footer-links">
-            <a href="support.html">Support <span class="ko" lang="ko">지원</span></a>
-            <a href="privacy.html">Privacy Policy <span class="ko" lang="ko">개인정보처리방침</span></a>
-            <a href="mailto:chungkil.kim@gmail.com">Contact <span class="ko" lang="ko">문의</span></a>
+            <a href="support.html" data-i18n="footSupport">Support</a>
+            <a href="privacy.html" data-i18n="footPrivacy">Privacy Policy</a>
+            <a href="mailto:chungkil.kim@gmail.com" data-i18n="footContact">Contact</a>
         </div>
         <p class="copyright">&copy; 2025–2026 Scratch Art. All rights reserved.</p>
     </footer>
@@ -810,11 +761,134 @@
                 a.target = "_blank";
                 a.rel = "noopener";
             } else {
-                // No URL set yet: keep the buttons from silently jumping to the top.
                 a.setAttribute("aria-disabled", "true");
                 a.addEventListener("click", function (e) { e.preventDefault(); });
             }
         });
+
+        // ---- i18n: English lives inline (default + SEO); ko/ja/zh below ----
+        const I18N = {
+            ko: {
+                docTitle: "Scratch Art — 손끝으로 빛나는 무지개 아트",
+                brandTag: "무지개 스크래치 아트", navDownload: "다운로드",
+                badge: "NEW · 사진을 라인아트로", h1: "손끝으로 빛나는 무지개 아트",
+                subtitle: "검은 표면을 손가락이나 Apple Pencil로 긁으면 숨겨진 무지개·오로라·은하수가 드러납니다. 힐링되고 만족스러운, 무한한 창작의 즐거움.",
+                dlSmall: "지금 다운로드", seeFeatures: "기능 보기",
+                statPatterns: "배경 패턴", statFoil: "포일 효과", statStamps: "스탬프", statCanvas: "캔버스 크기", statDpi: "최대 해상도", statLang: "지원 언어",
+                featHead: "긁고, 드러내고, 공유하는 모든 것", featSub: "원탭 패턴부터 인쇄 품질 내보내기까지, 주머니 속 창작 스튜디오.",
+                f1t: "사진을 라인아트 가이드로", f1d: "사진을 깔끔한 윤곽선 가이드로 변환해 따라 긁으세요. 주제를 자동으로 분리해 복잡한 배경도 깔끔합니다.",
+                f2t: "27가지 배경 패턴", f2d: "무지개·오로라·석양·바다·은하수·네온 시티, 그리고 크리스마스·봄꽃 같은 계절 테마까지.",
+                f3t: "프리미엄 포일 효과", f3d: "레인보우·골드·실버·홀로그래픽·오일 슬릭 5종. 기기를 기울이면 반짝이며 변합니다.",
+                f4t: "나만의 패턴 · 사진 배경", f4d: "좋아하는 색으로 그라데이션을 만들거나, 직접 찍은 사진을 숨은 배경으로 사용하세요.",
+                f5t: "Apple Pencil · 맞춤 브러시", f5d: "크기·경도·투명도를 조절하는 4가지 브러시. Apple Pencil 필압·기울기 완벽 지원.",
+                f6t: "스탬프 · 미러 드로잉", f6d: "8가지 스탬프와 3가지 대칭 모드로 균형 잡힌 만다라와 장식을 만드세요.",
+                f7t: "타임랩스 내보내기", f7d: "그리는 과정이 자동 녹화됩니다. 릴스·쇼츠·틱톡에 딱 맞는 타임랩스 영상으로 내보내세요.",
+                f8t: "갤러리 · iCloud 동기화", f8d: "포일 썸네일과 함께 그룹으로 정리하세요. iPhone·iPad 간 자동 동기화됩니다.",
+                f9t: "인쇄 품질 캔버스", f9d: "A3·A4·B5·Letter 등 6가지 용지와 최대 600 DPI. 화면용·인쇄용 모두 대응.",
+                f10t: "위젯 · 미니맵 · 왼손잡이", f10d: "홈 화면 위젯, 큰 캔버스용 미니맵, 좌우 어디든 둘 수 있는 도구 모음.",
+                shotsHead: "실제 화면으로 만나보세요", shotsSub: "앱 속을 미리 둘러보세요.",
+                cap1: "긁어서 색을 드러내기", cap2: "27가지 배경 패턴", cap3: "사진을 라인아트로", cap4: "고품질 내보내기", cap5: "타임랩스 영상", cap6: "인쇄 품질 캔버스", cap7: "홈 화면 위젯", cap8: "왼손잡이 · 제스처",
+                scrollHint: "← 좌우로 넘겨보세요 →",
+                patHead: "아름다운 패턴과 포일", patSub: "긁을 때마다 새로운 색의 세계가 펼쳐집니다.",
+                pat1: "무지개", pat2: "오로라", pat3: "석양", pat4: "바다", pat5: "은하수", pat6: "골드 포일", pat7: "인어", pat8: "홀로그래픽 포일",
+                patNote: "앱 안에 19가지가 더 있습니다",
+                forHead: "이런 순간에 좋아요", for1: "휴식과 마음챙김", for2: "아이와의 창의 시간", for3: "SNS용 아트 콘텐츠", for4: "스트레스 해소", for5: "ASMR 힐링 콘텐츠",
+                ctaHead: "지금 바로 마법을 시작하세요", ctaSub: "스크래치 아트를 받고, 검은 표면 아래 숨겨진 색을 드러내세요.",
+                footSupport: "지원", footPrivacy: "개인정보처리방침", footContact: "문의"
+            },
+            ja: {
+                docTitle: "Scratch Art — 指先で輝くレインボーアート",
+                brandTag: "レインボーお絵かき", navDownload: "ダウンロード",
+                badge: "NEW · 写真をラインアートに", h1: "削って現すレインボーカラー",
+                subtitle: "黒い表面を指やApple Pencilでこすると、隠れた虹・オーロラ・銀河が現れます。心癒される、満足感たっぷりの創作体験。",
+                dlSmall: "今すぐダウンロード", seeFeatures: "機能を見る",
+                statPatterns: "背景パターン", statFoil: "フォイル効果", statStamps: "スタンプ", statCanvas: "キャンバスサイズ", statDpi: "最大DPI", statLang: "対応言語",
+                featHead: "削って、現して、共有する", featSub: "ワンタップのパターンから印刷品質の書き出しまで、ポケットの中の創作スタジオ。",
+                f1t: "写真をラインアートガイドに", f1d: "写真をきれいな輪郭ガイドに変換し、線をなぞって削れます。被写体は自動で切り抜くので、複雑な背景もすっきり。",
+                f2t: "27種類の背景パターン", f2d: "レインボー、オーロラ、夕焼け、海、銀河、ネオンシティ、クリスマスや春の花などの季節テーマも。",
+                f3t: "プレミアムフォイル効果", f3d: "5種類のホログラフィックパターン（レインボー、ゴールド、シルバー、ホログラフィック、オイルスリック）。傾けると、きらめいて表情を変えます。",
+                f4t: "オリジナルパターン・写真背景", f4d: "好きな色でグラデーションを作ったり、自分の写真を隠れた背景として使えます。",
+                f5t: "Apple Pencil・ブラシ", f5d: "サイズ・硬さ・不透明度を調整できる4種類のブラシ。Apple Pencilの筆圧と傾きに完全対応。",
+                f6t: "スタンプ・ミラー描画", f6d: "8種類のスタンプと3つの対称モードで、バランスの取れたマンダラや装飾を。",
+                f7t: "タイムラプス書き出し", f7d: "描画は自動で記録。気持ちいいタイムラプス動画を書き出せます。リール・ショート・TikTokにぴったり。",
+                f8t: "ギャラリー・iCloud同期", f8d: "フォイル効果のサムネイルでグループ整理。iPhoneとiPadで自動同期します。",
+                f9t: "印刷品質キャンバス", f9d: "6種の用紙サイズ（A3・A4・B5・Letterなど）と最大600 DPI。画面用も印刷用も。",
+                f10t: "ウィジェット・ミニマップ・左利き", f10d: "ホーム画面に作品を表示、ミニマップで大きなキャンバスを移動、ツールバーは左右どちらにも配置。",
+                shotsHead: "実際の画面を見る", shotsSub: "アプリの中をのぞいてみましょう。",
+                cap1: "削って現す", cap2: "27種類のパターン", cap3: "写真をラインアートに", cap4: "高品質書き出し", cap5: "タイムラプス動画", cap6: "印刷品質", cap7: "ホームウィジェット", cap8: "左利き・ジェスチャー",
+                scrollHint: "← スワイプで見る →",
+                patHead: "美しいパターンとフォイル", patSub: "削るたびに新しい色の世界が広がります。",
+                pat1: "レインボー", pat2: "オーロラ", pat3: "夕焼け", pat4: "海", pat5: "銀河", pat6: "ゴールドフォイル", pat7: "マーメイド", pat8: "ホログラフィックフォイル",
+                patNote: "アプリ内にさらに19種類",
+                forHead: "こんなときに最適", for1: "リラックス・マインドフルネス", for2: "子どもとの創作時間", for3: "SNS投稿にぴったりのアート", for4: "ストレス解消", for5: "ASMR系の心地よさ",
+                ctaHead: "今すぐ魔法を始めよう", ctaSub: "Scratch Artをダウンロードして、黒の下に隠れた色を引き出そう。",
+                footSupport: "サポート", footPrivacy: "プライバシーポリシー", footContact: "お問い合わせ"
+            },
+            zh: {
+                docTitle: "Scratch Art — 指尖绽放的彩虹艺术",
+                brandTag: "彩虹刮刮画", navDownload: "下载",
+                badge: "NEW · 照片转线稿", h1: "刮开，绽放彩虹色彩",
+                subtitle: "用手指或 Apple Pencil 刮开黑色表面，隐藏的彩虹、极光与银河随之浮现。治愈、解压，创意无限。",
+                dlSmall: "立即下载", seeFeatures: "查看功能",
+                statPatterns: "背景图案", statFoil: "箔片效果", statStamps: "印章", statCanvas: "画布尺寸", statDpi: "最高 DPI", statLang: "支持语言",
+                featHead: "刮开、绽放、分享，应有尽有", featSub: "从一键图案到印刷级导出，口袋里的创作工作室。",
+                f1t: "照片转线稿引导", f1d: "将任意照片转为清晰的轮廓引导，照着刮即可。自动抠出主体，复杂背景也干净利落。",
+                f2t: "27 种背景图案", f2d: "彩虹、极光、日落、海洋、银河、霓虹城市，以及圣诞、春花等季节主题。",
+                f3t: "高级箔片效果", f3d: "5 种箔片——彩虹箔、金箔、银箔、全息箔、油彩——倾斜设备即闪烁变幻。",
+                f4t: "自定义图案与照片", f4d: "用喜欢的颜色自制渐变，或用自己的照片作为隐藏背景。",
+                f5t: "Apple Pencil 与画笔", f5d: "4 种画笔预设，可调大小、硬度与不透明度。完整支持 Apple Pencil 压感与倾斜。",
+                f6t: "印章与镜像绘画", f6d: "8 种印章形状加 3 种对称模式，轻松创作平衡的曼陀罗与装饰。",
+                f7t: "延时视频导出", f7d: "绘画过程自动记录，导出解压的延时视频——非常适合 Reels、Shorts 和 TikTok。",
+                f8t: "画廊与 iCloud 同步", f8d: "用箔片缩略图分组整理作品，在 iPhone 与 iPad 间自动同步。",
+                f9t: "印刷级画布", f9d: "6 种纸张尺寸（A3、A4、B5、Letter 等），最高 600 DPI——屏幕与打印皆宜。",
+                f10t: "小组件 · 迷你地图 · 左手", f10d: "在主屏幕展示作品，用迷你地图导航大画布，工具栏可置于任意一侧。",
+                shotsHead: "实机画面一览", shotsSub: "抢先看看应用内部。",
+                cap1: "刮开显色", cap2: "27 种图案", cap3: "照片转线稿", cap4: "高质量导出", cap5: "延时视频", cap6: "印刷品质", cap7: "主屏小组件", cap8: "左手与手势",
+                scrollHint: "← 左右滑动查看 →",
+                patHead: "绚丽图案与箔片", patSub: "每一笔都揭开一个新的色彩世界。",
+                pat1: "彩虹", pat2: "极光", pat3: "日落", pat4: "海洋", pat5: "银河", pat6: "金箔", pat7: "美人鱼", pat8: "全息箔",
+                patNote: "应用内还有 19 种",
+                forHead: "完美适合……", for1: "放松与正念", for2: "亲子创意时光", for3: "适合社交分享的作品", for4: "释放压力", for5: "ASMR 解压内容",
+                ctaHead: "今天就开始创作魔法", ctaSub: "下载 Scratch Art，揭开黑色之下隐藏的色彩。",
+                footSupport: "支持", footPrivacy: "隐私政策", footContact: "联系我们"
+            }
+        };
+
+        const SUPPORTED = ["en", "ko", "ja", "zh"];
+        const HTML_LANG = { en: "en", ko: "ko", ja: "ja", zh: "zh-Hans" };
+        const DEFAULT_TITLE = document.title;
+        const i18nNodes = Array.prototype.slice.call(document.querySelectorAll('[data-i18n]'));
+        // capture inline English as the canonical 'en' source
+        i18nNodes.forEach(function (el) { el._en = el.textContent; });
+
+        function setLang(lang) {
+            if (SUPPORTED.indexOf(lang) === -1) lang = "en";
+            const dict = I18N[lang] || null;
+            i18nNodes.forEach(function (el) {
+                const key = el.getAttribute('data-i18n');
+                el.textContent = (lang === "en" || !dict) ? el._en : (dict[key] != null ? dict[key] : el._en);
+            });
+            document.documentElement.lang = HTML_LANG[lang] || "en";
+            document.title = (dict && dict.docTitle) ? dict.docTitle : DEFAULT_TITLE;
+            document.querySelectorAll('.lang-btn').forEach(function (b) {
+                b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+            });
+            try { localStorage.setItem('preferred-lang', lang); } catch (e) {}
+        }
+
+        // initial language: saved → browser → en
+        (function () {
+            let lang = null;
+            try { lang = localStorage.getItem('preferred-lang'); } catch (e) {}
+            if (!lang || SUPPORTED.indexOf(lang) === -1) {
+                const nav = (navigator.language || "en").toLowerCase();
+                if (nav.indexOf('ko') === 0) lang = 'ko';
+                else if (nav.indexOf('ja') === 0) lang = 'ja';
+                else if (nav.indexOf('zh') === 0) lang = 'zh';
+                else lang = 'en';
+            }
+            setLang(lang);
+        })();
     </script>
 </body>
 </html>
