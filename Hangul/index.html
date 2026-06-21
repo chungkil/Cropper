@@ -22,6 +22,7 @@
             --bg: #f4f6fc;
             --card: #ffffff;
             --line: #e8ebf3;
+            --green: #1f8a4c;
         }
         html { scroll-behavior: smooth; }
         body {
@@ -31,6 +32,21 @@
         }
         a { color: var(--blue); text-decoration: none; }
         .wrap { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        /* ---------- Language switcher ---------- */
+        .langbar {
+            position: fixed; top: 12px; right: 12px; z-index: 50;
+            display: flex; gap: 3px; padding: 4px; border-radius: 999px;
+            background: rgba(20,24,45,0.45); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+        }
+        .lang-btn {
+            border: 0; background: transparent; color: #fff; font-size: 12.5px; font-weight: 700;
+            padding: 6px 11px; border-radius: 999px; cursor: pointer; opacity: .75;
+            transition: all .15s ease; line-height: 1; font-family: inherit;
+        }
+        .lang-btn:hover { opacity: 1; }
+        .lang-btn.active { background: #fff; color: var(--blue); opacity: 1; }
 
         /* ---------- Hero ---------- */
         .hero {
@@ -101,11 +117,16 @@
             background: var(--card); border-radius: 18px; padding: 26px 24px;
             border: 1px solid var(--line); box-shadow: 0 4px 16px rgba(40,50,90,0.05);
             transition: transform .15s ease, box-shadow .15s ease;
+            display: block; color: var(--ink); text-decoration: none;
         }
         .persona:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(40,50,90,0.12); }
         .persona .emoji { font-size: 34px; }
         .persona h3 { font-size: 19px; margin: 12px 0 6px; }
-        .persona .quote { color: var(--muted); font-size: 14px; font-style: italic; margin-bottom: 14px; }
+        .persona .quote { color: var(--muted); font-size: 14px; font-style: italic; margin-bottom: 12px; }
+        .persona .win {
+            color: var(--green); font-weight: 700; font-size: 14px; margin: 0 0 14px;
+            display: flex; gap: 7px; align-items: baseline;
+        }
         .persona .path {
             display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 700;
             color: var(--blue); background: #eef2ff; padding: 7px 13px; border-radius: 999px;
@@ -205,10 +226,10 @@
         }
         details summary {
             cursor: pointer; font-weight: 600; font-size: 15.5px; padding: 14px 0;
-            list-style: none; display: flex; justify-content: space-between; align-items: center;
+            list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px;
         }
         details summary::-webkit-details-marker { display: none; }
-        details summary::after { content: "+"; font-size: 22px; color: var(--blue); font-weight: 400; }
+        details summary::after { content: "+"; font-size: 22px; color: var(--blue); font-weight: 400; flex-shrink: 0; }
         details[open] summary::after { content: "−"; }
         details p { font-size: 14px; color: #4b5563; padding: 0 0 16px; }
 
@@ -226,6 +247,18 @@
         .footer .links { margin-bottom: 16px; }
         .footer .links a { color: #55607a; margin: 0 12px; font-weight: 500; }
 
+        /* ---------- Trust band ---------- */
+        .trust { display:flex; flex-wrap:wrap; justify-content:center; gap:12px 26px; margin:26px auto 0; max-width:780px; }
+        .trust span { display:inline-flex; align-items:center; gap:8px; font-size:14px; font-weight:600; color:#465070; }
+        .trust .ic { font-size:17px; }
+
+        /* ---------- Why / differentiators ---------- */
+        .why { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+        .why-item { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:22px 22px 22px 58px; position:relative; }
+        .why-item::before { content:"\2713"; position:absolute; left:20px; top:22px; width:26px; height:26px; border-radius:50%; background:#eaf6ee; color:#1f8a4c; font-weight:800; font-size:14px; display:flex; align-items:center; justify-content:center; }
+        .why-item h3 { font-size:16px; margin-bottom:4px; }
+        .why-item p { font-size:13.5px; color:var(--muted); margin:0; }
+
         /* ---------- Responsive ---------- */
         @media (max-width: 760px) {
             .features { grid-template-columns: repeat(2, 1fr); }
@@ -235,26 +268,14 @@
             .hero h1 { font-size: 40px; }
             .hero .tag { font-size: 18px; }
             .stats { grid-template-columns: repeat(3, 1fr); gap: 14px 4px; margin-top: -42px; }
-            .personas, .steps, .plans { grid-template-columns: 1fr; }
+            .personas, .steps, .plans, .why { grid-template-columns: 1fr; }
             .sec-head h2 { font-size: 25px; }
             section { padding: 44px 0 4px; }
+            .lang-btn { padding: 6px 9px; font-size: 12px; }
         }
         @media (max-width: 420px) {
             .features { grid-template-columns: 1fr; }
         }
-
-        /* trust band */
-        .trust { display:flex; flex-wrap:wrap; justify-content:center; gap:12px 26px; margin:26px auto 0; max-width:780px; }
-        .trust span { display:inline-flex; align-items:center; gap:8px; font-size:14px; font-weight:600; color:#465070; }
-        .trust .ic { font-size:17px; }
-
-        /* why / differentiators */
-        .why { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
-        .why-item { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:22px 22px 22px 58px; position:relative; }
-        .why-item::before { content:"\2713"; position:absolute; left:20px; top:22px; width:26px; height:26px; border-radius:50%; background:#eaf6ee; color:#1f8a4c; font-weight:800; font-size:14px; display:flex; align-items:center; justify-content:center; }
-        .why-item h3 { font-size:16px; margin-bottom:4px; }
-        .why-item p { font-size:13.5px; color:var(--muted); margin:0; }
-        @media (max-width:600px){ .why { grid-template-columns:1fr; } }
     </style>
     <script type="application/ld+json">
     {
@@ -273,18 +294,25 @@
 </head>
 <body>
 
+    <!-- ================= LANGUAGE SWITCHER ================= -->
+    <div class="langbar" role="group" aria-label="Language">
+        <button class="lang-btn" data-lang="en" type="button">EN</button>
+        <button class="lang-btn" data-lang="ja" type="button">日本語</button>
+        <button class="lang-btn" data-lang="zh" type="button">中文</button>
+    </div>
+
     <!-- ================= HERO ================= -->
     <header class="hero">
         <div class="app-mark">한</div>
         <h1>Hangul</h1>
-        <p class="tag">Read Korean in a day. Then write &amp; speak it for real.</p>
-        <p class="sub">The all-in-one course for absolute beginners — free to start, works offline.</p>
+        <p class="tag" data-i18n="hero_tag">Read Korean in a day. Then write &amp; speak it for real.</p>
+        <p class="sub" data-i18n="hero_sub">The all-in-one course for absolute beginners — free to start, works offline.</p>
         <div class="cta-row">
-            <a class="appstore-btn" href="https://apps.apple.com/app/id6760618886" aria-label="Download on the App Store">
+            <a class="appstore-btn" href="https://apps.apple.com/app/id6760618886" data-i18n-aria="cta_aria" aria-label="Download on the App Store">
                 <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-                <span class="lbl"><small>Download on the</small><b>App Store</b></span>
+                <span class="lbl"><small data-i18n="cta_dl">Download on the</small><b>App Store</b></span>
             </a>
-            <a class="ghost-btn" href="#who">See if it's for you ↓</a>
+            <a class="ghost-btn" href="#who" data-i18n="cta_see">See if it's for you ↓</a>
         </div>
     </header>
 
@@ -292,120 +320,124 @@
 
         <!-- ================= STATS ================= -->
         <div class="stats">
-            <div class="stat"><div class="stat-num">40</div><div class="stat-label">Letters</div></div>
-            <div class="stat"><div class="stat-num">975</div><div class="stat-label">Words</div></div>
-            <div class="stat"><div class="stat-num">30</div><div class="stat-label">Dialogues</div></div>
-            <div class="stat"><div class="stat-num">7</div><div class="stat-label">Practice modes</div></div>
-            <div class="stat"><div class="stat-num">3</div><div class="stat-label">Languages</div></div>
+            <div class="stat"><div class="stat-num">40</div><div class="stat-label" data-i18n="stat_letters">Letters</div></div>
+            <div class="stat"><div class="stat-num">975</div><div class="stat-label" data-i18n="stat_words">Words</div></div>
+            <div class="stat"><div class="stat-num">30</div><div class="stat-label" data-i18n="stat_dialogues">Dialogues</div></div>
+            <div class="stat"><div class="stat-num">7</div><div class="stat-label" data-i18n="stat_modes">Practice modes</div></div>
+            <div class="stat"><div class="stat-num">3</div><div class="stat-label" data-i18n="stat_langs">Languages</div></div>
         </div>
 
         <!-- Honest trust signals only. TODO(owner): App Store 평점이 쌓이면 여기에 실제 별점/리뷰수 추가 (예: ★ 4.8 · 120 ratings). 허위 평점 절대 금지. -->
         <div class="trust">
-            <span><span class="ic">🔒</span> Private — data stays on device</span>
-            <span><span class="ic">📶</span> Works fully offline</span>
-            <span><span class="ic">👤</span> No account needed</span>
-            <span><span class="ic">🌐</span> English · 日本語 · 中文</span>
+            <span data-i18n="trust_private"><span class="ic">🔒</span> Private — data stays on device</span>
+            <span data-i18n="trust_offline"><span class="ic">📶</span> Works fully offline</span>
+            <span data-i18n="trust_noacct"><span class="ic">👤</span> No account needed</span>
+            <span data-i18n="trust_langs"><span class="ic">🌐</span> English · 日本語 · 中文</span>
         </div>
 
         <!-- ================= WHO IS IT FOR (scenarios) ================= -->
         <section id="who">
             <div class="sec-head">
-                <span class="kicker">Pick your path</span>
-                <h2>Which learner are you?</h2>
-                <p>Hangul meets you where you are. Choose a starting point and the app builds your route from there.</p>
+                <span class="kicker" data-i18n="who_kicker">Pick your path</span>
+                <h2 data-i18n="who_h2">Which learner are you?</h2>
+                <p data-i18n="who_p">Tap the one that sounds like you — the app builds your route from there.</p>
             </div>
             <div class="personas">
-                <div class="persona">
+                <a class="persona" href="https://apps.apple.com/app/id6760618886">
                     <div class="emoji">🔤</div>
-                    <h3>“I can’t read Korean yet”</h3>
-                    <p class="quote">Total beginner — those characters look like a wall.</p>
-                    <span class="path">▶ Read Hangul in 1 Day</span>
+                    <h3 data-i18n="p1_title">“I can’t read Korean yet”</h3>
+                    <p class="quote" data-i18n="p1_quote">Total beginner — those characters look like a wall.</p>
+                    <p class="win" data-i18n="p1_win">✅ Read your own name in Korean — today.</p>
+                    <span class="path" data-i18n="p1_path">▶ Read Hangul in 1 Day</span>
                     <ul>
-                        <li>40 letters with memory tricks &amp; audio</li>
-                        <li>See how 2 letters snap into a syllable</li>
-                        <li>4 guided steps to read any Korean text</li>
+                        <li data-i18n="p1_li1">40 letters with memory tricks &amp; audio</li>
+                        <li data-i18n="p1_li2">See how 2 letters snap into a syllable</li>
+                        <li data-i18n="p1_li3">4 guided steps to read any Korean text</li>
                     </ul>
-                </div>
-                <div class="persona">
+                </a>
+                <a class="persona" href="https://apps.apple.com/app/id6760618886">
                     <div class="emoji">🎤</div>
-                    <h3>“I’m here for K-Pop &amp; K-Drama”</h3>
-                    <p class="quote">I want to understand lyrics and lines, not just sing along.</p>
-                    <span class="path">▶ K-Pop Korean path</span>
+                    <h3 data-i18n="p2_title">“I’m here for K-Pop &amp; K-Drama”</h3>
+                    <p class="quote" data-i18n="p2_quote">I want to understand lyrics and lines, not just sing along.</p>
+                    <p class="win" data-i18n="p2_win">✅ Catch real lines in the songs you love.</p>
+                    <span class="path" data-i18n="p2_path">▶ K-Pop Korean path</span>
                     <ul>
-                        <li>Phrases pulled from songs &amp; shows</li>
-                        <li>Pronunciation practice that scores you</li>
-                        <li>Listen-and-type dictation for the ear</li>
+                        <li data-i18n="p2_li1">Phrases pulled from songs &amp; shows</li>
+                        <li data-i18n="p2_li2">Pronunciation practice that scores you</li>
+                        <li data-i18n="p2_li3">Listen-and-type dictation for the ear</li>
                     </ul>
-                </div>
-                <div class="persona">
+                </a>
+                <a class="persona" href="https://apps.apple.com/app/id6760618886">
                     <div class="emoji">✈️</div>
-                    <h3>“I’m traveling to Korea”</h3>
-                    <p class="quote">I need to order, ask directions and not get lost.</p>
-                    <span class="path">▶ Travel Korean path</span>
+                    <h3 data-i18n="p3_title">“I’m traveling to Korea”</h3>
+                    <p class="quote" data-i18n="p3_quote">I need to order, ask directions and not get lost.</p>
+                    <p class="win" data-i18n="p3_win">✅ Order, ask &amp; get around — before you land.</p>
+                    <span class="path" data-i18n="p3_path">▶ Travel Korean path</span>
                     <ul>
-                        <li>Essential phrases for real situations</li>
-                        <li>30 dialogues: café, taxi, shopping &amp; more</li>
-                        <li>Everything works offline on the plane</li>
+                        <li data-i18n="p3_li1">Essential phrases for real situations</li>
+                        <li data-i18n="p3_li2">30 dialogues: café, taxi, shopping &amp; more</li>
+                        <li data-i18n="p3_li3">Everything works offline on the plane</li>
                     </ul>
-                </div>
-                <div class="persona">
+                </a>
+                <a class="persona" href="https://apps.apple.com/app/id6760618886">
                     <div class="emoji">🎓</div>
-                    <h3>“I’m preparing for TOPIK”</h3>
-                    <p class="quote">I need structure and to know where I’m weak.</p>
-                    <span class="path">▶ TOPIK Prep path</span>
+                    <h3 data-i18n="p4_title">“I’m preparing for TOPIK”</h3>
+                    <p class="quote" data-i18n="p4_quote">I need structure and to know where I’m weak.</p>
+                    <p class="win" data-i18n="p4_win">✅ Walk into the exam knowing your weak spots.</p>
+                    <span class="path" data-i18n="p4_path">▶ TOPIK Prep path</span>
                     <ul>
-                        <li>975 words covering TOPIK Level 1 &amp; 2</li>
-                        <li>Smart Quiz drills the words you miss</li>
-                        <li>Full TOPIK-style mock test</li>
+                        <li data-i18n="p4_li1">975 words covering TOPIK Level 1 &amp; 2</li>
+                        <li data-i18n="p4_li2">Smart Quiz drills the words you miss</li>
+                        <li data-i18n="p4_li3">Full TOPIK-style mock test</li>
                     </ul>
-                </div>
+                </a>
             </div>
         </section>
 
         <!-- ================= HOW IT WORKS ================= -->
         <section>
             <div class="sec-head">
-                <span class="kicker">How it works</span>
-                <h2>Korean is like LEGO</h2>
-                <p>Letters snap together into syllables. Learn the pieces, and you can read anything.</p>
+                <span class="kicker" data-i18n="how_kicker">How it works</span>
+                <h2 data-i18n="how_h2">Korean is like LEGO</h2>
+                <p data-i18n="how_p">Letters snap together into syllables. Learn the pieces, and you can read anything.</p>
             </div>
             <div class="steps">
                 <div class="step">
                     <div class="step-n">1</div>
-                    <h3>Learn the pieces</h3>
-                    <p>Master the 40 letters with mnemonics, stroke order and native audio.</p>
+                    <h3 data-i18n="how_s1t">Learn the pieces</h3>
+                    <p data-i18n="how_s1d">Master the 40 letters with mnemonics, stroke order and native audio.</p>
                 </div>
                 <div class="step">
                     <div class="step-n">2</div>
-                    <h3>Build &amp; practice</h3>
-                    <p>Combine letters into syllables and words, then drill with quizzes, writing and speaking.</p>
+                    <h3 data-i18n="how_s2t">Build &amp; practice</h3>
+                    <p data-i18n="how_s2d">Combine letters into syllables and words, then drill with quizzes, writing and speaking.</p>
                 </div>
                 <div class="step">
                     <div class="step-n">3</div>
-                    <h3>Read &amp; speak</h3>
-                    <p>Work through real dialogues and grammar, and track your streak every day.</p>
+                    <h3 data-i18n="how_s3t">Read &amp; speak</h3>
+                    <p data-i18n="how_s3d">Work through real dialogues and grammar, and track your streak every day.</p>
                 </div>
             </div>
             <div class="lego">
                 <div class="tiles"><span class="t1">ㄱ</span> + <span class="t2">ㅏ</span> = <span class="t3">가</span></div>
-                <p><b>g</b> + <b>a</b> = <b>ga</b> — that’s the whole idea. The rest is just more pieces.</p>
+                <p data-i18n="how_lego"><b>g</b> + <b>a</b> = <b>ga</b> — that’s the whole idea. The rest is just more pieces.</p>
             </div>
         </section>
 
         <!-- ================= WHY HANGUL (differentiators) ================= -->
         <section>
             <div class="sec-head">
-                <span class="kicker">Why Hangul</span>
-                <h2>Built for real understanding</h2>
-                <p>Most apps just drill words. Hangul teaches how Korean actually works — so you don’t stall at the beginner wall.</p>
+                <span class="kicker" data-i18n="why_kicker">Why Hangul</span>
+                <h2 data-i18n="why_h2">Built for real understanding</h2>
+                <p data-i18n="why_p">Most apps just drill words. Hangul teaches how Korean actually works — so you don’t stall at the beginner wall.</p>
             </div>
             <div class="why">
-                <div class="why-item"><h3>Grammar, actually explained</h3><p>Particles (은/는, 이/가), word order and verb endings taught clearly — not left for you to guess.</p></div>
-                <div class="why-item"><h3>Formal &amp; casual, never mixed up</h3><p>Learn 고마워 vs 고맙습니다 — and exactly when to use each.</p></div>
-                <div class="why-item"><h3>Hangul as a real alphabet</h3><p>Letters with mnemonics and correct stroke-order animation — not romanization crutches.</p></div>
-                <div class="why-item"><h3>Conversations from real life</h3><p>30 dialogues — café, subway, clinic — with grammar tips and cultural notes.</p></div>
-                <div class="why-item"><h3>Remembers what you forget</h3><p>Spaced-repetition review and a Smart Quiz that targets your weakest words.</p></div>
-                <div class="why-item"><h3>Romanization you can switch off</h3><p>Lean on it at first, then turn it off when you’re ready to read for real.</p></div>
+                <div class="why-item"><h3 data-i18n="why_1t">Grammar, actually explained</h3><p data-i18n="why_1d">Particles (은/는, 이/가), word order and verb endings taught clearly — not left for you to guess.</p></div>
+                <div class="why-item"><h3 data-i18n="why_2t">Formal &amp; casual, never mixed up</h3><p data-i18n="why_2d">Learn 고마워 vs 고맙습니다 — and exactly when to use each.</p></div>
+                <div class="why-item"><h3 data-i18n="why_3t">Hangul as a real alphabet</h3><p data-i18n="why_3d">Letters with mnemonics and correct stroke-order animation — not romanization crutches.</p></div>
+                <div class="why-item"><h3 data-i18n="why_4t">Conversations from real life</h3><p data-i18n="why_4d">30 dialogues — café, subway, clinic — with grammar tips and cultural notes.</p></div>
+                <div class="why-item"><h3 data-i18n="why_5t">Remembers what you forget</h3><p data-i18n="why_5d">Spaced-repetition review and a Smart Quiz that targets your weakest words.</p></div>
+                <div class="why-item"><h3 data-i18n="why_6t">Romanization you can switch off</h3><p data-i18n="why_6d">Lean on it at first, then turn it off when you’re ready to read for real.</p></div>
             </div>
         </section>
 
@@ -415,22 +447,22 @@
     <section>
         <div class="wrap">
             <div class="sec-head">
-                <span class="kicker">A look inside</span>
-                <h2>See it in action</h2>
-                <p>A clean, dark interface that keeps you focused on learning.</p>
+                <span class="kicker" data-i18n="shots_kicker">A look inside</span>
+                <h2 data-i18n="shots_h2">See it in action</h2>
+                <p data-i18n="shots_p">A clean, dark interface that keeps you focused on learning.</p>
             </div>
         </div>
         <div class="gallery">
-            <div class="shot"><img loading="lazy" src="shots/02_Learn_Levels.png" alt="Choose your learning path — K-Pop, Travel, TOPIK and more"></div>
-            <div class="shot"><img loading="lazy" src="shots/03_Jamo_List.png" alt="Learn the 40 Korean letters with mnemonics and audio"></div>
-            <div class="shot"><img loading="lazy" src="shots/04_Jamo_Detail.png" alt="Letter quiz with stroke order and pronunciation"></div>
-            <div class="shot"><img loading="lazy" src="shots/06_Word_Categories.png" alt="975 essential words across 15 categories"></div>
-            <div class="shot"><img loading="lazy" src="shots/05_Grammar_List.png" alt="Grammar made simple — particles, word order, verb endings"></div>
-            <div class="shot"><img loading="lazy" src="shots/07_Practice.png" alt="Practice your way — handwriting, quizzes, dictation and more"></div>
-            <div class="shot"><img loading="lazy" src="shots/01_Home.png" alt="Your learning dashboard with streaks, goals and daily quests"></div>
-            <div class="shot"><img loading="lazy" src="shots/09_Profile.png" alt="Track your progress — statistics, achievements and settings"></div>
+            <div class="shot"><img loading="lazy" src="shots/02_Learn_Levels.png" data-i18n-alt="shots_alt1" alt="Choose your learning path — K-Pop, Travel, TOPIK and more"></div>
+            <div class="shot"><img loading="lazy" src="shots/03_Jamo_List.png" data-i18n-alt="shots_alt2" alt="Learn the 40 Korean letters with mnemonics and audio"></div>
+            <div class="shot"><img loading="lazy" src="shots/04_Jamo_Detail.png" data-i18n-alt="shots_alt3" alt="Letter quiz with stroke order and pronunciation"></div>
+            <div class="shot"><img loading="lazy" src="shots/06_Word_Categories.png" data-i18n-alt="shots_alt4" alt="975 essential words across 15 categories"></div>
+            <div class="shot"><img loading="lazy" src="shots/05_Grammar_List.png" data-i18n-alt="shots_alt5" alt="Grammar made simple — particles, word order, verb endings"></div>
+            <div class="shot"><img loading="lazy" src="shots/07_Practice.png" data-i18n-alt="shots_alt6" alt="Practice your way — handwriting, quizzes, dictation and more"></div>
+            <div class="shot"><img loading="lazy" src="shots/01_Home.png" data-i18n-alt="shots_alt7" alt="Your learning dashboard with streaks, goals and daily quests"></div>
+            <div class="shot"><img loading="lazy" src="shots/09_Profile.png" data-i18n-alt="shots_alt8" alt="Track your progress — statistics, achievements and settings"></div>
         </div>
-        <p class="gallery-hint">← swipe to explore →</p>
+        <p class="gallery-hint" data-i18n="shots_hint">← swipe to explore →</p>
     </section>
 
     <div class="wrap">
@@ -438,39 +470,39 @@
         <!-- ================= FEATURES ================= -->
         <section>
             <div class="sec-head">
-                <span class="kicker">Everything in one app</span>
-                <h2>From first letter to fluent</h2>
-                <p>No more juggling five different apps. Reading, listening, writing and speaking — all here.</p>
+                <span class="kicker" data-i18n="feat_kicker">Everything in one app</span>
+                <h2 data-i18n="feat_h2">From first letter to fluent</h2>
+                <p data-i18n="feat_p">No more juggling five different apps. Reading, listening, writing and speaking — all here.</p>
             </div>
             <div class="features">
-                <div class="feature"><div class="fi">ㄱ</div><div><h3>Hangul Letters</h3><p>40 letters with mnemonics &amp; stroke order</p></div></div>
-                <div class="feature"><div class="fi">📚</div><div><h3>TOPIK Vocabulary</h3><p>975 words across Level 1 &amp; 2</p></div></div>
-                <div class="feature"><div class="fi">💬</div><div><h3>Real Conversations</h3><p>30 scenarios with grammar tips</p></div></div>
-                <div class="feature"><div class="fi">🎤</div><div><h3>Pronunciation</h3><p>Speech recognition scores your speaking</p></div></div>
-                <div class="feature"><div class="fi">✍️</div><div><h3>Handwriting</h3><p>Write Korean with stroke recognition</p></div></div>
-                <div class="feature"><div class="fi">🧠</div><div><h3>Smart Quiz</h3><p>Adaptive drills + TOPIK mock test</p></div></div>
-                <div class="feature"><div class="fi">🗣️</div><div><h3>Dictation</h3><p>Listen and type what you hear</p></div></div>
-                <div class="feature"><div class="fi">🌐</div><div><h3>Multi-Language</h3><p>English, Japanese &amp; Chinese support</p></div></div>
-                <div class="feature"><div class="fi">🔥</div><div><h3>Stay Motivated</h3><p>Streaks, daily goals &amp; quests</p></div></div>
+                <div class="feature"><div class="fi">ㄱ</div><div><h3 data-i18n="feat_1t">Hangul Letters</h3><p data-i18n="feat_1d">40 letters with mnemonics &amp; stroke order</p></div></div>
+                <div class="feature"><div class="fi">📚</div><div><h3 data-i18n="feat_2t">TOPIK Vocabulary</h3><p data-i18n="feat_2d">975 words across Level 1 &amp; 2</p></div></div>
+                <div class="feature"><div class="fi">💬</div><div><h3 data-i18n="feat_3t">Real Conversations</h3><p data-i18n="feat_3d">30 scenarios with grammar tips</p></div></div>
+                <div class="feature"><div class="fi">🎤</div><div><h3 data-i18n="feat_4t">Pronunciation</h3><p data-i18n="feat_4d">Speech recognition scores your speaking</p></div></div>
+                <div class="feature"><div class="fi">✍️</div><div><h3 data-i18n="feat_5t">Handwriting</h3><p data-i18n="feat_5d">Write Korean with stroke recognition</p></div></div>
+                <div class="feature"><div class="fi">🧠</div><div><h3 data-i18n="feat_6t">Smart Quiz</h3><p data-i18n="feat_6d">Adaptive drills + TOPIK mock test</p></div></div>
+                <div class="feature"><div class="fi">🗣️</div><div><h3 data-i18n="feat_7t">Dictation</h3><p data-i18n="feat_7d">Listen and type what you hear</p></div></div>
+                <div class="feature"><div class="fi">🌐</div><div><h3 data-i18n="feat_8t">Multi-Language</h3><p data-i18n="feat_8d">English, Japanese &amp; Chinese support</p></div></div>
+                <div class="feature"><div class="fi">🔥</div><div><h3 data-i18n="feat_9t">Stay Motivated</h3><p data-i18n="feat_9d">Streaks, daily goals &amp; quests</p></div></div>
             </div>
         </section>
 
         <!-- ================= PRACTICE MODES ================= -->
         <section>
             <div class="sec-head">
-                <span class="kicker">7 ways to practice</span>
-                <h2>Practice your way</h2>
-                <p>Different days call for different practice. Pick whatever fits the moment.</p>
+                <span class="kicker" data-i18n="prac_kicker">7 ways to practice</span>
+                <h2 data-i18n="prac_h2">Practice your way</h2>
+                <p data-i18n="prac_p">Different days call for different practice. Pick whatever fits the moment.</p>
             </div>
             <div class="practice-card">
                 <div class="chips">
-                    <span class="chip">📖 Study Session</span>
-                    <span class="chip">✍️ Handwriting</span>
-                    <span class="chip">🗂️ Flashcard Review</span>
-                    <span class="chip">❓ Quiz</span>
-                    <span class="chip">🎤 Pronunciation</span>
-                    <span class="chip">⌨️ Dictation</span>
-                    <span class="chip">📄 Reading</span>
+                    <span class="chip" data-i18n="prac_c1">📖 Study Session</span>
+                    <span class="chip" data-i18n="prac_c2">✍️ Handwriting</span>
+                    <span class="chip" data-i18n="prac_c3">🗂️ Flashcard Review</span>
+                    <span class="chip" data-i18n="prac_c4">❓ Quiz</span>
+                    <span class="chip" data-i18n="prac_c5">🎤 Pronunciation</span>
+                    <span class="chip" data-i18n="prac_c6">⌨️ Dictation</span>
+                    <span class="chip" data-i18n="prac_c7">📄 Reading</span>
                 </div>
             </div>
         </section>
@@ -478,77 +510,77 @@
         <!-- ================= PLANS ================= -->
         <section>
             <div class="sec-head">
-                <span class="kicker">Pricing</span>
-                <h2>Start free, upgrade when ready</h2>
-                <p>A genuinely useful free tier. Premium unlocks the full library when you’re hooked.</p>
+                <span class="kicker" data-i18n="plan_kicker">Pricing</span>
+                <h2 data-i18n="plan_h2">Start free, upgrade when ready</h2>
+                <p data-i18n="plan_p">A genuinely useful free tier. Premium unlocks the full library when you’re hooked.</p>
             </div>
             <div class="plans">
                 <div class="plan free">
-                    <div class="tier">Free</div>
-                    <h3>Everything to get started</h3>
+                    <div class="tier" data-i18n="plan_free_tier">Free</div>
+                    <h3 data-i18n="plan_free_h3">Everything to get started</h3>
                     <ul>
-                        <li>All 40 Hangul letters + stroke order</li>
-                        <li>Syllable builder &amp; 8 pronunciation rules</li>
-                        <li>8 word categories (400+ words)</li>
-                        <li>Essential travel phrases + 3 dialogues</li>
-                        <li>Handwriting practice</li>
-                        <li>Daily quizzes &amp; flashcards + goal tracking</li>
+                        <li data-i18n="plan_f1">All 40 Hangul letters + stroke order</li>
+                        <li data-i18n="plan_f2">Syllable builder &amp; 8 pronunciation rules</li>
+                        <li data-i18n="plan_f3">8 word categories (400+ words)</li>
+                        <li data-i18n="plan_f4">Essential travel phrases + 3 dialogues</li>
+                        <li data-i18n="plan_f5">Handwriting practice</li>
+                        <li data-i18n="plan_f6">Daily quizzes &amp; flashcards + goal tracking</li>
                     </ul>
                 </div>
                 <div class="plan pro">
-                    <div class="ribbon">PREMIUM</div>
-                    <div class="tier">Premium</div>
-                    <h3>The full Korean course</h3>
+                    <div class="ribbon" data-i18n="plan_ribbon">PREMIUM</div>
+                    <div class="tier" data-i18n="plan_pro_tier">Premium</div>
+                    <h3 data-i18n="plan_pro_h3">The full Korean course</h3>
                     <ul>
-                        <li>All 15 categories — full 975 words</li>
-                        <li>All 30 dialogues</li>
-                        <li>Unlimited Smart Quiz + TOPIK mock test</li>
-                        <li>Pronunciation &amp; dictation practice</li>
-                        <li>Reading comprehension &amp; unlimited flashcards</li>
-                        <li>Ad-free experience</li>
+                        <li data-i18n="plan_p1">All 15 categories — full 975 words</li>
+                        <li data-i18n="plan_p2">All 30 dialogues</li>
+                        <li data-i18n="plan_p3">Unlimited Smart Quiz + TOPIK mock test</li>
+                        <li data-i18n="plan_p4">Pronunciation &amp; dictation practice</li>
+                        <li data-i18n="plan_p5">Reading comprehension &amp; unlimited flashcards</li>
+                        <li data-i18n="plan_p6">Ad-free experience</li>
                     </ul>
                 </div>
             </div>
-            <p style="text-align:center;color:var(--muted);font-size:13px;margin-top:18px;">Subscriptions are billed through your Apple ID — cancel anytime.</p>
+            <p style="text-align:center;color:var(--muted);font-size:13px;margin-top:18px;" data-i18n="plan_note">Subscriptions are billed through your Apple ID — cancel anytime.</p>
         </section>
 
         <!-- ================= FAQ ================= -->
         <section>
             <div class="sec-head">
-                <span class="kicker">Good to know</span>
-                <h2>Frequently asked</h2>
+                <span class="kicker" data-i18n="faq_kicker">Good to know</span>
+                <h2 data-i18n="faq_h2">Frequently asked</h2>
             </div>
             <div class="faq">
                 <details open>
-                    <summary>Do I need any Korean to start?</summary>
-                    <p>None at all. The app is built for absolute beginners — you’ll learn to read Hangul from the very first letter, with mnemonics and audio for every character.</p>
+                    <summary data-i18n="faq_q1">Do I need any Korean to start?</summary>
+                    <p data-i18n="faq_a1">None at all. The app is built for absolute beginners — you’ll learn to read Hangul from the very first letter, with mnemonics and audio for every character.</p>
                 </details>
                 <details>
-                    <summary>Does it work offline?</summary>
-                    <p>Yes. All learning content — 975 words, 30 dialogues, quizzes, flashcards, handwriting and pronunciation rules — works fully offline. Only ads and subscription checks need a connection.</p>
+                    <summary data-i18n="faq_q2">Does it work offline?</summary>
+                    <p data-i18n="faq_a2">Yes. All learning content — 975 words, 30 dialogues, quizzes, flashcards, handwriting and pronunciation rules — works fully offline. Only ads and subscription checks need a connection.</p>
                 </details>
                 <details>
-                    <summary>What languages does the app support?</summary>
-                    <p>The interface and all translations are available in English, Japanese and Chinese (Simplified). The app follows your device language automatically.</p>
+                    <summary data-i18n="faq_q3">What languages does the app support?</summary>
+                    <p data-i18n="faq_a3">The interface and all translations are available in English, Japanese and Chinese (Simplified). The app follows your device language automatically.</p>
                 </details>
                 <details>
-                    <summary>How does the Smart Quiz work?</summary>
-                    <p>It analyzes your quiz history to spot the words you struggle with, then prioritizes those in future quizzes — so you spend your time on exactly what you need.</p>
+                    <summary data-i18n="faq_q4">How does the Smart Quiz work?</summary>
+                    <p data-i18n="faq_a4">It analyzes your quiz history to spot the words you struggle with, then prioritizes those in future quizzes — so you spend your time on exactly what you need.</p>
                 </details>
                 <details>
-                    <summary>Is it really free to start?</summary>
-                    <p>Yes. The free tier includes all 40 letters, 400+ words, handwriting, daily quizzes and flashcards. Premium unlocks the full 975-word library, all dialogues, advanced practice and an ad-free experience.</p>
+                    <summary data-i18n="faq_q5">Is it really free to start?</summary>
+                    <p data-i18n="faq_a5">Yes. The free tier includes all 40 letters, 400+ words, handwriting, daily quizzes and flashcards. Premium unlocks the full 975-word library, all dialogues, advanced practice and an ad-free experience.</p>
                 </details>
             </div>
         </section>
 
         <!-- ================= FINAL CTA ================= -->
         <div class="final">
-            <h2>Read your first Korean word today</h2>
-            <p>Free to start · Works offline · iOS 17+</p>
-            <a class="appstore-btn" href="https://apps.apple.com/app/id6760618886" aria-label="Download on the App Store">
+            <h2 data-i18n="final_h2">Read your first Korean word today</h2>
+            <p data-i18n="final_p">Free to start · Works offline · iOS 17+</p>
+            <a class="appstore-btn" href="https://apps.apple.com/app/id6760618886" data-i18n-aria="cta_aria" aria-label="Download on the App Store">
                 <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-                <span class="lbl"><small>Download on the</small><b>App Store</b></span>
+                <span class="lbl"><small data-i18n="cta_dl">Download on the</small><b>App Store</b></span>
             </a>
         </div>
 
@@ -557,13 +589,256 @@
     <!-- ================= FOOTER ================= -->
     <footer class="footer">
         <div class="links">
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="support.html">Support</a>
-            <a href="terms.html">Terms of Use</a>
-            <a href="mailto:chungkil.kim@gmail.com">Contact</a>
+            <a href="privacy.html" data-i18n="foot_privacy">Privacy Policy</a>
+            <a href="support.html" data-i18n="foot_support">Support</a>
+            <a href="terms.html" data-i18n="foot_terms">Terms of Use</a>
+            <a href="mailto:chungkil.kim@gmail.com" data-i18n="foot_contact">Contact</a>
         </div>
-        &copy; 2026 CKSW Games. All rights reserved.
+        <span data-i18n="foot_copy">&copy; 2026 CKSW Games. All rights reserved.</span>
     </footer>
+
+    <script>
+    (function () {
+        var I18N = {
+            en: {
+                meta_title: "Hangul — Learn Korean from Zero",
+                hero_tag: "Read Korean in a day. Then write &amp; speak it for real.",
+                hero_sub: "The all-in-one course for absolute beginners — free to start, works offline.",
+                cta_dl: "Download on the", cta_see: "See if it's for you ↓", cta_aria: "Download on the App Store",
+                trust_private: '<span class="ic">🔒</span> Private — data stays on device',
+                trust_offline: '<span class="ic">📶</span> Works fully offline',
+                trust_noacct: '<span class="ic">👤</span> No account needed',
+                trust_langs: '<span class="ic">🌐</span> English · 日本語 · 中文',
+                stat_letters: "Letters", stat_words: "Words", stat_dialogues: "Dialogues", stat_modes: "Practice modes", stat_langs: "Languages",
+                who_kicker: "Pick your path", who_h2: "Which learner are you?", who_p: "Tap the one that sounds like you — the app builds your route from there.",
+                p1_title: "“I can’t read Korean yet”", p1_quote: "Total beginner — those characters look like a wall.", p1_win: "✅ Read your own name in Korean — today.", p1_path: "▶ Read Hangul in 1 Day",
+                p1_li1: "40 letters with memory tricks &amp; audio", p1_li2: "See how 2 letters snap into a syllable", p1_li3: "4 guided steps to read any Korean text",
+                p2_title: "“I’m here for K-Pop &amp; K-Drama”", p2_quote: "I want to understand lyrics and lines, not just sing along.", p2_win: "✅ Catch real lines in the songs you love.", p2_path: "▶ K-Pop Korean path",
+                p2_li1: "Phrases pulled from songs &amp; shows", p2_li2: "Pronunciation practice that scores you", p2_li3: "Listen-and-type dictation for the ear",
+                p3_title: "“I’m traveling to Korea”", p3_quote: "I need to order, ask directions and not get lost.", p3_win: "✅ Order, ask &amp; get around — before you land.", p3_path: "▶ Travel Korean path",
+                p3_li1: "Essential phrases for real situations", p3_li2: "30 dialogues: café, taxi, shopping &amp; more", p3_li3: "Everything works offline on the plane",
+                p4_title: "“I’m preparing for TOPIK”", p4_quote: "I need structure and to know where I’m weak.", p4_win: "✅ Walk into the exam knowing your weak spots.", p4_path: "▶ TOPIK Prep path",
+                p4_li1: "975 words covering TOPIK Level 1 &amp; 2", p4_li2: "Smart Quiz drills the words you miss", p4_li3: "Full TOPIK-style mock test",
+                how_kicker: "How it works", how_h2: "Korean is like LEGO", how_p: "Letters snap together into syllables. Learn the pieces, and you can read anything.",
+                how_s1t: "Learn the pieces", how_s1d: "Master the 40 letters with mnemonics, stroke order and native audio.",
+                how_s2t: "Build &amp; practice", how_s2d: "Combine letters into syllables and words, then drill with quizzes, writing and speaking.",
+                how_s3t: "Read &amp; speak", how_s3d: "Work through real dialogues and grammar, and track your streak every day.",
+                how_lego: "<b>g</b> + <b>a</b> = <b>ga</b> — that’s the whole idea. The rest is just more pieces.",
+                why_kicker: "Why Hangul", why_h2: "Built for real understanding", why_p: "Most apps just drill words. Hangul teaches how Korean actually works — so you don’t stall at the beginner wall.",
+                why_1t: "Grammar, actually explained", why_1d: "Particles (은/는, 이/가), word order and verb endings taught clearly — not left for you to guess.",
+                why_2t: "Formal &amp; casual, never mixed up", why_2d: "Learn 고마워 vs 고맙습니다 — and exactly when to use each.",
+                why_3t: "Hangul as a real alphabet", why_3d: "Letters with mnemonics and correct stroke-order animation — not romanization crutches.",
+                why_4t: "Conversations from real life", why_4d: "30 dialogues — café, subway, clinic — with grammar tips and cultural notes.",
+                why_5t: "Remembers what you forget", why_5d: "Spaced-repetition review and a Smart Quiz that targets your weakest words.",
+                why_6t: "Romanization you can switch off", why_6d: "Lean on it at first, then turn it off when you’re ready to read for real.",
+                shots_kicker: "A look inside", shots_h2: "See it in action", shots_p: "A clean, dark interface that keeps you focused on learning.", shots_hint: "← swipe to explore →",
+                shots_alt1: "Choose your learning path — K-Pop, Travel, TOPIK and more", shots_alt2: "Learn the 40 Korean letters with mnemonics and audio", shots_alt3: "Letter quiz with stroke order and pronunciation", shots_alt4: "975 essential words across 15 categories",
+                shots_alt5: "Grammar made simple — particles, word order, verb endings", shots_alt6: "Practice your way — handwriting, quizzes, dictation and more", shots_alt7: "Your learning dashboard with streaks, goals and daily quests", shots_alt8: "Track your progress — statistics, achievements and settings",
+                feat_kicker: "Everything in one app", feat_h2: "From first letter to fluent", feat_p: "No more juggling five different apps. Reading, listening, writing and speaking — all here.",
+                feat_1t: "Hangul Letters", feat_1d: "40 letters with mnemonics &amp; stroke order", feat_2t: "TOPIK Vocabulary", feat_2d: "975 words across Level 1 &amp; 2",
+                feat_3t: "Real Conversations", feat_3d: "30 scenarios with grammar tips", feat_4t: "Pronunciation", feat_4d: "Speech recognition scores your speaking",
+                feat_5t: "Handwriting", feat_5d: "Write Korean with stroke recognition", feat_6t: "Smart Quiz", feat_6d: "Adaptive drills + TOPIK mock test",
+                feat_7t: "Dictation", feat_7d: "Listen and type what you hear", feat_8t: "Multi-Language", feat_8d: "English, Japanese &amp; Chinese support",
+                feat_9t: "Stay Motivated", feat_9d: "Streaks, daily goals &amp; quests",
+                prac_kicker: "7 ways to practice", prac_h2: "Practice your way", prac_p: "Different days call for different practice. Pick whatever fits the moment.",
+                prac_c1: "📖 Study Session", prac_c2: "✍️ Handwriting", prac_c3: "🗂️ Flashcard Review", prac_c4: "❓ Quiz", prac_c5: "🎤 Pronunciation", prac_c6: "⌨️ Dictation", prac_c7: "📄 Reading",
+                plan_kicker: "Pricing", plan_h2: "Start free, upgrade when ready", plan_p: "A genuinely useful free tier. Premium unlocks the full library when you’re hooked.",
+                plan_free_tier: "Free", plan_free_h3: "Everything to get started",
+                plan_f1: "All 40 Hangul letters + stroke order", plan_f2: "Syllable builder &amp; 8 pronunciation rules", plan_f3: "8 word categories (400+ words)", plan_f4: "Essential travel phrases + 3 dialogues", plan_f5: "Handwriting practice", plan_f6: "Daily quizzes &amp; flashcards + goal tracking",
+                plan_ribbon: "PREMIUM", plan_pro_tier: "Premium", plan_pro_h3: "The full Korean course",
+                plan_p1: "All 15 categories — full 975 words", plan_p2: "All 30 dialogues", plan_p3: "Unlimited Smart Quiz + TOPIK mock test", plan_p4: "Pronunciation &amp; dictation practice", plan_p5: "Reading comprehension &amp; unlimited flashcards", plan_p6: "Ad-free experience",
+                plan_note: "Subscriptions are billed through your Apple ID — cancel anytime.",
+                faq_kicker: "Good to know", faq_h2: "Frequently asked",
+                faq_q1: "Do I need any Korean to start?", faq_a1: "None at all. The app is built for absolute beginners — you’ll learn to read Hangul from the very first letter, with mnemonics and audio for every character.",
+                faq_q2: "Does it work offline?", faq_a2: "Yes. All learning content — 975 words, 30 dialogues, quizzes, flashcards, handwriting and pronunciation rules — works fully offline. Only ads and subscription checks need a connection.",
+                faq_q3: "What languages does the app support?", faq_a3: "The interface and all translations are available in English, Japanese and Chinese (Simplified). The app follows your device language automatically.",
+                faq_q4: "How does the Smart Quiz work?", faq_a4: "It analyzes your quiz history to spot the words you struggle with, then prioritizes those in future quizzes — so you spend your time on exactly what you need.",
+                faq_q5: "Is it really free to start?", faq_a5: "Yes. The free tier includes all 40 letters, 400+ words, handwriting, daily quizzes and flashcards. Premium unlocks the full 975-word library, all dialogues, advanced practice and an ad-free experience.",
+                final_h2: "Read your first Korean word today", final_p: "Free to start · Works offline · iOS 17+",
+                foot_privacy: "Privacy Policy", foot_support: "Support", foot_terms: "Terms of Use", foot_contact: "Contact", foot_copy: "&copy; 2026 CKSW Games. All rights reserved."
+            },
+            ja: {
+                meta_title: "Hangul — ゼロから学ぶ韓国語",
+                hero_tag: "1日でハングルが読める。書く・話すも、ちゃんと身につく。",
+                hero_sub: "完全初心者のためのオールインワン講座 — 無料で始められて、オフラインでも使える。",
+                cta_dl: "ダウンロード", cta_see: "自分に合うか見てみる ↓", cta_aria: "App Storeでダウンロード",
+                trust_private: '<span class="ic">🔒</span> プライバシー重視 — データは端末内に',
+                trust_offline: '<span class="ic">📶</span> 完全オフライン対応',
+                trust_noacct: '<span class="ic">👤</span> アカウント登録不要',
+                trust_langs: '<span class="ic">🌐</span> English · 日本語 · 中文',
+                stat_letters: "文字", stat_words: "単語", stat_dialogues: "会話", stat_modes: "練習モード", stat_langs: "対応言語",
+                who_kicker: "あなたに合う道を", who_h2: "どんな学習者ですか？", who_p: "自分に近いものをタップ — そこからアプリが学習ルートを組み立てます。",
+                p1_title: "「まだハングルが読めない」", p1_quote: "完全な初心者。あの文字が壁のように見える。", p1_win: "✅ 今日、自分の名前を韓国語で読める。", p1_path: "▶ 1日でハングル",
+                p1_li1: "40文字を覚え方のコツと音声で", p1_li2: "2文字が組み合わさり1音節になる仕組み", p1_li3: "4ステップでどんな韓国語も読める",
+                p2_title: "「K-POP・K-ドラマのために」", p2_quote: "ただ歌うだけでなく、歌詞やセリフを理解したい。", p2_win: "✅ 好きな曲の歌詞が聞き取れる。", p2_path: "▶ K-POP韓国語コース",
+                p2_li1: "曲やドラマから集めたフレーズ", p2_li2: "点数が出る発音練習", p2_li3: "耳を鍛える聞き取り入力",
+                p3_title: "「韓国に旅行する」", p3_quote: "注文も道案内も、迷わずできるようになりたい。", p3_win: "✅ 着く前に、注文・道案内ができる。", p3_path: "▶ 旅行韓国語コース",
+                p3_li1: "実際の場面で使える必須フレーズ", p3_li2: "30の会話：カフェ・タクシー・買い物など", p3_li3: "飛行機の中でもオフラインで全部使える",
+                p4_title: "「TOPIKの準備をしている」", p4_quote: "体系的に学んで、弱点を把握したい。", p4_win: "✅ 弱点を把握して試験に臨める。", p4_path: "▶ TOPIK対策コース",
+                p4_li1: "TOPIK 1・2級をカバーする975単語", p4_li2: "間違えた単語をスマートクイズが集中演習", p4_li3: "本番形式のTOPIK模擬テスト",
+                how_kicker: "仕組み", how_h2: "ハングルはレゴのよう", how_p: "文字が組み合わさって音節になる。パーツを覚えれば、何でも読めます。",
+                how_s1t: "パーツを覚える", how_s1d: "40文字を覚え方のコツ・書き順・ネイティブ音声でマスター。",
+                how_s2t: "組み立てて練習", how_s2d: "文字を音節や単語に組み合わせ、クイズ・書き取り・発音で定着。",
+                how_s3t: "読んで話す", how_s3d: "実際の会話と文法に取り組み、毎日の連続記録も管理。",
+                how_lego: "<b>g</b> + <b>a</b> = <b>ga</b> — たったこれだけ。あとはパーツが増えるだけ。",
+                why_kicker: "Hangulを選ぶ理由", why_h2: "本当の理解のために設計", why_p: "多くのアプリは単語を反復させるだけ。Hangulは韓国語の仕組みそのものを教えるから、初級の壁で止まりません。",
+                why_1t: "文法を、きちんと説明", why_1d: "助詞（은/는、이/가）・語順・語尾を明確に解説。推測まかせにしません。",
+                why_2t: "敬語とタメ口を混同しない", why_2d: "고마워 と 고맙습니다 の違いと、使い分けを学べます。",
+                why_3t: "ハングルを「文字」として", why_3d: "覚え方のコツと正しい書き順アニメ付き。ローマ字頼りにしません。",
+                why_4t: "実生活そのままの会話", why_4d: "30の会話 — カフェ・地下鉄・病院 — 文法のヒントと文化メモ付き。",
+                why_5t: "忘れた頃に思い出させる", why_5d: "間隔反復の復習と、弱点単語を狙うスマートクイズ。",
+                why_6t: "ローマ字はオフにできる", why_6d: "最初は頼り、読めるようになったらオフに。",
+                shots_kicker: "中身を見る", shots_h2: "実際の画面", shots_p: "学習に集中できる、すっきりとしたダークUI。", shots_hint: "← スワイプで見る →",
+                shots_alt1: "学習パスを選ぶ — K-POP・旅行・TOPIKなど", shots_alt2: "40のハングル文字を覚え方のコツと音声で学ぶ", shots_alt3: "書き順と発音つきの文字クイズ", shots_alt4: "15カテゴリ975の必須単語",
+                shots_alt5: "文法をシンプルに — 助詞・語順・語尾", shots_alt6: "自分に合った練習 — 書き取り・クイズ・聞き取りなど", shots_alt7: "連続記録・目標・デイリークエストの学習ダッシュボード", shots_alt8: "進捗を管理 — 統計・実績・設定",
+                feat_kicker: "ひとつのアプリに全部", feat_h2: "最初の一文字から、流暢まで", feat_p: "5つのアプリを使い分ける必要なし。読む・聞く・書く・話す、すべてここに。",
+                feat_1t: "ハングル文字", feat_1d: "40文字を覚え方のコツと書き順で", feat_2t: "TOPIK単語", feat_2d: "1・2級にわたる975単語",
+                feat_3t: "リアルな会話", feat_3d: "文法ヒント付き30シナリオ", feat_4t: "発音", feat_4d: "音声認識で話し方を採点",
+                feat_5t: "手書き", feat_5d: "書き順認識で韓国語を書く", feat_6t: "スマートクイズ", feat_6d: "適応型演習＋TOPIK模試",
+                feat_7t: "ディクテーション", feat_7d: "聞いて、その通りに入力", feat_8t: "多言語対応", feat_8d: "英語・日本語・中国語に対応",
+                feat_9t: "続けられる仕組み", feat_9d: "連続記録・目標・クエスト",
+                prac_kicker: "7つの練習法", prac_h2: "自分に合った練習を", prac_p: "その日の気分で練習を選べる。今に合うものをどうぞ。",
+                prac_c1: "📖 学習セッション", prac_c2: "✍️ 手書き", prac_c3: "🗂️ フラッシュカード", prac_c4: "❓ クイズ", prac_c5: "🎤 発音", prac_c6: "⌨️ ディクテーション", prac_c7: "📄 リーディング",
+                plan_kicker: "料金", plan_h2: "無料で始めて、必要なら拡張", plan_p: "本当に役立つ無料プラン。気に入ったらプレミアムで全コンテンツ解放。",
+                plan_free_tier: "無料", plan_free_h3: "始めるのに十分",
+                plan_f1: "40のハングル文字＋書き順すべて", plan_f2: "音節ビルダー＆発音ルール8種", plan_f3: "8単語カテゴリ（400語以上）", plan_f4: "必須の旅行フレーズ＋会話3本", plan_f5: "手書き練習", plan_f6: "毎日のクイズ＆フラッシュカード＋目標管理",
+                plan_ribbon: "プレミアム", plan_pro_tier: "プレミアム", plan_pro_h3: "韓国語フルコース",
+                plan_p1: "全15カテゴリ — 975単語すべて", plan_p2: "全30会話", plan_p3: "スマートクイズ無制限＋TOPIK模試", plan_p4: "発音＆ディクテーション練習", plan_p5: "読解＆フラッシュカード無制限", plan_p6: "広告なし",
+                plan_note: "サブスクはApple IDで課金 — いつでも解約できます。",
+                faq_kicker: "知っておくと安心", faq_h2: "よくある質問",
+                faq_q1: "韓国語の知識は必要ですか？", faq_a1: "まったく不要です。完全初心者向けに作られていて、最初の一文字からハングルの読み方を学べます。各文字に覚え方のコツと音声付き。",
+                faq_q2: "オフラインで使えますか？", faq_a2: "はい。975単語・30会話・クイズ・フラッシュカード・手書き・発音ルールなど、学習コンテンツは完全オフラインで動作します。広告とサブスク確認のみ通信が必要です。",
+                faq_q3: "対応言語は？", faq_a3: "インターフェースと全翻訳が英語・日本語・中国語（簡体字）に対応。端末の言語に自動で合わせます。",
+                faq_q4: "スマートクイズの仕組みは？", faq_a4: "クイズ履歴を分析して苦手な単語を見つけ、次回以降に優先出題。必要なところに時間を使えます。",
+                faq_q5: "本当に無料で始められますか？", faq_a5: "はい。無料プランに40文字すべて・400語以上・手書き・毎日のクイズ＆フラッシュカードを含みます。プレミアムで975単語・全会話・上級練習・広告なしを解放。",
+                final_h2: "今日、最初の韓国語を読もう", final_p: "無料で開始 · オフライン対応 · iOS 17+",
+                foot_privacy: "プライバシーポリシー", foot_support: "サポート", foot_terms: "利用規約", foot_contact: "お問い合わせ", foot_copy: "&copy; 2026 CKSW Games. All rights reserved."
+            },
+            zh: {
+                meta_title: "Hangul — 从零开始学韩语",
+                hero_tag: "一天学会读韩文，再真正学会写与说。",
+                hero_sub: "为零基础打造的一站式课程 — 免费开始，离线可用。",
+                cta_dl: "下载", cta_see: "看看适不适合你 ↓", cta_aria: "在 App Store 下载",
+                trust_private: '<span class="ic">🔒</span> 注重隐私 — 数据保存在设备上',
+                trust_offline: '<span class="ic">📶</span> 完全离线可用',
+                trust_noacct: '<span class="ic">👤</span> 无需注册账号',
+                trust_langs: '<span class="ic">🌐</span> English · 日本語 · 中文',
+                stat_letters: "字母", stat_words: "单词", stat_dialogues: "对话", stat_modes: "练习模式", stat_langs: "语言",
+                who_kicker: "选择你的路径", who_h2: "你是哪种学习者？", who_p: "点一个最像你的 — 应用会据此为你规划路线。",
+                p1_title: "“我还看不懂韩文”", p1_quote: "完全的初学者 — 那些字符就像一堵墙。", p1_win: "✅ 今天就能读出自己的韩文名字。", p1_path: "▶ 一天学会韩文",
+                p1_li1: "40个字母，配记忆技巧与发音", p1_li2: "看两个字母如何拼成一个音节", p1_li3: "4步引导，读懂任何韩文",
+                p2_title: "“我为K-Pop和韩剧而来”", p2_quote: "我想听懂歌词和台词，而不只是跟唱。", p2_win: "✅ 听懂你喜欢的歌里的歌词。", p2_path: "▶ K-Pop 韩语路径",
+                p2_li1: "取自歌曲与剧集的短语", p2_li2: "带评分的发音练习", p2_li3: "边听边打的听写，练耳朵",
+                p3_title: "“我要去韩国旅行”", p3_quote: "我要会点餐、问路，不会迷路。", p3_win: "✅ 落地前就能点餐、问路。", p3_path: "▶ 旅行韩语路径",
+                p3_li1: "真实场景的必备短语", p3_li2: "30段对话：咖啡馆、出租车、购物等", p3_li3: "飞机上也能全程离线使用",
+                p4_title: "“我在备考TOPIK”", p4_quote: "我需要系统学习，并知道弱点在哪。", p4_win: "✅ 清楚弱点，从容应考。", p4_path: "▶ TOPIK 备考路径",
+                p4_li1: "975个单词，覆盖TOPIK 1、2级", p4_li2: "智能测验集中训练你答错的词", p4_li3: "完整的TOPIK模拟考试",
+                how_kicker: "运作方式", how_h2: "韩文就像乐高", how_p: "字母拼合成音节。学会这些零件，你就能读懂一切。",
+                how_s1t: "先学零件", how_s1d: "用记忆技巧、笔顺和母语发音掌握40个字母。",
+                how_s2t: "拼合并练习", how_s2d: "把字母拼成音节和单词，再用测验、书写和口语巩固。",
+                how_s3t: "读与说", how_s3d: "攻克真实对话和语法，并每天记录连续学习。",
+                how_lego: "<b>g</b> + <b>a</b> = <b>ga</b> — 道理就这么简单，其余只是更多零件。",
+                why_kicker: "为什么选 Hangul", why_h2: "为真正的理解而打造", why_p: "多数应用只让你反复背词。Hangul教你韩语真正的运作方式 — 不会卡在初级瓶颈。",
+                why_1t: "语法，讲得清楚", why_1d: "助词（은/는、이/가）、语序和词尾都讲明白 — 不靠你猜。",
+                why_2t: "敬语与平语，不会混", why_2d: "学会 고마워 与 고맙습니다 的区别，以及何时该用哪个。",
+                why_3t: "把韩文当成真正的字母", why_3d: "配记忆技巧与正确笔顺动画 — 不靠罗马音拐杖。",
+                why_4t: "来自真实生活的对话", why_4d: "30段对话 — 咖啡馆、地铁、诊所 — 附语法提示和文化笔记。",
+                why_5t: "帮你记住快忘的", why_5d: "间隔重复复习，加上专攻薄弱词的智能测验。",
+                why_6t: "罗马音可以关掉", why_6d: "起步时依靠它，能读了就关掉。",
+                shots_kicker: "抢先看", shots_h2: "实际效果", shots_p: "简洁的深色界面，让你专注学习。", shots_hint: "← 左右滑动查看 →",
+                shots_alt1: "选择学习路径 — K-Pop、旅行、TOPIK等", shots_alt2: "用记忆技巧和发音学习40个韩文字母", shots_alt3: "带笔顺和发音的字母测验", shots_alt4: "15个类别共975个必备单词",
+                shots_alt5: "语法变简单 — 助词、语序、词尾", shots_alt6: "按你的方式练习 — 书写、测验、听写等", shots_alt7: "学习仪表盘：连续记录、目标和每日任务", shots_alt8: "追踪你的进度 — 统计、成就和设置",
+                feat_kicker: "一个应用，全部搞定", feat_h2: "从第一个字母到流利", feat_p: "不用再在五个应用间切换。读、听、写、说，全在这里。",
+                feat_1t: "韩文字母", feat_1d: "40个字母，配记忆技巧与笔顺", feat_2t: "TOPIK词汇", feat_2d: "覆盖1、2级的975个单词",
+                feat_3t: "真实对话", feat_3d: "30个场景，附语法提示", feat_4t: "发音", feat_4d: "语音识别为你的口语评分",
+                feat_5t: "手写", feat_5d: "用笔顺识别书写韩文", feat_6t: "智能测验", feat_6d: "自适应训练＋TOPIK模拟考",
+                feat_7t: "听写", feat_7d: "听到什么就打出什么", feat_8t: "多语言", feat_8d: "支持英语、日语和中文",
+                feat_9t: "保持动力", feat_9d: "连续记录、每日目标与任务",
+                prac_kicker: "7种练习方式", prac_h2: "按你的方式练习", prac_p: "不同的日子适合不同的练习。挑当下合适的就好。",
+                prac_c1: "📖 学习课程", prac_c2: "✍️ 手写", prac_c3: "🗂️ 抽认卡复习", prac_c4: "❓ 测验", prac_c5: "🎤 发音", prac_c6: "⌨️ 听写", prac_c7: "📄 阅读",
+                plan_kicker: "价格", plan_h2: "免费开始，准备好再升级", plan_p: "真正实用的免费版。喜欢了，再用高级版解锁全部内容。",
+                plan_free_tier: "免费", plan_free_h3: "入门所需，全都有",
+                plan_f1: "全部40个韩文字母＋笔顺", plan_f2: "音节拼合器＆8条发音规则", plan_f3: "8个单词类别（400+词）", plan_f4: "必备旅行短语＋3段对话", plan_f5: "手写练习", plan_f6: "每日测验＆抽认卡＋目标追踪",
+                plan_ribbon: "高级版", plan_pro_tier: "高级版", plan_pro_h3: "完整韩语课程",
+                plan_p1: "全部15个类别 — 完整975个单词", plan_p2: "全部30段对话", plan_p3: "无限智能测验＋TOPIK模拟考", plan_p4: "发音＆听写练习", plan_p5: "阅读理解＆无限抽认卡", plan_p6: "无广告体验",
+                plan_note: "订阅通过你的 Apple ID 扣费 — 可随时取消。",
+                faq_kicker: "须知", faq_h2: "常见问题",
+                faq_q1: "需要有韩语基础吗？", faq_a1: "完全不需要。应用为零基础打造 — 从第一个字母开始学读韩文，每个字符都配记忆技巧和发音。",
+                faq_q2: "可以离线使用吗？", faq_a2: "可以。975个单词、30段对话、测验、抽认卡、手写和发音规则等学习内容均可完全离线使用。仅广告和订阅校验需要联网。",
+                faq_q3: "支持哪些语言？", faq_a3: "界面和全部译文支持英语、日语和中文（简体）。应用会自动跟随你的设备语言。",
+                faq_q4: "智能测验如何运作？", faq_a4: "它分析你的测验记录，找出你薄弱的单词，并在之后的测验中优先出题 — 把时间花在真正需要的地方。",
+                faq_q5: "真的能免费开始吗？", faq_a5: "是的。免费版包含全部40个字母、400+单词、手写、每日测验和抽认卡。高级版解锁完整975词库、全部对话、进阶练习和无广告体验。",
+                final_h2: "今天就读出你的第一个韩文词", final_p: "免费开始 · 离线可用 · iOS 17+",
+                foot_privacy: "隐私政策", foot_support: "支持", foot_terms: "使用条款", foot_contact: "联系我们", foot_copy: "&copy; 2026 CKSW Games. 保留所有权利。"
+            }
+        };
+
+        var HTML_LANG = { en: "en", ja: "ja", zh: "zh-Hans" };
+
+        function apply(lang) {
+            var dict = I18N[lang] || I18N.en;
+            document.documentElement.lang = HTML_LANG[lang] || "en";
+            if (dict.meta_title) document.title = dict.meta_title;
+            var nodes = document.querySelectorAll("[data-i18n]");
+            for (var i = 0; i < nodes.length; i++) {
+                var k = nodes[i].getAttribute("data-i18n");
+                if (dict[k] != null) nodes[i].innerHTML = dict[k];
+            }
+            var alts = document.querySelectorAll("[data-i18n-alt]");
+            for (var j = 0; j < alts.length; j++) {
+                var ka = alts[j].getAttribute("data-i18n-alt");
+                if (dict[ka] != null) alts[j].setAttribute("alt", dict[ka]);
+            }
+            var arias = document.querySelectorAll("[data-i18n-aria]");
+            for (var a = 0; a < arias.length; a++) {
+                var kr = arias[a].getAttribute("data-i18n-aria");
+                if (dict[kr] != null) arias[a].setAttribute("aria-label", dict[kr]);
+            }
+            var btns = document.querySelectorAll(".lang-btn");
+            for (var b = 0; b < btns.length; b++) {
+                btns[b].classList.toggle("active", btns[b].getAttribute("data-lang") === lang);
+            }
+        }
+
+        function detect() {
+            try {
+                var p = new URLSearchParams(location.search).get("lang");
+                if (p && I18N[p]) return p;
+            } catch (e) {}
+            try {
+                var s = localStorage.getItem("hangul_lang");
+                if (s && I18N[s]) return s;
+            } catch (e) {}
+            var n = (navigator.language || "en").toLowerCase();
+            if (n.indexOf("ja") === 0) return "ja";
+            if (n.indexOf("zh") === 0) return "zh";
+            return "en";
+        }
+
+        function setLang(lang, push) {
+            if (!I18N[lang]) lang = "en";
+            apply(lang);
+            try { localStorage.setItem("hangul_lang", lang); } catch (e) {}
+            if (push) {
+                try {
+                    var u = new URL(location.href);
+                    u.searchParams.set("lang", lang);
+                    history.replaceState(null, "", u);
+                } catch (e) {}
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var btns = document.querySelectorAll(".lang-btn");
+            for (var i = 0; i < btns.length; i++) {
+                (function (btn) {
+                    btn.addEventListener("click", function () { setLang(btn.getAttribute("data-lang"), true); });
+                })(btns[i]);
+            }
+            setLang(detect(), false);
+        });
+    })();
+    </script>
 
 </body>
 </html>
