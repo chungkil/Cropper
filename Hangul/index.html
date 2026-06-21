@@ -242,7 +242,34 @@
         @media (max-width: 420px) {
             .features { grid-template-columns: 1fr; }
         }
+
+        /* trust band */
+        .trust { display:flex; flex-wrap:wrap; justify-content:center; gap:12px 26px; margin:26px auto 0; max-width:780px; }
+        .trust span { display:inline-flex; align-items:center; gap:8px; font-size:14px; font-weight:600; color:#465070; }
+        .trust .ic { font-size:17px; }
+
+        /* why / differentiators */
+        .why { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+        .why-item { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:22px 22px 22px 58px; position:relative; }
+        .why-item::before { content:"\2713"; position:absolute; left:20px; top:22px; width:26px; height:26px; border-radius:50%; background:#eaf6ee; color:#1f8a4c; font-weight:800; font-size:14px; display:flex; align-items:center; justify-content:center; }
+        .why-item h3 { font-size:16px; margin-bottom:4px; }
+        .why-item p { font-size:13.5px; color:var(--muted); margin:0; }
+        @media (max-width:600px){ .why { grid-template-columns:1fr; } }
     </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "Hangul — Learn Korean",
+      "operatingSystem": "iOS 17.0",
+      "applicationCategory": "EducationalApplication",
+      "description": "Learn Korean from zero: read Hangul in a day, master 975 TOPIK words, 30 real dialogues, handwriting, pronunciation practice and a TOPIK mock test.",
+      "url": "https://apps.apple.com/app/id6760618886",
+      "inLanguage": ["en", "ja", "zh"],
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Organization", "name": "CKSW Games" }
+    }
+    </script>
 </head>
 <body>
 
@@ -250,8 +277,8 @@
     <header class="hero">
         <div class="app-mark">한</div>
         <h1>Hangul</h1>
-        <p class="tag">Learn Korean from zero — read, write &amp; speak</p>
-        <p class="sub">iOS 17+ · Free to start · Works offline · English · 日本語 · 中文</p>
+        <p class="tag">Read Korean in a day. Then write &amp; speak it for real.</p>
+        <p class="sub">The all-in-one course for absolute beginners — free to start, works offline.</p>
         <div class="cta-row">
             <a class="appstore-btn" href="https://apps.apple.com/app/id6760618886" aria-label="Download on the App Store">
                 <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
@@ -270,6 +297,14 @@
             <div class="stat"><div class="stat-num">30</div><div class="stat-label">Dialogues</div></div>
             <div class="stat"><div class="stat-num">7</div><div class="stat-label">Practice modes</div></div>
             <div class="stat"><div class="stat-num">3</div><div class="stat-label">Languages</div></div>
+        </div>
+
+        <!-- Honest trust signals only. TODO(owner): App Store 평점이 쌓이면 여기에 실제 별점/리뷰수 추가 (예: ★ 4.8 · 120 ratings). 허위 평점 절대 금지. -->
+        <div class="trust">
+            <span><span class="ic">🔒</span> Private — data stays on device</span>
+            <span><span class="ic">📶</span> Works fully offline</span>
+            <span><span class="ic">👤</span> No account needed</span>
+            <span><span class="ic">🌐</span> English · 日本語 · 中文</span>
         </div>
 
         <!-- ================= WHO IS IT FOR (scenarios) ================= -->
@@ -354,6 +389,23 @@
             <div class="lego">
                 <div class="tiles"><span class="t1">ㄱ</span> + <span class="t2">ㅏ</span> = <span class="t3">가</span></div>
                 <p><b>g</b> + <b>a</b> = <b>ga</b> — that’s the whole idea. The rest is just more pieces.</p>
+            </div>
+        </section>
+
+        <!-- ================= WHY HANGUL (differentiators) ================= -->
+        <section>
+            <div class="sec-head">
+                <span class="kicker">Why Hangul</span>
+                <h2>Built for real understanding</h2>
+                <p>Most apps just drill words. Hangul teaches how Korean actually works — so you don’t stall at the beginner wall.</p>
+            </div>
+            <div class="why">
+                <div class="why-item"><h3>Grammar, actually explained</h3><p>Particles (은/는, 이/가), word order and verb endings taught clearly — not left for you to guess.</p></div>
+                <div class="why-item"><h3>Formal &amp; casual, never mixed up</h3><p>Learn 고마워 vs 고맙습니다 — and exactly when to use each.</p></div>
+                <div class="why-item"><h3>Hangul as a real alphabet</h3><p>Letters with mnemonics and correct stroke-order animation — not romanization crutches.</p></div>
+                <div class="why-item"><h3>Conversations from real life</h3><p>30 dialogues — café, subway, clinic — with grammar tips and cultural notes.</p></div>
+                <div class="why-item"><h3>Remembers what you forget</h3><p>Spaced-repetition review and a Smart Quiz that targets your weakest words.</p></div>
+                <div class="why-item"><h3>Romanization you can switch off</h3><p>Lean on it at first, then turn it off when you’re ready to read for real.</p></div>
             </div>
         </section>
 
@@ -457,6 +509,7 @@
                     </ul>
                 </div>
             </div>
+            <p style="text-align:center;color:var(--muted);font-size:13px;margin-top:18px;">Subscriptions are billed through your Apple ID — cancel anytime.</p>
         </section>
 
         <!-- ================= FAQ ================= -->
