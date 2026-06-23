@@ -195,6 +195,22 @@
             border: 1px solid var(--line);
         }
 
+        /* ---------- Word Game spotlight ---------- */
+        .spotlight {
+            display: grid; grid-template-columns: 250px 1fr; gap: 38px; align-items: center;
+            background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 34px;
+        }
+        .spotlight-img { width: 100%; border-radius: 22px; display: block; box-shadow: 0 12px 32px rgba(20,24,45,0.16); }
+        .spotlight h2 { font-size: 28px; font-weight: 800; letter-spacing: -0.5px; margin-top: 6px; }
+        .spotlight .lead { color: var(--muted); font-size: 15.5px; margin: 12px 0 18px; }
+        .spotlight ul { list-style: none; padding: 0; }
+        .spotlight li { font-size: 14.5px; color: #4b5563; margin-bottom: 10px; }
+        @media (max-width: 720px) {
+            .spotlight { grid-template-columns: 1fr; text-align: center; padding: 26px 20px; gap: 22px; }
+            .spotlight-img { max-width: 210px; margin: 0 auto; }
+            .spotlight ul { display: inline-block; text-align: left; }
+        }
+
         /* ---------- Free vs Premium ---------- */
         .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
         .plan {
@@ -459,10 +475,30 @@
             <div class="shot"><img loading="lazy" src="shots/06_Word_Categories.png" data-i18n-alt="shots_alt4" alt="975 essential words across 15 categories"></div>
             <div class="shot"><img loading="lazy" src="shots/05_Grammar_List.png" data-i18n-alt="shots_alt5" alt="Grammar made simple — particles, word order, verb endings"></div>
             <div class="shot"><img loading="lazy" src="shots/07_Practice.png" data-i18n-alt="shots_alt6" alt="Practice your way — handwriting, quizzes, dictation and more"></div>
+            <div class="shot"><img loading="lazy" src="shots/08_Word_Game.png" data-i18n-alt="shots_alt9" alt="Word Game — connect syllables to build Korean words"></div>
             <div class="shot"><img loading="lazy" src="shots/01_Home.png" data-i18n-alt="shots_alt7" alt="Your learning dashboard with streaks, goals and daily quests"></div>
             <div class="shot"><img loading="lazy" src="shots/09_Profile.png" data-i18n-alt="shots_alt8" alt="Track your progress — statistics, achievements and settings"></div>
         </div>
         <p class="gallery-hint" data-i18n="shots_hint">← swipe to explore →</p>
+    </section>
+
+    <!-- ================= WORD GAME SPOTLIGHT ================= -->
+    <section>
+        <div class="wrap">
+            <div class="spotlight">
+                <img class="spotlight-img" loading="lazy" src="shots/08_Word_Game.png" data-i18n-alt="shots_alt9" alt="Word Game — connect syllables to build Korean words">
+                <div>
+                    <span class="kicker" data-i18n="wg_kicker">New · Mini-game</span>
+                    <h2 data-i18n="wg_h2">Build words, learn as you play</h2>
+                    <p class="lead" data-i18n="wg_p">Connect neighboring syllables into real Korean words. Clear them to score — and every word you make shows its meaning and plays its pronunciation.</p>
+                    <ul>
+                        <li data-i18n="wg_b1">🎯 Daily Challenge — the same board for everyone, compare your best</li>
+                        <li data-i18n="wg_b2">🔤 Learn as you play — meaning and audio for every word</li>
+                        <li data-i18n="wg_b3">🧩 A fresh board every round, with hints when you're stuck</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
 
     <div class="wrap">
@@ -484,13 +520,14 @@
                 <div class="feature"><div class="fi">🗣️</div><div><h3 data-i18n="feat_7t">Dictation</h3><p data-i18n="feat_7d">Listen and type what you hear</p></div></div>
                 <div class="feature"><div class="fi">🌐</div><div><h3 data-i18n="feat_8t">Multi-Language</h3><p data-i18n="feat_8d">English, Japanese &amp; Chinese support</p></div></div>
                 <div class="feature"><div class="fi">🔥</div><div><h3 data-i18n="feat_9t">Stay Motivated</h3><p data-i18n="feat_9d">Streaks, daily goals &amp; quests</p></div></div>
+                <div class="feature"><div class="fi">🎮</div><div><h3 data-i18n="feat_10t">Word Game</h3><p data-i18n="feat_10d">Connect syllables to build words — daily challenge</p></div></div>
             </div>
         </section>
 
         <!-- ================= PRACTICE MODES ================= -->
         <section>
             <div class="sec-head">
-                <span class="kicker" data-i18n="prac_kicker">7 ways to practice</span>
+                <span class="kicker" data-i18n="prac_kicker">8 ways to practice</span>
                 <h2 data-i18n="prac_h2">Practice your way</h2>
                 <p data-i18n="prac_p">Different days call for different practice. Pick whatever fits the moment.</p>
             </div>
@@ -503,6 +540,7 @@
                     <span class="chip" data-i18n="prac_c5">🎤 Pronunciation</span>
                     <span class="chip" data-i18n="prac_c6">⌨️ Dictation</span>
                     <span class="chip" data-i18n="prac_c7">📄 Reading</span>
+                    <span class="chip" data-i18n="prac_c8">🎮 Word Game</span>
                 </div>
             </div>
         </section>
@@ -633,15 +671,16 @@
                 why_6t: "Romanization you can switch off", why_6d: "Lean on it at first, then turn it off when you’re ready to read for real.",
                 shots_kicker: "A look inside", shots_h2: "See it in action", shots_p: "A clean, dark interface that keeps you focused on learning.", shots_hint: "← swipe to explore →",
                 shots_alt1: "Choose your learning path — K-Pop, Travel, TOPIK and more", shots_alt2: "Learn the 40 Korean letters with mnemonics and audio", shots_alt3: "Letter quiz with stroke order and pronunciation", shots_alt4: "975 essential words across 15 categories",
-                shots_alt5: "Grammar made simple — particles, word order, verb endings", shots_alt6: "Practice your way — handwriting, quizzes, dictation and more", shots_alt7: "Your learning dashboard with streaks, goals and daily quests", shots_alt8: "Track your progress — statistics, achievements and settings",
+                shots_alt5: "Grammar made simple — particles, word order, verb endings", shots_alt6: "Practice your way — handwriting, quizzes, dictation and more", shots_alt7: "Your learning dashboard with streaks, goals and daily quests", shots_alt8: "Track your progress — statistics, achievements and settings", shots_alt9: "Word Game — connect syllables to build Korean words",
                 feat_kicker: "Everything in one app", feat_h2: "From first letter to fluent", feat_p: "No more juggling five different apps. Reading, listening, writing and speaking — all here.",
                 feat_1t: "Hangul Letters", feat_1d: "40 letters with mnemonics &amp; stroke order", feat_2t: "TOPIK Vocabulary", feat_2d: "975 words across Level 1 &amp; 2",
                 feat_3t: "Real Conversations", feat_3d: "30 scenarios with grammar tips", feat_4t: "Pronunciation", feat_4d: "Speech recognition scores your speaking",
                 feat_5t: "Handwriting", feat_5d: "Write Korean with stroke recognition", feat_6t: "Smart Quiz", feat_6d: "Adaptive drills + TOPIK mock test",
                 feat_7t: "Dictation", feat_7d: "Listen and type what you hear", feat_8t: "Multi-Language", feat_8d: "English, Japanese &amp; Chinese support",
-                feat_9t: "Stay Motivated", feat_9d: "Streaks, daily goals &amp; quests",
-                prac_kicker: "7 ways to practice", prac_h2: "Practice your way", prac_p: "Different days call for different practice. Pick whatever fits the moment.",
-                prac_c1: "📖 Study Session", prac_c2: "✍️ Handwriting", prac_c3: "🗂️ Flashcard Review", prac_c4: "❓ Quiz", prac_c5: "🎤 Pronunciation", prac_c6: "⌨️ Dictation", prac_c7: "📄 Reading",
+                feat_9t: "Stay Motivated", feat_9d: "Streaks, daily goals &amp; quests", feat_10t: "Word Game", feat_10d: "Connect syllables to build words — daily challenge",
+                prac_kicker: "8 ways to practice", prac_h2: "Practice your way", prac_p: "Different days call for different practice. Pick whatever fits the moment.",
+                prac_c1: "📖 Study Session", prac_c2: "✍️ Handwriting", prac_c3: "🗂️ Flashcard Review", prac_c4: "❓ Quiz", prac_c5: "🎤 Pronunciation", prac_c6: "⌨️ Dictation", prac_c7: "📄 Reading", prac_c8: "🎮 Word Game",
+                wg_kicker: "New · Mini-game", wg_h2: "Build words, learn as you play", wg_p: "Connect neighboring syllables into real Korean words. Clear them to score — and every word you make shows its meaning and plays its pronunciation.", wg_b1: "🎯 Daily Challenge — the same board for everyone, compare your best", wg_b2: "🔤 Learn as you play — meaning and audio for every word", wg_b3: "🧩 A fresh board every round, with hints when you're stuck",
                 plan_kicker: "Pricing", plan_h2: "Start free, upgrade when ready", plan_p: "A genuinely useful free tier. Premium unlocks the full library when you’re hooked.",
                 plan_free_tier: "Free", plan_free_h3: "Everything to get started",
                 plan_f1: "All 40 Hangul letters + stroke order", plan_f2: "Syllable builder &amp; 8 pronunciation rules", plan_f3: "8 word categories (400+ words)", plan_f4: "Essential travel phrases + 3 dialogues", plan_f5: "Handwriting practice", plan_f6: "Daily quizzes &amp; flashcards + goal tracking",
@@ -690,15 +729,16 @@
                 why_6t: "ローマ字はオフにできる", why_6d: "最初は頼り、読めるようになったらオフに。",
                 shots_kicker: "中身を見る", shots_h2: "実際の画面", shots_p: "学習に集中できる、すっきりとしたダークUI。", shots_hint: "← スワイプで見る →",
                 shots_alt1: "学習パスを選ぶ — K-POP・旅行・TOPIKなど", shots_alt2: "40のハングル文字を覚え方のコツと音声で学ぶ", shots_alt3: "書き順と発音つきの文字クイズ", shots_alt4: "15カテゴリ975の必須単語",
-                shots_alt5: "文法をシンプルに — 助詞・語順・語尾", shots_alt6: "自分に合った練習 — 書き取り・クイズ・聞き取りなど", shots_alt7: "連続記録・目標・デイリークエストの学習ダッシュボード", shots_alt8: "進捗を管理 — 統計・実績・設定",
+                shots_alt5: "文法をシンプルに — 助詞・語順・語尾", shots_alt6: "自分に合った練習 — 書き取り・クイズ・聞き取りなど", shots_alt7: "連続記録・目標・デイリークエストの学習ダッシュボード", shots_alt8: "進捗を管理 — 統計・実績・設定", shots_alt9: "ワードゲーム — 音節をつないで韓国語の単語を作る",
                 feat_kicker: "ひとつのアプリに全部", feat_h2: "最初の一文字から、流暢まで", feat_p: "5つのアプリを使い分ける必要なし。読む・聞く・書く・話す、すべてここに。",
                 feat_1t: "ハングル文字", feat_1d: "40文字を覚え方のコツと書き順で", feat_2t: "TOPIK単語", feat_2d: "1・2級にわたる975単語",
                 feat_3t: "リアルな会話", feat_3d: "文法ヒント付き30シナリオ", feat_4t: "発音", feat_4d: "音声認識で話し方を採点",
                 feat_5t: "手書き", feat_5d: "書き順認識で韓国語を書く", feat_6t: "スマートクイズ", feat_6d: "適応型演習＋TOPIK模試",
                 feat_7t: "ディクテーション", feat_7d: "聞いて、その通りに入力", feat_8t: "多言語対応", feat_8d: "英語・日本語・中国語に対応",
-                feat_9t: "続けられる仕組み", feat_9d: "連続記録・目標・クエスト",
-                prac_kicker: "7つの練習法", prac_h2: "自分に合った練習を", prac_p: "その日の気分で練習を選べる。今に合うものをどうぞ。",
-                prac_c1: "📖 学習セッション", prac_c2: "✍️ 手書き", prac_c3: "🗂️ フラッシュカード", prac_c4: "❓ クイズ", prac_c5: "🎤 発音", prac_c6: "⌨️ ディクテーション", prac_c7: "📄 リーディング",
+                feat_9t: "続けられる仕組み", feat_9d: "連続記録・目標・クエスト", feat_10t: "ワードゲーム", feat_10d: "音節をつないで単語づくり — デイリーチャレンジ",
+                prac_kicker: "8つの練習法", prac_h2: "自分に合った練習を", prac_p: "その日の気分で練習を選べる。今に合うものをどうぞ。",
+                prac_c1: "📖 学習セッション", prac_c2: "✍️ 手書き", prac_c3: "🗂️ フラッシュカード", prac_c4: "❓ クイズ", prac_c5: "🎤 発音", prac_c6: "⌨️ ディクテーション", prac_c7: "📄 リーディング", prac_c8: "🎮 ワードゲーム",
+                wg_kicker: "新着 · ミニゲーム", wg_h2: "遊びながら単語を作って覚える", wg_p: "隣り合う音節をつないで本物の韓国語の単語に。消して得点し、作った単語は意味と発音まで確認できます。", wg_b1: "🎯 デイリーチャレンジ — 全員同じ盤面でスコア比べ", wg_b2: "🔤 遊びながら学習 — 単語ごとに意味と音声", wg_b3: "🧩 毎回新しい盤面、詰まったらヒント",
                 plan_kicker: "料金", plan_h2: "無料で始めて、必要なら拡張", plan_p: "本当に役立つ無料プラン。気に入ったらプレミアムで全コンテンツ解放。",
                 plan_free_tier: "無料", plan_free_h3: "始めるのに十分",
                 plan_f1: "40のハングル文字＋書き順すべて", plan_f2: "音節ビルダー＆発音ルール8種", plan_f3: "8単語カテゴリ（400語以上）", plan_f4: "必須の旅行フレーズ＋会話3本", plan_f5: "手書き練習", plan_f6: "毎日のクイズ＆フラッシュカード＋目標管理",
@@ -747,15 +787,16 @@
                 why_6t: "罗马音可以关掉", why_6d: "起步时依靠它，能读了就关掉。",
                 shots_kicker: "抢先看", shots_h2: "实际效果", shots_p: "简洁的深色界面，让你专注学习。", shots_hint: "← 左右滑动查看 →",
                 shots_alt1: "选择学习路径 — K-Pop、旅行、TOPIK等", shots_alt2: "用记忆技巧和发音学习40个韩文字母", shots_alt3: "带笔顺和发音的字母测验", shots_alt4: "15个类别共975个必备单词",
-                shots_alt5: "语法变简单 — 助词、语序、词尾", shots_alt6: "按你的方式练习 — 书写、测验、听写等", shots_alt7: "学习仪表盘：连续记录、目标和每日任务", shots_alt8: "追踪你的进度 — 统计、成就和设置",
+                shots_alt5: "语法变简单 — 助词、语序、词尾", shots_alt6: "按你的方式练习 — 书写、测验、听写等", shots_alt7: "学习仪表盘：连续记录、目标和每日任务", shots_alt8: "追踪你的进度 — 统计、成就和设置", shots_alt9: "单词游戏 — 连接音节组成韩语单词",
                 feat_kicker: "一个应用，全部搞定", feat_h2: "从第一个字母到流利", feat_p: "不用再在五个应用间切换。读、听、写、说，全在这里。",
                 feat_1t: "韩文字母", feat_1d: "40个字母，配记忆技巧与笔顺", feat_2t: "TOPIK词汇", feat_2d: "覆盖1、2级的975个单词",
                 feat_3t: "真实对话", feat_3d: "30个场景，附语法提示", feat_4t: "发音", feat_4d: "语音识别为你的口语评分",
                 feat_5t: "手写", feat_5d: "用笔顺识别书写韩文", feat_6t: "智能测验", feat_6d: "自适应训练＋TOPIK模拟考",
                 feat_7t: "听写", feat_7d: "听到什么就打出什么", feat_8t: "多语言", feat_8d: "支持英语、日语和中文",
-                feat_9t: "保持动力", feat_9d: "连续记录、每日目标与任务",
-                prac_kicker: "7种练习方式", prac_h2: "按你的方式练习", prac_p: "不同的日子适合不同的练习。挑当下合适的就好。",
-                prac_c1: "📖 学习课程", prac_c2: "✍️ 手写", prac_c3: "🗂️ 抽认卡复习", prac_c4: "❓ 测验", prac_c5: "🎤 发音", prac_c6: "⌨️ 听写", prac_c7: "📄 阅读",
+                feat_9t: "保持动力", feat_9d: "连续记录、每日目标与任务", feat_10t: "单词游戏", feat_10d: "连接音节组成单词 — 每日挑战",
+                prac_kicker: "8种练习方式", prac_h2: "按你的方式练习", prac_p: "不同的日子适合不同的练习。挑当下合适的就好。",
+                prac_c1: "📖 学习课程", prac_c2: "✍️ 手写", prac_c3: "🗂️ 抽认卡复习", prac_c4: "❓ 测验", prac_c5: "🎤 发音", prac_c6: "⌨️ 听写", prac_c7: "📄 阅读", prac_c8: "🎮 单词游戏",
+                wg_kicker: "全新 · 小游戏", wg_h2: "拼出单词，边玩边学", wg_p: "连接相邻的音节组成真正的韩语单词。消除得分——每拼出一个词都会显示释义并朗读发音。", wg_b1: "🎯 每日挑战 — 所有人同一棋盘，比拼分数", wg_b2: "🔤 边玩边学 — 每个单词都有释义和发音", wg_b3: "🧩 每轮全新棋盘，卡住时有提示",
                 plan_kicker: "价格", plan_h2: "免费开始，准备好再升级", plan_p: "真正实用的免费版。喜欢了，再用高级版解锁全部内容。",
                 plan_free_tier: "免费", plan_free_h3: "入门所需，全都有",
                 plan_f1: "全部40个韩文字母＋笔顺", plan_f2: "音节拼合器＆8条发音规则", plan_f3: "8个单词类别（400+词）", plan_f4: "必备旅行短语＋3段对话", plan_f5: "手写练习", plan_f6: "每日测验＆抽认卡＋目标追踪",
