@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Renewly — 인증서·도메인 만료 감시 · TLS &amp; domain expiry monitor</title>
+<meta name="description" content="TLS 인증서와 도메인 등록 만료를 한곳에서 감시하고 만료 전에 알림을 받으세요. 서버 없이 기기에서 동작 · 계정·추적 없음. / Watch TLS certificate and domain registration expiry, with on-device alerts before they lapse. No server, no account, no tracking.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="glyph">R</span> Renewly</a>
+    <nav class="nav">
+      <a href="#features"><span data-ko>감시</span><span data-en>Monitors</span></a>
+      <a href="#privacy"><span data-ko>프라이버시</span><span data-en>Privacy</span></a>
+      <a href="#pricing"><span data-ko>가격</span><span data-en>Pricing</span></a>
+      <a href="support.html"><span data-ko>지원</span><span data-en>Support</span></a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button data-set="ko" aria-pressed="true">KO</button><button data-set="en" aria-pressed="false">EN</button>
+    </div>
+    <a class="nav-cta" href="#" aria-label="Download on the App Store">App&nbsp;Store</a>
+  </div>
+</header>
+
+<!-- ───────────── 히어로 ───────────── -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <p class="eyebrow reveal d1"><span data-ko>iOS · iPadOS · macOS</span><span data-en>iOS · iPadOS · macOS</span></p>
+      <h1 class="reveal d2">
+        <span data-ko>인증서 만료,<br>다시는 <span class="accent">놓치지</span> 마세요.</span>
+        <span data-en>Never miss<br>an <span class="accent">expiry</span> again.</span>
+      </h1>
+      <p class="lede reveal d3">
+        <span data-ko>TLS 인증서와 <strong>도메인 등록 만료</strong>를 한곳에서 감시합니다. 만료 <strong>14·10·5·1일·6시간 전</strong>에 알림 — 서버 없이, 기기에서. 계정도, 추적도 없습니다.</span>
+        <span data-en>Watch TLS certificates and <strong>domain registration expiry</strong> in one place. Alerts <strong>14, 10, 5, 1 days and 6 hours</strong> before — on device, no server. No account, no tracking.</span>
+      </p>
+      <div class="cta-row reveal d4">
+        <a class="btn btn-primary" href="#"><span data-ko>App Store에서 받기</span><span data-en>Get on the App Store</span></a>
+        <a class="btn btn-ghost" href="#features"><span data-ko>무엇을 감시하나</span><span data-en>What it watches</span></a>
+      </div>
+      <p class="hero-note reveal d5"><span data-ko>무료 3 도메인 · Pro $9.99 일회성 · iOS 17 / macOS 14</span><span data-en>Free 3 domains · Pro $9.99 one-time · iOS 17 / macOS 14</span></p>
+    </div>
+
+    <!-- 도메인 모니터 목업 -->
+    <div class="mock reveal d3" aria-hidden="true">
+      <div class="appbar"><span class="spark">✦</span> Renewly <span class="count">4 domains</span></div>
+      <div class="panel">
+        <div class="mrow"><span class="st ok"></span><div class="h">api.example.com<small>TLS · Let's Encrypt</small></div><span class="d ok">72d</span></div>
+        <div class="mrow"><span class="st warn"></span><div class="h">shop.example.com<small>TLS · DigiCert</small></div><span class="d warn">D-9</span></div>
+        <div class="mrow"><span class="st crit"></span><div class="h">legacy.example.com<small>TLS · expired</small></div><span class="d crit">expired</span></div>
+        <div class="mrow"><span class="st ok"></span><div class="h">example.com<small>Domain registration</small></div><span class="d ok">210d</span></div>
+        <div class="mmeta">
+          <span><span data-ko>다음 알림 · D-9</span><span data-en>Next alert · D-9</span></span>
+          <span><span data-ko>온디바이스 · iCloud</span><span data-en>On-device · iCloud</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── 감시 항목 ───────────── -->
+<section id="features">
+  <div class="wrap">
+    <p class="eyebrow"><span data-ko>감시</span><span data-en>Monitors</span></p>
+    <h2><span data-ko>두 종류의 만료, 하나의 앱.</span><span data-en>Two kinds of expiry, one app.</span></h2>
+    <p class="lede"><span data-ko>인증서가 끊겨도, 도메인을 깜빡 놓쳐도 사고입니다. Renewly는 둘 다 지킵니다.</span><span data-en>A lapsed certificate breaks trust; a lapsed domain loses everything. Renewly guards both.</span></p>
+    <div class="grid">
+      <div class="card"><span class="tag">TLS</span><h3><span data-ko>인증서 만료</span><span data-en>Certificate expiry</span></h3><p><span data-ko>온디바이스 TLS 핸드셰이크로 발급자·만료일·체인·호스트네임 확인. 만료·무효여도 만료일 표시.</span><span data-en>On-device TLS handshake reads issuer, expiry, chain and hostname — even when already expired or invalid.</span></p></div>
+      <div class="card"><span class="tag">RDAP</span><h3><span data-ko>도메인 등록 만료</span><span data-en>Domain expiry</span></h3><p><span data-ko>공개 RDAP 레지스트리로 도메인 등록 만료일을 조회해 도메인 실효를 예방.</span><span data-en>Looks up domain registration expiry via public RDAP registries so you never let a domain lapse.</span></p></div>
+      <div class="card"><span class="tag">ALERT</span><h3><span data-ko>다단계 로컬 알림</span><span data-en>Multi-stage alerts</span></h3><p><span data-ko>14·10·5·1일·6시간 전에 알림을 미리 예약. 푸시 서버 없이 OS가 정시에 발송.</span><span data-en>Schedules alerts 14, 10, 5, 1 days and 6 hours ahead — the OS delivers them on time, no push server.</span></p></div>
+      <div class="card"><span class="tag">WIDGET</span><h3><span data-ko>홈 화면 위젯</span><span data-en>Home-screen widget</span></h3><p><span data-ko>가장 임박한 도메인과 남은 일수를 한눈에.</span><span data-en>The most urgent domain and its days-left, at a glance.</span></p></div>
+      <div class="card"><span class="tag">iCLOUD</span><h3><span data-ko>iCloud 동기화</span><span data-en>iCloud sync</span></h3><p><span data-ko>기기 간 자동 동기화(비공개 CloudKit). 로그인·계정 생성 없음.</span><span data-en>Syncs across your devices via private CloudKit — no sign-up, no account.</span></p></div>
+      <div class="card"><span class="tag">BG</span><h3><span data-ko>백그라운드 갱신</span><span data-en>Background refresh</span></h3><p><span data-ko>앱을 열지 않아도 주기적으로 재점검해 갱신·만료 변화를 반영.</span><span data-en>Periodically re-checks in the background to catch renewals and changes, even unopened.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── 프라이버시 ───────────── -->
+<section id="privacy" class="section-dark">
+  <div class="wrap">
+    <p class="eyebrow"><span data-ko>프라이버시</span><span data-en>Privacy</span></p>
+    <h2><span data-ko>당신의 도메인은 당신 기기에.</span><span data-en>Your domains stay yours.</span></h2>
+    <p class="lede"><span data-ko>Renewly에는 백엔드가 없습니다. 감시 목록은 개발자 서버로 전송되지 않습니다.</span><span data-en>Renewly has no backend. Your watch-list is never sent to our servers — we have none.</span></p>
+    <div class="pillars">
+      <div class="pillar">
+        <span class="num">01</span>
+        <h3><span data-ko>계정·서버 없음</span><span data-en>No account, no server</span></h3>
+        <p><span data-ko>로그인 없이 바로 사용. 점검은 기기에서 직접 수행됩니다.</span><span data-en>Use it instantly without sign-in. Checks run directly from your device.</span></p>
+      </div>
+      <div class="pillar">
+        <span class="num">02</span>
+        <h3><span data-ko>추적 제로</span><span data-en>Zero tracking</span></h3>
+        <p><span data-ko>분석 도구도, 광고도, 제3자 SDK도 없습니다.</span><span data-en>No analytics, no ads, no third-party SDKs.</span></p>
+      </div>
+      <div class="pillar">
+        <span class="num">03</span>
+        <h3><span data-ko>비공개 동기화</span><span data-en>Private sync</span></h3>
+        <p><span data-ko>iCloud 비공개 데이터베이스(본인 Apple 계정)만 사용 — 개발자는 볼 수 없습니다.</span><span data-en>Only your private iCloud database (your Apple account) — we can't see it.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── 가격 ───────────── -->
+<section id="pricing">
+  <div class="wrap">
+    <p class="eyebrow"><span data-ko>가격</span><span data-en>Pricing</span></p>
+    <h2><span data-ko>한 번 사면 끝. 구독 없음.</span><span data-en>Buy once. No subscription.</span></h2>
+    <p class="lede"><span data-ko>모든 기능은 무료에도 전부 들어 있습니다. Pro는 도메인 한도만 없앱니다.</span><span data-en>Every feature is in the free app. Pro only removes the domain limit.</span></p>
+    <div class="price-row">
+      <div class="plan">
+        <p class="name">Free</p>
+        <p class="amt">$0</p>
+        <ul>
+          <li><span data-ko>도메인 3개</span><span data-en>3 domains</span></li>
+          <li><span data-ko>인증서 + 도메인 만료 감시</span><span data-en>Certificate + domain monitoring</span></li>
+          <li><span data-ko>알림 · 위젯 · iCloud 전부 포함</span><span data-en>Alerts, widget, iCloud — all included</span></li>
+        </ul>
+      </div>
+      <div class="plan pro">
+        <p class="name">Renewly Pro</p>
+        <p class="amt">$9.99 <small><span data-ko>일회성</span><span data-en>one-time</span></small></p>
+        <ul>
+          <li><span data-ko>도메인 무제한</span><span data-en>Unlimited domains</span></li>
+          <li><span data-ko>영구 잠금 해제</span><span data-en>Unlocked forever</span></li>
+          <li><span data-ko>구독 아님 · 자동 갱신 없음</span><span data-en>No subscription, no auto-renew</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span class="fine">© 2026 Renewly</span>
+    <div class="links">
+      <a href="privacy.html"><span data-ko>개인정보처리방침</span><span data-en>Privacy</span></a>
+      <a href="support.html"><span data-ko>지원</span><span data-en>Support</span></a>
+      <a href="mailto:chungkil.cksw@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

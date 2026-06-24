@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Renewly — 지원 · Support</title>
+<meta name="description" content="Renewly 지원 — 사용법, 자주 묻는 질문, 문의처. / Renewly support: how it works, FAQ, and contact.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="glyph">R</span> Renewly</a>
+    <nav class="nav">
+      <a href="index.html#features"><span data-ko>감시</span><span data-en>Monitors</span></a>
+      <a href="index.html#pricing"><span data-ko>가격</span><span data-en>Pricing</span></a>
+      <a href="privacy.html"><span data-ko>프라이버시</span><span data-en>Privacy</span></a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button data-set="ko" aria-pressed="true">KO</button><button data-set="en" aria-pressed="false">EN</button>
+    </div>
+    <a class="nav-cta" href="index.html"><span data-ko>홈</span><span data-en>Home</span></a>
+  </div>
+</header>
+
+<section>
+  <div class="wrap doc">
+    <h1><span data-ko>지원</span><span data-en>Support</span></h1>
+    <p class="updated"><span data-ko>보통 1~2일 내 답변드립니다</span><span data-en>We usually reply within 1–2 days</span></p>
+
+    <div class="contact-card">
+      <div>
+        <strong><span data-ko>문의하기</span><span data-en>Get in touch</span></strong>
+        <p style="margin:4px 0 0"><span data-ko>버그·기능 제안·질문 모두 환영합니다.</span><span data-en>Bugs, feature ideas, and questions are all welcome.</span></p>
+      </div>
+      <a class="mono" href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a>
+    </div>
+
+    <h2><span data-ko>시작하기</span><span data-en>Getting started</span></h2>
+    <ul class="bul">
+      <li><span data-ko><strong>도메인 추가</strong> — ＋를 눌러 host(예: <span class="mono">example.com</span>)와 포트(기본 443)를 입력하면 즉시 점검합니다.</span><span data-en><strong>Add a domain</strong> — tap ＋, enter a host (e.g. <span class="mono">example.com</span>) and port (default 443); it checks immediately.</span></li>
+      <li><span data-ko><strong>알림 허용</strong> — 첫 등록 시 알림 권한을 허용하면 만료 14·10·5·1일·6시간 전에 알림이 옵니다.</span><span data-en><strong>Allow notifications</strong> — grant permission on first add to receive alerts 14, 10, 5, 1 days and 6 hours before expiry.</span></li>
+      <li><span data-ko><strong>위젯·iCloud</strong> — 홈 화면에 위젯을 추가하고, iCloud에 로그인하면 기기 간 자동 동기화됩니다.</span><span data-en><strong>Widget &amp; iCloud</strong> — add the home-screen widget; sign into iCloud to sync across your devices.</span></li>
+    </ul>
+
+    <h2><span data-ko>자주 묻는 질문</span><span data-en>FAQ</span></h2>
+    <div class="faq">
+      <details class="q">
+        <summary><span data-ko>알림이 오지 않아요.</span><span data-en>I'm not getting alerts.</span></summary>
+        <div class="a"><span data-ko>설정 › 알림 › Renewly에서 알림이 켜져 있는지 확인하세요. 알림은 만료일 기준으로 미리 예약되므로, 도메인을 추가하거나 당겨서 새로고침해 최신 만료일을 반영하면 재예약됩니다.</span><span data-en>Check Settings › Notifications › Renewly is enabled. Alerts are pre-scheduled from the expiry date, so adding a domain or pull-to-refresh re-schedules them with the latest date.</span></div>
+      </details>
+      <details class="q">
+        <summary><span data-ko>도메인 등록 만료가 "조회 불가"로 나와요.</span><span data-en>Domain expiry shows "unavailable".</span></summary>
+        <div class="a"><span data-ko>도메인 만료는 공개 RDAP 레지스트리에서 조회합니다. 대부분의 gTLD(.com·.net·.org 등)는 지원하지만, 일부 ccTLD(.io 등)는 RDAP를 제공하지 않아 "조회 불가"로 표시됩니다. 이 경우에도 <strong>인증서 만료 감시는 정상 동작</strong>합니다.</span><span data-en>Domain expiry is read from public RDAP registries. Most gTLDs (.com, .net, .org…) are supported, but some ccTLDs (e.g. .io) don't offer RDAP and show "unavailable". <strong>Certificate monitoring still works</strong> in that case.</span></div>
+      </details>
+      <details class="q">
+        <summary><span data-ko>사내/내부망 호스트도 감시할 수 있나요?</span><span data-en>Can I monitor internal/private hosts?</span></summary>
+        <div class="a"><span data-ko>네. 그 기기에서 접근 가능한 사설 IP·내부 호스트도 점검할 수 있습니다. iOS가 로컬 네트워크 접근 권한을 한 번 물어볼 수 있습니다.</span><span data-en>Yes. Private IPs and internal hosts reachable from that device can be checked. iOS may ask once for Local Network permission.</span></div>
+      </details>
+      <details class="q">
+        <summary><span data-ko>무료와 Pro의 차이는?</span><span data-en>Free vs Pro?</span></summary>
+        <div class="a"><span data-ko>기능은 동일합니다. 무료는 도메인 3개, <strong>Renewly Pro($9.99 일회성)</strong>는 도메인 무제한입니다. 구독이 아니며 자동 갱신이 없습니다.</span><span data-en>Same features. Free covers 3 domains; <strong>Renewly Pro ($9.99 one-time)</strong> makes domains unlimited. It's not a subscription and never auto-renews.</span></div>
+      </details>
+      <details class="q">
+        <summary><span data-ko>구매를 복원하려면?</span><span data-en>How do I restore my purchase?</span></summary>
+        <div class="a"><span data-ko>페이월의 <strong>"구입 복원"</strong>을 누르면 같은 Apple 계정의 구매가 복원됩니다.</span><span data-en>Tap <strong>"Restore purchases"</strong> on the paywall to restore a purchase made with the same Apple account.</span></div>
+      </details>
+      <details class="q">
+        <summary><span data-ko>앱을 열지 않아도 만료를 감지하나요?</span><span data-en>Does it detect expiry without opening the app?</span></summary>
+        <div class="a"><span data-ko>알림은 만료일 기준으로 미리 예약되므로 앱을 열지 않아도 발송됩니다. 추가로 백그라운드 새로고침(OS가 시점 결정·베스트에포트)과 앱 진입 시 재점검으로 갱신·변경을 반영합니다.</span><span data-en>Alerts are pre-scheduled from the expiry date, so they fire even if you never open the app. Background refresh (best-effort, timed by the OS) and a re-check on launch keep renewals and changes up to date.</span></div>
+      </details>
+      <details class="q">
+        <summary><span data-ko>내 데이터는 어디에 저장되나요?</span><span data-en>Where is my data stored?</span></summary>
+        <div class="a"><span data-ko>기기에 로컬로 저장되고, iCloud 로그인 시 본인 계정의 비공개 CloudKit으로만 동기화됩니다. 개발자 서버는 없습니다. 자세한 내용은 <a href="privacy.html" style="color:var(--accent)">개인정보처리방침</a>을 참고하세요.</span><span data-en>Locally on device, and synced only via your private CloudKit when signed into iCloud. There is no developer server. See the <a href="privacy.html" style="color:var(--accent)">Privacy Policy</a> for details.</span></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span class="fine">© 2026 Renewly</span>
+    <div class="links">
+      <a href="index.html"><span data-ko>홈</span><span data-en>Home</span></a>
+      <a href="privacy.html"><span data-ko>개인정보처리방침</span><span data-en>Privacy</span></a>
+      <a href="mailto:chungkil.cksw@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

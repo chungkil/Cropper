@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Renewly — 개인정보처리방침 · Privacy Policy</title>
+<meta name="description" content="Renewly 개인정보처리방침. 백엔드 없음, 계정 없음, 추적 없음. 점검은 기기에서, 동기화는 iCloud 비공개. / Renewly Privacy Policy: no backend, no account, no tracking.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="glyph">R</span> Renewly</a>
+    <nav class="nav">
+      <a href="index.html#features"><span data-ko>감시</span><span data-en>Monitors</span></a>
+      <a href="index.html#privacy"><span data-ko>프라이버시</span><span data-en>Privacy</span></a>
+      <a href="support.html"><span data-ko>지원</span><span data-en>Support</span></a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button data-set="ko" aria-pressed="true">KO</button><button data-set="en" aria-pressed="false">EN</button>
+    </div>
+    <a class="nav-cta" href="index.html"><span data-ko>홈</span><span data-en>Home</span></a>
+  </div>
+</header>
+
+<section>
+  <div class="wrap doc">
+    <h1><span data-ko>개인정보처리방침</span><span data-en>Privacy Policy</span></h1>
+    <p class="updated"><span data-ko>최종 수정일: 2026-06-24</span><span data-en>Last updated: 2026-06-24</span></p>
+
+    <div class="callout">
+      <span data-ko>Renewly는 <strong>local-first 구조</strong>입니다 — 백엔드 서버가 없고, 계정이 없으며, 감시 목록은 개발자에게 전송되지 않습니다. 아래는 약속이 아니라 앱의 실제 동작입니다.</span>
+      <span data-en>Renewly is <strong>local-first</strong>: there is no backend server, no account, and your watch-list is never sent to us. The points below aren't promises — they describe how the app actually works.</span>
+    </div>
+
+    <h2><span data-ko>개발자는 데이터를 수집하지 않습니다</span><span data-en>We collect no data</span></h2>
+    <p>
+      <span data-ko>개발자는 서버를 운영하지 않습니다. 앱은 어떠한 개인정보도 개발자에게 <strong>수집·전송·판매·공유하지 않습니다.</strong> 분석 도구·광고 SDK·제3자 트래커가 전혀 없으며, 개발자는 사용자가 무엇을 감시하는지 알 수 없습니다.</span>
+      <span data-en>We run no servers. The app does <strong>not</strong> collect, transmit, sell, or share any personal data with us. There are no analytics, no advertising SDKs, and no third-party trackers — we cannot see what you monitor.</span>
+    </p>
+
+    <h2><span data-ko>앱이 수행하는 네트워크 연결 (투명 공개)</span><span data-en>Network connections the app makes (full transparency)</span></h2>
+    <p>
+      <span data-ko>인증서·도메인 만료를 점검하려면 앱이 네트워크에 접속해야 합니다. 이 연결은 <strong>개발자 서버가 아니라</strong> 사용자가 선택한 대상·공개 레지스트리로 직접 향합니다:</span>
+      <span data-en>To check certificate and domain expiry, the app must use the network. These connections go directly to the targets you choose and to public registries — <strong>never to a server of ours</strong>:</span>
+    </p>
+    <ul class="bul">
+      <li><span data-ko><strong>인증서 점검</strong>: 사용자가 추가한 호스트에 직접 TLS 핸드셰이크를 수행해 인증서를 읽습니다.</span><span data-en><strong>Certificate checks</strong>: a direct TLS handshake to the hosts you add, to read their certificate.</span></li>
+      <li><span data-ko><strong>도메인 만료 조회</strong>: 도메인 등록 만료일을 얻기 위해 공개 RDAP 서비스(<span class="mono">rdap.org</span> 및 해당 레지스트리)에 <strong>도메인 이름</strong>을 질의합니다. 이 질의에는 개인정보가 포함되지 않습니다.</span><span data-en><strong>Domain expiry lookups</strong>: your <strong>domain name</strong> is sent to public RDAP services (<span class="mono">rdap.org</span> and the relevant registry) to obtain the registration expiry date. These queries contain no personal information.</span></li>
+    </ul>
+    <p>
+      <span data-ko>이 외에 사용자 활동을 추적하기 위한 연결은 없습니다.</span>
+      <span data-en>No other connections are made to track your activity.</span>
+    </p>
+
+    <h2><span data-ko>기기에 저장되는 것</span><span data-en>What is stored on your device</span></h2>
+    <p>
+      <span data-ko>앱은 사용자가 등록한 <strong>도메인 목록과 인증서·도메인 메타데이터</strong>(발급자, 만료일, 시리얼, 최근 점검 시각 등 — 모두 공개 정보)를 저장합니다. 이 데이터는 기기에 로컬로(SwiftData) 저장되며, iCloud에 로그인되어 있으면 <strong>본인 Apple 계정의 비공개 CloudKit 데이터베이스</strong>를 통해 사용자 기기 간에만 동기화됩니다. 개발자는 이 데이터베이스에 접근할 수 없습니다.</span>
+      <span data-en>The app stores your <strong>list of domains and their certificate/domain metadata</strong> (issuer, expiry date, serial, last-checked time — all public information). This is stored locally on device (SwiftData) and, if you are signed into iCloud, synced only between your own devices through <strong>your private CloudKit database</strong>. We have no access to that database.</span>
+    </p>
+
+    <h2><span data-ko>알림</span><span data-en>Notifications</span></h2>
+    <p>
+      <span data-ko>만료 알림은 <strong>기기에서 로컬로 예약</strong>됩니다(푸시 서버 없음). 알림 권한은 첫 도메인 등록 시 요청하며, 거부해도 앱은 동작합니다.</span>
+      <span data-en>Expiry alerts are <strong>scheduled locally on your device</strong> (no push server). Notification permission is requested when you add your first domain; the app works even if you decline.</span>
+    </p>
+
+    <h2><span data-ko>결제</span><span data-en>Purchases</span></h2>
+    <p>
+      <span data-ko><strong>Renewly Pro</strong>는 Apple StoreKit을 통한 일회성 인앱 결제입니다. 모든 결제 정보는 Apple이 처리하며, 개발자는 결제 수단·이름·이메일·Apple ID를 받지도 저장하지도 않습니다. 앱은 구매 활성 여부 판단을 위해 기기에 저장된 Apple 서명 영수증만 읽습니다.</span>
+      <span data-en><strong>Renewly Pro</strong> is a one-time in-app purchase via Apple StoreKit. Apple handles all payment information; we never receive or store your payment details, name, email, or Apple ID. The app only reads a locally stored, Apple-signed receipt to determine whether the purchase is active.</span>
+    </p>
+
+    <h2><span data-ko>계정 없음 · 최소 권한</span><span data-en>No account, least privilege</span></h2>
+    <p>
+      <span data-ko>로그인이 필요 없습니다. 앱은 카메라·마이크·위치·연락처·사진에 접근하지 않습니다. 사내/내부망 호스트를 감시하는 경우에 한해 로컬 네트워크 접근을 요청할 수 있습니다.</span>
+      <span data-en>No sign-in is required. The app does not access your camera, microphone, location, contacts, or photos. It may request Local Network access only if you monitor hosts on your private/internal network.</span>
+    </p>
+
+    <h2><span data-ko>아동</span><span data-en>Children</span></h2>
+    <p>
+      <span data-ko>앱 등급은 4+이며, 아동을 포함한 누구의 개인정보도 수집하지 않습니다.</span>
+      <span data-en>The app is rated 4+ and collects no personal data from anyone, including children.</span>
+    </p>
+
+    <h2><span data-ko>정책 변경</span><span data-en>Changes to this policy</span></h2>
+    <p>
+      <span data-ko>정책이 변경되면 갱신본을 이 페이지에 게시하고 "최종 수정일"을 갱신합니다.</span>
+      <span data-en>If this policy changes, the updated version will be posted on this page with a new "Last updated" date.</span>
+    </p>
+
+    <h2 id="terms"><span data-ko>이용약관</span><span data-en>Terms of Use</span></h2>
+    <p>
+      <span data-ko>Renewly는 "있는 그대로" 제공되며, 인증서·도메인 만료 정보의 정확성·적시성·가용성을 보증하지 않습니다(레지스트리 응답·네트워크·OS 백그라운드 실행에 의존). 만료로 인한 손해에 대한 책임은 법이 허용하는 범위에서 배제됩니다 — Renewly는 보조 알림 도구이며 유일한 방어선으로 사용해서는 안 됩니다. 인앱 결제에는 Apple의 표준 EULA가 적용됩니다.</span>
+      <span data-en>Renewly is provided "as is," without warranty as to the accuracy, timeliness, or availability of certificate/domain expiry information (which depends on registry responses, the network, and OS background execution). To the extent permitted by law, we disclaim liability for losses arising from an expiry — Renewly is an auxiliary reminder and should not be your only safeguard. In-app purchases are governed by Apple's standard EULA.</span>
+    </p>
+
+    <h2><span data-ko>문의</span><span data-en>Contact</span></h2>
+    <p>
+      <span data-ko>개인정보 관련 문의: </span><span data-en>Questions about privacy: </span>
+      <a class="mono" href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a>
+    </p>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span class="fine">© 2026 Renewly</span>
+    <div class="links">
+      <a href="index.html"><span data-ko>홈</span><span data-en>Home</span></a>
+      <a href="support.html"><span data-ko>지원</span><span data-en>Support</span></a>
+      <a href="mailto:chungkil.cksw@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
