@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hangeul Blocks — Learn to Read Korean by Playing</title>
+<meta name="description" content="Hangeul Blocks turns the Korean alphabet into eight bite-sized games. Build syllables from jamo, hear native-style audio, and learn to read Korean — one block at a time.">
+<meta property="og:title" content="Hangeul Blocks — Learn to Read Korean by Playing">
+<meta property="og:description" content="Eight games turn the Hangeul alphabet into something you build, not just memorize. Five modes free, no subscription.">
+<meta property="og:type" content="website">
+<style>
+  :root{
+    --bg:#0f1020; --bg2:#1a1c38; --card:#1f2142; --ink:#f4f5ff; --muted:#a8acd6;
+    --red:#e2556a; --blue:#4a7dc9; --yellow:#f2b441; --green:#43c59e; --violet:#8b6df0;
+    --radius:18px; --maxw:980px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; color:var(--ink); background:linear-gradient(160deg,#0f1020 0%,#171a36 60%,#0f1020 100%);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Apple SD Gothic Neo",sans-serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--violet)}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px}
+  header{padding:30px 0 10px}
+  .brand{display:flex; align-items:center; gap:14px}
+  .logo{
+    width:54px; height:54px; border-radius:14px; display:grid; place-items:center;
+    font-size:30px; font-weight:800; color:#fff;
+    background:linear-gradient(135deg,var(--red),var(--violet)); box-shadow:0 10px 30px rgba(139,109,240,.35);
+  }
+  .brand h1{font-size:20px; margin:0; letter-spacing:.2px}
+  .brand p{margin:0; color:var(--muted); font-size:13px}
+  .hero{padding:54px 0 30px; text-align:center}
+  .hero h2{font-size:clamp(30px,6vw,52px); line-height:1.12; margin:0 0 18px; letter-spacing:-.5px}
+  .hero h2 .accent{background:linear-gradient(90deg,var(--yellow),var(--red),var(--violet)); -webkit-background-clip:text; background-clip:text; color:transparent}
+  .hero p{font-size:clamp(16px,2.6vw,20px); color:var(--muted); max-width:620px; margin:0 auto 30px}
+  .blocks{display:flex; gap:12px; justify-content:center; margin:36px 0 10px; flex-wrap:wrap}
+  .jblock{
+    width:74px; height:88px; border-radius:16px; display:grid; place-items:center;
+    font-size:42px; font-weight:800; color:#fff; box-shadow:0 14px 34px rgba(0,0,0,.35);
+    transform:translateY(0); transition:transform .25s ease;
+  }
+  .jblock:hover{transform:translateY(-6px)}
+  .jblock.r{background:linear-gradient(135deg,#ff7a8a,var(--red))}
+  .jblock.b{background:linear-gradient(135deg,#6fa4ff,var(--blue))}
+  .jblock.y{background:linear-gradient(135deg,#ffd066,var(--yellow))}
+  .jblock.g{background:linear-gradient(135deg,#6fe6c4,var(--green))}
+  .cta{display:inline-flex; align-items:center; gap:10px; background:#000; color:#fff;
+    padding:14px 22px; border-radius:14px; text-decoration:none; font-weight:600; font-size:16px;
+    border:1px solid rgba(255,255,255,.12);}
+  .cta:hover{background:#111}
+  .note{color:var(--muted); font-size:13px; margin-top:14px}
+  section{padding:46px 0}
+  h3.sec{font-size:clamp(22px,4vw,30px); text-align:center; margin:0 0 8px}
+  .sub{ text-align:center; color:var(--muted); max-width:560px; margin:0 auto 34px}
+  .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px}
+  .card{background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); padding:22px}
+  .card .ico{width:42px; height:42px; border-radius:12px; display:grid; place-items:center; font-size:22px; font-weight:800; color:#fff; margin-bottom:12px}
+  .card h4{margin:0 0 6px; font-size:17px}
+  .card p{margin:0; color:var(--muted); font-size:14px}
+  .tag{display:inline-block; font-size:11px; font-weight:700; letter-spacing:.4px; text-transform:uppercase;
+    padding:3px 8px; border-radius:999px; margin-left:8px; vertical-align:middle}
+  .tag.free{background:rgba(67,197,158,.18); color:var(--green)}
+  .tag.pro{background:rgba(242,180,65,.18); color:var(--yellow)}
+  .pricebox{max-width:520px; margin:0 auto; background:var(--card); border:1px solid rgba(255,255,255,.08);
+    border-radius:var(--radius); padding:28px; text-align:center}
+  .pricebox .big{font-size:34px; font-weight:800; margin:6px 0}
+  .pricebox ul{list-style:none; padding:0; margin:18px 0 0; color:var(--muted); font-size:14px}
+  .pricebox li{padding:5px 0}
+  footer{border-top:1px solid rgba(255,255,255,.07); padding:30px 0 50px; color:var(--muted); font-size:13px}
+  .flinks{display:flex; gap:18px; flex-wrap:wrap; margin-bottom:10px}
+  .flinks a{color:var(--muted); text-decoration:none}
+  .flinks a:hover{color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="logo">한</div>
+      <div>
+        <h1>Hangeul Blocks</h1>
+        <p>Learn to read Korean by playing</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>The Korean alphabet,<br><span class="accent">one block at a time.</span></h2>
+      <p>Korean isn't random shapes. Every syllable is built from simple letters following clear rules. Hangeul Blocks makes those rules visible — and turns them into play.</p>
+      <a class="cta" href="#">⬇️ Download on the App Store</a>
+      <div class="note">iPhone · iOS 16+ · Five modes free, no subscription</div>
+      <div class="blocks" aria-hidden="true">
+        <div class="jblock r">ㅎ</div>
+        <div class="jblock b">ㅏ</div>
+        <div class="jblock y">ㄴ</div>
+        <div class="jblock g">한</div>
+      </div>
+    </section>
+
+    <section>
+      <h3 class="sec">Eight ways to make it click</h3>
+      <p class="sub">Short, focused games — each one teaches a different piece of how Hangeul fits together.</p>
+      <div class="grid">
+        <div class="card">
+          <div class="ico" style="background:linear-gradient(135deg,#ff7a8a,var(--red))">블</div>
+          <h4>Letter Blocks <span class="tag free">Free</span></h4>
+          <p>Build syllables from jamo — see how consonants and vowels snap together.</p>
+        </div>
+        <div class="card">
+          <div class="ico" style="background:linear-gradient(135deg,#6fa4ff,var(--blue))">ㅋ</div>
+          <h4>Consonant Tiers <span class="tag free">Free</span></h4>
+          <p>Tell the plain · tense · aspirated families apart (ㄱ ㄲ ㅋ).</p>
+        </div>
+        <div class="card">
+          <div class="ico" style="background:linear-gradient(135deg,#6fe6c4,var(--green))">記</div>
+          <h4>Hangeul Memory <span class="tag free">Free</span></h4>
+          <p>Flip and match letters with their sounds.</p>
+        </div>
+        <div class="card">
+          <div class="ico" style="background:linear-gradient(135deg,#ffd066,var(--yellow))">ㅗ</div>
+          <h4>Vowel Match <span class="tag free">Free</span></h4>
+          <p>Train your eye on look-alike vowels (ㅓ vs ㅗ).</p>
+        </div>
+        <div class="card">
+          <div class="ico" style="background:linear-gradient(135deg,#b39bff,var(--violet))">단</div>
+          <h4>Word Review <span class="tag free">Free</span></h4>
+          <p>Spaced-repetition flashcards bring back words right before you forget them.</p>
+        </div>
+        <div class="card">
+          <div class="ico" style="background:linear-gradient(135deg,#ff9a6f,#e2556a)">ㅂ</div>
+          <h4>Final Consonant <span class="tag pro">Premium</span></h4>
+          <p>Master the batchim and how it reshapes a syllable's sound.</p>
+        </div>
+        <div class="card">
+          <div class="ico" style="background:linear-gradient(135deg,#6fd0ff,#4a7dc9)">走</div>
+          <h4>Reading Runner <span class="tag pro">Premium</span></h4>
+          <p>Read real syllables at speed before they pass you by.</p>
+        </div>
+        <div class="card">
+          <div class="ico" style="background:linear-gradient(135deg,#c2a3ff,#8b6df0)">雨</div>
+          <h4>Syllable Rain <span class="tag pro">Premium</span></h4>
+          <p>Complete words as syllables fall — an arcade vocabulary workout.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h3 class="sec">Built for absolute beginners</h3>
+      <p class="sub">Start with zero Korean and read your first words today.</p>
+      <div class="grid">
+        <div class="card"><h4>🔊 Native-style audio</h4><p>Hear every letter, syllable, and word spoken clearly.</p></div>
+        <div class="card"><h4>🇬🇧 English interface</h4><p>No Korean required to get started — the whole app guides you in English.</p></div>
+        <div class="card"><h4>🧠 Smart review</h4><p>Spaced repetition resurfaces exactly what you're about to forget.</p></div>
+        <div class="card"><h4>☁️ iCloud sync</h4><p>Your progress follows you across iPhone and iPad automatically.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h3 class="sec">Simple, honest pricing</h3>
+      <p class="sub">No subscription. No usage caps. Ever.</p>
+      <div class="pricebox">
+        <div>Premium</div>
+        <div class="big">$1.99 <span style="font-size:15px; color:var(--muted)">one-time</span></div>
+        <ul>
+          <li>✓ Five modes free forever</li>
+          <li>✓ Unlock all advanced modes & reading challenges</li>
+          <li>✓ Remove ads</li>
+          <li>✓ Unlimited review</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="flinks">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="support.html">Support</a>
+      <a href="mailto:chungkil.cksw@gmail.com">Contact</a>
+    </div>
+    <div>© 2026 Chungkil Kim · Hangeul Blocks. Made for learners of 한글, everywhere.</div>
+  </footer>
+</div>
+</body>
+</html>
