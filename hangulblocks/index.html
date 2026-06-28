@@ -75,25 +75,13 @@
   h3.sec{font-size:clamp(22px,4vw,30px); text-align:center; margin:0 0 8px}
   .sub{text-align:center; color:var(--muted); max-width:560px; margin:0 auto 34px}
 
-  /* 폰 목업 (실제 스크린샷 대체, CSS 전용) */
-  .shots{display:flex; gap:26px; justify-content:center; flex-wrap:wrap}
-  .phone{width:208px; flex:0 0 auto}
-  .screen{position:relative; border-radius:30px; padding:14px 12px 18px; background:#15172f;
-    border:8px solid #2a2d52; box-shadow:0 24px 50px rgba(0,0,0,.45); aspect-ratio:9/19; overflow:hidden}
-  .screen::before{content:""; position:absolute; top:10px; left:50%; transform:translateX(-50%);
-    width:64px; height:7px; border-radius:5px; background:#2a2d52}
-  .screen h5{margin:16px 4px 12px; font-size:13px; color:var(--muted); text-align:center; letter-spacing:.3px}
-  .scaption{text-align:center; color:var(--muted); font-size:13px; margin-top:12px}
-  .slotrow{display:flex; gap:8px; justify-content:center; margin:10px 0}
-  .slot{width:46px; height:54px; border-radius:11px; display:grid; place-items:center; font-size:26px; font-weight:800; color:#fff}
-  .slot.empty{background:transparent; border:2px dashed #3a3d66; color:#565a8c}
-  .tray{display:flex; gap:7px; justify-content:center; flex-wrap:wrap; margin-top:auto; padding-top:14px}
-  .key{width:38px; height:44px; border-radius:9px; background:#252848; color:#cfd2ff; display:grid; place-items:center; font-size:19px; font-weight:700}
-  .fall{position:relative; height:150px; margin-top:6px}
-  .fall .blk{position:absolute; width:44px; height:52px; border-radius:11px; display:grid; place-items:center; font-size:25px; font-weight:800; color:#fff}
-  .flash{margin:18px 10px; background:#23264a; border:1px solid #34386a; border-radius:16px; padding:22px 12px; text-align:center}
-  .flash .word{font-size:40px; font-weight:800}
-  .flash .mean{color:var(--muted); font-size:14px; margin-top:8px}
+  /* 실제 스크린샷 폰 프레임 */
+  .shots{display:flex; gap:28px; justify-content:center; flex-wrap:wrap}
+  .phone{width:212px; flex:0 0 auto; margin:0}
+  .frame{padding:8px; border-radius:34px; background:#23264a; border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 24px 50px rgba(0,0,0,.45)}
+  .frame img{display:block; width:100%; border-radius:27px}
+  .scaption{text-align:center; color:var(--muted); font-size:13px; margin:14px 0 0}
 
   .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px}
   .card{background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); padding:22px}
@@ -162,47 +150,21 @@
       <h3 class="sec" id="shots-title">See it in action</h3>
       <p class="sub">Short, focused games — here's a peek at three of them.</p>
       <div class="shots">
-        <div class="phone">
-          <div class="screen">
-            <h5>Letter Blocks</h5>
-            <div class="slotrow" lang="ko">
-              <div class="slot" style="background:linear-gradient(135deg,#ff7a8a,#e2556a)">ㄱ</div>
-              <div class="slot empty">+</div>
-              <div class="slot" style="background:linear-gradient(135deg,#ffd066,#f2b441)">ㅗ</div>
-            </div>
-            <div class="slotrow" lang="ko"><div class="slot" style="background:linear-gradient(135deg,#6fe6c4,#43c59e)">고</div></div>
-            <div class="tray" lang="ko"><span class="key">ㄱ</span><span class="key">ㄴ</span><span class="key">ㅗ</span><span class="key">ㅏ</span><span class="key">ㅁ</span></div>
-          </div>
-          <p class="scaption">Build a syllable from jamo</p>
-        </div>
-
-        <div class="phone">
-          <div class="screen">
-            <h5>Syllable Rain</h5>
-            <div class="fall" lang="ko">
-              <div class="blk" style="left:14px; top:6px; background:linear-gradient(135deg,#6fa4ff,#4a7dc9)">사</div>
-              <div class="blk" style="left:96px; top:48px; background:linear-gradient(135deg,#c2a3ff,#8b6df0)">기</div>
-              <div class="blk" style="left:40px; top:96px; background:linear-gradient(135deg,#6fe6c4,#43c59e)">과</div>
-            </div>
-            <div class="tray" lang="ko"><span class="key">ㄱ</span><span class="key">ㅘ</span><span class="key">ㅈ</span><span class="key">⏎</span></div>
-          </div>
-          <p class="scaption">Complete words as they fall</p>
-        </div>
-
-        <div class="phone">
-          <div class="screen">
-            <h5>Word Review</h5>
-            <div class="flash">
-              <div class="word" lang="ko">학교</div>
-              <div class="mean">tap to reveal — “school”</div>
-            </div>
-            <div class="tray" style="gap:10px">
-              <span class="key" style="width:78px; background:#3a2a2a; color:#ffb4b4">Again</span>
-              <span class="key" style="width:78px; background:#23402f; color:#9ff0c4">Good</span>
-            </div>
-          </div>
-          <p class="scaption">Review with spaced repetition</p>
-        </div>
+        <figure class="phone">
+          <div class="frame"><img src="shots/letter-blocks.png" width="540" height="1174"
+            alt="Letter Blocks screen: building the syllable 가 from jamo tiles" loading="lazy"></div>
+          <figcaption class="scaption">Build a syllable from jamo</figcaption>
+        </figure>
+        <figure class="phone">
+          <div class="frame"><img src="shots/vowel-match.png" width="540" height="1174"
+            alt="Vowel Match screen: hear a vowel, then choose between ㅓ and ㅗ" loading="lazy"></div>
+          <figcaption class="scaption">Hear it, then pick the right vowel</figcaption>
+        </figure>
+        <figure class="phone">
+          <div class="frame"><img src="shots/word-review.png" width="540" height="1174"
+            alt="Word Review flashcard showing the Korean word 엄마" loading="lazy"></div>
+          <figcaption class="scaption">Review words with spaced repetition</figcaption>
+        </figure>
       </div>
     </section>
 
