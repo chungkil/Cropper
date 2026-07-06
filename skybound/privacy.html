@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SkyBound — 개인정보처리방침</title>
+<title>SkyBound — 개인정보처리방침 · Privacy Policy</title>
 <style>
   :root{--ink:#1d1d2b;--muted:#5b6170;--bg:#f7f8fb;--card:#fff;--line:#e6e8ee;--accent:#e8833a;--radius:18px;--maxw:760px}
   *{box-sizing:border-box}
@@ -12,6 +12,14 @@
   a{color:var(--accent);text-decoration:none}
   a:hover{text-decoration:underline}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:48px 20px 72px}
+  #langSwitch{position:fixed;top:14px;right:14px;z-index:50;background:rgba(255,255,255,.94);
+    border:1px solid var(--line);border-radius:999px;padding:4px;display:flex;gap:2px;
+    box-shadow:0 2px 10px rgba(0,0,0,.10)}
+  #langSwitch button{border:none;background:transparent;border-radius:999px;padding:5px 12px;
+    font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;font-family:inherit}
+  #langSwitch button.on{background:var(--ink);color:#fff}
+  html[data-lang="ko"] .en{display:none!important}
+  html[data-lang="en"] .ko{display:none!important}
   h1{font-size:32px;letter-spacing:-0.02em;margin:0 0 6px}
   .sub{color:var(--muted);margin:0 0 32px;font-size:15px}
   h2{font-size:20px;margin:32px 0 10px}
@@ -21,50 +29,80 @@
 </style>
 </head>
 <body>
+<div id="langSwitch">
+  <button data-l="ko">한국어</button><button data-l="en">English</button>
+</div>
+
 <div class="wrap">
-  <h1>SkyBound 개인정보처리방침</h1>
-  <p class="sub">시행일: 2026년 7월 6일</p>
+  <h1><span class="ko">SkyBound 개인정보처리방침</span><span class="en">SkyBound Privacy Policy</span></h1>
+  <p class="sub ko">시행일: 2026년 7월 6일</p>
+  <p class="sub en">Effective date: July 6, 2026</p>
 
-  <p><b>요약: SkyBound는 어떠한 개인정보도 수집·전송하지 않습니다.</b> 계정이 없고, 서버가 없으며, 광고와 추적 SDK도 없습니다.</p>
+  <p class="ko"><b>요약: SkyBound는 어떠한 개인정보도 수집·전송하지 않습니다.</b> 계정이 없고, 서버가 없으며, 광고와 추적 SDK도 없습니다.</p>
+  <p class="en"><b>Summary: SkyBound does not collect or transmit any personal data.</b> There are no accounts, no servers, no ads and no tracking SDKs.</p>
 
   <div class="card">
-    <h2>1. 수집하는 정보</h2>
-    <p>없습니다. SkyBound는 이름, 이메일, 위치, 기기 식별자, 사용 기록 등 어떠한 개인정보도 수집하지 않으며, 외부 서버로 어떠한 데이터도 전송하지 않습니다.</p>
+    <h2><span class="ko">1. 수집하는 정보</span><span class="en">1. Data we collect</span></h2>
+    <p class="ko">없습니다. SkyBound는 이름, 이메일, 위치, 기기 식별자, 사용 기록 등 어떠한 개인정보도 수집하지 않으며, 외부 서버로 어떠한 데이터도 전송하지 않습니다.</p>
+    <p class="en">None. SkyBound does not collect names, email addresses, location, device identifiers, usage records or any other personal data, and transmits nothing to external servers.</p>
   </div>
 
   <div class="card">
-    <h2>2. 기기 내 저장 데이터</h2>
-    <p>게임 진행 상황(미션 기록·별·해금 상태)과 설정은 사용자의 기기 안에만 저장됩니다. 이 데이터는 개발자를 포함한 누구에게도 전송되지 않으며, 앱을 삭제하면 함께 삭제됩니다.</p>
+    <h2><span class="ko">2. 기기 내 저장 데이터</span><span class="en">2. Data stored on your device</span></h2>
+    <p class="ko">게임 진행 상황(미션 기록·별·해금 상태)과 설정은 사용자의 기기 안에만 저장됩니다. 이 데이터는 개발자를 포함한 누구에게도 전송되지 않으며, 앱을 삭제하면 함께 삭제됩니다.</p>
+    <p class="en">Game progress (mission records, stars, unlock state) and settings are stored only on your device. This data is never sent to anyone, including the developer, and is deleted when you delete the app.</p>
   </div>
 
   <div class="card">
-    <h2>3. 인앱 구매</h2>
-    <p>기체·맵 구매는 Apple App Store 결제 시스템을 통해 처리됩니다. 개발자는 결제 수단이나 카드 정보에 접근할 수 없으며, Apple이 제공하는 구매 영수증으로 해금 상태만 확인합니다. Apple의 개인정보 처리에 대해서는 <a href="https://www.apple.com/legal/privacy/">Apple 개인정보처리방침</a>을 참고하세요.</p>
+    <h2><span class="ko">3. 인앱 구매</span><span class="en">3. In-app purchases</span></h2>
+    <p class="ko">기체·맵 구매는 Apple App Store 결제 시스템을 통해 처리됩니다. 개발자는 결제 수단이나 카드 정보에 접근할 수 없으며, Apple이 제공하는 구매 영수증으로 해금 상태만 확인합니다. Apple의 개인정보 처리에 대해서는 <a href="https://www.apple.com/legal/privacy/">Apple 개인정보처리방침</a>을 참고하세요.</p>
+    <p class="en">Aircraft and map purchases are processed by the Apple App Store. The developer has no access to your payment details and only verifies unlock state through Apple-provided receipts. See <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a> for how Apple handles your data.</p>
   </div>
 
   <div class="card">
-    <h2>4. 광고 및 제3자 SDK</h2>
-    <p>광고가 없으며, 분석·추적 등 제3자 SDK를 사용하지 않습니다.</p>
+    <h2><span class="ko">4. 광고 및 제3자 SDK</span><span class="en">4. Ads and third-party SDKs</span></h2>
+    <p class="ko">광고가 없으며, 분석·추적 등 제3자 SDK를 사용하지 않습니다.</p>
+    <p class="en">There are no ads, and no third-party analytics or tracking SDKs are used.</p>
   </div>
 
   <div class="card">
-    <h2>5. 아동의 개인정보</h2>
-    <p>어떠한 정보도 수집하지 않으므로, 아동의 개인정보 또한 수집하지 않습니다.</p>
+    <h2><span class="ko">5. 아동의 개인정보</span><span class="en">5. Children's privacy</span></h2>
+    <p class="ko">어떠한 정보도 수집하지 않으므로, 아동의 개인정보 또한 수집하지 않습니다.</p>
+    <p class="en">Since no data is collected at all, no data is collected from children either.</p>
   </div>
 
   <div class="card">
-    <h2>6. 방침의 변경</h2>
-    <p>이 방침이 변경되는 경우 본 페이지에 게시하며, 중요한 변경은 앱 업데이트 노트로 안내합니다.</p>
+    <h2><span class="ko">6. 방침의 변경</span><span class="en">6. Changes to this policy</span></h2>
+    <p class="ko">이 방침이 변경되는 경우 본 페이지에 게시하며, 중요한 변경은 앱 업데이트 노트로 안내합니다.</p>
+    <p class="en">Any changes will be posted on this page; significant changes will also be noted in app update notes.</p>
   </div>
 
   <div class="card">
-    <h2>7. 문의</h2>
-    <p>개인정보 관련 문의: <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a></p>
+    <h2><span class="ko">7. 문의</span><span class="en">7. Contact</span></h2>
+    <p class="ko">개인정보 관련 문의: <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a></p>
+    <p class="en">Privacy questions: <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a></p>
   </div>
 
   <footer>
-    <a href="index.html">← SkyBound 홈</a> · <a href="support.html">지원</a>
+    <a href="index.html"><span class="ko">← SkyBound 홈</span><span class="en">← SkyBound Home</span></a> ·
+    <a href="support.html"><span class="ko">지원</span><span class="en">Support</span></a>
   </footer>
 </div>
+
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  document.documentElement.setAttribute('lang', l === 'ko' ? 'ko' : 'en');
+  try{localStorage.setItem('sb-lang', l)}catch(e){}
+  document.querySelectorAll('#langSwitch button').forEach(function(b){
+    b.classList.toggle('on', b.dataset.l === l);
+  });
+}
+document.querySelectorAll('#langSwitch button').forEach(function(b){
+  b.addEventListener('click', function(){ setLang(b.dataset.l); });
+});
+var saved = null; try{saved = localStorage.getItem('sb-lang')}catch(e){}
+setLang(saved || (((navigator.language||'').indexOf('ko') === 0) ? 'ko' : 'en'));
+</script>
 </body>
 </html>

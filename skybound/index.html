@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SkyBound — 기울여서 나는 감성 비행 시뮬레이션</title>
-<meta name="description" content="틸트 조종으로 이륙부터 착륙까지. 화산섬·협곡·피오르 세 개의 세계를 나는 iOS 비행 시뮬레이션 게임 SkyBound.">
+<meta name="description" content="틸트 조종으로 이륙부터 착륙까지. 화산섬·협곡·피오르 세 개의 세계를 나는 iOS 비행 시뮬레이션 게임 SkyBound. Tilt-to-fly flight simulator for iOS.">
 <style>
   :root{
     --ink:#1d1d2b; --muted:#5b6170; --bg:#f7f8fb; --card:#ffffff;
@@ -17,6 +17,14 @@
   a{color:var(--accent);text-decoration:none}
   a:hover{text-decoration:underline}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+  #langSwitch{position:fixed;top:14px;right:14px;z-index:50;background:rgba(255,255,255,.94);
+    border:1px solid var(--line);border-radius:999px;padding:4px;display:flex;gap:2px;
+    box-shadow:0 2px 10px rgba(0,0,0,.10)}
+  #langSwitch button{border:none;background:transparent;border-radius:999px;padding:5px 12px;
+    font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;font-family:inherit}
+  #langSwitch button.on{background:var(--ink);color:#fff}
+  html[data-lang="ko"] .en{display:none!important}
+  html[data-lang="en"] .ko{display:none!important}
   header.hero{background:linear-gradient(180deg,#141c3e 0%,#3a3468 45%,#c2653f 80%,#f0a05c 100%);
     color:#fff;padding:72px 0 56px;text-align:center}
   .hero img.icon{width:120px;height:120px;border-radius:27px;margin:0 auto 20px;
@@ -38,45 +46,91 @@
 </style>
 </head>
 <body>
+<div id="langSwitch">
+  <button data-l="ko">한국어</button><button data-l="en">English</button>
+</div>
+
 <header class="hero">
   <div class="wrap">
-    <img class="icon" src="icon.png" alt="SkyBound 앱 아이콘">
+    <img class="icon" src="icon.png" alt="SkyBound app icon">
     <h1>SkyBound</h1>
-    <p class="tag">기울여서 나는, 가장 손쉬운 비행.</p>
-    <a class="store-badge" href="https://apps.apple.com/app/id6787317568">App Store에서 받기</a>
+    <p class="tag ko">기울여서 나는, 가장 손쉬운 비행.</p>
+    <p class="tag en">Tilt to fly. The easiest way to take to the sky.</p>
+    <a class="store-badge" href="https://apps.apple.com/app/id6787317568"><span class="ko">App Store에서 받기</span><span class="en">Download on the App Store</span></a>
   </div>
 </header>
 
 <section>
   <div class="wrap">
-    <h2>특징</h2>
+    <h2><span class="ko">특징</span><span class="en">Features</span></h2>
     <div class="grid">
-      <div class="card"><h3>직관적인 틸트 조종</h3><p>기기를 기울여 롤·피치, 가상 스로틀·러더로 미세 조작. 누구나 1분 만에 이륙할 수 있습니다.</p></div>
-      <div class="card"><h3>가벼운 진짜 비행 물리</h3><p>양력·실속·바람·상승기류를 반영한 60Hz 고정 스텝 물리. 아케이드처럼 쉽고, 시뮬처럼 깊습니다.</p></div>
-      <div class="card"><h3>세 개의 세계</h3><p>화산섬 아졸라 제도, 붉은 캐니언 세도나 협곡, 설산 수로 하이달 피오르 — 각기 다른 지형과 도전.</p></div>
-      <div class="card"><h3>기체 4종</h3><p>훈련기 스카이호크, 수상기 펠리컨, 글라이더 알바트로스, 제트 팰컨 — 특성이 다른 비행감.</p></div>
-      <div class="card"><h3>미션과 해금</h3><p>링 게이트 코스, 화물 운송, 착륙 챌린지. 별을 모아 새 기체와 맵을 해금하세요.</p></div>
-      <div class="card"><h3>시간대·날씨</h3><p>맑은 아침, 골든아워, 강풍, 안개, 야간 — 같은 맵도 전혀 다른 비행이 됩니다.</p></div>
+      <div class="card">
+        <h3><span class="ko">직관적인 틸트 조종</span><span class="en">Intuitive tilt controls</span></h3>
+        <p class="ko">기기를 기울여 롤·피치, 가상 스로틀·러더로 미세 조작. 누구나 1분 만에 이륙할 수 있습니다.</p>
+        <p class="en">Tilt for roll and pitch, with a virtual throttle and rudder for fine control. Anyone can take off in under a minute.</p>
+      </div>
+      <div class="card">
+        <h3><span class="ko">가벼운 진짜 비행 물리</span><span class="en">Lightweight real physics</span></h3>
+        <p class="ko">양력·실속·바람·상승기류를 반영한 60Hz 고정 스텝 물리. 아케이드처럼 쉽고, 시뮬처럼 깊습니다.</p>
+        <p class="en">Fixed-step 60 Hz physics with lift, stall, wind and thermals. Easy like an arcade, deep like a sim.</p>
+      </div>
+      <div class="card">
+        <h3><span class="ko">세 개의 세계</span><span class="en">Three worlds</span></h3>
+        <p class="ko">화산섬 아졸라 제도, 붉은 캐니언 세도나 협곡, 설산 수로 하이달 피오르 — 각기 다른 지형과 도전.</p>
+        <p class="en">Volcanic Azolla Islands, red-rock Sedona Canyon and icy Hydal Fjord — each with its own terrain and challenges.</p>
+      </div>
+      <div class="card">
+        <h3><span class="ko">기체 4종</span><span class="en">Four aircraft</span></h3>
+        <p class="ko">훈련기 스카이호크, 수상기 펠리컨, 글라이더 알바트로스, 제트 팰컨 — 특성이 다른 비행감.</p>
+        <p class="en">Skyhawk trainer, Pelican seaplane, Albatross glider and Falcon jet — each flies differently.</p>
+      </div>
+      <div class="card">
+        <h3><span class="ko">미션과 해금</span><span class="en">Missions &amp; unlocks</span></h3>
+        <p class="ko">링 게이트 코스, 화물 운송, 착륙 챌린지. 별을 모아 새 기체와 맵을 해금하세요.</p>
+        <p class="en">Ring-gate courses, cargo runs and landing challenges. Earn stars to unlock new aircraft and maps.</p>
+      </div>
+      <div class="card">
+        <h3><span class="ko">시간대·날씨</span><span class="en">Time &amp; weather</span></h3>
+        <p class="ko">맑은 아침, 골든아워, 강풍, 안개, 야간 — 같은 맵도 전혀 다른 비행이 됩니다.</p>
+        <p class="en">Clear morning, golden hour, breeze, fog and night — the same map, a whole new flight.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section style="padding-top:0">
   <div class="wrap">
-    <h2>스크린샷</h2>
+    <h2><span class="ko">스크린샷</span><span class="en">Screenshots</span></h2>
     <div class="shots">
-      <img src="shots/01-azolla-skyhawk.jpg" alt="아졸라 제도 비행">
-      <img src="shots/02-sedona-canyon.jpg" alt="세도나 협곡 통과">
-      <img src="shots/03-hydal-fjord.jpg" alt="하이달 피오르 설산">
+      <img src="shots/01-azolla-skyhawk.jpg" alt="Azolla Islands flight">
+      <img src="shots/02-sedona-canyon.jpg" alt="Sedona Canyon run">
+      <img src="shots/03-hydal-fjord.jpg" alt="Hydal Fjord">
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <a href="support.html">지원</a> · <a href="privacy.html">개인정보처리방침</a>
+    <a href="support.html"><span class="ko">지원</span><span class="en">Support</span></a> ·
+    <a href="privacy.html"><span class="ko">개인정보처리방침</span><span class="en">Privacy Policy</span></a>
     <div style="margin-top:8px">© 2026 SkyBound. All rights reserved.</div>
   </div>
 </footer>
+
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  document.documentElement.setAttribute('lang', l === 'ko' ? 'ko' : 'en');
+  try{localStorage.setItem('sb-lang', l)}catch(e){}
+  document.querySelectorAll('#langSwitch button').forEach(function(b){
+    b.classList.toggle('on', b.dataset.l === l);
+  });
+}
+document.querySelectorAll('#langSwitch button').forEach(function(b){
+  b.addEventListener('click', function(){ setLang(b.dataset.l); });
+});
+var saved = null; try{saved = localStorage.getItem('sb-lang')}catch(e){}
+setLang(saved || (((navigator.language||'').indexOf('ko') === 0) ? 'ko' : 'en'));
+</script>
 </body>
 </html>
