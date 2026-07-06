@@ -25,22 +25,69 @@
   #langSwitch button.on{background:var(--ink);color:#fff}
   html[data-lang="ko"] .en{display:none!important}
   html[data-lang="en"] .ko{display:none!important}
+
   header.hero{background:linear-gradient(180deg,#141c3e 0%,#3a3468 45%,#c2653f 80%,#f0a05c 100%);
     color:#fff;padding:72px 0 56px;text-align:center}
   .hero img.icon{width:120px;height:120px;border-radius:27px;margin:0 auto 20px;
     box-shadow:0 12px 32px rgba(0,0,0,.35)}
   .hero h1{font-size:44px;font-weight:800;letter-spacing:-0.02em;margin:0 0 10px}
-  .hero p.tag{font-size:20px;opacity:.92;margin:0 0 26px}
+  .hero p.tag{font-size:21px;opacity:.95;margin:0 0 8px}
+  .hero p.sub{font-size:16px;opacity:.75;margin:0 0 28px}
   .store-badge{display:inline-block;background:#000;color:#fff;border:1px solid rgba(255,255,255,.35);
     border-radius:12px;padding:12px 22px;font-size:16px;font-weight:600}
+  .hero .perks{margin:18px 0 0;font-size:14px;opacity:.85}
+  .hero .perks span{margin:0 10px}
+
   section{padding:56px 0}
-  h2{font-size:28px;font-weight:800;letter-spacing:-0.02em;margin:0 0 24px}
+  h2{font-size:28px;font-weight:800;letter-spacing:-0.02em;margin:0 0 8px}
+  p.lead{color:var(--muted);margin:0 0 28px;font-size:16.5px}
+
+  /* 3스텝 */
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px 22px;text-align:center}
+  .step .num{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#e8833a,#f0a05c);
+    color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:17px}
+  .step h3{font-size:18px;margin:0 0 6px}
+  .step p{margin:0;color:var(--muted);font-size:15px}
+
+  /* 월드 카드 */
+  .world{position:relative;border-radius:var(--radius);overflow:hidden;margin-bottom:18px;border:1px solid var(--line)}
+  .world img{width:100%}
+  .world .label{position:absolute;left:0;right:0;bottom:0;padding:40px 24px 18px;
+    background:linear-gradient(180deg,transparent,rgba(10,14,30,.82));color:#fff}
+  .world .label h3{font-size:22px;margin:0 0 4px}
+  .world .label p{margin:0;font-size:15px;opacity:.9}
+
+  /* 기체 라인업 */
+  .fleet{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+  .plane{background:#1a2130;border-radius:var(--radius);overflow:hidden;color:#fff}
+  .plane img{width:100%}
+  .plane .body{padding:16px 18px 18px}
+  .plane h3{font-size:17px;margin:0 0 4px}
+  .plane .role{font-size:13px;color:#f0a05c;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+  .plane p{margin:6px 0 0;font-size:14px;color:#aeb6c8}
+
+  /* 특징 그리드 */
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
   .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
   .card h3{font-size:18px;margin:0 0 8px}
   .card p{margin:0;color:var(--muted);font-size:15px}
+
   .shots{display:grid;grid-template-columns:1fr;gap:18px}
   .shots img{border-radius:var(--radius);border:1px solid var(--line)}
+
+  /* 신뢰 밴드 */
+  .trust{background:linear-gradient(135deg,#141c3e,#2c3160);color:#fff;border-radius:var(--radius);
+    padding:34px 30px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+  .trust h3{font-size:17px;margin:0 0 6px;color:#ffc48a}
+  .trust p{margin:0;font-size:14.5px;color:#d9dcec}
+
+  /* CTA */
+  .cta{background:linear-gradient(180deg,#f0a05c,#c2653f);border-radius:var(--radius);
+    color:#fff;text-align:center;padding:48px 24px}
+  .cta h2{margin:0 0 8px}
+  .cta p{margin:0 0 24px;opacity:.92}
+
   footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:14px;text-align:center}
   footer a{color:var(--muted);margin:0 10px}
 </style>
@@ -56,43 +103,37 @@
     <h1>SkyBound</h1>
     <p class="tag ko">기울여서 나는, 가장 손쉬운 비행.</p>
     <p class="tag en">Tilt to fly. The easiest way to take to the sky.</p>
+    <p class="sub ko">이륙부터 착륙까지 — 석양의 하늘을 나는 감성 비행 시뮬레이션</p>
+    <p class="sub en">From takeoff to touchdown — a serene flight sim under sunset skies</p>
     <a class="store-badge" href="https://apps.apple.com/app/id6787317568"><span class="ko">App Store에서 받기</span><span class="en">Download on the App Store</span></a>
+    <p class="perks">
+      <span class="ko">✓ 무료로 시작</span><span class="en">✓ Free to start</span>
+      <span class="ko">✓ 광고 없음</span><span class="en">✓ No ads</span>
+      <span class="ko">✓ 계정·네트워크 불필요</span><span class="en">✓ No account, fully offline</span>
+    </p>
   </div>
 </header>
 
 <section>
   <div class="wrap">
-    <h2><span class="ko">특징</span><span class="en">Features</span></h2>
-    <div class="grid">
-      <div class="card">
-        <h3><span class="ko">직관적인 틸트 조종</span><span class="en">Intuitive tilt controls</span></h3>
-        <p class="ko">기기를 기울여 롤·피치, 가상 스로틀·러더로 미세 조작. 누구나 1분 만에 이륙할 수 있습니다.</p>
-        <p class="en">Tilt for roll and pitch, with a virtual throttle and rudder for fine control. Anyone can take off in under a minute.</p>
+    <h2><span class="ko">1분이면 하늘 위</span><span class="en">Airborne in a minute</span></h2>
+    <p class="lead ko">복잡한 조작 없이, 기기를 기울이는 것만으로 비행이 시작됩니다.</p>
+    <p class="lead en">No complicated controls — just tilt your device and you're flying.</p>
+    <div class="steps">
+      <div class="step"><div class="num">1</div>
+        <h3><span class="ko">스로틀을 올리고</span><span class="en">Push the throttle</span></h3>
+        <p class="ko">좌측 슬라이더로 엔진 출력을 올려 활주로를 달립니다.</p>
+        <p class="en">Slide the throttle up and roll down the runway.</p>
       </div>
-      <div class="card">
-        <h3><span class="ko">가벼운 진짜 비행 물리</span><span class="en">Lightweight real physics</span></h3>
-        <p class="ko">양력·실속·바람·상승기류를 반영한 60Hz 고정 스텝 물리. 아케이드처럼 쉽고, 시뮬처럼 깊습니다.</p>
-        <p class="en">Fixed-step 60 Hz physics with lift, stall, wind and thermals. Easy like an arcade, deep like a sim.</p>
+      <div class="step"><div class="num">2</div>
+        <h3><span class="ko">기울여서 날고</span><span class="en">Tilt and fly</span></h3>
+        <p class="ko">기기를 기울여 선회하고 오르내립니다. 몸이 기억하는 직관 조작.</p>
+        <p class="en">Bank and climb by tilting. Controls your body already knows.</p>
       </div>
-      <div class="card">
-        <h3><span class="ko">세 개의 세계</span><span class="en">Three worlds</span></h3>
-        <p class="ko">화산섬 아졸라 제도, 붉은 캐니언 세도나 협곡, 설산 수로 하이달 피오르 — 각기 다른 지형과 도전.</p>
-        <p class="en">Volcanic Azolla Islands, red-rock Sedona Canyon and icy Hydal Fjord — each with its own terrain and challenges.</p>
-      </div>
-      <div class="card">
-        <h3><span class="ko">기체 4종</span><span class="en">Four aircraft</span></h3>
-        <p class="ko">훈련기 스카이호크, 수상기 펠리컨, 글라이더 알바트로스, 제트 팰컨 — 특성이 다른 비행감.</p>
-        <p class="en">Skyhawk trainer, Pelican seaplane, Albatross glider and Falcon jet — each flies differently.</p>
-      </div>
-      <div class="card">
-        <h3><span class="ko">미션과 해금</span><span class="en">Missions &amp; unlocks</span></h3>
-        <p class="ko">링 게이트 코스, 화물 운송, 착륙 챌린지. 별을 모아 새 기체와 맵을 해금하세요.</p>
-        <p class="en">Ring-gate courses, cargo runs and landing challenges. Earn stars to unlock new aircraft and maps.</p>
-      </div>
-      <div class="card">
-        <h3><span class="ko">시간대·날씨</span><span class="en">Time &amp; weather</span></h3>
-        <p class="ko">맑은 아침, 골든아워, 강풍, 안개, 야간 — 같은 맵도 전혀 다른 비행이 됩니다.</p>
-        <p class="en">Clear morning, golden hour, breeze, fog and night — the same map, a whole new flight.</p>
+      <div class="step"><div class="num">3</div>
+        <h3><span class="ko">부드럽게 착륙</span><span class="en">Grease the landing</span></h3>
+        <p class="ko">얕은 각도로 활주로에 내려앉아 착륙 판정에 도전하세요.</p>
+        <p class="en">Settle in at a shallow angle and chase the perfect landing.</p>
       </div>
     </div>
   </div>
@@ -100,11 +141,152 @@
 
 <section style="padding-top:0">
   <div class="wrap">
-    <h2><span class="ko">스크린샷</span><span class="en">Screenshots</span></h2>
-    <div class="shots">
-      <img src="shots/01-azolla-skyhawk.jpg" alt="Azolla Islands flight">
-      <img src="shots/02-sedona-canyon.jpg" alt="Sedona Canyon run">
+    <h2><span class="ko">세 개의 세계</span><span class="en">Three worlds</span></h2>
+    <p class="lead ko">손으로 빚은 세 개의 맵 — 지형이 곧 도전이 됩니다.</p>
+    <p class="lead en">Three handcrafted maps where the terrain itself is the challenge.</p>
+
+    <div class="world">
+      <img src="shots/01-azolla-skyhawk.jpg" alt="Azolla Islands">
+      <div class="label">
+        <h3><span class="ko">아졸라 제도</span><span class="en">Azolla Islands</span></h3>
+        <p class="ko">화산과 산호빛 바다 위를 나는 첫 비행지. 해안 활주로에서 이륙해 칼데라를 통과해 보세요.</p>
+        <p class="en">Your first skies — a volcano over coral seas. Take off from the coastal strip and thread the caldera.</p>
+      </div>
+    </div>
+    <div class="world">
+      <img src="shots/02-sedona-canyon.jpg" alt="Sedona Canyon">
+      <div class="label">
+        <h3><span class="ko">세도나 협곡</span><span class="en">Sedona Canyon</span></h3>
+        <p class="ko">붉은 절벽 사이를 스치듯 나는 협곡 런. 좁은 슬롯 캐니언이 최고 난도의 코스를 만듭니다.</p>
+        <p class="en">Skim between red-rock walls. Narrow slot canyons carve out the hardest lines in the game.</p>
+      </div>
+    </div>
+    <div class="world">
       <img src="shots/03-hydal-fjord.jpg" alt="Hydal Fjord">
+      <div class="label">
+        <h3><span class="ko">하이달 피오르</span><span class="en">Hydal Fjord</span></h3>
+        <p class="ko">설산과 빙하 수로가 이어지는 북국의 세계. 고고도 빙원 활주로가 기다립니다.</p>
+        <p class="en">A northern world of snow peaks and glacial channels — with a high-altitude icefield runway.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2><span class="ko">기체 라인업</span><span class="en">The fleet</span></h2>
+    <p class="lead ko">특성이 뚜렷한 4종 — 별을 모아 해금하거나 바로 잠금 해제할 수 있습니다.</p>
+    <p class="lead en">Four distinct aircraft — unlock them with stars, or instantly.</p>
+    <div class="fleet">
+      <div class="plane"><img src="aircraft/skyhawk.jpg" alt="Skyhawk">
+        <div class="body"><div class="role"><span class="ko">훈련기</span><span class="en">Trainer</span></div>
+          <h3>Skyhawk</h3>
+          <p class="ko">균형 잡힌 첫 기체. 모든 것의 기준.</p>
+          <p class="en">The balanced starter. The benchmark for everything.</p>
+        </div>
+      </div>
+      <div class="plane"><img src="aircraft/pelican.jpg" alt="Pelican">
+        <div class="body"><div class="role"><span class="ko">수상기</span><span class="en">Seaplane</span></div>
+          <h3>Pelican</h3>
+          <p class="ko">물 위에 내려앉는 플로트 수상기. 저속에서 안정적.</p>
+          <p class="en">A floatplane that lands on water. Steady and slow.</p>
+        </div>
+      </div>
+      <div class="plane"><img src="aircraft/albatross.jpg" alt="Albatross">
+        <div class="body"><div class="role"><span class="ko">글라이더</span><span class="en">Glider</span></div>
+          <h3>Albatross</h3>
+          <p class="ko">엔진 없이 상승기류를 타는 순수 활공의 즐거움.</p>
+          <p class="en">No engine — just thermals and the pure joy of soaring.</p>
+        </div>
+      </div>
+      <div class="plane"><img src="aircraft/falcon.jpg" alt="Falcon">
+        <div class="body"><div class="role"><span class="ko">제트</span><span class="en">Jet</span></div>
+          <h3>Falcon</h3>
+          <p class="ko">최고 속도의 제트. 협곡 런에서 진가를 발휘합니다.</p>
+          <p class="en">Top speed of the fleet. Built for canyon runs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2><span class="ko">특징</span><span class="en">Features</span></h2>
+    <div class="grid">
+      <div class="card">
+        <h3><span class="ko">가벼운 진짜 비행 물리</span><span class="en">Lightweight real physics</span></h3>
+        <p class="ko">양력·실속·바람·상승기류를 반영한 60Hz 고정 스텝 물리. 아케이드처럼 쉽고, 시뮬처럼 깊습니다.</p>
+        <p class="en">Fixed-step 60 Hz physics with lift, stall, wind and thermals. Easy like an arcade, deep like a sim.</p>
+      </div>
+      <div class="card">
+        <h3><span class="ko">미션과 해금</span><span class="en">Missions &amp; unlocks</span></h3>
+        <p class="ko">링 게이트 코스, 화물 운송, 착륙 챌린지. 별을 모아 새 기체와 맵을 해금하세요.</p>
+        <p class="en">Ring-gate courses, cargo runs and landing challenges. Earn stars to unlock aircraft and maps.</p>
+      </div>
+      <div class="card">
+        <h3><span class="ko">시간대·날씨</span><span class="en">Time &amp; weather</span></h3>
+        <p class="ko">맑은 아침, 골든아워, 강풍, 안개, 야간 — 같은 맵도 전혀 다른 비행이 됩니다.</p>
+        <p class="en">Clear morning, golden hour, breeze, fog and night — the same map, a whole new flight.</p>
+      </div>
+      <div class="card">
+        <h3><span class="ko">착륙 판정</span><span class="en">Landing grades</span></h3>
+        <p class="ko">하강 속도와 뱅크로 판정하는 착륙 등급 — '완벽한 착륙'에 도전하세요.</p>
+        <p class="en">Landings graded by descent rate and bank — chase the perfect touchdown.</p>
+      </div>
+      <div class="card">
+        <h3><span class="ko">시야 둘러보기</span><span class="en">Look around</span></h3>
+        <p class="ko">화면을 드래그해 주변 경치를 둘러보고, 손을 떼면 시점이 부드럽게 복귀합니다.</p>
+        <p class="en">Drag to look around the scenery; the camera glides back when you let go.</p>
+      </div>
+      <div class="card">
+        <h3><span class="ko">한국어·영어·일본어</span><span class="en">Localized</span></h3>
+        <p class="ko">한국어, 영어, 일본어를 지원합니다.</p>
+        <p class="en">Available in English, Korean and Japanese.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2><span class="ko">순간들</span><span class="en">Moments</span></h2>
+    <div class="shots">
+      <img src="shots/04-falcon-sunset.jpg" alt="Falcon at sunset">
+      <img src="shots/05-pelican-seaplane.jpg" alt="Pelican over sunset water">
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="trust">
+      <div>
+        <h3><span class="ko">개인정보 수집 없음</span><span class="en">Zero data collection</span></h3>
+        <p class="ko">계정도, 서버도, 추적도 없습니다. 진행 데이터는 기기 안에만 저장됩니다.</p>
+        <p class="en">No accounts, no servers, no tracking. Your progress stays on your device.</p>
+      </div>
+      <div>
+        <h3><span class="ko">완전한 오프라인</span><span class="en">Fully offline</span></h3>
+        <p class="ko">비행기 모드에서도 끝까지 플레이할 수 있습니다.</p>
+        <p class="en">Playable end-to-end in airplane mode — fittingly.</p>
+      </div>
+      <div>
+        <h3><span class="ko">공정한 해금</span><span class="en">Fair unlocks</span></h3>
+        <p class="ko">모든 기체와 맵은 플레이만으로 해금 가능. 구매는 선택입니다.</p>
+        <p class="en">Everything can be unlocked by playing. Purchases are optional shortcuts.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="cta">
+      <h2><span class="ko">오늘, 첫 이륙을 해보세요</span><span class="en">Make your first takeoff today</span></h2>
+      <p class="ko">튜토리얼이 첫 비행을 함께합니다 — 활주로 끝에서 하늘이 시작됩니다.</p>
+      <p class="en">The tutorial flies with you — the sky begins at the end of the runway.</p>
+      <a class="store-badge" href="https://apps.apple.com/app/id6787317568"><span class="ko">App Store에서 받기</span><span class="en">Download on the App Store</span></a>
     </div>
   </div>
 </section>
@@ -113,7 +295,7 @@
   <div class="wrap">
     <a href="support.html"><span class="ko">지원</span><span class="en">Support</span></a> ·
     <a href="privacy.html"><span class="ko">개인정보처리방침</span><span class="en">Privacy Policy</span></a>
-    <div style="margin-top:8px">© 2026 SkyBound. All rights reserved.</div>
+    <div style="margin-top:8px">© 2026 SkyBound. All rights reserved. · <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a></div>
   </div>
 </footer>
 
