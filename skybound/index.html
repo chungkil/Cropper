@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SkyBound — 기울여서 나는 감성 비행 시뮬레이션</title>
+<meta name="description" content="틸트 조종으로 이륙부터 착륙까지. 화산섬·협곡·피오르 세 개의 세계를 나는 iOS 비행 시뮬레이션 게임 SkyBound.">
+<style>
+  :root{
+    --ink:#1d1d2b; --muted:#5b6170; --bg:#f7f8fb; --card:#ffffff;
+    --line:#e6e8ee; --accent:#e8833a; --sky:#2f4a8f; --radius:18px; --maxw:1000px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;
+    color:var(--ink);background:var(--bg);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%;height:auto}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+  header.hero{background:linear-gradient(180deg,#141c3e 0%,#3a3468 45%,#c2653f 80%,#f0a05c 100%);
+    color:#fff;padding:72px 0 56px;text-align:center}
+  .hero img.icon{width:120px;height:120px;border-radius:27px;margin:0 auto 20px;
+    box-shadow:0 12px 32px rgba(0,0,0,.35)}
+  .hero h1{font-size:44px;font-weight:800;letter-spacing:-0.02em;margin:0 0 10px}
+  .hero p.tag{font-size:20px;opacity:.92;margin:0 0 26px}
+  .store-badge{display:inline-block;background:#000;color:#fff;border:1px solid rgba(255,255,255,.35);
+    border-radius:12px;padding:12px 22px;font-size:16px;font-weight:600}
+  section{padding:56px 0}
+  h2{font-size:28px;font-weight:800;letter-spacing:-0.02em;margin:0 0 24px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+  .card h3{font-size:18px;margin:0 0 8px}
+  .card p{margin:0;color:var(--muted);font-size:15px}
+  .shots{display:grid;grid-template-columns:1fr;gap:18px}
+  .shots img{border-radius:var(--radius);border:1px solid var(--line)}
+  footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:14px;text-align:center}
+  footer a{color:var(--muted);margin:0 10px}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <img class="icon" src="icon.png" alt="SkyBound 앱 아이콘">
+    <h1>SkyBound</h1>
+    <p class="tag">기울여서 나는, 가장 손쉬운 비행.</p>
+    <a class="store-badge" href="https://apps.apple.com/app/id6787317568">App Store에서 받기</a>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>특징</h2>
+    <div class="grid">
+      <div class="card"><h3>직관적인 틸트 조종</h3><p>기기를 기울여 롤·피치, 가상 스로틀·러더로 미세 조작. 누구나 1분 만에 이륙할 수 있습니다.</p></div>
+      <div class="card"><h3>가벼운 진짜 비행 물리</h3><p>양력·실속·바람·상승기류를 반영한 60Hz 고정 스텝 물리. 아케이드처럼 쉽고, 시뮬처럼 깊습니다.</p></div>
+      <div class="card"><h3>세 개의 세계</h3><p>화산섬 아졸라 제도, 붉은 캐니언 세도나 협곡, 설산 수로 하이달 피오르 — 각기 다른 지형과 도전.</p></div>
+      <div class="card"><h3>기체 4종</h3><p>훈련기 스카이호크, 수상기 펠리컨, 글라이더 알바트로스, 제트 팰컨 — 특성이 다른 비행감.</p></div>
+      <div class="card"><h3>미션과 해금</h3><p>링 게이트 코스, 화물 운송, 착륙 챌린지. 별을 모아 새 기체와 맵을 해금하세요.</p></div>
+      <div class="card"><h3>시간대·날씨</h3><p>맑은 아침, 골든아워, 강풍, 안개, 야간 — 같은 맵도 전혀 다른 비행이 됩니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>스크린샷</h2>
+    <div class="shots">
+      <img src="shots/01-azolla-skyhawk.jpg" alt="아졸라 제도 비행">
+      <img src="shots/02-sedona-canyon.jpg" alt="세도나 협곡 통과">
+      <img src="shots/03-hydal-fjord.jpg" alt="하이달 피오르 설산">
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="support.html">지원</a> · <a href="privacy.html">개인정보처리방침</a>
+    <div style="margin-top:8px">© 2026 SkyBound. All rights reserved.</div>
+  </div>
+</footer>
+</body>
+</html>
