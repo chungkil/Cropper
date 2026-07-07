@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skydive — Precision Landing Game</title>
+<meta property="og:title" content="Skydive: Precision Landing">
+<meta property="og:description" content="Jump from 4,000 meters, read the wind and land dead center.">
+<style>
+  :root { --bg:#f8f9fa; --card:#fff; --fg:#1a1d21; --sub:#5c6670; --accent:#10266E; --link:#3366cc; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; background:var(--bg); color:var(--fg); line-height:1.7; }
+  .wrap { max-width:720px; margin:0 auto; padding:24px 20px 60px; }
+  .lang-toggle { text-align:right; margin-bottom:8px; }
+  .lang-toggle button { border:1px solid #ccc; background:#fff; padding:6px 14px; border-radius:16px; cursor:pointer; font-size:13px; }
+  .lang-toggle button.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .hero { text-align:center; padding:48px 20px; background:linear-gradient(180deg,#10266E,#2C56B8); border-radius:16px; color:#fff; }
+  .hero h1 { font-size:40px; letter-spacing:1px; }
+  .hero p { margin:12px 0 24px; color:#C9D6F5; font-size:17px; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:32px 0; }
+  .card { background:var(--card); border-radius:14px; padding:20px; box-shadow:0 4px 20px rgba(0,0,0,.08); }
+  .card h3 { font-size:16px; margin-bottom:6px; color:var(--accent); }
+  .card p { font-size:14px; color:var(--sub); }
+  footer { margin-top:48px; text-align:center; font-size:13px; color:var(--sub); }
+  footer a { color:var(--link); text-decoration:none; margin:0 8px; }
+  @media (max-width:480px) { .grid { grid-template-columns:1fr; } .hero h1 { font-size:32px; } }
+  [data-lang] { display:none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="lang-toggle">
+    <button id="btn-ko" onclick="setLang('ko')">한국어</button>
+    <button id="btn-en" onclick="setLang('en')">English</button>
+  </div>
+
+  <div class="hero">
+    <h1>SKYDIVE</h1>
+    <p data-lang="ko">4000미터에서 뛰어내려 바람을 읽고 타겟 정중앙에 착지하세요.</p>
+    <p data-lang="en">Jump from 4,000 meters, read the wind and land dead center.</p>
+    <a href="https://apps.apple.com/app/idAPP_ID_PLACEHOLDER">
+      <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="54" alt="Download on the App Store">
+    </a>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h3 data-lang="ko">리얼 물리</h3><h3 data-lang="en">Real Physics</h3>
+      <p data-lang="ko">종단속도 자유낙하, 낙하산 공기역학, 윙수트 양력까지 물리로 재현했습니다.</p>
+      <p data-lang="en">Terminal-velocity freefall, parachute aerodynamics and wingsuit lift, all simulated.</p>
+    </div>
+    <div class="card">
+      <h3 data-lang="ko">살아있는 바람</h3><h3 data-lang="en">Living Wind</h3>
+      <p data-lang="ko">매 점프 방향과 세기가 달라지고 실시간 돌풍이 붑니다. HUD 나침반으로 읽으세요.</p>
+      <p data-lang="en">Random direction and speed every jump, with live gusts. Read it on the HUD compass.</p>
+    </div>
+    <div class="card">
+      <h3 data-lang="ko">정밀 착지 등급</h3><h3 data-lang="en">Precision Grades</h3>
+      <p data-lang="ko">2미터 이내 PERFECT 1000점부터 MISS, 산악 CRASHED까지. 최고 점수에 도전하세요.</p>
+      <p data-lang="en">From PERFECT 1000 within 2 meters down to MISS, or CRASHED in the mountains.</p>
+    </div>
+    <div class="card">
+      <h3 data-lang="ko">두 가지 모드</h3><h3 data-lang="en">Two Modes</h3>
+      <p data-lang="ko">클래식 스카이다이브와 산맥을 가르는 윙수트 활공. 한 판 1분.</p>
+      <p data-lang="en">Classic skydive and wingsuit gliding over the mountains. One-minute rounds.</p>
+    </div>
+    <div class="card">
+      <h3 data-lang="ko">기울임 조작</h3><h3 data-lang="en">Tilt Controls</h3>
+      <p data-lang="ko">기기를 기울여 조종하고, 탭 한 번으로 낙하산을 펼칩니다.</p>
+      <p data-lang="en">Steer by tilting your phone. One tap deploys the parachute.</p>
+    </div>
+    <div class="card">
+      <h3 data-lang="ko">바로 플레이</h3><h3 data-lang="en">Jump Right In</h3>
+      <p data-lang="ko">계정도 로그인도 없습니다. 설치하고 바로 뛰어내리세요.</p>
+      <p data-lang="en">No account, no sign-in. Install and jump.</p>
+    </div>
+  </div>
+
+  <footer>
+    <a href="privacy.html" data-lang="ko">개인정보 처리방침</a><a href="privacy.html" data-lang="en">Privacy Policy</a>
+    <a href="support.html" data-lang="ko">기술 지원</a><a href="support.html" data-lang="en">Support</a>
+    <a href="mailto:chungkil.cksw@gmail.com">Contact</a>
+    <p style="margin-top:12px">&copy; 2026 Chungkil Kim. All rights reserved.</p>
+  </footer>
+</div>
+<script>
+function setLang(l){
+  document.querySelectorAll('[data-lang]').forEach(e=>{e.style.display=e.dataset.lang===l?(e.tagName==='SPAN'||e.tagName==='A'?'inline':'block'):'none';});
+  document.getElementById('btn-ko').classList.toggle('active',l==='ko');
+  document.getElementById('btn-en').classList.toggle('active',l==='en');
+  localStorage.setItem('skydive-lang',l);
+}
+setLang(localStorage.getItem('skydive-lang')||(navigator.language.startsWith('ko')?'ko':'en'));
+</script>
+</body>
+</html>
