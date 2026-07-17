@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>지원 — 천자문 배우기</title>
+<style>
+:root{--paper:#F3E8D7;--ink:#1A365D;--red:#B22222;--sub:#8A7059;--card:#FFFFFF}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;background:var(--paper);color:#2d3748;line-height:1.8}
+html[data-lang="ko"] .l-en{display:none}
+html[data-lang="en"] .l-ko{display:none}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px 60px}
+.langbar{display:flex;justify-content:flex-end;padding:14px 0}
+.langbar button{border:1px solid var(--red);background:transparent;color:var(--red);padding:5px 14px;cursor:pointer;font-size:14px}
+.langbar button:first-child{border-radius:8px 0 0 8px}
+.langbar button:last-child{border-radius:0 8px 8px 0}
+.langbar button.on{background:var(--red);color:#fff}
+h1{color:var(--ink);font-size:1.7rem;margin:16px 0 24px}
+.card{background:var(--card);border-radius:14px;padding:26px;box-shadow:0 4px 18px rgba(26,54,93,.08);margin-bottom:18px}
+.card h2{color:var(--ink);font-size:1.15rem;margin-bottom:10px}
+.contact{border-left:4px solid var(--red)}
+.contact a{font-size:1.05rem;font-weight:600}
+.faq h3{color:var(--ink);font-size:1rem;margin:16px 0 4px}
+.faq h3:first-of-type{margin-top:0}
+.faq p{font-size:.94rem}
+table{width:100%;border-collapse:collapse;font-size:.94rem}
+td{padding:7px 4px;border-bottom:1px solid #eee2cf;vertical-align:top}
+td:first-child{color:var(--sub);width:38%}
+a{color:var(--red)}
+.back{display:inline-block;margin-top:10px;color:var(--ink);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="langbar">
+    <button id="btn-ko" class="on" onclick="setLang('ko')">한국어</button>
+    <button id="btn-en" onclick="setLang('en')">English</button>
+  </div>
+
+  <h1><span class="l-ko">지원</span><span class="l-en">Support</span></h1>
+
+  <div class="card contact">
+    <h2><span class="l-ko">문의하기</span><span class="l-en">Contact Us</span></h2>
+    <p><a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a></p>
+    <p style="font-size:.9rem;color:var(--sub)">
+      <span class="l-ko">보통 1~2 영업일 안에 답변드립니다. 기기 모델과 iOS 버전을 함께 알려주시면 더 빨리 도와드릴 수 있습니다.</span>
+      <span class="l-en">We usually reply within 1–2 business days. Including your device model and iOS version helps us respond faster.</span>
+    </p>
+  </div>
+
+  <div class="card faq">
+    <h2>FAQ</h2>
+
+    <h3><span class="l-ko">인터넷 없이 쓸 수 있나요?</span><span class="l-en">Does it work offline?</span></h3>
+    <p><span class="l-ko">네. 모든 콘텐츠가 앱에 내장되어 있어 설치 후에는 인터넷 연결 없이 전 기능을 사용할 수 있습니다.</span>
+    <span class="l-en">Yes. All content ships inside the app, so every feature works without an internet connection.</span></p>
+
+    <h3><span class="l-ko">다음 과가 잠겨 있어요.</span><span class="l-en">The next lesson is locked.</span></h3>
+    <p><span class="l-ko">학당의 과는 앞 과를 마치면 차례로 열리는 순차 학습 방식입니다. 결제와는 무관하며, 모든 과가 무료입니다.</span>
+    <span class="l-en">Lessons unlock in order as you complete the previous one. This is a learning sequence, not a paywall — everything is free.</span></p>
+
+    <h3><span class="l-ko">카메라 인식이 동작하지 않아요.</span><span class="l-en">Camera recognition is not working.</span></h3>
+    <p><span class="l-ko">설정 &gt; 천자문 배우기 &gt; 카메라에서 권한을 허용해 주세요. 인쇄된 글자를 밝은 곳에서 비추면 인식률이 높아집니다. 손글씨보다는 인쇄체 인식에 최적화되어 있습니다.</span>
+    <span class="l-en">Allow camera access in Settings &gt; Learn Cheonjamun &gt; Camera. Recognition works best on printed characters in good lighting.</span></p>
+
+    <h3><span class="l-ko">발음이 들리지 않아요.</span><span class="l-en">I cannot hear pronunciation.</span></h3>
+    <p><span class="l-ko">기기 음량을 확인해 주세요. 발음은 무음 스위치가 켜져 있어도 재생되도록 설정되어 있습니다. 그래도 들리지 않으면 설정 &gt; 손쉬운 사용 &gt; 콘텐츠 말하기에서 한국어 음성이 설치되어 있는지 확인해 주세요.</span>
+    <span class="l-en">Check the device volume. Audio plays even with the silent switch on. If it still fails, make sure a Korean voice is installed under Settings &gt; Accessibility &gt; Spoken Content.</span></p>
+
+    <h3><span class="l-ko">학습 기록을 초기화하고 싶어요.</span><span class="l-en">How do I reset my progress?</span></h3>
+    <p><span class="l-ko">학습 기록은 기기 안에만 저장되므로 앱을 삭제 후 재설치하면 초기화됩니다. 삭제 전에는 복구할 수 없으니 유의해 주세요.</span>
+    <span class="l-en">Progress lives only on your device, so deleting and reinstalling the app resets it. This cannot be undone.</span></p>
+
+    <h3><span class="l-ko">기기를 바꾸면 기록이 옮겨지나요?</span><span class="l-en">Does progress transfer to a new device?</span></h3>
+    <p><span class="l-ko">현재 버전은 iCloud 동기화를 지원하지 않습니다. 기록은 각 기기에 따로 저장됩니다.</span>
+    <span class="l-en">The current version does not sync via iCloud. Progress is stored per device.</span></p>
+  </div>
+
+  <div class="card">
+    <h2><span class="l-ko">앱 정보</span><span class="l-en">App Information</span></h2>
+    <table>
+      <tr><td><span class="l-ko">개발자</span><span class="l-en">Developer</span></td><td>Chungkil Kim</td></tr>
+      <tr><td><span class="l-ko">플랫폼</span><span class="l-en">Platform</span></td><td>iPhone, iPad (iOS 17.0+)</td></tr>
+      <tr><td><span class="l-ko">가격</span><span class="l-en">Price</span></td><td><span class="l-ko">무료 (광고·인앱 결제 없음)</span><span class="l-en">Free (no ads, no in-app purchases)</span></td></tr>
+      <tr><td><span class="l-ko">언어</span><span class="l-en">Language</span></td><td><span class="l-ko">한국어</span><span class="l-en">Korean</span></td></tr>
+    </table>
+  </div>
+
+  <p>
+    <a href="privacy.html"><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></a>
+  </p>
+  <a class="back" href="index.html"><span class="l-ko">← 홈으로</span><span class="l-en">← Back to Home</span></a>
+</div>
+
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  document.getElementById('btn-ko').classList.toggle('on', l==='ko');
+  document.getElementById('btn-en').classList.toggle('on', l==='en');
+  try{localStorage.setItem('cjm-lang', l);}catch(e){}
+}
+try{var s=localStorage.getItem('cjm-lang'); if(s==='en') setLang('en');}catch(e){}
+</script>
+</body>
+</html>

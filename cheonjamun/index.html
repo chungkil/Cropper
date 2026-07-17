@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>천자문 배우기 — 서당식 한문 학습과 한자 사전</title>
+<meta property="og:title" content="천자문 배우기 — Learn Cheonjamun">
+<meta property="og:description" content="천자문부터 주역까지 서당 커리큘럼 15권 427과. 광고 없이 전부 무료.">
+<style>
+:root{--paper:#F3E8D7;--paper2:#FAF4E9;--ink:#1A365D;--ink2:#2B4A7A;--red:#B22222;--sub:#8A7059;--card:#FFFFFF}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7}
+html[data-lang="ko"] .l-en{display:none}
+html[data-lang="en"] .l-ko{display:none}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+.langbar{display:flex;justify-content:flex-end;padding:14px 0}
+.langbar button{border:1px solid var(--red);background:transparent;color:var(--red);padding:5px 14px;cursor:pointer;font-size:14px}
+.langbar button:first-child{border-radius:8px 0 0 8px}
+.langbar button:last-child{border-radius:0 8px 8px 0}
+.langbar button.on{background:var(--red);color:#fff}
+.hero{text-align:center;padding:40px 0 50px}
+.hero img.icon{width:120px;height:120px;border-radius:27px;box-shadow:0 8px 30px rgba(26,54,93,.18)}
+.hero h1{font-size:2.2rem;margin:22px 0 10px;letter-spacing:-.5px}
+.hero p.tag{font-size:1.15rem;color:var(--sub);margin-bottom:26px}
+.badge img{height:54px}
+.badge .soon{display:inline-block;font-size:.85rem;color:var(--sub);margin-top:8px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:10px 0 54px}
+.stat{background:var(--card);border-radius:14px;padding:22px 8px;text-align:center;box-shadow:0 4px 18px rgba(26,54,93,.08)}
+.stat b{display:block;font-size:1.6rem;color:var(--red)}
+.stat span{font-size:.9rem;color:var(--sub)}
+h2.sec{font-size:1.5rem;margin:0 0 22px;text-align:center}
+h2.sec::after{content:"";display:block;width:44px;height:3px;background:var(--red);margin:10px auto 0;border-radius:2px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:56px}
+.card{background:var(--card);border-radius:16px;padding:24px 20px;box-shadow:0 4px 18px rgba(26,54,93,.08)}
+.card .em{font-size:1.7rem}
+.card h3{font-size:1.05rem;margin:10px 0 6px}
+.card p{font-size:.92rem;color:#4a5568}
+.shots{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:60px}
+.shots img{width:100%;border-radius:14px;box-shadow:0 6px 22px rgba(26,54,93,.14)}
+footer{background:var(--ink);color:#dfe7f2;padding:36px 0;text-align:center;font-size:.9rem}
+footer a{color:#fff;text-decoration:none;margin:0 12px}
+footer a:hover{text-decoration:underline}
+footer .cr{margin-top:14px;color:#9fb3c8}
+@media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}.shots{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:1.7rem}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="langbar">
+    <button id="btn-ko" class="on" onclick="setLang('ko')">한국어</button>
+    <button id="btn-en" onclick="setLang('en')">English</button>
+  </div>
+
+  <section class="hero">
+    <img class="icon" src="img/icon.png" alt="천자문 배우기 앱 아이콘">
+    <h1><span class="l-ko">천자문 배우기</span><span class="l-en">Learn Cheonjamun</span></h1>
+    <p class="tag">
+      <span class="l-ko">조선 서당의 방식 그대로 — 천자문부터 주역까지, 광고 없이 전부 무료</span>
+      <span class="l-en">Classical Korean seodang method — from Cheonjamun to I Ching, completely free with no ads</span>
+    </p>
+    <div class="badge">
+      <!-- 출시 후 App Store ID로 교체: https://apps.apple.com/app/id{APP_ID} -->
+      <span class="soon l-ko">App Store 출시 준비 중</span>
+      <span class="soon l-en">Coming soon to the App Store</span>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="stat"><b>15<span style="font-size:1rem">권</span></b><span class="l-ko">서당 커리큘럼</span><span class="l-en">Classic books</span></div>
+    <div class="stat"><b>427<span style="font-size:1rem">과</span></b><span class="l-ko">단계별 레슨</span><span class="l-en">Structured lessons</span></div>
+    <div class="stat"><b>9,526<span style="font-size:1rem">자</span></b><span class="l-ko">한자 사전</span><span class="l-en">Hanja dictionary</span></div>
+    <div class="stat"><b>1,000</b><span class="l-ko">사자성어</span><span class="l-en">Four-character idioms</span></div>
+  </section>
+
+  <h2 class="sec"><span class="l-ko">주요 기능</span><span class="l-en">Features</span></h2>
+  <section class="grid">
+    <div class="card"><div class="em">📖</div>
+      <h3><span class="l-ko">학당 — 서당식 커리큘럼</span><span class="l-en">Hakdang — Seodang Curriculum</span></h3>
+      <p><span class="l-ko">천자문 125과부터 사자소학, 명심보감, 논어, 맹자, 주역까지 15권을 입문·기초·사서·삼경 4단계로 차례로 공부합니다.</span>
+      <span class="l-en">Study 15 classic books in order — from Cheonjamun's 125 lessons through Analects, Mencius, and I Ching — across four stages.</span></p></div>
+    <div class="card"><div class="em">✍️</div>
+      <h3><span class="l-ko">습자 · 강독 · 배강</span><span class="l-en">Trace, Read Aloud, Recite</span></h3>
+      <p><span class="l-ko">필순 따라쓰기로 익히고, 서산을 놓고 소리 내어 읽고, 마지막에 외워 말하는 전통 세 걸음 학습.</span>
+      <span class="l-en">The traditional three steps: trace each stroke, read aloud with a tally, then recite from memory.</span></p></div>
+    <div class="card"><div class="em">🔁</div>
+      <h3><span class="l-ko">자전 — 간격 반복 복습</span><span class="l-en">Jajeon — Spaced Repetition</span></h3>
+      <p><span class="l-ko">배운 한자를 잊을 때쯤 플래시카드와 퀴즈로 다시 묻습니다.</span>
+      <span class="l-en">Flashcards and quizzes resurface each character right before you forget it.</span></p></div>
+    <div class="card"><div class="em">🖌️</div>
+      <h3><span class="l-ko">필순 애니메이션</span><span class="l-en">Stroke Order Animation</span></h3>
+      <p><span class="l-ko">글자마다 획이 그려지는 순서를 애니메이션으로 보여줍니다. 훈음, 부수, 획수, 급수 정보 포함.</span>
+      <span class="l-en">Watch every character drawn stroke by stroke, with readings, radicals, stroke counts, and levels.</span></p></div>
+    <div class="card"><div class="em">📷</div>
+      <h3><span class="l-ko">카메라 · 필기 검색</span><span class="l-en">Camera and Handwriting Search</span></h3>
+      <p><span class="l-ko">책이나 간판의 한자를 카메라로 비추어 찾고, 모르는 글자는 손으로 그려서 찾습니다. 모두 기기 안에서 처리됩니다.</span>
+      <span class="l-en">Point your camera at printed hanja or draw a character by hand — all recognized on-device.</span></p></div>
+    <div class="card"><div class="em">🕊️</div>
+      <h3><span class="l-ko">무료 · 무광고 · 오프라인</span><span class="l-en">Free, No Ads, Offline</span></h3>
+      <p><span class="l-ko">결제도 광고도 로그인도 없습니다. 데이터를 수집하지 않으며 인터넷 없이 모든 기능이 동작합니다.</span>
+      <span class="l-en">No purchases, no ads, no sign-in. No data collection, and everything works without internet.</span></p></div>
+  </section>
+
+  <h2 class="sec"><span class="l-ko">화면 미리보기</span><span class="l-en">Screenshots</span></h2>
+  <section class="shots">
+    <img src="img/shot1.jpg" alt="학당 홈">
+    <img src="img/shot2.jpg" alt="습자 따라쓰기">
+    <img src="img/shot3.jpg" alt="한자 상세 필순">
+    <img src="img/shot4.jpg" alt="강독">
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a href="privacy.html"><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></a>
+    <a href="support.html"><span class="l-ko">지원</span><span class="l-en">Support</span></a>
+    <a href="mailto:chungkil.cksw@gmail.com">Contact</a>
+    <div class="cr">© 2026 Chungkil Kim. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  document.getElementById('btn-ko').classList.toggle('on', l==='ko');
+  document.getElementById('btn-en').classList.toggle('on', l==='en');
+  try{localStorage.setItem('cjm-lang', l);}catch(e){}
+}
+try{var s=localStorage.getItem('cjm-lang'); if(s==='en') setLang('en');}catch(e){}
+</script>
+</body>
+</html>

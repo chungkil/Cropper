@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>개인정보 처리방침 — 천자문 배우기</title>
+<style>
+:root{--paper:#F3E8D7;--ink:#1A365D;--red:#B22222;--sub:#8A7059;--card:#FFFFFF}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;background:var(--paper);color:#2d3748;line-height:1.8}
+html[data-lang="ko"] .l-en{display:none}
+html[data-lang="en"] .l-ko{display:none}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px 60px}
+.langbar{display:flex;justify-content:flex-end;padding:14px 0}
+.langbar button{border:1px solid var(--red);background:transparent;color:var(--red);padding:5px 14px;cursor:pointer;font-size:14px}
+.langbar button:first-child{border-radius:8px 0 0 8px}
+.langbar button:last-child{border-radius:0 8px 8px 0}
+.langbar button.on{background:var(--red);color:#fff}
+h1{color:var(--ink);font-size:1.7rem;margin:16px 0 4px}
+.date{color:var(--sub);font-size:.9rem;margin-bottom:28px}
+.card{background:var(--card);border-radius:14px;padding:26px 26px;box-shadow:0 4px 18px rgba(26,54,93,.08);margin-bottom:18px}
+.card h2{color:var(--ink);font-size:1.15rem;margin-bottom:10px}
+.card p, .card li{font-size:.95rem}
+.card ul{padding-left:20px;margin-top:6px}
+.hl{background:#FDF3E3;border-left:4px solid var(--red);padding:14px 18px;border-radius:8px;font-weight:600;color:var(--ink)}
+a{color:var(--red)}
+.back{display:inline-block;margin-top:10px;color:var(--ink);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="langbar">
+    <button id="btn-ko" class="on" onclick="setLang('ko')">한국어</button>
+    <button id="btn-en" onclick="setLang('en')">English</button>
+  </div>
+
+  <h1><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></h1>
+  <p class="date"><span class="l-ko">앱: 천자문 배우기 · 최종 수정일: 2026년 7월 17일</span><span class="l-en">App: Learn Cheonjamun · Last updated: July 17, 2026</span></p>
+
+  <div class="card">
+    <p class="hl">
+      <span class="l-ko">천자문 배우기는 어떤 개인정보도 수집하지 않습니다.</span>
+      <span class="l-en">Learn Cheonjamun does not collect any personal information.</span>
+    </p>
+  </div>
+
+  <div class="card">
+    <h2><span class="l-ko">1. 수집하는 정보</span><span class="l-en">1. Information We Collect</span></h2>
+    <p><span class="l-ko">없습니다. 이 앱에는 로그인, 계정, 광고, 분석 도구, 외부 서버 통신이 없습니다. 이름, 이메일, 위치, 기기 식별자, 사용 기록 등 어떤 정보도 수집·전송하지 않습니다.</span>
+    <span class="l-en">None. The app has no sign-in, no accounts, no ads, no analytics, and no communication with external servers. We do not collect or transmit names, email addresses, locations, device identifiers, or usage records.</span></p>
+  </div>
+
+  <div class="card">
+    <h2><span class="l-ko">2. 카메라 사용</span><span class="l-en">2. Camera Use</span></h2>
+    <p><span class="l-ko">사전의 "카메라로 한자 찾기" 기능은 기기의 카메라 영상을 기기 안에서만(온디바이스) 인식합니다. 영상과 인식 결과는 저장되거나 외부로 전송되지 않습니다. 카메라 권한을 거부해도 나머지 기능은 모두 정상 동작합니다.</span>
+    <span class="l-en">The dictionary's "find hanja with camera" feature recognizes characters entirely on your device. Camera frames and recognition results are never stored or transmitted. If you decline camera permission, every other feature continues to work.</span></p>
+  </div>
+
+  <div class="card">
+    <h2><span class="l-ko">3. 데이터 저장</span><span class="l-en">3. Data Storage</span></h2>
+    <p><span class="l-ko">학습 진행, 복습 기록, 즐겨찾기, 설정은 모두 사용자의 기기 안에만 저장됩니다. 앱을 삭제하면 이 데이터도 함께 삭제됩니다.</span>
+    <span class="l-en">Learning progress, review history, bookmarks, and settings are stored only on your device. Deleting the app deletes this data.</span></p>
+  </div>
+
+  <div class="card">
+    <h2><span class="l-ko">4. 제3자 서비스</span><span class="l-en">4. Third-Party Services</span></h2>
+    <p><span class="l-ko">광고 SDK, 분석 SDK, 소셜 로그인 등 제3자 서비스를 사용하지 않습니다.</span>
+    <span class="l-en">The app uses no third-party services — no advertising SDKs, no analytics SDKs, no social sign-in.</span></p>
+  </div>
+
+  <div class="card">
+    <h2><span class="l-ko">5. 아동의 개인정보</span><span class="l-en">5. Children's Privacy</span></h2>
+    <p><span class="l-ko">이 앱은 어떤 정보도 수집하지 않으므로 아동의 개인정보 역시 수집하지 않습니다. 모든 연령이 안심하고 사용할 수 있습니다.</span>
+    <span class="l-en">Since the app collects nothing, it collects no information from children either. It is safe for all ages.</span></p>
+  </div>
+
+  <div class="card">
+    <h2><span class="l-ko">6. 정책 변경</span><span class="l-en">6. Changes to This Policy</span></h2>
+    <p><span class="l-ko">정책이 변경되면 이 페이지에 게시하고 최종 수정일을 갱신합니다.</span>
+    <span class="l-en">If this policy changes, we will post the update on this page and revise the date above.</span></p>
+  </div>
+
+  <div class="card">
+    <h2><span class="l-ko">7. 문의</span><span class="l-en">7. Contact</span></h2>
+    <p><a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a></p>
+  </div>
+
+  <a class="back" href="index.html"><span class="l-ko">← 홈으로</span><span class="l-en">← Back to Home</span></a>
+</div>
+
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  document.getElementById('btn-ko').classList.toggle('on', l==='ko');
+  document.getElementById('btn-en').classList.toggle('on', l==='en');
+  try{localStorage.setItem('cjm-lang', l);}catch(e){}
+}
+try{var s=localStorage.getItem('cjm-lang'); if(s==='en') setLang('en');}catch(e){}
+</script>
+</body>
+</html>
