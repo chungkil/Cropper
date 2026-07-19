@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>난설헌 — 허난설헌 시집, 원문 그대로 오늘의 언어로</title>
+<meta name="description" content="허난설헌의 한시를 세로쓰기 원문·독음·번역·주해와 함께. 오늘의 시 위젯, 어휘 풀이, 완전 오프라인. iPhone·iPad.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --snow: #F7F7F4; --paper: #FDFDFB; --ink: #1F2124; --ink-soft: #62656B;
+    --orchid: #8B7AA6; --orchid-deep: #6F5F8C; --hairline: #E4E4DC;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Segoe UI', sans-serif;
+    background: var(--snow); color: var(--ink); line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  .serif { font-family: 'Noto Serif KR', 'Apple Myungjo', serif; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+  body[data-lang="ko"] [data-lang="en"] { display: none; }
+  body[data-lang="en"] [data-lang="ko"] { display: none; }
+
+  header {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(247,247,244,0.88); backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid var(--hairline);
+  }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 58px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 17px; color: var(--ink); text-decoration: none; }
+  .brand .logo {
+    width: 30px; height: 30px; border-radius: 8px; display: grid; place-items: center;
+    background: var(--ink); color: var(--snow); font-size: 16px; font-weight: 600;
+  }
+  .lang-toggle { display: flex; gap: 2px; border: 1px solid var(--hairline); border-radius: 999px; padding: 3px; background: var(--paper); }
+  .lang-toggle button {
+    font-size: 12.5px; font-weight: 600; border: 0; background: transparent; color: var(--ink-soft);
+    padding: 4px 12px; border-radius: 999px; cursor: pointer;
+  }
+  .lang-toggle button.active { background: var(--orchid); color: #fff; }
+
+  .hero { text-align: center; padding: 84px 24px 64px; position: relative; overflow: hidden; }
+  .hero .hanja {
+    font-size: 88px; line-height: 1.1; letter-spacing: 0.06em;
+    color: var(--ink); font-weight: 600; margin-bottom: 18px;
+  }
+  .hero .eyebrow { font-size: 13px; font-weight: 700; letter-spacing: .12em; color: var(--orchid-deep); margin-bottom: 22px; }
+  .hero h1 { font-size: 26px; font-weight: 600; margin-bottom: 14px; letter-spacing: -0.01em; }
+  .hero .desc { font-size: 16px; color: var(--ink-soft); max-width: 520px; margin: 0 auto 34px; }
+  .badge-link {
+    display: inline-block; background: var(--ink); color: var(--snow); text-decoration: none;
+    font-size: 15px; font-weight: 600; padding: 13px 26px; border-radius: 999px;
+    transition: background .15s ease;
+  }
+  .badge-link:hover { background: var(--orchid-deep); }
+  .snowdot { position: absolute; border-radius: 50%; background: #fff; pointer-events: none; }
+
+  .divider { width: 46px; height: 1px; background: var(--hairline); margin: 0 auto; }
+
+  .section { padding: 64px 0 8px; }
+  .section h2 { font-size: 22px; font-weight: 700; text-align: center; margin-bottom: 8px; }
+  .section .sub { text-align: center; color: var(--ink-soft); font-size: 15px; margin-bottom: 40px; }
+  .features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .card {
+    background: var(--paper); border: 1px solid var(--hairline); border-radius: 16px;
+    padding: 26px 24px;
+  }
+  .card .glyph { font-size: 30px; color: var(--orchid); margin-bottom: 12px; display: block; }
+  .card h3 { font-size: 16.5px; margin-bottom: 8px; }
+  .card p { font-size: 14px; color: var(--ink-soft); }
+
+  .story-band {
+    margin: 72px 0 0; padding: 56px 24px; background: var(--paper);
+    border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline);
+  }
+  .story-band .inner { max-width: 620px; margin: 0 auto; text-align: center; }
+  .story-band .mark { font-size: 34px; color: var(--orchid); margin-bottom: 16px; }
+  .story-band h2 { font-size: 21px; margin-bottom: 16px; }
+  .story-band p { font-size: 15px; color: var(--ink-soft); margin-bottom: 12px; }
+
+  .full-band { text-align: center; padding: 72px 24px 8px; }
+  .full-band .price { font-size: 15px; color: var(--orchid-deep); font-weight: 700; margin-top: 10px; }
+  .full-band p { font-size: 15px; color: var(--ink-soft); max-width: 480px; margin: 0 auto; }
+
+  footer { margin-top: 84px; border-top: 1px solid var(--hairline); padding: 32px 0 44px; }
+  .foot { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 13.5px; color: var(--ink-soft); }
+  .foot a { color: var(--ink-soft); text-decoration: none; margin-left: 16px; }
+  .foot a:hover { color: var(--orchid-deep); }
+
+  @media (max-width: 640px) {
+    .hero .hanja { font-size: 64px; }
+    .features { grid-template-columns: 1fr; }
+    .stat + .stat { border-left: 0; }
+  }
+</style>
+</head>
+<body data-lang="ko">
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html"><span class="logo serif">蘭</span><span data-lang="ko">난설헌</span><span data-lang="en">Nanseolheon</span></a>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" data-set-lang="ko" class="active">한국어</button>
+      <button type="button" data-set-lang="en">English</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="snowdot" style="left:12%; top:18%; width:7px; height:7px; opacity:.8"></div>
+    <div class="snowdot" style="left:26%; top:56%; width:5px; height:5px; opacity:.6"></div>
+    <div class="snowdot" style="left:78%; top:24%; width:8px; height:8px; opacity:.7"></div>
+    <div class="snowdot" style="left:88%; top:62%; width:5px; height:5px; opacity:.55"></div>
+    <div class="snowdot" style="left:64%; top:10%; width:4px; height:4px; opacity:.5"></div>
+    <div class="eyebrow" data-lang="ko">허난설헌 시집 · 1563–1589</div>
+    <div class="eyebrow" data-lang="en">POEMS OF HEO NANSEOLHEON · 1563–1589</div>
+    <div class="hanja serif">蘭雪軒</div>
+    <h1 data-lang="ko">400년 전 여성 시인의 목소리를,<br>원문 그대로 그리고 오늘의 언어로.</h1>
+    <h1 data-lang="en">A poet's voice from 400 years ago —<br>in her own script, and in today's words.</h1>
+    <p class="desc" data-lang="ko">세로쓰기 원문과 행 단위 번역, 글자마다 붙는 독음, 시어 풀이와 주해까지. 서버 없이 완전 오프라인으로 감상하는 디지털 소장본.</p>
+    <p class="desc" data-lang="en">Vertical-script originals with line-by-line translation, per-character readings, glossary and commentary — a fully offline digital edition.</p>
+    <a class="badge-link" href="https://apps.apple.com/app/id6792453819" data-lang="ko">App Store에서 받기</a>
+    <a class="badge-link" href="https://apps.apple.com/app/id6792453819" data-lang="en">Download on the App Store</a>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="section wrap">
+    <h2 data-lang="ko">책을 넘기듯 읽습니다</h2>
+    <h2 data-lang="en">Reads like turning pages</h2>
+    <p class="sub" data-lang="ko">감상과 학습, 두 호흡을 한 화면에서</p>
+    <p class="sub" data-lang="en">Appreciation and study, in one place</p>
+    <div class="features">
+      <div class="card">
+        <span class="glyph serif">縱</span>
+        <h3 data-lang="ko">세로쓰기 원문</h3>
+        <h3 data-lang="en">Vertical script</h3>
+        <p data-lang="ko">오른쪽에서 왼쪽으로, 한시 본연의 조판. 명조 활자와 한지빛 여백으로 책의 질감을 되살렸습니다.</p>
+        <p data-lang="en">Right-to-left columns, the way classical poetry was set — in serif type on snow-white paper tones.</p>
+      </div>
+      <div class="card">
+        <span class="glyph serif">音</span>
+        <h3 data-lang="ko">글자마다 독음</h3>
+        <h3 data-lang="en">Per-character readings</h3>
+        <p data-lang="ko">한자 오른쪽 아래에 음을 살짝 병기. 토글 한 번으로 켜고 꺼도 조판은 흔들리지 않습니다.</p>
+        <p data-lang="en">Korean readings sit quietly beside each character — toggle them without reflowing the layout.</p>
+      </div>
+      <div class="card">
+        <span class="glyph serif">註</span>
+        <h3 data-lang="ko">시어 풀이와 주해</h3>
+        <h3 data-lang="en">Glossary &amp; commentary</h3>
+        <p data-lang="ko">방점 찍힌 시어를 탭하면 뜻과 독음이. 창작 배경과 전고는 주해로 이어집니다.</p>
+        <p data-lang="en">Tap marked words for meanings; commentary carries the background and allusions.</p>
+      </div>
+      <div class="card">
+        <span class="glyph serif">日</span>
+        <h3 data-lang="ko">오늘의 시 위젯</h3>
+        <h3 data-lang="en">Poem of the day</h3>
+        <p data-lang="ko">매일 자정, 홈 화면과 잠금 화면에 한 편. 모두가 같은 날 같은 시를 만납니다.</p>
+        <p data-lang="en">A new poem at midnight, on your home and lock screen — the same poem for everyone, every day.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="story-band">
+    <div class="inner">
+      <div class="mark serif">蘭 · 雪</div>
+      <h2 data-lang="ko">불태워질 뻔한 시집</h2>
+      <h2 data-lang="en">The poems that were nearly burned</h2>
+      <p data-lang="ko">난설헌은 세상을 떠나며 자신의 시를 모두 불태우라 남겼습니다. 동생 허균이 남은 시와 외우던 시를 모아 유고를 수습했고, 시집은 1606년 명나라 사신에게 전해져 중국에서 먼저 간행되었습니다. 1608년 조선 목판본, 1711년 일본 간행 — 시 210여 수가 그렇게 살아남았습니다.</p>
+      <p data-lang="en">On her deathbed, Nanseolheon asked for her poems to be burned. Her brother Heo Gyun gathered what remained; the collection reached Ming envoys in 1606 and was published in China first, then Joseon (1608) and Japan (1711). Some 210 poems survived.</p>
+      <p data-lang="ko">이 앱은 그렇게 살아남은 시들을 다시 읽는 자리입니다.</p>
+      <p data-lang="en">This app is a place to read what survived.</p>
+    </div>
+  </section>
+
+  <section class="full-band">
+    <h2 class="serif" style="font-size:21px; margin-bottom:14px;" data-lang="ko">문집 완전판</h2>
+    <h2 class="serif" style="font-size:21px; margin-bottom:14px;" data-lang="en">Complete Edition</h2>
+    <p data-lang="ko">대표작은 무료로 감상하실 수 있습니다. 한 번의 구매로 문집 전체와 앞으로의 증보 수록분까지 소장하세요. 광고는 무료 구간에도 없습니다.</p>
+    <p data-lang="en">Selected poems are free to read. One purchase unlocks the entire collection, including future additions. No ads — anywhere.</p>
+    <div class="price" data-lang="ko">완전판 ₩6,900 · 비소모성(1회 구매)</div>
+    <div class="price" data-lang="en">Complete Edition — one-time purchase</div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>© 2026 CKSW · <span data-lang="ko">난설헌</span><span data-lang="en">Nanseolheon</span></div>
+    <div>
+      <a href="support.html" data-lang="ko">지원</a><a href="support.html" data-lang="en">Support</a>
+      <a href="privacy.html" data-lang="ko">개인정보처리방침</a><a href="privacy.html" data-lang="en">Privacy Policy</a>
+      <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var saved = null;
+    try { saved = localStorage.getItem('nanseol-lang'); } catch (e) {}
+    var lang = saved || ((navigator.language || '').toLowerCase().indexOf('ko') === 0 ? 'ko' : 'en');
+    apply(lang);
+    document.querySelectorAll('[data-set-lang]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        apply(btn.getAttribute('data-set-lang'));
+        try { localStorage.setItem('nanseol-lang', document.body.getAttribute('data-lang')); } catch (e) {}
+      });
+    });
+    function apply(l) {
+      document.body.setAttribute('data-lang', l);
+      document.documentElement.setAttribute('lang', l);
+      document.querySelectorAll('[data-set-lang]').forEach(function (b) {
+        b.classList.toggle('active', b.getAttribute('data-set-lang') === l);
+      });
+    }
+  })();
+</script>
+</body>
+</html>
