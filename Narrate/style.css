@@ -25,9 +25,10 @@ body {
 a { color: var(--grad-b); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-/* 언어 토글 */
-body[data-lang="en"] .ko { display: none; }
-body[data-lang="ko"] .en { display: none; }
+/* 언어 토글 — 선택한 언어 외 스팬을 감춘다 (en / ko / zh) */
+body[data-lang="en"] .ko, body[data-lang="en"] .zh { display: none; }
+body[data-lang="ko"] .en, body[data-lang="ko"] .zh { display: none; }
+body[data-lang="zh"] .en, body[data-lang="zh"] .ko { display: none; }
 
 .header {
   background: linear-gradient(135deg, var(--grad-a), var(--grad-b));
