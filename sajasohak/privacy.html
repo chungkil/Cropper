@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>개인정보 처리방침 — 사자소학 배우기</title>
+<style>
+:root{--paper:#F3E8D7;--ink:#1A365D;--red:#B22222;--sub:#8A7059;--card:#FFFFFF}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;background:var(--paper);color:#2d3748;line-height:1.8}
+html[data-lang="ko"] .l-en{display:none}
+html[data-lang="en"] .l-ko{display:none}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px 60px}
+.langbar{display:flex;justify-content:flex-end;padding:14px 0}
+.langbar button{border:1px solid var(--red);background:transparent;color:var(--red);padding:5px 14px;cursor:pointer;font-size:14px}
+.langbar button:first-child{border-radius:8px 0 0 8px}
+.langbar button:last-child{border-radius:0 8px 8px 0}
+.langbar button.on{background:var(--red);color:#fff}
+h1{color:var(--ink);font-size:1.7rem;margin:16px 0 4px}
+.date{color:var(--sub);font-size:.9rem;margin-bottom:28px}
+.card{background:var(--card);border-radius:14px;padding:26px 26px;box-shadow:0 4px 18px rgba(26,54,93,.08);margin-bottom:18px}
+.card h2{color:var(--ink);font-size:1.15rem;margin-bottom:10px}
+.card p, .card li{font-size:.95rem}
+.card ul{padding-left:20px;margin-top:6px}
+.card p + p{margin-top:10px}
+.hl{background:#FDF3E3;border-left:4px solid var(--red);padding:14px 18px;border-radius:8px;font-weight:600;color:var(--ink)}
+a{color:var(--red)}
+.back{display:inline-block;margin-top:10px;color:var(--ink);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="langbar">
+    <button id="btn-ko" class="on" onclick="setLang('ko')">한국어</button>
+    <button id="btn-en" onclick="setLang('en')">English</button>
+  </div>
+
+  <h1><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></h1>
+  <p class="date"><span class="l-ko">앱: 사자소학 배우기 · 최종 수정일: 2026년 7월 26일</span><span class="l-en">App: Learn Sajasohak · Last updated: July 26, 2026</span></p>
+
+  <div class="card">
+    <p class="hl">
+      <span class="l-ko">사자소학 배우기는 회원 가입도, 계정도, 자체 서버도 없습니다. 개발자가 수집해 보관하는 개인정보는 없습니다. 다만 무료 이용 시 표시되는 광고를 위해 Google AdMob이 기기 정보를 처리합니다.</span>
+      <span class="l-en">Learn Sajasohak has no sign-up, no accounts, and no server of its own. The developer collects and stores no personal information. However, Google AdMob processes device information to serve the ads shown to free users.</span>
+    </p>
+  </div>
+
+  <div class="card">
+    <h2><span class="l-ko">1. 개발자가 수집하는 정보</span><span class="l-en">1. Information the Developer Collects</span></h2>
+    <p><span class="l-ko">없습니다. 이름, 이메일, 전화번호, 위치, 학습 내용 등 어떤 정보도 개발자에게 전송되지 않습니다. 이 앱에는 로그인과 계정이 없고, 개발자가 운영하는 서버도 없습니다.</span>
+    <span class="l-en">None. No names, email addresses, phone numbers, locations, or learning content are transmitted to the developer. The app has no sign-in, no accounts, and no developer-operated server.</span></p>
+  </div>
+
+  <div class="card">
+    <h2><span class="l-ko">2. 광고 (Google AdMob)</span><span class="l-en">2. Advertising (Google AdMob)</span></h2>
+    <p><span class="l-ko">평생 이용권을 구매하지 않은 이용자에게는 화면 하단에 광고가 표시됩니다. 광고는 Google AdMob이 게재하며, 이 과정에서 AdMob이 광고 식별자(IDFA), 대략적인 위치(IP 기반), 광고 노출·클릭 기록을 처리합니다. 이 정보는 개발자에게 전달되지 않습니다.</span>
+    <span class="l-en">Users who have not purchased the lifetime unlock see an ad at the bottom of the screen. Ads are served by Google AdMob, which in the process handles the advertising identifier (IDFA), coarse location derived from IP, and ad impression and click records. This information is not shared with the developer.</span></p>
+    <p><span class="l-ko"><strong>평생 이용권을 구매하면 광고가 사라지며, 광고 SDK 자체가 시동되지 않습니다.</strong> 즉 구매자에게는 위 정보 처리가 일어나지 않습니다.</span>
+    <span class="l-en"><strong>Purchasing the lifetime unlock removes ads, and the ad SDK is never started at all.</strong> For purchasers, none of the processing above takes place.</span></p>
+    <p><span class="l-ko">Google의 개인정보 처리방침: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></span>
+    <span class="l-en">Google Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></span></p>
+  </div>
+
+  <div class="card">
+    <h2><span class="l-ko">3. 앱 추적 투명성 (ATT)</span><span class="l-en">3. App Tracking Transparency</span></h2>
+    <p><span class="l-ko">앱을 처음 실행하면 추적 동의를 묻는 시스템 창이 뜹니다. 동의하시면 관련성 높은 개인화 광고가, 거부하시면 비개인화 광고가 표시됩니다.</span>
+    <span class="l-en">On first launch, the system asks for tracking permission. If you allow it, you see personalized ads; if you decline, you see non-personalized ads.</span></p>
+    <p><span class="l-ko"><strong>거부해도 앱 기능은 전부 그대로 동작합니다.</strong> 잠기는 콘텐츠나 제한되는 기능은 없습니다. 이 선택은 iOS 설정 앱의 개인정보 보호 및 보안 - 추적에서 언제든 바꿀 수 있습니다.</span>
+    <span class="l-en"><strong>Declining does not restrict any feature.</strong> No content is locked and nothing stops working. You can change this choice at any time in Settings, under Privacy and Security, then Tracking.</span></p>
+  </div>
+
+  <div class="card">
+    <h2><span class="l-ko">4. 데이터 저장</span><span class="l-en">4. Data Storage</span></h2>
+    <p><span class="l-ko">학습 진행·복습 기록과 사전 즐겨찾기는 사용자의 기기, 그리고 기기 이전을 위해 사용자 본인의 iCloud 계정(Apple 키-값 저장소)에 저장됩니다. 개발자를 포함한 제3자는 이 데이터에 접근할 수 없습니다. 글자별 통계와 일별 활동 기록은 기기 안에만 저장되며 동기화되지 않습니다. 앱을 삭제하면 기기 데이터가 삭제됩니다.</span>
+    <span class="l-en">Learning progress, review history, and dictionary bookmarks are stored on your device and, for device transfer, in your own iCloud account (Apple key-value storage). No third party — including the developer — can access it. Per-character statistics and daily activity records stay on the device only and are not synced. Deleting the app removes on-device data.</span></p>
+    <p><span class="l-ko">앱 안의 설정 화면에서 학습 기록을 직접 초기화할 수 있으며, 이때 기기와 iCloud의 기록이 함께 삭제됩니다.</span>
+    <span class="l-en">You can reset your learning records from the app's settings screen, which clears both the on-device and iCloud copies.</span></p>
+  </div>
+
+  <div class="card">
+    <h2><span class="l-ko">5. 인앱 구매</span><span class="l-en">5. In-App Purchase</span></h2>
+    <p><span class="l-ko">평생 이용권은 Apple의 App Store를 통해 처리됩니다. 결제 정보는 Apple이 처리하며 개발자는 카드 번호 등 결제 수단에 접근할 수 없습니다. 앱은 구매 여부만 기기에서 확인합니다.</span>
+    <span class="l-en">The lifetime unlock is processed through Apple's App Store. Apple handles payment; the developer has no access to payment methods such as card numbers. The app only checks on-device whether the purchase exists.</span></p>
+  </div>
+
+  <div class="card">
+    <h2><span class="l-ko">6. 카메라 사용</span><span class="l-en">6. Camera Use</span></h2>
+    <p><span class="l-ko">사전의 "카메라로 한자 찾기" 기능은 기기의 카메라 영상을 기기 안에서만(온디바이스) 인식합니다. 영상과 인식 결과는 저장되거나 외부로 전송되지 않습니다. 카메라 권한을 거부해도 나머지 기능은 모두 정상 동작합니다.</span>
+    <span class="l-en">The dictionary's "find hanja with camera" feature recognizes characters entirely on your device. Camera frames and recognition results are never stored or transmitted. If you decline camera permission, every other feature continues to work.</span></p>
+  </div>
+
+  <div class="card">
+    <h2><span class="l-ko">7. 알림</span><span class="l-en">7. Notifications</span></h2>
+    <p><span class="l-ko">복습 알림은 첫 과를 뗀 뒤에 권한을 요청하며, 알림 예약은 모두 기기 안에서 이루어집니다. 알림을 위해 외부로 전송되는 정보는 없습니다.</span>
+    <span class="l-en">Review reminders ask for permission after you finish your first lesson, and all scheduling happens on the device. No information is sent anywhere for notifications.</span></p>
+  </div>
+
+  <div class="card">
+    <h2><span class="l-ko">8. 아동의 개인정보</span><span class="l-en">8. Children's Privacy</span></h2>
+    <p><span class="l-ko">개발자는 아동을 포함한 어떤 이용자의 개인정보도 수집하지 않습니다. 다만 광고가 표시되는 무료 이용 시에는 Google AdMob의 정책이 함께 적용됩니다. 광고 없이 이용하시려면 평생 이용권을 구매하시면 됩니다.</span>
+    <span class="l-en">The developer collects no personal information from any user, including children. Note that while ads are shown in the free tier, Google AdMob's policies also apply. Purchasing the lifetime unlock removes ads entirely.</span></p>
+  </div>
+
+  <div class="card">
+    <h2><span class="l-ko">9. 정책 변경</span><span class="l-en">9. Changes to This Policy</span></h2>
+    <p><span class="l-ko">정책이 변경되면 이 페이지에 게시하고 최종 수정일을 갱신합니다.</span>
+    <span class="l-en">If this policy changes, we will post the update on this page and revise the date above.</span></p>
+  </div>
+
+  <div class="card">
+    <h2><span class="l-ko">10. 문의</span><span class="l-en">10. Contact</span></h2>
+    <p><a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a></p>
+  </div>
+
+  <a class="back" href="index.html"><span class="l-ko">← 홈으로</span><span class="l-en">← Back to Home</span></a>
+</div>
+
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  document.getElementById('btn-ko').classList.toggle('on', l==='ko');
+  document.getElementById('btn-en').classList.toggle('on', l==='en');
+  try{localStorage.setItem('sjs-lang', l);}catch(e){}
+}
+try{var s=localStorage.getItem('sjs-lang'); if(s==='en') setLang('en');}catch(e){}
+</script>
+</body>
+</html>
