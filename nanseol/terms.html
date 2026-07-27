@@ -19,8 +19,10 @@
   }
   .serif { font-family: 'Noto Serif KR', serif; }
   .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
-  body[data-lang="ko"] [data-lang="en"] { display: none; }
-  body[data-lang="en"] [data-lang="ko"] { display: none; }
+  /* 선택된 언어 조각만 남긴다 — 언어를 늘려도 규칙은 그대로 */
+  body[data-lang="ko"] [data-lang]:not([data-lang="ko"]),
+  body[data-lang="en"] [data-lang]:not([data-lang="en"]),
+  body[data-lang="zh"] [data-lang]:not([data-lang="zh"]) { display: none; }
   header {
     position: sticky; top: 0; z-index: 50;
     background: rgba(247,247,244,0.88); backdrop-filter: saturate(180%) blur(12px);
@@ -58,10 +60,11 @@
 <body data-lang="ko">
 <header>
   <div class="wrap nav">
-    <a class="brand" href="index.html"><span class="logo serif">蘭</span><span data-lang="ko">난설헌</span><span data-lang="en">Nanseolheon</span></a>
+    <a class="brand" href="index.html"><span class="logo serif">蘭</span><span data-lang="ko">난설헌</span><span data-lang="en">Nanseolheon</span><span data-lang="zh">兰雪轩</span></a>
     <div class="lang-toggle" role="group" aria-label="Language">
       <button type="button" data-set-lang="ko" class="active">한국어</button>
       <button type="button" data-set-lang="en">English</button>
+      <button type="button" data-set-lang="zh">中文</button>
     </div>
   </div>
 </header>
@@ -174,15 +177,68 @@
       <p>Questions about these terms: <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a></p>
     </section>
   </div>
+  <div data-lang="zh">
+    <h1>使用条款</h1>
+    <div class="date">生效日期：2026年7月19日</div>
+    <div class="callout"><b>摘要：诗歌原文属于公有领域，译文与注释是开发者的版权作品。</b>完整版为一次买断（非订阅），付款与退款遵循 Apple 的相关政策。</div>
+    <section>
+      <h2>1. 条款的适用</h2>
+      <p>本条款适用于兰雪轩集应用（以下称“本应用”）。安装或使用本应用，即表示您同意本条款。</p>
+    </section>
+    <section>
+      <h2>2. 服务内容</h2>
+      <p>本应用为许兰雪轩诗集《兰雪轩集》所收诗作提供品读与学习内容：原文、读音、韩语译文、注释与词汇释义。部分诗作免费提供；购买完整版后可解锁全部收录诗作。</p>
+    </section>
+    <section>
+      <h2>3. 知识产权</h2>
+      <ul>
+        <li>诗歌的汉文原文属于公有领域。</li>
+        <li>韩语译文、注释、词汇释义与解说，以及本应用的设计与软件，均为开发者的作品，受著作权法保护。</li>
+        <li>您可在个人、非商业范围内使用相关内容。使用本应用的引用复制功能生成的引文，在注明出处的前提下可自由分享。</li>
+        <li>未经事先书面同意，禁止对译文与注释进行批量提取、再分发或商业使用。</li>
+      </ul>
+    </section>
+    <section>
+      <h2>4. 应用内购买（完整版）</h2>
+      <ul>
+        <li>完整版为非消耗型一次买断商品，并非订阅。购买归属于您的 Apple 账户；重新安装应用或更换设备后，可通过“恢复购买”找回。</li>
+        <li>付款、账单与退款均由 Apple App Store 处理，并遵循 Apple 媒体服务条款。开发者无法访问付款信息，也无法直接办理退款；退款可在 <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a> 申请。</li>
+        <li>购买完整版后，日后更新新增的收录诗作亦无需额外付费即可解锁。但为改进服务，本应用的功能与内容构成可能有所调整。</li>
+      </ul>
+    </section>
+    <section>
+      <h2>5. 广告</h2>
+      <p>免费使用时，部分页面会显示广告；购买完整版后将移除所有广告。有关广告相关数据的处理方式，请参阅<a href="privacy.html">隐私政策</a>。</p>
+    </section>
+    <section>
+      <h2>6. 免责声明</h2>
+      <ul>
+        <li>译文与注释在参考学术资料的基础上审慎编写，但古典文学在版本与解读上可能存在不同见解。相关内容仅供品读与学习参考，不保证其作为学术引用依据的完备性。</li>
+        <li>本服务按“现状”提供。在法律允许的范围内，开发者对因使用本应用而产生的间接性或附带性损害不承担责任。</li>
+      </ul>
+    </section>
+    <section>
+      <h2>7. 条款的变更</h2>
+      <p>条款如有变更，将在本页面发布；重要变更将通过应用更新说明另行告知。变更后继续使用本应用，即视为同意变更后的条款。</p>
+    </section>
+    <section>
+      <h2>8. 适用法律</h2>
+      <p>本条款依照大韩民国法律解释。</p>
+    </section>
+    <section>
+      <h2>9. 联系我们</h2>
+      <p>条款相关咨询：<a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a></p>
+    </section>
+  </div>
 </main>
 
 <footer>
   <div class="wrap foot">
-    <div>© 2026 CKSW · <span data-lang="ko">난설헌</span><span data-lang="en">Nanseolheon</span></div>
+    <div>© 2026 CKSW · <span data-lang="ko">난설헌</span><span data-lang="en">Nanseolheon</span><span data-lang="zh">兰雪轩</span></div>
     <div>
-      <a href="index.html" data-lang="ko">홈</a><a href="index.html" data-lang="en">Home</a>
-      <a href="support.html" data-lang="ko">지원</a><a href="support.html" data-lang="en">Support</a>
-      <a href="privacy.html" data-lang="ko">개인정보처리방침</a><a href="privacy.html" data-lang="en">Privacy Policy</a>
+      <a href="index.html" data-lang="ko">홈</a><a href="index.html" data-lang="en">Home</a><a href="index.html" data-lang="zh">首页</a>
+      <a href="support.html" data-lang="ko">지원</a><a href="support.html" data-lang="en">Support</a><a href="support.html" data-lang="zh">支持</a>
+      <a href="privacy.html" data-lang="ko">개인정보처리방침</a><a href="privacy.html" data-lang="en">Privacy Policy</a><a href="privacy.html" data-lang="zh">隐私政策</a>
     </div>
   </div>
 </footer>
@@ -191,7 +247,9 @@
   (function () {
     var saved = null;
     try { saved = localStorage.getItem('nanseol-lang'); } catch (e) {}
-    var lang = saved || ((navigator.language || '').toLowerCase().indexOf('ko') === 0 ? 'ko' : 'en');
+    var nav = (navigator.language || '').toLowerCase();
+    var lang = saved || (nav.indexOf('ko') === 0 ? 'ko'
+                       : nav.indexOf('zh') === 0 ? 'zh' : 'en');
     apply(lang);
     document.querySelectorAll('[data-set-lang]').forEach(function (btn) {
       btn.addEventListener('click', function () {

@@ -19,8 +19,10 @@
   }
   .serif { font-family: 'Noto Serif KR', serif; }
   .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
-  body[data-lang="ko"] [data-lang="en"] { display: none; }
-  body[data-lang="en"] [data-lang="ko"] { display: none; }
+  /* 선택된 언어 조각만 남긴다 — 언어를 늘려도 규칙은 그대로 */
+  body[data-lang="ko"] [data-lang]:not([data-lang="ko"]),
+  body[data-lang="en"] [data-lang]:not([data-lang="en"]),
+  body[data-lang="zh"] [data-lang]:not([data-lang="zh"]) { display: none; }
   header {
     position: sticky; top: 0; z-index: 50;
     background: rgba(247,247,244,0.88); backdrop-filter: saturate(180%) blur(12px);
@@ -58,10 +60,11 @@
 <body data-lang="ko">
 <header>
   <div class="wrap nav">
-    <a class="brand" href="index.html"><span class="logo serif">蘭</span><span data-lang="ko">난설헌</span><span data-lang="en">Nanseolheon</span></a>
+    <a class="brand" href="index.html"><span class="logo serif">蘭</span><span data-lang="ko">난설헌</span><span data-lang="en">Nanseolheon</span><span data-lang="zh">兰雪轩</span></a>
     <div class="lang-toggle" role="group" aria-label="Language">
       <button type="button" data-set-lang="ko" class="active">한국어</button>
       <button type="button" data-set-lang="en">English</button>
+      <button type="button" data-set-lang="zh">中文</button>
     </div>
   </div>
 </header>
@@ -164,15 +167,63 @@
       <p>Privacy inquiries: <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a></p>
     </section>
   </div>
+  <div data-lang="zh">
+    <h1>隐私政策</h1>
+    <div class="date">生效日期：2026年7月19日</div>
+    <div class="callout"><b>摘要：开发者不直接收集任何个人信息。</b>无服务器，无账户。免费使用时会显示广告（Google AdMob），广告 SDK 可能收集广告标识符。完整版将移除所有广告。</div>
+    <section>
+      <h2>1. 开发者收集的信息</h2>
+      <p>兰雪轩集应用（以下简称“应用”）的开发者不会直接收集、传输或存储任何个人信息——不收集姓名、电子邮箱或位置信息。应用没有注册，也没有登录。关于投放广告过程中处理的数据，请参见第 4 节。</p>
+    </section>
+    <section>
+      <h2>2. 仅保存在您设备上的数据</h2>
+      <p>以下数据仅保存在您的设备上，用于提供应用功能，绝不会传输到其他任何地方：</p>
+      <ul>
+        <li>收藏、阅读记录与品读设置（主题、竖排、注音显示等）</li>
+        <li>完整版购买状态（仅通过 Apple 收据验证判定）</li>
+      </ul>
+      <p>这些数据可能包含在 iOS 的标准备份（iCloud/电脑备份）中，其处理遵循 Apple 的政策。删除应用即会一并删除这些数据。</p>
+    </section>
+    <section>
+      <h2>3. 应用内购买</h2>
+      <p>完整版购买由 Apple App Store 处理。开发者无法访问您的付款信息。关于 Apple 如何处理付款数据，请参见 <a href="https://www.apple.com/legal/privacy/">Apple 隐私政策</a>。</p>
+    </section>
+    <section>
+      <h2>4. 广告与跟踪</h2>
+      <p>免费使用时，应用的部分页面（文集列表和首页）会显示 Google AdMob 广告。诗歌品读页面从不显示广告，购买完整版后将移除所有广告。</p>
+      <ul>
+        <li>广告 SDK 可能收集广告标识符（IDFA）和设备信息，用于投放广告和防止欺诈。</li>
+        <li>经应用跟踪透明度（ATT）同意后，将显示个性化广告；若拒绝，则显示非个性化广告。拒绝不会影响应用的使用。</li>
+        <li>您可以随时在 iOS 设置 &gt; 隐私与安全性 &gt; 跟踪 中更改跟踪权限。</li>
+      </ul>
+      <p>关于 Google 如何处理数据，请参见 <a href="https://policies.google.com/technologies/ads">Google 广告政策</a>及其<a href="https://policies.google.com/privacy">隐私政策</a>。</p>
+    </section>
+    <section>
+      <h2>4-1. 使用统计（Firebase Analytics）</h2>
+      <p>为改进应用，我们通过 Google Firebase Analytics 收集匿名化的使用统计数据（页面使用情况、功能使用情况、设备信息等）。这些数据不会与可识别个人身份的信息相关联，仅用于改进应用质量。</p>
+    </section>
+    <section>
+      <h2>5. 儿童隐私</h2>
+      <p>应用完全不收集任何个人信息，因此也不会收集儿童的个人信息。</p>
+    </section>
+    <section>
+      <h2>6. 政策变更</h2>
+      <p>本政策如有变更，将在本页面公布；重大变更将通过应用更新说明予以告知。</p>
+    </section>
+    <section>
+      <h2>7. 联系方式</h2>
+      <p>隐私相关咨询：<a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a></p>
+    </section>
+  </div>
 </main>
 
 <footer>
   <div class="wrap foot">
-    <div>© 2026 CKSW · <span data-lang="ko">난설헌</span><span data-lang="en">Nanseolheon</span></div>
+    <div>© 2026 CKSW · <span data-lang="ko">난설헌</span><span data-lang="en">Nanseolheon</span><span data-lang="zh">兰雪轩</span></div>
     <div>
-      <a href="index.html" data-lang="ko">홈</a><a href="index.html" data-lang="en">Home</a>
-      <a href="support.html" data-lang="ko">지원</a><a href="support.html" data-lang="en">Support</a>
-      <a href="terms.html" data-lang="ko">이용약관</a><a href="terms.html" data-lang="en">Terms</a>
+      <a href="index.html" data-lang="ko">홈</a><a href="index.html" data-lang="en">Home</a><a href="index.html" data-lang="zh">首页</a>
+      <a href="support.html" data-lang="ko">지원</a><a href="support.html" data-lang="en">Support</a><a href="support.html" data-lang="zh">支持</a>
+      <a href="terms.html" data-lang="ko">이용약관</a><a href="terms.html" data-lang="en">Terms</a><a href="terms.html" data-lang="zh">使用条款</a>
     </div>
   </div>
 </footer>
@@ -181,7 +232,9 @@
   (function () {
     var saved = null;
     try { saved = localStorage.getItem('nanseol-lang'); } catch (e) {}
-    var lang = saved || ((navigator.language || '').toLowerCase().indexOf('ko') === 0 ? 'ko' : 'en');
+    var nav = (navigator.language || '').toLowerCase();
+    var lang = saved || (nav.indexOf('ko') === 0 ? 'ko'
+                       : nav.indexOf('zh') === 0 ? 'zh' : 'en');
     apply(lang);
     document.querySelectorAll('[data-set-lang]').forEach(function (btn) {
       btn.addEventListener('click', function () {
