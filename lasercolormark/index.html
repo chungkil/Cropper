@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laser Mark Simulator</title>
+<meta name="description" content="Calibration aid for fiber laser color marking — fluence, overlap, cumulative dose, test matrices and recipes.">
+<link rel="stylesheet" href="style.css">
+<script src="lang.js" defer></script>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="brand">
+    <div class="mark"></div>
+    <div>
+      <h1>Laser Mark Simulator</h1>
+      <p data-lang="ko">파이버 레이저 색상 마킹 캘리브레이션 보조</p>
+      <p data-lang="en">Calibration aid for fiber laser color marking</p>
+    </div>
+  </div>
+  <div class="lang">
+    <button type="button" data-lang="ko" aria-pressed="false">한국어</button>
+    <button type="button" data-lang="en" aria-pressed="false">English</button>
+  </div>
+</header>
+
+<nav>
+  <a href="index.html" class="here" data-lang="ko">소개</a>
+  <a href="index.html" class="here" data-lang="en">Overview</a>
+  <a href="support.html" data-lang="ko">지원</a>
+  <a href="support.html" data-lang="en">Support</a>
+  <a href="privacy.html" data-lang="ko">개인정보 처리방침</a>
+  <a href="privacy.html" data-lang="en">Privacy</a>
+</nav>
+
+<section data-lang="ko">
+  <h2>색을 예측하지 않습니다. 탐색 범위를 좁힙니다.</h2>
+  <p>
+    스테인리스·티타늄 파이버 레이저 색상 마킹은 산화막 두께가 수십 나노미터 단위로 갈리며 색이 바뀝니다.
+    이 앱은 그 색을 맞혀 주지 않습니다. 대신 <strong>계산할 수 있는 물리량을 계산해</strong> 시행착오 범위를 줄이고,
+    <strong>실제로 관찰한 결과를 기록</strong>으로 남깁니다.
+  </p>
+
+  <div class="card">
+    <h3>계산</h3>
+    <ul>
+      <li>플루언스 F, 스팟 중첩 OL_x / OL_y, 누적 펄스 N, 누적 에너지(CDE)</li>
+      <li>영역 판정 — 산화 / 용융 / 어블레이션</li>
+      <li>MOPA와 Q-switched 별도 모델. Q-switched에서 펄스폭은 입력이 아니라 주파수 파생값입니다</li>
+      <li>정격 주파수 곡선으로 제한한 실효 평균출력</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>시편을 태우기 전에</h3>
+    <ul>
+      <li>소형 문자 판정 — 획 폭 대 스팟 지름, 획당 해칭 라인 수와 그 근거</li>
+      <li>실제 글리프 아웃라인·스캔라인 기반 문자 열분포 (온도가 아닌 상대 에너지)</li>
+      <li>갈바노 지연 시작값과 조정 방향</li>
+      <li>개당 처리 시간·축열과 권장 사이클 간격</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>캘리브레이션 루프</h3>
+    <ul>
+      <li>주파수 × 속도 1차 매트릭스 — 마킹 순서를 무작위화해 축열 효과를 드러냅니다</li>
+      <li>칸마다 12색 라벨·균일도 기록. 시편에는 인덱스만 마킹하고 파라미터는 CSV로 조회</li>
+      <li>유망한 칸 기준 출력 3레벨 2차 매트릭스</li>
+      <li>18% 그레이 패치 기준 촬영(선택) — CIE Lab, CIEDE2000 색차</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>레시피</h3>
+    <ul>
+      <li>validated 승격 조건은 <strong>서로 다른 소재 로트 2회 재현</strong></li>
+      <li>EzCad 펜 파라미터·매트릭스 CSV 내보내기</li>
+      <li>다른 초점 거리 렌즈로 환산 (지표 보존, 재검증 필요 명시)</li>
+      <li>발진기 유형 변경 시 기존 레시피를 조용히 재해석하지 않고 무효화</li>
+    </ul>
+  </div>
+
+  <div class="card notice">
+    <h3>안전</h3>
+    <p>
+      본 앱은 캘리브레이션 보조 도구이며 장비를 제어하지 않고, 무인 운전을 전제한 기능을 제공하지 않습니다.
+      1064nm 대응 보안경, 클래스 4 차폐 환경, 흄 집진은 사용자의 책임입니다.
+      모든 파라미터는 실제 테스트로 검증한 뒤 양산에 사용하십시오.
+    </p>
+  </div>
+
+  <p class="muted">
+    계산 엔진·시각화 뷰·권장값 탐색은 제한 없이 무료이며 광고가 없습니다.
+    무료 구간에 장비 프로파일 1개와 테스트 매트릭스 1개가 포함되어 캘리브레이션 루프를 끝까지 한 번 돌려볼 수 있습니다.
+    1회 결제 Pro 해제($14.99, 구독 아님)로 매트릭스 무제한·EzCad 내보내기, 셀 촬영 색상 기록, 레시피 라이브러리, 프로파일 무제한이 열립니다.
+  </p>
+</section>
+
+<section data-lang="en">
+  <h2>It does not predict color. It narrows the search.</h2>
+  <p>
+    In fiber laser color marking on stainless and titanium, the color turns on an oxide film only tens of
+    nanometers thick. This app will not guess that color for you. Instead it
+    <strong>computes the physics that can be computed</strong> to shrink the trial-and-error space, and
+    <strong>keeps a record of what you actually observed</strong>.
+  </p>
+
+  <div class="card">
+    <h3>What it computes</h3>
+    <ul>
+      <li>Fluence F, spot overlap OL_x / OL_y, pulse count N, cumulative dose energy (CDE)</li>
+      <li>Regime classification — oxidation / melting / ablation</li>
+      <li>MOPA and Q-switched modeled separately. On Q-switched sources, pulse width is derived from frequency, not entered</li>
+      <li>Effective average power capped by the rated frequency curve</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Before you burn a specimen</h3>
+    <ul>
+      <li>Small-character feasibility — stroke width against spot diameter, hatch lines per stroke, and the reason behind the verdict</li>
+      <li>Character heat distribution from real glyph outlines and scanlines (relative energy, not temperature)</li>
+      <li>Galvo delay starting values and an adjustment direction</li>
+      <li>Throughput, heat build-up per part, and a recommended cycle interval</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>The calibration loop</h3>
+    <ul>
+      <li>A primary matrix over frequency × speed, with randomized marking order so heat accumulation shows up</li>
+      <li>Record each cell with a 12-color label and uniformity. Only the index is marked on the specimen; parameters come from the CSV</li>
+      <li>A secondary matrix at three power levels around a promising cell</li>
+      <li>Optional capture against an 18% gray patch — CIE Lab and CIEDE2000 deltas</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Recipes</h3>
+    <ul>
+      <li>Promotion to validated requires <strong>reproduction across two different material lots</strong></li>
+      <li>Export EzCad pen parameters and matrix CSV</li>
+      <li>Convert to another lens focal length (metrics preserved, revalidation flagged)</li>
+      <li>Changing a source type invalidates existing recipes rather than silently reinterpreting them</li>
+    </ul>
+  </div>
+
+  <div class="card notice">
+    <h3>Safety</h3>
+    <p>
+      This app assists calibration. It does not control equipment and provides no unattended-operation
+      feature. 1064 nm rated eyewear, a Class 4 shielded environment and fume extraction remain your
+      responsibility. Verify every parameter with an actual test before production use.
+    </p>
+  </div>
+
+  <p class="muted">
+    The calculation engine, the visualization views and the recommended-value search are free with no
+    restrictions and carry no advertising. The free tier includes one machine profile and one test matrix,
+    enough to run the calibration loop once end to end. A one-time Pro unlock ($14.99, not a subscription)
+    opens unlimited matrices with EzCad export, cell photo color records, the recipe library and unlimited profiles.
+  </p>
+</section>
+
+<footer>
+  <p data-lang="ko">문의: <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a></p>
+  <p data-lang="en">Contact: <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a></p>
+  <p>© 2026 Laser Mark Simulator</p>
+</footer>
+
+</div>
+</body>
+</html>

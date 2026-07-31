@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support — Laser Mark Simulator</title>
+<link rel="stylesheet" href="style.css">
+<script src="lang.js" defer></script>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="brand">
+    <div class="mark"></div>
+    <div>
+      <h1>Laser Mark Simulator</h1>
+      <p data-lang="ko">지원</p>
+      <p data-lang="en">Support</p>
+    </div>
+  </div>
+  <div class="lang">
+    <button type="button" data-lang="ko" aria-pressed="false">한국어</button>
+    <button type="button" data-lang="en" aria-pressed="false">English</button>
+  </div>
+</header>
+
+<nav>
+  <a href="index.html" data-lang="ko">소개</a>
+  <a href="index.html" data-lang="en">Overview</a>
+  <a href="support.html" class="here" data-lang="ko">지원</a>
+  <a href="support.html" class="here" data-lang="en">Support</a>
+  <a href="privacy.html" data-lang="ko">개인정보 처리방침</a>
+  <a href="privacy.html" data-lang="en">Privacy</a>
+</nav>
+
+<section data-lang="ko">
+  <h2>문의</h2>
+  <div class="card">
+    <p>
+      <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a><br>
+      <span class="muted">
+        문의 시 앱 버전(설정 &gt; 버전), 기기·iOS 버전, 발진기 유형(MOPA / Q-switched)과 렌즈 초점 거리를
+        함께 알려 주시면 확인이 빠릅니다.
+      </span>
+    </p>
+  </div>
+
+  <h2>자주 묻는 질문</h2>
+
+  <h3>계산한 대로 마킹했는데 색이 다릅니다</h3>
+  <p>
+    정상입니다. 이 앱은 색을 예측하지 않습니다. 같은 플루언스라도 표면 조도, 유막, 소재 로트, 주변 온도에 따라
+    산화막 성장 속도가 달라집니다. 앱이 제공하는 것은 <strong>탐색 범위</strong>이며, 색은 테스트 매트릭스로
+    확정하는 것을 전제로 설계되어 있습니다.
+  </p>
+
+  <h3>펄스폭을 바꿀 수 없습니다</h3>
+  <p>
+    발진기 유형이 Q-switched로 설정된 경우입니다. Q-switched에서 펄스폭은 입력값이 아니라 주파수에서 파생되는
+    값이므로 컨트롤이 표시되지 않습니다. 유형이 확실하지 않다면 설정 &gt; 프로파일에서
+    <em>판별 마법사</em>를 실행하세요.
+  </p>
+
+  <h3>컬러 팔레트가 비활성입니다</h3>
+  <p>
+    Q-switched 발진기에서는 컬러 마킹이 물리적으로 불가능하므로 금색·자주·청색·청록이 비활성화됩니다.
+    흑색·회색·백색·깊은 각인은 동일하게 사용할 수 있습니다.
+  </p>
+
+  <h3>레시피가 validated로 승격되지 않습니다</h3>
+  <p>
+    승격 조건은 <strong>서로 다른 소재 로트에서 2회 이상 재현</strong>입니다. 같은 로트에서 여러 번 성공해도
+    승격되지 않습니다. 로트 편차가 색상 재현의 가장 큰 변수이기 때문입니다.
+  </p>
+
+  <h3>발진기 유형을 바꾸니 레시피가 무효화되었습니다</h3>
+  <p>
+    의도된 동작입니다. 유형이 바뀌면 파라미터의 물리적 의미 자체가 달라지므로, 기존 값을 조용히 재해석하는 대신
+    무효화하고 보존합니다. 미확인(unknown)에서 유형을 확정하는 경우에만 레시피가 승계됩니다.
+  </p>
+
+  <h3>촬영한 색상 값이 실제와 다릅니다</h3>
+  <p>
+    캡처 기능은 18% 그레이 패치를 함께 촬영해 화이트밸런스를 보정합니다. 참조 카드 없이 촬영하거나,
+    그레이 패치가 너무 어둡거나 포화된 경우 측정이 거부됩니다. 측정값은 참고용이며,
+    <strong>색상 판정의 기준은 실물 견본판</strong>입니다.
+  </p>
+
+  <h3>Pro 를 샀는데 다른 기기에서 잠겨 있습니다</h3>
+  <p>
+    같은 Apple 계정으로 로그인한 뒤 설정 &gt; 구매 &gt; <em>구매 복원</em>을 실행하세요.
+    비소모성 상품이므로 추가 결제 없이 복원됩니다.
+  </p>
+
+  <h3>무료로는 어디까지 쓸 수 있나요</h3>
+  <p>
+    계산 엔진 전체(F · OL_x · OL_y · N · CDE), 스팟 배열·단면·파라미터 스윕 뷰, 권장값 자동 탐색은
+    제한 없이 무료입니다. 여기에 장비 프로파일 1개와 테스트 매트릭스 1개가 포함되어,
+    매트릭스 생성 → EzCad 내보내기 → 셀 촬영 기록 → 레시피 저장까지 한 번은 끝까지 돌려볼 수 있습니다.
+    두 번째 매트릭스나 프로파일을 만들 때 Pro 해제($14.99, 1회 결제) 안내가 나타납니다.
+  </p>
+
+  <h3>내 데이터는 어디에 저장되나요</h3>
+  <p>
+    전부 기기 안에만 저장됩니다. 계정도 서버도 없습니다.
+    자세한 내용은 <a href="privacy.html">개인정보 처리방침</a>을 참고하세요.
+  </p>
+
+  <div class="card notice">
+    <h3>안전 고지</h3>
+    <p>
+      1064nm 대응 보안경, 클래스 4 차폐 환경, 흄 집진은 사용자의 책임입니다.
+      본 앱은 무인 운전을 전제한 기능을 제공하지 않으며, 모든 파라미터는 실제 테스트로 검증한 뒤
+      사용해야 합니다.
+    </p>
+  </div>
+</section>
+
+<section data-lang="en">
+  <h2>Contact</h2>
+  <div class="card">
+    <p>
+      <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a><br>
+      <span class="muted">
+        Including your app version (Settings &gt; Version), device and iOS version, source type
+        (MOPA / Q-switched) and lens focal length helps us answer faster.
+      </span>
+    </p>
+  </div>
+
+  <h2>Frequently asked questions</h2>
+
+  <h3>I marked exactly what it computed, but the color is different</h3>
+  <p>
+    That is expected. This app does not predict color. At the same fluence, oxide growth still varies with
+    surface roughness, oil film, material lot and ambient temperature. What the app gives you is a
+    <strong>search range</strong>; the color itself is meant to be settled with a test matrix.
+  </p>
+
+  <h3>I cannot change the pulse width</h3>
+  <p>
+    Your source type is set to Q-switched. There, pulse width is derived from frequency rather than
+    entered, so the control is hidden. If you are unsure of the type, run the
+    <em>determination wizard</em> from Settings &gt; Profile.
+  </p>
+
+  <h3>The color palette is disabled</h3>
+  <p>
+    Color marking is physically impossible on a Q-switched source, so gold, purple, blue and cyan are
+    disabled. Black, gray, white and deep engraving remain available.
+  </p>
+
+  <h3>My recipe will not promote to validated</h3>
+  <p>
+    Promotion requires <strong>reproduction across two different material lots</strong>. Repeated success
+    within a single lot does not qualify, because lot variation is the largest source of color
+    irreproducibility.
+  </p>
+
+  <h3>Changing the source type invalidated my recipes</h3>
+  <p>
+    That is intentional. When the type changes, the physical meaning of the parameters changes with it, so
+    existing values are invalidated and preserved rather than silently reinterpreted. Recipes are carried
+    over only when you are confirming a previously unknown type.
+  </p>
+
+  <h3>The captured color values do not match what I see</h3>
+  <p>
+    Capture corrects white balance using an 18% gray patch photographed alongside the sample. Without the
+    reference card — or if the patch is too dark or saturated — the measurement is rejected. Values are
+    for reference; <strong>a physical sample plate remains the authority</strong> on color judgment.
+  </p>
+
+  <h3>I bought Pro but it is locked on another device</h3>
+  <p>
+    Sign in with the same Apple Account, then use Settings &gt; Purchase &gt; <em>Restore Purchases</em>.
+    It is a non-consumable, so it restores at no additional charge.
+  </p>
+
+  <h3>How far can I get on the free tier</h3>
+  <p>
+    The full calculation engine (F · OL_x · OL_y · N · CDE), the spot array, cross-section and parameter
+    sweep views, and the automatic recommended-value search are free with no restrictions. The free tier
+    also includes one machine profile and one test matrix, which is enough to run the whole loop once —
+    generate a matrix, export to EzCad, photograph the cells and save a recipe. The Pro unlock
+    ($14.99, one-time) is offered when you create a second matrix or profile.
+  </p>
+
+  <h3>Where is my data stored</h3>
+  <p>
+    Entirely on your device. There is no account and no server. See the
+    <a href="privacy.html">privacy policy</a> for details.
+  </p>
+
+  <div class="card notice">
+    <h3>Safety notice</h3>
+    <p>
+      1064 nm rated eyewear, a Class 4 shielded environment and fume extraction remain your
+      responsibility. This app provides no unattended-operation feature, and every parameter must be
+      verified by an actual test before use.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <p data-lang="ko">문의: <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a></p>
+  <p data-lang="en">Contact: <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a></p>
+  <p>© 2026 Laser Mark Simulator</p>
+</footer>
+
+</div>
+</body>
+</html>
