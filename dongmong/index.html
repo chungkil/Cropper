@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>동몽선습 배우기 — 서당식 한문 학습과 한자 사전</title>
+<meta property="og:title" content="동몽선습 배우기 — Learn Dongmongseonseup">
+<meta property="og:description" content="천자문을 뗀 아이가 다음으로 펼치던 책. 동몽선습 원문 100과 2,039자를 습자·강독·배강 세 걸음으로. 무료로 시작해 평생 이용권 한 번으로 전체 열람.">
+<style>
+:root{--paper:#F3E8D7;--paper2:#FAF4E9;--ink:#1A365D;--ink2:#2B4A7A;--red:#B22222;--sub:#8A7059;--card:#FFFFFF}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7}
+html[data-lang="ko"] .l-en{display:none}
+html[data-lang="en"] .l-ko{display:none}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+.langbar{display:flex;justify-content:flex-end;padding:14px 0}
+.langbar button{border:1px solid var(--red);background:transparent;color:var(--red);padding:5px 14px;cursor:pointer;font-size:14px}
+.langbar button:first-child{border-radius:8px 0 0 8px}
+.langbar button:last-child{border-radius:0 8px 8px 0}
+.langbar button.on{background:var(--red);color:#fff}
+.hero{text-align:center;padding:40px 0 50px}
+.hero .seal{width:120px;height:120px;border-radius:27px;box-shadow:0 8px 30px rgba(26,54,93,.18);background:var(--paper2);display:inline-flex;align-items:center;justify-content:center;font-size:64px;font-family:serif;color:var(--ink)}
+.hero h1{font-size:2.2rem;margin:22px 0 10px;letter-spacing:-.5px}
+.hero p.tag{font-size:1.15rem;color:var(--sub);margin-bottom:26px}
+.badge .soon{display:inline-block;font-size:.85rem;color:var(--sub);margin-top:8px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:10px 0 54px}
+.stat{background:var(--card);border-radius:14px;padding:22px 8px;text-align:center;box-shadow:0 4px 18px rgba(26,54,93,.08)}
+.stat b{display:block;font-size:1.6rem;color:var(--red)}
+.stat span{font-size:.9rem;color:var(--sub)}
+h2.sec{font-size:1.5rem;margin:0 0 22px;text-align:center}
+h2.sec::after{content:"";display:block;width:44px;height:3px;background:var(--red);margin:10px auto 0;border-radius:2px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:56px}
+.card{background:var(--card);border-radius:16px;padding:24px 20px;box-shadow:0 4px 18px rgba(26,54,93,.08)}
+.card .em{font-size:1.7rem}
+.card h3{font-size:1.05rem;margin:10px 0 6px}
+.card p{font-size:.92rem;color:#4a5568}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:56px}
+.step{background:var(--paper2);border:1px solid #e4d5bd;border-radius:16px;padding:24px 20px}
+.step b{color:var(--red);font-size:1.05rem}
+.step p{font-size:.92rem;color:#4a5568;margin-top:6px}
+.pricing{background:var(--paper2);border:1px solid #e4d5bd;border-radius:16px;padding:26px;margin-bottom:56px}
+.pricing h3{font-size:1.1rem;margin-bottom:10px}
+.pricing ul{padding-left:20px;font-size:.94rem;color:#4a5568}
+.note{background:#fff;border-left:4px solid var(--red);border-radius:0 12px 12px 0;padding:18px 20px;margin-bottom:56px;font-size:.94rem;color:#4a5568}
+footer{border-top:1px solid #e4d5bd;padding:26px 0 40px;text-align:center;font-size:.9rem;color:var(--sub)}
+footer a{color:var(--ink2)}
+@media(max-width:720px){.grid,.steps{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="langbar">
+  <button id="b-ko" class="on" onclick="setLang('ko')">한국어</button>
+  <button id="b-en" onclick="setLang('en')">English</button>
+</div>
+
+<div class="hero">
+  <div class="seal">蒙</div>
+  <h1><span class="l-ko">동몽선습 배우기</span><span class="l-en">Learn Dongmongseonseup</span></h1>
+  <p class="tag">
+    <span class="l-ko">천자문을 뗀 아이가 다음으로 펼치던 책</span>
+    <span class="l-en">The book Korean children opened after the Thousand Character Classic</span>
+  </p>
+  <div class="badge"><span class="soon">
+    <span class="l-ko">App Store 출시 준비 중</span><span class="l-en">Coming soon to the App Store</span>
+  </span></div>
+</div>
+
+<div class="stats">
+  <div class="stat"><b>100</b><span class="l-ko">과</span><span class="l-en">lessons</span></div>
+  <div class="stat"><b>2,039</b><span class="l-ko">원문 글자</span><span class="l-en">characters</span></div>
+  <div class="stat"><b>655</b><span class="l-ko">신출자</span><span class="l-en">new characters</span></div>
+  <div class="stat"><b>36</b><span class="l-ko">전고 구절</span><span class="l-en">sourced quotations</span></div>
+</div>
+
+<h2 class="sec"><span class="l-ko">어떤 책인가</span><span class="l-en">About the text</span></h2>
+<div class="note">
+  <p class="l-ko"><b>동몽선습(童蒙先習)</b>은 조선 중종 때 박세무가 지은, 우리나라 사람이 만든 첫 어린이 교과서입니다.
+  서당에서 천자문을 뗀 아이가 다음으로 배우던 책이지요. 오륜으로 사람의 도리를 세운 뒤,
+  중국과 우리나라의 역사를 훑어 끝맺습니다. 단군에서 시작해 삼국과 고려를 거쳐 조선에 이르는
+  뒷부분은, 서당의 아이가 처음 만나던 우리 역사이기도 했습니다.</p>
+  <p class="l-en"><b>Dongmongseonseup</b> (1541) by Park Se-mu was the first primer for children written by a Korean.
+  Students read it right after the Thousand Character Classic. It lays out the Five Relationships,
+  then closes with a survey of Chinese and Korean history — from Dangun through the Three Kingdoms
+  and Goryeo to Joseon. This app contains the complete text in 100 lessons.</p>
+</div>
+
+<h2 class="sec"><span class="l-ko">한 과를 떼는 세 걸음</span><span class="l-en">Three steps per lesson</span></h2>
+<div class="steps">
+  <div class="step"><b>習字 <span class="l-ko">습자</span><span class="l-en">Writing</span></b>
+    <p class="l-ko">새 글자를 획순 애니메이션으로 보고 손으로 따라 씁니다. 획의 순서와 방향을 함께 판정합니다.</p>
+    <p class="l-en">Trace each new character by hand. Stroke order and direction are both checked.</p></div>
+  <div class="step"><b>講讀 <span class="l-ko">강독</span><span class="l-en">Reading</span></b>
+    <p class="l-ko">현토를 단 원문을 소리 내어 읽고 뜻을 새깁니다. 서산을 놓고 세 번 낭독합니다.</p>
+    <p class="l-en">Read the annotated original aloud and work through its meaning, three times over.</p></div>
+  <div class="step"><b>背講 <span class="l-ko">배강</span><span class="l-en">Recitation</span></b>
+    <p class="l-ko">책을 덮고 외워 바칩니다. 빈칸을 채워 통과해야 다음 과가 열립니다.</p>
+    <p class="l-en">Close the book and recite from memory to unlock the next lesson.</p></div>
+</div>
+
+<h2 class="sec"><span class="l-ko">구절마다 여섯 겹의 풀이</span><span class="l-en">Six layers per passage</span></h2>
+<div class="grid">
+  <div class="card"><div class="em">🔊</div><h3><span class="l-ko">독음</span><span class="l-en">Reading</span></h3>
+    <p class="l-ko">현토를 붙인 한글 읽기</p><p class="l-en">Korean pronunciation with grammatical particles</p></div>
+  <div class="card"><div class="em">🧩</div><h3><span class="l-ko">직역</span><span class="l-en">Literal gloss</span></h3>
+    <p class="l-ko">어절마다 뜻을 붙여 한문 어순을 익힙니다</p><p class="l-en">Phrase-by-phrase gloss to learn classical word order</p></div>
+  <div class="card"><div class="em">📖</div><h3><span class="l-ko">의역</span><span class="l-en">Translation</span></h3>
+    <p class="l-ko">문장 전체의 뜻</p><p class="l-en">The passage in natural Korean</p></div>
+  <div class="card"><div class="em">🖋</div><h3><span class="l-ko">새김</span><span class="l-en">Commentary</span></h3>
+    <p class="l-ko">구절의 배경과 성어의 유래, 자구의 요점</p><p class="l-en">Background, idiom origins, and points of usage</p></div>
+  <div class="card"><div class="em">🏛</div><h3><span class="l-ko">전고</span><span class="l-en">Source</span></h3>
+    <p class="l-ko">출전이 실재하는 36구절에 원전을 인용했습니다 — 맹자·예기·논어·좌씨전 등 열 종</p>
+    <p class="l-en">36 passages carry their actual classical source — Mencius, Book of Rites, Analects and seven more</p></div>
+  <div class="card"><div class="em">📚</div><h3><span class="l-ko">사전</span><span class="l-en">Dictionary</span></h3>
+    <p class="l-ko">원문의 한자를 누르면 뜻과 획순이 바로 열립니다</p><p class="l-en">Tap any character for its meaning and stroke order</p></div>
+</div>
+
+<h2 class="sec"><span class="l-ko">옛 글을 오늘 읽는 법</span><span class="l-en">Reading an old text today</span></h2>
+<div class="note">
+  <p class="l-ko">삼종지도와 칠거지악처럼 오늘의 가치와 어긋나는 대목, 마한을 기자의 정통으로 본 서술처럼
+  지금의 학계가 받아들이지 않는 대목이 원문에 있습니다. 지우지 않고 그대로 싣되,
+  <b>새김에 시대적 맥락을 붙여</b> 무엇이 16세기의 관점이고 무엇이 오늘의 이해인지 구분해 두었습니다.
+  고전은 있는 그대로 읽히되, 오독되지 않아야 한다고 보았습니다.</p>
+  <p class="l-en">The original contains passages that conflict with present-day values, and historical claims
+  that modern scholarship rejects. Rather than removing them, the app presents them as they are and
+  <b>adds historical context in the commentary</b>, marking clearly what belongs to the 16th century
+  and what we understand today.</p>
+</div>
+
+<h2 class="sec"><span class="l-ko">이용 안내</span><span class="l-en">Pricing</span></h2>
+<div class="pricing">
+  <h3><span class="l-ko">무료로 시작해, 마음에 들면 한 번의 결제로</span><span class="l-en">Start free, unlock once</span></h3>
+  <ul>
+    <li class="l-ko"><b>무료</b> — 학당 100과 가운데 앞 25과, 사전은 급수별 앞 부분</li>
+    <li class="l-en"><b>Free</b> — the first 25 of 100 lessons, plus part of the dictionary</li>
+    <li class="l-ko"><b>평생 이용권</b> — 전 과와 사전 전체. 구독이 아니라 1회 결제이며 만료되지 않습니다</li>
+    <li class="l-en"><b>Lifetime unlock</b> — everything. A one-time purchase, not a subscription; it never expires</li>
+    <li class="l-ko"><b>광고가 없습니다.</b> 이용 기록을 수집하거나 추적하지 않습니다</li>
+    <li class="l-en"><b>No ads.</b> No analytics, no tracking</li>
+    <li class="l-ko">인터넷 없이 학습할 수 있고, 회원 가입이나 로그인이 필요 없습니다</li>
+    <li class="l-en">Works offline. No account or sign-in required</li>
+  </ul>
+</div>
+
+<footer>
+  <p><a href="support.html"><span class="l-ko">지원</span><span class="l-en">Support</span></a> ·
+     <a href="privacy.html"><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></a></p>
+  <p style="margin-top:8px">chungkil.cksw@gmail.com</p>
+</footer>
+
+</div>
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  document.documentElement.setAttribute('lang', l);
+  document.getElementById('b-ko').classList.toggle('on', l==='ko');
+  document.getElementById('b-en').classList.toggle('on', l==='en');
+  try{ localStorage.setItem('lang', l); }catch(e){}
+}
+try{ var s=localStorage.getItem('lang'); if(s) setLang(s); }catch(e){}
+</script>
+</body>
+</html>
