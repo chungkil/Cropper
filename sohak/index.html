@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>소학 배우기 — 서당식 한문 학습과 한자 사전</title>
+<meta property="og:title" content="소학 배우기 — Learn Sohak">
+<meta property="og:description" content="사람 되는 공부의 첫 책. 주자의 제사에서 선행편까지 33과 38구절을 습자·강독·배강 세 걸음으로. 무료로 시작해 평생 이용권 한 번으로 전체 열람.">
+<style>
+:root{--paper:#F3E8D7;--paper2:#FAF4E9;--ink:#1A365D;--ink2:#2B4A7A;--red:#B22222;--sub:#8A7059;--card:#FFFFFF}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7}
+html[data-lang="ko"] .l-en{display:none}
+html[data-lang="en"] .l-ko{display:none}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+.langbar{display:flex;justify-content:flex-end;padding:14px 0}
+.langbar button{border:1px solid var(--red);background:transparent;color:var(--red);padding:5px 14px;cursor:pointer;font-size:14px}
+.langbar button:first-child{border-radius:8px 0 0 8px}
+.langbar button:last-child{border-radius:0 8px 8px 0}
+.langbar button.on{background:var(--red);color:#fff}
+.hero{text-align:center;padding:40px 0 50px}
+.hero .seal{width:120px;height:120px;border-radius:27px;box-shadow:0 8px 30px rgba(26,54,93,.18);background:var(--paper2);display:inline-flex;align-items:center;justify-content:center;font-size:64px;font-family:serif;color:var(--ink)}
+.hero h1{font-size:2.2rem;margin:22px 0 10px;letter-spacing:-.5px}
+.hero p.tag{font-size:1.15rem;color:var(--sub);margin-bottom:26px}
+.badge .soon{display:inline-block;font-size:.85rem;color:var(--sub);margin-top:8px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:10px 0 54px}
+.stat{background:var(--card);border-radius:14px;padding:22px 8px;text-align:center;box-shadow:0 4px 18px rgba(26,54,93,.08)}
+.stat b{display:block;font-size:1.6rem;color:var(--red)}
+.stat span{font-size:.9rem;color:var(--sub)}
+h2.sec{font-size:1.5rem;margin:0 0 22px;text-align:center}
+h2.sec::after{content:"";display:block;width:44px;height:3px;background:var(--red);margin:10px auto 0;border-radius:2px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:56px}
+.card{background:var(--card);border-radius:16px;padding:24px 20px;box-shadow:0 4px 18px rgba(26,54,93,.08)}
+.card .em{font-size:1.7rem}
+.card h3{font-size:1.05rem;margin:10px 0 6px}
+.card p{font-size:.92rem;color:#4a5568}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:56px}
+.step{background:var(--paper2);border:1px solid #e4d5bd;border-radius:16px;padding:24px 20px}
+.step b{color:var(--red);font-size:1.05rem}
+.step p{font-size:.92rem;color:#4a5568;margin-top:6px}
+.quote{background:var(--card);border-radius:16px;padding:26px 24px;margin-bottom:56px;box-shadow:0 4px 18px rgba(26,54,93,.08);text-align:center}
+.quote .han{font-family:serif;font-size:1.35rem;letter-spacing:2px;color:var(--ink)}
+.quote .kor{font-size:.95rem;color:#4a5568;margin-top:10px}
+.quote .src{font-size:.85rem;color:var(--sub);margin-top:6px}
+.pricing{background:var(--paper2);border:1px solid #e4d5bd;border-radius:16px;padding:26px;margin-bottom:56px}
+.pricing h3{font-size:1.1rem;margin-bottom:10px}
+.pricing ul{padding-left:20px;font-size:.94rem;color:#4a5568}
+.note{background:#fff;border-left:4px solid var(--red);border-radius:0 12px 12px 0;padding:18px 20px;margin-bottom:56px;font-size:.94rem;color:#4a5568}
+footer{border-top:1px solid #e4d5bd;padding:26px 0 40px;text-align:center;font-size:.9rem;color:var(--sub)}
+footer a{color:var(--ink2)}
+@media(max-width:720px){.grid,.steps{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="langbar">
+  <button id="b-ko" class="on" onclick="setLang('ko')">한국어</button>
+  <button id="b-en" onclick="setLang('en')">English</button>
+</div>
+
+<div class="hero">
+  <div class="seal">敬</div>
+  <h1><span class="l-ko">소학 배우기</span><span class="l-en">Learn Sohak</span></h1>
+  <p class="tag">
+    <span class="l-ko">몸가짐부터 익히는 서당 첫 공부</span>
+    <span class="l-en">Where a Korean scholar's education began</span>
+  </p>
+  <div class="badge"><span class="soon">
+    <span class="l-ko">App Store 출시 준비 중</span><span class="l-en">Coming soon to the App Store</span>
+  </span></div>
+</div>
+
+<div class="stats">
+  <div class="stat"><b>33</b><span class="l-ko">과</span><span class="l-en">lessons</span></div>
+  <div class="stat"><b>38</b><span class="l-ko">구절</span><span class="l-en">passages</span></div>
+  <div class="stat"><b>708</b><span class="l-ko">원문 글자</span><span class="l-en">characters</span></div>
+  <div class="stat"><b>300</b><span class="l-ko">신출자</span><span class="l-en">new characters</span></div>
+</div>
+
+<h2 class="sec"><span class="l-ko">어떤 책인가</span><span class="l-en">About the text</span></h2>
+<div class="note">
+  <p class="l-ko"><b>소학(小學)</b>은 주자가 제자 유청지와 함께 엮은 어린이 수신 교과서입니다.
+  물 뿌리고 쓸고 어른께 응대하는 법에서 시작해 몸가짐과 인륜의 바탕을 세우는 책이지요.
+  조선의 서당에서는 이 책을 다 뗀 뒤에야 사서(四書)의 큰 공부로 넘어갔습니다.
+  신체발부 수지부모도, 남녀칠세부동석도, 맹모삼천과 단기지교도 모두 여기서 나온 말입니다.
+  이 앱은 주자의 제사(題辭)로 시작해 내편 네 편(입교·명륜·경신·계고)과
+  외편 두 편(가언·선행)에서 골라 33과로 담았습니다.</p>
+  <p class="l-en"><b>Sohak</b> — the "Lesser Learning" — is the primer Zhu Xi compiled with his student Liu Qingzhi
+  for children, beginning with how to sweep a floor and answer an elder and building from there toward
+  the whole of human conduct. In Korea it was the book you had to finish before the Four Books were opened
+  to you. This app draws 33 lessons from Zhu Xi's preface, the four inner chapters, and the two outer ones.</p>
+</div>
+
+<div class="quote">
+  <div class="han">身體髮膚 受之父母 不敢毀傷 孝之始也</div>
+  <div class="kor"><span class="l-ko">몸과 터럭과 살갗은 부모에게서 받은 것이라, 감히 헐고 다치지 않게 함이 효도의 시작이다</span>
+    <span class="l-en">Your body, hair and skin were received from your parents; not to harm them is where filial duty begins</span></div>
+  <div class="src"><span class="l-ko">제5과 명륜(明倫)편</span>
+    <span class="l-en">Lesson 5, on human relations</span></div>
+</div>
+
+<h2 class="sec"><span class="l-ko">한 과를 떼는 세 걸음</span><span class="l-en">Three steps per lesson</span></h2>
+<div class="steps">
+  <div class="step"><b>習字 <span class="l-ko">습자</span><span class="l-en">Writing</span></b>
+    <p class="l-ko">새 글자를 획순 애니메이션으로 보고 손으로 따라 씁니다. 획의 순서와 방향을 함께 판정합니다.</p>
+    <p class="l-en">Trace each new character by hand. Stroke order and direction are both checked.</p></div>
+  <div class="step"><b>講讀 <span class="l-ko">강독</span><span class="l-en">Reading</span></b>
+    <p class="l-ko">현토를 단 원문을 소리 내어 읽고 뜻을 새깁니다. 서산을 놓고 세 번 낭독합니다.</p>
+    <p class="l-en">Read the annotated original aloud and work through its meaning, three times over.</p></div>
+  <div class="step"><b>背講 <span class="l-ko">배강</span><span class="l-en">Recitation</span></b>
+    <p class="l-ko">책을 덮고 외워 바칩니다. 빈칸을 채워 통과해야 다음 과가 열립니다.</p>
+    <p class="l-en">Close the book and recite from memory to unlock the next lesson.</p></div>
+</div>
+
+<h2 class="sec"><span class="l-ko">구절을 여는 여섯 가지</span><span class="l-en">Six ways into a passage</span></h2>
+<div class="grid">
+  <div class="card"><div class="em">🔊</div><h3><span class="l-ko">독음</span><span class="l-en">Reading</span></h3>
+    <p class="l-ko">현토를 붙인 한글 읽기</p><p class="l-en">Korean pronunciation with grammatical particles</p></div>
+  <div class="card"><div class="em">📖</div><h3><span class="l-ko">직역과 해석</span><span class="l-en">Gloss and translation</span></h3>
+    <p class="l-ko">어절마다 뜻을 붙여 한문 어순을 익히고, 문장 전체의 뜻을 함께 봅니다</p>
+    <p class="l-en">Word-by-word glosses to learn the word order, alongside the full meaning</p></div>
+  <div class="card"><div class="em">🖋</div><h3><span class="l-ko">새김</span><span class="l-en">Commentary</span></h3>
+    <p class="l-ko">그 말이 나온 편과 원출전, 성어의 유래와 오늘의 쓰임</p>
+    <p class="l-en">Which chapter it comes from, its original source, and how the phrase is used today</p></div>
+  <div class="card"><div class="em">📚</div><h3><span class="l-ko">사전</span><span class="l-en">Dictionary</span></h3>
+    <p class="l-ko">원문의 한자를 누르면 뜻과 획순이 바로 열립니다</p><p class="l-en">Tap any character for its meaning and stroke order</p></div>
+  <div class="card"><div class="em">🎧</div><h3><span class="l-ko">성독</span><span class="l-en">Recitation audio</span></h3>
+    <p class="l-ko">38구절 전량의 낭독을 담았습니다. 화면을 꺼도 이어지고, 목소리는 여성과 남성 가운데 고릅니다</p>
+    <p class="l-en">All 38 passages recorded. Playback continues with the screen off; choose a female or male voice</p></div>
+  <div class="card"><div class="em">🧧</div><h3><span class="l-ko">족자</span><span class="l-en">Scroll</span></h3>
+    <p class="l-ko">배운 구절을 오른쪽에서 왼쪽으로 흐르는 세로쓰기 족자로 만들어 공유합니다</p>
+    <p class="l-en">Turn what you have learned into a vertical scroll, right to left, and share it as an image</p></div>
+</div>
+
+<h2 class="sec"><span class="l-ko">옛 글을 오늘 읽는 법</span><span class="l-en">Reading an old text today</span></h2>
+<div class="note">
+  <p class="l-ko">소학은 조선의 어린이 교본입니다. 명륜편의 남녀칠세부동석이나 안팎을 나눈 거처처럼
+  오늘의 눈으로 보면 시대의 한계가 뚜렷한 대목이 원문에 있습니다. 지우지 않고 그대로 싣되,
+  <b>새김에 그것이 어느 시대의 규범이었는지 밝히고</b> 무엇이 지금도 읽을 만한지 함께 적어 두었습니다.
+  고전은 있는 그대로 읽히되, 오독되지 않아야 한다고 보았습니다.</p>
+  <p class="l-en">This is a primer written for another age. Some passages — the separation of boys and girls
+  at seven, the divided inner and outer quarters — carry the limits of their time. Rather than removing them,
+  the app presents them as they are and <b>says in the commentary which age's rule this was</b>,
+  marking what still reads well and what belongs to the past.</p>
+</div>
+
+<h2 class="sec"><span class="l-ko">이용 안내</span><span class="l-en">Pricing</span></h2>
+<div class="pricing">
+  <h3><span class="l-ko">무료로 시작해, 마음에 들면 한 번의 결제로</span><span class="l-en">Start free, unlock once</span></h3>
+  <ul>
+    <li class="l-ko"><b>무료</b> — 학당 33과 가운데 앞 8과, 사전은 급수별 앞 부분</li>
+    <li class="l-en"><b>Free</b> — the first 8 of 33 lessons, plus part of the dictionary</li>
+    <li class="l-ko"><b>평생 이용권</b> — 전 과와 사전 전체. 구독이 아니라 1회 결제이며 만료되지 않습니다</li>
+    <li class="l-en"><b>Lifetime unlock</b> — everything. A one-time purchase, not a subscription; it never expires</li>
+    <li class="l-ko"><b>평생 이용권을 사면 광고가 사라집니다.</b> 무료 이용 시에는 사전과 강독 아래에 작은 광고가 하나 붙습니다</li>
+    <li class="l-en"><b>The lifetime unlock removes ads.</b> Free users see one small ad below the dictionary and reading screens</li>
+    <li class="l-ko">회원 가입이나 로그인이 필요 없고, 학습 자체는 인터넷 없이도 됩니다</li>
+    <li class="l-en">No account or sign-in required; studying works offline</li>
+  </ul>
+</div>
+
+<footer>
+  <p><a href="support.html"><span class="l-ko">지원</span><span class="l-en">Support</span></a> ·
+     <a href="privacy.html"><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></a></p>
+  <p style="margin-top:8px">chungkil.cksw@gmail.com</p>
+</footer>
+
+</div>
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  document.documentElement.setAttribute('lang', l);
+  document.getElementById('b-ko').classList.toggle('on', l==='ko');
+  document.getElementById('b-en').classList.toggle('on', l==='en');
+  try{ localStorage.setItem('lang', l); }catch(e){}
+}
+try{ var s=localStorage.getItem('lang'); if(s) setLang(s); }catch(e){}
+</script>
+</body>
+</html>
