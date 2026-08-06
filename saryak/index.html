@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>사략 배우기 — 고사성어로 떼는 서당 역사 입문</title>
+<meta property="og:title" content="사략 배우기 — Learn Saryak">
+<meta property="og:description" content="천자문을 뗀 아이가 처음 만나던 역사책. 관포지교·순망치한·와신상담·완벽·낭중지추가 모두 여기서 나왔습니다. 16과 17구절을 습자·강독·배강 세 걸음으로. 무료로 시작해 평생 이용권 한 번으로 전체 열람.">
+<style>
+:root{--paper:#F3E8D7;--paper2:#FAF4E9;--ink:#1A365D;--ink2:#2B4A7A;--red:#B22222;--sub:#8A7059;--card:#FFFFFF}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7}
+html[data-lang="ko"] .l-en{display:none}
+html[data-lang="en"] .l-ko{display:none}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+.langbar{display:flex;justify-content:flex-end;padding:14px 0}
+.langbar button{border:1px solid var(--red);background:transparent;color:var(--red);padding:5px 14px;cursor:pointer;font-size:14px}
+.langbar button:first-child{border-radius:8px 0 0 8px}
+.langbar button:last-child{border-radius:0 8px 8px 0}
+.langbar button.on{background:var(--red);color:#fff}
+.hero{text-align:center;padding:40px 0 50px}
+.hero .seal{width:120px;height:120px;border-radius:27px;box-shadow:0 8px 30px rgba(26,54,93,.18);background:var(--paper2);display:inline-flex;align-items:center;justify-content:center;font-size:64px;font-family:serif;color:var(--ink)}
+.hero h1{font-size:2.2rem;margin:22px 0 10px;letter-spacing:-.5px}
+.hero p.tag{font-size:1.15rem;color:var(--sub);margin-bottom:26px}
+.badge .soon{display:inline-block;font-size:.85rem;color:var(--sub);margin-top:8px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:10px 0 54px}
+.stat{background:var(--card);border-radius:14px;padding:22px 8px;text-align:center;box-shadow:0 4px 18px rgba(26,54,93,.08)}
+.stat b{display:block;font-size:1.6rem;color:var(--red)}
+.stat span{font-size:.9rem;color:var(--sub)}
+h2.sec{font-size:1.5rem;margin:0 0 22px;text-align:center}
+h2.sec::after{content:"";display:block;width:44px;height:3px;background:var(--red);margin:10px auto 0;border-radius:2px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:56px}
+.card{background:var(--card);border-radius:16px;padding:24px 20px;box-shadow:0 4px 18px rgba(26,54,93,.08)}
+.card .em{font-size:1.7rem}
+.card h3{font-size:1.05rem;margin:10px 0 6px}
+.card p{font-size:.92rem;color:#4a5568}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:56px}
+.step{background:var(--paper2);border:1px solid #e4d5bd;border-radius:16px;padding:24px 20px}
+.step b{color:var(--red);font-size:1.05rem}
+.step p{font-size:.92rem;color:#4a5568;margin-top:6px}
+.quote{background:var(--card);border-radius:16px;padding:26px 24px;margin-bottom:56px;box-shadow:0 4px 18px rgba(26,54,93,.08);text-align:center}
+.quote .han{font-family:serif;font-size:1.35rem;letter-spacing:2px;color:var(--ink)}
+.quote .kor{font-size:.95rem;color:#4a5568;margin-top:10px}
+.quote .src{font-size:.85rem;color:var(--sub);margin-top:6px}
+.chips{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-bottom:56px}
+.chip{background:var(--card);border:1px solid #e4d5bd;border-radius:999px;padding:7px 15px;font-size:.92rem;color:var(--ink2);box-shadow:0 2px 10px rgba(26,54,93,.05)}
+.chip b{color:var(--red);font-family:serif;margin-right:5px}
+.pricing{background:var(--paper2);border:1px solid #e4d5bd;border-radius:16px;padding:26px;margin-bottom:56px}
+.pricing h3{font-size:1.1rem;margin-bottom:10px}
+.pricing ul{padding-left:20px;font-size:.94rem;color:#4a5568}
+.note{background:#fff;border-left:4px solid var(--red);border-radius:0 12px 12px 0;padding:18px 20px;margin-bottom:56px;font-size:.94rem;color:#4a5568}
+footer{border-top:1px solid #e4d5bd;padding:26px 0 40px;text-align:center;font-size:.9rem;color:var(--sub)}
+footer a{color:var(--ink2)}
+@media(max-width:720px){.grid,.steps{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="langbar">
+  <button id="b-ko" class="on" onclick="setLang('ko')">한국어</button>
+  <button id="b-en" onclick="setLang('en')">English</button>
+</div>
+
+<div class="hero">
+  <div class="seal">史</div>
+  <h1><span class="l-ko">사략 배우기</span><span class="l-en">Learn Saryak</span></h1>
+  <p class="tag">
+    <span class="l-ko">고사성어로 떼는 서당 역사 입문</span>
+    <span class="l-en">The first history book in a Korean village school</span>
+  </p>
+  <div class="badge"><span class="soon">
+    <span class="l-ko">App Store 출시 준비 중</span><span class="l-en">Coming soon to the App Store</span>
+  </span></div>
+</div>
+
+<div class="stats">
+  <div class="stat"><b>16</b><span class="l-ko">과</span><span class="l-en">lessons</span></div>
+  <div class="stat"><b>17</b><span class="l-ko">구절</span><span class="l-en">passages</span></div>
+  <div class="stat"><b>258</b><span class="l-ko">원문 글자</span><span class="l-en">characters</span></div>
+  <div class="stat"><b>188</b><span class="l-ko">신출자</span><span class="l-en">new characters</span></div>
+</div>
+
+<h2 class="sec"><span class="l-ko">어떤 책인가</span><span class="l-en">About the text</span></h2>
+<div class="note">
+  <p class="l-ko"><b>사략(史略)</b>은 원나라 증선지(曾先之)가 열여덟 사서를 간추려 엮은
+  <b>십팔사략(十八史略)</b>을 조선에서 부르던 이름입니다. 천자문으로 글자를 익히고 소학으로 몸가짐을 배운 아이가,
+  비로소 이야기가 있는 문장을 읽는 첫 책이 이것이었습니다. 서당에서는 통감(通鑑)과 함께
+  문리(文理)를 틔우는 책으로 삼았지요.
+  관포지교, 순망치한, 와신상담, 위편삼절, 완벽, 문경지교, 낭중지추 — 우리가 오늘도 쓰는 말들이 여기서 나왔습니다.
+  이 앱은 태고의 천황씨에서 진(秦)의 분서갱유까지, 고사성어의 출전이 되는 구절을 골라 <b>16과 17구절</b>로 담았습니다.
+  한 과가 하나의 고사(故事)입니다.</p>
+  <p class="l-en"><b>Saryak</b> is the Korean name for the <b>Shiba Shilüe</b>, the digest of eighteen dynastic
+  histories compiled by Zeng Xianzhi in the Yuan. In Korea it was the book you opened after the Thousand
+  Character Classic and the Lesser Learning — the first text where the characters you had learned finally
+  told a story. Many phrases still in daily use begin here: the friendship of Guan and Bao, lips gone and
+  teeth cold, sleeping on brushwood and tasting gall. This app draws <b>17 passages across 16 lessons</b>,
+  from the mythical first emperor to the burning of the books under Qin. Each lesson is one story.</p>
+</div>
+
+<div class="quote">
+  <div class="han">生我者父母 知我者鮑子也</div>
+  <div class="kor"><span class="l-ko">나를 낳아 준 이는 부모요, 나를 알아준 이는 포숙이다</span>
+    <span class="l-en">My parents gave me life; it was Bao Shu who understood me</span></div>
+  <div class="src"><span class="l-ko">제9과 관포지교(管鮑之交)</span>
+    <span class="l-en">Lesson 9, the friendship of Guan and Bao</span></div>
+</div>
+
+<h2 class="sec"><span class="l-ko">한 과가 하나의 고사</span><span class="l-en">One lesson, one story</span></h2>
+<div class="chips">
+  <span class="chip"><b>擊壤歌</b><span class="l-ko">격양가</span><span class="l-en">Song of the Clod</span></span>
+  <span class="chip"><b>大禹治水</b><span class="l-ko">대우치수</span><span class="l-en">Yu tames the flood</span></span>
+  <span class="chip"><b>酒池肉林</b><span class="l-ko">주지육림</span><span class="l-en">Pools of wine</span></span>
+  <span class="chip"><b>太公望</b><span class="l-ko">태공망</span><span class="l-en">The awaited one</span></span>
+  <span class="chip"><b>伯夷叔齊</b><span class="l-ko">백이숙제</span><span class="l-en">Boyi and Shuqi</span></span>
+  <span class="chip"><b>吐哺握髮</b><span class="l-ko">토포악발</span><span class="l-en">Duke of Zhou</span></span>
+  <span class="chip"><b>管鮑之交</b><span class="l-ko">관포지교</span><span class="l-en">Guan and Bao</span></span>
+  <span class="chip"><b>脣亡齒寒</b><span class="l-ko">순망치한</span><span class="l-en">Lips and teeth</span></span>
+  <span class="chip"><b>臥薪嘗膽</b><span class="l-ko">와신상담</span><span class="l-en">Brushwood and gall</span></span>
+  <span class="chip"><b>韋編三絶</b><span class="l-ko">위편삼절</span><span class="l-en">Three broken thongs</span></span>
+  <span class="chip"><b>完璧</b><span class="l-ko">완벽</span><span class="l-en">The jade returned whole</span></span>
+  <span class="chip"><b>刎頸之交</b><span class="l-ko">문경지교</span><span class="l-en">Friends unto death</span></span>
+  <span class="chip"><b>囊中之錐</b><span class="l-ko">낭중지추</span><span class="l-en">Awl in a bag</span></span>
+  <span class="chip"><b>焚書坑儒</b><span class="l-ko">분서갱유</span><span class="l-en">Burning the books</span></span>
+</div>
+
+<h2 class="sec"><span class="l-ko">한 과를 떼는 세 걸음</span><span class="l-en">Three steps per lesson</span></h2>
+<div class="steps">
+  <div class="step"><b>習字 <span class="l-ko">습자</span><span class="l-en">Writing</span></b>
+    <p class="l-ko">새 글자를 획순 애니메이션으로 보고 손으로 따라 씁니다. 획의 순서와 방향을 함께 판정합니다.</p>
+    <p class="l-en">Trace each new character by hand. Stroke order and direction are both checked.</p></div>
+  <div class="step"><b>講讀 <span class="l-ko">강독</span><span class="l-en">Reading</span></b>
+    <p class="l-ko">현토를 단 원문을 소리 내어 읽고 뜻을 새깁니다. 서산을 놓고 세 번 낭독합니다.</p>
+    <p class="l-en">Read the annotated original aloud and work through its meaning, three times over.</p></div>
+  <div class="step"><b>背講 <span class="l-ko">배강</span><span class="l-en">Recitation</span></b>
+    <p class="l-ko">책을 덮고 외워 바칩니다. 빈칸을 채워 통과해야 다음 과가 열립니다.</p>
+    <p class="l-en">Close the book and recite from memory to unlock the next lesson.</p></div>
+</div>
+
+<h2 class="sec"><span class="l-ko">구절을 여는 여섯 가지</span><span class="l-en">Six ways into a passage</span></h2>
+<div class="grid">
+  <div class="card"><div class="em">🔊</div><h3><span class="l-ko">독음</span><span class="l-en">Reading</span></h3>
+    <p class="l-ko">현토를 붙인 한글 읽기</p><p class="l-en">Korean pronunciation with grammatical particles</p></div>
+  <div class="card"><div class="em">📖</div><h3><span class="l-ko">직역과 해석</span><span class="l-en">Gloss and translation</span></h3>
+    <p class="l-ko">어절마다 뜻을 붙여 한문 어순을 익히고, 문장 전체의 뜻을 함께 봅니다</p>
+    <p class="l-en">Word-by-word glosses to learn the word order, alongside the full meaning</p></div>
+  <div class="card"><div class="em">🖋</div><h3><span class="l-ko">새김</span><span class="l-en">Commentary</span></h3>
+    <p class="l-ko">그 고사가 놓인 시대와 원출전, 성어의 유래와 오늘의 쓰임</p>
+    <p class="l-en">The age the story belongs to, its original source, and how the phrase is used today</p></div>
+  <div class="card"><div class="em">📚</div><h3><span class="l-ko">사전</span><span class="l-en">Dictionary</span></h3>
+    <p class="l-ko">원문의 한자를 누르면 뜻과 획순이 바로 열립니다</p><p class="l-en">Tap any character for its meaning and stroke order</p></div>
+  <div class="card"><div class="em">🎧</div><h3><span class="l-ko">성독</span><span class="l-en">Recitation audio</span></h3>
+    <p class="l-ko">17구절 전량의 낭독을 담았습니다. 화면을 꺼도 이어지고, 목소리는 여성과 남성 가운데 고릅니다</p>
+    <p class="l-en">All 17 passages recorded. Playback continues with the screen off; choose a female or male voice</p></div>
+  <div class="card"><div class="em">🧧</div><h3><span class="l-ko">족자</span><span class="l-en">Scroll</span></h3>
+    <p class="l-ko">배운 구절을 오른쪽에서 왼쪽으로 흐르는 세로쓰기 족자로 만들어 공유합니다</p>
+    <p class="l-en">Turn what you have learned into a vertical scroll, right to left, and share it as an image</p></div>
+</div>
+
+<h2 class="sec"><span class="l-ko">옛 글을 오늘 읽는 법</span><span class="l-en">Reading an old text today</span></h2>
+<div class="note">
+  <p class="l-ko">사략은 왕조의 흥망을 통해 다스림의 이치를 가르치던 책입니다.
+  걸(桀)의 주지육림이나 시황제의 분서갱유처럼 폭정을 경계로 삼은 대목이 있고,
+  천명(天命)으로 왕조의 교체를 설명하는 옛 사관의 시각도 그대로 남아 있습니다.
+  지우지 않고 싣되, <b>새김에 그것이 어느 시대의 관점이었는지 밝히고</b>
+  그 일이 어떤 결과로 이어졌는지 함께 적어 두었습니다.
+  또한 이번 분량은 상고(上古)에서 진(秦)까지의 발췌입니다. 한(漢)과 삼국 이후는 앞으로 채워 갈 계획입니다.</p>
+  <p class="l-en">Saryak teaches statecraft through the rise and fall of dynasties, so tyranny and its consequences
+  are part of the record — the pools of wine, the burning of the books. The old historian's framework, in which
+  heaven withdraws its mandate from a bad ruler, is left in place as well. Nothing is removed;
+  <b>the commentary says which age's view this was</b> and where each story led.
+  This first release covers antiquity through the Qin. The Han and the Three Kingdoms are still to come.</p>
+</div>
+
+<h2 class="sec"><span class="l-ko">이용 안내</span><span class="l-en">Pricing</span></h2>
+<div class="pricing">
+  <h3><span class="l-ko">무료로 시작해, 마음에 들면 한 번의 결제로</span><span class="l-en">Start free, unlock once</span></h3>
+  <ul>
+    <li class="l-ko"><b>무료</b> — 학당 16과 가운데 앞 4과, 사전은 급수별 앞 부분</li>
+    <li class="l-en"><b>Free</b> — the first 4 of 16 lessons, plus part of the dictionary</li>
+    <li class="l-ko"><b>평생 이용권</b> — 전 과와 사전 전체. 구독이 아니라 1회 결제이며 만료되지 않습니다</li>
+    <li class="l-en"><b>Lifetime unlock</b> — everything. A one-time purchase, not a subscription; it never expires</li>
+    <li class="l-ko"><b>평생 이용권을 사면 광고가 사라집니다.</b> 무료 이용 시에는 사전과 강독 아래에 작은 광고가 하나 붙습니다</li>
+    <li class="l-en"><b>The lifetime unlock removes ads.</b> Free users see one small ad below the dictionary and reading screens</li>
+    <li class="l-ko">회원 가입이나 로그인이 필요 없고, 학습 자체는 인터넷 없이도 됩니다</li>
+    <li class="l-en">No account or sign-in required; studying works offline</li>
+  </ul>
+</div>
+
+<footer>
+  <p><a href="support.html"><span class="l-ko">지원</span><span class="l-en">Support</span></a> ·
+     <a href="privacy.html"><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></a></p>
+  <p style="margin-top:8px">chungkil.cksw@gmail.com</p>
+</footer>
+
+</div>
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  document.documentElement.setAttribute('lang', l);
+  document.getElementById('b-ko').classList.toggle('on', l==='ko');
+  document.getElementById('b-en').classList.toggle('on', l==='en');
+  try{ localStorage.setItem('lang', l); }catch(e){}
+}
+try{ var s=localStorage.getItem('lang'); if(s) setLang(s); }catch(e){}
+</script>
+</body>
+</html>
