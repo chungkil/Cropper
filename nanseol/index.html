@@ -4,7 +4,40 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>난설헌 — 허난설헌 시집, 원문 그대로 오늘의 언어로</title>
-<meta name="description" content="허난설헌의 한시를 세로쓰기 원문·독음·번역·주해와 함께. 오늘의 시 위젯, 어휘 풀이, 완전 오프라인. iPhone·iPad.">
+<meta name="description" content="허난설헌의 한시 212편을 세로쓰기 원문·독음·번역·주해와 함께. 한국어·English·中文. 오늘의 시 위젯, 완전 오프라인. iPhone·iPad.">
+<link rel="canonical" href="https://cksw.pe.kr/nanseol/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="난설헌 · 蘭雪軒">
+<meta property="og:title" content="난설헌 — 허난설헌 시집, 원문 그대로 오늘의 언어로">
+<meta property="og:description" content="허난설헌의 한시 212편을 세로쓰기 원문·독음·번역·주해와 함께. 한국어·English·中文. 오늘의 시 위젯, 완전 오프라인. iPhone·iPad.">
+<meta property="og:url" content="https://cksw.pe.kr/nanseol/">
+<meta property="og:image" content="https://cksw.pe.kr/nanseol/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="난설헌 — 허난설헌 시집, 원문 그대로 오늘의 언어로">
+<meta name="twitter:description" content="허난설헌의 한시 212편을 세로쓰기 원문·독음·번역·주해와 함께. 한국어·English·中文. 오늘의 시 위젯, 완전 오프라인. iPhone·iPad.">
+<meta name="twitter:image" content="https://cksw.pe.kr/nanseol/assets/og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "난설헌",
+  "alternateName": ["Nanseolheon Anthology", "兰雪轩集"],
+  "applicationCategory": "BookApplication",
+  "operatingSystem": "iOS 17.0+",
+  "url": "https://cksw.pe.kr/nanseol/",
+  "downloadUrl": "https://apps.apple.com/app/id6792453819",
+  "inLanguage": ["ko", "en", "zh-Hans"],
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "KRW"},
+  "author": {"@type": "Person", "name": "CKSW"},
+  "about": {"@type": "Person", "name": "허난설헌", "alternateName": "許蘭雪軒",
+            "birthDate": "1563", "deathDate": "1589"}
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -52,6 +85,21 @@
   .hero .eyebrow { font-size: 13px; font-weight: 700; letter-spacing: .12em; color: var(--orchid-deep); margin-bottom: 22px; }
   .hero h1 { font-size: 26px; font-weight: 600; margin-bottom: 14px; letter-spacing: -0.01em; }
   .hero .desc { font-size: 16px; color: var(--ink-soft); max-width: 520px; margin: 0 auto 34px; }
+
+  .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 34px; }
+  .shots img {
+    width: 100%; height: auto; border-radius: 14px; display: block;
+    border: 1px solid var(--hairline); background: var(--paper);
+  }
+  @media (max-width: 620px) { .shots { grid-template-columns: 1fr; max-width: 320px; margin-inline: auto; } }
+  .closing { text-align: center; padding: 64px 24px 80px; }
+  .closing h2 { font-size: 22px; margin-bottom: 10px; }
+  .closing p { color: var(--ink-soft); margin-bottom: 26px; }
+  .langline {
+    display: inline-flex; gap: 8px; align-items: center; margin-bottom: 26px;
+    font-size: 13px; color: var(--ink-soft); border: 1px solid var(--hairline);
+    border-radius: 999px; padding: 6px 16px; background: var(--paper);
+  }
   .badge-link {
     display: inline-block; background: var(--ink); color: var(--snow); text-decoration: none;
     font-size: 15px; font-weight: 600; padding: 13px 26px; border-radius: 999px;
@@ -125,6 +173,10 @@
     <h1 data-lang="en">A poet's voice from 400 years ago —<br>in her own script, and in today's words.</h1><h1 data-lang="zh">四百年前一位女诗人的声音——<br>以她笔下的原文，也以今天的语言。</h1>
     <p class="desc" data-lang="ko">세로쓰기 원문과 행 단위 번역, 글자마다 붙는 독음, 시어 풀이와 주해까지. 서버 없이 완전 오프라인으로 감상하는 디지털 소장본.</p>
     <p class="desc" data-lang="en">Vertical-script originals with line-by-line translation, per-character readings, glossary and commentary — a fully offline digital edition.</p><p class="desc" data-lang="zh">竖排原文配逐行译文、逐字注音、词语释义与注解——一部完全离线的数字典藏版。</p>
+    <div class="langline">
+      <span data-lang="ko">한국어 · English · 中文 — 앱과 번역·주해 모두</span>
+      <span data-lang="en">Korean · English · Chinese — app and translations alike</span><span data-lang="zh">韩语 · 英语 · 中文 — 应用与译注皆备</span>
+    </div>
     <a class="badge-link" href="https://apps.apple.com/app/id6792453819" data-lang="ko">App Store에서 받기</a>
     <a class="badge-link" href="https://apps.apple.com/app/id6792453819" data-lang="en">Download on the App Store</a><a class="badge-link" href="https://apps.apple.com/app/id6792453819" data-lang="zh">在 App Store 下载</a>
   </section>
@@ -166,6 +218,12 @@
         <p data-lang="en">A new poem at midnight, on your home and lock screen — the same poem for everyone, every day.</p><p data-lang="zh">每天午夜，一首新诗出现在主屏幕与锁定屏幕上——每一天，所有人读到同一首诗。</p>
       </div>
     </div>
+
+    <div class="shots">
+      <img src="assets/shot-vertical.jpg" alt="세로쓰기 원문 화면" loading="lazy" width="420" height="912">
+      <img src="assets/shot-translation.jpg" alt="번역과 주해 화면" loading="lazy" width="420" height="912">
+      <img src="assets/shot-home.jpg" alt="오늘의 시 홈 화면" loading="lazy" width="420" height="912">
+    </div>
   </section>
 
   <section class="story-band">
@@ -187,6 +245,15 @@
     <p data-lang="en">Selected poems are free to read. One purchase unlocks the entire collection, including future additions — and removes all ads. Reading screens are ad-free even on the free tier.</p><p data-lang="zh">代表作可免费品读。一次买断即可解锁文集全部作品，包括今后的增补篇目，并移除所有广告。诗歌品读页面即使在免费版中也没有广告。</p>
     <div class="price" data-lang="ko">완전판 ₩6,900 · 비소모성(1회 구매)</div>
     <div class="price" data-lang="en">Complete Edition — one-time purchase</div><div class="price" data-lang="zh">完整版 — 一次买断</div>
+  </section>
+
+  <section class="closing">
+    <h2 class="serif" data-lang="ko">지금 읽어 보세요</h2>
+    <h2 class="serif" data-lang="en">Start reading</h2><h2 class="serif" data-lang="zh">现在就开始读</h2>
+    <p data-lang="ko">대표작 30편은 무료입니다. 내려받아 첫 편을 펼쳐 보세요.</p>
+    <p data-lang="en">Thirty poems are free. Download and open the first one.</p><p data-lang="zh">三十首代表作免费开放。下载后翻开第一首吧。</p>
+    <a class="badge-link" href="https://apps.apple.com/app/id6792453819" data-lang="ko">App Store에서 받기</a>
+    <a class="badge-link" href="https://apps.apple.com/app/id6792453819" data-lang="en">Download on the App Store</a><a class="badge-link" href="https://apps.apple.com/app/id6792453819" data-lang="zh">在 App Store 下载</a>
   </section>
 </main>
 
