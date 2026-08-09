@@ -17,6 +17,7 @@
 <meta property="og:locale" content="ko_KR">
 <meta property="og:locale:alternate" content="en_US">
 <meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="난설헌 — 개인정보처리방침">
 <meta name="twitter:description" content="난설헌 앱은 개인정보를 직접 수집하지 않습니다. 서버도 계정도 없습니다.">
@@ -38,7 +39,8 @@
   /* 선택된 언어 조각만 남긴다 — 언어를 늘려도 규칙은 그대로 */
   body[data-lang="ko"] [data-lang]:not([data-lang="ko"]),
   body[data-lang="en"] [data-lang]:not([data-lang="en"]),
-  body[data-lang="zh"] [data-lang]:not([data-lang="zh"]) { display: none; }
+  body[data-lang="zh"] [data-lang]:not([data-lang="zh"]),
+  body[data-lang="ja"] [data-lang]:not([data-lang="ja"]) { display: none; }
   header {
     position: sticky; top: 0; z-index: 50;
     background: rgba(247,247,244,0.88); backdrop-filter: saturate(180%) blur(12px);
@@ -76,11 +78,12 @@
 <body data-lang="ko">
 <header>
   <div class="wrap nav">
-    <a class="brand" href="index.html"><span class="logo serif">蘭</span><span data-lang="ko">난설헌</span><span data-lang="en">Nanseolheon</span><span data-lang="zh">兰雪轩</span></a>
+    <a class="brand" href="index.html"><span class="logo serif">蘭</span><span data-lang="ko">난설헌</span><span data-lang="en">Nanseolheon</span><span data-lang="zh">兰雪轩</span><span data-lang="ja">蘭雪軒</span></a>
     <div class="lang-toggle" role="group" aria-label="Language">
       <button type="button" data-set-lang="ko" class="active">한국어</button>
       <button type="button" data-set-lang="en">English</button>
       <button type="button" data-set-lang="zh">中文</button>
+      <button type="button" data-set-lang="ja">日本語</button>
     </div>
   </div>
 </header>
@@ -230,17 +233,64 @@
       <h2>7. 联系方式</h2>
       <p>隐私相关咨询：<a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a></p>
     </section>
+  </div><div data-lang="ja">
+    <h1>プライバシーポリシー</h1>
+    <div class="date">施行日：2026年7月19日</div>
+    <div class="callout"><b>要約：開発者は個人情報を直接収集しません。</b> サーバーもアカウントもありません。無料でご利用の場合は広告（Google AdMob）が表示され、広告 SDK が広告識別子を収集することがあります。完全版をご購入いただくと広告は表示されません。</div>
+    <section>
+      <h2>1. 開発者が収集する個人情報</h2>
+      <p>蘭雪軒集アプリ（以下「本アプリ」）の開発者は、氏名、メールアドレス、位置情報など、いかなる個人情報も直接収集・送信・保管することはありません。会員登録やログインもありません。広告表示の過程におけるデータの取り扱いについては、下記第4項をご参照ください。</p>
+    </section>
+    <section>
+      <h2>2. 端末内にのみ保存されるデータ</h2>
+      <p>以下のデータは、サービスの提供のためにお客様の端末内にのみ保存され、外部に送信されることはありません。</p>
+      <ul>
+        <li>お気に入り、既読履歴、鑑賞設定（テーマ・縦書き・読みの表示など）</li>
+        <li>完全版の購入の有無（Apple のレシート確認によってのみ判定されます）</li>
+      </ul>
+      <p>これらのデータは iOS の標準バックアップ（iCloud／コンピュータへのバックアップ）に含まれる場合があり、その取り扱いは Apple のポリシーに従います。本アプリを削除すると、これらのデータも併せて削除されます。</p>
+    </section>
+    <section>
+      <h2>3. アプリ内課金</h2>
+      <p>完全版のご購入は Apple App Store を通じて処理されます。開発者は、クレジットカード情報などの決済手段に関する情報にアクセスすることはできません。決済情報の取り扱いについては、<a href="https://www.apple.com/legal/privacy/">Apple プライバシーポリシー</a>をご参照ください。</p>
+    </section>
+    <section>
+      <h2>4. 広告およびトラッキング</h2>
+      <p>無料でご利用の場合、本アプリの一部の画面（文集一覧、ホーム）に Google AdMob の広告が表示されます。鑑賞（詩の詳細）画面には広告はなく、完全版をご購入いただくとすべての広告が削除されます。</p>
+      <ul>
+        <li>広告 SDK は、広告の配信や不正防止などのために、広告識別子（IDFA）や端末情報などを収集することがあります。</li>
+        <li>App Tracking Transparency（ATT）に同意された場合はパーソナライズ広告が、拒否された場合は非パーソナライズ広告が表示されます。拒否されても本アプリのご利用に影響はありません。</li>
+        <li>トラッキングの許可設定は、iOS の設定 &gt; プライバシーとセキュリティ &gt; トラッキング でいつでも変更できます。</li>
+      </ul>
+      <p>Google によるデータの取り扱いについては、<a href="https://policies.google.com/technologies/ads">Google の広告ポリシー</a>および<a href="https://policies.google.com/privacy">Google プライバシーポリシー</a>をご参照ください。</p>
+    </section>
+    <section>
+      <h2>4-1. 利用統計（Firebase Analytics）</h2>
+      <p>アプリ改善のため、Google Firebase Analytics により匿名化された利用統計（画面の利用状況、機能の利用の有無、端末情報など）を収集します。これらのデータは個人を識別する情報と結び付けられることはなく、アプリの品質改善の目的にのみ使用されます。</p>
+    </section>
+    <section>
+      <h2>5. お子様の個人情報</h2>
+      <p>本アプリはいかなる個人情報も収集しないため、お子様の個人情報についても収集することはありません。</p>
+    </section>
+    <section>
+      <h2>6. 本ポリシーの変更</h2>
+      <p>本ポリシーを変更する場合は本ページに掲載し、重要な変更についてはアプリのアップデート情報を通じてお知らせします。</p>
+    </section>
+    <section>
+      <h2>7. お問い合わせ</h2>
+      <p>個人情報に関するお問い合わせ：<a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a></p>
+    </section>
   </div>
 </main>
 
 <footer>
   <div class="wrap foot">
-    <div><a href="https://apps.apple.com/app/id6792453819" style="color:var(--orchid);font-weight:600;text-decoration:none"><span data-lang="ko">App Store에서 받기</span><span data-lang="en">Download on the App Store</span><span data-lang="zh">在 App Store 下载</span></a></div>
-    <div>© 2026 CKSW · <span data-lang="ko">난설헌</span><span data-lang="en">Nanseolheon</span><span data-lang="zh">兰雪轩</span></div>
+    <div><a href="https://apps.apple.com/app/id6792453819" style="color:var(--orchid);font-weight:600;text-decoration:none"><span data-lang="ko">App Store에서 받기</span><span data-lang="en">Download on the App Store</span><span data-lang="zh">在 App Store 下载</span><span data-lang="ja">App Store でダウンロード</span></a></div>
+    <div>© 2026 CKSW · <span data-lang="ko">난설헌</span><span data-lang="en">Nanseolheon</span><span data-lang="zh">兰雪轩</span><span data-lang="ja">蘭雪軒</span></div>
     <div>
-      <a href="index.html" data-lang="ko">홈</a><a href="index.html" data-lang="en">Home</a><a href="index.html" data-lang="zh">首页</a>
-      <a href="support.html" data-lang="ko">지원</a><a href="support.html" data-lang="en">Support</a><a href="support.html" data-lang="zh">支持</a>
-      <a href="terms.html" data-lang="ko">이용약관</a><a href="terms.html" data-lang="en">Terms</a><a href="terms.html" data-lang="zh">使用条款</a>
+      <a href="index.html" data-lang="ko">홈</a><a href="index.html" data-lang="en">Home</a><a href="index.html" data-lang="zh">首页</a><a href="index.html" data-lang="ja">ホーム</a>
+      <a href="support.html" data-lang="ko">지원</a><a href="support.html" data-lang="en">Support</a><a href="support.html" data-lang="zh">支持</a><a href="support.html" data-lang="ja">サポート</a>
+      <a href="terms.html" data-lang="ko">이용약관</a><a href="terms.html" data-lang="en">Terms</a><a href="terms.html" data-lang="zh">使用条款</a><a href="terms.html" data-lang="ja">利用規約</a>
     </div>
   </div>
 </footer>
@@ -251,7 +301,8 @@
     try { saved = localStorage.getItem('nanseol-lang'); } catch (e) {}
     var nav = (navigator.language || '').toLowerCase();
     var lang = saved || (nav.indexOf('ko') === 0 ? 'ko'
-                       : nav.indexOf('zh') === 0 ? 'zh' : 'en');
+                       : nav.indexOf('zh') === 0 ? 'zh'
+                       : nav.indexOf('ja') === 0 ? 'ja' : 'en');
     apply(lang);
     document.querySelectorAll('[data-set-lang]').forEach(function (btn) {
       btn.addEventListener('click', function () {
