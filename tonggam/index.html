@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>통감절요 배우기 — 고사성어로 읽는 중국사와 한자 사전</title>
+<meta property="og:title" content="통감절요 배우기 — Learn Tonggam Jeoryo">
+<meta property="og:description" content="지난 일을 거울 삼는다. 사마광의 자치통감을 간추린 통감절요를 지록위마·사면초가·삼고초려 등 27과 30구절로. 습자·강독·배강 세 걸음과 전고 30편. 무료로 시작해 평생 이용권 한 번으로 전체 열람.">
+<style>
+:root{--paper:#F3E8D7;--paper2:#FAF4E9;--ink:#1A365D;--ink2:#2B4A7A;--red:#B22222;--sub:#8A7059;--card:#FFFFFF}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7}
+html[data-lang="ko"] .l-en{display:none}
+html[data-lang="en"] .l-ko{display:none}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+.langbar{display:flex;justify-content:flex-end;padding:14px 0}
+.langbar button{border:1px solid var(--red);background:transparent;color:var(--red);padding:5px 14px;cursor:pointer;font-size:14px}
+.langbar button:first-child{border-radius:8px 0 0 8px}
+.langbar button:last-child{border-radius:0 8px 8px 0}
+.langbar button.on{background:var(--red);color:#fff}
+.hero{text-align:center;padding:40px 0 50px}
+.hero .seal{width:120px;height:120px;border-radius:27px;box-shadow:0 8px 30px rgba(26,54,93,.18);background:var(--paper2);display:inline-flex;align-items:center;justify-content:center;font-size:64px;font-family:serif;color:var(--ink)}
+.hero h1{font-size:2.2rem;margin:22px 0 10px;letter-spacing:-.5px}
+.hero p.tag{font-size:1.15rem;color:var(--sub);margin-bottom:26px}
+.badge .soon{display:inline-block;font-size:.85rem;color:var(--sub);margin-top:8px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:10px 0 54px}
+.stat{background:var(--card);border-radius:14px;padding:22px 8px;text-align:center;box-shadow:0 4px 18px rgba(26,54,93,.08)}
+.stat b{display:block;font-size:1.6rem;color:var(--red)}
+.stat span{font-size:.9rem;color:var(--sub)}
+h2.sec{font-size:1.5rem;margin:0 0 22px;text-align:center}
+h2.sec::after{content:"";display:block;width:44px;height:3px;background:var(--red);margin:10px auto 0;border-radius:2px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:56px}
+.card{background:var(--card);border-radius:16px;padding:24px 20px;box-shadow:0 4px 18px rgba(26,54,93,.08)}
+.card .em{font-size:1.7rem}
+.card h3{font-size:1.05rem;margin:10px 0 6px}
+.card p{font-size:.92rem;color:#4a5568}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:56px}
+.step{background:var(--paper2);border:1px solid #e4d5bd;border-radius:16px;padding:24px 20px}
+.step b{color:var(--red);font-size:1.05rem}
+.step p{font-size:.92rem;color:#4a5568;margin-top:6px}
+.quote{background:var(--card);border-radius:16px;padding:26px 24px;margin-bottom:56px;box-shadow:0 4px 18px rgba(26,54,93,.08);text-align:center}
+.quote .han{font-family:serif;font-size:1.35rem;letter-spacing:2px;color:var(--ink)}
+.quote .kor{font-size:.95rem;color:#4a5568;margin-top:10px}
+.quote .src{font-size:.85rem;color:var(--sub);margin-top:6px}
+.chapters{background:var(--card);border-radius:16px;padding:24px;margin-bottom:56px;box-shadow:0 4px 18px rgba(26,54,93,.08)}
+.chapters ul{padding-left:22px;font-size:.94rem;color:#4a5568}
+.chapters li{margin:4px 0}
+.chapters li b{color:var(--ink)}
+.pricing{background:var(--paper2);border:1px solid #e4d5bd;border-radius:16px;padding:26px;margin-bottom:56px}
+.pricing h3{font-size:1.1rem;margin-bottom:10px}
+.pricing ul{padding-left:20px;font-size:.94rem;color:#4a5568}
+.note{background:#fff;border-left:4px solid var(--red);border-radius:0 12px 12px 0;padding:18px 20px;margin-bottom:56px;font-size:.94rem;color:#4a5568}
+footer{border-top:1px solid #e4d5bd;padding:26px 0 40px;text-align:center;font-size:.9rem;color:var(--sub)}
+footer a{color:var(--ink2)}
+@media(max-width:720px){.grid,.steps{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="wrap"><div class="langbar">
+  <button id="b-ko" class="on" onclick="setLang('ko')">한국어</button>
+  <button id="b-en" onclick="setLang('en')">English</button>
+</div>
+
+<div class="hero">
+  <div class="seal">鑑</div>
+  <h1><span class="l-ko">통감절요 배우기</span><span class="l-en">Learn Tonggam Jeoryo</span></h1>
+  <p class="tag">
+    <span class="l-ko">지난 일을 거울 삼아 오늘을 비추다</span>
+    <span class="l-en">A mirror of past events, held up to the present</span>
+  </p>
+  <div class="badge"><span class="soon">
+    <span class="l-ko">App Store 출시 준비 중</span><span class="l-en">Coming soon to the App Store</span>
+  </span></div>
+</div>
+
+<div class="stats">
+  <div class="stat"><b>27</b><span class="l-ko">과</span><span class="l-en">lessons</span></div>
+  <div class="stat"><b>30</b><span class="l-ko">구절</span><span class="l-en">passages</span></div>
+  <div class="stat"><b>303</b><span class="l-ko">신출자</span><span class="l-en">new characters</span></div>
+  <div class="stat"><b>30</b><span class="l-ko">전고</span><span class="l-en">source texts</span></div>
+</div>
+
+<h2 class="sec"><span class="l-ko">어떤 책인가</span><span class="l-en">About the text</span></h2>
+<div class="note">
+  <p class="l-ko"><b>통감절요(通鑑節要)</b>는 사마광의 『자치통감』 294권을 50권으로 간추린 책입니다.
+  북송의 선비 강지(江贄)가 집안 아이들을 가르치려고 요긴한 대목만 골라 엮었고, 휘종은 그에게
+  소미선생(少微先生)이라는 호를 내렸습니다. 정작 중국에서는 크게 읽히지 않았으나 조선에서는
+  '통감'이라 불리며 서당의 초학 교재로 오백 년을 살아남았습니다.
+  이 앱은 그 가운데 <b>고사성어의 출전이 된 대목</b>을 27과 30구절로 골라 담았습니다.</p>
+  <p class="l-en"><b>Tonggam Jeoryo</b> is a Song-dynasty abridgement of Sima Guang's <i>Zizhi Tongjian</i>,
+  cutting 294 volumes down to 50. It was compiled by the scholar Jiang Zhi for the children of his own household.
+  Little read in China, it became a standard first reader in Korean village schools for five centuries.
+  This app selects <b>the passages that gave rise to well-known Chinese idioms</b> — 27 lessons, 30 passages.</p>
+</div>
+
+<div class="quote">
+  <div class="han">以古爲鏡 可以見興替</div>
+  <div class="kor"><span class="l-ko">옛일로 거울을 삼으면 흥하고 망함을 볼 수 있다</span>
+    <span class="l-en">Take the past as your mirror, and you can see why dynasties rise and fall</span></div>
+  <div class="src"><span class="l-ko">제26과 이인위경(以人爲鏡) — 당태종이 위징을 잃고 남긴 말</span>
+    <span class="l-en">Lesson 26 — Emperor Taizong of Tang, on the death of his most outspoken minister</span></div>
+</div>
+
+<h2 class="sec"><span class="l-ko">한 과를 떼는 세 걸음</span><span class="l-en">Three steps per lesson</span></h2>
+<div class="steps">
+  <div class="step"><b>習字 <span class="l-ko">습자</span><span class="l-en">Writing</span></b>
+    <p class="l-ko">새 글자를 획순 애니메이션으로 보고 손으로 따라 씁니다. 획의 순서와 방향을 함께 판정합니다.</p>
+    <p class="l-en">Trace each new character by hand. Stroke order and direction are both checked.</p></div>
+  <div class="step"><b>講讀 <span class="l-ko">강독</span><span class="l-en">Reading</span></b>
+    <p class="l-ko">현토를 단 원문을 소리 내어 읽고 뜻을 새깁니다. 서산을 놓고 세 번 낭독합니다.</p>
+    <p class="l-en">Read the annotated original aloud and work through its meaning, three times over.</p></div>
+  <div class="step"><b>背講 <span class="l-ko">배강</span><span class="l-en">Recitation</span></b>
+    <p class="l-ko">책을 덮고 외워 바칩니다. 빈칸을 채워 통과해야 다음 과가 열립니다.</p>
+    <p class="l-en">Close the book and recite from memory to unlock the next lesson.</p></div>
+</div>
+
+<h2 class="sec"><span class="l-ko">주(周)에서 당(唐)까지, 1362년</span><span class="l-en">From Zhou to Tang — 1,362 years</span></h2>
+<div class="chapters">
+  <ul>
+    <li class="l-ko"><b>제1·2과</b> — 사마광이 붓을 멈추고 쓴 논평(臣光曰): 천자의 직분과 재덕론</li>
+    <li class="l-ko"><b>전국</b> — 지상담병(紙上談兵) · 기화가거(奇貨可居) · 방약무인(傍若無人)</li>
+    <li class="l-ko"><b>진(秦)</b> — 지록위마(指鹿爲馬) · 파부침주(破釜沈舟)</li>
+    <li class="l-ko"><b>한(漢)</b> — 약법삼장 · 국사무쌍 · 배수진 · 사면초가 · 토사구팽 · 다다익선 · 곡학아세</li>
+    <li class="l-ko"><b>후한</b> — 득롱망촉(得隴望蜀) · 양상군자(梁上君子) · 등용문(登龍門)</li>
+    <li class="l-ko"><b>삼국·진(晉)</b> — 삼고초려 · 괄목상대 · 읍참마속 · 계륵 · 파죽지세</li>
+    <li class="l-ko"><b>수(隋)</b> — 일의대수(一衣帶水)</li>
+    <li class="l-ko"><b>당(唐)</b> — 겸청즉명 · 창업수성 · 이인위경 · 구밀복검</li>
+    <li class="l-en"><b>Lessons 1–2</b> — the historian's own verdicts: the duty of a ruler, and talent versus virtue</li>
+    <li class="l-en"><b>Warring States</b> — armchair strategy · "rare goods worth hoarding" · acting as if no one were near</li>
+    <li class="l-en"><b>Qin</b> — calling a deer a horse · burning the boats and smashing the cauldrons</li>
+    <li class="l-en"><b>Han</b> — the three-article law · the peerless general · the back-to-the-river formation · songs of Chu on all sides</li>
+    <li class="l-en"><b>Later Han</b> — coveting Shu after taking Long · the gentleman on the rafter · the dragon gate</li>
+    <li class="l-en"><b>Three Kingdoms &amp; Jin</b> — the three visits to the thatched hut · chicken ribs · splitting bamboo</li>
+    <li class="l-en"><b>Sui</b> — a strip of water no wider than a belt</li>
+    <li class="l-en"><b>Tang</b> — listen widely and you see clearly · founding versus keeping · honey in the mouth, a sword in the belly</li>
+  </ul>
+</div>
+
+<h2 class="sec"><span class="l-ko">구절을 여는 여덟 가지</span><span class="l-en">Eight ways into a passage</span></h2>
+<div class="grid">
+  <div class="card"><div class="em">🔊</div><h3><span class="l-ko">독음</span><span class="l-en">Reading</span></h3>
+    <p class="l-ko">현토를 붙인 한글 읽기</p><p class="l-en">Korean pronunciation with grammatical particles</p></div>
+  <div class="card"><div class="em">🧩</div><h3><span class="l-ko">직역</span><span class="l-en">Word-by-word</span></h3>
+    <p class="l-ko">어절마다 뜻을 붙여 한문 어순을 익힙니다</p>
+    <p class="l-en">Each phrase glossed in order, so the classical word order becomes readable</p></div>
+  <div class="card"><div class="em">📖</div><h3><span class="l-ko">해석</span><span class="l-en">Translation</span></h3>
+    <p class="l-ko">문장 전체의 뜻</p><p class="l-en">The passage in natural Korean</p></div>
+  <div class="card"><div class="em">🏛</div><h3><span class="l-ko">전고</span><span class="l-en">Source text</span></h3>
+    <p class="l-ko">절요는 줄인 책입니다. 30구절 전부에 <b>절요가 잘라 낸 원전</b>을 붙였습니다 — 『사기』·『삼국지』·『후한서』·『정관정요』·『논어』·『진서』·『남사』·『구당서』</p>
+    <p class="l-en">An abridgement leaves things out. Every one of the 30 passages is paired with the fuller original it was cut from</p></div>
+  <div class="card"><div class="em">🖋</div><h3><span class="l-ko">새김</span><span class="l-en">Commentary</span></h3>
+    <p class="l-ko">고사의 배경과 성어가 굳어진 경위, 그리고 이어지는 역사</p>
+    <p class="l-en">The story behind the idiom, and how it hardened into a phrase</p></div>
+  <div class="card"><div class="em">📚</div><h3><span class="l-ko">사전</span><span class="l-en">Dictionary</span></h3>
+    <p class="l-ko">원문의 한자를 누르면 뜻과 획순이 바로 열립니다</p><p class="l-en">Tap any character for its meaning and stroke order</p></div>
+  <div class="card"><div class="em">🎧</div><h3><span class="l-ko">성독</span><span class="l-en">Recitation audio</span></h3>
+    <p class="l-ko">30구절 전량의 낭독을 담았습니다. 화면을 꺼도 이어지고, 목소리는 여성과 남성 가운데 고릅니다</p>
+    <p class="l-en">All 30 passages recorded. Playback continues with the screen off; choose a female or male voice</p></div>
+  <div class="card"><div class="em">🧧</div><h3><span class="l-ko">족자</span><span class="l-en">Scroll</span></h3>
+    <p class="l-ko">배운 구절을 오른쪽에서 왼쪽으로 흐르는 세로쓰기 족자로 만들어 공유합니다</p>
+    <p class="l-en">Turn what you have learned into a vertical scroll, right to left, and share it as an image</p></div>
+</div>
+
+<h2 class="sec"><span class="l-ko">역사서를 그대로 읽는다는 것</span><span class="l-en">Reading a history as it was written</span></h2>
+<div class="note">
+  <p class="l-ko">통감은 다스림에 도움이 되라고 엮은 역사서입니다. 그러므로 본문에는 권력을 잡기 위한
+  모략과 배신, 처형과 전쟁이 가감 없이 실려 있습니다. 사슴을 말이라 부르게 하고 바른말 한 이를
+  없앤 조고, 천하를 얻은 뒤 공신을 삶아 죽인 한나라 조정, 아끼던 이를 군법으로 벤 제갈량 —
+  이 앱은 <b>원문을 미화하거나 덜어내지 않습니다</b>. 대신 새김과 전고에서 그 일이 어떤 자리에서
+  일어났고 무엇으로 귀결됐는지를 밝혀, 사건을 본보기가 아니라 거울로 읽도록 했습니다.
+  책 이름의 鑑이 곧 거울입니다.</p>
+  <p class="l-en">The <i>Tongjian</i> was compiled as a manual for rulers, so its pages carry conspiracy, betrayal,
+  execution and war without softening. This app presents <b>the original text unedited</b>, and uses the commentary
+  and paired source texts to show where each event stood and what it led to — so the reader meets it as a mirror
+  rather than a model. The character 鑑 in the title means exactly that: a mirror.</p>
+</div>
+
+<h2 class="sec"><span class="l-ko">이용 안내</span><span class="l-en">Pricing</span></h2>
+<div class="pricing">
+  <h3><span class="l-ko">무료로 시작해, 마음에 들면 한 번의 결제로</span><span class="l-en">Start free, unlock once</span></h3>
+  <ul>
+    <li class="l-ko"><b>무료</b> — 학당 27과 가운데 앞 6과, 사전은 급수별 앞 부분</li>
+    <li class="l-en"><b>Free</b> — the first 6 of 27 lessons, plus part of the dictionary</li>
+    <li class="l-ko"><b>평생 이용권</b> — 전 과와 사전 전체, 그리고 <b>광고 제거</b>. 구독이 아니라 1회 결제이며 만료되지 않습니다</li>
+    <li class="l-en"><b>Lifetime unlock</b> — every lesson, the full dictionary, and <b>no ads</b>. A one-time purchase, not a subscription; it never expires</li>
+    <li class="l-ko"><b>30구절 전부에 전고를 붙였습니다</b> — 현토·독음·해석·새김·직역에 더해 절요가 잘라 낸 원전까지</li>
+    <li class="l-en"><b>Every passage carries its source text</b> — reading marks, pronunciation, translation, commentary, word-by-word gloss, and the original it was abridged from</li>
+    <li class="l-ko">무료로 보실 때는 화면 아래에 배너 광고가 하나 표시됩니다. <b>이용 통계를 수집하는 분석 도구는 넣지 않았습니다</b></li>
+    <li class="l-en">The free version shows one banner ad at the bottom of the screen. <b>No analytics are collected</b></li>
+    <li class="l-ko">인터넷 없이 학습할 수 있고, 회원 가입이나 로그인이 필요 없습니다</li>
+    <li class="l-en">Works offline. No account or sign-in required</li>
+  </ul>
+</div>
+
+<footer>
+  <p><a href="support.html"><span class="l-ko">지원</span><span class="l-en">Support</span></a> ·
+     <a href="privacy.html"><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></a></p>
+  <p style="margin-top:8px">chungkil.cksw@gmail.com</p>
+</footer>
+
+</div>
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  document.documentElement.setAttribute('lang', l);
+  document.getElementById('b-ko').classList.toggle('on', l==='ko');
+  document.getElementById('b-en').classList.toggle('on', l==='en');
+  try{ localStorage.setItem('lang', l); }catch(e){}
+}
+try{ var s=localStorage.getItem('lang'); if(s) setLang(s); }catch(e){}
+</script>
+</body>
+</html>
