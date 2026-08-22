@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SleepSound — 코골이가 언제 심했는지 보여드립니다</title>
+<meta property="og:title" content="SleepSound">
+<meta property="og:description" content="얼마나가 아니라 언제. 자는 동안의 소리를 기록해 코골이가 언제 심했는지 시간대별로 보여드립니다. 녹음은 기기를 벗어나지 않습니다.">
+<style>
+:root{--bg:#0A0907;--surface:#141110;--surface2:#1C1816;--line:#2B2521;--ink:#ECE2D4;--dim:#A79684;--faint:#6F6355;--amber:#EDBD70;--deep:#8C6E42}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Hiragino Sans','Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;-webkit-font-smoothing:antialiased}
+html[data-lang="ko"] .l-en,html[data-lang="ko"] .l-ja{display:none}
+html[data-lang="en"] .l-ko,html[data-lang="en"] .l-ja{display:none}
+html[data-lang="ja"] .l-ko,html[data-lang="ja"] .l-en{display:none}
+.wrap{max-width:820px;margin:0 auto;padding:0 22px 72px}
+.langbar{display:flex;justify-content:flex-end;gap:0;padding:16px 0}
+.langbar button{border:1px solid var(--deep);background:transparent;color:var(--amber);padding:5px 13px;cursor:pointer;font-size:13px;font-family:inherit}
+.langbar button:first-child{border-radius:8px 0 0 8px}
+.langbar button:last-child{border-radius:0 8px 8px 0}
+.langbar button.on{background:var(--amber);color:#17110A;border-color:var(--amber)}
+.hero{text-align:center;padding:38px 0 44px}
+.hero .mark{width:104px;height:104px;border-radius:23px;box-shadow:0 10px 34px rgba(237,189,112,.13)}
+.hero h1{font-size:2rem;margin:22px 0 10px;letter-spacing:-.02em;line-height:1.25}
+.hero .tag{font-size:1.08rem;color:var(--dim);font-weight:300}
+h2{font-size:1.3rem;margin:44px 0 14px;letter-spacing:-.01em}
+h3{font-size:1.02rem;margin:24px 0 8px}
+p{margin:0 0 12px;color:var(--dim);font-weight:300}
+p.lead{color:var(--ink)}
+ul{margin:0 0 14px 20px;color:var(--dim);font-weight:300}
+li{margin:5px 0}
+strong{color:var(--ink);font-weight:600}
+a{color:var(--amber)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin:0 0 16px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px}
+.note{border-left:2px solid var(--deep);padding:2px 0 2px 16px;margin:18px 0;color:var(--dim);font-size:.95rem;font-weight:300}
+.note strong{color:var(--amber);font-weight:500}
+.note.flag{border-left-color:#F28C33}
+.note.flag strong{color:#F28C33}
+table{width:100%;border-collapse:collapse;font-size:.94rem;margin:0 0 18px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--faint);font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+td{color:var(--dim);font-weight:300}
+.updated{font-size:.86rem;color:var(--faint);margin-bottom:26px}
+footer{border-top:1px solid var(--line);padding:26px 0 0;margin-top:52px;text-align:center;font-size:.88rem;color:var(--faint)}
+footer a{margin:0 8px}
+@media(max-width:720px){.grid{grid-template-columns:1fr}.hero h1{font-size:1.6rem}}
+</style>
+<script>
+function setLang(l){document.documentElement.setAttribute('data-lang',l);document.documentElement.lang=l;
+['ko','en','ja'].forEach(function(x){var b=document.getElementById('b-'+x);if(b)b.className=(x===l?'on':'')});
+try{localStorage.setItem('lang',l)}catch(e){}}
+(function(){var l='ko';try{l=localStorage.getItem('lang')||(navigator.language||'ko').slice(0,2)}catch(e){}
+if(['ko','en','ja'].indexOf(l)<0)l='en';document.addEventListener('DOMContentLoaded',function(){setLang(l)})})();
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="langbar"><button id="b-ko" onclick="setLang(&#39;ko&#39;)">한국어</button><button id="b-en" onclick="setLang(&#39;en&#39;)">English</button><button id="b-ja" onclick="setLang(&#39;ja&#39;)">日本語</button></div>
+
+<div class="hero">
+  <img class="mark" src="icon.png" alt="SleepSound">
+  <h1><span class="l-ko">얼마나가 아니라, 언제</span><span class="l-en">Not how much. When.</span><span class="l-ja">どれだけ、ではなく、いつ。</span></h1>
+  <p class="tag"><span class="l-ko">자는 동안의 소리를 기록해<br>코골이가 언제 심했는지 보여드립니다</span>
+     <span class="l-en">We record the sounds while you sleep<br>and show you when snoring got loud</span>
+     <span class="l-ja">眠っている間の音を記録して<br>いびきがいつ大きかったかをお見せします</span></p>
+</div>
+
+<div class="grid">
+  <div class="card">
+    <h3><span class="l-ko">시간대별로 봅니다</span><span class="l-en">Hour by hour</span><span class="l-ja">時間帯ごとに</span></h3>
+    <p><span class="l-ko">총량 하나로는 알 수 없습니다. 새벽 2시에 집중적으로 심했다면 그게 보여야 합니다.</span>
+       <span class="l-en">A single total tells you nothing. If 2 a.m. was the worst stretch, you should be able to see it.</span>
+       <span class="l-ja">合計だけでは分かりません。午前2時に集中していたなら、それが見えるべきです。</span></p>
+  </div>
+  <div class="card">
+    <h3><span class="l-ko">그 순간을 들어봅니다</span><span class="l-en">Listen to the moment</span><span class="l-ja">その瞬間を聴く</span></h3>
+    <p><span class="l-ko">밤새 통녹음 대신 감지된 순간만 짧게 남깁니다. 하룻밤에 15MB 남짓입니다.</span>
+       <span class="l-en">Instead of recording all night, we keep short clips of the moments that mattered — about 15 MB a night.</span>
+       <span class="l-ja">一晩中の録音ではなく、検出された瞬間だけを短く残します。一晩で約15MBです。</span></p>
+  </div>
+  <div class="card">
+    <h3><span class="l-ko">기기를 벗어나지 않습니다</span><span class="l-en">It stays on your phone</span><span class="l-ja">端末から出ません</span></h3>
+    <p><span class="l-ko">녹음도 분석도 전부 기기 안에서. 서버로 보내지 않고 계정도 필요 없습니다.</span>
+       <span class="l-en">Recording and analysis both happen on device. Nothing is uploaded, no account needed.</span>
+       <span class="l-ja">録音も解析もすべて端末の中で。サーバーに送らず、アカウントも不要です。</span></p>
+  </div>
+</div>
+
+<h2><span class="l-ko">어떻게 판단하나요</span><span class="l-en">How it decides</span><span class="l-ja">どのように判定するか</span></h2>
+<p class="lead"><span class="l-ko">어떤 신호도 혼자서 판정하지 않습니다.</span><span class="l-en">No single signal decides on its own.</span><span class="l-ja">どの信号も単独では判定しません。</span></p>
+<p><span class="l-ko">방의 배경 소음을 5분간 익힌 뒤 그 기준 위로 올라온 소리만 후보로 봅니다. 후보는 음향 분류, 저역 스펙트럼, 그리고 <strong>호흡 주기성</strong>으로 다시 걸러집니다. 코골이는 숨에 맞춰 반복되고, 문 닫는 소리나 지나가는 차는 단발입니다. 말소리가 감지된 구간은 판정을 보류합니다 — 말하고 있으면 깨어 있다는 뜻이니까요.</span>
+   <span class="l-en">The app spends five minutes learning your room's background noise, then only considers sounds that rise above it. Candidates are filtered again by sound classification, low-frequency spectrum, and <strong>breathing periodicity</strong> — snoring repeats with your breath, while a closing door or passing car is a one-off. Stretches with speech are held back: if you're talking, you're awake.</span>
+   <span class="l-ja">まず5分かけて部屋の環境音を学習し、その基準を超えた音だけを候補とします。候補は音の分類、低域スペクトル、そして<strong>呼吸の周期性</strong>で再度絞られます — いびきは呼吸に合わせて繰り返し、ドアの音や通過する車は単発です。話し声が検出された区間は判定を保留します。話しているなら起きているからです。</span></p>
+
+<h2><span class="l-ko">밤에는 화면을 보여드리지 않습니다</span><span class="l-en">At night, the screen gets out of the way</span><span class="l-ja">夜は画面をお見せしません</span></h2>
+<p><span class="l-ko">측정 화면에는 실시간 그래프도, 지금까지의 횟수도, 어떤 애니메이션도 없습니다. 어두운 방에서 0.5초마다 움직이는 물체는 각성 자극이기 때문입니다. 5초 뒤 화면은 스스로 어두워지고, 자다 깨서 보실 수 있게 시각만 크게 남습니다.</span>
+   <span class="l-en">The measuring screen has no live graph, no running count, no animation. In a dark room, anything that moves every half second is a stimulus that keeps you awake. After five seconds the screen dims itself, leaving just the time — large enough to read if you wake up.</span>
+   <span class="l-ja">測定画面にはリアルタイムのグラフも、これまでの回数も、アニメーションもありません。暗い部屋で0.5秒ごとに動くものは覚醒の刺激になるからです。5秒後に画面は自ら暗くなり、夜中に目が覚めたときのために時刻だけが大きく残ります。</span></p>
+
+<h2><span class="l-ko">무료와 Pro</span><span class="l-en">Free and Pro</span><span class="l-ja">無料とPro</span></h2>
+<table>
+<tr><th></th><th><span class="l-ko">무료</span><span class="l-en">Free</span><span class="l-ja">無料</span></th><th>Pro</th></tr>
+<tr><td><span class="l-ko">측정 · 리포트 · 그래프</span><span class="l-en">Measuring, reports, charts</span><span class="l-ja">測定・レポート・グラフ</span></td>
+    <td><span class="l-ko">전부</span><span class="l-en">All of it</span><span class="l-ja">すべて</span></td>
+    <td><span class="l-ko">전부</span><span class="l-en">All of it</span><span class="l-ja">すべて</span></td></tr>
+<tr><td><span class="l-ko">측정 횟수</span><span class="l-en">Nights</span><span class="l-ja">測定回数</span></td>
+    <td><span class="l-ko">주 3회</span><span class="l-en">3 a week</span><span class="l-ja">週3回</span></td>
+    <td><span class="l-ko">무제한</span><span class="l-en">Unlimited</span><span class="l-ja">無制限</span></td></tr>
+<tr><td><span class="l-ko">클립 저장</span><span class="l-en">Clips</span><span class="l-ja">クリップ保存</span></td>
+    <td><span class="l-ko">30개</span><span class="l-en">30</span><span class="l-ja">30件</span></td>
+    <td><span class="l-ko">300개 · 통녹음</span><span class="l-en">300 · all night</span><span class="l-ja">300件・一晩中</span></td></tr>
+<tr><td><span class="l-ko">추이</span><span class="l-en">Trends</span><span class="l-ja">推移</span></td>
+    <td><span class="l-ko">7일</span><span class="l-en">7 days</span><span class="l-ja">7日</span></td>
+    <td><span class="l-ko">90일</span><span class="l-en">90 days</span><span class="l-ja">90日</span></td></tr>
+<tr><td><span class="l-ko">CSV 내보내기 · 광고</span><span class="l-en">CSV export · ads</span><span class="l-ja">CSV書き出し・広告</span></td>
+    <td><span class="l-ko">잠금 · 표시</span><span class="l-en">Locked · shown</span><span class="l-ja">ロック・表示</span></td>
+    <td><span class="l-ko">사용 · 제거</span><span class="l-en">Unlocked · removed</span><span class="l-ja">利用可・なし</span></td></tr>
+</table>
+<div class="note">
+  <span class="l-ko"><strong>이미 기록한 데이터는 잠그지 않습니다.</strong> 측정 결과와 데이터 삭제는 무료에서도 전부 제공합니다. Pro는 한 번 구매하면 끝이며 구독이 아닙니다.</span>
+  <span class="l-en"><strong>We never lock data you already recorded.</strong> Your results and the ability to delete them are always free. Pro is a one-time purchase, not a subscription.</span>
+  <span class="l-ja"><strong>すでに記録したデータをロックすることはありません。</strong>測定結果とデータの削除は無料でもすべて利用できます。Proは買い切りで、サブスクリプションではありません。</span>
+</div>
+
+<div class="note flag">
+  <span class="l-ko"><strong>본 앱은 의료기기가 아닙니다.</strong> 질환의 진단·치료 목적으로 사용할 수 없습니다.</span>
+  <span class="l-en"><strong>This app is not a medical device.</strong> It cannot be used to diagnose or treat any condition.</span>
+  <span class="l-ja"><strong>本アプリは医療機器ではありません。</strong>疾患の診断・治療を目的として使用することはできません。</span>
+</div>
+
+<footer><a href="index.html"><span class="l-ko">홈</span><span class="l-en">Home</span><span class="l-ja">ホーム</span></a>·<a href="support.html"><span class="l-ko">지원</span><span class="l-en">Support</span><span class="l-ja">サポート</span></a>·<a href="privacy.html"><span class="l-ko">개인정보</span><span class="l-en">Privacy</span><span class="l-ja">プライバシー</span></a><p style="margin-top:12px">chungkil.cksw@gmail.com</p></footer>
+</div>
+</body>
+</html>
