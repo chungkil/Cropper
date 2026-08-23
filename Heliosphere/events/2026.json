@@ -713,6 +713,62 @@
       "source": "remote"
     },
     {
+      "id": "neptune_opposition_2026",
+      "baseId": "neptune_opposition",
+      "titleKey": "event_neptune_opposition",
+      "descriptionKey": "event_neptune_opposition_desc",
+      "category": "planetaryEvent",
+      "icon": "globe",
+      "date": "2026-09-26",
+      "source": "remote",
+      "localizedStrings": {
+        "en": {
+          "title": "Neptune at Opposition",
+          "description": "Neptune is at its closest to Earth and fully illuminated by the Sun, shining at its brightest for the year in the constellation Pisces. At magnitude 7.8 it requires binoculars or a telescope to see."
+        },
+        "ko": {
+          "title": "해왕성 충",
+          "description": "해왕성이 지구에 가장 가까워지며 태양에 의해 완전히 밝혀져 물고기자리에서 올해 가장 밝게 빛납니다. 밝기 7.8등급으로 쌍안경이나 망원경이 필요합니다."
+        },
+        "ja": {
+          "title": "海王星の衝",
+          "description": "海王星が地球に最も近づき、太陽に完全に照らされ、うお座で一年で最も明るく輝きます。7.8等級のため、観測には双眼鏡か望遠鏡が必要です。"
+        },
+        "zh-Hans": {
+          "title": "海王星冲日",
+          "description": "海王星距离地球最近,被太阳完全照亮,在双鱼座中达到全年最亮。视星等7.8,需借助双筒望远镜或天文望远镜观测。"
+        },
+        "zh-Hant": {
+          "title": "海王星衝",
+          "description": "海王星距離地球最近,被太陽完全照亮,在雙魚座中達到全年最亮。視星等7.8,需借助雙筒望遠鏡或天文望遠鏡觀測。"
+        },
+        "de": {
+          "title": "Neptun in Opposition",
+          "description": "Neptun steht der Erde am nächsten und wird von der Sonne voll beleuchtet. Im Sternbild Fische erstrahlt er am hellsten des Jahres. Mit einer Helligkeit von 7,8 mag ist ein Fernglas oder Teleskop nötig."
+        },
+        "es": {
+          "title": "Oposición de Neptuno",
+          "description": "Neptuno está en su punto más cercano a la Tierra e iluminado completamente por el Sol, brillando al máximo del año en la constelación de Piscis. Con magnitud 7,8 requiere binoculares o telescopio."
+        },
+        "fr": {
+          "title": "Neptune en opposition",
+          "description": "Neptune est au plus proche de la Terre et entièrement éclairée par le Soleil, brillant au maximum de l'année dans la constellation des Poissons. À magnitude 7,8, des jumelles ou un télescope sont nécessaires."
+        },
+        "it": {
+          "title": "Opposizione di Nettuno",
+          "description": "Nettuno è nel punto più vicino alla Terra e completamente illuminato dal Sole, splendendo al massimo dell'anno nella costellazione dei Pesci. A magnitudine 7,8 richiede binocolo o telescopio."
+        },
+        "pt-BR": {
+          "title": "Oposição de Netuno",
+          "description": "Netuno está no ponto mais próximo da Terra e totalmente iluminado pelo Sol, brilhando no máximo do ano na constelação de Peixes. Com magnitude 7,8, exige binóculos ou telescópio."
+        },
+        "ru": {
+          "title": "Противостояние Нептуна",
+          "description": "Нептун находится ближе всего к Земле и полностью освещён Солнцем, сияя ярче всего в году в созвездии Рыб. При звёздной величине 7,8 для наблюдения нужны бинокль или телескоп."
+        }
+      }
+    },
+    {
       "id": "saturn_opposition_2026",
       "baseId": "saturn_opposition",
       "titleKey": "event_saturn_opposition",
@@ -801,6 +857,62 @@
       }
     },
     {
+      "id": "uranus_opposition_2026",
+      "baseId": "uranus_opposition",
+      "titleKey": "event_uranus_opposition",
+      "descriptionKey": "event_uranus_opposition_desc",
+      "category": "planetaryEvent",
+      "icon": "globe",
+      "date": "2026-11-25",
+      "source": "remote",
+      "localizedStrings": {
+        "en": {
+          "title": "Uranus at Opposition",
+          "description": "Uranus is at its closest to Earth and fully illuminated by the Sun, at its brightest for the year in the constellation Taurus. At magnitude 5.6 it is just visible to the naked eye under dark skies and easy in binoculars."
+        },
+        "ko": {
+          "title": "천왕성 충",
+          "description": "천왕성이 지구에 가장 가까워지며 태양에 의해 완전히 밝혀져 황소자리에서 올해 가장 밝게 빛납니다. 밝기 5.6등급으로 어두운 하늘에서는 맨눈으로도 겨우 보이며 쌍안경으로 쉽게 관측됩니다."
+        },
+        "ja": {
+          "title": "天王星の衝",
+          "description": "天王星が地球に最も近づき、太陽に完全に照らされ、おうし座で一年で最も明るく輝きます。5.6等級で、暗い空では肉眼でもかろうじて見え、双眼鏡なら容易に観測できます。"
+        },
+        "zh-Hans": {
+          "title": "天王星冲日",
+          "description": "天王星距离地球最近,被太阳完全照亮,在金牛座中达到全年最亮。视星等5.6,在黑暗的天空下勉强可用肉眼看到,用双筒望远镜则很容易。"
+        },
+        "zh-Hant": {
+          "title": "天王星衝",
+          "description": "天王星距離地球最近,被太陽完全照亮,在金牛座中達到全年最亮。視星等5.6,在黑暗的天空下勉強可用肉眼看到,用雙筒望遠鏡則很容易。"
+        },
+        "de": {
+          "title": "Uranus in Opposition",
+          "description": "Uranus steht der Erde am nächsten und wird von der Sonne voll beleuchtet. Im Sternbild Stier erstrahlt er am hellsten des Jahres. Mit 5,6 mag ist er unter dunklem Himmel gerade noch mit bloßem Auge und leicht im Fernglas zu sehen."
+        },
+        "es": {
+          "title": "Oposición de Urano",
+          "description": "Urano está en su punto más cercano a la Tierra e iluminado completamente por el Sol, en su punto más brillante del año en la constelación de Tauro. Con magnitud 5,6 es apenas visible a simple vista bajo cielos oscuros y fácil con binoculares."
+        },
+        "fr": {
+          "title": "Uranus en opposition",
+          "description": "Uranus est au plus proche de la Terre et entièrement éclairée par le Soleil, à son maximum d'éclat de l'année dans la constellation du Taureau. À magnitude 5,6, elle est tout juste visible à l'œil nu sous un ciel sombre et facile aux jumelles."
+        },
+        "it": {
+          "title": "Opposizione di Urano",
+          "description": "Urano è nel punto più vicino alla Terra e completamente illuminato dal Sole, al massimo della luminosità dell'anno nella costellazione del Toro. A magnitudine 5,6 è appena visibile a occhio nudo sotto cieli bui e facile col binocolo."
+        },
+        "pt-BR": {
+          "title": "Oposição de Urano",
+          "description": "Urano está no ponto mais próximo da Terra e totalmente iluminado pelo Sol, no seu brilho máximo do ano na constelação de Touro. Com magnitude 5,6, é apenas visível a olho nu sob céus escuros e fácil com binóculos."
+        },
+        "ru": {
+          "title": "Противостояние Урана",
+          "description": "Уран находится ближе всего к Земле и полностью освещён Солнцем, сияя ярче всего в году в созвездии Тельца. При звёздной величине 5,6 он едва виден невооружённым глазом под тёмным небом и легко — в бинокль."
+        }
+      }
+    },
+    {
       "id": "geminids_2026",
       "baseId": "geminids",
       "titleKey": "event_geminids",
@@ -825,6 +937,68 @@
       "icon": "sun.max.fill",
       "date": "2026-12-21T20:50:00Z",
       "source": "remote"
+    },
+    {
+      "id": "ursids_2026",
+      "baseId": "ursids",
+      "titleKey": "event_ursids",
+      "descriptionKey": "event_ursids_desc",
+      "category": "meteorShower",
+      "icon": "sparkles",
+      "date": "2026-12-22",
+      "peakDate": "2026-12-22T20:59:00Z",
+      "endDate": "2026-12-23",
+      "source": "remote",
+      "extraInfo": {
+        "zhr": 10,
+        "moonIllumination": 0.94
+      },
+      "localizedStrings": {
+        "en": {
+          "title": "Ursids Meteor Shower",
+          "description": "A minor shower radiating from Ursa Minor around the winter solstice, with about 10 meteors per hour at its peak. In 2026 a 94%-full Moon washes out all but the brightest meteors."
+        },
+        "ko": {
+          "title": "작은곰자리 유성우",
+          "description": "동지 무렵 작은곰자리에서 복사되는 소규모 유성우로, 극대기에 시간당 약 10개의 유성이 흐릅니다. 2026년에는 94% 밝기의 달이 밝은 유성을 제외한 대부분을 가립니다."
+        },
+        "ja": {
+          "title": "こぐま座流星群",
+          "description": "冬至の頃にこぐま座から放射される小規模な流星群で、極大時には1時間あたり約10個の流星が見られます。2026年は94%の月明かりが、明るい流星以外をかき消します。"
+        },
+        "zh-Hans": {
+          "title": "小熊座流星雨",
+          "description": "冬至前后从小熊座辐射的小型流星雨,极大时每小时约10颗。2026年94%的明亮月光会盖过除最亮流星以外的大部分。"
+        },
+        "zh-Hant": {
+          "title": "小熊座流星雨",
+          "description": "冬至前後從小熊座輻射的小型流星雨,極大時每小時約10顆。2026年94%的明亮月光會蓋過除最亮流星以外的大部分。"
+        },
+        "de": {
+          "title": "Ursiden-Meteorstrom",
+          "description": "Ein kleiner Strom, der um die Wintersonnenwende aus dem Kleinen Bären strahlt, mit etwa 10 Meteoren pro Stunde im Maximum. 2026 überstrahlt ein zu 94 % beleuchteter Mond alle bis auf die hellsten Meteore."
+        },
+        "es": {
+          "title": "Lluvia de meteoros Úrsidas",
+          "description": "Una lluvia menor que irradia desde la Osa Menor cerca del solsticio de invierno, con unos 10 meteoros por hora en su pico. En 2026 una Luna llena al 94 % oculta todos menos los más brillantes."
+        },
+        "fr": {
+          "title": "Pluie de météores des Ursides",
+          "description": "Une pluie mineure rayonnant de la Petite Ourse autour du solstice d'hiver, avec environ 10 météores par heure au maximum. En 2026, une Lune éclairée à 94 % efface tous les météores sauf les plus brillants."
+        },
+        "it": {
+          "title": "Sciame meteorico delle Ursidi",
+          "description": "Uno sciame minore che irradia dall'Orsa Minore vicino al solstizio d'inverno, con circa 10 meteore all'ora al picco. Nel 2026 una Luna piena al 94% cancella tutte tranne le meteore più luminose."
+        },
+        "pt-BR": {
+          "title": "Chuva de meteoros Ursídeas",
+          "description": "Uma chuva menor que irradia da Ursa Menor perto do solstício de inverno, com cerca de 10 meteoros por hora no pico. Em 2026, uma Lua 94% cheia ofusca todos, exceto os mais brilhantes."
+        },
+        "ru": {
+          "title": "Метеорный поток Урсиды",
+          "description": "Небольшой поток, исходящий из созвездия Малой Медведицы вблизи зимнего солнцестояния, с примерно 10 метеорами в час в максимуме. В 2026 году Луна, освещённая на 94 %, затмевает все метеоры, кроме самых ярких."
+        }
+      }
     }
   ]
 }

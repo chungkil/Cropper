@@ -1,0 +1,1074 @@
+{
+  "version": 1,
+  "year": 2027,
+  "events": [
+    {
+      "id": "earth_perihelion_2027",
+      "baseId": "earth_perihelion",
+      "titleKey": "event_earth_perihelion",
+      "descriptionKey": "event_earth_perihelion_desc",
+      "category": "planetaryEvent",
+      "icon": "globe",
+      "date": "2027-01-03T02:33:00Z",
+      "source": "remote"
+    },
+    {
+      "id": "quadrantids_2027",
+      "baseId": "quadrantids",
+      "titleKey": "event_quadrantids",
+      "descriptionKey": "event_quadrantids_desc",
+      "category": "meteorShower",
+      "icon": "sparkles",
+      "date": "2027-01-04",
+      "peakDate": "2027-01-04T03:27:00Z",
+      "source": "remote",
+      "extraInfo": {
+        "zhr": 80,
+        "moonIllumination": 0.12
+      },
+      "endDate": "2027-01-05"
+    },
+    {
+      "id": "annular_solar_eclipse_2027_02",
+      "baseId": "annular_solar_eclipse",
+      "titleKey": "event_annular_solar_eclipse",
+      "descriptionKey": "event_annular_solar_eclipse_desc",
+      "category": "solarEvent",
+      "icon": "sun.max.fill",
+      "date": "2027-02-06T16:01:00Z",
+      "source": "remote",
+      "visibility": [
+        "Chile",
+        "Argentina",
+        "South Atlantic",
+        "South America",
+        "Antarctica",
+        "Western Africa",
+        "Southern Africa"
+      ],
+      "localizedStrings": {
+        "en": {
+          "title": "Annular Solar Eclipse",
+          "description": "The Moon is too far from Earth to cover the Sun completely, leaving a ring of fire around the silhouette for up to 7 minutes 51 seconds. The path crosses Chile, Argentina and the South Atlantic; a partial eclipse is visible from South America, Antarctica and western and southern Africa."
+        },
+        "ko": {
+          "title": "금환 일식",
+          "description": "달이 지구에서 멀어 태양을 다 가리지 못하고, 최대 7분 51초 동안 가장자리에 불의 고리가 남습니다. 금환 경로는 칠레와 아르헨티나, 남대서양을 지나갑니다. 남아메리카, 남극, 아프리카 서부·남부에서 부분 일식을 볼 수 있습니다."
+        },
+        "ja": {
+          "title": "金環日食",
+          "description": "月が地球から遠く太陽を覆いきれず、最大7分51秒にわたって縁に光の環が残ります。金環帯はチリ、アルゼンチン、南大西洋を通ります。南アメリカ、南極、アフリカ西部・南部で部分日食が見られます。"
+        },
+        "zh-Hans": {
+          "title": "日环食",
+          "description": "月球距离地球较远，无法完全遮住太阳，边缘留下一圈光环，最长可达7分51秒。环食带经过智利、阿根廷和南大西洋；南美洲、南极洲以及非洲西部和南部可见日偏食。"
+        },
+        "zh-Hant": {
+          "title": "日環食",
+          "description": "月球距離地球較遠，無法完全遮住太陽，邊緣留下一圈光環，最長可達7分51秒。環食帶經過智利、阿根廷和南大西洋；南美洲、南極洲以及非洲西部和南部可見日偏食。"
+        },
+        "de": {
+          "title": "Ringförmige Sonnenfinsternis",
+          "description": "Der Mond ist zu weit von der Erde entfernt, um die Sonne ganz zu bedecken – bis zu 7 Minuten 51 Sekunden bleibt ein Feuerring stehen. Die Zone verläuft über Chile, Argentinien und den Südatlantik; eine partielle Finsternis ist in Südamerika, der Antarktis sowie West- und Südafrika zu sehen."
+        },
+        "es": {
+          "title": "Eclipse solar anular",
+          "description": "La Luna está demasiado lejos de la Tierra para cubrir el Sol por completo y deja un anillo de fuego durante hasta 7 minutos y 51 segundos. La franja cruza Chile, Argentina y el Atlántico Sur; el eclipse parcial se ve en Sudamérica, la Antártida y el oeste y sur de África."
+        },
+        "fr": {
+          "title": "Éclipse solaire annulaire",
+          "description": "La Lune est trop éloignée de la Terre pour couvrir entièrement le Soleil : un anneau de feu subsiste jusqu'à 7 minutes 51 secondes. La bande traverse le Chili, l'Argentine et l'Atlantique Sud ; l'éclipse partielle est visible depuis l'Amérique du Sud, l'Antarctique et l'ouest et le sud de l'Afrique."
+        },
+        "it": {
+          "title": "Eclissi solare anulare",
+          "description": "La Luna è troppo lontana dalla Terra per coprire del tutto il Sole e lascia un anello di fuoco per un massimo di 7 minuti e 51 secondi. La fascia attraversa Cile, Argentina e Atlantico meridionale; l'eclissi parziale è visibile da Sud America, Antartide e Africa occidentale e meridionale."
+        },
+        "pt-BR": {
+          "title": "Eclipse solar anular",
+          "description": "A Lua está longe demais da Terra para cobrir o Sol por completo e deixa um anel de fogo por até 7 minutos e 51 segundos. A faixa cruza Chile, Argentina e o Atlântico Sul; o eclipse parcial é visível na América do Sul, Antártida e no oeste e sul da África."
+        },
+        "ru": {
+          "title": "Кольцеобразное солнечное затмение",
+          "description": "Луна слишком далека от Земли, чтобы закрыть Солнце целиком: огненное кольцо держится до 7 минут 51 секунды. Полоса проходит через Чили, Аргентину и Южную Атлантику; частное затмение видно в Южной Америке, Антарктиде, а также на западе и юге Африки."
+        }
+      }
+    },
+    {
+      "id": "jupiter_opposition_2027",
+      "baseId": "jupiter_opposition",
+      "titleKey": "event_jupiter_opposition",
+      "descriptionKey": "event_jupiter_opposition_desc",
+      "category": "planetaryEvent",
+      "icon": "globe",
+      "date": "2027-02-11",
+      "source": "remote",
+      "localizedStrings": {
+        "en": {
+          "title": "Jupiter at Opposition",
+          "description": "Jupiter is at its closest to Earth and fully illuminated by the Sun. The giant planet will be brighter than any other time of the year in the constellation Gemini."
+        },
+        "ko": {
+          "title": "목성 충",
+          "description": "목성이 지구에 가장 가까워지며 태양에 의해 완전히 밝혀집니다. 쌍둥이자리에서 올해 가장 밝게 빛나는 거대한 행성을 관측하세요."
+        },
+        "ja": {
+          "title": "木星の衝",
+          "description": "木星が地球に最も近づき、太陽の光を完全に受けます。ふたご座で今年最も明るく輝く巨大惑星を観測できます。"
+        },
+        "zh-Hans": {
+          "title": "木星冲日",
+          "description": "木星距离地球最近,被太阳完全照亮。这颗巨行星在双子座中全年最亮。"
+        },
+        "zh-Hant": {
+          "title": "木星衝",
+          "description": "木星距離地球最近,被太陽完全照亮。這顆巨行星在雙子座中全年最亮。"
+        },
+        "de": {
+          "title": "Jupiter in Opposition",
+          "description": "Jupiter steht der Erde am nächsten und wird von der Sonne voll beleuchtet. Der Riesenplanet erstrahlt im Sternbild Zwillinge am hellsten des Jahres."
+        },
+        "es": {
+          "title": "Oposición de Júpiter",
+          "description": "Júpiter está en su punto más cercano a la Tierra e iluminado completamente por el Sol. El planeta gigante brillará más que nunca en la constelación de Géminis."
+        },
+        "fr": {
+          "title": "Jupiter en opposition",
+          "description": "Jupiter est au plus proche de la Terre et entièrement éclairée par le Soleil. La planète géante brille au maximum dans la constellation des Gémeaux."
+        },
+        "it": {
+          "title": "Opposizione di Giove",
+          "description": "Giove è nel punto più vicino alla Terra e completamente illuminato dal Sole. Il pianeta gigante brilla al massimo nella costellazione dei Gemelli."
+        },
+        "pt-BR": {
+          "title": "Oposição de Júpiter",
+          "description": "Júpiter está no ponto mais próximo da Terra e totalmente iluminado pelo Sol. O planeta gigante brilhará ao máximo na constelação de Gêmeos."
+        },
+        "ru": {
+          "title": "Противостояние Юпитера",
+          "description": "Юпитер находится ближе всего к Земле и полностью освещён Солнцем. Гигантская планета сияет ярче всего в созвездии Близнецов."
+        }
+      }
+    },
+    {
+      "id": "mars_opposition_2027",
+      "baseId": "mars_opposition",
+      "titleKey": "event_mars_opposition",
+      "descriptionKey": "event_mars_opposition_desc",
+      "category": "planetaryEvent",
+      "icon": "globe",
+      "date": "2027-02-19",
+      "source": "remote",
+      "localizedStrings": {
+        "en": {
+          "title": "Mars at Opposition",
+          "description": "Mars is at its closest to Earth and fully illuminated by the Sun, shining a brilliant red all night. Oppositions come only every 26 months, so this is the best time of the year to observe surface features."
+        },
+        "ko": {
+          "title": "화성 충",
+          "description": "화성이 지구에 가장 가까워지며 태양에 완전히 밝혀져 밤새 붉게 빛납니다. 충은 26개월마다 한 번뿐이라 표면 무늬를 관측하기에 가장 좋은 시기입니다."
+        },
+        "ja": {
+          "title": "火星の衝",
+          "description": "火星が地球に最も近づき、太陽に完全に照らされて一晩中赤く輝きます。衝は26か月に一度しか訪れず、表面の模様を観測する絶好の時期です。"
+        },
+        "zh-Hans": {
+          "title": "火星冲日",
+          "description": "火星距离地球最近，被太阳完全照亮，整夜呈现明亮的红色。冲日每26个月才出现一次，是观测火星表面特征的最佳时机。"
+        },
+        "zh-Hant": {
+          "title": "火星衝",
+          "description": "火星距離地球最近，被太陽完全照亮，整夜呈現明亮的紅色。衝每26個月才出現一次，是觀測火星表面特徵的最佳時機。"
+        },
+        "de": {
+          "title": "Mars in Opposition",
+          "description": "Mars steht der Erde am nächsten und wird von der Sonne voll beleuchtet – er leuchtet die ganze Nacht kräftig rot. Oppositionen treten nur alle 26 Monate auf, daher ist dies die beste Zeit, Oberflächenstrukturen zu beobachten."
+        },
+        "es": {
+          "title": "Oposición de Marte",
+          "description": "Marte está en su punto más cercano a la Tierra e iluminado completamente por el Sol, brillando de un rojo intenso toda la noche. Las oposiciones ocurren solo cada 26 meses, así que es el mejor momento para observar detalles de su superficie."
+        },
+        "fr": {
+          "title": "Mars en opposition",
+          "description": "Mars est au plus proche de la Terre et entièrement éclairée par le Soleil : elle brille d'un rouge éclatant toute la nuit. Les oppositions ne reviennent que tous les 26 mois, c'est donc le meilleur moment pour observer les détails de sa surface."
+        },
+        "it": {
+          "title": "Opposizione di Marte",
+          "description": "Marte è nel punto più vicino alla Terra e completamente illuminato dal Sole, brillando di un rosso intenso per tutta la notte. Le opposizioni si verificano solo ogni 26 mesi: è il momento migliore per osservare i dettagli della superficie."
+        },
+        "pt-BR": {
+          "title": "Oposição de Marte",
+          "description": "Marte está no ponto mais próximo da Terra e totalmente iluminado pelo Sol, brilhando em vermelho intenso a noite toda. As oposições ocorrem apenas a cada 26 meses, sendo o melhor momento para observar detalhes da superfície."
+        },
+        "ru": {
+          "title": "Противостояние Марса",
+          "description": "Марс находится ближе всего к Земле и полностью освещён Солнцем, ярко сияя красным всю ночь. Противостояния случаются лишь раз в 26 месяцев — лучшее время для наблюдения деталей поверхности."
+        }
+      }
+    },
+    {
+      "id": "penumbral_lunar_eclipse_2027_02",
+      "baseId": "penumbral_lunar_eclipse",
+      "titleKey": "event_penumbral_lunar_eclipse",
+      "descriptionKey": "event_penumbral_lunar_eclipse_desc",
+      "category": "lunarEvent",
+      "icon": "moon.fill",
+      "date": "2027-02-20T23:14:00Z",
+      "source": "remote",
+      "visibility": [
+        "Americas",
+        "Europe",
+        "Africa",
+        "Asia"
+      ],
+      "localizedStrings": {
+        "en": {
+          "title": "Penumbral Lunar Eclipse",
+          "description": "The Moon passes through Earth's outer shadow. There is no bite taken out of the disc — only a subtle dimming along one edge, easiest to notice in a photograph. Visible from the Americas, Europe, Africa and Asia."
+        },
+        "ko": {
+          "title": "반영 월식",
+          "description": "달이 지구의 바깥 그림자(반영)를 지나갑니다. 달이 이지러지지는 않고 한쪽 가장자리가 옅게 어두워질 뿐이라, 사진으로 비교하면 알아보기 쉽습니다. 아메리카, 유럽, 아프리카, 아시아에서 관측 가능합니다."
+        },
+        "ja": {
+          "title": "半影月食",
+          "description": "月が地球の外側の影（半影）を通過します。月が欠けることはなく、片側がわずかに暗くなるだけで、写真で比べると分かりやすいです。アメリカ大陸、ヨーロッパ、アフリカ、アジアで観測できます。"
+        },
+        "zh-Hans": {
+          "title": "半影月食",
+          "description": "月球穿过地球的外层阴影（半影）。月面不会出现缺口，只是一侧略微变暗，通过照片对比最容易察觉。美洲、欧洲、非洲和亚洲可见。"
+        },
+        "zh-Hant": {
+          "title": "半影月食",
+          "description": "月球穿過地球的外層陰影（半影）。月面不會出現缺口，只是一側略微變暗，透過照片對比最容易察覺。美洲、歐洲、非洲和亞洲可見。"
+        },
+        "de": {
+          "title": "Halbschatten-Mondfinsternis",
+          "description": "Der Mond durchquert den äußeren Erdschatten. Es fehlt kein Stück der Scheibe – nur eine feine Abdunklung an einem Rand, am ehesten auf einem Foto zu erkennen. Sichtbar von Amerika, Europa, Afrika und Asien."
+        },
+        "es": {
+          "title": "Eclipse lunar penumbral",
+          "description": "La Luna atraviesa la sombra exterior de la Tierra. No falta ningún trozo del disco: solo un sutil oscurecimiento en un borde, más fácil de notar en una fotografía. Visible desde América, Europa, África y Asia."
+        },
+        "fr": {
+          "title": "Éclipse lunaire par la pénombre",
+          "description": "La Lune traverse l'ombre extérieure de la Terre. Aucun morceau du disque ne disparaît : seul un léger assombrissement sur un bord, plus facile à repérer sur une photo. Visible depuis les Amériques, l'Europe, l'Afrique et l'Asie."
+        },
+        "it": {
+          "title": "Eclissi lunare penombrale",
+          "description": "La Luna attraversa l'ombra esterna della Terra. Nessun morso al disco: solo un lieve oscuramento su un bordo, più facile da notare in fotografia. Visibile da Americhe, Europa, Africa e Asia."
+        },
+        "pt-BR": {
+          "title": "Eclipse lunar penumbral",
+          "description": "A Lua atravessa a sombra externa da Terra. Nenhum pedaço do disco desaparece: apenas um leve escurecimento em uma borda, mais fácil de notar em fotografia. Visível de Américas, Europa, África e Ásia."
+        },
+        "ru": {
+          "title": "Полутеневое лунное затмение",
+          "description": "Луна проходит через внешнюю тень Земли. Диск не выщербляется — лишь слегка темнеет с одного края, что заметнее всего на фотографии. Видно из Америки, Европы, Африки и Азии."
+        }
+      }
+    },
+    {
+      "id": "vernal_equinox_2027",
+      "baseId": "vernal_equinox",
+      "titleKey": "event_vernal_equinox",
+      "descriptionKey": "event_vernal_equinox_desc",
+      "category": "solsticeEquinox",
+      "icon": "sun.max.fill",
+      "date": "2027-03-20T20:24:00Z",
+      "source": "remote"
+    },
+    {
+      "id": "lyrids_2027",
+      "baseId": "lyrids",
+      "titleKey": "event_lyrids",
+      "descriptionKey": "event_lyrids_desc",
+      "category": "meteorShower",
+      "icon": "sparkles",
+      "date": "2027-04-23",
+      "peakDate": "2027-04-23T01:42:00Z",
+      "source": "remote",
+      "extraInfo": {
+        "zhr": 18,
+        "moonIllumination": 0.95
+      },
+      "endDate": "2027-04-24"
+    },
+    {
+      "id": "eta_aquariids_2027",
+      "baseId": "eta_aquariids",
+      "titleKey": "event_eta_aquariids",
+      "descriptionKey": "event_eta_aquariids_desc",
+      "category": "meteorShower",
+      "icon": "sparkles",
+      "date": "2027-05-06",
+      "peakDate": "2027-05-06T15:12:00Z",
+      "source": "remote",
+      "extraInfo": {
+        "zhr": 50,
+        "moonIllumination": 0.0
+      },
+      "endDate": "2027-05-07"
+    },
+    {
+      "id": "venus_saturn_conjunction_2027_05",
+      "baseId": "venus_saturn_conjunction",
+      "titleKey": "event_venus_saturn_2027_05",
+      "descriptionKey": "event_venus_saturn_2027_05_desc",
+      "category": "planetaryEvent",
+      "icon": "circle.circle",
+      "date": "2027-05-07T19:00:00Z",
+      "source": "remote",
+      "localizedStrings": {
+        "en": {
+          "title": "Venus Meets Saturn",
+          "description": "Venus passes 0.6° from Saturn in the evening sky — about the width of a full Moon. The brilliant white of Venus next to Saturn's steady gold, close enough to hold both in one telescope field."
+        },
+        "ko": {
+          "title": "금성-토성 근접",
+          "description": "저녁 하늘에서 금성이 토성으로부터 0.6°까지 다가갑니다. 보름달 지름 정도의 간격입니다. 눈부신 흰 금성과 은은한 금빛 토성이 망원경 시야 하나에 함께 들어옵니다."
+        },
+        "ja": {
+          "title": "金星と土星の接近",
+          "description": "夕方の空で金星が土星から0.6°まで近づきます。満月の見かけの直径ほどの間隔です。まぶしい白の金星と落ち着いた金色の土星が、望遠鏡の同じ視野に収まります。"
+        },
+        "zh-Hans": {
+          "title": "金星合土星",
+          "description": "傍晚天空中，金星与土星相距仅0.6°，约为满月的视直径。耀眼的白色金星与沉稳的金色土星近到可以同时收入一个望远镜视场。"
+        },
+        "zh-Hant": {
+          "title": "金星合土星",
+          "description": "傍晚天空中，金星與土星相距僅0.6°，約為滿月的視直徑。耀眼的白色金星與沉穩的金色土星近到可以同時收入一個望遠鏡視場。"
+        },
+        "de": {
+          "title": "Venus trifft Saturn",
+          "description": "Venus zieht am Abendhimmel 0,6° an Saturn vorbei – etwa eine Vollmondbreite. Das strahlende Weiß der Venus neben dem ruhigen Gold Saturns, nah genug für ein gemeinsames Teleskopgesichtsfeld."
+        },
+        "es": {
+          "title": "Venus junto a Saturno",
+          "description": "Venus pasa a 0,6° de Saturno en el cielo del atardecer, aproximadamente el diámetro de la Luna llena. El blanco brillante de Venus junto al dorado sereno de Saturno, lo bastante cerca para caber en un mismo campo del telescopio."
+        },
+        "fr": {
+          "title": "Vénus rencontre Saturne",
+          "description": "Vénus passe à 0,6° de Saturne dans le ciel du soir, soit environ le diamètre de la pleine Lune. Le blanc éclatant de Vénus à côté de l'or paisible de Saturne, assez proches pour tenir dans un même champ de télescope."
+        },
+        "it": {
+          "title": "Venere incontra Saturno",
+          "description": "Venere passa a 0,6° da Saturno nel cielo della sera, circa il diametro della Luna piena. Il bianco brillante di Venere accanto all'oro tranquillo di Saturno, abbastanza vicini da stare in un solo campo del telescopio."
+        },
+        "pt-BR": {
+          "title": "Vênus encontra Saturno",
+          "description": "Vênus passa a 0,6° de Saturno no céu do anoitecer, cerca do diâmetro da Lua cheia. O branco brilhante de Vênus ao lado do dourado sereno de Saturno, perto o bastante para caberem no mesmo campo do telescópio."
+        },
+        "ru": {
+          "title": "Венера рядом с Сатурном",
+          "description": "Венера проходит в 0,6° от Сатурна на вечернем небе — примерно ширина полной Луны. Ослепительно белая Венера рядом со спокойным золотом Сатурна: достаточно близко, чтобы уместиться в одном поле зрения телескопа."
+        }
+      }
+    },
+    {
+      "id": "summer_solstice_2027",
+      "baseId": "summer_solstice",
+      "titleKey": "event_summer_solstice",
+      "descriptionKey": "event_summer_solstice_desc",
+      "category": "solsticeEquinox",
+      "icon": "sun.max.fill",
+      "date": "2027-06-21T14:10:00Z",
+      "source": "remote"
+    },
+    {
+      "id": "june_bootids_2027",
+      "baseId": "june_bootids",
+      "titleKey": "event_june_bootids",
+      "descriptionKey": "event_june_bootids_desc",
+      "category": "meteorShower",
+      "icon": "sparkles",
+      "date": "2027-06-22",
+      "peakDate": "2027-06-22T07:20:00Z",
+      "source": "remote",
+      "extraInfo": {
+        "zhr": 2,
+        "moonIllumination": 0.91
+      },
+      "localizedStrings": {
+        "en": {
+          "title": "June Bootids",
+          "description": "A highly variable shower from comet 7P/Pons-Winnecke. Usually just a few meteors per hour, but capable of rare outbursts of dozens."
+        },
+        "ko": {
+          "title": "6월 목동자리 유성우",
+          "description": "혜성 7P/폰스-빈네케에서 비롯된 변덕스러운 유성우. 보통 시간당 몇 개뿐이지만 드물게 수십 개의 폭발적 출현이 있습니다."
+        },
+        "ja": {
+          "title": "6月うしかい座流星群",
+          "description": "彗星7P/ポンス・ウィンネッケ由来の変動の大きい流星群。通常は1時間に数個ですが、まれに数十個の突発出現があります。"
+        },
+        "zh-Hans": {
+          "title": "六月牧夫座流星雨",
+          "description": "源自7P/庞斯-温内克彗星的高度不稳定流星雨。通常每小时仅数颗,但偶有数十颗的罕见爆发。"
+        },
+        "zh-Hant": {
+          "title": "六月牧夫座流星雨",
+          "description": "源自7P/龐斯-溫內克彗星的高度不穩定流星雨。通常每小時僅數顆,但偶有數十顆的罕見爆發。"
+        },
+        "de": {
+          "title": "Juni-Bootiden",
+          "description": "Ein stark variabler Strom vom Kometen 7P/Pons-Winnecke. Meist nur wenige Meteore pro Stunde, selten Ausbrüche mit Dutzenden."
+        },
+        "es": {
+          "title": "Bootidas de junio",
+          "description": "Una lluvia muy variable del cometa 7P/Pons-Winnecke. Suele dar pocos meteoros por hora, pero puede tener raros estallidos de docenas."
+        },
+        "fr": {
+          "title": "Bootides de juin",
+          "description": "Une pluie très variable issue de la comète 7P/Pons-Winnecke. Généralement quelques météores par heure, mais de rares sursauts de dizaines."
+        },
+        "it": {
+          "title": "Bootidi di giugno",
+          "description": "Uno sciame molto variabile dalla cometa 7P/Pons-Winnecke. Di solito pochi meteore all'ora, ma con rari picchi di decine."
+        },
+        "pt-BR": {
+          "title": "Bootídeos de junho",
+          "description": "Uma chuva muito variável do cometa 7P/Pons-Winnecke. Normalmente poucos meteoros por hora, mas com raros surtos de dezenas."
+        },
+        "ru": {
+          "title": "Июньские Боотиды",
+          "description": "Очень переменный поток от кометы 7P/Понса-Виннеке. Обычно несколько метеоров в час, но возможны редкие всплески до десятков."
+        }
+      }
+    },
+    {
+      "id": "earth_aphelion_2027",
+      "baseId": "earth_aphelion",
+      "titleKey": "event_earth_aphelion",
+      "descriptionKey": "event_earth_aphelion_desc",
+      "category": "planetaryEvent",
+      "icon": "globe",
+      "date": "2027-07-05T05:06:00Z",
+      "source": "remote"
+    },
+    {
+      "id": "penumbral_lunar_eclipse_2027_07",
+      "baseId": "penumbral_lunar_eclipse",
+      "titleKey": "event_penumbral_lunar_eclipse",
+      "descriptionKey": "event_penumbral_lunar_eclipse_desc",
+      "category": "lunarEvent",
+      "icon": "moon.fill",
+      "date": "2027-07-18T16:04:00Z",
+      "source": "remote",
+      "visibility": [
+        "Eastern Africa",
+        "Asia",
+        "Australia",
+        "Pacific"
+      ],
+      "localizedStrings": {
+        "en": {
+          "title": "Penumbral Lunar Eclipse",
+          "description": "The Moon passes through Earth's outer shadow. There is no bite taken out of the disc — only a subtle dimming along one edge, easiest to notice in a photograph. Visible from eastern Africa, Asia, Australia and the Pacific."
+        },
+        "ko": {
+          "title": "반영 월식",
+          "description": "달이 지구의 바깥 그림자(반영)를 지나갑니다. 달이 이지러지지는 않고 한쪽 가장자리가 옅게 어두워질 뿐이라, 사진으로 비교하면 알아보기 쉽습니다. 아프리카 동부, 아시아, 오스트레일리아, 태평양에서 관측 가능합니다."
+        },
+        "ja": {
+          "title": "半影月食",
+          "description": "月が地球の外側の影（半影）を通過します。月が欠けることはなく、片側がわずかに暗くなるだけで、写真で比べると分かりやすいです。アフリカ東部、アジア、オーストラリア、太平洋で観測できます。"
+        },
+        "zh-Hans": {
+          "title": "半影月食",
+          "description": "月球穿过地球的外层阴影（半影）。月面不会出现缺口，只是一侧略微变暗，通过照片对比最容易察觉。非洲东部、亚洲、澳大利亚和太平洋可见。"
+        },
+        "zh-Hant": {
+          "title": "半影月食",
+          "description": "月球穿過地球的外層陰影（半影）。月面不會出現缺口，只是一側略微變暗，透過照片對比最容易察覺。非洲東部、亞洲、澳洲和太平洋可見。"
+        },
+        "de": {
+          "title": "Halbschatten-Mondfinsternis",
+          "description": "Der Mond durchquert den äußeren Erdschatten. Es fehlt kein Stück der Scheibe – nur eine feine Abdunklung an einem Rand, am ehesten auf einem Foto zu erkennen. Sichtbar von Ostafrika, Asien, Australien und dem Pazifik."
+        },
+        "es": {
+          "title": "Eclipse lunar penumbral",
+          "description": "La Luna atraviesa la sombra exterior de la Tierra. No falta ningún trozo del disco: solo un sutil oscurecimiento en un borde, más fácil de notar en una fotografía. Visible desde el este de África, Asia, Australia y el Pacífico."
+        },
+        "fr": {
+          "title": "Éclipse lunaire par la pénombre",
+          "description": "La Lune traverse l'ombre extérieure de la Terre. Aucun morceau du disque ne disparaît : seul un léger assombrissement sur un bord, plus facile à repérer sur une photo. Visible depuis l'est de l'Afrique, l'Asie, l'Australie et le Pacifique."
+        },
+        "it": {
+          "title": "Eclissi lunare penombrale",
+          "description": "La Luna attraversa l'ombra esterna della Terra. Nessun morso al disco: solo un lieve oscuramento su un bordo, più facile da notare in fotografia. Visibile da Africa orientale, Asia, Australia e Pacifico."
+        },
+        "pt-BR": {
+          "title": "Eclipse lunar penumbral",
+          "description": "A Lua atravessa a sombra externa da Terra. Nenhum pedaço do disco desaparece: apenas um leve escurecimento em uma borda, mais fácil de notar em fotografia. Visível de leste da África, Ásia, Austrália e Pacífico."
+        },
+        "ru": {
+          "title": "Полутеневое лунное затмение",
+          "description": "Луна проходит через внешнюю тень Земли. Диск не выщербляется — лишь слегка темнеет с одного края, что заметнее всего на фотографии. Видно из востока Африки, Азии, Австралии и Тихого океана."
+        }
+      }
+    },
+    {
+      "id": "delta_aquariids_2027",
+      "baseId": "delta_aquariids",
+      "titleKey": "event_delta_aquariids",
+      "descriptionKey": "event_delta_aquariids_desc",
+      "category": "meteorShower",
+      "icon": "sparkles",
+      "date": "2027-07-31",
+      "peakDate": "2027-07-31T19:38:00Z",
+      "source": "remote",
+      "extraInfo": {
+        "zhr": 25,
+        "moonIllumination": 0.04
+      },
+      "endDate": "2027-08-01",
+      "localizedStrings": {
+        "en": {
+          "title": "Southern Delta Aquariids",
+          "description": "A steady shower peaking around July 30 (~25 meteors/hour), best from the Southern Hemisphere. Coincides with the minor Alpha Capricornids."
+        },
+        "ko": {
+          "title": "남쪽 물병자리 델타 유성우",
+          "description": "7월 30일경 극대(시간당 ~25개)에 이르는 꾸준한 유성우로 남반구에서 관측이 가장 좋습니다. 마이너한 염소자리 알파 유성우와 겹칩니다."
+        },
+        "ja": {
+          "title": "みずがめ座δ南流星群",
+          "description": "7月30日頃に極大(1時間に約25個)を迎える安定した流星群で、南半球で最もよく見えます。小規模なやぎ座α流星群と重なります。"
+        },
+        "zh-Hans": {
+          "title": "南宝瓶座δ流星雨",
+          "description": "在7月30日左右达到极大(每小时约25颗)的稳定流星雨,南半球观测最佳。与小型摩羯座α流星雨重叠。"
+        },
+        "zh-Hant": {
+          "title": "南寶瓶座δ流星雨",
+          "description": "在7月30日左右達到極大(每小時約25顆)的穩定流星雨,南半球觀測最佳。與小型摩羯座α流星雨重疊。"
+        },
+        "de": {
+          "title": "Südliche Delta-Aquariiden",
+          "description": "Ein gleichmäßiger Strom mit Maximum um den 30. Juli (~25 Meteore/Stunde), am besten von der Südhalbkugel. Fällt mit den schwachen Alpha-Capricorniden zusammen."
+        },
+        "es": {
+          "title": "Delta Acuáridas del Sur",
+          "description": "Una lluvia constante con máximo hacia el 30 de julio (~25 meteoros/hora), mejor desde el hemisferio sur. Coincide con las menores Alfa Capricórnidas."
+        },
+        "fr": {
+          "title": "Delta Aquarides du Sud",
+          "description": "Une pluie régulière culminant vers le 30 juillet (~25 météores/heure), idéale depuis l'hémisphère sud. Coïncide avec les faibles Alpha Capricornides."
+        },
+        "it": {
+          "title": "Delta Aquaridi del Sud",
+          "description": "Uno sciame costante con picco intorno al 30 luglio (~25 meteore/ora), migliore dall'emisfero sud. Coincide con le minori Alfa Capricornidi."
+        },
+        "pt-BR": {
+          "title": "Delta Aquáridas do Sul",
+          "description": "Uma chuva constante com pico por volta de 30 de julho (~25 meteoros/hora), melhor do hemisfério sul. Coincide com as menores Alfa Capricornídeas."
+        },
+        "ru": {
+          "title": "Южные дельта-Аквариды",
+          "description": "Стабильный поток с максимумом около 30 июля (~25 метеоров/час), лучше виден в Южном полушарии. Совпадает со слабыми Альфа-Каприкорнидами."
+        }
+      }
+    },
+    {
+      "id": "total_solar_eclipse_2027_08",
+      "baseId": "total_solar_eclipse",
+      "titleKey": "event_total_solar_eclipse",
+      "descriptionKey": "event_total_solar_eclipse_desc",
+      "category": "solarEvent",
+      "icon": "sun.max.fill",
+      "date": "2027-08-02T10:08:00Z",
+      "source": "remote",
+      "visibility": [
+        "Morocco",
+        "Spain",
+        "Algeria",
+        "Libya",
+        "Egypt",
+        "Saudi Arabia",
+        "Yemen",
+        "Somalia",
+        "Africa",
+        "Europe",
+        "Middle East",
+        "Western Asia"
+      ],
+      "localizedStrings": {
+        "en": {
+          "title": "Total Solar Eclipse",
+          "description": "Totality lasts 6 minutes 23 seconds near Luxor, Egypt — the longest of any total solar eclipse until 2114. The path runs from Morocco and southern Spain across Algeria, Libya and Egypt to Saudi Arabia, Yemen and Somalia. A partial eclipse is visible across Africa, Europe, the Middle East and western Asia."
+        },
+        "ko": {
+          "title": "개기 일식",
+          "description": "이집트 룩소르 부근에서 개기 지속 시간이 6분 23초로, 2114년까지 어떤 개기 일식도 넘어서지 못하는 길이입니다. 개기 경로는 모로코와 스페인 남부에서 알제리·리비아·이집트를 지나 사우디아라비아·예멘·소말리아로 이어집니다. 아프리카, 유럽, 중동, 서아시아에서 부분 일식을 볼 수 있습니다."
+        },
+        "ja": {
+          "title": "皆既日食",
+          "description": "エジプト・ルクソール付近で皆既が6分23秒続きます。2114年まで、これを上回る皆既日食はありません。皆既帯はモロッコとスペイン南部からアルジェリア・リビア・エジプトを通り、サウジアラビア・イエメン・ソマリアへ抜けます。アフリカ、ヨーロッパ、中東、西アジアで部分日食が見られます。"
+        },
+        "zh-Hans": {
+          "title": "日全食",
+          "description": "在埃及卢克索附近，全食持续6分23秒——直到2114年也没有任何日全食能超过这一时长。全食带自摩洛哥和西班牙南部起，经阿尔及利亚、利比亚、埃及，延伸至沙特阿拉伯、也门和索马里。非洲、欧洲、中东和西亚可见日偏食。"
+        },
+        "zh-Hant": {
+          "title": "日全食",
+          "description": "在埃及路克索附近，全食持續6分23秒——直到2114年也沒有任何日全食能超過這一時長。全食帶自摩洛哥和西班牙南部起，經阿爾及利亞、利比亞、埃及，延伸至沙烏地阿拉伯、葉門和索馬利亞。非洲、歐洲、中東和西亞可見日偏食。"
+        },
+        "de": {
+          "title": "Totale Sonnenfinsternis",
+          "description": "Bei Luxor in Ägypten dauert die Totalität 6 Minuten 23 Sekunden – länger als bei jeder totalen Sonnenfinsternis bis 2114. Die Zone verläuft von Marokko und Südspanien über Algerien, Libyen und Ägypten bis nach Saudi-Arabien, Jemen und Somalia. Eine partielle Finsternis ist in Afrika, Europa, dem Nahen Osten und Westasien zu sehen."
+        },
+        "es": {
+          "title": "Eclipse solar total",
+          "description": "La totalidad dura 6 minutos y 23 segundos cerca de Luxor, Egipto: la más larga de cualquier eclipse solar total hasta 2114. La franja recorre Marruecos y el sur de España, atraviesa Argelia, Libia y Egipto, y llega a Arabia Saudí, Yemen y Somalia. El eclipse parcial se ve en África, Europa, Oriente Medio y Asia occidental."
+        },
+        "fr": {
+          "title": "Éclipse solaire totale",
+          "description": "La totalité dure 6 minutes 23 secondes près de Louxor, en Égypte — la plus longue de toutes les éclipses totales jusqu'en 2114. La bande traverse le Maroc et le sud de l'Espagne, puis l'Algérie, la Libye et l'Égypte, jusqu'à l'Arabie saoudite, le Yémen et la Somalie. L'éclipse partielle est visible en Afrique, en Europe, au Moyen-Orient et en Asie occidentale."
+        },
+        "it": {
+          "title": "Eclissi solare totale",
+          "description": "La totalità dura 6 minuti e 23 secondi vicino a Luxor, in Egitto: la più lunga di qualsiasi eclissi solare totale fino al 2114. La fascia attraversa Marocco e Spagna meridionale, poi Algeria, Libia ed Egitto, fino ad Arabia Saudita, Yemen e Somalia. L'eclissi parziale è visibile in Africa, Europa, Medio Oriente e Asia occidentale."
+        },
+        "pt-BR": {
+          "title": "Eclipse solar total",
+          "description": "A totalidade dura 6 minutos e 23 segundos perto de Luxor, no Egito — a mais longa de qualquer eclipse solar total até 2114. A faixa vai do Marrocos e do sul da Espanha, cruza Argélia, Líbia e Egito e chega à Arábia Saudita, Iêmen e Somália. O eclipse parcial é visível na África, Europa, Oriente Médio e Ásia ocidental."
+        },
+        "ru": {
+          "title": "Полное солнечное затмение",
+          "description": "Полная фаза длится 6 минут 23 секунды у Луксора в Египте — дольше, чем у любого полного солнечного затмения вплоть до 2114 года. Полоса проходит от Марокко и юга Испании через Алжир, Ливию и Египет к Саудовской Аравии, Йемену и Сомали. Частное затмение видно в Африке, Европе, на Ближнем Востоке и в Западной Азии."
+        }
+      }
+    },
+    {
+      "id": "perseids_2027",
+      "baseId": "perseids",
+      "titleKey": "event_perseids",
+      "descriptionKey": "event_perseids_desc",
+      "category": "meteorShower",
+      "icon": "sparkles",
+      "date": "2027-08-13",
+      "peakDate": "2027-08-13T08:12:00Z",
+      "source": "remote",
+      "extraInfo": {
+        "zhr": 110,
+        "moonIllumination": 0.87
+      },
+      "endDate": "2027-08-14"
+    },
+    {
+      "id": "penumbral_lunar_eclipse_2027_08",
+      "baseId": "penumbral_lunar_eclipse",
+      "titleKey": "event_penumbral_lunar_eclipse",
+      "descriptionKey": "event_penumbral_lunar_eclipse_desc",
+      "category": "lunarEvent",
+      "icon": "moon.fill",
+      "date": "2027-08-17T07:15:00Z",
+      "source": "remote",
+      "visibility": [
+        "Pacific",
+        "Americas"
+      ],
+      "localizedStrings": {
+        "en": {
+          "title": "Penumbral Lunar Eclipse",
+          "description": "The Moon passes through Earth's outer shadow. There is no bite taken out of the disc — only a subtle dimming along one edge, easiest to notice in a photograph. Visible from the Pacific and the Americas."
+        },
+        "ko": {
+          "title": "반영 월식",
+          "description": "달이 지구의 바깥 그림자(반영)를 지나갑니다. 달이 이지러지지는 않고 한쪽 가장자리가 옅게 어두워질 뿐이라, 사진으로 비교하면 알아보기 쉽습니다. 태평양과 아메리카에서 관측 가능합니다."
+        },
+        "ja": {
+          "title": "半影月食",
+          "description": "月が地球の外側の影（半影）を通過します。月が欠けることはなく、片側がわずかに暗くなるだけで、写真で比べると分かりやすいです。太平洋とアメリカ大陸で観測できます。"
+        },
+        "zh-Hans": {
+          "title": "半影月食",
+          "description": "月球穿过地球的外层阴影（半影）。月面不会出现缺口，只是一侧略微变暗，通过照片对比最容易察觉。太平洋和美洲可见。"
+        },
+        "zh-Hant": {
+          "title": "半影月食",
+          "description": "月球穿過地球的外層陰影（半影）。月面不會出現缺口，只是一側略微變暗，透過照片對比最容易察覺。太平洋和美洲可見。"
+        },
+        "de": {
+          "title": "Halbschatten-Mondfinsternis",
+          "description": "Der Mond durchquert den äußeren Erdschatten. Es fehlt kein Stück der Scheibe – nur eine feine Abdunklung an einem Rand, am ehesten auf einem Foto zu erkennen. Sichtbar von dem Pazifik und Amerika."
+        },
+        "es": {
+          "title": "Eclipse lunar penumbral",
+          "description": "La Luna atraviesa la sombra exterior de la Tierra. No falta ningún trozo del disco: solo un sutil oscurecimiento en un borde, más fácil de notar en una fotografía. Visible desde el Pacífico y América."
+        },
+        "fr": {
+          "title": "Éclipse lunaire par la pénombre",
+          "description": "La Lune traverse l'ombre extérieure de la Terre. Aucun morceau du disque ne disparaît : seul un léger assombrissement sur un bord, plus facile à repérer sur une photo. Visible depuis le Pacifique et les Amériques."
+        },
+        "it": {
+          "title": "Eclissi lunare penombrale",
+          "description": "La Luna attraversa l'ombra esterna della Terra. Nessun morso al disco: solo un lieve oscuramento su un bordo, più facile da notare in fotografia. Visibile da Pacifico e Americhe."
+        },
+        "pt-BR": {
+          "title": "Eclipse lunar penumbral",
+          "description": "A Lua atravessa a sombra externa da Terra. Nenhum pedaço do disco desaparece: apenas um leve escurecimento em uma borda, mais fácil de notar em fotografia. Visível de Pacífico e Américas."
+        },
+        "ru": {
+          "title": "Полутеневое лунное затмение",
+          "description": "Луна проходит через внешнюю тень Земли. Диск не выщербляется — лишь слегка темнеет с одного края, что заметнее всего на фотографии. Видно из Тихого океана и Америк."
+        }
+      }
+    },
+    {
+      "id": "autumnal_equinox_2027",
+      "baseId": "autumnal_equinox",
+      "titleKey": "event_autumnal_equinox",
+      "descriptionKey": "event_autumnal_equinox_desc",
+      "category": "solsticeEquinox",
+      "icon": "sun.max.fill",
+      "date": "2027-09-23T06:01:00Z",
+      "source": "remote"
+    },
+    {
+      "id": "neptune_opposition_2027",
+      "baseId": "neptune_opposition",
+      "titleKey": "event_neptune_opposition",
+      "descriptionKey": "event_neptune_opposition_desc",
+      "category": "planetaryEvent",
+      "icon": "globe",
+      "date": "2027-09-28",
+      "source": "remote",
+      "localizedStrings": {
+        "en": {
+          "title": "Neptune at Opposition",
+          "description": "Neptune is at its closest to Earth and fully illuminated by the Sun, shining at its brightest for the year in the constellation Pisces. At magnitude 7.8 it requires binoculars or a telescope to see."
+        },
+        "ko": {
+          "title": "해왕성 충",
+          "description": "해왕성이 지구에 가장 가까워지며 태양에 의해 완전히 밝혀져 물고기자리에서 올해 가장 밝게 빛납니다. 밝기 7.8등급으로 쌍안경이나 망원경이 필요합니다."
+        },
+        "ja": {
+          "title": "海王星の衝",
+          "description": "海王星が地球に最も近づき、太陽に完全に照らされ、うお座で一年で最も明るく輝きます。7.8等級のため、観測には双眼鏡か望遠鏡が必要です。"
+        },
+        "zh-Hans": {
+          "title": "海王星冲日",
+          "description": "海王星距离地球最近,被太阳完全照亮,在双鱼座中达到全年最亮。视星等7.8,需借助双筒望远镜或天文望远镜观测。"
+        },
+        "zh-Hant": {
+          "title": "海王星衝",
+          "description": "海王星距離地球最近,被太陽完全照亮,在雙魚座中達到全年最亮。視星等7.8,需借助雙筒望遠鏡或天文望遠鏡觀測。"
+        },
+        "de": {
+          "title": "Neptun in Opposition",
+          "description": "Neptun steht der Erde am nächsten und wird von der Sonne voll beleuchtet. Im Sternbild Fische erstrahlt er am hellsten des Jahres. Mit einer Helligkeit von 7,8 mag ist ein Fernglas oder Teleskop nötig."
+        },
+        "es": {
+          "title": "Oposición de Neptuno",
+          "description": "Neptuno está en su punto más cercano a la Tierra e iluminado completamente por el Sol, brillando al máximo del año en la constelación de Piscis. Con magnitud 7,8 requiere binoculares o telescopio."
+        },
+        "fr": {
+          "title": "Neptune en opposition",
+          "description": "Neptune est au plus proche de la Terre et entièrement éclairée par le Soleil, brillant au maximum de l'année dans la constellation des Poissons. À magnitude 7,8, des jumelles ou un télescope sont nécessaires."
+        },
+        "it": {
+          "title": "Opposizione di Nettuno",
+          "description": "Nettuno è nel punto più vicino alla Terra e completamente illuminato dal Sole, splendendo al massimo dell'anno nella costellazione dei Pesci. A magnitudine 7,8 richiede binocolo o telescopio."
+        },
+        "pt-BR": {
+          "title": "Oposição de Netuno",
+          "description": "Netuno está no ponto mais próximo da Terra e totalmente iluminado pelo Sol, brilhando no máximo do ano na constelação de Peixes. Com magnitude 7,8, exige binóculos ou telescópio."
+        },
+        "ru": {
+          "title": "Противостояние Нептуна",
+          "description": "Нептун находится ближе всего к Земле и полностью освещён Солнцем, сияя ярче всего в году в созвездии Рыб. При звёздной величине 7,8 для наблюдения нужны бинокль или телескоп."
+        }
+      }
+    },
+    {
+      "id": "saturn_opposition_2027",
+      "baseId": "saturn_opposition",
+      "titleKey": "event_saturn_opposition",
+      "descriptionKey": "event_saturn_opposition_desc",
+      "category": "planetaryEvent",
+      "icon": "globe",
+      "date": "2027-10-18",
+      "source": "remote",
+      "localizedStrings": {
+        "en": {
+          "title": "Saturn at Opposition",
+          "description": "Saturn is at its closest to Earth and fully illuminated by the Sun. An excellent opportunity to view and photograph Saturn's rings."
+        },
+        "ko": {
+          "title": "토성 충",
+          "description": "토성이 지구에 가장 가까워지며 태양에 의해 완전히 밝혀집니다. 토성의 고리를 관측하고 촬영하기에 최적의 시기입니다."
+        },
+        "ja": {
+          "title": "土星の衝",
+          "description": "土星が地球に最も近づき、太陽に完全に照らされます。土星の環を観測・撮影する絶好の機会です。"
+        },
+        "zh-Hans": {
+          "title": "土星冲日",
+          "description": "土星距离地球最近,被太阳完全照亮。观测和拍摄土星环的绝佳机会。"
+        },
+        "zh-Hant": {
+          "title": "土星衝",
+          "description": "土星距離地球最近,被太陽完全照亮。觀測和拍攝土星環的絕佳機會。"
+        },
+        "de": {
+          "title": "Saturn in Opposition",
+          "description": "Saturn steht der Erde am nächsten und wird von der Sonne voll beleuchtet. Eine hervorragende Gelegenheit, Saturns Ringe zu beobachten und zu fotografieren."
+        },
+        "es": {
+          "title": "Oposición de Saturno",
+          "description": "Saturno está en su punto más cercano a la Tierra e iluminado completamente por el Sol. Excelente oportunidad para observar y fotografiar los anillos de Saturno."
+        },
+        "fr": {
+          "title": "Saturne en opposition",
+          "description": "Saturne est au plus proche de la Terre et entièrement éclairée par le Soleil. Excellente occasion d'observer et photographier les anneaux de Saturne."
+        },
+        "it": {
+          "title": "Opposizione di Saturno",
+          "description": "Saturno è nel punto più vicino alla Terra e completamente illuminato dal Sole. Un'ottima occasione per osservare e fotografare gli anelli di Saturno."
+        },
+        "pt-BR": {
+          "title": "Oposição de Saturno",
+          "description": "Saturno está no ponto mais próximo da Terra e totalmente iluminado pelo Sol. Excelente oportunidade para observar e fotografar os anéis de Saturno."
+        },
+        "ru": {
+          "title": "Противостояние Сатурна",
+          "description": "Сатурн находится ближе всего к Земле и полностью освещён Солнцем. Отличная возможность наблюдать и фотографировать кольца Сатурна."
+        }
+      }
+    },
+    {
+      "id": "orionids_2027",
+      "baseId": "orionids",
+      "titleKey": "event_orionids",
+      "descriptionKey": "event_orionids_desc",
+      "category": "meteorShower",
+      "icon": "sparkles",
+      "date": "2027-10-22",
+      "peakDate": "2027-10-22T00:38:00Z",
+      "source": "remote",
+      "extraInfo": {
+        "zhr": 20,
+        "moonIllumination": 0.58
+      },
+      "endDate": "2027-10-23"
+    },
+    {
+      "id": "leonids_2027",
+      "baseId": "leonids",
+      "titleKey": "event_leonids",
+      "descriptionKey": "event_leonids_desc",
+      "category": "meteorShower",
+      "icon": "sparkles",
+      "date": "2027-11-18",
+      "peakDate": "2027-11-18T06:00:00Z",
+      "source": "remote",
+      "extraInfo": {
+        "zhr": 15,
+        "moonIllumination": 0.8
+      },
+      "endDate": "2027-11-19"
+    },
+    {
+      "id": "venus_mars_conjunction_2027_11",
+      "baseId": "venus_mars_conjunction",
+      "titleKey": "event_venus_mars_2027_11",
+      "descriptionKey": "event_venus_mars_2027_11_desc",
+      "category": "planetaryEvent",
+      "icon": "circle.circle",
+      "date": "2027-11-25T01:00:00Z",
+      "source": "remote",
+      "localizedStrings": {
+        "en": {
+          "title": "Venus Meets Mars",
+          "description": "Venus and Mars close to within 0.3° in the morning sky — half the width of a full Moon. The brightest planet beside the red one, an easy naked-eye pairing at dawn."
+        },
+        "ko": {
+          "title": "금성-화성 근접",
+          "description": "새벽 하늘에서 금성과 화성이 0.3°까지 가까워집니다. 보름달 지름의 절반 정도입니다. 가장 밝은 행성과 붉은 행성이 나란히 서서, 맨눈으로도 쉽게 찾을 수 있습니다."
+        },
+        "ja": {
+          "title": "金星と火星の接近",
+          "description": "明け方の空で金星と火星が0.3°まで近づきます。満月の見かけの直径の半分ほどです。最も明るい惑星と赤い惑星が並び、肉眼でも簡単に見つけられます。"
+        },
+        "zh-Hans": {
+          "title": "金星合火星",
+          "description": "清晨天空中，金星与火星相距仅0.3°，约为满月视直径的一半。最亮的行星与红色的行星并肩而立，肉眼即可轻松找到。"
+        },
+        "zh-Hant": {
+          "title": "金星合火星",
+          "description": "清晨天空中，金星與火星相距僅0.3°，約為滿月視直徑的一半。最亮的行星與紅色的行星並肩而立，肉眼即可輕鬆找到。"
+        },
+        "de": {
+          "title": "Venus trifft Mars",
+          "description": "Venus und Mars kommen sich am Morgenhimmel bis auf 0,3° nahe – eine halbe Vollmondbreite. Der hellste Planet neben dem roten, mit bloßem Auge leicht zu finden."
+        },
+        "es": {
+          "title": "Venus junto a Marte",
+          "description": "Venus y Marte se acercan hasta 0,3° en el cielo matutino, la mitad del diámetro de la Luna llena. El planeta más brillante junto al rojo, fácil de ver a simple vista al amanecer."
+        },
+        "fr": {
+          "title": "Vénus rencontre Mars",
+          "description": "Vénus et Mars se rapprochent à 0,3° dans le ciel du matin, soit la moitié du diamètre de la pleine Lune. La planète la plus brillante à côté de la rouge, facile à repérer à l'œil nu à l'aube."
+        },
+        "it": {
+          "title": "Venere incontra Marte",
+          "description": "Venere e Marte si avvicinano fino a 0,3° nel cielo del mattino, metà del diametro della Luna piena. Il pianeta più luminoso accanto a quello rosso, facile da vedere a occhio nudo all'alba."
+        },
+        "pt-BR": {
+          "title": "Vênus encontra Marte",
+          "description": "Vênus e Marte se aproximam até 0,3° no céu da manhã, metade do diâmetro da Lua cheia. O planeta mais brilhante ao lado do vermelho, fácil de ver a olho nu ao amanhecer."
+        },
+        "ru": {
+          "title": "Венера рядом с Марсом",
+          "description": "Венера и Марс сближаются до 0,3° на утреннем небе — половина ширины полной Луны. Самая яркая планета рядом с красной: лёгкая пара для невооружённого глаза на рассвете."
+        }
+      }
+    },
+    {
+      "id": "uranus_opposition_2027",
+      "baseId": "uranus_opposition",
+      "titleKey": "event_uranus_opposition",
+      "descriptionKey": "event_uranus_opposition_desc",
+      "category": "planetaryEvent",
+      "icon": "globe",
+      "date": "2027-11-30",
+      "source": "remote",
+      "localizedStrings": {
+        "en": {
+          "title": "Uranus at Opposition",
+          "description": "Uranus is at its closest to Earth and fully illuminated by the Sun, at its brightest for the year in the constellation Taurus. At magnitude 5.6 it is just visible to the naked eye under dark skies and easy in binoculars."
+        },
+        "ko": {
+          "title": "천왕성 충",
+          "description": "천왕성이 지구에 가장 가까워지며 태양에 의해 완전히 밝혀져 황소자리에서 올해 가장 밝게 빛납니다. 밝기 5.6등급으로 어두운 하늘에서는 맨눈으로도 겨우 보이며 쌍안경으로 쉽게 관측됩니다."
+        },
+        "ja": {
+          "title": "天王星の衝",
+          "description": "天王星が地球に最も近づき、太陽に完全に照らされ、おうし座で一年で最も明るく輝きます。5.6等級で、暗い空では肉眼でもかろうじて見え、双眼鏡なら容易に観測できます。"
+        },
+        "zh-Hans": {
+          "title": "天王星冲日",
+          "description": "天王星距离地球最近,被太阳完全照亮,在金牛座中达到全年最亮。视星等5.6,在黑暗的天空下勉强可用肉眼看到,用双筒望远镜则很容易。"
+        },
+        "zh-Hant": {
+          "title": "天王星衝",
+          "description": "天王星距離地球最近,被太陽完全照亮,在金牛座中達到全年最亮。視星等5.6,在黑暗的天空下勉強可用肉眼看到,用雙筒望遠鏡則很容易。"
+        },
+        "de": {
+          "title": "Uranus in Opposition",
+          "description": "Uranus steht der Erde am nächsten und wird von der Sonne voll beleuchtet. Im Sternbild Stier erstrahlt er am hellsten des Jahres. Mit 5,6 mag ist er unter dunklem Himmel gerade noch mit bloßem Auge und leicht im Fernglas zu sehen."
+        },
+        "es": {
+          "title": "Oposición de Urano",
+          "description": "Urano está en su punto más cercano a la Tierra e iluminado completamente por el Sol, en su punto más brillante del año en la constelación de Tauro. Con magnitud 5,6 es apenas visible a simple vista bajo cielos oscuros y fácil con binoculares."
+        },
+        "fr": {
+          "title": "Uranus en opposition",
+          "description": "Uranus est au plus proche de la Terre et entièrement éclairée par le Soleil, à son maximum d'éclat de l'année dans la constellation du Taureau. À magnitude 5,6, elle est tout juste visible à l'œil nu sous un ciel sombre et facile aux jumelles."
+        },
+        "it": {
+          "title": "Opposizione di Urano",
+          "description": "Urano è nel punto più vicino alla Terra e completamente illuminato dal Sole, al massimo della luminosità dell'anno nella costellazione del Toro. A magnitudine 5,6 è appena visibile a occhio nudo sotto cieli bui e facile col binocolo."
+        },
+        "pt-BR": {
+          "title": "Oposição de Urano",
+          "description": "Urano está no ponto mais próximo da Terra e totalmente iluminado pelo Sol, no seu brilho máximo do ano na constelação de Touro. Com magnitude 5,6, é apenas visível a olho nu sob céus escuros e fácil com binóculos."
+        },
+        "ru": {
+          "title": "Противостояние Урана",
+          "description": "Уран находится ближе всего к Земле и полностью освещён Солнцем, сияя ярче всего в году в созвездии Тельца. При звёздной величине 5,6 он едва виден невооружённым глазом под тёмным небом и легко — в бинокль."
+        }
+      }
+    },
+    {
+      "id": "geminids_2027",
+      "baseId": "geminids",
+      "titleKey": "event_geminids",
+      "descriptionKey": "event_geminids_desc",
+      "category": "meteorShower",
+      "icon": "sparkles",
+      "date": "2027-12-14",
+      "peakDate": "2027-12-14T19:55:00Z",
+      "source": "remote",
+      "extraInfo": {
+        "zhr": 150,
+        "moonIllumination": 0.98
+      },
+      "endDate": "2027-12-15"
+    },
+    {
+      "id": "winter_solstice_2027",
+      "baseId": "winter_solstice",
+      "titleKey": "event_winter_solstice",
+      "descriptionKey": "event_winter_solstice_desc",
+      "category": "solsticeEquinox",
+      "icon": "sun.max.fill",
+      "date": "2027-12-22T02:42:00Z",
+      "source": "remote"
+    },
+    {
+      "id": "ursids_2027",
+      "baseId": "ursids",
+      "titleKey": "event_ursids",
+      "descriptionKey": "event_ursids_desc",
+      "category": "meteorShower",
+      "icon": "sparkles",
+      "date": "2027-12-23",
+      "peakDate": "2027-12-23T04:22:00Z",
+      "source": "remote",
+      "extraInfo": {
+        "zhr": 10,
+        "moonIllumination": 0.21
+      },
+      "endDate": "2027-12-24",
+      "localizedStrings": {
+        "en": {
+          "title": "Ursids Meteor Shower",
+          "description": "A minor shower radiating from Ursa Minor around the winter solstice, with about 10 meteors per hour at its peak. In 2026 a 94%-full Moon washes out all but the brightest meteors."
+        },
+        "ko": {
+          "title": "작은곰자리 유성우",
+          "description": "동지 무렵 작은곰자리에서 복사되는 소규모 유성우로, 극대기에 시간당 약 10개의 유성이 흐릅니다. 2026년에는 94% 밝기의 달이 밝은 유성을 제외한 대부분을 가립니다."
+        },
+        "ja": {
+          "title": "こぐま座流星群",
+          "description": "冬至の頃にこぐま座から放射される小規模な流星群で、極大時には1時間あたり約10個の流星が見られます。2026年は94%の月明かりが、明るい流星以外をかき消します。"
+        },
+        "zh-Hans": {
+          "title": "小熊座流星雨",
+          "description": "冬至前后从小熊座辐射的小型流星雨,极大时每小时约10颗。2026年94%的明亮月光会盖过除最亮流星以外的大部分。"
+        },
+        "zh-Hant": {
+          "title": "小熊座流星雨",
+          "description": "冬至前後從小熊座輻射的小型流星雨,極大時每小時約10顆。2026年94%的明亮月光會蓋過除最亮流星以外的大部分。"
+        },
+        "de": {
+          "title": "Ursiden-Meteorstrom",
+          "description": "Ein kleiner Strom, der um die Wintersonnenwende aus dem Kleinen Bären strahlt, mit etwa 10 Meteoren pro Stunde im Maximum. 2026 überstrahlt ein zu 94 % beleuchteter Mond alle bis auf die hellsten Meteore."
+        },
+        "es": {
+          "title": "Lluvia de meteoros Úrsidas",
+          "description": "Una lluvia menor que irradia desde la Osa Menor cerca del solsticio de invierno, con unos 10 meteoros por hora en su pico. En 2026 una Luna llena al 94 % oculta todos menos los más brillantes."
+        },
+        "fr": {
+          "title": "Pluie de météores des Ursides",
+          "description": "Une pluie mineure rayonnant de la Petite Ourse autour du solstice d'hiver, avec environ 10 météores par heure au maximum. En 2026, une Lune éclairée à 94 % efface tous les météores sauf les plus brillants."
+        },
+        "it": {
+          "title": "Sciame meteorico delle Ursidi",
+          "description": "Uno sciame minore che irradia dall'Orsa Minore vicino al solstizio d'inverno, con circa 10 meteore all'ora al picco. Nel 2026 una Luna piena al 94% cancella tutte tranne le meteore più luminose."
+        },
+        "pt-BR": {
+          "title": "Chuva de meteoros Ursídeas",
+          "description": "Uma chuva menor que irradia da Ursa Menor perto do solstício de inverno, com cerca de 10 meteoros por hora no pico. Em 2026, uma Lua 94% cheia ofusca todos, exceto os mais brilhantes."
+        },
+        "ru": {
+          "title": "Метеорный поток Урсиды",
+          "description": "Небольшой поток, исходящий из созвездия Малой Медведицы вблизи зимнего солнцестояния, с примерно 10 метеорами в час в максимуме. В 2026 году Луна, освещённая на 94 %, затмевает все метеоры, кроме самых ярких."
+        }
+      }
+    }
+  ]
+}
