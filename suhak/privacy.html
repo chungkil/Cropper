@@ -94,6 +94,29 @@ developer-run server, and CloudKit does not reveal your Apple Account to the dev
 signed in to iCloud, you can send it by mail or copy instead.</p>
 </div>
 
+<h2><span class="l-ko">1-B. 응답 비율 (기본 꺼짐)</span><span class="l-en">1-B. Answer statistics (off by default)</span></h2>
+<div class="box">
+<p class="l-ko">설정에서 <b>「다른 학생들의 응답 비율」</b>을 켜면, 문제를 푼 뒤 그 문항을 몇 %가
+틀렸는지 볼 수 있습니다. <b>기본은 꺼져 있습니다.</b> 꺼 두면 이 기능으로 나가는 통신이 아예 없습니다.</p>
+<p class="l-ko">켜면 함께 가는 것 —— <b>내가 낸 답</b>(40자까지), 문항 번호, 소단원 번호, 맞았는지 틀렸는지,
+난이도와 유형. 한 문항에 <b>한 번만</b>, 처음 낸 답만 보냅니다. 복습으로 다시 풀어도 다시 보내지 않습니다.</p>
+<p class="l-ko">이름·이메일·전화번호도, 이용자를 가리키는 어떤 식별자도 함께 가지 않습니다. 저장되는 곳은
+<b>Apple 의 CloudKit</b> 이며, 누가 보냈는지는 개발자도 알 수 없습니다. 언제든 설정에서 끄실 수 있고,
+끄면 그 뒤로는 보내지 않습니다.</p>
+<p class="l-ko">화면에 나오는 비율은 <b>최근 응답 일부</b>를 센 것이며, 그래서 "최근 몇 명 중" 이라고 적습니다.
+등수나 다른 학생과의 비교는 어디에도 두지 않습니다.</p>
+<p class="l-en">Turning on <b>"Answer statistics"</b> in Settings lets you see what share of students missed
+a problem after you answer it. <b>It is off by default</b>, and while off this feature sends nothing at all.</p>
+<p class="l-en">When on, what goes with it — <b>the answer you gave</b> (up to 40 characters), the problem
+number, the lesson number, whether you got it right, difficulty and type. <b>Once per problem</b>, your first
+answer only; solving it again in review sends nothing further.</p>
+<p class="l-en">No name, email, phone number, or any identifier pointing to you is included. It is stored in
+<b>Apple's CloudKit</b>, and the developer cannot tell who sent it. You can turn it off at any time, and
+nothing is sent after that.</p>
+<p class="l-en">The percentage shown counts a <b>sample of recent answers</b>, which is why it says "of the
+last N". There is no ranking and no comparison against other students anywhere.</p>
+</div>
+
 <h2><span class="l-ko">2. 학습 기록이 저장되는 곳</span><span class="l-en">2. Where your study data lives</span></h2>
 <div class="box">
 <p class="l-ko">문항별 시도 기록, 풀이 시간, 오답노트, 개념 숙련도, 시험 플랜 같은 학습 기록은
@@ -148,7 +171,7 @@ that entitlement is shared with your family group — also handled by Apple.</p>
 쓰이는지만 봅니다(1절 참고). 충돌 보고와 사용자 행동 추적은 넣지 않았습니다. 이 정보는 Google 로
 전달되며, Google 의 처리 방침은
 <a href="https://policies.google.com/privacy">policies.google.com/privacy</a> 에 있습니다.</p>
-<p class="l-ko"><b>이의 제기는 Apple 의 CloudKit 에 저장됩니다</b>(1-A 참고). 개발자가 운영하는
+<p class="l-ko"><b>이의 제기와 응답 비율은 Apple 의 CloudKit 에 저장됩니다</b>(1-A · 1-B 참고). 개발자가 운영하는
 서버는 없습니다.</p>
 <p class="l-ko"><b>그 밖의 외부 라이브러리는 없습니다.</b> 나머지는 Apple 이 제공하는 프레임워크만으로
 만들어졌고 수식 조판도 직접 구현했습니다.</p>
@@ -157,7 +180,7 @@ never used, and <b>the App Tracking Transparency prompt never appears.</b></p>
 <p class="l-en"><b>One analytics tool.</b> Google Firebase Analytics tells us which screens get used
 (see section 1). No crash reporting, no behavioural tracking. That data goes to Google, whose privacy
 policy is at <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>.</p>
-<p class="l-en"><b>Problem reports are stored in Apple's CloudKit</b> (see 1-A). There is no
+<p class="l-en"><b>Problem reports and answer statistics are stored in Apple's CloudKit</b> (see 1-A and 1-B). There is no
 developer-run server.</p>
 <p class="l-en"><b>No other third-party libraries.</b> The rest is built solely on Apple's own frameworks;
 even the mathematical typesetting is our own.</p>
