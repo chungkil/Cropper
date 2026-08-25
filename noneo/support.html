@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>지원 — 논어 배우기</title>
+<style>
+:root{--paper:#F2E8DA;--paper2:#FBF6EE;--ink:#3A2B1A;--ink2:#5A452C;--red:#8C5E33;--sub:#8A7059;--card:#FFFFFF}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;background:var(--paper);color:var(--ink);line-height:1.75}
+html[data-lang="ko"] .l-en{display:none}
+html[data-lang="en"] .l-ko{display:none}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px 60px}
+.langbar{display:flex;justify-content:flex-end;padding:14px 0}
+.langbar button{border:1px solid var(--red);background:transparent;color:var(--red);padding:5px 14px;cursor:pointer;font-size:14px}
+.langbar button:first-child{border-radius:8px 0 0 8px}
+.langbar button:last-child{border-radius:0 8px 8px 0}
+.langbar button.on{background:var(--red);color:#fff}
+h1{font-size:1.8rem;margin:16px 0 26px}
+h2{font-size:1.2rem;margin:32px 0 10px;padding-top:14px;border-top:1px solid #e4d5bd}
+p,li{font-size:.98rem;color:#3a4a63}
+ul{padding-left:22px;margin:8px 0}
+.qa{background:var(--card);border-radius:14px;padding:18px 22px;margin:14px 0;box-shadow:0 4px 18px rgba(58,43,26,.08)}
+.qa>b{display:block;color:var(--ink);margin-bottom:6px}
+.contact{background:var(--paper2);border-left:4px solid var(--red);border-radius:0 12px 12px 0;padding:18px 20px;margin:20px 0}
+footer{border-top:1px solid #e4d5bd;padding:24px 0 0;margin-top:40px;text-align:center;font-size:.9rem;color:var(--sub)}
+footer a{color:var(--ink2)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="langbar">
+  <button id="b-ko" class="on" onclick="setLang('ko')">한국어</button>
+  <button id="b-en" onclick="setLang('en')">English</button>
+</div>
+
+<h1><span class="l-ko">지원 · 자주 묻는 질문</span><span class="l-en">Support · FAQ</span></h1>
+
+<div class="contact">
+  <p class="l-ko">문의는 아래 주소로 보내 주세요. 보통 하루 이틀 안에 답장드립니다.<br>
+  <b>chungkil.cksw@gmail.com</b><br>
+  버그를 알려 주실 때는 <b>기기 모델·iOS 버전·앱 버전</b>(설정 화면 아래쪽)을 함께 적어 주시면 큰 도움이 됩니다.</p>
+  <p class="l-en">Questions and bug reports are welcome at<br>
+  <b>chungkil.cksw@gmail.com</b><br>
+  When reporting a bug, please include your <b>device model, iOS version, and app version</b> (shown at the bottom of Settings).</p>
+</div>
+
+<h2><span class="l-ko">학습</span><span class="l-en">Studying</span></h2>
+
+<div class="qa"><b><span class="l-ko">한 과는 어떻게 뗍니까?</span><span class="l-en">How does a lesson work?</span></b>
+<p class="l-ko">서당의 순서를 그대로 따릅니다. <b>습자</b>로 새 글자를 손으로 익히고, <b>강독</b>으로 원문을 소리 내어 읽으며 뜻을 새기고,
+<b>배강</b>으로 책을 덮고 외워 바칩니다. 배강을 통과해야 다음 과가 열립니다.</p>
+<p class="l-en">Three steps, as in a traditional village school: <b>writing</b> the new characters by hand,
+<b>reading</b> the annotated original aloud, then <b>reciting</b> it from memory. Passing the recitation unlocks the next lesson.</p></div>
+
+<div class="qa"><b><span class="l-ko">과에 자물쇠가 걸려 있습니다.</span><span class="l-en">A lesson is locked.</span></b>
+<p class="l-ko">자물쇠는 두 종류입니다. <b>앞 과를 아직 마치지 않아</b> 잠긴 것이라면 그 과를 먼저 떼면 열립니다.
+6과 이후가 잠긴 것이라면 평생 이용권이 필요합니다.</p>
+<p class="l-en">Two kinds. If it is simply the next lesson in sequence, finish the one before it.
+If it is lesson 6 or later, it requires the lifetime unlock.</p></div>
+
+<div class="qa"><b><span class="l-ko">새 글자가 하나도 없는 과가 있습니다.</span><span class="l-en">A lesson has no new characters.</span></b>
+<p class="l-ko">잘못된 것이 아닙니다. 앞선 과에서 이미 나온 글자는 다시 세지 않는데,
+논어에는 <b>지지위지지(知之爲知之)</b>처럼 짧고 되풀이가 많은 명구가 있어 새 글자가 한 자도 남지 않는 과가 몇 곳 생깁니다.
+그런 과에서는 습자가 <b>이미 배운 글자의 복습</b>으로 채워집니다.</p>
+<p class="l-en">Nothing is wrong. Characters met in an earlier lesson are not counted again, and a few of the
+shorter, much-repeated sayings leave no new ones at all. Those lessons practise characters you have already learned.</p></div>
+
+<div class="qa"><b><span class="l-ko">과마다 분량이 들쭉날쭉합니다.</span><span class="l-en">Lesson length varies a lot.</span></b>
+<p class="l-ko">한 과가 논어의 한 대목이라 그렇습니다. 짧은 한 마디로 끝나는 장이 있는가 하면,
+문답이 길게 이어지는 장도 있습니다. 습자는 언제든 나갔다가 이어서 하실 수 있고, 익힌 글자는 그대로 남습니다.</p>
+<p class="l-en">Each lesson is one passage of the original — some are a single line, others a longer exchange.
+You can leave the writing practice at any point and pick it up where you left off.</p></div>
+
+<div class="qa"><b><span class="l-ko">획순 판정이 자꾸 틀렸다고 나옵니다.</span><span class="l-en">Stroke checking keeps failing.</span></b>
+<p class="l-ko">시작점을 짚어 주는 안내를 따라 천천히 그어 보세요. 세 번 이어서 어긋나면 힌트를 보여 준 뒤 자동으로 넘어가므로,
+한 획에 막혀 진도가 멈추는 일은 없습니다.</p>
+<p class="l-en">Follow the starting-point guide and draw slowly. After three misses the app shows a hint and moves on,
+so you will never be stuck on one stroke.</p></div>
+
+<div class="qa"><b><span class="l-ko">낭독 속도나 목소리를 바꿀 수 있습니까?</span><span class="l-en">Can I change the voice or speed?</span></b>
+<p class="l-ko">학당 홈 오른쪽 위 톱니바퀴 → 설정에서 <b>발음 속도</b>를 조절하고, <b>성독 음성</b>을 여성과 남성 가운데 고릅니다.
+속도는 훈음 발음과 원문 낭독에 함께 적용됩니다.</p>
+<p class="l-en">Tap the gear icon at the top right of the main screen. Speed applies to both the character readings
+and the recitation, and the recitation voice can be female or male.</p></div>
+
+<div class="qa"><b><span class="l-ko">화면을 끄면 낭독이 멈춥니다.</span><span class="l-en">Playback stops when the screen turns off.</span></b>
+<p class="l-ko">서고의 <b>성독 이어듣기</b>는 화면을 꺼도 이어집니다. 잠금 화면에서 재생·정지·이전·다음을 조작할 수 있고,
+다음에 열면 듣던 구절부터 이어집니다. 강독 화면의 낭독 버튼은 학습용이라 화면이 꺼지면 멈춥니다.</p>
+<p class="l-en">The <b>continuous recitation</b> in the library keeps playing with the screen off, with lock-screen
+controls, and resumes where you stopped. The read-aloud button inside a lesson is meant for study and stops when the screen turns off.</p></div>
+
+<h2><span class="l-ko">기록과 동기화</span><span class="l-en">Data and sync</span></h2>
+
+<div class="qa"><b><span class="l-ko">기기를 바꾸면 진도가 이어집니까?</span><span class="l-en">Does my progress carry to a new device?</span></b>
+<p class="l-ko">같은 Apple 계정으로 로그인하고 iCloud가 켜져 있으면 진도·복습·즐겨찾기가 이어집니다.
+글자별 통계와 일별 활동 기록은 기기에만 남으므로 옮겨지지 않습니다.</p>
+<p class="l-en">Yes — progress, reviews, and bookmarks sync through your own iCloud when signed in to the same Apple Account.
+Per-character statistics and daily activity stay on the device and do not transfer.</p></div>
+
+<div class="qa"><b><span class="l-ko">학습 기록을 지우고 처음부터 하고 싶습니다.</span><span class="l-en">I want to start over.</span></b>
+<p class="l-ko">설정 → 학습 기록 초기화. 기기의 기록과 iCloud에 올려 둔 기록이 함께 지워집니다. 되돌릴 수 없습니다.</p>
+<p class="l-en">Settings → Reset study data. This clears both the device records and the iCloud copy, and cannot be undone.</p></div>
+
+<div class="qa"><b><span class="l-ko">매일 알림을 받고 싶습니다.</span><span class="l-en">Can I get a daily reminder?</span></b>
+<p class="l-ko">설정 → 매일 학습 알림을 켜고 시각을 정하시면 됩니다. 알림은 기기 안에서 예약되며, 알림 권한을 주지 않으셔도
+앱의 다른 기능은 그대로 쓰실 수 있습니다.</p>
+<p class="l-en">Settings → Daily study reminder, then pick a time. Reminders are scheduled on the device;
+declining notification permission changes nothing else in the app.</p></div>
+
+<h2><span class="l-ko">구매</span><span class="l-en">Purchase</span></h2>
+
+<div class="qa"><b><span class="l-ko">구독입니까?</span><span class="l-en">Is it a subscription?</span></b>
+<p class="l-ko">아닙니다. <b>평생 이용권</b>은 1회 결제이며 만료되지 않습니다. 정기 결제가 빠져나가지 않습니다.</p>
+<p class="l-en">No. The <b>lifetime unlock</b> is a one-time purchase that never expires. Nothing recurs.</p></div>
+
+<div class="qa"><b><span class="l-ko">기기를 바꿨는데 구매가 풀렸습니다.</span><span class="l-en">My purchase is gone on a new device.</span></b>
+<p class="l-ko">페이월 화면 아래의 <b>구매 복원</b>을 눌러 주세요. 설정(학당 홈 오른쪽 위 톱니바퀴)의 구매 항목에도 같은 단추가 있습니다.
+구매할 때와 같은 Apple 계정으로 로그인되어 있어야 합니다.</p>
+<p class="l-en">Tap <b>Restore Purchases</b> on the unlock screen, or in Settings under Purchase.
+You must be signed in with the same Apple Account used for the purchase.</p></div>
+
+<div class="qa"><b><span class="l-ko">가격이 표시되지 않습니다.</span><span class="l-en">The price does not load.</span></b>
+<p class="l-ko">네트워크가 잠시 불안정할 때 생길 수 있습니다. 화면을 닫았다가 다시 열거나, 잠시 뒤 다시 시도해 주세요.
+계속 같은 문제가 있으면 메일로 알려 주세요.</p>
+<p class="l-en">This is usually a temporary network issue. Close and reopen the screen, or try again shortly.
+If it persists, please email us.</p></div>
+
+<h2><span class="l-ko">원문에 대하여</span><span class="l-en">About the text</span></h2>
+
+<div class="qa"><b><span class="l-ko">논어 전문이 다 들어 있습니까?</span><span class="l-en">Is this the complete text?</span></b>
+<p class="l-ko">아닙니다. 논어는 스무 편에 오백 장 가까운 말이 실린 책이라, 이 앱은 그 가운데
+<b>96과 101구절, 원문 1526자</b>를 골라 엮은 선집입니다. 다만 <b>학이편에서 요왈편까지 스무 편 가운데
+한 편도 건너뛰지 않았고</b>, 고른 구절은 편과 장의 차례를 그대로 지켜 배열했습니다.
+앞에서부터 떼어 나가면 논어의 순서대로 읽게 됩니다. 남은 대목은 앞으로 채워 갈 계획입니다.</p>
+<p class="l-en">No. The Analects runs to nearly five hundred chapters across twenty books; this app is a selection —
+<b>101 passages across 96 lessons, 1,526 characters</b>. <b>No book is skipped</b>, from Xue Er to Yao Yue,
+and the passages stay in the original order, so working through them follows the Analects in sequence.
+More is planned.</p></div>
+
+<div class="qa"><b><span class="l-ko">한자의 음이 사전과 다르게 읽히는 곳이 있습니다.</span><span class="l-en">A character is read differently from the dictionary.</span></b>
+<p class="l-ko">한 글자가 자리에 따라 다르게 읽히는 다음자(多音字)입니다. 이를테면 樂은 대개 '락'으로 읽지만
+요산요수(樂山樂水)에서는 '요'로 읽어 <b>같은 구절 안에서 요수·요산과 낙이 함께</b> 나옵니다.
+食도 대개 '식'이지만 단사표음(簞食瓢飮)에서는 '사'로 읽습니다.
+구절의 독음은 그 자리의 읽기를 따르고, 사전은 대표음을 보여 줍니다.</p>
+<p class="l-en">Some characters are read differently depending on context — 樂 is usually <i>rak</i> but is read <i>yo</i>
+in "the wise delight in water"; 食 is usually <i>sik</i> but <i>sa</i> in "a single bowl of rice".
+The passage reading follows the reading proper to that line, while the dictionary shows the standard one.</p></div>
+
+<div class="qa"><b><span class="l-ko">오늘의 상식과 맞지 않는 말이 보입니다.</span><span class="l-en">Some views feel dated.</span></b>
+<p class="l-ko">논어는 이천오백 년 전 사람의 말이라, 임금과 신하·아비와 자식의 자리를 말하는 신분 사회의 언어가
+원문에 그대로 있습니다. 군군신신(君君臣臣)처럼 오늘의 정치 용어로 그대로 옮기기 어려운 대목도 있습니다.
+지우지 않고 싣되 <b>새김에 그것이 어느 시대의 말이었는지</b>와 오늘 무엇으로 읽을 수 있는지를 함께 적어 두었습니다.</p>
+<p class="l-en">These are the words of someone who lived two and a half thousand years ago, spoken in the language of
+that society — ruler and minister, father and son. Nothing is removed; the commentary notes which age's words
+these were and what they can mean for a reader now.</p></div>
+
+<div class="qa"><b><span class="l-ko">원문이나 번역에 잘못된 곳을 찾았습니다.</span><span class="l-en">I found an error in the text.</span></b>
+<p class="l-ko">알려 주시면 감사하겠습니다. <b>몇 과인지</b>와 함께 보내 주시면 확인해 고치겠습니다.
+원문은 통용되는 논어 판본을 따랐으며, 현토와 새김은 이 앱이 새로 붙인 것이라 제보가 큰 도움이 됩니다.</p>
+<p class="l-en">Please tell us — include the <b>lesson number</b>. Corrections are genuinely welcome:
+the annotations and commentary were written for this app, and wording varies between editions.</p></div>
+
+<footer>
+  <p><a href="index.html"><span class="l-ko">홈</span><span class="l-en">Home</span></a> ·
+     <a href="privacy.html"><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></a></p>
+  <p style="margin-top:8px">chungkil.cksw@gmail.com</p>
+</footer>
+
+</div>
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  document.documentElement.setAttribute('lang', l);
+  document.getElementById('b-ko').classList.toggle('on', l==='ko');
+  document.getElementById('b-en').classList.toggle('on', l==='en');
+  try{ localStorage.setItem('lang', l); }catch(e){}
+}
+try{ var s=localStorage.getItem('lang'); if(s) setLang(s); }catch(e){}
+</script>
+</body>
+</html>
