@@ -11,6 +11,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe U
 html[data-lang="ko"] .l-en{display:none}
 html[data-lang="en"] .l-ko{display:none}
 .wrap{max-width:760px;margin:0 auto;padding:0 20px 60px}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:.92rem}
+th,td{border:1px solid #d8d8dc;padding:7px 10px;text-align:left}
+th{background:#f4f4f6;font-weight:600}
+td:nth-child(3),td:nth-child(4),th:nth-child(3),th:nth-child(4){text-align:center}
+@media (prefers-color-scheme:dark){
+  th,td{border-color:#3a3a3e}
+  th{background:#2a2a2e}
+}
 .langbar{display:flex;justify-content:flex-end;padding:14px 0}
 .langbar button{border:1px solid var(--accent);background:transparent;color:var(--accent);padding:5px 14px;cursor:pointer;font-size:14px}
 .langbar button:first-child{border-radius:8px 0 0 8px}
@@ -61,6 +69,18 @@ footer a{color:var(--ink2)}
 추적 허용을 묻는 창이 뜨지 않습니다. 광고 개인화 신호와 IDFV 수집도 꺼 두었습니다.</p>
 <p class="l-ko">회원 가입과 로그인이 없어 위 정보를 <b>이용자가 누구인지와 이을 방법이 없습니다.</b>
 콘텐츠는 앱 안에 담겨 있어 학습 자체에는 인터넷이 필요하지 않습니다.</p>
+<p class="l-ko"><b>App Store 의 「앱 개인정보」에는 다음 넷을 신고했습니다.</b> 이 문서와 같은 내용이며,
+<b>어느 것도 추적에 쓰지 않습니다.</b></p>
+<table class="l-ko">
+  <tr><th>데이터</th><th>목적</th><th>신원 연결</th><th>추적</th></tr>
+  <tr><td>제품 상호 작용</td><td>분석</td><td>아니요</td><td><b>아니요</b></td></tr>
+  <tr><td>기기 ID (앱 인스턴스 ID)</td><td>분석</td><td>아니요</td><td><b>아니요</b></td></tr>
+  <tr><td>대략적 위치 (국가·지역)</td><td>분석</td><td>아니요</td><td><b>아니요</b></td></tr>
+  <tr><td>기타 사용자 콘텐츠</td><td>앱 기능 · 분석</td><td>아니요</td><td><b>아니요</b></td></tr>
+</table>
+<p class="l-ko">Apple 이 말하는 <b>추적</b>은 다른 회사의 자료와 이어 맞춤 광고에 쓰거나 데이터 중개업체에
+넘기는 것을 뜻합니다. 이 앱은 광고가 없고 광고 식별자에 접근하지 않으므로 <b>추적을 하지 않으며,
+그래서 추적 허용을 묻는 창(ATT)도 뜨지 않습니다.</b></p>
 <p class="l-en">We use Google <b>Firebase Analytics</b> for usage statistics. It sends only:</p>
 <ul class="l-en">
   <li><b>Basic events</b> — which screens you opened, when the app started and stopped</li>
@@ -75,6 +95,19 @@ not linked, which is why you never see a tracking permission prompt. Ad personal
 IDFV collection are turned off as well.</p>
 <p class="l-en">With no sign-up and no login, <b>none of this can be tied to who you are.</b>
 All content is bundled with the app, so studying itself requires no internet connection.</p>
+<p class="l-en"><b>Our App Store privacy label declares these four.</b> They match this document, and
+<b>none of them is used for tracking.</b></p>
+<table class="l-en">
+  <tr><th>Data</th><th>Purpose</th><th>Linked to you</th><th>Tracking</th></tr>
+  <tr><td>Product Interaction</td><td>Analytics</td><td>No</td><td><b>No</b></td></tr>
+  <tr><td>Device ID (app instance ID)</td><td>Analytics</td><td>No</td><td><b>No</b></td></tr>
+  <tr><td>Coarse Location (country/region)</td><td>Analytics</td><td>No</td><td><b>No</b></td></tr>
+  <tr><td>Other User Content</td><td>App Functionality · Analytics</td><td>No</td><td><b>No</b></td></tr>
+</table>
+<p class="l-en">Apple defines <b>tracking</b> as linking your data with data from other companies for
+targeted advertising, or sharing it with data brokers. This app has no ads and does not access the
+advertising identifier, so it <b>does not track you — which is why no tracking permission prompt (ATT)
+ever appears.</b></p>
 
 <h2><span class="l-ko">1-A. 문항 이의 제기</span><span class="l-en">1-A. Reporting a problem</span></h2>
 <div class="box">
