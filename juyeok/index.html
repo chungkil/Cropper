@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>주역 배우기 — 예순네 괘를 원문으로 읽는 주역</title>
+<meta property="og:title" content="주역 배우기 — Learn Juyeok">
+<meta property="og:description" content="자강불식·적선여경·궁즉통이 나온 자리를 원문으로. 예순네 괘를 하나도 건너뛰지 않고 계사전·설괘전까지 85과 101구절, 습자·강독·배강 세 걸음으로 떼고 101구절 전량 낭독을 귀로 이어 듣습니다.">
+<style>
+:root{--paper:#F2E8DA;--paper2:#FBF6EE;--ink:#3A2B1A;--ink2:#5A452C;--red:#8C5E33;--sub:#8A7059;--card:#FFFFFF}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7}
+html[data-lang="ko"] .l-en{display:none}
+html[data-lang="en"] .l-ko{display:none}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+.langbar{display:flex;justify-content:flex-end;padding:14px 0}
+.langbar button{border:1px solid var(--red);background:transparent;color:var(--red);padding:5px 14px;cursor:pointer;font-size:14px}
+.langbar button:first-child{border-radius:8px 0 0 8px}
+.langbar button:last-child{border-radius:0 8px 8px 0}
+.langbar button.on{background:var(--red);color:#fff}
+.hero{text-align:center;padding:40px 0 50px}
+.hero .seal{width:120px;height:120px;border-radius:27px;box-shadow:0 8px 30px rgba(58,43,26,.18);background:var(--paper2);display:inline-flex;align-items:center;justify-content:center;font-size:64px;font-family:serif;color:var(--ink)}
+.hero h1{font-size:2.2rem;margin:22px 0 10px;letter-spacing:-.5px}
+.hero p.tag{font-size:1.15rem;color:var(--sub);margin-bottom:26px}
+.badge .soon{display:inline-block;font-size:.85rem;color:var(--sub);margin-top:8px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:10px 0 54px}
+.stat{background:var(--card);border-radius:14px;padding:22px 8px;text-align:center;box-shadow:0 4px 18px rgba(58,43,26,.08)}
+.stat b{display:block;font-size:1.6rem;color:var(--red)}
+.stat span{font-size:.9rem;color:var(--sub)}
+h2.sec{font-size:1.5rem;margin:0 0 22px;text-align:center}
+h2.sec::after{content:"";display:block;width:44px;height:3px;background:var(--red);margin:10px auto 0;border-radius:2px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:56px}
+.card{background:var(--card);border-radius:16px;padding:24px 20px;box-shadow:0 4px 18px rgba(58,43,26,.08)}
+.card .em{font-size:1.7rem}
+.card h3{font-size:1.05rem;margin:10px 0 6px}
+.card p{font-size:.92rem;color:#4a4033}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:56px}
+.step{background:var(--paper2);border:1px solid #e4d5bd;border-radius:16px;padding:24px 20px}
+.step b{color:var(--red);font-size:1.05rem}
+.step p{font-size:.92rem;color:#4a4033;margin-top:6px}
+.quote{background:var(--card);border-radius:16px;padding:26px 24px;margin-bottom:56px;box-shadow:0 4px 18px rgba(58,43,26,.08);text-align:center}
+.quote .han{font-family:serif;font-size:1.35rem;letter-spacing:2px;color:var(--ink)}
+.quote .kor{font-size:.95rem;color:#4a4033;margin-top:10px}
+.quote .src{font-size:.85rem;color:var(--sub);margin-top:6px}
+.chips{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-bottom:56px}
+.chip{background:var(--card);border:1px solid #e4d5bd;border-radius:999px;padding:7px 15px;font-size:.92rem;color:var(--ink2);box-shadow:0 2px 10px rgba(58,43,26,.05)}
+.chip b{color:var(--red);font-family:serif;margin-right:5px}
+.ladder{background:var(--paper2);border:1px solid #e4d5bd;border-radius:16px;padding:22px 24px;margin-bottom:56px}
+.ladder ol{padding-left:22px;font-size:.95rem;color:#4a4033}
+.ladder li{margin:5px 0}
+.ladder li b{color:var(--red);font-family:serif;margin-right:6px}
+.pricing{background:var(--paper2);border:1px solid #e4d5bd;border-radius:16px;padding:26px;margin-bottom:56px}
+.pricing h3{font-size:1.1rem;margin-bottom:10px}
+.pricing ul{padding-left:20px;font-size:.94rem;color:#4a4033}
+.note{background:#fff;border-left:4px solid var(--red);border-radius:0 12px 12px 0;padding:18px 20px;margin-bottom:56px;font-size:.94rem;color:#4a4033}
+.note p+p{margin-top:10px}
+footer{border-top:1px solid #e4d5bd;padding:26px 0 40px;text-align:center;font-size:.9rem;color:var(--sub)}
+footer a{color:var(--ink2)}
+@media(max-width:720px){.grid,.steps{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="langbar">
+  <button id="b-ko" class="on" onclick="setLang('ko')">한국어</button>
+  <button id="b-en" onclick="setLang('en')">English</button>
+</div>
+
+<div class="hero">
+  <div class="seal">易</div>
+  <h1><span class="l-ko">주역 배우기</span><span class="l-en">Learn Juyeok</span></h1>
+  <p class="tag">
+    <span class="l-ko">예순네 괘를 원문으로 읽는 주역</span>
+    <span class="l-en">The Book of Changes — all sixty-four hexagrams, in the original</span>
+  </p>
+  <div class="badge"><span class="soon">
+    <span class="l-ko">App Store 출시 준비 중</span><span class="l-en">Coming soon to the App Store</span>
+  </span></div>
+</div>
+
+<div class="stats">
+  <div class="stat"><b>64</b><span class="l-ko">괘 전부</span><span class="l-en">hexagrams</span></div>
+  <div class="stat"><b>85</b><span class="l-ko">과</span><span class="l-en">lessons</span></div>
+  <div class="stat"><b>101</b><span class="l-ko">구절</span><span class="l-en">passages</span></div>
+  <div class="stat"><b>437</b><span class="l-ko">신출자</span><span class="l-en">new characters</span></div>
+</div>
+
+<h2 class="sec"><span class="l-ko">어떤 책인가</span><span class="l-en">About the text</span></h2>
+<div class="note">
+  <p class="l-ko">주역(周易)은 삼경 가운데 가장 오래된 책이자, 동아시아에서 가장 오래 읽힌 책입니다.
+  여덟 괘를 처음 그은 이는 <b>복희(伏羲)</b>라 하고, 그것을 겹쳐 예순네 괘를 만들고 괘마다 말을 붙인 이는
+  <b>문왕(文王)</b>과 주공(周公)이라 하며, 그 뜻을 풀어 열 편의 날개를 단 이는 <b>공자</b>라고 전합니다.
+  공자가 이 책을 하도 읽어 가죽끈이 세 번 끊어졌다는 위편삼절(韋編三絶)이 여기서 나온 말입니다.</p>
+  <p class="l-ko">본래 점을 치던 책이지만, 십익(十翼)을 거치며 <b>변화를 읽는 책</b>이 되었습니다.
+  음과 양이 갈마드는 자리에서 나아갈 때와 물러설 때를 가늠하는 언어 —
+  자강불식·적선여경·궁즉통·호시탐탐·개과천선처럼 오늘도 쓰는 말들이 모두 여기서 나왔습니다.</p>
+  <p class="l-ko">이 앱은 <b>예순네 괘를 하나도 건너뛰지 않고</b> 괘사와 효사, 대상전에서 고비가 되는 대목을 골라
+  담았고, 여기에 건괘 문언전과 계사전·설괘전을 더해 <b>85과 101구절, 원문 1,259자</b>로 엮었습니다.</p>
+  <p class="l-en"><b>The Book of Changes</b> is the oldest of the Three Classics and the longest-read book in East Asia.
+  Tradition credits <b>Fuxi</b> with the eight trigrams, <b>King Wen</b> and the Duke of Zhou with doubling them into
+  sixty-four hexagrams and attaching the judgements, and <b>Confucius</b> with the Ten Wings that explain them.
+  He is said to have worn through the leather binding three times reading it.</p>
+  <p class="l-en">It began as a divination manual, but through the Ten Wings it became a book about <b>change itself</b> —
+  a language for judging when to advance and when to withdraw as yin and yang give way to each other.</p>
+  <p class="l-en">This app skips <b>none of the sixty-four hexagrams</b>: the decisive lines from the judgements, the line
+  statements, and the Great Images, together with the Wenyan on Qian and passages from the Great Treatise and the
+  Shuogua — <b>101 passages across 85 lessons, 1,259 characters</b>.</p>
+</div>
+
+<div class="quote">
+  <div class="han">天行健 君子以自强不息</div>
+  <div class="kor"><span class="l-ko">하늘의 운행은 굳세니, 군자는 이를 본받아 스스로 힘쓰며 쉬지 않는다</span>
+    <span class="l-en">Heaven moves without ceasing; so the noble one strengthens himself and never rests</span></div>
+  <div class="src"><span class="l-ko">제6과 대상전 자강불식(自强不息) — 건괘의 상(象)</span>
+    <span class="l-en">Lesson 6 — the Great Image of Qian</span></div>
+</div>
+
+<h2 class="sec"><span class="l-ko">건에서 미제까지, 그리고 십익</span><span class="l-en">From Qian to Weiji, and the Wings</span></h2>
+<div class="ladder">
+  <ol>
+    <li class="l-ko"><b>乾坤</b>건·곤 8과 — 원형이정·잠룡물용·항룡유회·자강불식·후덕재물·이상견빙·적선여경. 두 괘가 예순네 괘의 문입니다</li>
+    <li class="l-en"><b>Qian and Kun</b>8 lessons — the four virtues, the hidden dragon, the arrogant dragon, ceaseless self-strengthening</li>
+    <li class="l-ko"><b>上經</b>상경 28과 — 둔의 경륜, 몽의 동몽구아, 관국지광, 석과불식, 칠일래복, 호시탐탐. 하늘과 땅에서 시작해 감·리에 이릅니다</li>
+    <li class="l-en"><b>Upper Canon</b>28 lessons — from Zhun and Meng through Guan, Bo and Fu to Kan and Li</li>
+    <li class="l-ko"><b>下經</b>하경 34과 — 함의 허수인, 손의 징분질욕, 익의 개과천선, 혁의 군자표변, 중부의 명학재음, 기제와 미제. 사람의 일로 내려옵니다</li>
+    <li class="l-en"><b>Lower Canon</b>34 lessons — Xian to Weiji: human affairs, from courtship to the crossing not yet finished</li>
+    <li class="l-ko"><b>繫辭傳</b>계사전 14과 — 천존지비·일음일양·형이상·궁즉통·금란지교·안불망위. 괘를 넘어 역 전체를 말합니다</li>
+    <li class="l-en"><b>Great Treatise</b>14 lessons — one yin, one yang; what lies above form; when exhausted, change</li>
+    <li class="l-ko"><b>說卦傳</b>설괘전 1과 — 궁리진성(窮理盡性). 이치를 궁구하고 본성을 다하여 명에 이릅니다</li>
+    <li class="l-en"><b>Shuogua</b>1 lesson — fathom the principle, exhaust the nature, and so arrive at destiny</li>
+  </ol>
+</div>
+
+<h2 class="sec"><span class="l-ko">오늘도 쓰는 말들의 자리</span><span class="l-en">Phrases still in use</span></h2>
+<div class="chips">
+  <span class="chip"><b>自强不息</b><span class="l-ko">자강불식</span><span class="l-en">Never resting</span></span>
+  <span class="chip"><b>厚德載物</b><span class="l-ko">후덕재물</span><span class="l-en">Carrying all things</span></span>
+  <span class="chip"><b>元亨利貞</b><span class="l-ko">원형이정</span><span class="l-en">The four virtues</span></span>
+  <span class="chip"><b>潛龍勿用</b><span class="l-ko">잠룡물용</span><span class="l-en">The hidden dragon</span></span>
+  <span class="chip"><b>亢龍有悔</b><span class="l-ko">항룡유회</span><span class="l-en">The arrogant dragon</span></span>
+  <span class="chip"><b>積善餘慶</b><span class="l-ko">적선여경</span><span class="l-en">Goodness stored up</span></span>
+  <span class="chip"><b>虎視眈眈</b><span class="l-ko">호시탐탐</span><span class="l-en">A tiger's stare</span></span>
+  <span class="chip"><b>碩果不食</b><span class="l-ko">석과불식</span><span class="l-en">The last fruit uneaten</span></span>
+  <span class="chip"><b>七日來復</b><span class="l-ko">칠일래복</span><span class="l-en">Return on the seventh day</span></span>
+  <span class="chip"><b>改過遷善</b><span class="l-ko">개과천선</span><span class="l-en">Mend and move to good</span></span>
+  <span class="chip"><b>君子豹變</b><span class="l-ko">군자표변</span><span class="l-en">The leopard's change</span></span>
+  <span class="chip"><b>窮則變通</b><span class="l-ko">궁즉변통</span><span class="l-en">Exhausted, it changes</span></span>
+  <span class="chip"><b>金蘭之交</b><span class="l-ko">금란지교</span><span class="l-en">Gold and orchid</span></span>
+  <span class="chip"><b>一陰一陽</b><span class="l-ko">일음일양</span><span class="l-en">One yin, one yang</span></span>
+  <span class="chip"><b>形而上</b><span class="l-ko">형이상</span><span class="l-en">Above form</span></span>
+  <span class="chip"><b>安不忘危</b><span class="l-ko">안불망위</span><span class="l-en">Safe, not forgetting danger</span></span>
+</div>
+
+<h2 class="sec"><span class="l-ko">한 과를 떼는 세 걸음</span><span class="l-en">Three steps per lesson</span></h2>
+<div class="steps">
+  <div class="step"><b>習字 <span class="l-ko">습자</span><span class="l-en">Writing</span></b>
+    <p class="l-ko">새 글자를 획순 애니메이션으로 보고 손으로 따라 씁니다. 획의 순서와 방향을 함께 판정합니다.</p>
+    <p class="l-en">Trace each new character by hand. Stroke order and direction are both checked.</p></div>
+  <div class="step"><b>講讀 <span class="l-ko">강독</span><span class="l-en">Reading</span></b>
+    <p class="l-ko">현토를 단 원문을 소리 내어 읽고 뜻을 새깁니다. 서산을 놓고 세 번 낭독합니다.</p>
+    <p class="l-en">Read the annotated original aloud and work through its meaning, three times over.</p></div>
+  <div class="step"><b>背講 <span class="l-ko">배강</span><span class="l-en">Recitation</span></b>
+    <p class="l-ko">책을 덮고 외워 바칩니다. 빈칸을 채워 통과해야 다음 과가 열립니다.</p>
+    <p class="l-en">Close the book and recite from memory to unlock the next lesson.</p></div>
+</div>
+
+<h2 class="sec"><span class="l-ko">구절을 여는 여섯 가지</span><span class="l-en">Six ways into a passage</span></h2>
+<div class="grid">
+  <div class="card"><div class="em">🔊</div><h3><span class="l-ko">독음과 현토</span><span class="l-en">Reading aloud</span></h3>
+    <p class="l-ko">"천행이 건하니 군자이하여 자강불식이니라" — 토를 붙여 읽는 대로 적었습니다</p>
+    <p class="l-en">Korean pronunciation with the traditional grammatical particles, exactly as it is chanted</p></div>
+  <div class="card"><div class="em">📖</div><h3><span class="l-ko">직역과 해석</span><span class="l-en">Gloss and translation</span></h3>
+    <p class="l-ko">어절마다 뜻을 붙여 한문 어순을 익히고, 문장 전체의 뜻을 함께 봅니다</p>
+    <p class="l-en">Word-by-word glosses to learn the word order, alongside the full meaning</p></div>
+  <div class="card"><div class="em">🖋</div><h3><span class="l-ko">새김</span><span class="l-en">Commentary</span></h3>
+    <p class="l-ko">어느 괘 몇 번째 효의 말인지, 그 자리가 무엇을 가리키는지, 오늘 어떤 뜻으로 쓰이는지</p>
+    <p class="l-en">Which hexagram and which line, what that position means, and how the phrase reads today</p></div>
+  <div class="card"><div class="em">📚</div><h3><span class="l-ko">사전</span><span class="l-en">Dictionary</span></h3>
+    <p class="l-ko">원문의 한자를 누르면 뜻과 획순이 바로 열립니다. 필기와 카메라로도 찾습니다</p>
+    <p class="l-en">Tap any character for its meaning and stroke order; search by handwriting or camera</p></div>
+  <div class="card"><div class="em">🎧</div><h3><span class="l-ko">성독</span><span class="l-en">Recitation audio</span></h3>
+    <p class="l-ko">101구절 전량의 낭독을 담았습니다. 화면을 꺼도 이어지고, 목소리는 여성과 남성 가운데 고릅니다</p>
+    <p class="l-en">All 101 passages recorded. Playback continues with the screen off; choose a female or male voice</p></div>
+  <div class="card"><div class="em">🧧</div><h3><span class="l-ko">서재와 족자</span><span class="l-en">Library and scroll</span></h3>
+    <p class="l-ko">마음에 든 구절을 갈무리해 두고, 배운 구절을 세로쓰기 족자로 만들어 공유합니다</p>
+    <p class="l-en">Keep the passages you like, and turn what you have learned into a vertical scroll to share</p></div>
+</div>
+
+<h2 class="sec"><span class="l-ko">점치는 앱이 아닙니다</span><span class="l-en">Not a divination app</span></h2>
+<div class="note">
+  <p class="l-ko">이 앱에는 <b>괘를 뽑아 주거나 길흉을 봐 주는 기능이 없습니다.</b>
+  산가지도 동전도 없고, 오늘의 운세도 없습니다. 주역을 점치는 책이 아니라 <b>읽는 책</b>으로 다룹니다 —
+  손으로 쓰고 소리 내어 읽고 외워 바치는 서당의 순서 그대로입니다.</p>
+  <p class="l-ko">원문에 나오는 길(吉)·흉(凶)·회(悔)·린(吝)은 본래 점의 판정어이므로 지우지 않고 그대로 옮기되,
+  <b>새김에서는 그것이 어떤 처지와 태도를 가리키는 말인지로 풀었습니다.</b>
+  이를테면 항룡유회는 "높이 오른 용에게는 뉘우침이 있다" — 끝까지 오른 자리의 위태로움을 말한 것으로 읽습니다.</p>
+  <p class="l-en">There is <b>no hexagram casting and no fortune-telling here</b> — no yarrow stalks, no coins, no daily
+  reading. The Changes is treated as a book to be <b>read</b>: written by hand, chanted aloud, and recited from memory,
+  in the order a traditional school would follow.</p>
+  <p class="l-en">The words auspicious, ominous, regret and remorse are kept as they stand in the original, since that
+  is the language of the text — but <b>the commentary reads them as descriptions of a situation and a bearing</b>,
+  not as predictions.</p>
+</div>
+
+<h2 class="sec"><span class="l-ko">이용 안내</span><span class="l-en">Pricing</span></h2>
+<div class="pricing">
+  <h3><span class="l-ko">무료로 시작해, 마음에 들면 한 번의 결제로</span><span class="l-en">Start free, unlock once</span></h3>
+  <ul>
+    <li class="l-ko"><b>무료</b> — 학당 85과 가운데 앞 5과, 사전은 급수별 앞 부분</li>
+    <li class="l-en"><b>Free</b> — the first 5 of 85 lessons, plus part of the dictionary</li>
+    <li class="l-ko"><b>평생 이용권</b> — 전 과와 사전 전체. 구독이 아니라 1회 결제이며 만료되지 않습니다</li>
+    <li class="l-en"><b>Lifetime unlock</b> — everything. A one-time purchase, not a subscription; it never expires</li>
+    <li class="l-ko"><b>평생 이용권을 사면 광고가 사라집니다.</b> 무료 이용 시에는 사전과 강독 아래에 작은 광고가 하나 붙습니다</li>
+    <li class="l-en"><b>The lifetime unlock removes ads.</b> Free users see one small ad below the dictionary and reading screens</li>
+    <li class="l-ko">회원 가입이나 로그인이 필요 없고, 학습 자체는 인터넷 없이도 됩니다</li>
+    <li class="l-en">No account or sign-in required; studying works offline</li>
+  </ul>
+</div>
+
+<footer>
+  <p><a href="support.html"><span class="l-ko">지원</span><span class="l-en">Support</span></a> ·
+     <a href="privacy.html"><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></a></p>
+  <p style="margin-top:8px">chungkil.cksw@gmail.com</p>
+</footer>
+
+</div>
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  document.documentElement.setAttribute('lang', l);
+  document.getElementById('b-ko').classList.toggle('on', l==='ko');
+  document.getElementById('b-en').classList.toggle('on', l==='en');
+  try{ localStorage.setItem('lang', l); }catch(e){}
+}
+try{ var s=localStorage.getItem('lang'); if(s) setLang(s); }catch(e){}
+</script>
+</body>
+</html>
