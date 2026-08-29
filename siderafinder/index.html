@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sidera Finder — 오늘 밤 무엇을 언제 볼지</title>
+<meta property="og:title" content="Sidera Finder — What to see tonight, and when">
+<meta property="og:description" content="달과 행성 다섯, 은하수를 오늘 밤 하나의 시간축에 그립니다. 각 대상이 충분히 어두운 하늘에 떠 있는 시간을 막대로 보여줍니다. 완전 오프라인, 계정 없음, 광고 없음.">
+<style>
+:root{--sky:#0A0C1F;--sky2:#141A35;--ground:#211A12;--moon:#FCF5DC;--dim:#9AA3C0;--line:#2A3358;--card:#161C39}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;background:var(--sky);color:var(--moon);line-height:1.75}
+html[data-lang="ko"] .l-en{display:none}
+html[data-lang="en"] .l-ko{display:none}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+.langbar{display:flex;justify-content:flex-end;padding:14px 0}
+.langbar button{border:1px solid var(--moon);background:transparent;color:var(--moon);padding:5px 14px;cursor:pointer;font-size:14px}
+.langbar button:first-child{border-radius:8px 0 0 8px}
+.langbar button:last-child{border-radius:0 8px 8px 0}
+.langbar button.on{background:var(--moon);color:var(--sky)}
+.hero{text-align:center;padding:44px 0 52px}
+.hero .seal{width:120px;height:120px;border-radius:27px;background:linear-gradient(160deg,#0D1130,#232C55);box-shadow:0 8px 34px rgba(0,0,0,.5);display:inline-flex;align-items:center;justify-content:center;font-size:60px}
+.hero h1{font-size:2.3rem;margin:22px 0 10px;letter-spacing:-.5px}
+.hero p.tag{font-size:1.15rem;color:var(--dim)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:34px 0 56px}
+.stat{background:var(--card);border-radius:14px;padding:22px 8px;text-align:center;border:1px solid var(--line)}
+.stat b{display:block;font-size:1.5rem;color:var(--moon)}
+.stat span{font-size:.88rem;color:var(--dim)}
+h2.sec{font-size:1.5rem;margin:0 0 22px;text-align:center}
+h2.sec::after{content:"";display:block;width:44px;height:3px;background:var(--moon);margin:10px auto 0;border-radius:2px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:56px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 20px}
+.card .em{font-size:1.7rem}
+.card h3{font-size:1.05rem;margin:10px 0 6px}
+.card p{font-size:.92rem;color:var(--dim)}
+.feature{background:linear-gradient(180deg,var(--sky2) 55%,var(--ground) 55%);border:1px solid var(--line);border-radius:16px;padding:30px 26px;margin-bottom:56px;text-align:center}
+.feature h3{font-size:1.25rem;margin-bottom:10px}
+.feature p{font-size:.98rem;color:var(--dim);max-width:640px;margin:0 auto}
+.feature .copy{display:inline-block;margin-top:16px;background:rgba(0,0,0,.35);border:1px solid var(--line);border-radius:12px;padding:12px 18px;font-size:.95rem}
+.pricing{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;margin-bottom:56px}
+.pricing h3{font-size:1.1rem;margin-bottom:10px}
+.pricing ul{padding-left:20px;font-size:.94rem;color:var(--dim)}
+.pricing li{margin:5px 0}
+.note{background:var(--card);border-left:4px solid var(--moon);border-radius:0 12px 12px 0;padding:18px 20px;margin-bottom:56px;font-size:.94rem;color:var(--dim)}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;font-size:.9rem;color:var(--dim)}
+footer a{color:var(--moon)}
+@media(max-width:720px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="langbar">
+  <button id="b-ko" class="on" onclick="setLang('ko')">한국어</button>
+  <button id="b-en" onclick="setLang('en')">English</button>
+</div>
+
+<div class="hero">
+  <div class="seal">🌘</div>
+  <h1>Sidera Finder</h1>
+  <p class="tag">
+    <span class="l-ko">오늘 밤, 무엇을 언제 보러 나갈까</span>
+    <span class="l-en">What is worth going outside for tonight, and when</span>
+  </p>
+</div>
+
+<div class="stats">
+  <div class="stat"><b>7</b><span class="l-ko">한 축 위의 관측 대상</span><span class="l-en">targets on one axis</span></div>
+  <div class="stat"><b>0.014°</b><span class="l-ko">JPL 대비 달 오차</span><span class="l-en">Moon vs JPL</span></div>
+  <div class="stat"><b>0</b><span class="l-ko">네트워크 요청</span><span class="l-en">network requests</span></div>
+  <div class="stat"><b>4</b><span class="l-ko">지원 언어</span><span class="l-en">languages</span></div>
+</div>
+
+<h2 class="sec"><span class="l-ko">무엇을 하는 앱인가</span><span class="l-en">What it does</span></h2>
+<div class="grid">
+  <div class="card">
+    <div class="em">📊</div>
+    <h3><span class="l-ko">오늘 밤을 하나의 축에</span><span class="l-en">Tonight on one axis</span></h3>
+    <p><span class="l-ko">달, 맨눈으로 보이는 행성 다섯, 은하 중심을 하나의 시간축 위에 막대로 그립니다. 금성이 언제 사라지고 토성이 언제 올라오는지가 한눈에 겹쳐 보입니다.</span>
+       <span class="l-en">The Moon, the five naked-eye planets and the galactic core, drawn as bars on one timeline. You can see at a glance when Venus goes and Saturn arrives.</span></p>
+  </div>
+  <div class="card">
+    <div class="em">🌒</div>
+    <h3><span class="l-ko">떴다가 아니라 볼 만하다</span><span class="l-en">Not risen — worth looking at</span></h3>
+    <p><span class="l-ko">막대는 대상이 탁한 공기를 벗어날 만큼 높고, 그 대상에게 하늘이 충분히 어두운 시간입니다. 행성은 시민박명부터, 은하 중심은 천문박명부터 셉니다.</span>
+       <span class="l-en">A bar is the stretch when the target is high enough to clear the murk and the sky is dark enough for it. Planets count from civil twilight, the galactic core from astronomical.</span></p>
+  </div>
+  <div class="card">
+    <div class="em">🔔</div>
+    <h3><span class="l-ko">알릴 것이 있을 때만</span><span class="l-en">Told only when it matters</span></h3>
+    <p><span class="l-ko">행성의 충과 최대이각, 달이 행성 옆을 지나는 밤, 어두울 때 뜨는 월출. 맑은 밤마다 울리는 알림은 결국 꺼지게 됩니다.</span>
+       <span class="l-en">Opposition and greatest elongation, the Moon passing a planet, a moonrise that happens in the dark. A ping every clear night is a ping you switch off.</span></p>
+  </div>
+</div>
+
+<div class="feature">
+  <h3><span class="l-ko">달빛은 대상마다 다르게 셉니다</span><span class="l-en">Moonlight counts differently for each target</span></h3>
+  <p><span class="l-ko">상현이 지난 달은 은하수를 지우지만 목성은 건드리지 못합니다. 둘을 같은 기준으로 줄 세우면 한쪽에게는 자신 있게 틀린 조언을 하게 됩니다 — 행성 관측자에게 3주를 기다리라고 하거나, 은하수 촬영자에게 달 뜬 밤이 괜찮다고 하거나.</span>
+     <span class="l-en">A gibbous Moon erases the Milky Way and leaves Jupiter untouched. Ranking both the same way gives one of them confident bad advice: telling a planet watcher to wait three weeks, or telling a Milky Way photographer that a moonlit night is fine.</span></p>
+  <div class="copy">
+    <span class="l-ko">9월 6일 · 20:40~22:55 · 최고 고도 23° · 달빛 4%</span>
+    <span class="l-en">6 Sept · 20:40–22:55 · peak 23° · moonlight 4%</span>
+  </div>
+</div>
+
+<h2 class="sec"><span class="l-ko">정직한 나침반</span><span class="l-en">An honest compass</span></h2>
+<div class="grid">
+  <div class="card">
+    <div class="em">⚠️</div>
+    <h3><span class="l-ko">모르면 모른다고 합니다</span><span class="l-en">It says when it doesn't know</span></h3>
+    <p><span class="l-ko">폰의 자기 나침반은 차 안이나 금속 책상 근처에서 5~15° 어긋납니다. 신뢰도가 낮으면 정밀한 숫자 대신 방위 이름과 불확실 범위만 보여줍니다.</span>
+       <span class="l-en">A phone compass is routinely 5–15° off in a car or near metal. When confidence is low it shows a compass point and an uncertainty wedge instead of a precise number.</span></p>
+  </div>
+  <div class="card">
+    <div class="em">🔒</div>
+    <h3><span class="l-ko">위치는 기기 밖으로 나가지 않습니다</span><span class="l-en">Your location stays on the device</span></h3>
+    <p><span class="l-ko">모든 천문 계산이 기기 안에서 끝납니다. 서버도, 계정도, 분석 도구도 없습니다.</span>
+       <span class="l-en">Every calculation runs on the device. No server, no account, no analytics.</span></p>
+  </div>
+  <div class="card">
+    <div class="em">✈️</div>
+    <h3><span class="l-ko">완전 오프라인</span><span class="l-en">Fully offline</span></h3>
+    <p><span class="l-ko">비행기 모드에서도 전 기능이 동작합니다. 위치 권한을 거부해도 도시를 직접 골라 쓸 수 있습니다.</span>
+       <span class="l-en">Everything works in airplane mode. Decline location access and you can pick a city by hand instead.</span></p>
+  </div>
+</div>
+
+<div class="pricing">
+  <h3><span class="l-ko">가격</span><span class="l-en">Pricing</span></h3>
+  <ul>
+    <li class="l-ko"><b>기본 무료</b> — 오늘 밤 그래프, 대상별 관측 창과 연중 시기, 좋은 밤 순위, 방향으로 날짜 찾기, 추적 화면까지 핵심 경험이 무료로 완결됩니다</li>
+    <li class="l-en"><b>Free</b> — the tonight chart, each target's window, season and ranked nights, the bearing search and the tracking view. The core experience is complete without paying</li>
+    <li class="l-ko"><b>Pro</b> — 알림, 시간 미리보기(−24h ~ +24h), 암순응을 지키는 나이트 모드, 이번 달 외의 위상 달력. <b>1회 결제</b>이며 구독이 아닙니다</li>
+    <li class="l-en"><b>Pro</b> — reminders, time preview (−24 h to +24 h), a night mode that preserves dark adaptation, and the phase calendar beyond the current month. A <b>one-time purchase</b>, not a subscription</li>
+    <li class="l-ko"><b>광고 없음</b> — 야간에 쓰는 앱이라 밝은 배너는 암순응을 깨뜨립니다. 넣지 않았습니다</li>
+    <li class="l-en"><b>No ads</b> — this is an app you use at night, and a bright banner destroys dark adaptation</li>
+  </ul>
+</div>
+
+<div class="note">
+  <p class="l-ko"><b>지원 환경</b> — iPhone, iOS 18.0 이상. 나침반(자력계)이 있는 기기에서 방위 안내가 동작하며, 자력계가 없거나 고장 난 기기에서는 고도 정보만 표시하고 그 사실을 명시합니다. 한국어 · English · 日本語 · 简体中文.</p>
+  <p class="l-en"><b>Requirements</b> — iPhone, iOS 18.0 or later. Bearing guidance needs a working magnetometer; without one the app shows altitude only and says so. Available in English, 한국어, 日本語 and 简体中文.</p>
+</div>
+
+<footer>
+  <p><a href="support.html"><span class="l-ko">지원</span><span class="l-en">Support</span></a> ·
+     <a href="privacy.html"><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></a></p>
+  <p style="margin-top:8px">chungkil.cksw@gmail.com</p>
+</footer>
+
+</div>
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  document.documentElement.setAttribute('lang', l);
+  document.getElementById('b-ko').classList.toggle('on', l==='ko');
+  document.getElementById('b-en').classList.toggle('on', l==='en');
+  try{ localStorage.setItem('lang', l); }catch(e){}
+}
+try{ var s=localStorage.getItem('lang'); if(s) setLang(s); }catch(e){}
+</script>
+</body>
+</html>

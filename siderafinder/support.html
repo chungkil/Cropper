@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sidera Finder — 지원</title>
+<style>
+:root{--sky:#0A0C1F;--moon:#FCF5DC;--dim:#9AA3C0;--line:#2A3358;--card:#161C39;--warn:#E8A44C}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;background:var(--sky);color:var(--moon);line-height:1.8}
+html[data-lang="ko"] .l-en{display:none}
+html[data-lang="en"] .l-ko{display:none}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.langbar{display:flex;justify-content:flex-end;padding:14px 0}
+.langbar button{border:1px solid var(--moon);background:transparent;color:var(--moon);padding:5px 14px;cursor:pointer;font-size:14px}
+.langbar button:first-child{border-radius:8px 0 0 8px}
+.langbar button:last-child{border-radius:0 8px 8px 0}
+.langbar button.on{background:var(--moon);color:var(--sky)}
+h1{font-size:1.9rem;margin:20px 0 8px}
+.lead{color:var(--dim);margin-bottom:36px}
+h2{font-size:1.25rem;margin:38px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.qa{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-bottom:14px}
+.qa h3{font-size:1.02rem;margin-bottom:8px}
+.qa p{font-size:.95rem;color:var(--dim);margin-bottom:8px}
+.qa p:last-child{margin-bottom:0}
+.qa ul{padding-left:20px;font-size:.95rem;color:var(--dim)}
+.qa li{margin:4px 0}
+.callout{background:rgba(232,164,76,.1);border-left:4px solid var(--warn);border-radius:0 12px 12px 0;padding:16px 20px;margin:14px 0;font-size:.94rem;color:var(--dim)}
+footer{border-top:1px solid var(--line);margin-top:46px;padding:26px 0 40px;text-align:center;font-size:.9rem;color:var(--dim)}
+footer a{color:var(--moon)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="langbar">
+  <button id="b-ko" class="on" onclick="setLang('ko')">한국어</button>
+  <button id="b-en" onclick="setLang('en')">English</button>
+</div>
+
+<h1><span class="l-ko">지원</span><span class="l-en">Support</span></h1>
+<p class="lead">
+  <span class="l-ko">Sidera Finder 사용 중 궁금한 점과, 자주 오해되는 동작을 정리했습니다.</span>
+  <span class="l-en">How Sidera Finder behaves, including the parts that are most often mistaken for bugs.</span>
+</p>
+
+<h2><span class="l-ko">오늘 밤의 하늘</span><span class="l-en">Tonight's sky</span></h2>
+
+<div class="qa">
+  <h3><span class="l-ko">"오늘 밤의 하늘" 막대는 무엇을 뜻하나요</span><span class="l-en">What does a bar on "Tonight's sky" mean?</span></h3>
+  <p class="l-ko">그 대상이 <b>탁한 공기를 벗어날 만큼 높고, 동시에 하늘이 그 대상에게 충분히 어두운</b> 시간입니다. 지평선 위에 있다는 것과는 다릅니다. 요구하는 어둠은 대상마다 다릅니다 — 행성은 시민박명(태양 고도 −6°)부터, 은하 중심은 천문박명(−18°)부터 셉니다. 실선은 현재 시각, 점선은 자정입니다.</p>
+  <p class="l-en">The stretch when the target is <b>high enough to be clear of the murk and the sky is dark enough for that particular target</b> — which is not the same as being above the horizon. The darkness required differs by target: planets count from civil twilight (Sun at −6°), the galactic core from astronomical twilight (−18°). The solid line is now; the dashed one is midnight.</p>
+</div>
+
+<div class="qa">
+  <h3><span class="l-ko">행성이 "오늘 밤은 아닙니다" 라고 나옵니다</span><span class="l-en">A planet says "not tonight"</span></h3>
+  <p class="l-ko">그 행성이 지금 태양과 가까운 방향에 있다는 뜻입니다. 수성과 금성은 태양에서 멀어야 28°, 47° 까지만 떨어지므로 몇 주씩 보이지 않는 기간이 있고, 외행성도 합 부근에서는 낮에만 하늘에 있습니다. 대상을 눌러 연중 그래프를 보시면 언제 돌아오는지 알 수 있습니다.</p>
+  <p class="l-en">That planet is currently near the Sun in the sky. Mercury and Venus never get further than 28° and 47° from it, so they disappear for weeks at a time, and the outer planets are in the daytime sky near conjunction. Tap the target and its season chart shows when it comes back.</p>
+</div>
+
+<div class="qa">
+  <h3><span class="l-ko">행성 알림을 켰는데 아무 알림도 오지 않습니다</span><span class="l-en">I turned on planet alerts and nothing arrives</span></h3>
+  <p class="l-ko">의도된 동작입니다. 행성은 몇 달씩 매일 밤 떠 있으므로 "떴습니다" 는 알릴 일이 아닙니다. 드문 사건만 알립니다 — 화성·목성·토성의 충, 수성·금성의 최대이각, 달이 행성 옆 몇 도 안으로 지나가는 밤. 다섯 행성을 합쳐도 한 해에 몇 밤뿐이며, 앞으로 60일 안에 해당 사건이 없으면 예약이 생기지 않습니다.</p>
+  <p class="l-en">That is intended. A planet is up most nights for months, so "it has risen" is not news. Only the rare things are announced: opposition for Mars, Jupiter and Saturn, greatest elongation for Mercury and Venus, and the Moon passing within a few degrees of a planet. Across all five that is a handful of nights a year, and if none falls in the next 60 days nothing is scheduled.</p>
+</div>
+
+<h2><span class="l-ko">방향이 맞지 않을 때</span><span class="l-en">When the direction looks wrong</span></h2>
+
+<div class="qa">
+  <h3><span class="l-ko">마커가 실제 달과 어긋나 보입니다</span><span class="l-en">The marker doesn't line up with the Moon</span></h3>
+  <p class="l-ko">거의 항상 폰의 <b>자기 나침반</b> 때문입니다. 달의 위치 계산 오차는 1° 미만이지만, 아이폰 나침반은 주변 자성체 영향으로 흔히 5~15°, 심하면 수십 도까지 어긋납니다.</p>
+  <p class="l-en">Almost always the phone's <b>magnetic compass</b>. The Moon's computed position is accurate to under a degree, but an iPhone compass is routinely 5–15° off near magnetic material, sometimes far worse.</p>
+  <ul>
+    <li class="l-ko">차 안에서 나오세요 — 차체가 자기장을 크게 왜곡합니다</li>
+    <li class="l-en">Step out of the car; the body shell distorts the field badly</li>
+    <li class="l-ko">금속 책상, 난간, 스피커, 노트북에서 떨어지세요</li>
+    <li class="l-en">Move away from metal desks, railings, speakers and laptops</li>
+    <li class="l-ko"><b>MagSafe 를 포함한 자석 케이스와 거치대를 빼세요</b> — 가장 흔한 원인입니다</li>
+    <li class="l-en"><b>Remove magnetic cases and stands, MagSafe included</b> — the most common cause</li>
+    <li class="l-ko">폰을 8자 모양으로 몇 번 흔들어 주세요</li>
+    <li class="l-en">Wave the phone in a figure-of-eight a few times</li>
+  </ul>
+</div>
+
+<div class="qa">
+  <h3><span class="l-ko">"나침반 신뢰 낮음" 배지가 뜹니다</span><span class="l-en">A "compass unreliable" badge appears</span></h3>
+  <p class="l-ko">앱이 방위를 믿을 수 없다고 판단한 상태입니다. 이때는 <b>정확한 각도를 일부러 표시하지 않고</b> 방위 이름("남동쪽 부근")과 불확실 범위만 보여줍니다. 나침반 눈금도 흐리게 처리됩니다.</p>
+  <p class="l-en">The app has decided it cannot trust the heading. It then <b>deliberately withholds the precise number</b> and shows a compass point ("around southeast") with an uncertainty wedge instead. The bearing tape is blurred too.</p>
+  <p class="l-ko">틀린 숫자를 자신 있게 보여주는 것보다 낫다고 판단한 설계입니다. 배지를 누르면 개선 방법이 나옵니다.</p>
+  <p class="l-en">Showing a confident wrong number would be worse. Tap the badge for ways to improve it.</p>
+</div>
+
+<h2><span class="l-ko">지평선 아래</span><span class="l-en">Below the horizon</span></h2>
+
+<div class="qa">
+  <h3><span class="l-ko">화면이 어두운 흙색으로 바뀌고 달이 반투명해집니다</span><span class="l-en">The screen turns earthy and the Moon goes translucent</span></h3>
+  <p class="l-ko">고장이 아닙니다. 달이 <b>지평선 아래</b>, 즉 지구 반대편에 있다는 뜻입니다. 이때 마커는 발밑 방향을 가리키며, 폰을 바닥 쪽으로 내리면 화면에 들어옵니다.</p>
+  <p class="l-en">Not a fault. It means the Moon is <b>below the horizon</b> — on the other side of the Earth. The marker points down through the ground; lower your phone and it comes into view.</p>
+  <p class="l-ko">함께 표시되는 문구가 발밑 기준 각도와, 다음에 언제 어느 쪽에서 떠오르는지를 알려줍니다.</p>
+  <p class="l-en">The caption tells you how far below your feet it is, and when and where it next rises.</p>
+</div>
+
+<div class="qa">
+  <h3><span class="l-ko">"오늘은 월출 없음" 이라고 나옵니다</span><span class="l-en">It says "no moonrise today"</span></h3>
+  <p class="l-ko">오류가 아니라 실제로 그런 날입니다. 달은 매일 약 50분씩 늦게 뜨기 때문에, 자정을 넘겨 버려 <b>달력상 하루에 월출이 없는 날</b>이 주기적으로 생깁니다. 이때는 다음 월출 시각을 대신 보여줍니다.</p>
+  <p class="l-en">Not an error — some days really are like that. The Moon rises about 50 minutes later each day, so it periodically skips a calendar day entirely. The app shows the next moonrise instead.</p>
+  <p class="l-ko">위도가 높은 지역(북극권 근처)에서는 며칠간 뜨지 않거나 지지 않을 수 있고, 그 경우에는 별도 문구로 알려줍니다.</p>
+  <p class="l-en">Near the polar circles the Moon can stay up or down for days; the app says so explicitly in that case.</p>
+</div>
+
+<h2><span class="l-ko">위치와 권한</span><span class="l-en">Location and permissions</span></h2>
+
+<div class="qa">
+  <h3><span class="l-ko">위치 권한을 주고 싶지 않습니다</span><span class="l-en">I'd rather not grant location access</span></h3>
+  <p class="l-ko">주지 않아도 됩니다. 설정에서 <b>도시를 직접 선택</b>하면 그 좌표로 계산합니다. 앱이 막히지 않도록 설계했습니다.</p>
+  <p class="l-en">You don't have to. Pick a <b>city by hand</b> in Settings and the app computes from those coordinates. It is designed not to dead-end.</p>
+  <p class="l-ko">위치를 허용하시더라도 정확도는 <b>킬로미터 수준</b>만 사용합니다. 달의 위치는 1 km 이동으로 0.01° 도 변하지 않기 때문에 그 이상은 배터리 낭비입니다.</p>
+  <p class="l-en">Even with access granted the app only requests <b>kilometre-level</b> accuracy. The Moon's position doesn't shift by even 0.01° over a kilometre, so anything finer just costs battery.</p>
+</div>
+
+<h2><span class="l-ko">Pro 와 구매</span><span class="l-en">Pro and purchases</span></h2>
+
+<div class="qa">
+  <h3><span class="l-ko">Pro 로 무엇이 열리나요</span><span class="l-en">What does Pro unlock?</span></h3>
+  <ul>
+    <li class="l-ko"><b>알림</b> — 행성의 충·최대이각, 달과 행성의 근접, 어두울 때 뜨는 월출, 은하수가 좋은 밤</li>
+    <li class="l-en"><b>Reminders</b> — opposition and greatest elongation, the Moon meeting a planet, moonrises that happen in the dark, and the good Milky Way nights</li>
+    <li class="l-ko"><b>시간 미리보기</b> — 지금부터 앞뒤 24시간 사이 아무 시각의 달 위치를 확인합니다. 그 시각의 방향을 지금 몸으로 겨눠볼 수 있습니다</li>
+    <li class="l-en"><b>Time preview</b> — the Moon's position at any moment within a day either way, and you can aim at it now</li>
+    <li class="l-ko"><b>나이트 모드</b> — 붉은 계열 화면으로 어둠에 적응한 눈을 지킵니다</li>
+    <li class="l-en"><b>Night mode</b> — a red palette that preserves your dark adaptation</li>
+  </ul>
+  <p class="l-ko"><b>1회 결제</b>이며 구독이 아닙니다. 한 번 구매하면 만료되지 않습니다.</p>
+  <p class="l-en">A <b>one-time purchase</b>, not a subscription. It never expires.</p>
+</div>
+
+<div class="qa">
+  <h3><span class="l-ko">기기를 바꿨는데 Pro 가 안 보입니다</span><span class="l-en">I changed devices and Pro is gone</span></h3>
+  <p class="l-ko">설정에서 <b>구매 복원</b>을 눌러 주세요. 구매 여부는 앱이 자체 저장하지 않고 Apple 계정에서 확인하므로, 같은 Apple 계정이면 복원됩니다.</p>
+  <p class="l-en">Tap <b>Restore purchase</b> in Settings. Entitlement is read from your Apple account rather than stored locally, so it restores on any device signed in to the same account.</p>
+</div>
+
+<h2><span class="l-ko">그 밖에</span><span class="l-en">Other</span></h2>
+
+<div class="qa">
+  <h3><span class="l-ko">진동이 거슬립니다</span><span class="l-en">The vibration is distracting</span></h3>
+  <p class="l-ko">설정에서 <b>정렬 햅틱</b>을 끌 수 있습니다. 저전력 모드에서는 자동으로 약해집니다.</p>
+  <p class="l-en">Turn off <b>alignment haptics</b> in Settings. It also eases off automatically in Low Power Mode.</p>
+</div>
+
+<div class="qa">
+  <h3><span class="l-ko">폰을 눕히면 화면이 바뀝니다</span><span class="l-en">The screen changes when I lay the phone flat</span></h3>
+  <p class="l-ko">의도된 동작입니다. 폰을 지면과 수평으로 눕히면 지도처럼 내려다보는 <b>탑다운 나침반</b>으로 전환됩니다. 설정에서 끌 수 있습니다.</p>
+  <p class="l-en">Intended. Laying the phone flat switches to a <b>top-down dial</b>, like reading a map. You can turn this off in Settings.</p>
+</div>
+
+<div class="callout">
+  <p class="l-ko"><b>버그 제보 · 문의</b> — 아래 주소로 보내 주세요. 재현이 필요한 경우 <b>사용하신 대략적인 위치와 시각</b>, 그리고 화면의 <b>나침반 신뢰도 배지 상태</b>를 함께 알려 주시면 원인 파악이 훨씬 빠릅니다.</p>
+  <p class="l-en"><b>Bug reports and questions</b> — write to the address below. Including your <b>approximate location and the time</b>, plus what the <b>compass confidence badge</b> said, makes a report far easier to act on.</p>
+</div>
+
+<footer>
+  <p><a href="index.html"><span class="l-ko">홈</span><span class="l-en">Home</span></a> ·
+     <a href="privacy.html"><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></a></p>
+  <p style="margin-top:8px">chungkil.cksw@gmail.com</p>
+</footer>
+
+</div>
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  document.documentElement.setAttribute('lang', l);
+  document.getElementById('b-ko').classList.toggle('on', l==='ko');
+  document.getElementById('b-en').classList.toggle('on', l==='en');
+  try{ localStorage.setItem('lang', l); }catch(e){}
+}
+try{ var s=localStorage.getItem('lang'); if(s) setLang(s); }catch(e){}
+</script>
+</body>
+</html>
