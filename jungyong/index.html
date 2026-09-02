@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>중용 배우기 — 서른세 장을 원문으로 읽는 중용</title>
+<meta property="og:title" content="중용 배우기 — Learn Jungyong">
+<meta property="og:description" content="신독·시중·명철보신이 나온 자리를 원문으로. 주희의 서른세 장을 하나도 건너뛰지 않고 66과 101구절, 습자·강독·배강 세 걸음으로 떼고 101구절 전량 낭독을 귀로 이어 듣습니다.">
+<style>
+:root{--paper:#F2E8DA;--paper2:#FBF6EE;--ink:#3A2B1A;--ink2:#5A452C;--red:#8C5E33;--sub:#8A7059;--card:#FFFFFF}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7}
+html[data-lang="ko"] .l-en{display:none}
+html[data-lang="en"] .l-ko{display:none}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+.langbar{display:flex;justify-content:flex-end;padding:14px 0}
+.langbar button{border:1px solid var(--red);background:transparent;color:var(--red);padding:5px 14px;cursor:pointer;font-size:14px}
+.langbar button:first-child{border-radius:8px 0 0 8px}
+.langbar button:last-child{border-radius:0 8px 8px 0}
+.langbar button.on{background:var(--red);color:#fff}
+.hero{text-align:center;padding:40px 0 50px}
+.hero .seal{width:120px;height:120px;border-radius:27px;box-shadow:0 8px 30px rgba(58,43,26,.18);background:var(--paper2);display:inline-flex;align-items:center;justify-content:center;font-size:64px;font-family:serif;color:var(--ink)}
+.hero h1{font-size:2.2rem;margin:22px 0 10px;letter-spacing:-.5px}
+.hero p.tag{font-size:1.15rem;color:var(--sub);margin-bottom:26px}
+.badge .soon{display:inline-block;font-size:.85rem;color:var(--sub);margin-top:8px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:10px 0 54px}
+.stat{background:var(--card);border-radius:14px;padding:22px 8px;text-align:center;box-shadow:0 4px 18px rgba(58,43,26,.08)}
+.stat b{display:block;font-size:1.6rem;color:var(--red)}
+.stat span{font-size:.9rem;color:var(--sub)}
+h2.sec{font-size:1.5rem;margin:0 0 22px;text-align:center}
+h2.sec::after{content:"";display:block;width:44px;height:3px;background:var(--red);margin:10px auto 0;border-radius:2px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:56px}
+.card{background:var(--card);border-radius:16px;padding:24px 20px;box-shadow:0 4px 18px rgba(58,43,26,.08)}
+.card .em{font-size:1.7rem}
+.card h3{font-size:1.05rem;margin:10px 0 6px}
+.card p{font-size:.92rem;color:#4a4033}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:56px}
+.step{background:var(--paper2);border:1px solid #e4d5bd;border-radius:16px;padding:24px 20px}
+.step b{color:var(--red);font-size:1.05rem}
+.step p{font-size:.92rem;color:#4a4033;margin-top:6px}
+.quote{background:var(--card);border-radius:16px;padding:26px 24px;margin-bottom:56px;box-shadow:0 4px 18px rgba(58,43,26,.08);text-align:center}
+.quote .han{font-family:serif;font-size:1.35rem;letter-spacing:2px;color:var(--ink)}
+.quote .kor{font-size:.95rem;color:#4a4033;margin-top:10px}
+.quote .src{font-size:.85rem;color:var(--sub);margin-top:6px}
+.chips{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-bottom:56px}
+.chip{background:var(--card);border:1px solid #e4d5bd;border-radius:999px;padding:7px 15px;font-size:.92rem;color:var(--ink2);box-shadow:0 2px 10px rgba(58,43,26,.05)}
+.chip b{color:var(--red);font-family:serif;margin-right:5px}
+.ladder{background:var(--paper2);border:1px solid #e4d5bd;border-radius:16px;padding:22px 24px;margin-bottom:56px}
+.ladder ol{padding-left:22px;font-size:.95rem;color:#4a4033}
+.ladder li{margin:5px 0}
+.ladder li b{color:var(--red);font-family:serif;margin-right:6px}
+.pricing{background:var(--paper2);border:1px solid #e4d5bd;border-radius:16px;padding:26px;margin-bottom:56px}
+.pricing h3{font-size:1.1rem;margin-bottom:10px}
+.pricing ul{padding-left:20px;font-size:.94rem;color:#4a4033}
+.note{background:#fff;border-left:4px solid var(--red);border-radius:0 12px 12px 0;padding:18px 20px;margin-bottom:56px;font-size:.94rem;color:#4a4033}
+.note p+p{margin-top:10px}
+footer{border-top:1px solid #e4d5bd;padding:26px 0 40px;text-align:center;font-size:.9rem;color:var(--sub)}
+footer a{color:var(--ink2)}
+@media(max-width:720px){.grid,.steps{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="langbar">
+  <button id="b-ko" class="on" onclick="setLang('ko')">한국어</button>
+  <button id="b-en" onclick="setLang('en')">English</button>
+</div>
+
+<div class="hero">
+  <div class="seal">中</div>
+  <h1><span class="l-ko">중용 배우기</span><span class="l-en">Learn Jungyong</span></h1>
+  <p class="tag">
+    <span class="l-ko">서른세 장을 원문으로 읽는 중용</span>
+    <span class="l-en">The Doctrine of the Mean — all thirty-three chapters, in the original</span>
+  </p>
+  <div class="badge"><span class="soon">
+    <span class="l-ko">App Store 출시 준비 중</span><span class="l-en">Coming soon to the App Store</span>
+  </span></div>
+</div>
+
+<div class="stats">
+  <div class="stat"><b>33</b><span class="l-ko">장 전부</span><span class="l-en">chapters</span></div>
+  <div class="stat"><b>66</b><span class="l-ko">과</span><span class="l-en">lessons</span></div>
+  <div class="stat"><b>101</b><span class="l-ko">구절</span><span class="l-en">passages</span></div>
+  <div class="stat"><b>425</b><span class="l-ko">신출자</span><span class="l-en">new characters</span></div>
+</div>
+
+<h2 class="sec"><span class="l-ko">어떤 책인가</span><span class="l-en">About the text</span></h2>
+<div class="note">
+  <p class="l-ko">중용(中庸)은 본래 『예기(禮記)』 안의 한 편이었습니다. 공자의 손자 <b>자사(子思)</b>가 지었다고 전하며,
+  주희(朱熹)가 『대학』과 함께 예기에서 따로 떼어 『논어』·『맹자』와 묶어 <b>사서(四書)</b>를 세우고
+  서른세 장으로 나누어 『중용장구(中庸章句)』를 남겼습니다.
+  옛 서당에서는 대학·논어·맹자를 지나 <b>맨 마지막에 읽던 책</b>입니다.</p>
+  <p class="l-ko">"하늘이 명한 것을 성(性)이라 하고, 성을 따르는 것을 도(道)라 하며, 도를 닦는 것을 교(敎)라 한다."
+  첫 장의 이 세 줄에서 시작해, 남이 보지 않는 자리를 삼가는 <b>신독(愼獨)</b>을 지나, 때에 맞음(<b>時中</b>)을 거쳐,
+  뒤로 갈수록 <b>성(誠)</b> 한 글자로 모입니다. 신독·시중·연비어약·반구저신·인일기백·명철보신처럼
+  오늘도 쓰는 말들이 여기서 나왔습니다.</p>
+  <p class="l-ko">이 앱은 <b>서른세 장을 하나도 건너뛰지 않고</b> 장마다 그 장을 대표하는 대목을 골라
+  <b>66과 101구절, 원문 1,686자</b>로 엮었습니다.</p>
+  <p class="l-en"><b>The Doctrine of the Mean</b> began as a single chapter of the Book of Rites. Tradition credits it to
+  <b>Zisi</b>, grandson of Confucius. <b>Zhu Xi</b> lifted it out, paired it with the Great Learning, the Analects and
+  Mencius to form the <b>Four Books</b>, and divided it into thirty-three chapters. In the old village schools it was
+  the <b>last of the four to be read</b>.</p>
+  <p class="l-en">"What heaven confers is called the nature; following the nature is called the way; cultivating the way
+  is called teaching." From those three lines it moves through <b>watchfulness when alone</b> and <b>timeliness</b>,
+  and gathers, chapter by chapter, into a single word: <b>sincerity</b>.</p>
+  <p class="l-en">This app skips <b>none of the thirty-three chapters</b>: each is represented by its decisive passage —
+  <b>101 passages across 66 lessons, 1,686 characters</b>.</p>
+</div>
+
+<div class="note">
+  <p class="l-ko">중용은 짧지만 되짚어 가며 쌓아 올리는 글입니다. 성(性)·도(道)·교(敎)로 열고,
+  같은 말을 다른 자리에서 다시 꺼내 뜻을 겹쳐 두껍게 만든 뒤, 마지막 장에서 "소리도 없고 냄새도 없다"로 거둡니다.
+  그래서 구절마다 <b>현토를 달아 읽는 대로 적고, 어절마다 직역을 붙이고, 그 말이 어느 장의 어느 대목인지를 새김에 적었습니다.</b>
+  원문은 사서장구집주 계열의 통행본을 따랐고, <b>현토와 직역·해석·새김은 이 앱이 붙였습니다.</b>
+  한문은 명조체로 조판해 획이 또렷하게 보이도록 했습니다.</p>
+  <p class="l-en">The text is short but cumulative: it opens with nature, way and teaching, returns to the same words in
+  new positions to thicken their meaning, and closes with "neither sound nor scent." Every passage therefore carries
+  Korean reading particles, a word-by-word gloss, a translation, and a note placing it in its chapter. The original
+  follows the received edition; <b>the particles, glosses and commentary were written for this app.</b></p>
+</div>
+
+<div class="quote">
+  <div class="han">天命之謂性 率性之謂道 修道之謂敎</div>
+  <div class="kor"><span class="l-ko">하늘이 명한 것을 성이라 하고, 성을 따르는 것을 도라 하고, 도를 닦는 것을 교라 한다</span>
+    <span class="l-en">What heaven confers is the nature; following the nature is the way; cultivating the way is teaching</span></div>
+  <div class="src"><span class="l-ko">제1과 천명지성(天命之性) — 중용 제1장의 첫 세 줄</span>
+    <span class="l-en">Lesson 1 — the opening lines of chapter 1</span></div>
+</div>
+
+<h2 class="sec"><span class="l-ko">천명지성에서 무성무취까지</span><span class="l-en">From the first line to the last</span></h2>
+<div class="ladder">
+  <ol>
+    <li class="l-ko"><b>第一章</b>제1장 4과 — 천명지성·계신공구·신독·중화. 성·도·교로 열고 중화(中和)로 맺는, 중용 전체의 문입니다</li>
+    <li class="l-en"><b>Chapter 1</b>4 lessons — nature, way and teaching; watchfulness when alone; equilibrium and harmony</li>
+    <li class="l-ko"><b>二~十一章</b>제2~11장 11과 — 시중·집기양단·권권복응·백인가도·화이불류·둔세불회. 군자의 중용과 소인의 중용을 가릅니다</li>
+    <li class="l-en"><b>Chapters 2-11</b>11 lessons — timeliness, holding both ends, the blade one may tread on, the recluse without regret</li>
+    <li class="l-ko"><b>十二~十九章</b>제12~19장 14과 — 비이은·연비어약·도불원인·반구저신·행원자이·귀신의 덕·계지술사. 도가 멀리 있지 않음을 말합니다</li>
+    <li class="l-en"><b>Chapters 12-19</b>14 lessons — the hawk and the fish, the way is not far from us, seek it in yourself</li>
+    <li class="l-ko"><b>第二十章</b>제20장 13과 — 애공문정(哀公問政). 삼달덕·구경·예즉립·성자천도·박학독행·인일기백. 가장 긴 장이라 여러 과로 나누어 읽습니다</li>
+    <li class="l-en"><b>Chapter 20</b>13 lessons — Duke Ai asks about government: the three virtues, the nine standards, learn widely and act earnestly</li>
+    <li class="l-ko"><b>二十一~二十六章</b>제21~26장 10과 — 자성명·여천지참·치곡·지성여신·성기성물·지성무식·무위이성. 성(誠) 한 글자로 모이는 대목입니다</li>
+    <li class="l-en"><b>Chapters 21-26</b>10 lessons — sincerity: forming oneself and all things, ceaseless and without striving</li>
+    <li class="l-ko"><b>二十七~三十三章</b>제27~33장 14과 — 존덕성·명철보신·거동궤·조술요순·만물병육·의금상경·무성무취. 비단옷 위에 홑옷을 걸치듯 거두어 맺습니다</li>
+    <li class="l-en"><b>Chapters 27-33</b>14 lessons — all things nourished together, the plain robe over brocade, neither sound nor scent</li>
+  </ol>
+</div>
+
+<h2 class="sec"><span class="l-ko">오늘도 쓰는 말들의 자리</span><span class="l-en">Phrases still in use</span></h2>
+<div class="chips">
+  <span class="chip"><b>中庸</b><span class="l-ko">중용</span><span class="l-en">The mean</span></span>
+  <span class="chip"><b>愼獨</b><span class="l-ko">신독</span><span class="l-en">Watchful when alone</span></span>
+  <span class="chip"><b>中和</b><span class="l-ko">중화</span><span class="l-en">Equilibrium and harmony</span></span>
+  <span class="chip"><b>時中</b><span class="l-ko">시중</span><span class="l-en">Timeliness</span></span>
+  <span class="chip"><b>執其兩端</b><span class="l-ko">집기양단</span><span class="l-en">Holding both ends</span></span>
+  <span class="chip"><b>拳拳服膺</b><span class="l-ko">권권복응</span><span class="l-en">Held fast to the breast</span></span>
+  <span class="chip"><b>白刃可蹈</b><span class="l-ko">백인가도</span><span class="l-en">A blade one may tread</span></span>
+  <span class="chip"><b>鳶飛魚躍</b><span class="l-ko">연비어약</span><span class="l-en">Hawk and fish</span></span>
+  <span class="chip"><b>道不遠人</b><span class="l-ko">도불원인</span><span class="l-en">The way is not far</span></span>
+  <span class="chip"><b>反求諸身</b><span class="l-ko">반구저신</span><span class="l-en">Seek it in yourself</span></span>
+  <span class="chip"><b>行遠自邇</b><span class="l-ko">행원자이</span><span class="l-en">Far begins near</span></span>
+  <span class="chip"><b>豫則立</b><span class="l-ko">예즉립</span><span class="l-en">Prepared, it stands</span></span>
+  <span class="chip"><b>博學審問</b><span class="l-ko">박학심문</span><span class="l-en">Learn widely, ask closely</span></span>
+  <span class="chip"><b>人一己百</b><span class="l-ko">인일기백</span><span class="l-en">One to their hundred</span></span>
+  <span class="chip"><b>明哲保身</b><span class="l-ko">명철보신</span><span class="l-en">Clear-sighted, self-preserving</span></span>
+  <span class="chip"><b>萬物並育</b><span class="l-ko">만물병육</span><span class="l-en">All things nourished together</span></span>
+  <span class="chip"><b>無聲無臭</b><span class="l-ko">무성무취</span><span class="l-en">Neither sound nor scent</span></span>
+</div>
+
+<h2 class="sec"><span class="l-ko">한 과를 떼는 세 걸음</span><span class="l-en">Three steps per lesson</span></h2>
+<div class="steps">
+  <div class="step"><b>習字 <span class="l-ko">습자</span><span class="l-en">Writing</span></b>
+    <p class="l-ko">새 글자를 획순 애니메이션으로 보고 손으로 따라 씁니다. 획의 순서와 방향을 함께 판정합니다.</p>
+    <p class="l-en">Trace each new character by hand. Stroke order and direction are both checked.</p></div>
+  <div class="step"><b>講讀 <span class="l-ko">강독</span><span class="l-en">Reading</span></b>
+    <p class="l-ko">현토를 단 원문을 소리 내어 읽고 뜻을 새깁니다. 서산을 놓고 세 번 낭독합니다.</p>
+    <p class="l-en">Read the annotated original aloud and work through its meaning, three times over.</p></div>
+  <div class="step"><b>背講 <span class="l-ko">배강</span><span class="l-en">Recitation</span></b>
+    <p class="l-ko">책을 덮고 외워 바칩니다. 빈칸을 채워 통과해야 다음 과가 열립니다.</p>
+    <p class="l-en">Close the book and recite from memory to unlock the next lesson.</p></div>
+</div>
+
+<h2 class="sec"><span class="l-ko">구절을 여는 여섯 가지</span><span class="l-en">Six ways into a passage</span></h2>
+<div class="grid">
+  <div class="card"><div class="em">🔊</div><h3><span class="l-ko">독음과 현토</span><span class="l-en">Reading aloud</span></h3>
+    <p class="l-ko">"천명지위성이요 솔성지위도요 수도지위교니라" — 토를 붙여 읽는 대로 적었습니다</p>
+    <p class="l-en">Korean pronunciation with the traditional grammatical particles, exactly as it is chanted</p></div>
+  <div class="card"><div class="em">📖</div><h3><span class="l-ko">직역과 해석</span><span class="l-en">Gloss and translation</span></h3>
+    <p class="l-ko">어절마다 뜻을 붙여 한문 어순을 익히고, 문장 전체의 뜻을 함께 봅니다</p>
+    <p class="l-en">Word-by-word glosses to learn the word order, alongside the full meaning</p></div>
+  <div class="card"><div class="em">🖋</div><h3><span class="l-ko">새김</span><span class="l-en">Commentary</span></h3>
+    <p class="l-ko">어느 장의 어느 대목인지, 그 말이 놓인 자리가 무엇을 가리키는지, 오늘 어떤 뜻으로 쓰이는지</p>
+    <p class="l-en">Which chapter the line belongs to, what it points at, and how the phrase reads today</p></div>
+  <div class="card"><div class="em">📚</div><h3><span class="l-ko">사전</span><span class="l-en">Dictionary</span></h3>
+    <p class="l-ko">원문의 한자를 누르면 뜻과 획순이 바로 열립니다. 필기와 카메라로도 찾습니다</p>
+    <p class="l-en">Tap any character for its meaning and stroke order; search by handwriting or camera</p></div>
+  <div class="card"><div class="em">🎧</div><h3><span class="l-ko">성독</span><span class="l-en">Recitation audio</span></h3>
+    <p class="l-ko">101구절 전량의 낭독을 담았습니다. 화면을 꺼도 이어지고, 목소리는 여성과 남성 가운데 고릅니다</p>
+    <p class="l-en">All 101 passages recorded. Playback continues with the screen off; choose a female or male voice</p></div>
+  <div class="card"><div class="em">🧧</div><h3><span class="l-ko">서재와 족자</span><span class="l-en">Library and scroll</span></h3>
+    <p class="l-ko">마음에 든 구절을 갈무리해 두고, 배운 구절을 세로쓰기 족자로 만들어 공유합니다</p>
+    <p class="l-en">Keep the passages you like, and turn what you have learned into a vertical scroll to share</p></div>
+</div>
+
+<h2 class="sec"><span class="l-ko">가운데를 취하라는 책이 아닙니다</span><span class="l-en">Not a book about splitting the difference</span></h2>
+<div class="note">
+  <p class="l-ko">중용의 중(中)은 <b>둘 사이의 산술적 중간이 아닙니다.</b> 지나침도 모자람도 없는 자리이고,
+  그 자리는 때에 따라 옮겨 갑니다. 그래서 제2장은 "군자의 중용은 군자로서 때에 맞게 하는 것"이라 하여
+  <b>시중(時中)</b>이라 못 박습니다. 무엇이든 적당히 하라는 말이 아니라, 매번 다시 재라는 말에 가깝습니다.</p>
+  <p class="l-ko">뒤로 갈수록 이 책은 처세의 요령에서 멀어져 <b>성(誠)</b> 한 글자로 모입니다.
+  "성은 하늘의 도요, 성하려 하는 것은 사람의 도"라는 제20장의 문장이 그 분기점이고,
+  거기서부터 스물여섯 장까지가 성을 풀어 가는 대목입니다.
+  새김에서는 각 구절이 그 흐름의 어디쯤인지를 함께 적어 두었습니다.</p>
+  <p class="l-en">The "mean" here is <b>not a midpoint between two positions.</b> It is the place with neither excess nor
+  deficiency — and that place moves. Chapter 2 names it <b>timeliness</b>: the noble person's mean is to meet each
+  moment as it comes. It is less "be moderate" than "measure again."</p>
+  <p class="l-en">As the text goes on it turns away from practical tact and gathers into one word, <b>sincerity</b>:
+  "Sincerity is the way of heaven; to become sincere is the way of man." The commentary places each passage
+  within that movement.</p>
+</div>
+
+<h2 class="sec"><span class="l-ko">이용 안내</span><span class="l-en">Pricing</span></h2>
+<div class="pricing">
+  <h3><span class="l-ko">무료로 시작해, 마음에 들면 한 번의 결제로</span><span class="l-en">Start free, unlock once</span></h3>
+  <ul>
+    <li class="l-ko"><b>무료</b> — 학당 66과 가운데 앞 5과, 사전은 급수별 앞 부분</li>
+    <li class="l-en"><b>Free</b> — the first 5 of 66 lessons, plus part of the dictionary</li>
+    <li class="l-ko"><b>평생 이용권</b> — 전 과와 사전 전체. 구독이 아니라 1회 결제이며 만료되지 않습니다</li>
+    <li class="l-en"><b>Lifetime unlock</b> — everything. A one-time purchase, not a subscription; it never expires</li>
+    <li class="l-ko"><b>평생 이용권을 사면 광고가 사라집니다.</b> 무료 이용 시에는 사전과 강독 아래에 작은 광고가 하나 붙습니다</li>
+    <li class="l-en"><b>The lifetime unlock removes ads.</b> Free users see one small ad below the dictionary and reading screens</li>
+    <li class="l-ko">회원 가입이나 로그인이 필요 없고, 학습 자체는 인터넷 없이도 됩니다</li>
+    <li class="l-en">No account or sign-in required; studying works offline</li>
+  </ul>
+</div>
+
+<footer>
+  <p><a href="support.html"><span class="l-ko">지원</span><span class="l-en">Support</span></a> ·
+     <a href="privacy.html"><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></a></p>
+  <p style="margin-top:8px">chungkil.cksw@gmail.com</p>
+</footer>
+
+</div>
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  document.documentElement.setAttribute('lang', l);
+  document.getElementById('b-ko').classList.toggle('on', l==='ko');
+  document.getElementById('b-en').classList.toggle('on', l==='en');
+  try{ localStorage.setItem('lang', l); }catch(e){}
+}
+try{ var s=localStorage.getItem('lang'); if(s) setLang(s); }catch(e){}
+</script>
+</body>
+</html>
