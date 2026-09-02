@@ -15,25 +15,35 @@
   h1 { font-size: 28px; margin: 0 0 4px; } h2 { font-size: 19px; margin-top: 26px; }
   a { color: var(--primary); }
   .updated { color: #888; font-size: 14px; }
+  .meta { color: #444; }
   footer { text-align: center; color: #888; font-size: 14px; margin-top: 28px; }
   .lang-switch { display: flex; gap: 8px; justify-content: flex-end; margin-bottom: 16px; }
   .lang-switch button { font: inherit; font-size: 13px; padding: 6px 14px; border-radius: 999px;
     border: 1px solid rgba(0,0,0,0.15); background: #fff; cursor: pointer; color: #1d1d1f; }
   .lang-switch button.active { background: var(--primary); border-color: var(--primary); color: #fff; }
   @media (max-width: 480px) { .card { padding: 22px 20px; } h1 { font-size: 24px; } }
+  .lang-switch { flex-wrap: wrap; }
+  .lang-switch button { white-space: nowrap; }
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <!-- JS 비활성 시 두 언어가 모두 표시된다(안전 폴백). -->
+  <!-- JS 비활성 시 모든 언어가 표시된다(안전 폴백). -->
   <nav class="lang-switch" id="langSwitch" hidden>
     <button type="button" data-lang="ko">한국어</button>
     <button type="button" data-lang="en">English</button>
+    <button type="button" data-lang="ja">日本語</button>
+    <button type="button" data-lang="zh-Hans">简体中文</button>
+    <button type="button" data-lang="zh-Hant">繁體中文</button>
+    <button type="button" data-lang="de">Deutsch</button>
+    <button type="button" data-lang="fr">Français</button>
+    <button type="button" data-lang="es">Español</button>
+    <button type="button" data-lang="pt-BR">Português</button>
   </nav>
 
-  <!-- ====================== 한국어 ====================== -->
-  <section class="lang-ko">
+  <!-- ====================== ko ====================== -->
+  <section class="lang" data-lang="ko">
   <div class="card">
     <h1>개인정보 처리방침</h1>
     <p class="updated">최종 수정일: 2026년 6월 19일</p>
@@ -67,8 +77,8 @@
   <footer>© 2026 CHUNGKIL KIM. All rights reserved.</footer>
   </section>
 
-  <!-- ====================== English ====================== -->
-  <section class="lang-en">
+  <!-- ====================== en ====================== -->
+  <section class="lang" data-lang="en">
   <div class="card">
     <h1>Privacy Policy</h1>
     <p class="updated">Last updated: June 19, 2026</p>
@@ -102,28 +112,292 @@
   <footer>© 2026 CHUNGKIL KIM. All rights reserved.</footer>
   </section>
 
+  <!-- ====================== ja ====================== -->
+  <section class="lang" data-lang="ja">
+  <div class="card">
+    <h1>プライバシーポリシー</h1>
+    <p class="updated">最終更新日: 2026年6月19日</p>
+
+    <p>ClipStitch はプライバシーを前提に設計されています。このポリシーは、アプリがあなたのデータをどう扱うかを説明します。</p>
+
+    <h2>収集する情報</h2>
+    <p>個人情報は一切収集しません。アカウントもサーバーも分析もありません。アプリにはネットワークコードが一切なく、データを外部に送信することはありません。</p>
+
+    <h2>クリップボードと画像</h2>
+    <p>ClipStitch はスクリーンショットを連結するために、監視中のときだけクリップボードの画像を読み取ります。iOS では、アプリに戻ったあとクリップボードの変化が検出されたときのみ読み取るため、システムがペースト通知を表示することがあります。画像と作業中のセッションは端末内のアプリコンテナ、またはあなたが選んだ場所(ファイル/写真)にのみ保存され、アップロードされません。</p>
+
+    <h2>サードパーティサービス</h2>
+    <p>ありません。広告・トラッキング・分析の SDK は使用していません。</p>
+
+    <h2>Required Reason API</h2>
+    <p>iOS でクリップボードの変更カウンターを記憶するために UserDefaults を使用します(理由コード CA92.1、アプリ自身の設定)。アプリのプライバシーマニフェストに宣言されており、トラッキングには使用しません。</p>
+
+    <h2>お子様のプライバシー</h2>
+    <p>13歳未満のお子様を含め、誰のデータも収集しません。</p>
+
+    <h2>データの保持と削除</h2>
+    <p>データが端末から出ることはないため、アプリを削除すればすべてのデータも削除されます。</p>
+
+    <h2>ポリシーの変更</h2>
+    <p>ポリシーが変更された場合は、上部の最終更新日を更新します。</p>
+
+    <h2>お問い合わせ</h2>
+    <p>ご質問は <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a> までお送りください。</p>
+  </div>
+  <footer>© 2026 CHUNGKIL KIM. All rights reserved.</footer>
+  </section>
+
+  <!-- ====================== zh-Hans ====================== -->
+  <section class="lang" data-lang="zh-Hans">
+  <div class="card">
+    <h1>隐私政策</h1>
+    <p class="updated">最后更新：2026年6月19日</p>
+
+    <p>ClipStitch 以隐私为前提设计。本政策说明这款 App 如何处理你的数据。</p>
+
+    <h2>我们收集的信息</h2>
+    <p>我们不收集任何个人信息。没有账户、没有服务器、没有分析。App 完全没有网络代码，绝不会把你的数据传输到任何地方。</p>
+
+    <h2>剪贴板与图像</h2>
+    <p>为了拼接截图，ClipStitch 仅在监视时读取剪贴板中的图像。在 iOS 上，只有在你回到 App 后检测到剪贴板变化时才会读取，因此系统可能显示粘贴提示。图像和进行中的会话仅保存在你的设备上，位于 App 容器或你选择的位置(文件/照片)，绝不会上传。</p>
+
+    <h2>第三方服务</h2>
+    <p>无。ClipStitch 不使用广告、追踪或分析 SDK。</p>
+
+    <h2>Required Reason API</h2>
+    <p>App 在 iOS 上使用 UserDefaults 记住剪贴板变更计数(原因代码 CA92.1，App 自身设置)。这已在 App 的隐私清单中声明，且不用于追踪。</p>
+
+    <h2>儿童隐私</h2>
+    <p>我们不收集任何人的数据，包括 13 岁以下的儿童。</p>
+
+    <h2>数据保留与删除</h2>
+    <p>由于数据不会离开你的设备，删除 App 即可删除其全部数据。</p>
+
+    <h2>政策变更</h2>
+    <p>如本政策有变更，将更新上方的最后更新日期。</p>
+
+    <h2>联系方式</h2>
+    <p>有疑问请发送邮件至 <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a>。</p>
+  </div>
+  <footer>© 2026 CHUNGKIL KIM. All rights reserved.</footer>
+  </section>
+
+  <!-- ====================== zh-Hant ====================== -->
+  <section class="lang" data-lang="zh-Hant">
+  <div class="card">
+    <h1>隱私權政策</h1>
+    <p class="updated">最後更新：2026年6月19日</p>
+
+    <p>ClipStitch 以隱私為前提設計。本政策說明這款 App 如何處理你的資料。</p>
+
+    <h2>我們收集的資訊</h2>
+    <p>我們不收集任何個人資訊。沒有帳號、沒有伺服器、沒有分析。App 完全沒有網路程式碼，絕不會把你的資料傳送到任何地方。</p>
+
+    <h2>剪貼簿與圖片</h2>
+    <p>為了拼接截圖，ClipStitch 僅在監看時讀取剪貼簿中的圖片。在 iOS 上，只有在你回到 App 後偵測到剪貼簿變更時才會讀取，因此系統可能顯示貼上提示。圖片和進行中的工作階段僅儲存在你的裝置上，位於 App 容器或你選擇的位置(檔案/照片)，絕不會上傳。</p>
+
+    <h2>第三方服務</h2>
+    <p>無。ClipStitch 不使用廣告、追蹤或分析 SDK。</p>
+
+    <h2>Required Reason API</h2>
+    <p>App 在 iOS 上使用 UserDefaults 記住剪貼簿變更計數(原因代碼 CA92.1，App 自身設定)。這已在 App 的隱私權資訊清單中宣告，且不用於追蹤。</p>
+
+    <h2>兒童隱私</h2>
+    <p>我們不收集任何人的資料，包括 13 歲以下的兒童。</p>
+
+    <h2>資料保存與刪除</h2>
+    <p>由於資料不會離開你的裝置，刪除 App 即可刪除其全部資料。</p>
+
+    <h2>政策變更</h2>
+    <p>如本政策有變更，將更新上方的最後更新日期。</p>
+
+    <h2>聯絡方式</h2>
+    <p>有疑問請寄信至 <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a>。</p>
+  </div>
+  <footer>© 2026 CHUNGKIL KIM. All rights reserved.</footer>
+  </section>
+
+  <!-- ====================== de ====================== -->
+  <section class="lang" data-lang="de">
+  <div class="card">
+    <h1>Datenschutzrichtlinie</h1>
+    <p class="updated">Zuletzt aktualisiert: 19. Juni 2026</p>
+
+    <p>ClipStitch ist auf Datenschutz ausgelegt. Diese Richtlinie erklärt, was die App mit deinen Daten tut und was nicht.</p>
+
+    <h2>Erhobene Daten</h2>
+    <p>Wir erheben keinerlei personenbezogene Daten. ClipStitch hat keine Accounts, keine Server und keine Analyse. Die App enthält keinen Netzwerkcode und überträgt deine Daten niemals irgendwohin.</p>
+
+    <h2>Zwischenablage und Bilder</h2>
+    <p>ClipStitch liest Bilder aus der Zwischenablage nur, während die Überwachung aktiv ist, um deine Screenshots zusammenzufügen. Unter iOS wird die Zwischenablage nur gelesen, wenn nach der Rückkehr in die App eine Änderung erkannt wird – deshalb kann das System einen Einfügehinweis anzeigen. Bilder und deine laufende Sitzung werden ausschließlich auf deinem Gerät gespeichert, im Container der App oder an einem von dir gewählten Ort (Dateien oder Fotos). Sie werden niemals hochgeladen.</p>
+
+    <h2>Dienste von Dritten</h2>
+    <p>Keine. ClipStitch verwendet keine Werbe-, Tracking- oder Analyse-SDKs.</p>
+
+    <h2>Required Reason API</h2>
+    <p>Die App nutzt UserDefaults, um unter iOS einen Zähler für Änderungen der Zwischenablage zu merken (Grundcode CA92.1, eigene Einstellungen der App). Das ist im Privacy-Manifest der App deklariert und wird nicht für Tracking verwendet.</p>
+
+    <h2>Datenschutz für Kinder</h2>
+    <p>ClipStitch erhebt von niemandem Daten, auch nicht von Kindern unter 13 Jahren.</p>
+
+    <h2>Aufbewahrung und Löschung</h2>
+    <p>Da keine Daten dein Gerät verlassen, entfernt das Löschen der App auch alle ihre Daten.</p>
+
+    <h2>Änderungen dieser Richtlinie</h2>
+    <p>Wenn sich diese Richtlinie ändert, wird das Datum oben aktualisiert.</p>
+
+    <h2>Kontakt</h2>
+    <p>Fragen? Schreib an <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a>.</p>
+  </div>
+  <footer>© 2026 CHUNGKIL KIM. All rights reserved.</footer>
+  </section>
+
+  <!-- ====================== fr ====================== -->
+  <section class="lang" data-lang="fr">
+  <div class="card">
+    <h1>Politique de confidentialité</h1>
+    <p class="updated">Dernière mise à jour : 19 juin 2026</p>
+
+    <p>ClipStitch est conçu pour respecter votre vie privée. Cette politique explique ce que l'app fait, et ne fait pas, de vos données.</p>
+
+    <h2>Informations collectées</h2>
+    <p>Nous ne collectons aucune information personnelle. ClipStitch n'a ni compte, ni serveur, ni analyse d'audience. L'app ne contient aucun code réseau et ne transmet jamais vos données où que ce soit.</p>
+
+    <h2>Presse-papiers et images</h2>
+    <p>ClipStitch lit les images du presse-papiers uniquement pendant la surveillance, afin d'assembler vos captures. Sur iOS, le presse-papiers n'est lu que lorsqu'un changement est détecté après votre retour dans l'app, ce qui explique la notification de collage affichée par le système. Les images et votre session en cours sont stockées uniquement sur votre appareil, dans le conteneur de l'app ou à l'emplacement que vous choisissez (Fichiers ou Photos). Elles ne sont jamais envoyées en ligne.</p>
+
+    <h2>Services tiers</h2>
+    <p>Aucun. ClipStitch n'utilise ni publicité, ni traceur, ni SDK d'analyse.</p>
+
+    <h2>Required Reason API</h2>
+    <p>L'app utilise UserDefaults pour mémoriser un compteur de changements du presse-papiers sur iOS (code de motif CA92.1, réglages propres à l'app). Cela est déclaré dans le manifeste de confidentialité de l'app et n'est pas utilisé à des fins de suivi.</p>
+
+    <h2>Confidentialité des enfants</h2>
+    <p>ClipStitch ne collecte les données de personne, y compris des enfants de moins de 13 ans.</p>
+
+    <h2>Conservation et suppression</h2>
+    <p>Comme aucune donnée ne quitte votre appareil, supprimer l'app supprime toutes ses données.</p>
+
+    <h2>Modifications de cette politique</h2>
+    <p>Si cette politique change, la date de mise à jour ci-dessus sera modifiée.</p>
+
+    <h2>Contact</h2>
+    <p>Une question ? Écrivez à <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a>.</p>
+  </div>
+  <footer>© 2026 CHUNGKIL KIM. All rights reserved.</footer>
+  </section>
+
+  <!-- ====================== es ====================== -->
+  <section class="lang" data-lang="es">
+  <div class="card">
+    <h1>Política de privacidad</h1>
+    <p class="updated">Última actualización: 19 de junio de 2026</p>
+
+    <p>ClipStitch está diseñado para respetar tu privacidad. Esta política explica qué hace, y qué no hace, la app con tus datos.</p>
+
+    <h2>Información que recopilamos</h2>
+    <p>No recopilamos ninguna información personal. ClipStitch no tiene cuentas, ni servidores, ni analíticas. La app no contiene código de red y nunca transmite tus datos a ningún sitio.</p>
+
+    <h2>Portapapeles e imágenes</h2>
+    <p>ClipStitch lee imágenes del portapapeles solo mientras la vigilancia está activa, para unir tus capturas. En iOS, el portapapeles se lee únicamente cuando se detecta un cambio tras volver a la app, por eso el sistema puede mostrar un aviso de pegado. Las imágenes y tu sesión en curso se guardan solo en tu dispositivo, en el contenedor de la app o en la ubicación que elijas (Archivos o Fotos). Nunca se suben.</p>
+
+    <h2>Servicios de terceros</h2>
+    <p>Ninguno. ClipStitch no usa SDK de publicidad, seguimiento ni analítica.</p>
+
+    <h2>Required Reason API</h2>
+    <p>La app usa UserDefaults para recordar un contador de cambios del portapapeles en iOS (código de motivo CA92.1, ajustes propios de la app). Está declarado en el manifiesto de privacidad de la app y no se usa para seguimiento.</p>
+
+    <h2>Privacidad de los menores</h2>
+    <p>ClipStitch no recopila datos de nadie, tampoco de menores de 13 años.</p>
+
+    <h2>Conservación y eliminación de datos</h2>
+    <p>Como ningún dato sale de tu dispositivo, al eliminar la app se eliminan todos sus datos.</p>
+
+    <h2>Cambios en esta política</h2>
+    <p>Si esta política cambia, se actualizará la fecha indicada arriba.</p>
+
+    <h2>Contacto</h2>
+    <p>¿Dudas? Escribe a <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a>.</p>
+  </div>
+  <footer>© 2026 CHUNGKIL KIM. All rights reserved.</footer>
+  </section>
+
+  <!-- ====================== pt-BR ====================== -->
+  <section class="lang" data-lang="pt-BR">
+  <div class="card">
+    <h1>Política de Privacidade</h1>
+    <p class="updated">Última atualização: 19 de junho de 2026</p>
+
+    <p>O ClipStitch foi projetado para respeitar sua privacidade. Esta política explica o que o app faz, e o que não faz, com seus dados.</p>
+
+    <h2>Informações que coletamos</h2>
+    <p>Não coletamos nenhuma informação pessoal. O ClipStitch não tem contas, servidores nem análises. O app não contém código de rede e nunca transmite seus dados para lugar nenhum.</p>
+
+    <h2>Área de transferência e imagens</h2>
+    <p>O ClipStitch lê imagens da área de transferência apenas enquanto a observação está ativa, para juntar suas capturas. No iOS, a área de transferência é lida somente quando uma mudança é detectada depois que você volta ao app, e por isso o sistema pode mostrar um aviso de colagem. As imagens e a sessão em andamento ficam apenas no seu dispositivo, no contêiner do app ou no local que você escolher (Arquivos ou Fotos). Elas nunca são enviadas.</p>
+
+    <h2>Serviços de terceiros</h2>
+    <p>Nenhum. O ClipStitch não usa SDKs de publicidade, rastreamento ou análise.</p>
+
+    <h2>Required Reason API</h2>
+    <p>O app usa UserDefaults para lembrar um contador de mudanças da área de transferência no iOS (código de motivo CA92.1, ajustes do próprio app). Isso está declarado no manifesto de privacidade do app e não é usado para rastreamento.</p>
+
+    <h2>Privacidade das crianças</h2>
+    <p>O ClipStitch não coleta dados de ninguém, incluindo crianças menores de 13 anos.</p>
+
+    <h2>Retenção e exclusão de dados</h2>
+    <p>Como nenhum dado sai do seu dispositivo, excluir o app remove todos os seus dados.</p>
+
+    <h2>Mudanças nesta política</h2>
+    <p>Se esta política mudar, a data de atualização acima será revisada.</p>
+
+    <h2>Contato</h2>
+    <p>Dúvidas? Escreva para <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a>.</p>
+  </div>
+  <footer>© 2026 CHUNGKIL KIM. All rights reserved.</footer>
+  </section>
+
 </div>
 
 <script>
 (function () {
-  var sections = { ko: document.querySelector(".lang-ko"), en: document.querySelector(".lang-en") };
-  var nav = document.getElementById("langSwitch");
+  var sections = {}, nav = document.getElementById("langSwitch");
+  Array.prototype.forEach.call(document.querySelectorAll("section[data-lang]"), function (s) {
+    sections[s.dataset.lang] = s;
+  });
   var buttons = nav.querySelectorAll("button");
 
   function show(lang) {
-    sections.ko.hidden = lang !== "ko";
-    sections.en.hidden = lang !== "en";
-    buttons.forEach(function (b) { b.classList.toggle("active", b.dataset.lang === lang); });
+    if (!sections[lang]) { lang = "en"; }
+    Object.keys(sections).forEach(function (k) { sections[k].hidden = k !== lang; });
+    Array.prototype.forEach.call(buttons, function (b) {
+      b.classList.toggle("active", b.dataset.lang === lang);
+    });
     document.documentElement.lang = lang;
   }
 
-  nav.hidden = false;  // JS 동작 시에만 토글 노출 (비활성 시 두 언어 모두 표시)
-  buttons.forEach(function (b) { b.addEventListener("click", function () { show(b.dataset.lang); }); });
+  // 브라우저 언어 → 지원 언어 매핑. 중국어는 번체(tw/hk/mo/hant)와 간체를 구분한다.
+  function detect() {
+    var hash = location.hash.replace("#", "");
+    if (hash && sections[hash]) { return hash; }
+    var nl = (navigator.language || "").toLowerCase();
+    if (nl.indexOf("ko") === 0) { return "ko"; }
+    if (nl.indexOf("ja") === 0) { return "ja"; }
+    if (nl.indexOf("zh") === 0) {
+      return /hant|tw|hk|mo/.test(nl) ? "zh-Hant" : "zh-Hans";
+    }
+    if (nl.indexOf("de") === 0) { return "de"; }
+    if (nl.indexOf("fr") === 0) { return "fr"; }
+    if (nl.indexOf("es") === 0) { return "es"; }
+    if (nl.indexOf("pt") === 0) { return "pt-BR"; }
+    return "en";
+  }
 
-  // 초기 언어: #en 해시 → 영어, 그 외 브라우저 언어 기준 (한국어 외 → 영어)
-  var initial = location.hash === "#en" ? "en"
-    : (navigator.language || "").toLowerCase().indexOf("ko") === 0 ? "ko" : "en";
-  show(initial);
+  nav.hidden = false;  // JS 동작 시에만 토글 노출 (비활성 시 모든 언어 표시)
+  Array.prototype.forEach.call(buttons, function (b) {
+    b.addEventListener("click", function () { show(b.dataset.lang); });
+  });
+  show(detect());
 })();
 </script>
 

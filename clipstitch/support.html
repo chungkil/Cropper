@@ -11,30 +11,39 @@
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', Roboto, sans-serif;
          margin: 0; background: #f8f9fa; color: #1d1d1f; line-height: 1.7; }
   .wrap { max-width: 720px; margin: 0 auto; padding: 40px 20px 60px; }
-  .card { background: #fff; border-radius: 16px; padding: 28px 32px; margin-bottom: 20px;
-          box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
-  h1 { font-size: 28px; margin: 0 0 8px; } h2 { font-size: 18px; margin: 22px 0 4px; }
+  .card { background: #fff; border-radius: 16px; padding: 28px 32px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+  h1 { font-size: 28px; margin: 0 0 4px; } h2 { font-size: 19px; margin-top: 26px; }
   a { color: var(--primary); }
-  .meta { color: #666; font-size: 15px; }
-  footer { text-align: center; color: #888; font-size: 14px; margin-top: 12px; }
+  .updated { color: #888; font-size: 14px; }
+  .meta { color: #444; }
+  footer { text-align: center; color: #888; font-size: 14px; margin-top: 28px; }
   .lang-switch { display: flex; gap: 8px; justify-content: flex-end; margin-bottom: 16px; }
   .lang-switch button { font: inherit; font-size: 13px; padding: 6px 14px; border-radius: 999px;
     border: 1px solid rgba(0,0,0,0.15); background: #fff; cursor: pointer; color: #1d1d1f; }
   .lang-switch button.active { background: var(--primary); border-color: var(--primary); color: #fff; }
   @media (max-width: 480px) { .card { padding: 22px 20px; } h1 { font-size: 24px; } }
+  .lang-switch { flex-wrap: wrap; }
+  .lang-switch button { white-space: nowrap; }
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <!-- JS 비활성 시 두 언어가 모두 표시된다(안전 폴백). -->
+  <!-- JS 비활성 시 모든 언어가 표시된다(안전 폴백). -->
   <nav class="lang-switch" id="langSwitch" hidden>
     <button type="button" data-lang="ko">한국어</button>
     <button type="button" data-lang="en">English</button>
+    <button type="button" data-lang="ja">日本語</button>
+    <button type="button" data-lang="zh-Hans">简体中文</button>
+    <button type="button" data-lang="zh-Hant">繁體中文</button>
+    <button type="button" data-lang="de">Deutsch</button>
+    <button type="button" data-lang="fr">Français</button>
+    <button type="button" data-lang="es">Español</button>
+    <button type="button" data-lang="pt-BR">Português</button>
   </nav>
 
-  <!-- ====================== 한국어 ====================== -->
-  <section class="lang-ko">
+  <!-- ====================== ko ====================== -->
+  <section class="lang" data-lang="ko">
   <div class="card">
     <h1>기술 지원</h1>
     <p>도움이 필요하신가요? <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a> 으로 문의해 주세요. 보통 2~3일 내에 답변드립니다.</p>
@@ -46,6 +55,12 @@
 
     <h2>iOS에서 붙여넣기 알림이 왜 뜨나요?</h2>
     <p class="meta">iOS는 앱이 클립보드의 이미지를 읽을 때마다 그 알림을 표시합니다. ClipStitch는 클립보드가 바뀌었을 때만 읽어 알림을 최소화합니다.</p>
+
+    <h2>거의 같은 화면이 건너뛰어집니다. 끌 수 있나요?</h2>
+    <p class="meta">네. 하단 옵션 바의 톱니바퀴 메뉴에서 "거의 같은 화면 건너뛰기"를 끄면 모든 캡처가 그대로 추가됩니다. macOS는 설정(Command-쉼표)에서도 바꿀 수 있습니다.</p>
+
+    <h2>내보낼 때 해상도를 조절할 수 있나요?</h2>
+    <p class="meta">네. 같은 톱니바퀴 메뉴의 내보내기 항목에서 원본(100%), 75%, 50%, 25% 중 고르세요. 기본값은 원본이라 이어붙인 해상도가 그대로 유지됩니다.</p>
 
     <h2>겹친 부분은 어떻게 정리하나요?</h2>
     <p class="meta">썸네일을 길게 누르거나(iOS) 오른쪽 클릭(macOS)해서 트림을 선택하면 위아래를 잘라낼 수 있습니다.</p>
@@ -59,14 +74,14 @@
 
   <div class="card">
     <h2>앱 정보</h2>
-    <p class="meta">개발자: CHUNGKIL KIM<br>플랫폼: macOS 14+, iOS 17+<br>언어: 한국어, 영어<br><a href="privacy.html">개인정보 처리방침</a></p>
+    <p class="meta">개발자: CHUNGKIL KIM<br>플랫폼: macOS 14+, iOS 17+<br>앱 언어: 한국어, 영어, 일본어, 중국어 간체<br><a href="privacy.html">개인정보 처리방침</a></p>
   </div>
 
   <footer>© 2026 CHUNGKIL KIM. All rights reserved.</footer>
   </section>
 
-  <!-- ====================== English ====================== -->
-  <section class="lang-en">
+  <!-- ====================== en ====================== -->
+  <section class="lang" data-lang="en">
   <div class="card">
     <h1>Support</h1>
     <p>Need help with ClipStitch? Email <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a>. We usually reply within a couple of days.</p>
@@ -78,6 +93,12 @@
 
     <h2>Why does iOS show a paste notification?</h2>
     <p class="meta">iOS shows that banner whenever an app reads image content from the clipboard. ClipStitch reads only when the clipboard has changed, to keep this to a minimum.</p>
+
+    <h2>Near-identical screens are being skipped. Can I turn that off?</h2>
+    <p class="meta">Yes. In the gear menu of the bottom options bar, turn off "Skip near-duplicate screens" and every capture is kept. On macOS you can also change it in Settings (Command-comma).</p>
+
+    <h2>Can I control the export resolution?</h2>
+    <p class="meta">Yes. In the same gear menu, under Export, choose Original (100%), 75%, 50%, or 25%. Original is the default, so exports keep the full stitched resolution.</p>
 
     <h2>How do I clean up an overlapping piece?</h2>
     <p class="meta">Long-press (iOS) or right-click (macOS) a thumbnail and choose Trim to cut the top or bottom.</p>
@@ -91,7 +112,273 @@
 
   <div class="card">
     <h2>App information</h2>
-    <p class="meta">Developer: CHUNGKIL KIM<br>Platforms: macOS 14+, iOS 17+<br>Languages: English, Korean<br><a href="privacy.html">Privacy Policy</a></p>
+    <p class="meta">Developer: CHUNGKIL KIM<br>Platforms: macOS 14+, iOS 17+<br>App languages: English, Korean, Japanese, Simplified Chinese<br><a href="privacy.html">Privacy Policy</a></p>
+  </div>
+
+  <footer>© 2026 CHUNGKIL KIM. All rights reserved.</footer>
+  </section>
+
+  <!-- ====================== ja ====================== -->
+  <section class="lang" data-lang="ja">
+  <div class="card">
+    <h1>サポート</h1>
+    <p>お困りですか？ <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a> までご連絡ください。通常2〜3日以内に返信します。</p>
+  </div>
+
+  <div class="card">
+    <h2>スクリーンショットはどう追加しますか？</h2>
+    <p class="meta">ClipStitch を起動したままスクリーンショットをコピーしてください。macOS ではバックグラウンドで自動的に追加されます。iOS では他のアプリでコピーしてから ClipStitch に戻ると検出されます。画像ファイルをプレビュー領域にドラッグして追加することもできます。</p>
+
+    <h2>iOS でペースト通知が出るのはなぜですか？</h2>
+    <p class="meta">iOS はアプリがクリップボードの画像を読み取るたびにその通知を表示します。ClipStitch はクリップボードが変化したときだけ読み取り、通知を最小限にしています。</p>
+
+    <h2>ほぼ同じ画面がスキップされます。オフにできますか？</h2>
+    <p class="meta">はい。下部オプションバーの歯車メニューで「ほぼ同じ画面をスキップ」をオフにすると、すべてのキャプチャがそのまま追加されます。macOS では設定(Command-カンマ)からも変更できます。</p>
+
+    <h2>書き出しの解像度は選べますか？</h2>
+    <p class="meta">はい。同じ歯車メニューの「書き出し」から、オリジナル(100%)・75%・50%・25% を選べます。既定はオリジナルなので、連結した解像度がそのまま保たれます。</p>
+
+    <h2>重なった部分はどう整理しますか？</h2>
+    <p class="meta">サムネイルを長押し(iOS)または右クリック(macOS)して「トリミング」を選ぶと、上下を切り取れます。</p>
+
+    <h2>書き出した結果はどこに保存されますか？</h2>
+    <p class="meta">選んだ場所に PNG または JPEG で保存、クリップボードにコピー、または写真に保存できます。外部に送信されることはありません。</p>
+
+    <h2>オフラインでも動作しますか？</h2>
+    <p class="meta">はい。ClipStitch はネットワーク機能を持たず、完全にオフラインで動作します。</p>
+  </div>
+
+  <div class="card">
+    <h2>アプリ情報</h2>
+    <p class="meta">開発者: CHUNGKIL KIM<br>対応プラットフォーム: macOS 14+, iOS 17+<br>アプリの言語: 日本語、英語、韓国語、簡体中国語<br><a href="privacy.html">プライバシーポリシー</a></p>
+  </div>
+
+  <footer>© 2026 CHUNGKIL KIM. All rights reserved.</footer>
+  </section>
+
+  <!-- ====================== zh-Hans ====================== -->
+  <section class="lang" data-lang="zh-Hans">
+  <div class="card">
+    <h1>支持</h1>
+    <p>需要帮助吗？请发送邮件至 <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a>。我们通常在两三天内回复。</p>
+  </div>
+
+  <div class="card">
+    <h2>如何添加截图？</h2>
+    <p class="meta">让 ClipStitch 保持运行并复制截图。在 macOS 上会在后台自动添加。在 iOS 上，先在其他 App 中复制截图，回到 ClipStitch 即可检测到。你也可以把图像文件拖入预览区域。</p>
+
+    <h2>为什么 iOS 会显示粘贴提示？</h2>
+    <p class="meta">只要 App 读取剪贴板中的图像，iOS 就会显示该提示。ClipStitch 仅在剪贴板发生变化时读取，以尽量减少提示。</p>
+
+    <h2>几乎相同的画面被跳过了，可以关闭吗？</h2>
+    <p class="meta">可以。在底部选项栏的齿轮菜单中关闭"跳过几乎相同的画面"，每一张截图都会被保留。在 macOS 上也可以在"设置"(Command-逗号)中更改。</p>
+
+    <h2>可以控制导出的分辨率吗？</h2>
+    <p class="meta">可以。在同一个齿轮菜单的"导出"中选择原始(100%)、75%、50% 或 25%。默认是原始，导出会保留拼接后的完整分辨率。</p>
+
+    <h2>如何清理重叠的部分？</h2>
+    <p class="meta">长按(iOS)或右键点按(macOS)缩略图并选择"裁剪"，即可裁掉顶部或底部。</p>
+
+    <h2>导出的结果保存到哪里？</h2>
+    <p class="meta">可以存储为 PNG 或 JPEG 到你选择的位置、复制到剪贴板，或存储到照片。不会上传到任何地方。</p>
+
+    <h2>离线也能用吗？</h2>
+    <p class="meta">可以。ClipStitch 没有任何网络功能，完全离线工作。</p>
+  </div>
+
+  <div class="card">
+    <h2>App 信息</h2>
+    <p class="meta">开发者：CHUNGKIL KIM<br>平台：macOS 14+、iOS 17+<br>App 语言：简体中文、英语、韩语、日语<br><a href="privacy.html">隐私政策</a></p>
+  </div>
+
+  <footer>© 2026 CHUNGKIL KIM. All rights reserved.</footer>
+  </section>
+
+  <!-- ====================== zh-Hant ====================== -->
+  <section class="lang" data-lang="zh-Hant">
+  <div class="card">
+    <h1>技術支援</h1>
+    <p>需要協助嗎？請寄信至 <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a>。我們通常會在兩三天內回覆。</p>
+  </div>
+
+  <div class="card">
+    <h2>如何加入截圖？</h2>
+    <p class="meta">讓 ClipStitch 保持執行並複製截圖。在 macOS 上會在背景自動加入。在 iOS 上，先在其他 App 中複製截圖，回到 ClipStitch 即可偵測到。你也可以把圖片檔案拖到預覽區域。</p>
+
+    <h2>為什麼 iOS 會顯示貼上提示？</h2>
+    <p class="meta">只要 App 讀取剪貼簿中的圖片，iOS 就會顯示該提示。ClipStitch 僅在剪貼簿變更時讀取，以盡量減少提示。</p>
+
+    <h2>幾乎相同的畫面被跳過了，可以關閉嗎？</h2>
+    <p class="meta">可以。在底部選項列的齒輪選單中關閉「跳過幾乎相同的畫面」，每一張截圖都會保留。在 macOS 上也可以在「設定」(Command-逗號)中更改。</p>
+
+    <h2>可以控制匯出的解析度嗎？</h2>
+    <p class="meta">可以。在同一個齒輪選單的「匯出」中選擇原始(100%)、75%、50% 或 25%。預設是原始，匯出會保留拼接後的完整解析度。</p>
+
+    <h2>如何清理重疊的部分？</h2>
+    <p class="meta">長按(iOS)或按右鍵(macOS)縮圖並選擇「裁剪」，即可裁掉頂部或底部。</p>
+
+    <h2>匯出的結果會存到哪裡？</h2>
+    <p class="meta">可以儲存為 PNG 或 JPEG 到你選擇的位置、複製到剪貼簿，或儲存到「照片」。不會上傳到任何地方。</p>
+
+    <h2>離線也能用嗎？</h2>
+    <p class="meta">可以。ClipStitch 沒有任何網路功能，完全離線運作。</p>
+  </div>
+
+  <div class="card">
+    <h2>App 資訊</h2>
+    <p class="meta">開發者：CHUNGKIL KIM<br>平台：macOS 14+、iOS 17+<br>App 語言：英語、韓語、日語、簡體中文<br><a href="privacy.html">隱私權政策</a></p>
+  </div>
+
+  <footer>© 2026 CHUNGKIL KIM. All rights reserved.</footer>
+  </section>
+
+  <!-- ====================== de ====================== -->
+  <section class="lang" data-lang="de">
+  <div class="card">
+    <h1>Support</h1>
+    <p>Brauchst du Hilfe? Schreib an <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a>. Wir antworten meist innerhalb von zwei bis drei Tagen.</p>
+  </div>
+
+  <div class="card">
+    <h2>Wie füge ich Screenshots hinzu?</h2>
+    <p class="meta">Lass ClipStitch laufen und kopiere einen Screenshot. Unter macOS wird er automatisch im Hintergrund hinzugefügt. Unter iOS kopierst du den Screenshot in einer anderen App und kehrst zu ClipStitch zurück, dann wird er erkannt. Du kannst auch Bilddateien in den Vorschaubereich ziehen.</p>
+
+    <h2>Warum zeigt iOS einen Einfügehinweis?</h2>
+    <p class="meta">iOS zeigt diesen Hinweis, sobald eine App Bildinhalte aus der Zwischenablage liest. ClipStitch liest nur, wenn sich die Zwischenablage geändert hat, um das so selten wie möglich zu halten.</p>
+
+    <h2>Fast identische Screenshots werden übersprungen. Kann ich das abschalten?</h2>
+    <p class="meta">Ja. Schalte im Zahnrad-Menü der unteren Optionsleiste "Skip near-duplicate screens" aus, dann bleibt jede Aufnahme erhalten. Unter macOS geht das auch in den Einstellungen (Command-Komma).</p>
+
+    <h2>Kann ich die Export-Auflösung steuern?</h2>
+    <p class="meta">Ja. Im selben Zahnrad-Menü unter Export wählst du Original (100%), 75%, 50% oder 25%. Original ist voreingestellt, Exporte behalten also die volle zusammengefügte Auflösung.</p>
+
+    <h2>Wie bereinige ich Überlappungen?</h2>
+    <p class="meta">Tippe lange auf eine Miniatur (iOS) oder klicke sie mit rechts an (macOS) und wähle Zuschneiden, um oben oder unten zu kürzen.</p>
+
+    <h2>Wohin gehen die Exporte?</h2>
+    <p class="meta">Sichere als PNG oder JPEG an einem Ort deiner Wahl, kopiere das Ergebnis in die Zwischenablage oder sichere es in Fotos. Nichts wird hochgeladen.</p>
+
+    <h2>Funktioniert die App offline?</h2>
+    <p class="meta">Ja. ClipStitch hat keinerlei Netzwerkfunktionen und arbeitet vollständig offline.</p>
+  </div>
+
+  <div class="card">
+    <h2>App-Informationen</h2>
+    <p class="meta">Entwickler: CHUNGKIL KIM<br>Plattformen: macOS 14+, iOS 17+<br>App-Sprachen: Englisch, Koreanisch, Japanisch, Chinesisch (vereinfacht)<br><a href="privacy.html">Datenschutzrichtlinie</a></p>
+  </div>
+
+  <footer>© 2026 CHUNGKIL KIM. All rights reserved.</footer>
+  </section>
+
+  <!-- ====================== fr ====================== -->
+  <section class="lang" data-lang="fr">
+  <div class="card">
+    <h1>Assistance</h1>
+    <p>Besoin d'aide ? Écrivez à <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a>. Nous répondons généralement sous deux à trois jours.</p>
+  </div>
+
+  <div class="card">
+    <h2>Comment ajouter des captures ?</h2>
+    <p class="meta">Laissez ClipStitch ouvert et copiez une capture. Sur macOS, elle est ajoutée automatiquement en arrière-plan. Sur iOS, copiez la capture dans une autre app puis revenez dans ClipStitch : elle est détectée. Vous pouvez aussi glisser des fichiers image dans la zone d'aperçu.</p>
+
+    <h2>Pourquoi iOS affiche-t-il une notification de collage ?</h2>
+    <p class="meta">iOS affiche cette bannière dès qu'une app lit une image dans le presse-papiers. ClipStitch ne lit que lorsque le presse-papiers a changé, pour limiter ces notifications.</p>
+
+    <h2>Des captures presque identiques sont ignorées. Puis-je le désactiver ?</h2>
+    <p class="meta">Oui. Dans le menu roue dentée de la barre d'options en bas, désactivez "Skip near-duplicate screens" et toutes les captures seront conservées. Sur macOS, c'est aussi dans Réglages (Command-virgule).</p>
+
+    <h2>Puis-je choisir la résolution d'export ?</h2>
+    <p class="meta">Oui. Dans le même menu roue dentée, section Export, choisissez Original (100%), 75%, 50% ou 25%. Original est la valeur par défaut, les exports conservent donc toute la résolution de l'assemblage.</p>
+
+    <h2>Comment nettoyer un recouvrement ?</h2>
+    <p class="meta">Appui long (iOS) ou clic droit (macOS) sur une vignette, puis choisissez Rogner pour couper le haut ou le bas.</p>
+
+    <h2>Où vont les exports ?</h2>
+    <p class="meta">Enregistrez en PNG ou JPEG à l'emplacement de votre choix, copiez le résultat dans le presse-papiers ou enregistrez-le dans Photos. Rien n'est envoyé en ligne.</p>
+
+    <h2>L'app fonctionne-t-elle hors ligne ?</h2>
+    <p class="meta">Oui. ClipStitch n'a aucune fonction réseau et fonctionne entièrement hors ligne.</p>
+  </div>
+
+  <div class="card">
+    <h2>Informations sur l'app</h2>
+    <p class="meta">Développeur : CHUNGKIL KIM<br>Plateformes : macOS 14+, iOS 17+<br>Langues de l'app : anglais, coréen, japonais, chinois simplifié<br><a href="privacy.html">Politique de confidentialité</a></p>
+  </div>
+
+  <footer>© 2026 CHUNGKIL KIM. All rights reserved.</footer>
+  </section>
+
+  <!-- ====================== es ====================== -->
+  <section class="lang" data-lang="es">
+  <div class="card">
+    <h1>Soporte</h1>
+    <p>¿Necesitas ayuda? Escribe a <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a>. Solemos responder en dos o tres días.</p>
+  </div>
+
+  <div class="card">
+    <h2>¿Cómo añado capturas?</h2>
+    <p class="meta">Deja ClipStitch abierto y copia una captura. En macOS se añade automáticamente en segundo plano. En iOS, copia la captura en otra app y vuelve a ClipStitch: se detecta sola. También puedes arrastrar archivos de imagen al área de vista previa.</p>
+
+    <h2>¿Por qué iOS muestra un aviso de pegado?</h2>
+    <p class="meta">iOS muestra ese aviso cada vez que una app lee imágenes del portapapeles. ClipStitch solo lee cuando el portapapeles ha cambiado, para reducirlo al mínimo.</p>
+
+    <h2>Se omiten capturas casi idénticas. ¿Puedo desactivarlo?</h2>
+    <p class="meta">Sí. En el menú del engranaje de la barra de opciones inferior, desactiva "Skip near-duplicate screens" y se conservarán todas las capturas. En macOS también puedes cambiarlo en Ajustes (Command-coma).</p>
+
+    <h2>¿Puedo elegir la resolución de exportación?</h2>
+    <p class="meta">Sí. En ese mismo menú del engranaje, en Exportar, elige Original (100%), 75%, 50% o 25%. Original es el valor por defecto, así que se conserva toda la resolución del montaje.</p>
+
+    <h2>¿Cómo limpio una parte solapada?</h2>
+    <p class="meta">Mantén pulsada (iOS) o haz clic derecho (macOS) en una miniatura y elige Recortar para cortar arriba o abajo.</p>
+
+    <h2>¿Dónde se guardan las exportaciones?</h2>
+    <p class="meta">Guarda como PNG o JPEG en la ubicación que elijas, copia el resultado al portapapeles o guárdalo en Fotos. No se sube nada.</p>
+
+    <h2>¿Funciona sin conexión?</h2>
+    <p class="meta">Sí. ClipStitch no tiene funciones de red y funciona completamente sin conexión.</p>
+  </div>
+
+  <div class="card">
+    <h2>Información de la app</h2>
+    <p class="meta">Desarrollador: CHUNGKIL KIM<br>Plataformas: macOS 14+, iOS 17+<br>Idiomas de la app: inglés, coreano, japonés, chino simplificado<br><a href="privacy.html">Política de privacidad</a></p>
+  </div>
+
+  <footer>© 2026 CHUNGKIL KIM. All rights reserved.</footer>
+  </section>
+
+  <!-- ====================== pt-BR ====================== -->
+  <section class="lang" data-lang="pt-BR">
+  <div class="card">
+    <h1>Suporte</h1>
+    <p>Precisa de ajuda? Escreva para <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a>. Costumamos responder em dois ou três dias.</p>
+  </div>
+
+  <div class="card">
+    <h2>Como adiciono capturas?</h2>
+    <p class="meta">Deixe o ClipStitch aberto e copie uma captura. No macOS ela é adicionada automaticamente em segundo plano. No iOS, copie a captura em outro app e volte ao ClipStitch: ela é detectada. Você também pode arrastar arquivos de imagem para a área de pré-visualização.</p>
+
+    <h2>Por que o iOS mostra um aviso de colagem?</h2>
+    <p class="meta">O iOS mostra esse aviso sempre que um app lê imagens da área de transferência. O ClipStitch só lê quando a área de transferência mudou, para reduzir isso ao mínimo.</p>
+
+    <h2>Capturas quase idênticas estão sendo puladas. Posso desativar?</h2>
+    <p class="meta">Pode. No menu de engrenagem da barra de opções inferior, desative "Skip near-duplicate screens" e todas as capturas serão mantidas. No macOS também dá para mudar em Ajustes (Command-vírgula).</p>
+
+    <h2>Posso escolher a resolução da exportação?</h2>
+    <p class="meta">Pode. No mesmo menu de engrenagem, em Exportar, escolha Original (100%), 75%, 50% ou 25%. Original é o padrão, então a exportação mantém toda a resolução da junção.</p>
+
+    <h2>Como limpo uma parte sobreposta?</h2>
+    <p class="meta">Toque e segure (iOS) ou clique com o botão direito (macOS) em uma miniatura e escolha Cortar para tirar o topo ou a base.</p>
+
+    <h2>Para onde vão as exportações?</h2>
+    <p class="meta">Salve como PNG ou JPEG no local que você escolher, copie o resultado para a área de transferência ou salve em Fotos. Nada é enviado.</p>
+
+    <h2>Funciona offline?</h2>
+    <p class="meta">Sim. O ClipStitch não tem recursos de rede e funciona totalmente offline.</p>
+  </div>
+
+  <div class="card">
+    <h2>Informações do app</h2>
+    <p class="meta">Desenvolvedor: CHUNGKIL KIM<br>Plataformas: macOS 14+, iOS 17+<br>Idiomas do app: inglês, coreano, japonês, chinês simplificado<br><a href="privacy.html">Política de Privacidade</a></p>
   </div>
 
   <footer>© 2026 CHUNGKIL KIM. All rights reserved.</footer>
@@ -101,24 +388,43 @@
 
 <script>
 (function () {
-  var sections = { ko: document.querySelector(".lang-ko"), en: document.querySelector(".lang-en") };
-  var nav = document.getElementById("langSwitch");
+  var sections = {}, nav = document.getElementById("langSwitch");
+  Array.prototype.forEach.call(document.querySelectorAll("section[data-lang]"), function (s) {
+    sections[s.dataset.lang] = s;
+  });
   var buttons = nav.querySelectorAll("button");
 
   function show(lang) {
-    sections.ko.hidden = lang !== "ko";
-    sections.en.hidden = lang !== "en";
-    buttons.forEach(function (b) { b.classList.toggle("active", b.dataset.lang === lang); });
+    if (!sections[lang]) { lang = "en"; }
+    Object.keys(sections).forEach(function (k) { sections[k].hidden = k !== lang; });
+    Array.prototype.forEach.call(buttons, function (b) {
+      b.classList.toggle("active", b.dataset.lang === lang);
+    });
     document.documentElement.lang = lang;
   }
 
-  nav.hidden = false;  // JS 동작 시에만 토글 노출 (비활성 시 두 언어 모두 표시)
-  buttons.forEach(function (b) { b.addEventListener("click", function () { show(b.dataset.lang); }); });
+  // 브라우저 언어 → 지원 언어 매핑. 중국어는 번체(tw/hk/mo/hant)와 간체를 구분한다.
+  function detect() {
+    var hash = location.hash.replace("#", "");
+    if (hash && sections[hash]) { return hash; }
+    var nl = (navigator.language || "").toLowerCase();
+    if (nl.indexOf("ko") === 0) { return "ko"; }
+    if (nl.indexOf("ja") === 0) { return "ja"; }
+    if (nl.indexOf("zh") === 0) {
+      return /hant|tw|hk|mo/.test(nl) ? "zh-Hant" : "zh-Hans";
+    }
+    if (nl.indexOf("de") === 0) { return "de"; }
+    if (nl.indexOf("fr") === 0) { return "fr"; }
+    if (nl.indexOf("es") === 0) { return "es"; }
+    if (nl.indexOf("pt") === 0) { return "pt-BR"; }
+    return "en";
+  }
 
-  // 초기 언어: #en 해시 → 영어, 그 외 브라우저 언어 기준 (한국어 외 → 영어)
-  var initial = location.hash === "#en" ? "en"
-    : (navigator.language || "").toLowerCase().indexOf("ko") === 0 ? "ko" : "en";
-  show(initial);
+  nav.hidden = false;  // JS 동작 시에만 토글 노출 (비활성 시 모든 언어 표시)
+  Array.prototype.forEach.call(buttons, function (b) {
+    b.addEventListener("click", function () { show(b.dataset.lang); });
+  });
+  show(detect());
 })();
 </script>
 

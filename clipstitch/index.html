@@ -38,17 +38,19 @@
   /* Language toggle */
   #langSwitch{
     position:fixed;top:12px;right:12px;z-index:50;
-    display:inline-flex;gap:4px;padding:4px;
+    display:inline-flex;padding:4px;
     background:rgba(20,22,30,.72);backdrop-filter:blur(10px);
     border:1px solid rgba(255,255,255,.18);border-radius:999px;
   }
-  #langSwitch button{
+  #langSwitch select{
     appearance:none;border:0;cursor:pointer;
-    min-height:36px;padding:0 14px;border-radius:999px;
+    min-height:36px;padding:0 32px 0 14px;border-radius:999px;
     font:inherit;font-size:14px;font-weight:600;
     color:#e9ebf2;background:transparent;
+    background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23e9ebf2' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;background-position:right 12px center;
   }
-  #langSwitch button.active{background:#fff;color:#15151a;}
+  #langSwitch select option{color:#15151a;background:#fff;}
 
   /* Hero */
   .hero{
@@ -277,12 +279,21 @@
 <body>
 
 <nav id="langSwitch" hidden aria-label="Language">
-  <button type="button" data-lang="ko">한국어</button>
-  <button type="button" data-lang="en">English</button>
+  <select id="langSelect" aria-label="Language">
+    <option value="ko">한국어</option>
+    <option value="en">English</option>
+    <option value="ja">日本語</option>
+    <option value="zh-Hans">简体中文</option>
+    <option value="zh-Hant">繁體中文</option>
+    <option value="de">Deutsch</option>
+    <option value="fr">Français</option>
+    <option value="es">Español</option>
+    <option value="pt-BR">Português</option>
+  </select>
 </nav>
 
 <!-- ============ KOREAN ============ -->
-<section class="lang-ko">
+<section class="lang" data-lang="ko">
   <header class="hero">
     <div class="wrap">
       <div class="brand">
@@ -296,10 +307,10 @@
       <div class="cta-row">
         <a class="badge" href="https://apps.apple.com/app/id6782062390" target="_blank" rel="noopener" aria-label="App Store에서 다운로드 (곧 제공)">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.1 12.7c0-1.8 1.4-2.7 1.5-2.8-.8-1.2-2.1-1.4-2.5-1.4-1.1-.1-2.1.6-2.6.6-.5 0-1.4-.6-2.3-.6-1.2 0-2.3.7-2.9 1.8-1.2 2.2-.3 5.4.9 7.1.6.9 1.3 1.8 2.2 1.8.9 0 1.2-.6 2.3-.6 1.1 0 1.4.6 2.3.6.9 0 1.6-.9 2.2-1.8.4-.6.6-1.2.8-1.8-1.7-.7-1.9-2.4-1.9-2.7zM15.3 6.6c.5-.6.8-1.4.7-2.2-.7 0-1.5.5-2 1.1-.4.5-.8 1.3-.7 2.1.8.1 1.5-.4 2-1z"/></svg>
-          <span><span class="b1">곧 출시 예정</span><span class="b2">App Store</span></span>
+          <span><span class="b1">App Store에서</span><span class="b2">App Store</span></span>
         </a>
       </div>
-      <p class="badge-note">현재 App Store 심사 중입니다 — 승인되면 바로 열립니다.</p>
+      <p class="badge-note">App Store에서 지금 받을 수 있습니다.</p>
 
       <figure class="hero-shot">
         <img src="shots/mac-result-ko.png" width="1400" height="875" alt="ClipStitch macOS 앱 창. 왼쪽 사이드바에 이어붙인 조각 3개의 썸네일, 가운데 캔버스에 채팅 형태로 이어붙인 결과, 상단에 '감시 중' 표시와 '자동 추가' 토글, 하단에 정렬·클립보드로 복사·내보내기 버튼이 보입니다.">
@@ -532,10 +543,10 @@
       <div class="cta-row">
         <a class="badge" href="https://apps.apple.com/app/id6782062390" target="_blank" rel="noopener" aria-label="App Store에서 다운로드 (곧 제공)">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.1 12.7c0-1.8 1.4-2.7 1.5-2.8-.8-1.2-2.1-1.4-2.5-1.4-1.1-.1-2.1.6-2.6.6-.5 0-1.4-.6-2.3-.6-1.2 0-2.3.7-2.9 1.8-1.2 2.2-.3 5.4.9 7.1.6.9 1.3 1.8 2.2 1.8.9 0 1.2-.6 2.3-.6 1.1 0 1.4.6 2.3.6.9 0 1.6-.9 2.2-1.8.4-.6.6-1.2.8-1.8-1.7-.7-1.9-2.4-1.9-2.7zM15.3 6.6c.5-.6.8-1.4.7-2.2-.7 0-1.5.5-2 1.1-.4.5-.8 1.3-.7 2.1.8.1 1.5-.4 2-1z"/></svg>
-          <span><span class="b1">곧 출시 예정</span><span class="b2">App Store</span></span>
+          <span><span class="b1">App Store에서</span><span class="b2">App Store</span></span>
         </a>
       </div>
-      <p class="badge-note" style="color:#8a90a0;">현재 App Store 심사 중입니다 — 승인되면 바로 열립니다.</p>
+      <p class="badge-note" style="color:#8a90a0;">App Store에서 지금 받을 수 있습니다.</p>
     </div>
   </section>
 
@@ -558,7 +569,8 @@
 <hr class="nojs-divider">
 
 <!-- ============ ENGLISH ============ -->
-<section class="lang-en">
+
+<section class="lang" data-lang="en">
   <header class="hero">
     <div class="wrap">
       <div class="brand">
@@ -570,12 +582,12 @@
       <h1>Copy a screenshot and it stitches automatically.</h1>
       <p class="lede">Long web pages, chat threads, documents, and code that don't fit one screen — capture them in pieces and ClipStitch watches your clipboard and stitches them into one tall image. No opening an app and picking photos.</p>
       <div class="cta-row">
-        <a class="badge" href="https://apps.apple.com/app/id6782062390" target="_blank" rel="noopener" aria-label="Download on the App Store (coming soon)">
+        <a class="badge" href="https://apps.apple.com/app/id6782062390" target="_blank" rel="noopener" aria-label="Download on the App Store">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.1 12.7c0-1.8 1.4-2.7 1.5-2.8-.8-1.2-2.1-1.4-2.5-1.4-1.1-.1-2.1.6-2.6.6-.5 0-1.4-.6-2.3-.6-1.2 0-2.3.7-2.9 1.8-1.2 2.2-.3 5.4.9 7.1.6.9 1.3 1.8 2.2 1.8.9 0 1.2-.6 2.3-.6 1.1 0 1.4.6 2.3.6.9 0 1.6-.9 2.2-1.8.4-.6.6-1.2.8-1.8-1.7-.7-1.9-2.4-1.9-2.7zM15.3 6.6c.5-.6.8-1.4.7-2.2-.7 0-1.5.5-2 1.1-.4.5-.8 1.3-.7 2.1.8.1 1.5-.4 2-1z"/></svg>
-          <span><span class="b1">Coming soon</span><span class="b2">App Store</span></span>
+          <span><span class="b1">Download on the</span><span class="b2">App Store</span></span>
         </a>
       </div>
-      <p class="badge-note">In review on the App Store — opens once approved.</p>
+      <p class="badge-note">Available now on the App Store.</p>
 
       <figure class="hero-shot">
         <img src="shots/mac-result-en.png" width="1400" height="875" alt="ClipStitch macOS app window. A left sidebar shows three stitched-piece thumbnails, the main canvas shows a stitched chat-style result, the toolbar shows a 'Watching' indicator and an 'Auto-add' toggle, and the bottom bar has alignment, Copy to Clipboard, and Export controls.">
@@ -806,12 +818,12 @@
       <h2>Give it a try</h2>
       <p>Copy and it stitches, export and you're done. The core features are free.</p>
       <div class="cta-row">
-        <a class="badge" href="https://apps.apple.com/app/id6782062390" target="_blank" rel="noopener" aria-label="Download on the App Store (coming soon)">
+        <a class="badge" href="https://apps.apple.com/app/id6782062390" target="_blank" rel="noopener" aria-label="Download on the App Store">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.1 12.7c0-1.8 1.4-2.7 1.5-2.8-.8-1.2-2.1-1.4-2.5-1.4-1.1-.1-2.1.6-2.6.6-.5 0-1.4-.6-2.3-.6-1.2 0-2.3.7-2.9 1.8-1.2 2.2-.3 5.4.9 7.1.6.9 1.3 1.8 2.2 1.8.9 0 1.2-.6 2.3-.6 1.1 0 1.4.6 2.3.6.9 0 1.6-.9 2.2-1.8.4-.6.6-1.2.8-1.8-1.7-.7-1.9-2.4-1.9-2.7zM15.3 6.6c.5-.6.8-1.4.7-2.2-.7 0-1.5.5-2 1.1-.4.5-.8 1.3-.7 2.1.8.1 1.5-.4 2-1z"/></svg>
-          <span><span class="b1">Coming soon</span><span class="b2">App Store</span></span>
+          <span><span class="b1">Download on the</span><span class="b2">App Store</span></span>
         </a>
       </div>
-      <p class="badge-note" style="color:#8a90a0;">In review on the App Store — opens once approved.</p>
+      <p class="badge-note" style="color:#8a90a0;">Available now on the App Store.</p>
     </div>
   </section>
 
@@ -831,21 +843,1950 @@
   </footer>
 </section>
 
+<section class="lang" data-lang="ja">
+  <header class="hero">
+    <div class="wrap">
+      <div class="brand">
+        <span class="mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="7" rx="1.6"/><rect x="4" y="14" width="16" height="7" rx="1.6"/></svg>
+        </span>
+        <span class="name">ClipStitch</span>
+      </div>
+      <h1>スクリーンショットをコピーするだけで、自動的につながる。</h1>
+      <p class="lede">1画面に収まらない長いWebページ、チャット、書類、コード。分けて撮れば、ClipStitch がクリップボードを見張って1枚の長い画像に連結します。アプリを開いて写真を選ぶ必要はありません。</p>
+      <div class="cta-row">
+        <a class="badge" href="https://apps.apple.com/app/id6782062390" target="_blank" rel="noopener" aria-label="App Store でダウンロード">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.1 12.7c0-1.8 1.4-2.7 1.5-2.8-.8-1.2-2.1-1.4-2.5-1.4-1.1-.1-2.1.6-2.6.6-.5 0-1.4-.6-2.3-.6-1.2 0-2.3.7-2.9 1.8-1.2 2.2-.3 5.4.9 7.1.6.9 1.3 1.8 2.2 1.8.9 0 1.2-.6 2.3-.6 1.1 0 1.4.6 2.3.6.9 0 1.6-.9 2.2-1.8.4-.6.6-1.2.8-1.8-1.7-.7-1.9-2.4-1.9-2.7zM15.3 6.6c.5-.6.8-1.4.7-2.2-.7 0-1.5.5-2 1.1-.4.5-.8 1.3-.7 2.1.8.1 1.5-.4 2-1z"/></svg>
+          <span><span class="b1">ダウンロード</span><span class="b2">App Store</span></span>
+        </a>
+      </div>
+      <p class="badge-note">App Store で配信中。</p>
+
+      <figure class="hero-shot">
+        <img src="shots/mac-result-en.png" width="1400" height="875" alt="ClipStitch の macOS アプリウインドウ。左のサイドバーに連結した断片のサムネイルが3つ並び、中央のキャンバスにチャット風の連結結果、ツールバーに「監視中」表示と「自動追加」トグル、下部バーに配置・クリップボードにコピー・書き出しのコントロールがある。">
+      </figure>
+
+      <div class="pill-row">
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>macOS メニューバーアプリ</span>
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>iPhone・iPad</span>
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>すべて端末内で処理</span>
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>広告なし・トラッキングなし</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- How it works -->
+  <section class="block" data-lang="ja">
+    <div class="wrap">
+      <p class="eyebrow">使い方</p>
+      <h2 class="sec-h">コピー、連結、書き出し</h2>
+      <p class="sec-sub">手順は3つだけ。撮った順に連結され、サムネイルでいつでも並べ替えられます。</p>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>コピー</h3>
+          <p>長い画面を上から順に分けて撮り、それぞれクリップボードにコピーします。macOS ならショートカット ⌃⌘A ひとつ。</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>連結</h3>
+          <p>ClipStitch がクリップボードを監視し、新しいスクリーンショットを追加して1枚の長い画像に連結します。同じ画像を2回コピーしても重複は除外されます。</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>書き出し</h3>
+          <p>PNG・JPEG・PDF で保存、クリップボードにコピー、写真に保存。配置と順番はライブプレビューでそのまま確認できます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Free features -->
+  <section class="block" style="padding-top:0;" data-lang="ja">
+    <div class="wrap">
+      <p class="eyebrow">無料の機能</p>
+      <h2 class="sec-h">基本機能はずっと無料</h2>
+      <p class="sec-sub">毎日使うために必要なものは、最初からすべて揃っています。</p>
+      <div class="grid">
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="4" rx="1"/><path d="M9 4H6a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-3"/></svg></div>
+          <h3>クリップボードの自動取り込み</h3>
+          <p>macOS はバックグラウンドで監視し、iOS は戻った瞬間に新しいスクリーンショットを検出します。</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+          <h3>ライブプレビューと並べ替え</h3>
+          <p>サムネイルをドラッグして並べ替えや削除ができ、結果はリアルタイムで更新されます。</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="6" x2="3" y2="6"/><line x1="15" y1="12" x2="3" y2="12"/><line x1="17" y1="18" x2="3" y2="18"/></svg></div>
+          <h3>配置</h3>
+          <p>左・中央・右に揃えるか、すべての断片を最も広い幅に合わせて拡大します。</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+          <h3>重複ガード</h3>
+          <p>同じ画像を2回コピーしても ClipStitch が除外するので、連結結果がきれいなままです。</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+          <h3>ドラッグ&amp;ドロップ</h3>
+          <p>手元にある画像ファイルをそのまま追加して、キャプチャと一緒に連結できます。</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v6h6"/><path d="M3 13a9 9 0 1 0 3-7.7L3 8"/></svg></div>
+          <h3>取り消しとやり直し</h3>
+          <p>どの操作も取り消し・やり直しができるので、気軽に試せます。</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><polyline points="8 7 12 3 16 7"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
+          <h3>どこへでも書き出し</h3>
+          <p>PNG・JPEG・PDF で保存、クリップボードにコピー、写真に保存。</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="2" y1="8" x2="22" y2="8"/><circle cx="18" cy="5.5" r="1"/></svg></div>
+          <h3>macOS メニューバー</h3>
+          <p>メニューバーに常駐し、グローバルショートカットとログイン時起動に対応。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showcase -->
+  <section class="showcase" data-lang="ja">
+    <div class="wrap">
+      <p class="eyebrow">すべてのデバイス</p>
+      <h2 class="sec-h">Mac でも iPhone でも iPad でも</h2>
+      <p class="sec-sub">メニューバーから素早く、手元では気軽に。同じ流れがどこでも続きます。</p>
+      <div class="show-grid">
+        <figure class="show-card mac">
+          <div class="frame mac">
+            <img src="shots/mac-empty-en.png" width="1400" height="875" loading="lazy" alt="ClipStitch の macOS 空の状態。中央に「画面をキャプチャすると自動で連結されます」というメッセージと、Control-Command-A でクリップボードにコピーするヒントが表示され、サイドバーには「断片なし」と出ている。">
+          </div>
+          <figcaption><strong>macOS メニューバーアプリ</strong>グローバルショートカットとログイン時起動で、コピーした瞬間から連結が始まります。</figcaption>
+        </figure>
+        <div class="mobile-pair">
+          <figure class="show-card">
+            <div class="frame phone">
+              <img src="shots/iphone-result-en.png" width="1320" height="2868" loading="lazy" alt="iPhone の ClipStitch。上部のコントロール行に断片の数と「自動追加」トグル、画面いっぱいにチャット風の長い連結結果、下部にサムネイル列と配置・書き出しバーが並ぶ。">
+            </div>
+            <figcaption><strong>iPhone</strong>戻ると自動で検出。</figcaption>
+          </figure>
+          <figure class="show-card">
+            <div class="frame pad">
+              <img src="shots/ipad-result-en.png" width="1200" height="1600" loading="lazy" alt="iPad の ClipStitch。大きなキャンバスに連結結果を表示している。">
+            </div>
+            <figcaption><strong>iPad</strong>大きなキャンバスで編集。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pro -->
+  <section class="pro-wrap" data-lang="ja">
+    <div class="wrap">
+      <div class="pro-card">
+        <span class="pro-tag">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 7l4 4 5-6 5 6 4-4v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>
+          ClipStitch Pro
+        </span>
+        <h2>Pro でさらに深く</h2>
+        <p class="pro-lede">必要なときに使える強力な機能を、ひとつのアップグレードに。基本機能はずっと無料です。</p>
+        <span class="pro-once">買い切り、ずっとあなたのもの — サブスクではありません</span>
+        <div class="pro-grid">
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v4M3 5h4M6 17v4M4 19h4"/><path d="M13 3l2.5 6.5L22 12l-6.5 2.5L13 21l-2.5-6.5L4 12l6.5-2.5z"/></svg></div>
+            <h3>スマート連結</h3>
+            <p>断片どうしの重なりを自動で検出して取り除き、継ぎ目なくつなげます。</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V5a1 1 0 0 1 1-1h2M20 7V5a1 1 0 0 0-1-1h-2M4 17v2a1 1 0 0 0 1 1h2M20 17v2a1 1 0 0 1-1 1h-2"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="14" y2="13"/></svg></div>
+            <h3>テキスト抽出</h3>
+            <p>端末内の OCR が文字を読み取り、コピーや検索可能な PDF の書き出しができます。</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><line x1="3" y1="3" x2="21" y2="21"/></svg></div>
+            <h3>マスキング</h3>
+            <p>共有前に、塗りつぶしまたはモザイクで見せたくない部分を隠せます。</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg></div>
+            <h3>レイアウトとトリミング</h3>
+            <p>横方向モードに切り替え、間隔・背景色・上下のトリミングを調整できます。</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+            <h3>Pro の書き出し</h3>
+            <p>余白・グラデーション・影を付けた画像に加えて、複数ページ PDF とドラッグ&amp;ドロップ。</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+            <h3>プロジェクト</h3>
+            <p>複数のプロジェクトを保存して、いつでも切り替えられます。</p>
+          </div>
+        </div>
+        <p class="pro-foot">Pro は買い切りです — 月額も年額もありません。無料の機能は、これからもずっと無料です。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block" style="padding-top:0;" data-lang="ja">
+    <div class="wrap">
+      <p class="eyebrow">よくある質問</p>
+      <h2 class="sec-h">よくある質問</h2>
+      <div class="faq">
+        <details>
+          <summary>サブスクリプションですか？<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>いいえ。ClipStitch Pro は買い切りで、ずっとあなたのものです。継続課金はありません。</p>
+        </details>
+        <details>
+          <summary>オフラインでも動きますか？<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>はい。すべて端末内で完結し、ネットワークコードは一切ないため、インターネットがなくてもまったく同じように動作します。</p>
+        </details>
+        <details>
+          <summary>データは安全ですか？<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>クリップボードの内容は端末内にとどまり、外部に送信されることはありません。監視中のみ読み取り、広告・トラッキング・アカウントもありません。App Store のプライバシー表示は「データを収集していません」です。</p>
+        </details>
+        <details>
+          <summary>対応プラットフォームは？<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>macOS(メニューバーアプリ、グローバルショートカット、ログイン時起動)と iOS(iPhone・iPad)。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy -->
+  <section class="privacy" data-lang="ja">
+    <div class="wrap">
+      <p class="eyebrow" style="color:#8fd1a6;">プライバシー</p>
+      <h2 class="sec-h">クリップボードは端末の中に</h2>
+      <p class="sec-sub">プライバシーは後付けの機能ではなく、ClipStitch の作りそのものです。</p>
+      <div class="priv-grid">
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+          <div><h3>ネットワークコードなし</h3><p>ネットワークコードが一切ないため、クリップボードが外部に送られることはありません。</p></div>
+        </div>
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
+          <div><h3>監視中のみ読み取り</h3><p>クリップボードを読むのは監視がオンのときだけ。それ以外は触れません。</p></div>
+        </div>
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="5" y1="5" x2="19" y2="19"/></svg></span>
+          <div><h3>広告もトラッキングもなし</h3><p>広告なし、トラッキングなし、アカウントなし。ただの道具です。</p></div>
+        </div>
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+          <div><h3>端末内で処理</h3><p>OCR を含め、すべての処理が端末内で完結します。</p></div>
+        </div>
+      </div>
+      <span class="priv-label">App Store のプライバシー: データを収集していません</span>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final" data-lang="ja">
+    <div class="wrap">
+      <h2>使ってみる</h2>
+      <p>コピーすれば連結、書き出せば完成。基本機能は無料です。</p>
+      <div class="cta-row">
+        <a class="badge" href="https://apps.apple.com/app/id6782062390" target="_blank" rel="noopener" aria-label="App Store でダウンロード">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.1 12.7c0-1.8 1.4-2.7 1.5-2.8-.8-1.2-2.1-1.4-2.5-1.4-1.1-.1-2.1.6-2.6.6-.5 0-1.4-.6-2.3-.6-1.2 0-2.3.7-2.9 1.8-1.2 2.2-.3 5.4.9 7.1.6.9 1.3 1.8 2.2 1.8.9 0 1.2-.6 2.3-.6 1.1 0 1.4.6 2.3.6.9 0 1.6-.9 2.2-1.8.4-.6.6-1.2.8-1.8-1.7-.7-1.9-2.4-1.9-2.7zM15.3 6.6c.5-.6.8-1.4.7-2.2-.7 0-1.5.5-2 1.1-.4.5-.8 1.3-.7 2.1.8.1 1.5-.4 2-1z"/></svg>
+          <span><span class="b1">ダウンロード</span><span class="b2">App Store</span></span>
+        </a>
+      </div>
+      <p class="badge-note" style="color:#8a90a0;">App Store で配信中。</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap foot-in">
+      <div class="foot-brand">
+        <span class="mark" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="7" rx="1.6"/><rect x="4" y="14" width="16" height="7" rx="1.6"/></svg></span>
+        ClipStitch
+      </div>
+      <nav class="foot-links" aria-label="フッター">
+        <a href="privacy.html">プライバシーポリシー</a>
+        <a href="support.html">サポート</a>
+        <a href="mailto:chungkil.cksw@gmail.com">お問い合わせ</a>
+      </nav>
+      <p class="foot-copy">© 2026 CHUNGKIL KIM. All rights reserved.</p>
+    </div>
+  </footer>
+</section>
+
+<section class="lang" data-lang="zh-Hans">
+  <header class="hero">
+    <div class="wrap">
+      <div class="brand">
+        <span class="mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="7" rx="1.6"/><rect x="4" y="14" width="16" height="7" rx="1.6"/></svg>
+        </span>
+        <span class="name">ClipStitch</span>
+      </div>
+      <h1>复制截图，它就自动拼接。</h1>
+      <p class="lede">一屏放不下的长网页、聊天记录、文档和代码，分段截取即可 —— ClipStitch 监视剪贴板，把它们拼成一张长图。不用打开 App 挑选照片。</p>
+      <div class="cta-row">
+        <a class="badge" href="https://apps.apple.com/app/id6782062390" target="_blank" rel="noopener" aria-label="在 App Store 下载">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.1 12.7c0-1.8 1.4-2.7 1.5-2.8-.8-1.2-2.1-1.4-2.5-1.4-1.1-.1-2.1.6-2.6.6-.5 0-1.4-.6-2.3-.6-1.2 0-2.3.7-2.9 1.8-1.2 2.2-.3 5.4.9 7.1.6.9 1.3 1.8 2.2 1.8.9 0 1.2-.6 2.3-.6 1.1 0 1.4.6 2.3.6.9 0 1.6-.9 2.2-1.8.4-.6.6-1.2.8-1.8-1.7-.7-1.9-2.4-1.9-2.7zM15.3 6.6c.5-.6.8-1.4.7-2.2-.7 0-1.5.5-2 1.1-.4.5-.8 1.3-.7 2.1.8.1 1.5-.4 2-1z"/></svg>
+          <span><span class="b1">立即下载</span><span class="b2">App Store</span></span>
+        </a>
+      </div>
+      <p class="badge-note">已在 App Store 上架。</p>
+
+      <figure class="hero-shot">
+        <img src="shots/mac-result-en.png" width="1400" height="875" alt="ClipStitch 的 macOS 应用窗口。左侧边栏显示三个拼接片段的缩略图，主画布显示聊天风格的拼接结果，工具栏显示「监视中」指示和「自动添加」开关，底部栏有对齐、复制到剪贴板和导出控件。">
+      </figure>
+
+      <div class="pill-row">
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>macOS 菜单栏应用</span>
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>iPhone 与 iPad</span>
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>全部在设备上完成</span>
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>无广告、无追踪</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- How it works -->
+  <section class="block" data-lang="zh-Hans">
+    <div class="wrap">
+      <p class="eyebrow">如何使用</p>
+      <h2 class="sec-h">复制、拼接、导出</h2>
+      <p class="sec-sub">只有三步。片段按你截取的顺序拼接，随时可以用缩略图重新排序。</p>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>复制</h3>
+          <p>把长画面从上到下分段截取，逐张复制到剪贴板。在 macOS 上只需一个快捷键：⌃⌘A。</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>拼接</h3>
+          <p>ClipStitch 监视剪贴板，把每张新截图加入并拼成一张长图。同一张复制两次，重复的会被过滤掉。</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>导出</h3>
+          <p>存储为 PNG、JPEG 或 PDF，复制到剪贴板，或存储到照片。对齐和顺序都能在实时预览里确认。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Free features -->
+  <section class="block" style="padding-top:0;" data-lang="zh-Hans">
+    <div class="wrap">
+      <p class="eyebrow">免费功能</p>
+      <h2 class="sec-h">核心功能始终免费</h2>
+      <p class="sec-sub">日常所需的一切，从一开始就都在。</p>
+      <div class="grid">
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="4" rx="1"/><path d="M9 4H6a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-3"/></svg></div>
+          <h3>自动捕获剪贴板</h3>
+          <p>macOS 在后台监视；iOS 在你返回的瞬间检测到新截图。</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+          <h3>实时预览与排序</h3>
+          <p>拖动缩略图即可重新排序或删除片段，结果实时更新。</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="6" x2="3" y2="6"/><line x1="15" y1="12" x2="3" y2="12"/><line x1="17" y1="18" x2="3" y2="18"/></svg></div>
+          <h3>对齐</h3>
+          <p>左对齐、居中或右对齐 —— 也可以把每个片段缩放到最宽的那张。</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+          <h3>重复防护</h3>
+          <p>同一张复制两次，ClipStitch 会过滤掉，拼接结果保持干净。</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+          <h3>拖放</h3>
+          <p>把已有的图像文件拖进来，和你的截图一起拼接。</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v6h6"/><path d="M3 13a9 9 0 1 0 3-7.7L3 8"/></svg></div>
+          <h3>撤销与重做</h3>
+          <p>任何更改都能撤销或重做，放心尝试。</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><polyline points="8 7 12 3 16 7"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
+          <h3>随处导出</h3>
+          <p>存储为 PNG、JPEG 或 PDF，复制到剪贴板，或存储到照片。</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="2" y1="8" x2="22" y2="8"/><circle cx="18" cy="5.5" r="1"/></svg></div>
+          <h3>macOS 菜单栏</h3>
+          <p>常驻菜单栏，支持全局快捷键和登录时启动。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showcase -->
+  <section class="showcase" data-lang="zh-Hans">
+    <div class="wrap">
+      <p class="eyebrow">所有设备</p>
+      <h2 class="sec-h">Mac、iPhone 和 iPad 上都能用</h2>
+      <p class="sec-sub">在菜单栏上快，在手里也轻松。同样的流程，随处相伴。</p>
+      <div class="show-grid">
+        <figure class="show-card mac">
+          <div class="frame mac">
+            <img src="shots/mac-empty-en.png" width="1400" height="875" loading="lazy" alt="ClipStitch 的 macOS 空状态。居中的信息写着「截取画面即自动拼接」，并提示用 Control-Command-A 复制到剪贴板；侧边栏显示「没有片段」。">
+          </div>
+          <figcaption><strong>macOS 菜单栏应用</strong>全局快捷键加登录时启动，复制的瞬间就开始拼接。</figcaption>
+        </figure>
+        <div class="mobile-pair">
+          <figure class="show-card">
+            <div class="frame phone">
+              <img src="shots/iphone-result-en.png" width="1320" height="2868" loading="lazy" alt="iPhone 上的 ClipStitch。顶部控制行显示片段数量和「自动添加」开关，聊天风格的长拼接结果铺满屏幕，底部是缩略图条以及对齐和导出栏。">
+            </div>
+            <figcaption><strong>iPhone</strong>返回即自动检测。</figcaption>
+          </figure>
+          <figure class="show-card">
+            <div class="frame pad">
+              <img src="shots/ipad-result-en.png" width="1200" height="1600" loading="lazy" alt="iPad 上的 ClipStitch，在更大的画布上显示拼接结果。">
+            </div>
+            <figcaption><strong>iPad</strong>在大画布上编辑。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pro -->
+  <section class="pro-wrap" data-lang="zh-Hans">
+    <div class="wrap">
+      <div class="pro-card">
+        <span class="pro-tag">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 7l4 4 5-6 5 6 4-4v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>
+          ClipStitch Pro
+        </span>
+        <h2>用 Pro 走得更远</h2>
+        <p class="pro-lede">需要时随手可用的强大工具，一次升级全部到手。核心功能始终免费。</p>
+        <span class="pro-once">一次购买，永久拥有 —— 不是订阅</span>
+        <div class="pro-grid">
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v4M3 5h4M6 17v4M4 19h4"/><path d="M13 3l2.5 6.5L22 12l-6.5 2.5L13 21l-2.5-6.5L4 12l6.5-2.5z"/></svg></div>
+            <h3>智能拼接</h3>
+            <p>自动检测并移除片段之间的重叠区域，接缝自然。</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V5a1 1 0 0 1 1-1h2M20 7V5a1 1 0 0 0-1-1h-2M4 17v2a1 1 0 0 0 1 1h2M20 17v2a1 1 0 0 1-1 1h-2"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="14" y2="13"/></svg></div>
+            <h3>提取文字</h3>
+            <p>设备端 OCR 读出文字，可以复制或导出可搜索 PDF。</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><line x1="3" y1="3" x2="21" y2="21"/></svg></div>
+            <h3>遮盖</h3>
+            <p>分享前用纯色或马赛克遮住敏感区域。</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg></div>
+            <h3>布局与裁剪</h3>
+            <p>切换到横向模式，调整间距、背景色以及上下裁剪。</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+            <h3>Pro 导出</h3>
+            <p>带边距、渐变和阴影的样式图像，还有多页 PDF 和拖放。</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+            <h3>项目</h3>
+            <p>保存多个项目并随时切换。</p>
+          </div>
+        </div>
+        <p class="pro-foot">Pro 是一次性购买 —— 没有月费或年费。免费功能也会一直免费。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block" style="padding-top:0;" data-lang="zh-Hans">
+    <div class="wrap">
+      <p class="eyebrow">常见问题</p>
+      <h2 class="sec-h">常见问题</h2>
+      <div class="faq">
+        <details>
+          <summary>这是订阅制吗？<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>不是。ClipStitch Pro 是一次性购买，永久属于你，没有任何重复扣费。</p>
+        </details>
+        <details>
+          <summary>离线也能用吗？<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>可以。一切都在你的设备上完成 —— 完全没有网络代码 —— 所以没有网络时也一模一样。</p>
+        </details>
+        <details>
+          <summary>我的数据安全吗？<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>剪贴板内容留在你的设备上，绝不发送到任何地方。仅在监视时读取，也没有广告、追踪或账户。App Store 隐私标签为「未收集数据」。</p>
+        </details>
+        <details>
+          <summary>支持哪些平台？<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>macOS(菜单栏应用、全局快捷键、登录时启动)和 iOS(iPhone 与 iPad)。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy -->
+  <section class="privacy" data-lang="zh-Hans">
+    <div class="wrap">
+      <p class="eyebrow" style="color:#8fd1a6;">隐私</p>
+      <h2 class="sec-h">剪贴板留在你的设备上</h2>
+      <p class="sec-sub">隐私不是后来加上的功能，而是 ClipStitch 的构建方式。</p>
+      <div class="priv-grid">
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+          <div><h3>没有网络代码</h3><p>完全没有网络代码，你的剪贴板绝不会被发送到任何地方。</p></div>
+        </div>
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
+          <div><h3>仅在监视时读取</h3><p>只有监视开启时才读取剪贴板，其余时候完全不碰。</p></div>
+        </div>
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="5" y1="5" x2="19" y2="19"/></svg></span>
+          <div><h3>无广告无追踪</h3><p>没有广告、没有追踪、没有账户。它只是一件工具。</p></div>
+        </div>
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+          <div><h3>设备端处理</h3><p>包括 OCR 在内，一切都在你的设备上完成。</p></div>
+        </div>
+      </div>
+      <span class="priv-label">App Store 隐私：未收集数据</span>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final" data-lang="zh-Hans">
+    <div class="wrap">
+      <h2>来试试看</h2>
+      <p>复制即拼接，导出即完成。核心功能免费。</p>
+      <div class="cta-row">
+        <a class="badge" href="https://apps.apple.com/app/id6782062390" target="_blank" rel="noopener" aria-label="在 App Store 下载">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.1 12.7c0-1.8 1.4-2.7 1.5-2.8-.8-1.2-2.1-1.4-2.5-1.4-1.1-.1-2.1.6-2.6.6-.5 0-1.4-.6-2.3-.6-1.2 0-2.3.7-2.9 1.8-1.2 2.2-.3 5.4.9 7.1.6.9 1.3 1.8 2.2 1.8.9 0 1.2-.6 2.3-.6 1.1 0 1.4.6 2.3.6.9 0 1.6-.9 2.2-1.8.4-.6.6-1.2.8-1.8-1.7-.7-1.9-2.4-1.9-2.7zM15.3 6.6c.5-.6.8-1.4.7-2.2-.7 0-1.5.5-2 1.1-.4.5-.8 1.3-.7 2.1.8.1 1.5-.4 2-1z"/></svg>
+          <span><span class="b1">立即下载</span><span class="b2">App Store</span></span>
+        </a>
+      </div>
+      <p class="badge-note" style="color:#8a90a0;">已在 App Store 上架。</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap foot-in">
+      <div class="foot-brand">
+        <span class="mark" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="7" rx="1.6"/><rect x="4" y="14" width="16" height="7" rx="1.6"/></svg></span>
+        ClipStitch
+      </div>
+      <nav class="foot-links" aria-label="页脚">
+        <a href="privacy.html">隐私政策</a>
+        <a href="support.html">支持</a>
+        <a href="mailto:chungkil.cksw@gmail.com">联系我们</a>
+      </nav>
+      <p class="foot-copy">© 2026 CHUNGKIL KIM. All rights reserved.</p>
+    </div>
+  </footer>
+</section>
+
+<section class="lang" data-lang="zh-Hant">
+  <header class="hero">
+    <div class="wrap">
+      <div class="brand">
+        <span class="mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="7" rx="1.6"/><rect x="4" y="14" width="16" height="7" rx="1.6"/></svg>
+        </span>
+        <span class="name">ClipStitch</span>
+      </div>
+      <h1>複製截圖，它就自動拼接。</h1>
+      <p class="lede">一個畫面放不下的長網頁、聊天記錄、文件和程式碼，分段擷取即可 —— ClipStitch 監看剪貼簿，把它們拼成一張長圖。不用打開 App 挑選照片。</p>
+      <div class="cta-row">
+        <a class="badge" href="https://apps.apple.com/app/id6782062390" target="_blank" rel="noopener" aria-label="在 App Store 下載">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.1 12.7c0-1.8 1.4-2.7 1.5-2.8-.8-1.2-2.1-1.4-2.5-1.4-1.1-.1-2.1.6-2.6.6-.5 0-1.4-.6-2.3-.6-1.2 0-2.3.7-2.9 1.8-1.2 2.2-.3 5.4.9 7.1.6.9 1.3 1.8 2.2 1.8.9 0 1.2-.6 2.3-.6 1.1 0 1.4.6 2.3.6.9 0 1.6-.9 2.2-1.8.4-.6.6-1.2.8-1.8-1.7-.7-1.9-2.4-1.9-2.7zM15.3 6.6c.5-.6.8-1.4.7-2.2-.7 0-1.5.5-2 1.1-.4.5-.8 1.3-.7 2.1.8.1 1.5-.4 2-1z"/></svg>
+          <span><span class="b1">立即下載</span><span class="b2">App Store</span></span>
+        </a>
+      </div>
+      <p class="badge-note">已在 App Store 上架。</p>
+
+      <figure class="hero-shot">
+        <img src="shots/mac-result-en.png" width="1400" height="875" alt="ClipStitch 的 macOS App 視窗。左側邊欄顯示三個拼接片段的縮圖，主畫布顯示聊天風格的拼接結果，工具列顯示「監看中」指示和「自動加入」開關，底部列有對齊、複製到剪貼簿和匯出控制項。">
+      </figure>
+
+      <div class="pill-row">
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>macOS 選單列 App</span>
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>iPhone 與 iPad</span>
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>全部在裝置上完成</span>
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>無廣告、無追蹤</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- How it works -->
+  <section class="block" data-lang="zh-Hant">
+    <div class="wrap">
+      <p class="eyebrow">如何使用</p>
+      <h2 class="sec-h">複製、拼接、匯出</h2>
+      <p class="sec-sub">只有三步。片段依你擷取的順序拼接，隨時可以用縮圖重新排序。</p>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>複製</h3>
+          <p>把長畫面從上到下分段擷取，逐張複製到剪貼簿。在 macOS 上只需一個快速鍵：⌃⌘A。</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>拼接</h3>
+          <p>ClipStitch 監看剪貼簿，把每張新截圖加入並拼成一張長圖。同一張複製兩次，重複的會被過濾掉。</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>匯出</h3>
+          <p>儲存為 PNG、JPEG 或 PDF，複製到剪貼簿，或儲存到「照片」。對齊和順序都能在即時預覽裡確認。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Free features -->
+  <section class="block" style="padding-top:0;" data-lang="zh-Hant">
+    <div class="wrap">
+      <p class="eyebrow">免費功能</p>
+      <h2 class="sec-h">核心功能永遠免費</h2>
+      <p class="sec-sub">日常所需的一切，從一開始就都在。</p>
+      <div class="grid">
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="4" rx="1"/><path d="M9 4H6a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-3"/></svg></div>
+          <h3>自動擷取剪貼簿</h3>
+          <p>macOS 在背景監看；iOS 在你返回的瞬間偵測到新截圖。</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+          <h3>即時預覽與排序</h3>
+          <p>拖曳縮圖即可重新排序或刪除片段，結果即時更新。</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="6" x2="3" y2="6"/><line x1="15" y1="12" x2="3" y2="12"/><line x1="17" y1="18" x2="3" y2="18"/></svg></div>
+          <h3>對齊</h3>
+          <p>靠左、置中或靠右 —— 也可以把每個片段縮放到最寬的那張。</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+          <h3>重複防護</h3>
+          <p>同一張複製兩次，ClipStitch 會過濾掉，拼接結果保持乾淨。</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+          <h3>拖放</h3>
+          <p>把已有的圖片檔案拖進來，和你的截圖一起拼接。</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v6h6"/><path d="M3 13a9 9 0 1 0 3-7.7L3 8"/></svg></div>
+          <h3>復原與重做</h3>
+          <p>任何變更都能復原或重做，放心嘗試。</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><polyline points="8 7 12 3 16 7"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
+          <h3>隨處匯出</h3>
+          <p>儲存為 PNG、JPEG 或 PDF，複製到剪貼簿，或儲存到「照片」。</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="2" y1="8" x2="22" y2="8"/><circle cx="18" cy="5.5" r="1"/></svg></div>
+          <h3>macOS 選單列</h3>
+          <p>常駐選單列，支援全域快速鍵和登入時啟動。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showcase -->
+  <section class="showcase" data-lang="zh-Hant">
+    <div class="wrap">
+      <p class="eyebrow">所有裝置</p>
+      <h2 class="sec-h">Mac、iPhone 和 iPad 上都能用</h2>
+      <p class="sec-sub">在選單列上快，在手裡也輕鬆。同樣的流程，隨處相伴。</p>
+      <div class="show-grid">
+        <figure class="show-card mac">
+          <div class="frame mac">
+            <img src="shots/mac-empty-en.png" width="1400" height="875" loading="lazy" alt="ClipStitch 的 macOS 空狀態。置中的訊息寫著「擷取畫面即自動拼接」，並提示用 Control-Command-A 複製到剪貼簿；側邊欄顯示「沒有片段」。">
+          </div>
+          <figcaption><strong>macOS 選單列 App</strong>全域快速鍵加上登入時啟動，複製的瞬間就開始拼接。</figcaption>
+        </figure>
+        <div class="mobile-pair">
+          <figure class="show-card">
+            <div class="frame phone">
+              <img src="shots/iphone-result-en.png" width="1320" height="2868" loading="lazy" alt="iPhone 上的 ClipStitch。頂部控制列顯示片段數量和「自動加入」開關，聊天風格的長拼接結果鋪滿螢幕，底部是縮圖列以及對齊和匯出列。">
+            </div>
+            <figcaption><strong>iPhone</strong>返回即自動偵測。</figcaption>
+          </figure>
+          <figure class="show-card">
+            <div class="frame pad">
+              <img src="shots/ipad-result-en.png" width="1200" height="1600" loading="lazy" alt="iPad 上的 ClipStitch，在更大的畫布上顯示拼接結果。">
+            </div>
+            <figcaption><strong>iPad</strong>在大畫布上編輯。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pro -->
+  <section class="pro-wrap" data-lang="zh-Hant">
+    <div class="wrap">
+      <div class="pro-card">
+        <span class="pro-tag">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 7l4 4 5-6 5 6 4-4v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>
+          ClipStitch Pro
+        </span>
+        <h2>用 Pro 走得更遠</h2>
+        <p class="pro-lede">需要時隨手可用的強大工具，一次升級全部到手。核心功能永遠免費。</p>
+        <span class="pro-once">一次購買，永久擁有 —— 不是訂閱</span>
+        <div class="pro-grid">
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v4M3 5h4M6 17v4M4 19h4"/><path d="M13 3l2.5 6.5L22 12l-6.5 2.5L13 21l-2.5-6.5L4 12l6.5-2.5z"/></svg></div>
+            <h3>智慧拼接</h3>
+            <p>自動偵測並移除片段之間的重疊區域，接縫自然。</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V5a1 1 0 0 1 1-1h2M20 7V5a1 1 0 0 0-1-1h-2M4 17v2a1 1 0 0 0 1 1h2M20 17v2a1 1 0 0 1-1 1h-2"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="14" y2="13"/></svg></div>
+            <h3>擷取文字</h3>
+            <p>裝置端 OCR 讀出文字，可以複製或匯出可搜尋 PDF。</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><line x1="3" y1="3" x2="21" y2="21"/></svg></div>
+            <h3>遮蓋</h3>
+            <p>分享前用純色或馬賽克遮住敏感區域。</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg></div>
+            <h3>版面與裁剪</h3>
+            <p>切換到橫向模式，調整間距、背景色以及上下裁剪。</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+            <h3>Pro 匯出</h3>
+            <p>帶邊距、漸層和陰影的樣式圖片，還有多頁 PDF 和拖放。</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+            <h3>專案</h3>
+            <p>儲存多個專案並隨時切換。</p>
+          </div>
+        </div>
+        <p class="pro-foot">Pro 是一次性購買 —— 沒有月費或年費。免費功能也會一直免費。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block" style="padding-top:0;" data-lang="zh-Hant">
+    <div class="wrap">
+      <p class="eyebrow">常見問題</p>
+      <h2 class="sec-h">常見問題</h2>
+      <div class="faq">
+        <details>
+          <summary>這是訂閱制嗎？<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>不是。ClipStitch Pro 是一次性購買，永久屬於你，沒有任何重複扣款。</p>
+        </details>
+        <details>
+          <summary>離線也能用嗎？<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>可以。一切都在你的裝置上完成 —— 完全沒有網路程式碼 —— 所以沒有網路時也一模一樣。</p>
+        </details>
+        <details>
+          <summary>我的資料安全嗎？<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>剪貼簿內容留在你的裝置上，絕不傳送到任何地方。僅在監看時讀取，也沒有廣告、追蹤或帳號。App Store 隱私標示為「未收集資料」。</p>
+        </details>
+        <details>
+          <summary>支援哪些平台？<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>macOS(選單列 App、全域快速鍵、登入時啟動)和 iOS(iPhone 與 iPad)。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy -->
+  <section class="privacy" data-lang="zh-Hant">
+    <div class="wrap">
+      <p class="eyebrow" style="color:#8fd1a6;">隱私</p>
+      <h2 class="sec-h">剪貼簿留在你的裝置上</h2>
+      <p class="sec-sub">隱私不是後來加上的功能，而是 ClipStitch 的打造方式。</p>
+      <div class="priv-grid">
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+          <div><h3>沒有網路程式碼</h3><p>完全沒有網路程式碼，你的剪貼簿絕不會被傳送到任何地方。</p></div>
+        </div>
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
+          <div><h3>僅在監看時讀取</h3><p>只有監看開啟時才讀取剪貼簿，其餘時候完全不碰。</p></div>
+        </div>
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="5" y1="5" x2="19" y2="19"/></svg></span>
+          <div><h3>無廣告無追蹤</h3><p>沒有廣告、沒有追蹤、沒有帳號。它只是一件工具。</p></div>
+        </div>
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+          <div><h3>裝置端處理</h3><p>包括 OCR 在內，一切都在你的裝置上完成。</p></div>
+        </div>
+      </div>
+      <span class="priv-label">App Store 隱私：未收集資料</span>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final" data-lang="zh-Hant">
+    <div class="wrap">
+      <h2>來試試看</h2>
+      <p>複製即拼接，匯出即完成。核心功能免費。</p>
+      <div class="cta-row">
+        <a class="badge" href="https://apps.apple.com/app/id6782062390" target="_blank" rel="noopener" aria-label="在 App Store 下載">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.1 12.7c0-1.8 1.4-2.7 1.5-2.8-.8-1.2-2.1-1.4-2.5-1.4-1.1-.1-2.1.6-2.6.6-.5 0-1.4-.6-2.3-.6-1.2 0-2.3.7-2.9 1.8-1.2 2.2-.3 5.4.9 7.1.6.9 1.3 1.8 2.2 1.8.9 0 1.2-.6 2.3-.6 1.1 0 1.4.6 2.3.6.9 0 1.6-.9 2.2-1.8.4-.6.6-1.2.8-1.8-1.7-.7-1.9-2.4-1.9-2.7zM15.3 6.6c.5-.6.8-1.4.7-2.2-.7 0-1.5.5-2 1.1-.4.5-.8 1.3-.7 2.1.8.1 1.5-.4 2-1z"/></svg>
+          <span><span class="b1">立即下載</span><span class="b2">App Store</span></span>
+        </a>
+      </div>
+      <p class="badge-note" style="color:#8a90a0;">已在 App Store 上架。</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap foot-in">
+      <div class="foot-brand">
+        <span class="mark" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="7" rx="1.6"/><rect x="4" y="14" width="16" height="7" rx="1.6"/></svg></span>
+        ClipStitch
+      </div>
+      <nav class="foot-links" aria-label="頁尾">
+        <a href="privacy.html">隱私權政策</a>
+        <a href="support.html">技術支援</a>
+        <a href="mailto:chungkil.cksw@gmail.com">聯絡我們</a>
+      </nav>
+      <p class="foot-copy">© 2026 CHUNGKIL KIM. All rights reserved.</p>
+    </div>
+  </footer>
+</section>
+
+<section class="lang" data-lang="de">
+  <header class="hero">
+    <div class="wrap">
+      <div class="brand">
+        <span class="mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="7" rx="1.6"/><rect x="4" y="14" width="16" height="7" rx="1.6"/></svg>
+        </span>
+        <span class="name">ClipStitch</span>
+      </div>
+      <h1>Screenshot kopieren – und er fügt sich automatisch an.</h1>
+      <p class="lede">Lange Webseiten, Chatverläufe, Dokumente und Code, die nicht auf einen Bildschirm passen: Nimm sie in Teilen auf, ClipStitch beobachtet die Zwischenablage und fügt alles zu einem hohen Bild zusammen. Kein Öffnen einer App, kein Auswählen von Fotos.</p>
+      <div class="cta-row">
+        <a class="badge" href="https://apps.apple.com/app/id6782062390" target="_blank" rel="noopener" aria-label="Laden im App Store">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.1 12.7c0-1.8 1.4-2.7 1.5-2.8-.8-1.2-2.1-1.4-2.5-1.4-1.1-.1-2.1.6-2.6.6-.5 0-1.4-.6-2.3-.6-1.2 0-2.3.7-2.9 1.8-1.2 2.2-.3 5.4.9 7.1.6.9 1.3 1.8 2.2 1.8.9 0 1.2-.6 2.3-.6 1.1 0 1.4.6 2.3.6.9 0 1.6-.9 2.2-1.8.4-.6.6-1.2.8-1.8-1.7-.7-1.9-2.4-1.9-2.7zM15.3 6.6c.5-.6.8-1.4.7-2.2-.7 0-1.5.5-2 1.1-.4.5-.8 1.3-.7 2.1.8.1 1.5-.4 2-1z"/></svg>
+          <span><span class="b1">Laden im</span><span class="b2">App Store</span></span>
+        </a>
+      </div>
+      <p class="badge-note">Jetzt im App Store erhältlich.</p>
+
+      <figure class="hero-shot">
+        <img src="shots/mac-result-en.png" width="1400" height="875" alt="ClipStitch-Fenster unter macOS. In der linken Seitenleiste liegen drei Miniaturen zusammengefügter Teile, die Hauptfläche zeigt ein zusammengefügtes Chat-Ergebnis, die Symbolleiste eine Anzeige „Watching“ und einen Schalter „Auto-add“, und die untere Leiste enthält Ausrichtung, In die Zwischenablage kopieren und Export.">
+      </figure>
+
+      <div class="pill-row">
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>macOS Menüleisten-App</span>
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>iPhone &amp; iPad</span>
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Läuft vollständig auf dem Gerät</span>
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Keine Werbung, kein Tracking</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- How it works -->
+  <section class="block" data-lang="de">
+    <div class="wrap">
+      <p class="eyebrow">So funktioniert es</p>
+      <h2 class="sec-h">Kopieren, zusammenfügen, exportieren</h2>
+      <p class="sec-sub">Drei Schritte, mehr nicht. Die Teile werden in der Reihenfolge der Aufnahme zusammengefügt, und über die Miniaturen kannst du jederzeit umsortieren.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Kopieren</h3>
+          <p>Nimm einen langen Bildschirm von oben nach unten in Teilen auf und kopiere jeden Teil in die Zwischenablage. Unter macOS genügt ein Kurzbefehl: ⌃⌘A.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>Zusammenfügen</h3>
+          <p>ClipStitch beobachtet die Zwischenablage, nimmt jeden neuen Screenshot auf und fügt alles zu einem hohen Bild zusammen. Kopierst du dieselbe Aufnahme zweimal, wird das Duplikat aussortiert.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Exportieren</h3>
+          <p>Als PNG, JPEG oder PDF sichern, in die Zwischenablage kopieren oder in Fotos sichern. Ausrichtung und Reihenfolge prüfst du direkt in der Live-Vorschau.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Free features -->
+  <section class="block" style="padding-top:0;" data-lang="de">
+    <div class="wrap">
+      <p class="eyebrow">Kostenlose Funktionen</p>
+      <h2 class="sec-h">Die Kernfunktionen bleiben kostenlos</h2>
+      <p class="sec-sub">Alles, was du im Alltag brauchst, ist von Anfang an dabei.</p>
+      <div class="grid">
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="4" rx="1"/><path d="M9 4H6a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-3"/></svg></div>
+          <h3>Automatische Aufnahme aus der Zwischenablage</h3>
+          <p>macOS beobachtet im Hintergrund, iOS erkennt neue Screenshots in dem Moment, in dem du zurückkehrst.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+          <h3>Live-Vorschau &amp; Umsortieren</h3>
+          <p>Zieh die Miniaturen zum Umsortieren oder Löschen und sieh das Ergebnis in Echtzeit.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="6" x2="3" y2="6"/><line x1="15" y1="12" x2="3" y2="12"/><line x1="17" y1="18" x2="3" y2="18"/></svg></div>
+          <h3>Ausrichtung</h3>
+          <p>Links, mittig oder rechts ausrichten – oder jedes Teil auf die breiteste Aufnahme skalieren.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+          <h3>Duplikatschutz</h3>
+          <p>Kopierst du dieselbe Aufnahme zweimal, sortiert ClipStitch sie aus, damit das Ergebnis sauber bleibt.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+          <h3>Drag and Drop</h3>
+          <p>Zieh vorhandene Bilddateien hinein und füge sie direkt neben deinen Aufnahmen ein.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v6h6"/><path d="M3 13a9 9 0 1 0 3-7.7L3 8"/></svg></div>
+          <h3>Widerrufen &amp; Wiederholen</h3>
+          <p>Jede Änderung lässt sich widerrufen oder wiederholen – experimentiere ohne Sorge.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><polyline points="8 7 12 3 16 7"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
+          <h3>Überall exportieren</h3>
+          <p>Als PNG, JPEG oder PDF sichern, in die Zwischenablage kopieren oder in Fotos sichern.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="2" y1="8" x2="22" y2="8"/><circle cx="18" cy="5.5" r="1"/></svg></div>
+          <h3>macOS Menüleiste</h3>
+          <p>Sitzt in der Menüleiste, mit globalem Kurzbefehl und Start bei der Anmeldung.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showcase -->
+  <section class="showcase" data-lang="de">
+    <div class="wrap">
+      <p class="eyebrow">Jedes Gerät</p>
+      <h2 class="sec-h">Auf Mac, iPhone und iPad</h2>
+      <p class="sec-sub">Schnell aus der Menüleiste, entspannt in der Hand. Derselbe Ablauf begleitet dich überall.</p>
+      <div class="show-grid">
+        <figure class="show-card mac">
+          <div class="frame mac">
+            <img src="shots/mac-empty-en.png" width="1400" height="875" loading="lazy" alt="Leerer Zustand von ClipStitch unter macOS. Eine zentrierte Meldung lautet „Capture your screen and it's stitched automatically“, mit dem Hinweis, mit Control-Command-A in die Zwischenablage zu kopieren; die Seitenleiste zeigt „No pieces“.">
+          </div>
+          <figcaption><strong>macOS Menüleisten-App</strong>Globaler Kurzbefehl und Start bei der Anmeldung: Es fügt zusammen, sobald du kopierst.</figcaption>
+        </figure>
+        <div class="mobile-pair">
+          <figure class="show-card">
+            <div class="frame phone">
+              <img src="shots/iphone-result-en.png" width="1320" height="2868" loading="lazy" alt="ClipStitch auf dem iPhone. Eine obere Steuerzeile zeigt die Anzahl der Teile und einen Schalter „Auto-add“, ein langes zusammengefügtes Chat-Ergebnis füllt den Bildschirm, darunter liegen eine Miniaturleiste sowie eine Leiste für Ausrichtung und Export.">
+            </div>
+            <figcaption><strong>iPhone</strong>Erkennt automatisch bei der Rückkehr.</figcaption>
+          </figure>
+          <figure class="show-card">
+            <div class="frame pad">
+              <img src="shots/ipad-result-en.png" width="1200" height="1600" loading="lazy" alt="ClipStitch auf dem iPad mit einem zusammengefügten Ergebnis auf größerer Fläche.">
+            </div>
+            <figcaption><strong>iPad</strong>Bearbeiten auf großer Fläche.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pro -->
+  <section class="pro-wrap" data-lang="de">
+    <div class="wrap">
+      <div class="pro-card">
+        <span class="pro-tag">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 7l4 4 5-6 5 6 4-4v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>
+          ClipStitch Pro
+        </span>
+        <h2>Mit Pro noch weiter</h2>
+        <p class="pro-lede">Starke Werkzeuge für den Moment, in dem du sie brauchst – alles in einem Upgrade. Die Kernfunktionen bleiben kostenlos.</p>
+        <span class="pro-once">Einmaliger Kauf, für immer deins – kein Abo</span>
+        <div class="pro-grid">
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v4M3 5h4M6 17v4M4 19h4"/><path d="M13 3l2.5 6.5L22 12l-6.5 2.5L13 21l-2.5-6.5L4 12l6.5-2.5z"/></svg></div>
+            <h3>Intelligentes Zusammenfügen</h3>
+            <p>Erkennt Überlappungen zwischen Teilen automatisch und entfernt sie für einen nahtlosen Übergang.</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V5a1 1 0 0 1 1-1h2M20 7V5a1 1 0 0 0-1-1h-2M4 17v2a1 1 0 0 0 1 1h2M20 17v2a1 1 0 0 1-1 1h-2"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="14" y2="13"/></svg></div>
+            <h3>Text extrahieren</h3>
+            <p>Texterkennung auf dem Gerät liest den Text, damit du ihn kopieren oder als durchsuchbares PDF exportieren kannst.</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><line x1="3" y1="3" x2="21" y2="21"/></svg></div>
+            <h3>Schwärzen</h3>
+            <p>Verdecke sensible Bereiche vor dem Teilen mit einer Fläche oder verpixelt.</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg></div>
+            <h3>Layout und Zuschnitt</h3>
+            <p>Wechsle in den horizontalen Modus und passe Abstand, Hintergrundfarbe sowie den Zuschnitt oben und unten an.</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+            <h3>Pro-Export</h3>
+            <p>Gestaltetes Bild mit Rand, Verlauf und Schatten, dazu mehrseitige PDFs und Drag and Drop.</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+            <h3>Projekte</h3>
+            <p>Sichere mehrere Projekte und wechsle jederzeit zwischen ihnen.</p>
+          </div>
+        </div>
+        <p class="pro-foot">Pro ist ein einmaliger Kauf – keine monatlichen oder jährlichen Gebühren. Und die kostenlosen Funktionen bleiben kostenlos, für immer.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block" style="padding-top:0;" data-lang="de">
+    <div class="wrap">
+      <p class="eyebrow">FAQ</p>
+      <h2 class="sec-h">Gute Fragen</h2>
+      <div class="faq">
+        <details>
+          <summary>Ist das ein Abo?<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>Nein. ClipStitch Pro ist ein einmaliger Kauf, der für immer dir gehört. Es gibt keine wiederkehrenden Kosten.</p>
+        </details>
+        <details>
+          <summary>Funktioniert es offline?<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>Ja. Alles passiert auf deinem Gerät – es gibt überhaupt keinen Netzwerkcode – also funktioniert es ohne Internet genauso.</p>
+        </details>
+        <details>
+          <summary>Sind meine Daten sicher?<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>Deine Zwischenablage bleibt auf deinem Gerät und wird nirgendwohin gesendet. Sie wird nur während der Überwachung gelesen, und es gibt keine Werbung, kein Tracking und keine Accounts. Das Datenschutzlabel im App Store lautet „Keine Daten erfasst“.</p>
+        </details>
+        <details>
+          <summary>Welche Plattformen?<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>macOS (Menüleisten-App, globaler Kurzbefehl, Start bei der Anmeldung) und iOS (iPhone und iPad).</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy -->
+  <section class="privacy" data-lang="de">
+    <div class="wrap">
+      <p class="eyebrow" style="color:#8fd1a6;">Datenschutz</p>
+      <h2 class="sec-h">Deine Zwischenablage bleibt auf deinem Gerät</h2>
+      <p class="sec-sub">Datenschutz ist keine nachträglich angeschraubte Funktion – so ist ClipStitch gebaut.</p>
+      <div class="priv-grid">
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+          <div><h3>Kein Netzwerkcode</h3><p>Es gibt überhaupt keinen Netzwerkcode, deine Zwischenablage wird also nie irgendwohin gesendet.</p></div>
+        </div>
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
+          <div><h3>Nur während der Überwachung gelesen</h3><p>Die Zwischenablage wird nur gelesen, wenn die Überwachung aktiv ist, sonst bleibt sie unangetastet.</p></div>
+        </div>
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="5" y1="5" x2="19" y2="19"/></svg></span>
+          <div><h3>Keine Werbung, kein Tracking</h3><p>Keine Werbung, kein Tracking, kein Account. Es ist einfach ein Werkzeug.</p></div>
+        </div>
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+          <div><h3>Verarbeitung auf dem Gerät</h3><p>Alles, auch die Texterkennung, wird auf deinem Gerät erledigt.</p></div>
+        </div>
+      </div>
+      <span class="priv-label">App-Store-Datenschutz: Keine Daten erfasst</span>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final" data-lang="de">
+    <div class="wrap">
+      <h2>Probier es aus</h2>
+      <p>Kopieren und es fügt zusammen, exportieren und du bist fertig. Die Kernfunktionen sind kostenlos.</p>
+      <div class="cta-row">
+        <a class="badge" href="https://apps.apple.com/app/id6782062390" target="_blank" rel="noopener" aria-label="Laden im App Store">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.1 12.7c0-1.8 1.4-2.7 1.5-2.8-.8-1.2-2.1-1.4-2.5-1.4-1.1-.1-2.1.6-2.6.6-.5 0-1.4-.6-2.3-.6-1.2 0-2.3.7-2.9 1.8-1.2 2.2-.3 5.4.9 7.1.6.9 1.3 1.8 2.2 1.8.9 0 1.2-.6 2.3-.6 1.1 0 1.4.6 2.3.6.9 0 1.6-.9 2.2-1.8.4-.6.6-1.2.8-1.8-1.7-.7-1.9-2.4-1.9-2.7zM15.3 6.6c.5-.6.8-1.4.7-2.2-.7 0-1.5.5-2 1.1-.4.5-.8 1.3-.7 2.1.8.1 1.5-.4 2-1z"/></svg>
+          <span><span class="b1">Laden im</span><span class="b2">App Store</span></span>
+        </a>
+      </div>
+      <p class="badge-note" style="color:#8a90a0;">Jetzt im App Store erhältlich.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap foot-in">
+      <div class="foot-brand">
+        <span class="mark" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="7" rx="1.6"/><rect x="4" y="14" width="16" height="7" rx="1.6"/></svg></span>
+        ClipStitch
+      </div>
+      <nav class="foot-links" aria-label="Fußzeile">
+        <a href="privacy.html">Datenschutzrichtlinie</a>
+        <a href="support.html">Support</a>
+        <a href="mailto:chungkil.cksw@gmail.com">Kontakt</a>
+      </nav>
+      <p class="foot-copy">© 2026 CHUNGKIL KIM. All rights reserved.</p>
+    </div>
+  </footer>
+</section>
+
+<section class="lang" data-lang="fr">
+  <header class="hero">
+    <div class="wrap">
+      <div class="brand">
+        <span class="mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="7" rx="1.6"/><rect x="4" y="14" width="16" height="7" rx="1.6"/></svg>
+        </span>
+        <span class="name">ClipStitch</span>
+      </div>
+      <h1>Copiez une capture, elle s'assemble toute seule.</h1>
+      <p class="lede">Longues pages web, fils de discussion, documents et code qui ne tiennent pas sur un écran : capturez-les en morceaux, ClipStitch surveille le presse-papiers et les assemble en une seule image en hauteur. Sans ouvrir d'app ni choisir de photos.</p>
+      <div class="cta-row">
+        <a class="badge" href="https://apps.apple.com/app/id6782062390" target="_blank" rel="noopener" aria-label="Télécharger dans l'App Store">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.1 12.7c0-1.8 1.4-2.7 1.5-2.8-.8-1.2-2.1-1.4-2.5-1.4-1.1-.1-2.1.6-2.6.6-.5 0-1.4-.6-2.3-.6-1.2 0-2.3.7-2.9 1.8-1.2 2.2-.3 5.4.9 7.1.6.9 1.3 1.8 2.2 1.8.9 0 1.2-.6 2.3-.6 1.1 0 1.4.6 2.3.6.9 0 1.6-.9 2.2-1.8.4-.6.6-1.2.8-1.8-1.7-.7-1.9-2.4-1.9-2.7zM15.3 6.6c.5-.6.8-1.4.7-2.2-.7 0-1.5.5-2 1.1-.4.5-.8 1.3-.7 2.1.8.1 1.5-.4 2-1z"/></svg>
+          <span><span class="b1">Télécharger dans l'</span><span class="b2">App Store</span></span>
+        </a>
+      </div>
+      <p class="badge-note">Disponible dès maintenant sur l'App Store.</p>
+
+      <figure class="hero-shot">
+        <img src="shots/mac-result-en.png" width="1400" height="875" alt="Fenêtre de l'app ClipStitch sur macOS. Une barre latérale gauche montre trois vignettes de morceaux assemblés, le canevas principal affiche un résultat assemblé de type conversation, la barre d'outils affiche un indicateur « Watching » et un interrupteur « Auto-add », et la barre inférieure propose l'alignement, Copier dans le presse-papiers et Exporter.">
+      </figure>
+
+      <div class="pill-row">
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>App de barre des menus macOS</span>
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>iPhone &amp; iPad</span>
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Fonctionne entièrement sur l'appareil</span>
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Sans publicité ni traceur</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- How it works -->
+  <section class="block" data-lang="fr">
+    <div class="wrap">
+      <p class="eyebrow">Comment ça marche</p>
+      <h2 class="sec-h">Copier, assembler, exporter</h2>
+      <p class="sec-sub">Trois étapes, c'est tout. Les morceaux s'assemblent dans l'ordre de capture, et les vignettes permettent de réorganiser à tout moment.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Copier</h3>
+          <p>Capturez un long écran en morceaux, de haut en bas, et copiez chacun dans le presse-papiers. Sur macOS, un seul raccourci suffit : ⌃⌘A.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>Assembler</h3>
+          <p>ClipStitch surveille le presse-papiers, ajoute chaque nouvelle capture et les assemble en une image en hauteur. Copiez deux fois la même capture et le doublon est écarté.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Exporter</h3>
+          <p>Enregistrez en PNG, JPEG ou PDF, copiez dans le presse-papiers ou enregistrez dans Photos. Vérifiez l'alignement et l'ordre directement dans l'aperçu en direct.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Free features -->
+  <section class="block" style="padding-top:0;" data-lang="fr">
+    <div class="wrap">
+      <p class="eyebrow">Fonctions gratuites</p>
+      <h2 class="sec-h">Les fonctions essentielles restent gratuites</h2>
+      <p class="sec-sub">Tout ce qu'il faut au quotidien est là dès le départ.</p>
+      <div class="grid">
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="4" rx="1"/><path d="M9 4H6a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-3"/></svg></div>
+          <h3>Capture automatique du presse-papiers</h3>
+          <p>macOS surveille en arrière-plan ; iOS détecte les nouvelles captures dès votre retour.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+          <h3>Aperçu en direct &amp; réorganisation</h3>
+          <p>Faites glisser les vignettes pour réorganiser ou supprimer des morceaux, et voyez le résultat se mettre à jour en temps réel.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="6" x2="3" y2="6"/><line x1="15" y1="12" x2="3" y2="12"/><line x1="17" y1="18" x2="3" y2="18"/></svg></div>
+          <h3>Alignement</h3>
+          <p>Alignez à gauche, au centre ou à droite — ou mettez chaque morceau à l'échelle du plus large.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+          <h3>Protection contre les doublons</h3>
+          <p>Copiez deux fois la même capture et ClipStitch l'écarte, pour un assemblage propre.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+          <h3>Glisser-déposer</h3>
+          <p>Déposez les fichiers image que vous avez déjà et assemblez-les avec vos captures.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v6h6"/><path d="M3 13a9 9 0 1 0 3-7.7L3 8"/></svg></div>
+          <h3>Annuler &amp; rétablir</h3>
+          <p>Annulez ou rétablissez n'importe quelle modification, pour expérimenter sans crainte.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><polyline points="8 7 12 3 16 7"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
+          <h3>Exporter partout</h3>
+          <p>Enregistrez en PNG, JPEG ou PDF, copiez dans le presse-papiers ou enregistrez dans Photos.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="2" y1="8" x2="22" y2="8"/><circle cx="18" cy="5.5" r="1"/></svg></div>
+          <h3>Barre des menus macOS</h3>
+          <p>Vit dans la barre des menus, avec raccourci global et ouverture à la session.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showcase -->
+  <section class="showcase" data-lang="fr">
+    <div class="wrap">
+      <p class="eyebrow">Tous vos appareils</p>
+      <h2 class="sec-h">Sur votre Mac, iPhone et iPad</h2>
+      <p class="sec-sub">Rapide depuis la barre des menus, léger dans la main. Le même flux vous suit partout.</p>
+      <div class="show-grid">
+        <figure class="show-card mac">
+          <div class="frame mac">
+            <img src="shots/mac-empty-en.png" width="1400" height="875" loading="lazy" alt="État vide de ClipStitch sur macOS. Un message centré indique « Capture your screen and it's stitched automatically », avec une astuce pour copier dans le presse-papiers avec Control-Command-A ; la barre latérale affiche « No pieces ».">
+          </div>
+          <figcaption><strong>App de barre des menus macOS</strong>Raccourci global et ouverture à la session : l'assemblage démarre dès que vous copiez.</figcaption>
+        </figure>
+        <div class="mobile-pair">
+          <figure class="show-card">
+            <div class="frame phone">
+              <img src="shots/iphone-result-en.png" width="1320" height="2868" loading="lazy" alt="ClipStitch sur iPhone. Une rangée de commandes en haut montre le nombre de morceaux et un interrupteur « Auto-add », un long résultat assemblé de type conversation remplit l'écran, et une bande de vignettes avec une barre d'alignement et d'export se trouve en dessous.">
+            </div>
+            <figcaption><strong>iPhone</strong>Détection automatique au retour.</figcaption>
+          </figure>
+          <figure class="show-card">
+            <div class="frame pad">
+              <img src="shots/ipad-result-en.png" width="1200" height="1600" loading="lazy" alt="ClipStitch sur iPad affichant un résultat assemblé sur un canevas plus grand.">
+            </div>
+            <figcaption><strong>iPad</strong>Modifiez sur un grand canevas.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pro -->
+  <section class="pro-wrap" data-lang="fr">
+    <div class="wrap">
+      <div class="pro-card">
+        <span class="pro-tag">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 7l4 4 5-6 5 6 4-4v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>
+          ClipStitch Pro
+        </span>
+        <h2>Allez plus loin avec Pro</h2>
+        <p class="pro-lede">Des outils puissants pour les moments où vous en avez besoin, réunis en une seule mise à niveau. Les fonctions essentielles restent gratuites.</p>
+        <span class="pro-once">Achat unique, à vous pour toujours — pas un abonnement</span>
+        <div class="pro-grid">
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v4M3 5h4M6 17v4M4 19h4"/><path d="M13 3l2.5 6.5L22 12l-6.5 2.5L13 21l-2.5-6.5L4 12l6.5-2.5z"/></svg></div>
+            <h3>Assemblage intelligent</h3>
+            <p>Détecte et supprime automatiquement les zones qui se recouvrent entre les morceaux, pour une jonction invisible.</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V5a1 1 0 0 1 1-1h2M20 7V5a1 1 0 0 0-1-1h-2M4 17v2a1 1 0 0 0 1 1h2M20 17v2a1 1 0 0 1-1 1h-2"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="14" y2="13"/></svg></div>
+            <h3>Extraire le texte</h3>
+            <p>La reconnaissance de texte sur l'appareil lit le contenu pour le copier ou l'exporter en PDF consultable.</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><line x1="3" y1="3" x2="21" y2="21"/></svg></div>
+            <h3>Masquer</h3>
+            <p>Cachez les zones sensibles avant de partager, en aplat ou en pixelisation.</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg></div>
+            <h3>Mise en page et rognage</h3>
+            <p>Passez en mode horizontal et ajustez l'espacement, la couleur de fond et le rognage haut/bas.</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+            <h3>Export Pro</h3>
+            <p>Image stylisée avec marge, dégradé et ombre, plus PDF multipage et glisser-déposer.</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+            <h3>Projets</h3>
+            <p>Enregistrez plusieurs projets et passez de l'un à l'autre quand vous voulez.</p>
+          </div>
+        </div>
+        <p class="pro-foot">Pro est un achat unique — ni mensuel, ni annuel. Et les fonctions gratuites le restent, toujours.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block" style="padding-top:0;" data-lang="fr">
+    <div class="wrap">
+      <p class="eyebrow">FAQ</p>
+      <h2 class="sec-h">Bonnes questions</h2>
+      <div class="faq">
+        <details>
+          <summary>Est-ce un abonnement ?<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>Non. ClipStitch Pro est un achat unique, à vous pour toujours. Aucun prélèvement récurrent.</p>
+        </details>
+        <details>
+          <summary>Est-ce que ça marche hors ligne ?<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>Oui. Tout se passe sur votre appareil — il n'y a aucun code réseau — donc cela fonctionne exactement pareil sans internet.</p>
+        </details>
+        <details>
+          <summary>Mes données sont-elles en sécurité ?<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>Votre presse-papiers reste sur votre appareil et n'est jamais envoyé nulle part. Il n'est lu que pendant la surveillance, et il n'y a ni publicité, ni traceur, ni compte. L'étiquette de confidentialité de l'App Store indique « Aucune donnée collectée ».</p>
+        </details>
+        <details>
+          <summary>Quelles plateformes ?<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>macOS (app de barre des menus, raccourci global, ouverture à la session) et iOS (iPhone et iPad).</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy -->
+  <section class="privacy" data-lang="fr">
+    <div class="wrap">
+      <p class="eyebrow" style="color:#8fd1a6;">Confidentialité</p>
+      <h2 class="sec-h">Votre presse-papiers reste sur votre appareil</h2>
+      <p class="sec-sub">La confidentialité n'est pas une option ajoutée après coup — c'est la façon dont ClipStitch est construit.</p>
+      <div class="priv-grid">
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+          <div><h3>Aucun code réseau</h3><p>Il n'y a aucun code réseau, votre presse-papiers n'est donc jamais envoyé nulle part.</p></div>
+        </div>
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
+          <div><h3>Lu uniquement pendant la surveillance</h3><p>Le presse-papiers n'est lu que lorsque la surveillance est active, et laissé tranquille le reste du temps.</p></div>
+        </div>
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="5" y1="5" x2="19" y2="19"/></svg></span>
+          <div><h3>Ni publicité ni traceur</h3><p>Pas de publicité, pas de suivi, pas de compte. C'est juste un outil.</p></div>
+        </div>
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+          <div><h3>Traitement sur l'appareil</h3><p>Tout, y compris la reconnaissance de texte, se termine sur votre appareil.</p></div>
+        </div>
+      </div>
+      <span class="priv-label">Confidentialité App Store : aucune donnée collectée</span>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final" data-lang="fr">
+    <div class="wrap">
+      <h2>Essayez-le</h2>
+      <p>Vous copiez, ça s'assemble ; vous exportez, c'est fini. Les fonctions essentielles sont gratuites.</p>
+      <div class="cta-row">
+        <a class="badge" href="https://apps.apple.com/app/id6782062390" target="_blank" rel="noopener" aria-label="Télécharger dans l'App Store">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.1 12.7c0-1.8 1.4-2.7 1.5-2.8-.8-1.2-2.1-1.4-2.5-1.4-1.1-.1-2.1.6-2.6.6-.5 0-1.4-.6-2.3-.6-1.2 0-2.3.7-2.9 1.8-1.2 2.2-.3 5.4.9 7.1.6.9 1.3 1.8 2.2 1.8.9 0 1.2-.6 2.3-.6 1.1 0 1.4.6 2.3.6.9 0 1.6-.9 2.2-1.8.4-.6.6-1.2.8-1.8-1.7-.7-1.9-2.4-1.9-2.7zM15.3 6.6c.5-.6.8-1.4.7-2.2-.7 0-1.5.5-2 1.1-.4.5-.8 1.3-.7 2.1.8.1 1.5-.4 2-1z"/></svg>
+          <span><span class="b1">Télécharger dans l'</span><span class="b2">App Store</span></span>
+        </a>
+      </div>
+      <p class="badge-note" style="color:#8a90a0;">Disponible dès maintenant sur l'App Store.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap foot-in">
+      <div class="foot-brand">
+        <span class="mark" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="7" rx="1.6"/><rect x="4" y="14" width="16" height="7" rx="1.6"/></svg></span>
+        ClipStitch
+      </div>
+      <nav class="foot-links" aria-label="Pied de page">
+        <a href="privacy.html">Politique de confidentialité</a>
+        <a href="support.html">Assistance</a>
+        <a href="mailto:chungkil.cksw@gmail.com">Contact</a>
+      </nav>
+      <p class="foot-copy">© 2026 CHUNGKIL KIM. All rights reserved.</p>
+    </div>
+  </footer>
+</section>
+
+<section class="lang" data-lang="es">
+  <header class="hero">
+    <div class="wrap">
+      <div class="brand">
+        <span class="mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="7" rx="1.6"/><rect x="4" y="14" width="16" height="7" rx="1.6"/></svg>
+        </span>
+        <span class="name">ClipStitch</span>
+      </div>
+      <h1>Copia una captura y se une sola.</h1>
+      <p class="lede">Páginas web largas, conversaciones, documentos y código que no caben en una pantalla: captúralos por partes y ClipStitch vigila el portapapeles y los une en una sola imagen alta. Sin abrir una app ni elegir fotos.</p>
+      <div class="cta-row">
+        <a class="badge" href="https://apps.apple.com/app/id6782062390" target="_blank" rel="noopener" aria-label="Consíguelo en el App Store">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.1 12.7c0-1.8 1.4-2.7 1.5-2.8-.8-1.2-2.1-1.4-2.5-1.4-1.1-.1-2.1.6-2.6.6-.5 0-1.4-.6-2.3-.6-1.2 0-2.3.7-2.9 1.8-1.2 2.2-.3 5.4.9 7.1.6.9 1.3 1.8 2.2 1.8.9 0 1.2-.6 2.3-.6 1.1 0 1.4.6 2.3.6.9 0 1.6-.9 2.2-1.8.4-.6.6-1.2.8-1.8-1.7-.7-1.9-2.4-1.9-2.7zM15.3 6.6c.5-.6.8-1.4.7-2.2-.7 0-1.5.5-2 1.1-.4.5-.8 1.3-.7 2.1.8.1 1.5-.4 2-1z"/></svg>
+          <span><span class="b1">Consíguelo en el</span><span class="b2">App Store</span></span>
+        </a>
+      </div>
+      <p class="badge-note">Ya disponible en el App Store.</p>
+
+      <figure class="hero-shot">
+        <img src="shots/mac-result-en.png" width="1400" height="875" alt="Ventana de la app ClipStitch en macOS. Una barra lateral izquierda muestra tres miniaturas de piezas unidas, el lienzo principal muestra un resultado unido tipo conversación, la barra de herramientas muestra un indicador «Watching» y un interruptor «Auto-add», y la barra inferior tiene alineación, Copiar al portapapeles y Exportar.">
+      </figure>
+
+      <div class="pill-row">
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>App de barra de menús en macOS</span>
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>iPhone y iPad</span>
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Funciona por completo en el dispositivo</span>
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Sin anuncios ni seguimiento</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- How it works -->
+  <section class="block" data-lang="es">
+    <div class="wrap">
+      <p class="eyebrow">Cómo funciona</p>
+      <h2 class="sec-h">Copiar, unir, exportar</h2>
+      <p class="sec-sub">Tres pasos y ya está. Las piezas se unen en el orden en que las capturaste, y puedes reordenarlas con las miniaturas cuando quieras.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Copiar</h3>
+          <p>Captura una pantalla larga por partes, de arriba abajo, y copia cada una al portapapeles. En macOS basta un atajo: ⌃⌘A.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>Unir</h3>
+          <p>ClipStitch vigila el portapapeles, añade cada captura nueva y las une en una imagen alta. Si copias dos veces la misma, el duplicado se descarta.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Exportar</h3>
+          <p>Guarda como PNG, JPEG o PDF, copia al portapapeles o guarda en Fotos. Comprueba la alineación y el orden en la vista previa en vivo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Free features -->
+  <section class="block" style="padding-top:0;" data-lang="es">
+    <div class="wrap">
+      <p class="eyebrow">Funciones gratuitas</p>
+      <h2 class="sec-h">Las funciones esenciales siguen siendo gratis</h2>
+      <p class="sec-sub">Todo lo que necesitas para el día a día está desde el principio.</p>
+      <div class="grid">
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="4" rx="1"/><path d="M9 4H6a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-3"/></svg></div>
+          <h3>Captura automática del portapapeles</h3>
+          <p>macOS vigila en segundo plano; iOS detecta las capturas nuevas en cuanto vuelves.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+          <h3>Vista previa en vivo y reordenar</h3>
+          <p>Arrastra las miniaturas para reordenar o eliminar piezas y mira cómo se actualiza el resultado en tiempo real.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="6" x2="3" y2="6"/><line x1="15" y1="12" x2="3" y2="12"/><line x1="17" y1="18" x2="3" y2="18"/></svg></div>
+          <h3>Alineación</h3>
+          <p>Alinea a la izquierda, al centro o a la derecha, o escala cada pieza a la más ancha.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+          <h3>Protección de duplicados</h3>
+          <p>Si copias dos veces la misma captura, ClipStitch la descarta para que la unión quede limpia.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+          <h3>Arrastrar y soltar</h3>
+          <p>Suelta los archivos de imagen que ya tienes y úneles junto a tus capturas.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v6h6"/><path d="M3 13a9 9 0 1 0 3-7.7L3 8"/></svg></div>
+          <h3>Deshacer y rehacer</h3>
+          <p>Deshaz o rehaz cualquier cambio para experimentar sin preocuparte.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><polyline points="8 7 12 3 16 7"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
+          <h3>Exporta a donde quieras</h3>
+          <p>Guarda como PNG, JPEG o PDF, copia al portapapeles o guarda en Fotos.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="2" y1="8" x2="22" y2="8"/><circle cx="18" cy="5.5" r="1"/></svg></div>
+          <h3>Barra de menús de macOS</h3>
+          <p>Vive en la barra de menús, con atajo global y apertura al iniciar sesión.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showcase -->
+  <section class="showcase" data-lang="es">
+    <div class="wrap">
+      <p class="eyebrow">Todos tus dispositivos</p>
+      <h2 class="sec-h">En tu Mac, iPhone y iPad</h2>
+      <p class="sec-sub">Rápido desde la barra de menús, cómodo en la mano. El mismo flujo te acompaña en todas partes.</p>
+      <div class="show-grid">
+        <figure class="show-card mac">
+          <div class="frame mac">
+            <img src="shots/mac-empty-en.png" width="1400" height="875" loading="lazy" alt="Estado vacío de ClipStitch en macOS. Un mensaje centrado dice «Capture your screen and it's stitched automatically», con una pista para copiar al portapapeles con Control-Command-A; la barra lateral muestra «No pieces».">
+          </div>
+          <figcaption><strong>App de barra de menús en macOS</strong>Con atajo global y apertura al iniciar sesión, une desde el momento en que copias.</figcaption>
+        </figure>
+        <div class="mobile-pair">
+          <figure class="show-card">
+            <div class="frame phone">
+              <img src="shots/iphone-result-en.png" width="1320" height="2868" loading="lazy" alt="ClipStitch en iPhone. Una fila de controles superior muestra el número de piezas y un interruptor «Auto-add», un resultado largo tipo conversación llena la pantalla, y debajo hay una tira de miniaturas con una barra de alineación y exportación.">
+            </div>
+            <figcaption><strong>iPhone</strong>Detección automática al volver.</figcaption>
+          </figure>
+          <figure class="show-card">
+            <div class="frame pad">
+              <img src="shots/ipad-result-en.png" width="1200" height="1600" loading="lazy" alt="ClipStitch en iPad mostrando un resultado unido en un lienzo más grande.">
+            </div>
+            <figcaption><strong>iPad</strong>Edita en un lienzo grande.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pro -->
+  <section class="pro-wrap" data-lang="es">
+    <div class="wrap">
+      <div class="pro-card">
+        <span class="pro-tag">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 7l4 4 5-6 5 6 4-4v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>
+          ClipStitch Pro
+        </span>
+        <h2>Llega más lejos con Pro</h2>
+        <p class="pro-lede">Herramientas potentes para cuando las necesitas, todas en una sola mejora. Las funciones esenciales siguen siendo gratis.</p>
+        <span class="pro-once">Compra única, tuya para siempre — no es una suscripción</span>
+        <div class="pro-grid">
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v4M3 5h4M6 17v4M4 19h4"/><path d="M13 3l2.5 6.5L22 12l-6.5 2.5L13 21l-2.5-6.5L4 12l6.5-2.5z"/></svg></div>
+            <h3>Unión inteligente</h3>
+            <p>Detecta y elimina automáticamente las zonas solapadas entre piezas para una unión sin costuras.</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V5a1 1 0 0 1 1-1h2M20 7V5a1 1 0 0 0-1-1h-2M4 17v2a1 1 0 0 0 1 1h2M20 17v2a1 1 0 0 1-1 1h-2"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="14" y2="13"/></svg></div>
+            <h3>Extraer texto</h3>
+            <p>El OCR en el dispositivo lee el texto para que lo copies o lo exportes como PDF con búsqueda.</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><line x1="3" y1="3" x2="21" y2="21"/></svg></div>
+            <h3>Ocultar</h3>
+            <p>Tapa zonas sensibles antes de compartir, con relleno sólido o pixelado.</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg></div>
+            <h3>Diseño y recorte</h3>
+            <p>Cambia al modo horizontal y ajusta el espaciado, el color de fondo y el recorte superior e inferior.</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+            <h3>Exportación Pro</h3>
+            <p>Imagen con estilo, con margen, degradado y sombra, además de PDF de varias páginas y arrastrar y soltar.</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+            <h3>Proyectos</h3>
+            <p>Guarda varios proyectos y cambia entre ellos cuando quieras.</p>
+          </div>
+        </div>
+        <p class="pro-foot">Pro es una compra única: sin cuotas mensuales ni anuales. Y las funciones gratuitas seguirán siendo gratis, siempre.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block" style="padding-top:0;" data-lang="es">
+    <div class="wrap">
+      <p class="eyebrow">Preguntas frecuentes</p>
+      <h2 class="sec-h">Buenas preguntas</h2>
+      <div class="faq">
+        <details>
+          <summary>¿Es una suscripción?<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>No. ClipStitch Pro es una compra única que es tuya para siempre. No hay cargos recurrentes.</p>
+        </details>
+        <details>
+          <summary>¿Funciona sin conexión?<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>Sí. Todo ocurre en tu dispositivo (no hay nada de código de red), así que funciona igual sin internet.</p>
+        </details>
+        <details>
+          <summary>¿Están seguros mis datos?<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>Tu portapapeles se queda en tu dispositivo y nunca se envía a ningún sitio. Solo se lee mientras la vigilancia está activa, y no hay anuncios, seguimiento ni cuentas. La etiqueta de privacidad del App Store es «No se recopilan datos».</p>
+        </details>
+        <details>
+          <summary>¿Qué plataformas?<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>macOS (app de barra de menús, atajo global, apertura al iniciar sesión) e iOS (iPhone y iPad).</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy -->
+  <section class="privacy" data-lang="es">
+    <div class="wrap">
+      <p class="eyebrow" style="color:#8fd1a6;">Privacidad</p>
+      <h2 class="sec-h">Tu portapapeles se queda en tu dispositivo</h2>
+      <p class="sec-sub">La privacidad no es una función añadida después: es la forma en que está hecho ClipStitch.</p>
+      <div class="priv-grid">
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+          <div><h3>Sin código de red</h3><p>No hay nada de código de red, así que tu portapapeles nunca se envía a ningún sitio.</p></div>
+        </div>
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
+          <div><h3>Se lee solo mientras vigila</h3><p>El portapapeles se lee únicamente cuando la vigilancia está activada; el resto del tiempo no se toca.</p></div>
+        </div>
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="5" y1="5" x2="19" y2="19"/></svg></span>
+          <div><h3>Sin anuncios ni seguimiento</h3><p>Sin anuncios, sin seguimiento, sin cuenta. Es solo una herramienta.</p></div>
+        </div>
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+          <div><h3>Procesamiento en el dispositivo</h3><p>Todo, incluido el OCR, termina en tu dispositivo.</p></div>
+        </div>
+      </div>
+      <span class="priv-label">Privacidad en el App Store: no se recopilan datos</span>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final" data-lang="es">
+    <div class="wrap">
+      <h2>Pruébalo</h2>
+      <p>Copias y se une, exportas y listo. Las funciones esenciales son gratis.</p>
+      <div class="cta-row">
+        <a class="badge" href="https://apps.apple.com/app/id6782062390" target="_blank" rel="noopener" aria-label="Consíguelo en el App Store">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.1 12.7c0-1.8 1.4-2.7 1.5-2.8-.8-1.2-2.1-1.4-2.5-1.4-1.1-.1-2.1.6-2.6.6-.5 0-1.4-.6-2.3-.6-1.2 0-2.3.7-2.9 1.8-1.2 2.2-.3 5.4.9 7.1.6.9 1.3 1.8 2.2 1.8.9 0 1.2-.6 2.3-.6 1.1 0 1.4.6 2.3.6.9 0 1.6-.9 2.2-1.8.4-.6.6-1.2.8-1.8-1.7-.7-1.9-2.4-1.9-2.7zM15.3 6.6c.5-.6.8-1.4.7-2.2-.7 0-1.5.5-2 1.1-.4.5-.8 1.3-.7 2.1.8.1 1.5-.4 2-1z"/></svg>
+          <span><span class="b1">Consíguelo en el</span><span class="b2">App Store</span></span>
+        </a>
+      </div>
+      <p class="badge-note" style="color:#8a90a0;">Ya disponible en el App Store.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap foot-in">
+      <div class="foot-brand">
+        <span class="mark" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="7" rx="1.6"/><rect x="4" y="14" width="16" height="7" rx="1.6"/></svg></span>
+        ClipStitch
+      </div>
+      <nav class="foot-links" aria-label="Pie de página">
+        <a href="privacy.html">Política de privacidad</a>
+        <a href="support.html">Soporte</a>
+        <a href="mailto:chungkil.cksw@gmail.com">Contacto</a>
+      </nav>
+      <p class="foot-copy">© 2026 CHUNGKIL KIM. All rights reserved.</p>
+    </div>
+  </footer>
+</section>
+
+<section class="lang" data-lang="pt-BR">
+  <header class="hero">
+    <div class="wrap">
+      <div class="brand">
+        <span class="mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="7" rx="1.6"/><rect x="4" y="14" width="16" height="7" rx="1.6"/></svg>
+        </span>
+        <span class="name">ClipStitch</span>
+      </div>
+      <h1>Copie uma captura e ela se junta sozinha.</h1>
+      <p class="lede">Páginas web longas, conversas, documentos e código que não cabem em uma tela: capture em partes e o ClipStitch observa a área de transferência e junta tudo em uma única imagem alta. Sem abrir um app nem escolher fotos.</p>
+      <div class="cta-row">
+        <a class="badge" href="https://apps.apple.com/app/id6782062390" target="_blank" rel="noopener" aria-label="Baixar na App Store">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.1 12.7c0-1.8 1.4-2.7 1.5-2.8-.8-1.2-2.1-1.4-2.5-1.4-1.1-.1-2.1.6-2.6.6-.5 0-1.4-.6-2.3-.6-1.2 0-2.3.7-2.9 1.8-1.2 2.2-.3 5.4.9 7.1.6.9 1.3 1.8 2.2 1.8.9 0 1.2-.6 2.3-.6 1.1 0 1.4.6 2.3.6.9 0 1.6-.9 2.2-1.8.4-.6.6-1.2.8-1.8-1.7-.7-1.9-2.4-1.9-2.7zM15.3 6.6c.5-.6.8-1.4.7-2.2-.7 0-1.5.5-2 1.1-.4.5-.8 1.3-.7 2.1.8.1 1.5-.4 2-1z"/></svg>
+          <span><span class="b1">Baixar na</span><span class="b2">App Store</span></span>
+        </a>
+      </div>
+      <p class="badge-note">Já disponível na App Store.</p>
+
+      <figure class="hero-shot">
+        <img src="shots/mac-result-en.png" width="1400" height="875" alt="Janela do app ClipStitch no macOS. Uma barra lateral esquerda mostra três miniaturas de partes juntadas, a área principal mostra um resultado juntado em estilo de conversa, a barra de ferramentas mostra um indicador “Watching” e um botão “Auto-add”, e a barra inferior tem alinhamento, Copiar para a área de transferência e Exportar.">
+      </figure>
+
+      <div class="pill-row">
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>App na barra de menus do macOS</span>
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>iPhone e iPad</span>
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Funciona inteiramente no dispositivo</span>
+        <span class="pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Sem anúncios, sem rastreamento</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- How it works -->
+  <section class="block" data-lang="pt-BR">
+    <div class="wrap">
+      <p class="eyebrow">Como funciona</p>
+      <h2 class="sec-h">Copiar, juntar, exportar</h2>
+      <p class="sec-sub">São só três passos. As partes são juntadas na ordem em que você capturou, e as miniaturas permitem reordenar quando quiser.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Copiar</h3>
+          <p>Capture uma tela longa em partes, de cima para baixo, e copie cada uma para a área de transferência. No macOS basta um atalho: ⌃⌘A.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>Juntar</h3>
+          <p>O ClipStitch observa a área de transferência, adiciona cada nova captura e junta tudo em uma imagem alta. Se copiar a mesma captura duas vezes, a duplicata é descartada.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Exportar</h3>
+          <p>Salve como PNG, JPEG ou PDF, copie para a área de transferência ou salve em Fotos. Confira o alinhamento e a ordem na pré-visualização ao vivo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Free features -->
+  <section class="block" style="padding-top:0;" data-lang="pt-BR">
+    <div class="wrap">
+      <p class="eyebrow">Recursos gratuitos</p>
+      <h2 class="sec-h">Os recursos essenciais continuam gratuitos</h2>
+      <p class="sec-sub">Tudo o que você precisa no dia a dia já está aqui desde o início.</p>
+      <div class="grid">
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="4" rx="1"/><path d="M9 4H6a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-3"/></svg></div>
+          <h3>Captura automática da área de transferência</h3>
+          <p>O macOS observa em segundo plano; o iOS detecta novas capturas assim que você volta.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+          <h3>Pré-visualização ao vivo e reordenação</h3>
+          <p>Arraste as miniaturas para reordenar ou remover partes e veja o resultado se atualizar em tempo real.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="6" x2="3" y2="6"/><line x1="15" y1="12" x2="3" y2="12"/><line x1="17" y1="18" x2="3" y2="18"/></svg></div>
+          <h3>Alinhamento</h3>
+          <p>Alinhe à esquerda, ao centro ou à direita — ou dimensione cada parte pela mais larga.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+          <h3>Proteção contra duplicatas</h3>
+          <p>Se você copiar a mesma captura duas vezes, o ClipStitch descarta a repetida e a junção continua limpa.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+          <h3>Arrastar e soltar</h3>
+          <p>Solte os arquivos de imagem que você já tem e junte-os junto com suas capturas.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v6h6"/><path d="M3 13a9 9 0 1 0 3-7.7L3 8"/></svg></div>
+          <h3>Desfazer e refazer</h3>
+          <p>Desfaça ou refaça qualquer alteração e experimente sem preocupação.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><polyline points="8 7 12 3 16 7"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
+          <h3>Exporte para qualquer lugar</h3>
+          <p>Salve como PNG, JPEG ou PDF, copie para a área de transferência ou salve em Fotos.</p>
+        </div>
+        <div class="feat">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="2" y1="8" x2="22" y2="8"/><circle cx="18" cy="5.5" r="1"/></svg></div>
+          <h3>Barra de menus do macOS</h3>
+          <p>Fica na barra de menus, com atalho global e abertura ao iniciar sessão.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showcase -->
+  <section class="showcase" data-lang="pt-BR">
+    <div class="wrap">
+      <p class="eyebrow">Todos os dispositivos</p>
+      <h2 class="sec-h">No seu Mac, iPhone e iPad</h2>
+      <p class="sec-sub">Rápido pela barra de menus, leve na mão. O mesmo fluxo acompanha você em todo lugar.</p>
+      <div class="show-grid">
+        <figure class="show-card mac">
+          <div class="frame mac">
+            <img src="shots/mac-empty-en.png" width="1400" height="875" loading="lazy" alt="Estado vazio do ClipStitch no macOS. Uma mensagem centralizada diz “Capture your screen and it's stitched automatically”, com uma dica para copiar para a área de transferência com Control-Command-A; a barra lateral mostra “No pieces”.">
+          </div>
+          <figcaption><strong>App na barra de menus do macOS</strong>Atalho global e abertura ao iniciar sessão: ele já está juntando no momento em que você copia.</figcaption>
+        </figure>
+        <div class="mobile-pair">
+          <figure class="show-card">
+            <div class="frame phone">
+              <img src="shots/iphone-result-en.png" width="1320" height="2868" loading="lazy" alt="ClipStitch no iPhone. Uma linha de controles no topo mostra a contagem de partes e um botão “Auto-add”, um longo resultado juntado em estilo de conversa preenche a tela, e abaixo há uma faixa de miniaturas com uma barra de alinhamento e exportação.">
+            </div>
+            <figcaption><strong>iPhone</strong>Detecta automaticamente ao voltar.</figcaption>
+          </figure>
+          <figure class="show-card">
+            <div class="frame pad">
+              <img src="shots/ipad-result-en.png" width="1200" height="1600" loading="lazy" alt="ClipStitch no iPad mostrando um resultado juntado em uma tela maior.">
+            </div>
+            <figcaption><strong>iPad</strong>Edite em uma tela maior.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pro -->
+  <section class="pro-wrap" data-lang="pt-BR">
+    <div class="wrap">
+      <div class="pro-card">
+        <span class="pro-tag">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 7l4 4 5-6 5 6 4-4v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>
+          ClipStitch Pro
+        </span>
+        <h2>Vá além com o Pro</h2>
+        <p class="pro-lede">Ferramentas poderosas para quando você precisa, tudo em um único upgrade. Os recursos essenciais continuam gratuitos.</p>
+        <span class="pro-once">Compra única, sua para sempre — não é assinatura</span>
+        <div class="pro-grid">
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v4M3 5h4M6 17v4M4 19h4"/><path d="M13 3l2.5 6.5L22 12l-6.5 2.5L13 21l-2.5-6.5L4 12l6.5-2.5z"/></svg></div>
+            <h3>Junção inteligente</h3>
+            <p>Detecta e remove automaticamente as áreas sobrepostas entre as partes para uma emenda perfeita.</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V5a1 1 0 0 1 1-1h2M20 7V5a1 1 0 0 0-1-1h-2M4 17v2a1 1 0 0 0 1 1h2M20 17v2a1 1 0 0 1-1 1h-2"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="14" y2="13"/></svg></div>
+            <h3>Extrair texto</h3>
+            <p>O OCR no dispositivo lê o texto para você copiar ou exportar um PDF pesquisável.</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><line x1="3" y1="3" x2="21" y2="21"/></svg></div>
+            <h3>Ocultar</h3>
+            <p>Esconda áreas sensíveis antes de compartilhar, com preenchimento sólido ou pixelização.</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg></div>
+            <h3>Layout e corte</h3>
+            <p>Mude para o modo horizontal e ajuste espaçamento, cor de fundo e corte no topo e na base.</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+            <h3>Exportação Pro</h3>
+            <p>Imagem estilizada com margem, gradiente e sombra, além de PDF de várias páginas e arrastar e soltar.</p>
+          </div>
+          <div class="pro-item">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+            <h3>Projetos</h3>
+            <p>Salve vários projetos e alterne entre eles quando quiser.</p>
+          </div>
+        </div>
+        <p class="pro-foot">O Pro é uma compra única — sem mensalidade nem anuidade. E os recursos gratuitos continuam gratuitos, sempre.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block" style="padding-top:0;" data-lang="pt-BR">
+    <div class="wrap">
+      <p class="eyebrow">Perguntas frequentes</p>
+      <h2 class="sec-h">Boas perguntas</h2>
+      <div class="faq">
+        <details>
+          <summary>É uma assinatura?<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>Não. O ClipStitch Pro é uma compra única e é sua para sempre. Não há cobranças recorrentes.</p>
+        </details>
+        <details>
+          <summary>Funciona offline?<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>Sim. Tudo acontece no seu dispositivo — não existe nenhum código de rede — então funciona exatamente igual sem internet.</p>
+        </details>
+        <details>
+          <summary>Meus dados estão seguros?<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>Sua área de transferência fica no seu dispositivo e nunca é enviada a lugar nenhum. Ela só é lida durante a observação, e não há anúncios, rastreamento nem contas. O rótulo de privacidade da App Store é “Dados não coletados”.</p>
+        </details>
+        <details>
+          <summary>Quais plataformas?<span class="chev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <p>macOS (app na barra de menus, atalho global, abertura ao iniciar sessão) e iOS (iPhone e iPad).</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy -->
+  <section class="privacy" data-lang="pt-BR">
+    <div class="wrap">
+      <p class="eyebrow" style="color:#8fd1a6;">Privacidade</p>
+      <h2 class="sec-h">Sua área de transferência fica no seu dispositivo</h2>
+      <p class="sec-sub">Privacidade não é um recurso pregado depois — é como o ClipStitch foi construído.</p>
+      <div class="priv-grid">
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+          <div><h3>Nenhum código de rede</h3><p>Não existe nenhum código de rede, então sua área de transferência nunca é enviada a lugar nenhum.</p></div>
+        </div>
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span>
+          <div><h3>Lida apenas durante a observação</h3><p>A área de transferência só é lida quando a observação está ativa; fora isso, fica intocada.</p></div>
+        </div>
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="5" y1="5" x2="19" y2="19"/></svg></span>
+          <div><h3>Sem anúncios nem rastreamento</h3><p>Sem anúncios, sem rastreamento, sem conta. É só uma ferramenta.</p></div>
+        </div>
+        <div class="priv-item">
+          <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+          <div><h3>Processamento no dispositivo</h3><p>Tudo, inclusive o OCR, termina no seu dispositivo.</p></div>
+        </div>
+      </div>
+      <span class="priv-label">Privacidade na App Store: dados não coletados</span>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final" data-lang="pt-BR">
+    <div class="wrap">
+      <h2>Experimente</h2>
+      <p>Você copia e ele junta, exporta e pronto. Os recursos essenciais são gratuitos.</p>
+      <div class="cta-row">
+        <a class="badge" href="https://apps.apple.com/app/id6782062390" target="_blank" rel="noopener" aria-label="Baixar na App Store">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.1 12.7c0-1.8 1.4-2.7 1.5-2.8-.8-1.2-2.1-1.4-2.5-1.4-1.1-.1-2.1.6-2.6.6-.5 0-1.4-.6-2.3-.6-1.2 0-2.3.7-2.9 1.8-1.2 2.2-.3 5.4.9 7.1.6.9 1.3 1.8 2.2 1.8.9 0 1.2-.6 2.3-.6 1.1 0 1.4.6 2.3.6.9 0 1.6-.9 2.2-1.8.4-.6.6-1.2.8-1.8-1.7-.7-1.9-2.4-1.9-2.7zM15.3 6.6c.5-.6.8-1.4.7-2.2-.7 0-1.5.5-2 1.1-.4.5-.8 1.3-.7 2.1.8.1 1.5-.4 2-1z"/></svg>
+          <span><span class="b1">Baixar na</span><span class="b2">App Store</span></span>
+        </a>
+      </div>
+      <p class="badge-note" style="color:#8a90a0;">Já disponível na App Store.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap foot-in">
+      <div class="foot-brand">
+        <span class="mark" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="7" rx="1.6"/><rect x="4" y="14" width="16" height="7" rx="1.6"/></svg></span>
+        ClipStitch
+      </div>
+      <nav class="foot-links" aria-label="Rodapé">
+        <a href="privacy.html">Política de Privacidade</a>
+        <a href="support.html">Suporte</a>
+        <a href="mailto:chungkil.cksw@gmail.com">Contato</a>
+      </nav>
+      <p class="foot-copy">© 2026 CHUNGKIL KIM. All rights reserved.</p>
+    </div>
+  </footer>
+</section>
+
 <script>
 (function () {
-  var sections = { ko: document.querySelector(".lang-ko"), en: document.querySelector(".lang-en") };
-  var nav = document.getElementById("langSwitch");
-  var buttons = nav.querySelectorAll("button");
+  var sections = {}, nav = document.getElementById("langSwitch");
+  var select = document.getElementById("langSelect");
+  Array.prototype.forEach.call(document.querySelectorAll("section[data-lang]"), function (s) {
+    sections[s.dataset.lang] = s;
+  });
+
   function show(lang) {
-    sections.ko.hidden = lang !== "ko";
-    sections.en.hidden = lang !== "en";
-    buttons.forEach(function (b) { b.classList.toggle("active", b.dataset.lang === lang); });
+    if (!sections[lang]) { lang = "en"; }
+    Object.keys(sections).forEach(function (k) { sections[k].hidden = k !== lang; });
+    select.value = lang;
     document.documentElement.lang = lang;
   }
-  nav.hidden = false;
-  buttons.forEach(function (b) { b.addEventListener("click", function () { show(b.dataset.lang); }); });
-  var initial = location.hash === "#en" ? "en" : (navigator.language || "").toLowerCase().indexOf("ko") === 0 ? "ko" : "en";
-  show(initial);
+
+  // 브라우저 언어 → 지원 언어. 중국어는 번체(tw/hk/mo/hant)와 간체를 구분한다.
+  function detect() {
+    var hash = location.hash.replace("#", "");
+    if (hash && sections[hash]) { return hash; }
+    var nl = (navigator.language || "").toLowerCase();
+    if (nl.indexOf("ko") === 0) { return "ko"; }
+    if (nl.indexOf("ja") === 0) { return "ja"; }
+    if (nl.indexOf("zh") === 0) { return /hant|tw|hk|mo/.test(nl) ? "zh-Hant" : "zh-Hans"; }
+    if (nl.indexOf("de") === 0) { return "de"; }
+    if (nl.indexOf("fr") === 0) { return "fr"; }
+    if (nl.indexOf("es") === 0) { return "es"; }
+    if (nl.indexOf("pt") === 0) { return "pt-BR"; }
+    return "en";
+  }
+
+  nav.hidden = false;  // JS 동작 시에만 노출 (비활성 시 모든 언어 표시)
+  select.addEventListener("change", function () { show(select.value); });
+  show(detect());
 })();
 </script>
 </body>
