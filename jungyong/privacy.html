@@ -40,17 +40,19 @@ footer a{color:var(--ink2)}
 <span class="l-en">Learn Jungyong · Last updated September 2, 2026</span></p>
 
 <div class="big">
-  <span class="l-ko">이 앱은 개발자가 개인정보를 수집하지 않습니다. 다만 무료 이용 시 표시되는 광고를 위해 Google AdMob이 광고 식별자 등을 처리합니다.</span>
-  <span class="l-en">The developer collects no personal information. For free users, Google AdMob processes advertising identifiers to serve ads.</span>
+  <span class="l-ko">이 앱은 개발자가 개인정보를 수집하지 않습니다. 다만 익명 이용 통계(Firebase Analytics)와, 무료 이용 시 표시되는 광고를 위해 Google이 광고 식별자 등을 처리합니다.</span>
+  <span class="l-en">The developer collects no personal information. Google processes anonymous usage statistics (Firebase Analytics) and, for free users, advertising identifiers to serve ads.</span>
 </div>
 
 <h2><span class="l-ko">1. 수집하는 정보</span><span class="l-en">1. Information we collect</span></h2>
-<p class="l-ko"><b>개발자가 수집하는 것은 없습니다.</b> 회원 가입과 로그인이 없고, 개발자가 운영하는 서버도 없습니다.
-이름·이메일·전화번호·연락처를 묻지 않으며 개발자에게 전송되는 정보도 없습니다.</p>
+<p class="l-ko"><b>개발자가 운영하는 서버는 없습니다.</b> 회원 가입과 로그인이 없고,
+이름·이메일·전화번호·연락처를 묻지 않습니다. 학습한 원문이나 검색어 원문도 밖으로 나가지 않습니다.
+이용 통계는 Google의 Firebase Analytics로만 익명 집계합니다(아래 7항).</p>
 <p class="l-ko">다만 무료 이용 시 표시되는 광고를 위해 <b>Google AdMob</b>이 광고 식별자(IDFA)와
 대략적인 위치(IP 기반), 광고 노출·클릭 기록을 처리합니다. 자세한 내용은 아래 7항을 봐 주세요.</p>
-<p class="l-en"><b>The developer collects nothing.</b> There is no sign-up, no login, and no developer-operated server.
-We never ask for your name, email, phone number, or contacts, and nothing is transmitted to the developer.</p>
+<p class="l-en"><b>There is no developer-operated server.</b> No sign-up, no login; we never ask for your name,
+email, phone number, or contacts, and neither the passages you study nor your search terms leave the device.
+Usage statistics are gathered anonymously through Google's Firebase Analytics (see section 7).</p>
 <p class="l-en">For free users, <b>Google AdMob</b> processes the advertising identifier (IDFA), coarse
 (IP-based) location, and ad interaction data in order to serve ads. See section 7 below.</p>
 
@@ -95,15 +97,21 @@ and never reach the developer. The app only checks whether a purchase exists.</p
 <h2><span class="l-ko">7. 광고 · 분석 · 추적</span><span class="l-en">7. Ads, analytics, tracking</span></h2>
 <p class="l-ko">무료로 이용하실 때 사전과 강독 화면 아래에 Google AdMob 광고가 하나 표시됩니다.
 이때 AdMob이 광고 식별자(IDFA)와 대략적인 위치(IP 기반), 광고 노출·클릭 기록을 처리합니다.
-자세한 내용은 <a href="https://policies.google.com/privacy">Google 개인정보처리방침</a>을 참고해 주세요.
-개발자가 따로 수집하는 이용 통계나 분석 도구는 없습니다.</p>
+자세한 내용은 <a href="https://policies.google.com/privacy">Google 개인정보처리방침</a>을 참고해 주세요.</p>
+<p class="l-ko">이용 통계는 <b>Firebase Analytics</b>(Google)로 집계합니다. 어느 화면을 얼마나 보는지,
+한 과를 떼는 데 얼마나 걸리는지 같은 <b>익명 이벤트</b>이며, 이름·이메일 같은 개인 식별 정보나
+검색어 원문은 보내지 않습니다(검색은 글자 수만 기록). 충돌 리포트 도구는 쓰지 않습니다.
+이 과정에서 기기 ID(앱 인스턴스 ID)와 IP 기반의 대략적인 위치가 Google에 의해 처리됩니다.</p>
 <p class="l-ko">처음 실행할 때 <b>앱 추적 투명성(ATT)</b> 동의를 여쭙습니다. 동의하지 않으셔도 앱의 모든 기능을
 그대로 쓰실 수 있으며, 맞춤형이 아닌 일반 광고가 표시됩니다.
 <b>평생 이용권을 구매하시면 광고가 사라지고 광고 SDK도 시동되지 않습니다.</b></p>
 <p class="l-en">Free users see one Google AdMob ad below the dictionary and reading screens. AdMob processes
 the advertising identifier (IDFA), coarse (IP-based) location, and ad interaction data. See the
-<a href="https://policies.google.com/privacy">Google Privacy Policy</a> for details. The developer collects
-no separate analytics.</p>
+<a href="https://policies.google.com/privacy">Google Privacy Policy</a> for details.</p>
+<p class="l-en">Usage statistics are gathered with <b>Firebase Analytics</b> — anonymous events such as which
+screens are opened and how long a lesson takes. No personally identifying information and no raw search terms
+are sent (only the length of a query). No crash-reporting tool is used. Google processes an app instance ID
+and coarse, IP-based location in the process.</p>
 <p class="l-en">On first launch the app asks for App Tracking Transparency consent. Declining changes nothing
 about app functionality — you simply get non-personalized ads. <b>Purchasing the lifetime unlock removes ads
 entirely; the ad SDK is never started.</b></p>
