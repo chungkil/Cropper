@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sidera Finder — 오늘 밤 무엇을 언제 볼지</title>
-<meta property="og:title" content="Sidera Finder — What to see tonight, and when">
-<meta property="og:description" content="달과 행성 다섯, 은하수를 오늘 밤 하나의 시간축에 그립니다. 각 대상이 충분히 어두운 하늘에 떠 있는 시간을 막대로 보여줍니다. 완전 오프라인, 계정 없음, 광고 없음.">
+<title>Sidera Skyline — 내 창에서 보이는 하늘</title>
+<meta property="og:title" content="Sidera Skyline — Rise times for your skyline">
+<meta property="og:description" content="평평한 지평선에서 보는 사람은 없습니다. 창가에서 스카이라인을 한 번 훑어 두면, 앱은 월출 시각이 아니라 그 지붕 위로 올라오는 시각을 답합니다. 완전 오프라인, 계정 없음, 광고 없음.">
 <style>
 :root{--sky:#0A0C1F;--sky2:#141A35;--ground:#211A12;--moon:#FCF5DC;--dim:#9AA3C0;--line:#2A3358;--card:#161C39}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -57,39 +57,49 @@ footer a{color:var(--moon)}
 
 <div class="hero">
   <div class="seal">🌘</div>
-  <h1>Sidera Finder</h1>
+  <h1>Sidera Skyline</h1>
   <p class="tag">
-    <span class="l-ko">오늘 밤, 무엇을 언제 보러 나갈까</span>
-    <span class="l-en">What is worth going outside for tonight, and when</span>
+    <span class="l-ko">평평한 지평선에서 보는 사람은 없습니다</span>
+    <span class="l-en">Nobody observes the sky from a flat horizon</span>
   </p>
 </div>
 
 <div class="stats">
-  <div class="stat"><b>7</b><span class="l-ko">한 축 위의 관측 대상</span><span class="l-en">targets on one axis</span></div>
+  <div class="stat"><b>1<span style="font-size:.9rem">분</span></b><span class="l-ko">스카이라인 측정</span><span class="l-en">to measure a skyline</span></div>
   <div class="stat"><b>0.014°</b><span class="l-ko">JPL 대비 달 오차</span><span class="l-en">Moon vs JPL</span></div>
   <div class="stat"><b>0</b><span class="l-ko">네트워크 요청</span><span class="l-en">network requests</span></div>
   <div class="stat"><b>4</b><span class="l-ko">지원 언어</span><span class="l-en">languages</span></div>
 </div>
 
+<div class="feature">
+  <h3><span class="l-ko">"월출 19:42" 는 벌판의 시각입니다</span><span class="l-en">"Moonrise 19:42" is a time for an open plain</span></h3>
+  <p><span class="l-ko">천문 앱은 고도 0도의 수학적 지평선에 대해 답합니다. 그런 지평선을 가진 사람은 없습니다 — 남쪽이 앞 동에 막힌 발코니, 하늘이 90도만 보이는 부엌 창, 서쪽에 능선이 있는 마당에서 봅니다. 창가에서 스카이라인을 한 번 훑어 두면, 그 뒤로 모든 시각이 그 지붕 기준으로 바뀝니다.</span>
+     <span class="l-en">Astronomy apps answer for a mathematical horizon at zero degrees. Nobody has one — people watch from a balcony blocked to the south, a kitchen window that sees ninety degrees of sky, a yard with a ridge to the west. Sweep your skyline once at the window and every time after that is measured against your own rooftops.</span></p>
+  <div class="copy">
+    <span class="l-ko">월출 19:42 &nbsp;→&nbsp; 앞 건물 위로 21:10, 남동쪽</span>
+    <span class="l-en">moonrise 19:42 &nbsp;→&nbsp; over the block opposite at 21:10, southeast</span>
+  </div>
+</div>
+
 <h2 class="sec"><span class="l-ko">무엇을 하는 앱인가</span><span class="l-en">What it does</span></h2>
 <div class="grid">
   <div class="card">
-    <div class="em">📊</div>
-    <h3><span class="l-ko">오늘 밤을 하나의 축에</span><span class="l-en">Tonight on one axis</span></h3>
-    <p><span class="l-ko">달, 맨눈으로 보이는 행성 다섯, 은하 중심을 하나의 시간축 위에 막대로 그립니다. 금성이 언제 사라지고 토성이 언제 올라오는지가 한눈에 겹쳐 보입니다.</span>
-       <span class="l-en">The Moon, the five naked-eye planets and the galactic core, drawn as bars on one timeline. You can see at a glance when Venus goes and Saturn arrives.</span></p>
+    <div class="em">🏢</div>
+    <h3><span class="l-ko">한 번만 재면 됩니다</span><span class="l-en">Measured once</span></h3>
+    <p><span class="l-ko">창가에서 카메라 화면의 선을 맞은편 지붕 윗선에 맞추고 천천히 한 바퀴 돕니다. 훑지 않은 방향은 가려진 것으로 둡니다 — 90도만 보이는 창이 흔한 경우니까요.</span>
+       <span class="l-en">Stand at the window, put the line on the screen along the roofline opposite, and turn slowly through what you can see. Any direction you do not sweep counts as blocked — a window that gives you ninety degrees is the common case.</span></p>
   </div>
   <div class="card">
-    <div class="em">🌒</div>
-    <h3><span class="l-ko">떴다가 아니라 볼 만하다</span><span class="l-en">Not risen — worth looking at</span></h3>
-    <p><span class="l-ko">막대는 대상이 탁한 공기를 벗어날 만큼 높고, 그 대상에게 하늘이 충분히 어두운 시간입니다. 행성은 시민박명부터, 은하 중심은 천문박명부터 셉니다.</span>
-       <span class="l-en">A bar is the stretch when the target is high enough to clear the murk and the sky is dark enough for it. Planets count from civil twilight, the galactic core from astronomical.</span></p>
+    <div class="em">📊</div>
+    <h3><span class="l-ko">하룻밤이 조각으로 나뉩니다</span><span class="l-en">A night in pieces</span></h3>
+    <p><span class="l-ko">달과 행성 다섯, 은하 중심을 하나의 시간축에 그리되, 막대는 그 자리에서 실제로 보이는 구간만 채웁니다. 굴뚝 뒤로 들어가는 30분이 구멍으로 보입니다.</span>
+       <span class="l-en">The Moon, the five naked-eye planets and the galactic core on one timeline — but each bar only fills the stretches this spot can actually see. The thirty minutes behind a chimney show up as a hole.</span></p>
   </div>
   <div class="card">
     <div class="em">🔔</div>
     <h3><span class="l-ko">알릴 것이 있을 때만</span><span class="l-en">Told only when it matters</span></h3>
-    <p><span class="l-ko">행성의 충과 최대이각, 달이 행성 옆을 지나는 밤, 어두울 때 뜨는 월출. 맑은 밤마다 울리는 알림은 결국 꺼지게 됩니다.</span>
-       <span class="l-en">Opposition and greatest elongation, the Moon passing a planet, a moonrise that happens in the dark. A ping every clear night is a ping you switch off.</span></p>
+    <p><span class="l-ko">알림은 월출이 아니라 가리던 것 뒤에서 나오는 그 시각에 옵니다. 그 밤에 한 번도 지붕을 못 넘으면 아예 울리지 않습니다. 행성의 충과 최대이각, 달이 행성 옆을 지나는 밤도 같은 기준입니다.</span>
+       <span class="l-en">Reminders arrive when it comes out from behind what is in the way — not at the moonrise, and not at all on nights it never clears your roof. Opposition, greatest elongation and the Moon passing a planet follow the same rule.</span></p>
   </div>
 </div>
 
