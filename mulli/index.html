@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>스타트 물리 — 막힌 곳부터 되짚는 학교 물리</title>
+<meta property="og:title" content="스타트 물리 — Start Physics">
+<meta property="og:description" content="개념 → 예제 → 훈련 → 정리. 상수는 문제 안에서 주고, 채점기가 단위를 압니다. 틀린 문제는 1·3·7·16·35일 간격으로 돌아오고, 막힌 개념은 선수 단원까지 되짚어 줍니다.">
+<style>
+:root{--bg:#F4F6FB;--card:#FFFFFF;--ink:#16233A;--ink2:#2B3F5E;--accent:#3873DB;--accent2:#22499E;--sub:#6B7A90;--line:#DDE4EF}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+html[data-lang="ko"] .l-en{display:none}
+html[data-lang="en"] .l-ko{display:none}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+.langbar{display:flex;justify-content:flex-end;padding:14px 0}
+.langbar button{border:1px solid var(--accent);background:transparent;color:var(--accent);padding:5px 14px;cursor:pointer;font-size:14px}
+.langbar button:first-child{border-radius:8px 0 0 8px}
+.langbar button:last-child{border-radius:0 8px 8px 0}
+.langbar button.on{background:var(--accent);color:#fff}
+.hero{text-align:center;padding:40px 0 50px}
+.icon{width:120px;height:120px;border-radius:27px;display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#4787F0,#22499E);box-shadow:0 10px 34px rgba(34,73,158,.28)}
+.icon span{font-family:Times,'Times New Roman',serif;font-style:italic;color:#fff;font-size:58px;line-height:1;position:relative;padding-top:14px}
+.icon span::before{content:"\2192";position:absolute;top:0;left:50%;transform:translateX(-45%);font-style:normal;font-size:26px;line-height:1}
+.hero h1{font-size:2.2rem;margin:22px 0 10px;letter-spacing:-.5px}
+.hero p.tag{font-size:1.15rem;color:var(--sub);margin-bottom:22px}
+.soon{display:inline-block;font-size:.85rem;color:var(--sub);border:1px solid var(--line);border-radius:20px;padding:5px 16px;text-decoration:none}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:34px 0 54px}
+.stat{background:var(--card);border-radius:14px;padding:22px 8px;text-align:center;box-shadow:0 4px 18px rgba(22,35,58,.06)}
+.stat b{display:block;font-size:1.6rem;color:var(--accent)}
+.stat span{font-size:.9rem;color:var(--sub)}
+h2.sec{font-size:1.5rem;margin:0 0 22px;text-align:center}
+h2.sec::after{content:"";display:block;width:44px;height:3px;background:var(--accent);margin:10px auto 0;border-radius:2px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:56px}
+.card{background:var(--card);border-radius:16px;padding:24px 20px;box-shadow:0 4px 18px rgba(22,35,58,.06)}
+.card .em{font-size:1.7rem}
+.card h3{font-size:1.05rem;margin:10px 0 6px}
+.card p{font-size:.92rem;color:#4a5a71}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:56px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 18px}
+.step b{color:var(--accent);font-size:1.02rem}
+.step p{font-size:.9rem;color:#4a5a71;margin-top:6px}
+.note{background:var(--card);border-left:4px solid var(--accent);border-radius:0 12px 12px 0;padding:20px 22px;margin-bottom:56px;font-size:.96rem;color:#3f5169;box-shadow:0 4px 18px rgba(22,35,58,.06)}
+.note p+p{margin-top:12px}
+.trace{background:var(--card);border-radius:16px;padding:26px 24px;margin-bottom:56px;box-shadow:0 4px 18px rgba(22,35,58,.06)}
+.chain{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;margin:6px 0 14px}
+.chain i{font-style:normal;background:#EDF3FF;color:var(--accent2);border-radius:10px;padding:8px 14px;font-size:.95rem;white-space:nowrap}
+.chain i.bad{background:#FDECEC;color:#B4232A}
+.chain u{text-decoration:none;color:var(--sub)}
+.trace p{font-size:.94rem;color:#4a5a71;text-align:center}
+.pricing{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;margin-bottom:56px}
+.pricing h3{font-size:1.1rem;margin-bottom:10px}
+.pricing ul{padding-left:20px;font-size:.94rem;color:#4a5a71}
+.pricing li{margin:5px 0}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;font-size:.9rem;color:var(--sub)}
+footer a{color:var(--ink2)}
+@media(max-width:820px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:720px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="langbar">
+  <button id="b-ko" class="on" onclick="setLang('ko')">한국어</button>
+  <button id="b-en" onclick="setLang('en')">English</button>
+</div>
+
+<div class="hero">
+  <div class="icon"><span>F</span></div>
+  <h1><span class="l-ko">스타트 물리</span><span class="l-en">Start Physics</span></h1>
+  <p class="tag">
+    <span class="l-ko">막힌 곳부터 되짚는 학교 물리</span>
+    <span class="l-en">School physics, traced back to where you stuck</span>
+  </p>
+  <span class="soon"><span class="l-ko">App Store 출시 준비 중</span><span class="l-en">Coming to the App Store</span></span>
+</div>
+
+<div class="stats">
+  <div class="stat"><b>3</b><span class="l-ko">과목 · 16 대단원 · 문제 790</span><span class="l-en">courses · 16 units · 790 problems</span></div>
+  <div class="stat"><b>0</b><span class="l-ko">계정 · 로그인</span><span class="l-en">accounts needed</span></div>
+  <div class="stat"><b>0</b><span class="l-ko">광고 · 추적</span><span class="l-en">ads or tracking</span></div>
+  <div class="stat"><b>1</b><span class="l-ko">회 결제 · 구독 아님</span><span class="l-en">one-time purchase</span></div>
+</div>
+
+<h2 class="sec"><span class="l-ko">왜 또 하나의 물리 앱인가</span><span class="l-en">Why another physics app</span></h2>
+<div class="note">
+  <p class="l-ko">물리가 막히는 자리는 대개 지금 배우는 곳이 아닙니다. 역학적 에너지 보존에서 자꾸 틀리는데
+  원인이 <b>일과 운동 에너지</b>에 있다면, 같은 문제를 백 번 더 풀어도 나아지지 않습니다.
+  그런데 대부분의 학습 앱은 "몇 개 틀렸는지"만 알려 주고 <b>어디서부터 다시 봐야 하는지</b>는
+  말해 주지 않습니다.</p>
+  <p class="l-ko">이 앱은 틀린 문제에 걸린 개념을 모아 보고, 정답률이 낮은 개념의 <b>선수 개념</b>까지
+  거슬러 올라가 되짚을 곳을 짚어 줍니다. 물리의 막힘이 <b>수학</b>에 있을 때는 《스타트 수학》의
+  그 단원으로 건너갈 수 있게 이어 두었습니다.</p>
+  <p class="l-en">Where you get stuck is usually not where you are studying. If conservation of mechanical
+  energy keeps going wrong because the real gap is in <b>work and kinetic energy</b>, solving the same
+  problem a hundred more times will not help. Most study apps tell you how many you missed, but not
+  <b>where to go back to</b>.</p>
+  <p class="l-en">This app gathers the concepts behind your wrong answers and walks back along the
+  prerequisite chain. When the gap is in <b>mathematics</b>, a tap takes you to that unit in Start Math.</p>
+</div>
+
+<h2 class="sec"><span class="l-ko">되짚기</span><span class="l-en">Tracing back</span></h2>
+<div class="trace">
+  <div class="chain">
+    <i class="bad"><span class="l-ko">역학적 에너지 보존 · 정답률 40%</span><span class="l-en">Conservation of energy · 40%</span></i>
+    <u>←</u>
+    <i><span class="l-ko">일과 운동 에너지</span><span class="l-en">Work and kinetic energy</span></i>
+    <u>←</u>
+    <i><span class="l-ko">등가속도 운동</span><span class="l-en">Uniform acceleration</span></i>
+  </div>
+  <p class="l-ko">같은 개념에서 세 번 넘게 틀리면 앱이 선수 개념을 거슬러 올라가 후보를 찾습니다.
+  확률이 아니라 <b>교육과정의 위계</b>를 따라가므로, 왜 그 단원을 권하는지 근거를 함께 보여 드립니다.</p>
+  <p class="l-en">After three or more misses on the same concept, the app walks back through the
+  prerequisite chain. It follows the <b>curriculum hierarchy</b> rather than a guess, so it can always
+  show you why that lesson was suggested.</p>
+</div>
+
+<h2 class="sec"><span class="l-ko">물리라서 다른 것</span><span class="l-en">What physics needs</span></h2>
+<div class="grid">
+  <div class="card"><div class="em">📏</div><h3><span class="l-ko">상수는 문제 안에서</span><span class="l-en">Constants inside the problem</span></h3>
+    <p class="l-ko">중력가속도를 9.8 로 쓰는 교과서도, 10 으로 쓰는 교과서도 있습니다. 쓰는 책에 따라 답이 갈리지 않도록 <b>필요한 상수를 발문에서 줍니다</b>.</p>
+    <p class="l-en">Some textbooks use 9.8 for gravity, others 10. Every problem <b>states the constants it needs</b>, so the answer never depends on which book you own.</p></div>
+  <div class="card"><div class="em">⚖️</div><h3><span class="l-ko">단위를 아는 채점기</span><span class="l-en">A grader that knows units</span></h3>
+    <p class="l-ko">답이 40 N 이면 <b>0.04 kN 도 맞습니다</b>. 접두어, km/h ↔ m/s 환산, 「3배」 같은 세는 말, 소수의 허용 오차까지 압니다.</p>
+    <p class="l-en">If the answer is 40 N, <b>0.04 kN is correct too</b>. Prefixes, conversions, counting words and tolerances are all handled.</p></div>
+  <div class="card"><div class="em">🔌</div><h3><span class="l-ko">도형과 회로를 좌표로</span><span class="l-en">Diagrams drawn, not pasted</span></h3>
+    <p class="l-ko">자유물체도, 전기 회로, 자기장 속 도선, 에너지 준위, 렌즈 작도 —— 37개의 그림을 좌표로 그립니다. 회로 기호는 KS 를 따릅니다.</p>
+    <p class="l-en">Free-body diagrams, circuits, fields, energy levels, ray tracing — 37 figures drawn from coordinates, with Korean-standard circuit symbols.</p></div>
+  <div class="card"><div class="em">🎚</div><h3><span class="l-ko">끌어 보는 개념 카드</span><span class="l-en">Concepts you can move</span></h3>
+    <p class="l-ko">합력 · 중력과 무게 · 탄성력 · 마찰력 · 부력 · 알짜힘과 운동 상태의 변화. 여섯 카드에서 값을 직접 끌어 봅니다.</p>
+    <p class="l-en">Net force, weight, elasticity, friction, buoyancy, and how net force changes motion — drag the values yourself on six cards.</p></div>
+  <div class="card"><div class="em">📚</div><h3><span class="l-ko">교육과정의 선을 지킵니다</span><span class="l-en">Inside the curriculum's limits</span></h3>
+    <p class="l-ko">2022 개정 성취기준과 그 <b>해설</b>에 맞추었습니다. 해설이 "정량 계산은 다루지 않는다"고 한 곳은 정량으로 묻지 않습니다.</p>
+    <p class="l-en">Aligned with the 2022 revised curriculum <b>and its commentary</b> —— where it says a topic stays qualitative, we do not ask for numbers.</p></div>
+  <div class="card"><div class="em">✏️</div><h3><span class="l-ko">새로 쓴 문항</span><span class="l-en">Originally written</span></h3>
+    <p class="l-ko">수능·학력평가·교과서 문항을 옮겨 싣지 않았습니다. 실험 자료의 수치까지 자체 계산으로 만들었습니다.</p>
+    <p class="l-en">No exam or textbook questions are reproduced. Even the data in experiment problems was computed for this app.</p></div>
+</div>
+
+<h2 class="sec"><span class="l-ko">한 소단원을 떼는 네 걸음</span><span class="l-en">Four steps per lesson</span></h2>
+<div class="steps">
+  <div class="step"><b><span class="l-ko">개념</span><span class="l-en">Concept</span></b>
+    <p class="l-ko">정의·공식·직관, 흔한 오해, 그리고 그 개념이 처음 나온 이야기를 카드로 나눠 봅니다.</p>
+    <p class="l-en">Definitions, formulas, intuition, common misconceptions — and where the idea came from.</p></div>
+  <div class="step"><b><span class="l-ko">예제</span><span class="l-en">Example</span></b>
+    <p class="l-ko">풀이를 한 줄씩 따라가며 각 줄이 왜 그렇게 되는지 확인합니다.</p>
+    <p class="l-en">Worked solutions one line at a time, each line explained.</p></div>
+  <div class="step"><b><span class="l-ko">훈련</span><span class="l-en">Practice</span></b>
+    <p class="l-ko">기초·표준·심화·최상위를 직접 풉니다. 입력란이 단위를 보여 줍니다.</p>
+    <p class="l-en">Four levels to solve; the answer field shows the unit it expects.</p></div>
+  <div class="step"><b><span class="l-ko">정리</span><span class="l-en">Review</span></b>
+    <p class="l-ko">무엇을 익혔고 무엇이 남았는지 확인하고, 틀린 문제는 복습 큐로 넘깁니다.</p>
+    <p class="l-en">See what stuck and what did not; misses move into the review queue.</p></div>
+</div>
+
+<h2 class="sec"><span class="l-ko">담긴 과목</span><span class="l-en">What is inside</span></h2>
+<div class="grid">
+  <div class="card"><div class="em">🧲</div><h3><span class="l-ko">중학 물리 · 250문항</span><span class="l-en">Middle School Physics · 250</span></h3>
+    <p class="l-ko">힘의 작용 · 열 · 빛과 파동 · 전기와 자기 · 운동과 에너지. 세 학년에 흩어진 물리 단원을 영역으로 묶었습니다.</p>
+    <p class="l-en">Forces, heat, light and waves, electricity and magnetism, motion and energy — the physics units of all three years, grouped by topic.</p></div>
+  <div class="card"><div class="em">🔋</div><h3><span class="l-ko">통합과학 물리 · 190문항</span><span class="l-en">Integrated Science · 190</span></h3>
+    <p class="l-ko">과학의 기초 · 역학 시스템 · 물질의 전기적 성질 · 에너지 전환과 발전.</p>
+    <p class="l-en">Foundations of science, mechanical systems, electrical properties of matter, energy conversion and power generation.</p></div>
+  <div class="card"><div class="em">🌌</div><h3><span class="l-ko">물리학 · 350문항</span><span class="l-en">Physics · 350</span></h3>
+    <p class="l-ko">힘과 평형 · 운동량과 역학적 에너지 · 열과 에너지 전환 · 전기장과 전기 회로 · 자기장과 전자기 유도 · 빛의 파동성과 렌즈 · 양자와 물질.</p>
+    <p class="l-en">Equilibrium, momentum and energy, heat, electric fields and circuits, magnetism and induction, the wave nature of light, quanta and matter.</p></div>
+</div>
+
+<h2 class="sec"><span class="l-ko">기능</span><span class="l-en">Features</span></h2>
+<div class="grid">
+  <div class="card"><div class="em">✍️</div><h3><span class="l-ko">손으로 풀 자리</span><span class="l-en">Room to work by hand</span></h3>
+    <p class="l-ko">문항 옆에 필기 공간이 있습니다. 아이패드는 화면이 좌우로 갈리고, Apple Pencil 로 쓰면 손바닥이 그려지지 않습니다. 쓴 풀이는 <b>오답노트에서 다시</b> 봅니다.</p>
+    <p class="l-en">A writing space beside every problem. On iPad the screen splits, and your palm can rest on the glass. Your working <b>comes back in the review notes</b>.</p></div>
+  <div class="card"><div class="em">🔁</div><h3><span class="l-ko">오답노트와 간격 반복</span><span class="l-en">Spaced review</span></h3>
+    <p class="l-ko">틀린 문제는 1·3·7·16·35일 뒤에 돌아옵니다. 맞히면 간격이 늘고, 또 틀리면 처음으로.</p>
+    <p class="l-en">Misses return after 1, 3, 7, 16 and 35 days. Right answers stretch the interval; wrong ones reset it.</p></div>
+  <div class="card"><div class="em">🏷</div><h3><span class="l-ko">틀린 이유 태깅</span><span class="l-en">Why you missed it</span></h3>
+    <p class="l-ko">계산 실수·개념 부족·문제 오독 중에서 고릅니다. 계산 실수는 개념 숙련도를 깎지 않습니다.</p>
+    <p class="l-en">Tag each miss as arithmetic, concept, or misreading. Arithmetic slips do not count against mastery.</p></div>
+  <div class="card"><div class="em">🗺</div><h3><span class="l-ko">개념 지도</span><span class="l-en">Concept map</span></h3>
+    <p class="l-ko">개념 100개와 그 사이의 길을 한 장으로 봅니다. 수학 개념으로 이어지는 길도 함께 그립니다.</p>
+    <p class="l-en">One hundred concepts and the paths between them, including the ones that lead into mathematics.</p></div>
+  <div class="card"><div class="em">📐</div><h3><span class="l-ko">수식을 그림으로 넣지 않았습니다</span><span class="l-en">Real typesetting</span></h3>
+    <p class="l-ko">분수선의 굵기, 근호의 기울기, 벡터 기호까지 조판 규칙으로 그립니다. 글자를 키워도 흐려지지 않습니다.</p>
+    <p class="l-en">Rule thickness, radical slant, vector marks — all drawn by typesetting rules. Nothing blurs when enlarged.</p></div>
+  <div class="card"><div class="em">🔊</div><h3><span class="l-ko">수식을 우리말 어순으로</span><span class="l-en">Spoken in Korean order</span></h3>
+    <p class="l-ko">VoiceOver 로 읽으면 ½은 "2분의 1", |x|는 "x의 절댓값"으로 읽습니다.</p>
+    <p class="l-en">With VoiceOver, formulas are read in natural Korean word order.</p></div>
+  <div class="card"><div class="em">📖</div><h3><span class="l-ko">용어 설명집</span><span class="l-en">Glossary</span></h3>
+    <p class="l-ko">본문의 용어를 누르면 그 자리에서 뜻을 봅니다. 131항목이 서로 이어져 있습니다.</p>
+    <p class="l-en">Tap a term in the text to see what it means — 131 entries, linked to one another.</p></div>
+  <div class="card"><div class="em">📅</div><h3><span class="l-ko">시험 D-day 플랜</span><span class="l-en">Exam plan</span></h3>
+    <p class="l-ko">범위와 하루 학습 시간을 넣으면 선수 관계를 지켜 배분하고, 마지막 이틀은 복습만 넣습니다.</p>
+    <p class="l-en">Enter the scope and your daily minutes; the plan respects prerequisites and keeps the last two days for review.</p></div>
+  <div class="card"><div class="em">📊</div><h3><span class="l-ko">통계</span><span class="l-en">Statistics</span></h3>
+    <p class="l-ko">연속 학습일, 단원별 진행률, 오답 원인 분포, 그리고 실제로 걸린 풀이 시간.</p>
+    <p class="l-en">Streak, per-unit progress, causes of mistakes, and how long problems actually took.</p></div>
+  <div class="card"><div class="em">📮</div><h3><span class="l-ko">부모님께 한 장으로</span><span class="l-en">One card for a parent</span></h3>
+    <p class="l-ko">한 주의 공부를 카드 한 장으로 보냅니다. <b>등수도 비교도 넣지 않았고</b>, 자동으로 보내지도 않습니다 —— 학생이 직접 누르고, 무엇이 나가는지 먼저 봅니다.</p>
+    <p class="l-en">A week's work as a single card. <b>No rank, no comparison</b>, and nothing is sent automatically.</p></div>
+  <div class="card"><div class="em">🧩</div><h3><span class="l-ko">오늘의 한 문제</span><span class="l-en">Daily problem</span></h3>
+    <p class="l-ko">홈 화면 위젯. <b>무료 구간 문항만</b> 나오므로 눌렀다가 구매 화면을 만나는 일이 없습니다.</p>
+    <p class="l-en">A home screen widget that only ever shows <b>free-section problems</b>, so a tap never hits a paywall.</p></div>
+  <div class="card"><div class="em">☁️</div><h3><span class="l-ko">iCloud 동기화</span><span class="l-en">iCloud sync</span></h3>
+    <p class="l-ko">같은 Apple 계정의 기기끼리 진도와 오답노트가 이어집니다. 로그인하지 않아도 앱은 그대로 동작합니다.</p>
+    <p class="l-en">Progress and review notes follow your Apple Account. Not signed in? Everything still works.</p></div>
+</div>
+
+<h2 class="sec"><span class="l-ko">무료로 어디까지</span><span class="l-en">How much is free</span></h2>
+<div class="pricing">
+  <h3><span class="l-ko">사기 전에, 어떻게 가르치는지 충분히 보십시오</span><span class="l-en">See how it teaches before you decide</span></h3>
+  <ul>
+    <li class="l-ko"><b>대단원마다 앞 두 소단원이 무료</b> —— 790문항 가운데 320문항, 전체의 40%입니다</li>
+    <li class="l-en"><b>The first two lessons of every unit are free</b> —— 320 of 790 problems, 40% of the app</li>
+    <li class="l-ko"><b>그다음 한 단원</b>은 개념과 예제까지 무료로 이어 보시고, 문제 풀이에서 구매를 만납니다</li>
+    <li class="l-en"><b>One further lesson</b> gives you the concepts and worked examples; the paywall waits at its practice problems</li>
+    <li class="l-ko"><b>되짚기로 안내된 단원</b>은 잠겨 있어도 개념과 예제가 열리고, 한 번 열리면 다시 잠기지 않습니다</li>
+    <li class="l-en"><b>A lesson you were sent back to</b> opens its concepts and examples even when locked — and stays open</li>
+    <li class="l-ko"><b>결제는 1회</b> —— 과목별로 하나씩, 필요한 과목만 삽니다. 구독이 아니라 만료되지 않고, 가족 공유를 지원합니다</li>
+    <li class="l-en"><b>One-time purchase</b> —— one pack per course. Not a subscription; never expires; Family Sharing supported</li>
+    <li class="l-ko">문항과 단원이 늘어나는 업데이트는 <b>이미 구매하신 분께 무료</b>입니다</li>
+    <li class="l-en">Updates that add lessons and problems are <b>free to everyone who has already purchased</b></li>
+    <li class="l-ko">인터넷 없이 학습할 수 있고, 회원 가입이나 로그인이 필요 없습니다</li>
+    <li class="l-en">Works offline. No account or sign-in required</li>
+  </ul>
+</div>
+
+<h2 class="sec"><span class="l-ko">개인정보</span><span class="l-en">Privacy</span></h2>
+<div class="note">
+  <p class="l-ko"><b>개인을 알아볼 수 있는 것은 수집하지 않습니다.</b> 회원 가입도, 로그인도,
+  개발자가 운영하는 서버도 없고 광고도 없습니다. 문항에 <b>이의를 제기하실 때는</b>
+  직접 쓰신 글과 낸 답이 함께 갑니다(누르기 전에 보여 드립니다). 그 밖의 학습 기록과 필기는
+  기기와 <b>이용자 본인의 iCloud</b> 에만 남으며 개발자는 볼 수 없습니다.</p>
+  <p class="l-en"><b>Nothing that identifies you is collected.</b> No sign-up, no login, no
+  developer-operated server, no ads. <b>If you report a problem</b>, what you wrote and the answer you gave go
+  with it, shown to you before you tap. Everything else lives on your device and in
+  <b>your own iCloud</b>, where the developer has no access.</p>
+</div>
+
+<footer>
+  <p><a href="support.html"><span class="l-ko">지원</span><span class="l-en">Support</span></a> ·
+     <a href="privacy.html"><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></a></p>
+  <p style="margin-top:8px">chungkil.cksw@gmail.com</p>
+</footer>
+
+</div>
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  document.documentElement.setAttribute('lang', l);
+  document.getElementById('b-ko').classList.toggle('on', l==='ko');
+  document.getElementById('b-en').classList.toggle('on', l==='en');
+  try{ localStorage.setItem('lang', l); }catch(e){}
+}
+try{ var s=localStorage.getItem('lang'); if(s) setLang(s); }catch(e){}
+</script>
+</body>
+</html>
