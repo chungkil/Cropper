@@ -19,9 +19,10 @@ html[data-lang="en"] .l-ko{display:none}
 .langbar button:last-child{border-radius:0 8px 8px 0}
 .langbar button.on{background:var(--accent);color:#fff}
 .hero{text-align:center;padding:40px 0 50px}
-.icon{width:120px;height:120px;border-radius:27px;display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#4787F0,#22499E);box-shadow:0 10px 34px rgba(34,73,158,.28)}
-.icon span{font-family:Times,'Times New Roman',serif;font-style:italic;color:#fff;font-size:58px;line-height:1;position:relative;padding-top:14px}
-.icon span::before{content:"\2192";position:absolute;top:0;left:50%;transform:translateX(-45%);font-style:normal;font-size:26px;line-height:1}
+.icon{width:120px;height:120px;border-radius:27px;display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#FAA829,#D14D12);box-shadow:0 10px 34px rgba(209,77,18,.28)}
+.icon span{font-family:Times,'Times New Roman',serif;color:#fff;font-size:31px;line-height:1;white-space:nowrap;text-shadow:0 1px 1px rgba(0,0,0,.22)}
+.icon i{font-style:italic}
+.icon sup{font-size:.62em;vertical-align:.62em;line-height:0}
 .hero h1{font-size:2.2rem;margin:22px 0 10px;letter-spacing:-.5px}
 .hero p.tag{font-size:1.15rem;color:var(--sub);margin-bottom:22px}
 .soon{display:inline-block;font-size:.85rem;color:var(--sub);border:1px solid var(--line);border-radius:20px;padding:5px 16px;text-decoration:none}
@@ -67,7 +68,7 @@ footer a{color:var(--ink2)}
 </div>
 
 <div class="hero">
-  <div class="icon"><span>F</span></div>
+  <div class="icon" aria-hidden="true"><span><i>E</i> = <i>mc</i><sup>2</sup></span></div>
   <h1><span class="l-ko">스타트 물리</span><span class="l-en">Start Physics</span></h1>
   <p class="tag">
     <span class="l-ko">막힌 곳부터 되짚는 학교 물리</span>
