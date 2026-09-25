@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>지원 — Volt 전기기사 필기</title>
+<style>
+:root{--bg:#F4F7FC;--bg2:#E9EFFA;--ink:#0B1F4B;--ink2:#1E4FD8;--accent:#E89A00;--sub:#5B6B88;--card:#FFFFFF}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.75}
+html[data-lang="ko"] .l-en{display:none}
+html[data-lang="en"] .l-ko{display:none}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px 60px}
+.langbar{display:flex;justify-content:flex-end;padding:14px 0}
+.langbar button{border:1px solid var(--ink2);background:transparent;color:var(--ink2);padding:5px 14px;cursor:pointer;font-size:14px}
+.langbar button:first-child{border-radius:8px 0 0 8px}
+.langbar button:last-child{border-radius:0 8px 8px 0}
+.langbar button.on{background:var(--ink2);color:#fff}
+h1{font-size:1.8rem;margin:16px 0 6px}
+.lead{color:var(--sub);margin-bottom:26px}
+.contact{background:var(--card);border-radius:14px;padding:20px 22px;margin:0 0 30px;box-shadow:0 4px 18px rgba(11,31,75,.08)}
+.contact a{color:var(--ink2);font-weight:600}
+h2{font-size:1.2rem;margin:30px 0 12px}
+.qa{background:var(--card);border-radius:14px;padding:18px 20px;margin:12px 0;box-shadow:0 4px 18px rgba(11,31,75,.06)}
+.qa h3{font-size:1rem;margin-bottom:6px}
+.qa p,.qa li{font-size:.95rem;color:#3a4763}
+.qa ul{padding-left:20px;margin-top:6px}
+footer{border-top:1px solid #d3ddf0;padding:24px 0 0;margin-top:40px;text-align:center;font-size:.9rem;color:var(--sub)}
+footer a{color:var(--ink2)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="langbar">
+  <button id="b-ko" class="on" onclick="setLang('ko')">한국어</button>
+  <button id="b-en" onclick="setLang('en')">English</button>
+</div>
+
+<h1><span class="l-ko">지원</span><span class="l-en">Support</span></h1>
+<p class="lead"><span class="l-ko">Volt 전기기사 필기를 쓰시다 막히는 곳이 있으면 알려 주세요.</span>
+<span class="l-en">Stuck somewhere in Volt? Let us know.</span></p>
+
+<div class="contact">
+  <p><span class="l-ko">이메일</span><span class="l-en">Email</span>:
+  <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a></p>
+  <p class="l-ko">문항 오류를 알려 주실 때는 과목과 지문 첫 줄, 어디가 틀렸다고 보시는지를 함께 적어 주시면 빨리 고칠 수 있습니다.</p>
+  <p class="l-en">When reporting a question error, please include the subject, the first line of the question, and what you think is wrong.</p>
+</div>
+
+<h2><span class="l-ko">자주 묻는 질문</span><span class="l-en">FAQ</span></h2>
+
+<div class="qa">
+  <h3><span class="l-ko">무료로 어디까지 쓸 수 있나요?</span><span class="l-en">What can I use for free?</span></h3>
+  <p class="l-ko">과목마다 일부 개념의 카드와 문항이 열려 있습니다. 아무 과목도 사지 않은 동안에는 이 개념들로 오늘의 학습 큐와
+  계획을 만듭니다. 사지 않은 과목의 다른 개념은 목록에 자물쇠로 표시됩니다.</p>
+  <p class="l-en">Each subject has a few free concepts with their cards and questions. Until you buy a subject, your daily
+  queue and plan are built from them. Other concepts show a lock.</p>
+</div>
+
+<div class="qa">
+  <h3><span class="l-ko">구독인가요?</span><span class="l-en">Is it a subscription?</span></h3>
+  <p class="l-ko">아닙니다. 과목마다 <b>한 번 결제</b>하면 계속 쓰며 다시 결제되지 않습니다. 필요한 과목만 골라 사실 수 있고,
+  다섯 과목을 모두 열면 실전 모의고사가 열립니다.</p>
+  <p class="l-en">No. Each subject is a <b>one-time purchase</b> and is never charged again. Buy only the subjects you need;
+  unlocking all five opens the full mock exam.</p>
+</div>
+
+<div class="qa">
+  <h3><span class="l-ko">과목을 샀는데 계획에 다른 과목이 안 보입니다</span><span class="l-en">I bought a subject and the others disappeared from my plan</span></h3>
+  <p class="l-ko">의도된 동작입니다. 과목을 하나라도 사면 <b>산 과목만으로</b> 학습 계획과 오늘의 큐를 만듭니다.
+  사지 않은 과목의 무료 개념은 학습 탭의 개념·연습에서 계속 열어 볼 수 있습니다.</p>
+  <p class="l-en">That is by design. Once you own any subject, your plan and daily queue cover <b>only the subjects you own</b>.
+  Free concepts of other subjects are still available under Concepts and Practice.</p>
+</div>
+
+<div class="qa">
+  <h3><span class="l-ko">새 기기에서 산 과목이 잠겨 있어요</span><span class="l-en">My purchases are locked on a new device</span></h3>
+  <p class="l-ko">잠긴 곳의 "과목 열기"를 누른 뒤 아래의 <b>구매 복원</b>을 눌러 주세요. 구매할 때와 같은 Apple 계정이어야 합니다.
+  복원 결과(새로 열림 / 이미 반영됨 / 산 과목 없음)가 화면에 표시됩니다.</p>
+  <p class="l-en">Tap "Unlock subjects" on any locked item, then <b>Restore Purchases</b>. Use the same Apple ID you bought with.
+  The result (restored / already up to date / nothing to restore) is shown on screen.</p>
+</div>
+
+<div class="qa">
+  <h3><span class="l-ko">환불받고 싶어요</span><span class="l-en">How do I get a refund?</span></h3>
+  <p class="l-ko">결제는 Apple이 처리하므로 환불도 Apple에 요청합니다.
+  <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>에서 해당 구매를 골라 요청해 주세요.</p>
+  <p class="l-en">Payments are handled by Apple, so refunds are requested from Apple at
+  <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+</div>
+
+<div class="qa">
+  <h3><span class="l-ko">다른 기기와 진도가 이어지나요?</span><span class="l-en">Does my progress sync between devices?</span></h3>
+  <p class="l-ko">같은 Apple 계정으로 iCloud에 로그인한 기기끼리 풀이 기록이 이어집니다. iCloud를 쓰지 않아도 앱은 그대로
+  동작하며, 기록은 그 기기에만 남습니다. 동기화는 앱을 열거나 닫을 때 이루어집니다.</p>
+  <p class="l-en">Devices signed in to iCloud with the same Apple ID share your answer history. Without iCloud the app still
+  works and keeps data on that device. Syncing happens when you open or leave the app.</p>
+</div>
+
+<div class="qa">
+  <h3><span class="l-ko">시험 일정이 나오지 않아요</span><span class="l-en">I don't see the exam schedule</span></h3>
+  <p class="l-ko">일정 정보를 받지 못했을 때는 온보딩에서 시험일을 직접 정하게 됩니다. 정한 날짜로 학습 단계와 하루 분량이 계산됩니다.
+  접수 기간과 시험일은 반드시 한국산업인력공단(Q-Net)의 공고로 확인해 주세요.</p>
+  <p class="l-en">When schedule data isn't available, onboarding asks you to set the exam date yourself; your study phases and
+  daily load are computed from it. Always confirm registration periods and exam dates with the official Q-Net announcement.</p>
+</div>
+
+<div class="qa">
+  <h3><span class="l-ko">인터넷 없이 쓸 수 있나요?</span><span class="l-en">Can I use it offline?</span></h3>
+  <p class="l-ko">네. 모든 문항·개념 카드·공식이 앱 안에 있습니다. 구매와 구매 복원, iCloud 동기화만 인터넷이 필요합니다.</p>
+  <p class="l-en">Yes. All questions, cards and formulas are inside the app. Only purchases, restoring, and iCloud sync need a connection.</p>
+</div>
+
+<div class="qa">
+  <h3><span class="l-ko">앱의 "오류 신고"를 눌렀는데 답이 없어요</span><span class="l-en">I used "Report an error" in the app but got no reply</span></h3>
+  <p class="l-ko">앱 안의 오류 신고는 기기에 메모로만 남고 전송되지 않습니다. 개발자에게 알리시려면 위의 이메일로 보내 주세요.</p>
+  <p class="l-en">In-app reports are saved on your device only and are not sent. To reach us, please use the email above.</p>
+</div>
+
+<footer>
+  <p><a href="index.html"><span class="l-ko">홈</span><span class="l-en">Home</span></a> ·
+     <a href="privacy.html"><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></a></p>
+</footer>
+
+</div>
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  document.documentElement.setAttribute('lang', l);
+  document.getElementById('b-ko').classList.toggle('on', l==='ko');
+  document.getElementById('b-en').classList.toggle('on', l==='en');
+  try{ localStorage.setItem('lang', l); }catch(e){}
+}
+try{ var s=localStorage.getItem('lang'); if(s) setLang(s); }catch(e){}
+</script>
+</body>
+</html>

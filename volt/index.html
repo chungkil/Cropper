@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Volt — 전기기사 필기 학습</title>
+<meta property="og:title" content="Volt — 전기기사 필기 학습">
+<meta property="og:description" content="전기기사 필기 다섯 과목을 개념 카드와 문항으로. 간격 반복과 과락 방어 계획으로 오늘 풀 문항을 정해 줍니다. 과목마다 무료로 체험하고, 필요한 과목만 한 번 사서 계속 씁니다.">
+<style>
+:root{--bg:#F4F7FC;--bg2:#E9EFFA;--ink:#0B1F4B;--ink2:#1E4FD8;--accent:#E89A00;--sub:#5B6B88;--card:#FFFFFF}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+html[data-lang="ko"] .l-en{display:none}
+html[data-lang="en"] .l-ko{display:none}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+.langbar{display:flex;justify-content:flex-end;padding:14px 0}
+.langbar button{border:1px solid var(--ink2);background:transparent;color:var(--ink2);padding:5px 14px;cursor:pointer;font-size:14px}
+.langbar button:first-child{border-radius:8px 0 0 8px}
+.langbar button:last-child{border-radius:0 8px 8px 0}
+.langbar button.on{background:var(--ink2);color:#fff}
+.hero{text-align:center;padding:40px 0 50px}
+.hero .icon{width:120px;height:120px;border-radius:27px;box-shadow:0 8px 30px rgba(11,31,75,.25);background:linear-gradient(#0A1C4A,#1A56DB);display:inline-flex;align-items:center;justify-content:center;font-size:66px}
+.hero h1{font-size:2.2rem;margin:22px 0 10px;letter-spacing:-.5px}
+.hero p.tag{font-size:1.15rem;color:var(--sub);margin-bottom:26px}
+.badge .soon{display:inline-block;font-size:.85rem;color:var(--sub);margin-top:8px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:10px 0 54px}
+.stat{background:var(--card);border-radius:14px;padding:22px 8px;text-align:center;box-shadow:0 4px 18px rgba(11,31,75,.08)}
+.stat b{display:block;font-size:1.6rem;color:var(--ink2)}
+.stat span{font-size:.9rem;color:var(--sub)}
+h2.sec{font-size:1.5rem;margin:0 0 22px;text-align:center}
+h2.sec::after{content:"";display:block;width:44px;height:3px;background:var(--accent);margin:10px auto 0;border-radius:2px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:56px}
+.card{background:var(--card);border-radius:16px;padding:24px 20px;box-shadow:0 4px 18px rgba(11,31,75,.08)}
+.card .em{font-size:1.7rem}
+.card h3{font-size:1.05rem;margin:10px 0 6px}
+.card p{font-size:.92rem;color:#44516b}
+.subjects{background:var(--card);border-radius:16px;padding:24px;margin-bottom:56px;box-shadow:0 4px 18px rgba(11,31,75,.08)}
+.subjects ul{padding-left:22px;font-size:.94rem;color:#44516b}
+.subjects li{margin:4px 0}
+.subjects li b{color:var(--ink)}
+.pricing{background:var(--bg2);border:1px solid #d3ddf0;border-radius:16px;padding:26px;margin-bottom:56px}
+.pricing h3{font-size:1.1rem;margin-bottom:10px}
+.pricing ul{padding-left:20px;font-size:.94rem;color:#44516b}
+.note{background:#fff;border-left:4px solid var(--accent);border-radius:0 12px 12px 0;padding:18px 20px;margin-bottom:56px;font-size:.94rem;color:#44516b}
+footer{border-top:1px solid #d3ddf0;padding:26px 0 40px;text-align:center;font-size:.9rem;color:var(--sub)}
+footer a{color:var(--ink2)}
+@media(max-width:720px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="langbar">
+  <button id="b-ko" class="on" onclick="setLang('ko')">한국어</button>
+  <button id="b-en" onclick="setLang('en')">English</button>
+</div>
+
+<div class="hero">
+  <div class="icon">⚡️</div>
+  <h1><span class="l-ko">Volt — 전기기사 필기</span><span class="l-en">Volt — Electrical Engineer Exam Prep</span></h1>
+  <p class="tag">
+    <span class="l-ko">오늘 무엇을 풀지, 앱이 정해 줍니다</span>
+    <span class="l-en">Know exactly what to study today</span>
+  </p>
+  <div class="badge"><span class="soon">
+    <span class="l-ko">App Store 출시 준비 중</span><span class="l-en">Coming soon to the App Store</span>
+  </span></div>
+</div>
+
+<div class="stats">
+  <div class="stat"><b>5</b><span class="l-ko">과목</span><span class="l-en">subjects</span></div>
+  <div class="stat"><b>198</b><span class="l-ko">개념 카드</span><span class="l-en">concept cards</span></div>
+  <div class="stat"><b>390</b><span class="l-ko">문항</span><span class="l-en">questions</span></div>
+  <div class="stat"><b>1,135</b><span class="l-ko">공식</span><span class="l-en">formulas</span></div>
+</div>
+
+<h2 class="sec"><span class="l-ko">무엇이 다른가</span><span class="l-en">What makes it different</span></h2>
+<div class="grid">
+  <div class="card"><div class="em">🗓️</div>
+    <h3><span class="l-ko">오늘의 학습 큐</span><span class="l-en">A daily queue</span></h3>
+    <p class="l-ko">잊을 때쯤 다시 보여 주는 간격 반복에 개념마다 다른 중요도를 더해 오늘 풀 문항을 고릅니다. 앱을 다시 켜도 같은 날에는 같은 큐가 이어집니다.</p>
+    <p class="l-en">Spaced repetition plus per-concept weighting picks today's questions. Reopen the app and the same day continues where you left off.</p>
+  </div>
+  <div class="card"><div class="em">🛡️</div>
+    <h3><span class="l-ko">과락 방어 계획</span><span class="l-en">No subject left behind</span></h3>
+    <p class="l-ko">총점이 아니라 가장 약한 과목을 끌어올리도록 과목별 분량을 나눕니다. 계획에 든 과목은 어느 것도 하루 분량의 10% 아래로 밀려나지 않습니다.</p>
+    <p class="l-en">The plan lifts your weakest subject rather than your total. No planned subject ever drops below 10% of the day.</p>
+  </div>
+  <div class="card"><div class="em">📐</div>
+    <h3><span class="l-ko">개념 카드와 공식 검색</span><span class="l-en">Concept cards &amp; formula search</span></h3>
+    <p class="l-ko">정의·핵심 공식·자주 나오는 함정을 한 장에. 공식은 이름뿐 아니라 기호와 단위로도 찾습니다.</p>
+    <p class="l-en">Definition, key formulas and common traps on one card. Search formulas by name, symbol or unit.</p>
+  </div>
+  <div class="card"><div class="em">❌</div>
+    <h3><span class="l-ko">오답 노트</span><span class="l-en">Mistake notebook</span></h3>
+    <p class="l-ko">틀린 문항이 자동으로 모이고 세 번 연속 맞히면 빠집니다. 개념 부족·계산 실수·시간 부족·문제 오독으로 사유를 달아 걸러 볼 수 있습니다.</p>
+    <p class="l-en">Missed questions gather automatically and graduate after three correct answers in a row. Tag why you missed it and filter.</p>
+  </div>
+  <div class="card"><div class="em">⏱️</div>
+    <h3><span class="l-ko">실전 모의고사</span><span class="l-en">Full mock exam</span></h3>
+    <p class="l-ko">다섯 과목을 한 번에, 시간 제한과 과락 판정까지. 앱을 닫아도 시간은 흐르고, 다시 열면 고른 답이 그대로 있습니다.</p>
+    <p class="l-en">All five subjects with a time limit and per-subject cut-off. The clock keeps running if you leave, and your answers are kept.</p>
+  </div>
+  <div class="card"><div class="em">📶</div>
+    <h3><span class="l-ko">오프라인이 기본</span><span class="l-en">Offline first</span></h3>
+    <p class="l-ko">모든 문항과 카드가 앱 안에 있어 인터넷 없이 풉니다. 학습 기록은 본인의 iCloud에 보관되어 같은 Apple 계정의 기기로 이어집니다.</p>
+    <p class="l-en">Everything ships inside the app, so no connection is needed. Your study history is kept in your own iCloud and follows you across devices on the same Apple ID.</p>
+  </div>
+</div>
+
+<h2 class="sec"><span class="l-ko">다루는 과목</span><span class="l-en">Subjects</span></h2>
+<div class="subjects">
+  <ul class="l-ko">
+    <li><b>전기자기학</b> — 개념 55 · 문항 108</li>
+    <li><b>전력공학</b> — 개념 37 · 문항 74</li>
+    <li><b>전기기기</b> — 개념 57 · 문항 109</li>
+    <li><b>회로이론 및 제어공학</b> — 개념 19 · 문항 36</li>
+    <li><b>전기설비기술기준(KEC)</b> — 개념 30 · 문항 63</li>
+  </ul>
+  <ul class="l-en">
+    <li><b>Electromagnetics</b> — 55 concepts · 108 questions</li>
+    <li><b>Power Engineering</b> — 37 concepts · 74 questions</li>
+    <li><b>Electrical Machines</b> — 57 concepts · 109 questions</li>
+    <li><b>Circuit Theory &amp; Control</b> — 19 concepts · 36 questions</li>
+    <li><b>Electrical Installation Standards (KEC)</b> — 30 concepts · 63 questions</li>
+  </ul>
+</div>
+
+<div class="pricing">
+  <h3><span class="l-ko">무료로 시작하고, 필요한 과목만</span><span class="l-en">Start free, buy only what you need</span></h3>
+  <ul class="l-ko">
+    <li>과목마다 일부 개념을 무료로 열어 두었습니다. 체험 중에는 이 개념들로 오늘의 큐를 만듭니다.</li>
+    <li>과목은 하나씩 따로 삽니다. <b>구독이 아니라 한 번 결제</b>이고, 같은 Apple 계정의 기기에서 계속 씁니다.</li>
+    <li>산 과목만으로 학습 계획을 세웁니다. 다섯 과목을 모두 열면 실전 모의고사가 열립니다.</li>
+  </ul>
+  <ul class="l-en">
+    <li>Each subject has a few free concepts. During the trial, your daily queue is built from them.</li>
+    <li>Subjects are sold individually as <b>one-time purchases, not subscriptions</b>, and work on every device with the same Apple ID.</li>
+    <li>Your plan covers the subjects you own. Unlock all five to take the full mock exam.</li>
+  </ul>
+</div>
+
+<div class="note">
+  <span class="l-ko">문항과 해설은 기출문제를 옮기거나 복원하지 않고 출제기준에 맞춰 새로 만들었습니다.
+  이 앱은 합격을 보장하거나 합격률을 예측하지 않습니다. 틀린 내용을 발견하시면
+  <a href="support.html">지원 페이지</a>의 이메일로 알려 주세요.</span>
+  <span class="l-en">Questions and explanations are written from scratch against the official exam criteria; no past exam
+  questions are copied or reconstructed. The app does not guarantee passing or predict pass rates. If you find an error,
+  please let us know by the email on the <a href="support.html">support page</a>.</span>
+</div>
+
+<footer>
+  <p><a href="support.html"><span class="l-ko">지원</span><span class="l-en">Support</span></a> ·
+     <a href="privacy.html"><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></a></p>
+  <p>© 2026 CKSW · chungkil.cksw@gmail.com</p>
+</footer>
+
+</div>
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  document.documentElement.setAttribute('lang', l);
+  document.getElementById('b-ko').classList.toggle('on', l==='ko');
+  document.getElementById('b-en').classList.toggle('on', l==='en');
+  try{ localStorage.setItem('lang', l); }catch(e){}
+}
+try{ var s=localStorage.getItem('lang'); if(s) setLang(s); }catch(e){}
+</script>
+</body>
+</html>
