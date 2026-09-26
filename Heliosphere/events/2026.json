@@ -831,13 +831,69 @@
       "descriptionKey": "event_orionids_desc",
       "category": "meteorShower",
       "icon": "sparkles",
-      "date": "2026-10-23",
-      "peakDate": "2026-10-23T06:54:00Z",
-      "endDate": "2026-10-24",
+      "date": "2026-10-21",
+      "peakDate": "2026-10-21T18:20:00Z",
+      "endDate": "2026-10-22",
       "source": "remote",
       "extraInfo": {
         "zhr": 20,
-        "moonIllumination": 0.8
+        "moonIllumination": 0.79
+      }
+    },
+    {
+      "id": "mars_jupiter_conjunction_2026_11",
+      "baseId": "mars_jupiter_conjunction",
+      "titleKey": "event_mars_jupiter_2026_11",
+      "descriptionKey": "event_mars_jupiter_2026_11_desc",
+      "category": "planetaryEvent",
+      "icon": "circle.circle",
+      "date": "2026-11-16T02:00:00Z",
+      "source": "remote",
+      "localizedStrings": {
+        "en": {
+          "title": "Mars Meets Jupiter",
+          "description": "Mars and Jupiter pass 1.2° apart in the morning sky, a few degrees from Regulus in Leo. Jupiter is about 13 times brighter; orange Mars sits right beside it. An easy naked-eye pair before dawn."
+        },
+        "ko": {
+          "title": "화성-목성 근접",
+          "description": "새벽 하늘에서 화성과 목성이 1.2°까지 가까워집니다. 사자자리 레굴루스에서 몇 도 떨어진 자리입니다. 목성이 13배쯤 밝고, 그 곁에 주황빛 화성이 붙어 있어 동트기 전 맨눈으로 쉽게 찾을 수 있습니다."
+        },
+        "ja": {
+          "title": "火星と木星の接近",
+          "description": "明け方の空で火星と木星が1.2°まで近づきます。しし座のレグルスから数度の位置です。木星のほうが約13倍明るく、そのすぐそばにオレンジ色の火星が並び、夜明け前に肉眼で簡単に見つけられます。"
+        },
+        "zh-Hans": {
+          "title": "火星合木星",
+          "description": "清晨天空中，火星与木星相距仅1.2°，位于狮子座轩辕十四附近几度处。木星亮约13倍，橙色的火星紧挨其旁，黎明前肉眼即可轻松找到。"
+        },
+        "zh-Hant": {
+          "title": "火星合木星",
+          "description": "清晨天空中，火星與木星相距僅1.2°，位於獅子座軒轅十四附近幾度處。木星亮約13倍，橙色的火星緊挨其旁，黎明前肉眼即可輕鬆找到。"
+        },
+        "de": {
+          "title": "Mars trifft Jupiter",
+          "description": "Mars und Jupiter ziehen am Morgenhimmel 1,2° aneinander vorbei, wenige Grad von Regulus im Löwen entfernt. Jupiter ist etwa 13-mal heller, der orangefarbene Mars steht direkt daneben – vor der Dämmerung leicht mit bloßem Auge zu finden."
+        },
+        "es": {
+          "title": "Marte junto a Júpiter",
+          "description": "Marte y Júpiter pasan a 1,2° en el cielo matutino, a pocos grados de Régulo, en Leo. Júpiter es unas 13 veces más brillante y el anaranjado Marte queda justo a su lado: una pareja fácil de ver a simple vista antes del amanecer."
+        },
+        "fr": {
+          "title": "Mars rencontre Jupiter",
+          "description": "Mars et Jupiter passent à 1,2° l'une de l'autre dans le ciel du matin, à quelques degrés de Régulus, dans le Lion. Jupiter est environ 13 fois plus brillante et Mars, orangée, se tient juste à côté : un duo facile à l'œil nu avant l'aube."
+        },
+        "it": {
+          "title": "Marte incontra Giove",
+          "description": "Marte e Giove passano a 1,2° l'uno dall'altro nel cielo del mattino, a pochi gradi da Regolo nel Leone. Giove è circa 13 volte più luminoso e l'arancione Marte gli sta proprio accanto: una coppia facile da vedere a occhio nudo prima dell'alba."
+        },
+        "pt-BR": {
+          "title": "Marte encontra Júpiter",
+          "description": "Marte e Júpiter passam a 1,2° um do outro no céu da manhã, a poucos graus de Régulo, em Leão. Júpiter é cerca de 13 vezes mais brilhante e o alaranjado Marte fica logo ao lado: um par fácil de ver a olho nu antes do amanhecer."
+        },
+        "ru": {
+          "title": "Марс рядом с Юпитером",
+          "description": "Марс и Юпитер сближаются до 1,2° на утреннем небе, в нескольких градусах от Регула в созвездии Льва. Юпитер примерно в 13 раз ярче, а оранжевый Марс стоит совсем рядом — лёгкая пара для невооружённого глаза перед рассветом."
+        }
       }
     },
     {
@@ -920,12 +976,12 @@
       "category": "meteorShower",
       "icon": "sparkles",
       "date": "2026-12-14",
-      "peakDate": "2026-12-14T05:44:00Z",
+      "peakDate": "2026-12-14T13:40:00Z",
       "endDate": "2026-12-15",
       "source": "remote",
       "extraInfo": {
         "zhr": 150,
-        "moonIllumination": 0.21
+        "moonIllumination": 0.25
       }
     },
     {
@@ -946,12 +1002,12 @@
       "category": "meteorShower",
       "icon": "sparkles",
       "date": "2026-12-22",
-      "peakDate": "2026-12-22T20:59:00Z",
+      "peakDate": "2026-12-22T22:10:00Z",
       "endDate": "2026-12-23",
       "source": "remote",
       "extraInfo": {
         "zhr": 10,
-        "moonIllumination": 0.94
+        "moonIllumination": 0.98
       },
       "localizedStrings": {
         "en": {
