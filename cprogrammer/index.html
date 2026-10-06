@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>C 프로그래머 과정</title>
+<meta name="description" content="한 줄씩 실행하며 스택·힙·포인터가 바뀌는 모습을 보는 C 언어 학습 앱 (iPhone·iPad)">
+<style>
+:root{--paper:#F6F4EE;--card:#FFFFFF;--ink:#16181D;--sub:#5B5F68;--line:#E3E0D7;--blue:#2456A6;--blue2:#1F4C92;--soft:#E6EDF8;--orange:#B85418;--orange-soft:#F6E7DC;--changed:#FFF1BF;--type:#8A3FA0}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7}
+html[data-lang="ko"] .l-en{display:none}
+html[data-lang="en"] .l-ko{display:none}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px 60px}
+.langbar{display:flex;justify-content:flex-end;padding:14px 0}
+.langbar button{border:1px solid var(--blue);background:transparent;color:var(--blue);padding:5px 14px;cursor:pointer;font-size:14px}
+.langbar button:first-child{border-radius:8px 0 0 8px}
+.langbar button:last-child{border-radius:0 8px 8px 0}
+.langbar button.on{background:var(--blue);color:#fff}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:center;margin:20px 0 36px}
+.hero h1{font-size:2.3rem;line-height:1.25;margin-bottom:12px}
+.hero .tag{font-size:1.1rem;color:var(--sub)}
+.badge{display:inline-block;margin-top:18px;background:var(--ink);color:#fff;border-radius:10px;padding:9px 16px;font-size:.95rem}
+.demo{background:var(--card);border-radius:18px;padding:16px;box-shadow:0 6px 24px rgba(22,24,29,.08);font-size:.86rem}
+.demo pre{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#FBFAF7;border-radius:10px;padding:10px 12px;line-height:1.55;overflow-x:auto}
+.demo .cur{background:var(--changed);display:block}
+.frame{border:2px solid var(--blue);border-radius:12px;margin-top:12px;overflow:hidden}
+.frame .head{background:var(--soft);color:var(--blue2);font-family:ui-monospace,Menlo,monospace;font-weight:700;padding:5px 10px}
+.frame .row{display:flex;justify-content:space-between;padding:5px 10px;border-top:1px solid #ECE9E1;font-family:ui-monospace,Menlo,monospace}
+.frame .row .t{color:var(--type)}
+.frame .row.changed{background:var(--changed)}
+.frame.idle{border-color:#CFCBC0;margin-top:10px}
+.frame.idle .head{background:#F1EFE9;color:#3E4149}
+h2{font-size:1.35rem;margin:40px 0 14px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.card{background:var(--card);border-radius:16px;padding:20px 22px;box-shadow:0 4px 18px rgba(22,24,29,.06)}
+.card h3{font-size:1.05rem;margin-bottom:6px}
+p,li,td,th{font-size:.98rem;color:#33363d}
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:16px;overflow:hidden;box-shadow:0 4px 18px rgba(22,24,29,.06)}
+th,td{text-align:left;padding:12px 16px;border-bottom:1px solid #ECE9E1;vertical-align:top;word-break:keep-all}
+th{background:#F1EFE9;font-weight:600}
+tr:last-child td{border-bottom:none}
+.free{color:#2E7D32;font-weight:600}
+.note{color:var(--sub);font-size:.9rem;margin-top:10px}
+footer{border-top:1px solid var(--line);padding:24px 0 0;margin-top:44px;text-align:center;font-size:.9rem;color:var(--sub)}
+footer a{color:var(--blue2)}
+@media (max-width:720px){.hero{grid-template-columns:1fr}.hero h1{font-size:1.9rem}.grid{grid-template-columns:1fr}th,td{padding:10px 10px;font-size:.92rem}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="langbar">
+  <button id="b-ko" class="on" onclick="setLang('ko')">한국어</button>
+  <button id="b-en" onclick="setLang('en')">English</button>
+</div>
+
+<section class="hero">
+  <div>
+    <h1><span class="l-ko">C 프로그래머 과정</span><span class="l-en">C Programmer Course</span></h1>
+    <p class="tag"><span class="l-ko">코드를 한 줄씩 실행하며 스택·힙·포인터가 바뀌는 모습을 눈으로 보는 C 언어 학습 앱입니다.
+    iPhone과 iPad에서, 인터넷 없이 기기 안에서 실행합니다.</span>
+    <span class="l-en">Learn C by running code one line at a time and watching the stack, the heap, and pointers change.
+    For iPhone and iPad; everything runs on the device, no internet needed.</span></p>
+    <span class="badge"><span class="l-ko">App Store 출시 준비 중</span><span class="l-en">Coming soon to the App Store</span></span>
+  </div>
+  <div class="demo" aria-hidden="true">
+<pre>int square(int n) {
+<span class="cur">    int result = n * n;</span>    return result;
+}
+
+int main(void) {
+    int y = square(3);</pre>
+    <div class="frame">
+      <div class="head">square</div>
+      <div class="row"><span>n <span class="t">int</span></span><span>3</span></div>
+      <div class="row changed"><span>result <span class="t">int</span></span><span>9</span></div>
+    </div>
+    <div class="frame idle">
+      <div class="head">main</div>
+      <div class="row"><span>y <span class="t">int</span></span><span>??</span></div>
+    </div>
+  </div>
+</section>
+
+<h2><span class="l-ko">이런 앱이에요</span><span class="l-en">What it does</span></h2>
+<div class="grid">
+  <div class="card">
+    <h3><span class="l-ko">한 줄씩 실행하고 되감기</span><span class="l-en">Step forward, step back</span></h3>
+    <p class="l-ko">다음 줄·이전 줄·중단점까지 옮겨 가며 함수를 부를 때 생기는 스택 프레임, <code>malloc</code>으로 빌린 힙 블록, 포인터가 가리키는 곳을 그림으로 봅니다.
+    방금 바뀐 값은 노랗게 칠해집니다.</p>
+    <p class="l-en">Move to the next line, the previous line, or a breakpoint, and watch stack frames appear on each call, heap blocks from
+    <code>malloc</code>, and arrows to where pointers point. Values that just changed are highlighted.</p>
+  </div>
+  <div class="card">
+    <h3><span class="l-ko">레슨 74개 · 퀴즈 · 실습 34개</span><span class="l-en">74 lessons, quizzes, 34 exercises</span></h3>
+    <p class="l-ko">짧은 카드로 된 레슨에서 예제를 바로 실행하고, 모듈마다 퀴즈(메모리 그림 맞추기, 빈칸 채우기 포함)와 자동 채점되는 실습 두 개로 확인합니다.</p>
+    <p class="l-en">Bite-sized lesson cards with runnable examples, a quiz for every module (including memory-picture matching and fill-in-the-blank),
+    and two auto-graded exercises per module with hints.</p>
+  </div>
+  <div class="card">
+    <h3><span class="l-ko">오류를 한국어로</span><span class="l-en">Errors explained in Korean</span></h3>
+    <p class="l-ko">clang과 같은 오류·경고에 한국어 설명과 관련 레슨을 붙여 보여 줍니다. 배열 범위 넘기, 해제한 메모리 쓰기 같은 메모리 버그는 그 자리에서 알려 줍니다.</p>
+    <p class="l-en">Errors and warnings match clang's, with a Korean explanation and a link to the related lesson. Memory bugs such as writing past an
+    array or using freed memory are caught where they happen.</p>
+  </div>
+  <div class="card">
+    <h3><span class="l-ko">C99 · C11, 기기 안에서</span><span class="l-en">C99 and C11, on the device</span></h3>
+    <p class="l-ko">앱에 들어 있는 교육용 C 인터프리터가 실행하고, 결과는 Mac의 clang과 견주어 맞췄습니다. 작성한 코드는 기기를 떠나지 않습니다.</p>
+    <p class="l-en">An educational C interpreter inside the app runs your code, with results checked against clang on the Mac. Your code never leaves the device.</p>
+  </div>
+</div>
+
+<h2 id="tracks"><span class="l-ko">과정</span><span class="l-en">Tracks</span></h2>
+<table>
+  <tr><th><span class="l-ko">트랙</span><span class="l-en">Track</span></th><th><span class="l-ko">내용</span><span class="l-en">What you learn</span></th><th><span class="l-ko">무료</span><span class="l-en">Free</span></th></tr>
+  <tr><td><span class="l-ko">1 프로그래밍 기초</span><span class="l-en">1 Programming Basics</span></td>
+      <td><span class="l-ko">프로그램이 무엇인지부터 값, 조건, 반복, 함수까지&nbsp;(레슨 16개)</span><span class="l-en">What a program is, values, conditions, loops, functions&nbsp;(16 lessons)</span></td>
+      <td class="free"><span class="l-ko">전체</span><span class="l-en">All</span></td></tr>
+  <tr><td><span class="l-ko">2 C 언어</span><span class="l-en">2 The C Language</span></td>
+      <td><span class="l-ko">printf부터 포인터, 구조체, 동적 메모리까지&nbsp;(레슨 37개)</span><span class="l-en">From printf to pointers, structs, and dynamic memory&nbsp;(37 lessons)</span></td>
+      <td><span class="l-ko">2.1 첫 C 프로그램</span><span class="l-en">2.1 Your First C Program</span></td></tr>
+  <tr><td><span class="l-ko">3 메모리 구조 핵심</span><span class="l-en">3 Memory Essentials</span></td>
+      <td><span class="l-ko">비트·바이트, 프로세스 메모리 지도, 스택 깊이, 메모리 버그&nbsp;(레슨 17개)</span><span class="l-en">Bits and bytes, the process memory map, the stack, memory bugs&nbsp;(17 lessons)</span></td>
+      <td><span class="l-ko">3.1 비트, 바이트, 16진수</span><span class="l-en">3.1 Bits, Bytes, and Hex</span></td></tr>
+  <tr><td><span class="l-ko">4 실행파일 기초 핵심</span><span class="l-en">4 Executable Essentials</span></td>
+      <td><span class="l-ko">소스 코드가 전처리·컴파일·링크를 거쳐 실행파일이 되는 과정&nbsp;(레슨 4개)</span><span class="l-en">How source becomes an executable: preprocessing, compiling, linking&nbsp;(4 lessons)</span></td>
+      <td><span class="l-ko">4.1 소스에서 실행까지</span><span class="l-en">4.1 From Source to Executable</span></td></tr>
+</table>
+<p class="note"><span class="l-ko">무료가 아닌 모듈은 트랙마다 한 번 구매하면 열립니다. 잠긴 레슨도 첫 카드는 미리 볼 수 있습니다.</span>
+<span class="l-en">Other modules unlock with a one-time purchase per track. You can preview the first card of any locked lesson.</span></p>
+
+<h2><span class="l-ko">지원 기기</span><span class="l-en">Requirements</span></h2>
+<p class="l-ko">iOS 18 이상의 iPhone, iPadOS 18 이상의 iPad. 앱 화면은 한국어입니다.</p>
+<p class="l-en">iPhone with iOS 18 or later, iPad with iPadOS 18 or later. The app's screens are in Korean.</p>
+
+<footer>
+  <p><a href="support.html"><span class="l-ko">지원</span><span class="l-en">Support</span></a> ·
+     <a href="privacy.html"><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></a> ·
+     <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a></p>
+</footer>
+
+</div>
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  document.documentElement.setAttribute('lang', l);
+  document.getElementById('b-ko').classList.toggle('on', l==='ko');
+  document.getElementById('b-en').classList.toggle('on', l==='en');
+  try{ localStorage.setItem('lang', l); }catch(e){}
+}
+try{ var s=localStorage.getItem('lang'); if(s) setLang(s); }catch(e){}
+</script>
+</body>
+</html>

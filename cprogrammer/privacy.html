@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>개인정보 처리방침 — C 프로그래머 과정</title>
+<style>
+:root{--paper:#F6F4EE;--card:#FFFFFF;--ink:#16181D;--sub:#5B5F68;--line:#E3E0D7;--blue:#2456A6;--blue2:#1F4C92;--orange:#B85418;--soft:#E6EDF8}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;background:var(--paper);color:var(--ink);line-height:1.75}
+html[data-lang="ko"] .l-en{display:none}
+html[data-lang="en"] .l-ko{display:none}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px 60px}
+.langbar{display:flex;justify-content:flex-end;padding:14px 0}
+.langbar button{border:1px solid var(--blue);background:transparent;color:var(--blue);padding:5px 14px;cursor:pointer;font-size:14px}
+.langbar button:first-child{border-radius:8px 0 0 8px}
+.langbar button:last-child{border-radius:0 8px 8px 0}
+.langbar button.on{background:var(--blue);color:#fff}
+h1{font-size:1.8rem;margin:16px 0 6px}
+.upd{color:var(--sub);font-size:.9rem;margin-bottom:30px}
+h2{font-size:1.2rem;margin:32px 0 10px;padding-top:14px;border-top:1px solid var(--line)}
+p,li{font-size:.98rem;color:#33363d}
+p+p{margin-top:8px}
+ul{padding-left:22px;margin:8px 0}
+.box{background:var(--card);border-radius:14px;padding:20px 22px;margin:16px 0;box-shadow:0 4px 18px rgba(22,24,29,.06)}
+.big{background:var(--soft);border-left:4px solid var(--blue);border-radius:0 12px 12px 0;padding:18px 20px;margin:18px 0;font-weight:600}
+footer{border-top:1px solid var(--line);padding:24px 0 0;margin-top:40px;text-align:center;font-size:.9rem;color:var(--sub)}
+footer a{color:var(--blue2)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="langbar">
+  <button id="b-ko" class="on" onclick="setLang('ko')">한국어</button>
+  <button id="b-en" onclick="setLang('en')">English</button>
+</div>
+
+<h1><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></h1>
+<p class="upd"><span class="l-ko">C 프로그래머 과정 · 최종 수정 2026년 10월 7일</span>
+<span class="l-en">C Programmer Course · Last updated October 7, 2026</span></p>
+
+<div class="big">
+  <span class="l-ko">개발자는 이용자의 개인정보를 수집하지 않습니다. 학습 기록과 작성한 코드는 이용자의 기기 안에만 있고,
+  광고와 분석 도구도 없습니다.</span>
+  <span class="l-en">The developer collects no personal information. Your study records and the code you write stay on your device,
+  and the app contains no ads and no analytics.</span>
+</div>
+
+<h2><span class="l-ko">1. 수집하는 정보</span><span class="l-en">1. Information we collect</span></h2>
+<p class="l-ko"><b>개발자가 수집하는 정보는 없습니다.</b> 회원 가입과 로그인이 없고, 개발자가 운영하는 서버도 없습니다.
+이름·이메일·전화번호·연락처·위치 같은 정보를 수집하거나 전송하지 않습니다.</p>
+<p class="l-en"><b>The developer collects nothing.</b> There is no sign-up, no login, and no developer-operated server.
+We do not collect or transmit names, email addresses, phone numbers, contacts, or location.</p>
+
+<h2><span class="l-ko">2. 학습 기록이 저장되는 곳</span><span class="l-en">2. Where your study data lives</span></h2>
+<div class="box">
+<p class="l-ko">레슨 진도(어디까지 봤는지, 마친 레슨), 퀴즈 답과 점수, 실습에서 채점한 코드, 설정(기본 C 표준, 추천받은 시작 레슨)은
+<b>이 기기 안에만</b> 저장됩니다. 앱이 iCloud나 다른 곳으로 보내지 않으므로 다른 기기와 이어지지 않습니다.
+(이용자가 켜 둔 기기 전체 백업에는 다른 앱의 데이터처럼 함께 들어갈 수 있습니다.)</p>
+<p class="l-en">Lesson progress (where you stopped and which lessons you finished), quiz answers and scores, the code you graded in exercises,
+and settings (default C standard, recommended starting lesson) are stored <b>only on this device</b>. The app sends nothing to iCloud or anywhere else,
+so records do not carry over to your other devices. (A whole-device backup you have turned on may include them, like any other app's data.)</p>
+</div>
+<p class="l-ko">앱의 <i>설정 › 진도 초기화</i>로 학습 기록을 지울 수 있고, 앱을 지우면 기록도 함께 지워집니다.</p>
+<p class="l-en">You can erase your study records in <i>설정 (Settings) › 진도 초기화 (Reset progress)</i>, and deleting the app removes them as well.
+The app's screens are in Korean.</p>
+
+<h2><span class="l-ko">3. 작성한 C 코드</span><span class="l-en">3. The C code you write</span></h2>
+<p class="l-ko">작성한 C 프로그램은 앱에 들어 있는 교육용 C 인터프리터가 <b>기기 안에서</b> 실행합니다. 코드를 외부로 보내지 않고,
+실행에 인터넷 연결이 필요하지 않습니다. 프로그램은 앱 안의 가상 메모리에서만 돌며 기기의 파일·네트워크·다른 앱에 닿지 않습니다.</p>
+<p class="l-ko">연습장에 쓴 코드는 저장하지 않습니다(열 때마다 예제 코드로 새로 시작합니다). 실습은 채점한 코드만 위 2번처럼 기기에 남깁니다.</p>
+<p class="l-en">Your C programs run <b>on the device</b> in the educational C interpreter built into the app. Code is never sent anywhere,
+and running it needs no internet connection. Programs run only inside the app's virtual memory and cannot reach the device's files,
+the network, or other apps.</p>
+<p class="l-en">Code written in the playground is not saved (it starts from the sample code each time). For exercises, only the code you grade
+is kept on the device, as described in section 2.</p>
+
+<h2><span class="l-ko">4. 인앱 구매</span><span class="l-en">4. In-app purchases</span></h2>
+<p class="l-ko">트랙 구매는 Apple의 App Store를 통해서만 이루어집니다. 결제 정보는 Apple이 처리하며 개발자에게 전달되지 않습니다.
+앱은 어느 트랙을 구매했는지만 확인합니다.</p>
+<p class="l-en">Track purchases are processed entirely by Apple's App Store. Payment details are handled by Apple and never reach the developer.
+The app only checks which tracks you own.</p>
+
+<h2><span class="l-ko">5. 광고 · 분석 · 추적</span><span class="l-en">5. Ads, analytics, and tracking</span></h2>
+<p class="l-ko"><b>광고가 없고 분석 도구도 넣지 않았습니다.</b> 이용 통계를 개발자에게 보내지 않으며, 다른 회사의 앱이나 웹사이트에 걸쳐
+이용자를 추적하지 않으므로 추적 동의 요청도 표시하지 않습니다.</p>
+<p class="l-en"><b>No ads and no analytics.</b> The app sends no usage statistics to the developer and does not track you across
+other companies' apps or websites, so it never shows a tracking permission prompt.</p>
+
+<h2><span class="l-ko">6. 아동의 개인정보</span><span class="l-en">6. Children's privacy</span></h2>
+<p class="l-ko">이 앱은 어린이를 포함한 모든 연령이 쓸 수 있으며, 개발자는 연령과 상관없이 어떤 개인정보도 수집하지 않습니다.</p>
+<p class="l-en">The app is suitable for all ages, including children, and the developer collects no personal information from anyone.</p>
+
+<h2><span class="l-ko">7. 방침의 변경</span><span class="l-en">7. Changes to this policy</span></h2>
+<p class="l-ko">내용이 바뀌면 이 페이지에 고쳐 싣고 위의 최종 수정일을 바꿉니다.</p>
+<p class="l-en">Any changes will be posted on this page with an updated revision date.</p>
+
+<h2><span class="l-ko">8. 문의</span><span class="l-en">8. Contact</span></h2>
+<p>chungkil.cksw@gmail.com</p>
+
+<footer>
+  <p><a href="index.html"><span class="l-ko">홈</span><span class="l-en">Home</span></a> ·
+     <a href="support.html"><span class="l-ko">지원</span><span class="l-en">Support</span></a></p>
+</footer>
+
+</div>
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  document.documentElement.setAttribute('lang', l);
+  document.getElementById('b-ko').classList.toggle('on', l==='ko');
+  document.getElementById('b-en').classList.toggle('on', l==='en');
+  try{ localStorage.setItem('lang', l); }catch(e){}
+}
+try{ var s=localStorage.getItem('lang'); if(s) setLang(s); }catch(e){}
+</script>
+</body>
+</html>
