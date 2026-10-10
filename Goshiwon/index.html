@@ -338,8 +338,8 @@ footer{border-top:1px solid var(--line);padding:48px 0 60px;color:var(--faint)}
         <p>전체 매출과 실수금, 미납·부분납·완납 현황이 색상으로 구분된 바 그래프로 정리됩니다.</p>
         <ul class="feat-list">
           <li><span class="chk"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>미납·입금 예정·계약 만료 임박 대시보드</li>
-          <li><span class="chk"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>완납 / 부분납 / 미납 상태와 수납 금액 기록</li>
-          <li><span class="chk"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>월초 납부 상태 일괄 리셋 (소유자 전용)</li>
+          <li><span class="chk"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>받은 금액만 넣으면 밀린 달부터 채우는 수납 기록 (부분납·여러 달·선납)</li>
+          <li><span class="chk"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>다음 납부일이 지나면 '미납 N개월'·밀린 금액 자동 표시 — 월초 리셋 불필요</li>
         </ul>
         <div class="chips"><span class="chip red">미납</span><span class="chip amber">부분납</span><span class="chip green">완납</span></div>
       </div>
@@ -440,7 +440,7 @@ footer{border-top:1px solid var(--line);padding:48px 0 60px;color:var(--faint)}
       <div class="ops-card reveal">
         <div class="ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></div>
         <h3>납부일·만료 알림</h3>
-        <p>납부 예정일과 계약 만료일이 다가오면 원하는 일수 전에 알림을 받습니다.</p>
+        <p>납부 예정일과 계약 만료일이 다가오면 원하는 일수 전에 알림을 받습니다. 소유자·직원 기기 모두에 오고, 알림을 누르면 그 방이 바로 열립니다.</p>
       </div>
       <div class="ops-card reveal">
         <div class="ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-2.7 1.1V21a2 2 0 0 1-4 0v-.1A1.6 1.6 0 0 0 7 19.4a1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0-1.1-2.7H1a2 2 0 0 1 0-4h.1A1.6 1.6 0 0 0 2.6 7a1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1A1.6 1.6 0 0 0 7 2.6h.1A1.6 1.6 0 0 0 8 1.1V1a2 2 0 0 1 4 0v.1A1.6 1.6 0 0 0 15 2.6a1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0 1.1 2.7h.2a2 2 0 0 1 0 4h-.1a1.6 1.6 0 0 0-1.4 1z"/></svg></div>
