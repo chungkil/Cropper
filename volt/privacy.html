@@ -49,10 +49,11 @@ footer a{color:var(--ink2)}
 
 <h2><span class="l-ko">1. 수집하는 정보</span><span class="l-en">1. Information we collect</span></h2>
 <p class="l-ko">이용자가 <b>오류 신고를 보낼 때의 신고 내용</b>뿐입니다(3항). 회원 가입과 로그인이 없고,
-이름·이메일·전화번호·위치·연락처를 요청하거나 전송하지 않습니다. 카메라·마이크·위치 권한도 쓰지 않습니다.</p>
+이름·이메일·전화번호·위치·연락처를 요청하거나 전송하지 않습니다. 마이크·위치 권한은 쓰지 않습니다.
+카메라는 이용자가 실기 답을 사진으로 찍을 때만 쓰고, 찍은 사진은 기기 밖으로 보내지 않습니다(2항).</p>
 <p class="l-en">Only the <b>content of an error report you send</b> (section 3). There is no sign-up or login, and the app
-never asks for or transmits your name, email, phone number, location, or contacts. It does not use the camera,
-microphone, or location.</p>
+never asks for or transmits your name, email, phone number, location, or contacts. It does not use the microphone
+or location. The camera is used only when you photograph a practical answer, and the photo never leaves your device (section 2).</p>
 
 <h2><span class="l-ko">2. 학습 기록이 저장되는 곳</span><span class="l-en">2. Where your study data lives</span></h2>
 <div class="box">
@@ -63,8 +64,10 @@ microphone, or location.</p>
 <p class="l-ko">기기를 구분하기 위해 앱이 만든 임의의 값 하나가 풀이 이력과 읽은 기록에 함께 남습니다.
 이 값은 이용자를 식별하지 않으며 역시 이용자의 iCloud 밖으로 나가지 않습니다.
 숙련도와 복습 일정은 풀이 이력에서 기기마다 다시 계산하므로 따로 올리지 않습니다.</p>
-<p class="l-ko">실기 필답형에 적은 답(글이나 손글씨)은 저장하지 않고, 자기 채점 결과(백분율)만 풀이 이력에 남습니다.
-실기 시간 재현 중 적은 답과 손글씨는 <b>이 기기에만</b> 임시로 두었다가 채점을 마치거나 그만두면 지우며, iCloud에도 올리지 않습니다.</p>
+<p class="l-ko">실기 필답형에 적은 답(글·손글씨·사진)은 저장하지 않고, 자기 채점 결과(백분율)만 풀이 이력에 남습니다.
+실기 시간 재현 중 적은 답과 손글씨·사진은 <b>이 기기에만</b> 임시로 두었다가 채점을 마치거나 그만두면 지우며, iCloud에도 올리지 않습니다.</p>
+<p class="l-ko">답으로 붙이는 사진은 크기를 줄여 다시 저장하므로 촬영 위치 같은 사진 정보가 남지 않습니다.
+앨범에서 고를 때는 이용자가 고른 사진 한 장만 앱에 전달되며, 앱은 사진 보관함 전체에 접근하지 않습니다.</p>
 <p class="l-ko">필기를 PDF나 이미지로 공유하면 파일을 기기 안에서 만들어 이용자가 고른 곳(메시지·파일 앱 등)으로 넘길 뿐, 개발자에게 보내지 않습니다.</p>
 <p class="l-en">Your answer history, plan inputs (exam date, daily study time), bookmarks and notes, mistake tags,
 mock exam results, written-exam pass date, handwritten notes on concept cards, and your reading record (which parts of each card you have read) are stored <b>on your device</b>. To keep your devices in step,
@@ -73,9 +76,11 @@ cannot access it.</p>
 <p class="l-en">A random value created by the app is attached to your answers and reading record to tell your devices apart. It does not
 identify you and never leaves your iCloud either. Mastery and review schedules are recomputed from your history on
 each device, so they are not uploaded at all.</p>
-<p class="l-en">Answers you write for practical questions — typed or handwritten — are not saved; only your self-graded score (a percentage) is kept
-in your history. During a timed practical session, drafts and handwriting are kept <b>on this device only</b>, deleted once you finish
+<p class="l-en">Answers you give for practical questions — typed, handwritten or photographed — are not saved; only your self-graded score (a percentage) is kept
+in your history. During a timed practical session, drafts, handwriting and photos are kept <b>on this device only</b>, deleted once you finish
 grading or quit, and never uploaded to iCloud.</p>
+<p class="l-en">A photo you attach as an answer is resized and saved again, so details such as where it was taken are not kept.
+When you pick from your library, only the one photo you choose is passed to the app; it never accesses the rest of your library.</p>
 <p class="l-en">When you share a handwritten note as a PDF or image, the file is made on your device and handed to the place you choose
 (Messages, Files and so on); nothing is sent to the developer.</p>
 </div>
@@ -102,11 +107,15 @@ information. Please do not put personal details such as your name or contact inf
 You can review your reports, and whether each was sent, under "Reported questions" at the top of the mistake notes.</p>
 </div>
 
-<h2><span class="l-ko">4. 위젯과 Siri</span><span class="l-en">4. Widget and Siri</span></h2>
+<h2><span class="l-ko">4. 위젯 · Siri · 알림</span><span class="l-en">4. Widgets, Siri and notifications</span></h2>
 <p class="l-ko">홈 화면·잠금 화면 위젯과 Siri 단축어는 같은 기기 안의 앱 그룹 저장소에서 오늘 남은 문항 수와
 시험까지 남은 날을 읽어 보여 줍니다. 외부로 나가는 정보는 없습니다.</p>
+<p class="l-ko">모의고사가 끝나는 시각의 알림과 잠금 화면의 남은 시간 표시(실시간 현황)는 기기 안에서 예약하고 그리며 서버를 거치지 않습니다.
+알림 권한은 처음 모의고사를 시작할 때 묻고, 허용하지 않아도 모의고사는 그대로 볼 수 있습니다.</p>
 <p class="l-en">The widgets and Siri shortcuts read today's remaining questions and days until the exam from a shared
 container on the same device. Nothing is sent anywhere.</p>
+<p class="l-en">The mock-exam end-time notification and the remaining-time Live Activity on the Lock Screen are scheduled and drawn on
+your device, with no server involved. Notification permission is asked the first time you start a mock exam; the exam works the same if you decline.</p>
 
 <h2><span class="l-ko">5. 인앱 구매</span><span class="l-en">5. In-app purchases</span></h2>
 <p class="l-ko">과목 구매는 Apple의 App Store를 통해서만 이루어집니다. 결제 정보는 Apple이 처리하며 개발자에게
