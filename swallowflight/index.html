@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>제비의 비행 — Swallow Flight</title>
+<meta property="og:title" content="제비의 비행 · Swallow Flight">
+<meta property="og:description" content="제비가 되어 도심 빌딩숲, 전통 마을, 협곡, 창고를 끝없이 날아가는 3D 비행 게임.">
+<style>
+  :root { --bg:#f8f9fa; --card:#fff; --fg:#1a1d21; --sub:#5c6670; --accent:#14245C; --rust:#A33A17; --link:#3366cc; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; background:var(--bg); color:var(--fg); line-height:1.7; }
+  .wrap { max-width:720px; margin:0 auto; padding:24px 20px 60px; }
+  .lang-toggle { text-align:right; margin-bottom:8px; }
+  .lang-toggle button { border:1px solid #ccc; background:#fff; padding:6px 14px; border-radius:16px; cursor:pointer; font-size:13px; }
+  .lang-toggle button.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .hero { text-align:center; padding:48px 20px; background:linear-gradient(180deg,#0D1438 0%,#2B5AA8 70%,#C9D8EE 100%); border-radius:16px; color:#fff; }
+  .hero h1 { font-size:40px; letter-spacing:1px; }
+  .hero .en-title { font-size:15px; letter-spacing:4px; color:#BFD0F0; text-transform:uppercase; }
+  .hero p { margin:12px 0 24px; color:#E3EBF8; font-size:17px; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:32px 0; }
+  .card { background:var(--card); border-radius:14px; padding:20px; box-shadow:0 4px 20px rgba(0,0,0,.08); }
+  .card h3 { font-size:16px; margin-bottom:6px; color:var(--accent); }
+  .card p { font-size:14px; color:var(--sub); }
+  .worlds { background:var(--card); border-radius:14px; padding:20px 24px; box-shadow:0 4px 20px rgba(0,0,0,.08); }
+  .worlds h2 { font-size:18px; color:var(--rust); margin-bottom:8px; }
+  .worlds li { font-size:14px; color:var(--sub); margin-left:18px; }
+  footer { margin-top:48px; text-align:center; font-size:13px; color:var(--sub); }
+  footer a { color:var(--link); text-decoration:none; margin:0 8px; }
+  @media (max-width:480px) { .grid { grid-template-columns:1fr; } .hero h1 { font-size:32px; } }
+  [data-lang] { display:none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="lang-toggle">
+    <button id="btn-ko" onclick="setLang('ko')">한국어</button>
+    <button id="btn-en" onclick="setLang('en')">English</button>
+  </div>
+
+  <div class="hero">
+    <h1 data-lang="ko">제비의 비행</h1>
+    <h1 data-lang="en">Swallow Flight</h1>
+    <div class="en-title" data-lang="ko">Swallow Flight</div>
+    <p data-lang="ko">제비가 되어 빌딩숲부터 협곡까지, 끝없이 이어지는 길을 날아가세요.</p>
+    <p data-lang="en">Become a swallow and fly an endless path from city towers to the canyon.</p>
+    <a href="https://apps.apple.com/app/id6758345857">
+      <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" height="54" alt="Download on the App Store">
+    </a>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h3 data-lang="ko">끝없는 3D 비행</h3><h3 data-lang="en">Endless 3D Flight</h3>
+      <p data-lang="ko">길은 계속 새로 만들어집니다. 부딪히는 순간 끝, 얼마나 멀리 갈 수 있을까요?</p>
+      <p data-lang="en">The path keeps generating. One hit ends the flight. How far can you go?</p>
+    </div>
+    <div class="card">
+      <h3 data-lang="ko">기울이거나 드래그</h3><h3 data-lang="en">Tilt or Drag</h3>
+      <p data-lang="ko">기기를 기울이거나 화면을 드래그해 방향을 잡습니다.</p>
+      <p data-lang="en">Steer by tilting your device or dragging the screen.</p>
+    </div>
+    <div class="card">
+      <h3 data-lang="ko">곡예 비행</h3><h3 data-lang="en">Aerial Moves</h3>
+      <p data-lang="ko">끝 탭으로 대시, 스와이프로 배럴롤·급상승·급강하. 기술을 쓰는 동안 잠깐 무적입니다.</p>
+      <p data-lang="en">Edge tap to dash, swipe to roll, climb or dive. You are briefly invincible during each move.</p>
+    </div>
+    <div class="card">
+      <h3 data-lang="ko">슬로우모션</h3><h3 data-lang="en">Slow Motion</h3>
+      <p data-lang="ko">길게 누르면 시간이 느려집니다. 게이지가 다시 차면 또 쓸 수 있습니다.</p>
+      <p data-lang="en">Press and hold to slow time. Use it again once the gauge refills.</p>
+    </div>
+    <div class="card">
+      <h3 data-lang="ko">니어미스 콤보</h3><h3 data-lang="en">Near-Miss Combo</h3>
+      <p data-lang="ko">장애물을 아슬아슬하게 스치면 보너스 점수와 함께 콤보가 최대 5배까지 쌓입니다.</p>
+      <p data-lang="en">Skim past obstacles for bonus points and a combo of up to 5x.</p>
+    </div>
+    <div class="card">
+      <h3 data-lang="ko">바로 플레이</h3><h3 data-lang="en">Jump Right In</h3>
+      <p data-lang="ko">계정, 광고, 인앱 결제가 없고 인터넷 없이도 동작합니다.</p>
+      <p data-lang="en">No account, no ads, no in-app purchases. Works offline.</p>
+    </div>
+  </div>
+
+  <div class="worlds">
+    <h2 data-lang="ko">네 개의 세계</h2><h2 data-lang="en">Four Worlds</h2>
+    <ul data-lang="ko">
+      <li>도심 빌딩숲: 고층 빌딩과 크레인, 광고판 사이</li>
+      <li>전통 마을: 기와지붕과 빨랫줄, 초롱 사이 저공비행</li>
+      <li>협곡: 바위와 나뭇가지, 종유석이 앞을 막는 노을빛 구간</li>
+      <li>실내 공간: 상자와 선반, 배관이 얽힌 어둑한 창고</li>
+    </ul>
+    <ul data-lang="en">
+      <li>City Towers: high-rises, cranes and billboards</li>
+      <li>Old Village: low flight past tiled roofs, clotheslines and lanterns</li>
+      <li>Canyon: rocks, branches and stalactites in the sunset glow</li>
+      <li>Indoor: a dim warehouse full of crates, shelves and pipes</li>
+    </ul>
+  </div>
+
+  <footer>
+    <a href="privacy.html" data-lang="ko">개인정보 처리방침</a><a href="privacy.html" data-lang="en">Privacy Policy</a>
+    <a href="support.html" data-lang="ko">기술 지원</a><a href="support.html" data-lang="en">Support</a>
+    <a href="mailto:chungkil.cksw@gmail.com">Contact</a>
+    <p style="margin-top:12px">&copy; 2026 Chungkil Kim. All rights reserved.</p>
+  </footer>
+</div>
+<script>
+function setLang(l){
+  document.querySelectorAll('[data-lang]').forEach(e=>{e.style.display=e.dataset.lang===l?(e.tagName==='SPAN'||e.tagName==='A'?'inline':'block'):'none';});
+  document.getElementById('btn-ko').classList.toggle('active',l==='ko');
+  document.getElementById('btn-en').classList.toggle('active',l==='en');
+  document.documentElement.lang=l;
+  localStorage.setItem('swallowflight-lang',l);
+}
+setLang(localStorage.getItem('swallowflight-lang')||(navigator.language.startsWith('ko')?'ko':'en'));
+</script>
+</body>
+</html>
