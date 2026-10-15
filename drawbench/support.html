@@ -10,13 +10,10 @@
 :root{--paper:#F7F3EA;--paper2:#FCFAF5;--ink:#1C2333;--ink2:#2E4A7A;--accent:#E8662A;--blue:#3D7FD9;--sub:#6B6F7A;--card:#FFFFFF;--line:#E6DFD0}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7}
-html[data-lang="ko"] .l-en{display:none}
-html[data-lang="en"] .l-ko{display:none}
+html:not([data-lang="ko"]) .l-ko,html:not([data-lang="en"]) .l-en,html:not([data-lang="ja"]) .l-ja,html:not([data-lang="de"]) .l-de,html:not([data-lang="zh-Hant"]) .l-zh-Hant,html:not([data-lang="zh-Hans"]) .l-zh-Hans{display:none}
 .wrap{max-width:960px;margin:0 auto;padding:0 20px}
-.langbar{display:flex;justify-content:flex-end;padding:14px 0}
-.langbar button{border:1px solid var(--accent);background:transparent;color:var(--accent);padding:5px 14px;cursor:pointer;font-size:14px}
-.langbar button:first-child{border-radius:8px 0 0 8px}
-.langbar button:last-child{border-radius:0 8px 8px 0}
+.langbar{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:4px;padding:14px 0}
+.langbar button{border:1px solid var(--accent);background:transparent;color:var(--accent);padding:5px 11px;cursor:pointer;font-size:14px;border-radius:8px}
 .langbar button.on{background:var(--accent);color:#fff}
 a{color:var(--ink2)}
 footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;font-size:.9rem;color:var(--sub)}
@@ -34,85 +31,105 @@ h2{font-size:1.25rem;margin:34px 0 12px;padding-bottom:6px;border-bottom:2px sol
 <div class="langbar">
   <button id="b-ko" class="on" onclick="setLang('ko')">한국어</button>
   <button id="b-en" onclick="setLang('en')">English</button>
+  <button id="b-ja" onclick="setLang('ja')">日本語</button>
+  <button id="b-de" onclick="setLang('de')">Deutsch</button>
+  <button id="b-zh-Hant" onclick="setLang('zh-Hant')">繁體中文</button>
+  <button id="b-zh-Hans" onclick="setLang('zh-Hans')">简体中文</button>
 </div>
 
-<h1><span class="l-ko">지원 · 자주 묻는 질문</span><span class="l-en">Support · FAQ</span></h1>
+<h1><span class="l-ko">지원 · 자주 묻는 질문</span><span class="l-en">Support · FAQ</span><span class="l-ja">サポート · よくある質問</span><span class="l-de">Support · FAQ</span><span class="l-zh-Hant">支援 · 常見問題</span><span class="l-zh-Hans">支持 · 常见问题</span></h1>
 <div class="contact">
   <p class="l-ko">문의는 아래 주소로 보내 주세요. 보통 하루 이틀 안에 답장드립니다.<br>
   <b>chungkil.cksw@gmail.com</b><br>
   버그를 알려 주실 때는 <b>기기 모델·iOS 버전·앱 버전</b>(설정 → 정보)을 함께 적어 주시고, 가능하면 그 장면 파일(.drawbench)을 첨부해 주세요.</p>
   <p class="l-en">Questions and bug reports are welcome at<br>
   <b>chungkil.cksw@gmail.com</b><br>
-  Please include your <b>device model, iOS version and app version</b> (Settings → About), and attach the scene file (.drawbench) if you can.</p>
+  Please include your <b>device model, iOS version and app version</b> (Settings → About), and attach the scene file (.drawbench) if you can.</p><p class="l-ja">ご質問や不具合の報告は<br>
+<b>chungkil.cksw@gmail.com</b><br>
+までお寄せください。<b>機種、iOSのバージョン、アプリのバージョン</b>(設定 → 情報)を添え、できればシーンファイル(.drawbench)も添付してください。</p><p class="l-de">Fragen und Fehlerberichte bitte an<br>
+<b>chungkil.cksw@gmail.com</b><br>
+Gib dabei <b>Gerätemodell, iOS-Version und App-Version</b> an (Einstellungen → Info) und hänge nach Möglichkeit die Szenendatei (.drawbench) an.</p><p class="l-zh-Hant">歡迎將問題與錯誤回報寄到<br>
+<b>chungkil.cksw@gmail.com</b><br>
+請附上<b>裝置型號、iOS 版本與 App 版本</b>（設定 → 關於），可以的話也請附上場景檔案（.drawbench）。</p><p class="l-zh-Hans">欢迎将问题与错误报告发送到<br>
+<b>chungkil.cksw@gmail.com</b><br>
+请附上<b>设备型号、iOS 版本与 App 版本</b>（设置 → 关于），可以的话也请附上场景文件（.drawbench）。</p>
 </div>
-<h2><span class="l-ko">시작하기</span><span class="l-en">Getting started</span></h2>
-<div class="qa"><b><span class="l-ko">어디서 시작하면 됩니까?</span><span class="l-en">Where do I start?</span></b>
+<h2><span class="l-ko">시작하기</span><span class="l-en">Getting started</span><span class="l-ja">はじめに</span><span class="l-de">Erste Schritte</span><span class="l-zh-Hant">開始使用</span><span class="l-zh-Hans">开始使用</span></h2>
+<div class="qa"><b><span class="l-ko">어디서 시작하면 됩니까?</span><span class="l-en">Where do I start?</span><span class="l-ja">どこから始めればいいですか?</span><span class="l-de">Wo fange ich an?</span><span class="l-zh-Hant">該從哪裡開始？</span><span class="l-zh-Hans">该从哪里开始？</span></b>
 <p class="l-ko">첫 화면의 <b>프리셋에서 시작</b>을 누르고 마음에 드는 무늬를 고르세요. 바로 재생되고, 요소를 눌러 값을 바꿀 수 있습니다. 마음에 들면 오른쪽 위의 <b>내 작업으로 저장</b>을 누르세요.</p>
-<p class="l-en">Tap <b>Start from a Preset</b> on the first screen and pick a pattern. It plays right away, and you can tap any part to change its values. When you like it, tap <b>Save to My Work</b> at the top right.</p></div>
-<div class="qa"><b><span class="l-ko">처음 안내를 다시 보고 싶습니다.</span><span class="l-en">How do I see the guide again?</span></b>
+<p class="l-en">Tap <b>Start from a Preset</b> on the first screen and pick a pattern. It plays right away, and you can tap any part to change its values. When you like it, tap <b>Save to My Work</b> at the top right.</p><p class="l-ja">最初の画面で<b>プリセットから始める</b>をタップし、好きな模様を選んでください。すぐに再生され、パーツをタップして値を変えられます。気に入ったら右上の<b>マイ作品に保存</b>をタップしてください。</p><p class="l-de">Tippe auf dem ersten Bildschirm auf <b>Mit einer Vorlage beginnen</b> und wähle ein Muster. Es läuft sofort, und du kannst jedes Teil antippen, um seine Werte zu ändern. Gefällt es dir, tippe oben rechts auf <b>Sichern</b>.</p><p class="l-zh-Hant">在第一個畫面點選<b>從預設開始</b>，選一個喜歡的圖案。它會立刻播放，點選部件即可更改數值。滿意後點選右上角的<b>儲存到我的作品</b>。</p><p class="l-zh-Hans">在第一个界面轻点<b>从预设开始</b>，选一个喜欢的图案。它会立即播放，轻点部件即可更改数值。满意后轻点右上角的<b>保存到我的作品</b>。</p></div>
+<div class="qa"><b><span class="l-ko">처음 안내를 다시 보고 싶습니다.</span><span class="l-en">How do I see the guide again?</span><span class="l-ja">最初の案内をもう一度見るには?</span><span class="l-de">Wie sehe ich die Anleitung erneut?</span><span class="l-zh-Hant">如何再次查看指南？</span><span class="l-zh-Hans">如何再次查看指南？</span></b>
 <p class="l-ko">설정 → <b>안내 다시 보기</b>를 누르세요. 소개 카드가 다시 나오고, 첫 화면의 <b>리사주로 시작하기</b>나 갤러리의 '리사주 1:2'에서 단계별 안내가 다시 나옵니다. 설정은 프리셋 갤러리나 편집기 오른쪽 위의 더보기(…)에서 엽니다.</p>
-<p class="l-en">Open Settings from the More (…) menu in the gallery or the editor, then tap <b>Show the Guide Again</b>. The intro cards come back, and the step-by-step guide appears again from <b>Start with Lissajous</b> on the first screen or Lissajous 1:2 in the gallery.</p></div>
-<div class="qa"><b><span class="l-ko">기능 설명은 어디서 봅니까?</span><span class="l-en">Where can I read how each feature works?</span></b>
-<p class="l-ko">앱의 <b>사용법</b>에 요소 조립, 값 바꾸기, 재생, 화면 다루기, 자취 꾸미기, 수식, 내보내기, 키보드 단축키가 정리되어 있습니다. 첫 화면의 <b>더 보기…</b>, 프리셋 갤러리·편집기의 더보기(…), 설정에서 엽니다.</p>
-<p class="l-en">The app's <b>How to Use</b> covers assembling parts, changing values, playback, moving around, styling the trace, formulas, export and keyboard shortcuts. Open it from <b>More…</b> on the first screen, the More (…) menu in the gallery or the editor, or Settings.</p></div>
-<div class="qa"><b><span class="l-ko">무늬가 닫히지 않고 계속 그려집니다.</span><span class="l-en">The pattern never closes.</span></b>
+<p class="l-en">Open Settings from the More (…) menu in the gallery or the editor, then tap <b>Show the Guide Again</b>. The intro cards come back, and the step-by-step guide appears again from <b>Start with Lissajous</b> on the first screen or Lissajous 1:2 in the gallery.</p><p class="l-ja">ギャラリーかエディタのその他(…)メニューから設定を開き、<b>案内をもう一度見る</b>をタップしてください。紹介カードがもう一度表示され、最初の画面の<b>リサージュで始める</b>かギャラリーの「リサージュ 1:2」から手順の案内がもう一度表示されます。</p><p class="l-de">Öffne die Einstellungen über das Mehr-Menü (…) in der Galerie oder im Editor und tippe auf <b>Anleitung erneut zeigen</b>. Die Einführungskarten erscheinen wieder, und die Schritt-für-Schritt-Anleitung startet erneut über <b>Mit Lissajous beginnen</b> auf dem ersten Bildschirm oder über Lissajous 1:2 in der Galerie.</p><p class="l-zh-Hant">從圖庫或編輯器的「更多」(…) 選單開啟設定，點選<b>再次查看指南</b>。介紹卡片會再次出現，並可從第一個畫面的<b>從李薩如開始</b>或圖庫中的「李薩如 1:2」再次看到逐步指南。</p><p class="l-zh-Hans">从图库或编辑器的“更多”(…) 菜单打开设置，轻点<b>再次查看指南</b>。介绍卡片会再次出现，并可从第一个界面的<b>从李萨如开始</b>或图库中的“李萨如 1:2”再次看到分步指南。</p></div>
+<div class="qa"><b><span class="l-ko">기능 설명은 어디서 봅니까?</span><span class="l-en">Where can I read how each feature works?</span><span class="l-ja">機能の説明はどこで読めますか?</span><span class="l-de">Wo finde ich Erklärungen zu den Funktionen?</span><span class="l-zh-Hant">在哪裡可以看到各項功能的說明？</span><span class="l-zh-Hans">在哪里可以看到各项功能的说明？</span></b>
+<p class="l-ko">앱의 <b>사용법</b>에 요소 조립, 값 바꾸기, 재생, 화면 다루기, 자취 꾸미기, 수식, 내보내기, 키보드 단축키가 정리되어 있습니다. 프리셋 갤러리·편집기의 더보기(…), 설정, 그리고 첫 실행이 끝난 뒤에는 첫 화면의 <b>더 보기…</b>에서 엽니다.</p>
+<p class="l-en">The app's <b>How to Use</b> covers assembling parts, changing values, playback, moving around, styling the trace, formulas, export and keyboard shortcuts. Open it from the More (…) menu in the gallery or the editor, from Settings, or, after your first session, from <b>More…</b> on the first screen.</p><p class="l-ja">アプリの<b>使い方</b>で、パーツの組み立て、値の変更、再生、画面の操作、軌跡のスタイル、数式、書き出し、キーボードショートカットを説明しています。ギャラリーやエディタのその他(…)メニュー、設定、また初回の起動のあとは最初の画面の<b>その他…</b>から開けます。</p><p class="l-de">Die <b>Anleitung</b> in der App erklärt das Zusammensetzen von Teilen, das Ändern von Werten, die Wiedergabe, das Navigieren, das Gestalten der Spur, Formeln, den Export und Tastaturkurzbefehle. Du öffnest sie über das Mehr-Menü (…) in der Galerie oder im Editor, die Einstellungen und nach dem ersten Start auch über <b>Mehr…</b> auf dem ersten Bildschirm.</p><p class="l-zh-Hant">App 內的<b>使用方法</b>說明了組合部件、更改數值、播放、移動畫面、軌跡樣式、公式、匯出與鍵盤快速鍵。可從圖庫或編輯器的「更多」(…) 選單、設定開啟；第一次使用之後，也可從第一個畫面的<b>更多…</b>開啟。</p><p class="l-zh-Hans">App 内的<b>使用方法</b>说明了组合部件、更改数值、播放、移动画面、轨迹样式、公式、导出与键盘快捷键。可从图库或编辑器的“更多”(…) 菜单、设置打开；第一次使用之后，也可从第一个界面的<b>更多…</b>打开。</p></div>
+<div class="qa"><b><span class="l-ko">무늬가 닫히지 않고 계속 그려집니다.</span><span class="l-en">The pattern never closes.</span><span class="l-ja">模様がいつまでも閉じません。</span><span class="l-de">Das Muster schließt sich nie.</span><span class="l-zh-Hant">圖案一直不閉合。</span><span class="l-zh-Hans">图案一直不闭合。</span></b>
 <p class="l-ko">각속도의 비가 정수비가 아니거나 감쇠·진자처럼 물리로 푸는 요소가 있으면 무늬가 정확히 닫히지 않습니다. 각속도 다이얼을 돌리면 3:2 같은 정수비에 맞춰 붙습니다. 종료 시각을 정하면 그 시각에 멈춥니다.</p>
-<p class="l-en">A pattern closes only when its angular velocities form a whole-number ratio and nothing is simulated by physics (pendulums and damping are). Turn the angular velocity dial and it snaps to ratios such as 3:2, or set an end time.</p></div>
-<h2><span class="l-ko">문서와 iCloud</span><span class="l-en">Documents and iCloud</span></h2>
-<div class="qa"><b><span class="l-ko">저장한 장면은 어디에 있습니까?</span><span class="l-en">Where are my scenes saved?</span></b>
+<p class="l-en">A pattern closes only when its angular velocities form a whole-number ratio and nothing is simulated by physics (pendulums and damping are). Turn the angular velocity dial and it snaps to ratios such as 3:2, or set an end time.</p><p class="l-ja">模様が閉じるのは、角速度が整数比になっていて、物理で解くもの(振り子や減衰)がないときだけです。角速度ダイヤルを回すと 3:2 のような比に吸着します。終了時刻を決めることもできます。</p><p class="l-de">Ein Muster schließt sich nur, wenn die Winkelgeschwindigkeiten ein ganzzahliges Verhältnis bilden und nichts physikalisch simuliert wird (Pendel und Dämpfung schon). Drehe das Winkelgeschwindigkeits-Rad, dann rastet es bei Verhältnissen wie 3:2 ein, oder lege eine Endzeit fest.</p><p class="l-zh-Hant">只有當角速度成整數比，且沒有以物理模擬的部分（擺與阻尼屬於此類）時，圖案才會閉合。轉動角速度轉盤會吸附到 3:2 這樣的比例，也可以設定結束時間。</p><p class="l-zh-Hans">只有当角速度成整数比，且没有以物理模拟的部分（摆与阻尼属于此类）时，图案才会闭合。转动角速度转盘会吸附到 3:2 这样的比例，也可以设置结束时间。</p></div>
+<h2><span class="l-ko">문서와 iCloud</span><span class="l-en">Documents and iCloud</span><span class="l-ja">書類とiCloud</span><span class="l-de">Dokumente und iCloud</span><span class="l-zh-Hant">文件與 iCloud</span><span class="l-zh-Hans">文稿与 iCloud</span></h2>
+<div class="qa"><b><span class="l-ko">저장한 장면은 어디에 있습니까?</span><span class="l-en">Where are my scenes saved?</span><span class="l-ja">シーンはどこに保存されますか?</span><span class="l-de">Wo werden meine Szenen gespeichert?</span><span class="l-zh-Hant">場景儲存在哪裡？</span><span class="l-zh-Hans">场景存储在哪里？</span></b>
 <p class="l-ko">iCloud Drive를 쓰면 iCloud Drive의 <b>Drawbench</b> 폴더에, 아니면 기기의 Drawbench 폴더에 .drawbench 문서로 저장됩니다. 파일 앱에서도 보이고, 무늬가 썸네일로 나옵니다.</p>
-<p class="l-en">As .drawbench documents in the <b>Drawbench</b> folder in iCloud Drive, or on the device if iCloud Drive is off. They also appear in the Files app with a thumbnail of the pattern.</p></div>
-<div class="qa"><b><span class="l-ko">다른 기기에서 이어서 작업할 수 있습니까?</span><span class="l-en">Can I continue on another device?</span></b>
+<p class="l-en">As .drawbench documents in the <b>Drawbench</b> folder in iCloud Drive, or on the device if iCloud Drive is off. They also appear in the Files app with a thumbnail of the pattern.</p><p class="l-ja">iCloud Driveの<b>Drawbench</b>フォルダに .drawbench 書類として保存されます。iCloud Driveがオフならデバイスに保存されます。「ファイル」アプリにも模様のサムネイル付きで表示されます。</p><p class="l-de">Als .drawbench-Dokumente im Ordner <b>Drawbench</b> in iCloud Drive oder auf dem Gerät, wenn iCloud Drive aus ist. Sie erscheinen auch in der Dateien-App mit einer Vorschau des Musters.</p><p class="l-zh-Hant">以 .drawbench 文件儲存在 iCloud 雲碟的 <b>Drawbench</b> 檔案夾中；若關閉 iCloud 雲碟則儲存在裝置上。它們也會帶著圖案縮圖顯示在「檔案」App 中。</p><p class="l-zh-Hans">以 .drawbench 文稿存储在 iCloud 云盘的 <b>Drawbench</b> 文件夹中；若关闭 iCloud 云盘则存储在设备上。它们也会带着图案缩略图显示在“文件”App 中。</p></div>
+<div class="qa"><b><span class="l-ko">다른 기기에서 이어서 작업할 수 있습니까?</span><span class="l-en">Can I continue on another device?</span><span class="l-ja">別のデバイスで続きができますか?</span><span class="l-de">Kann ich auf einem anderen Gerät weitermachen?</span><span class="l-zh-Hant">可以在其他裝置上繼續嗎？</span><span class="l-zh-Hans">可以在其他设备上继续吗？</span></b>
 <p class="l-ko">같은 Apple 계정으로 iCloud Drive를 켜 두면 문서가 다른 iPhone·iPad에도 나타납니다. 장면 파일을 AirDrop이나 메일로 보내 열 수도 있습니다.</p>
-<p class="l-en">With iCloud Drive on and the same Apple Account, your documents appear on your other iPhone and iPad. You can also send a scene file by AirDrop or email and open it.</p></div>
-<div class="qa"><b><span class="l-ko">"이전 버전에서 만든 장면입니다" 안내가 보입니다.</span><span class="l-en">I see "This scene was made with an earlier version".</span></b>
+<p class="l-en">With iCloud Drive on and the same Apple Account, your documents appear on your other iPhone and iPad. You can also send a scene file by AirDrop or email and open it.</p><p class="l-ja">iCloud Driveをオンにして同じApple Accountを使えば、ほかのiPhoneやiPadにも書類が表示されます。シーンファイルをAirDropやメールで送って開くこともできます。</p><p class="l-de">Mit eingeschaltetem iCloud Drive und demselben Apple Account erscheinen deine Dokumente auf deinen anderen iPhones und iPads. Du kannst eine Szenendatei auch per AirDrop oder E-Mail senden und öffnen.</p><p class="l-zh-Hant">開啟 iCloud 雲碟並使用相同的 Apple 帳號，文件就會出現在你的其他 iPhone 和 iPad 上。也可以用 AirDrop 或電子郵件傳送場景檔案後開啟。</p><p class="l-zh-Hans">打开 iCloud 云盘并使用相同的 Apple 账户，文稿就会出现在你的其他 iPhone 和 iPad 上。也可以用隔空投送或电子邮件发送场景文件后打开。</p></div>
+<div class="qa"><b><span class="l-ko">"이전 버전에서 만든 장면입니다" 안내가 보입니다.</span><span class="l-en">I see "This scene was made with an earlier version".</span><span class="l-ja">「以前のバージョンで作成されたシーンです」と表示されます。</span><span class="l-de">Ich sehe „Diese Szene wurde mit einer älteren Version erstellt“.</span><span class="l-zh-Hant">看到「此場景由較早版本製作」的訊息。</span><span class="l-zh-Hans">看到“此场景由较早版本创建”的提示。</span></b>
 <p class="l-ko">앞선 버전의 계산 엔진으로 만든 장면이라 무늬가 아주 조금 다를 수 있다는 안내입니다. 고쳐서 저장하면 지금 엔진 버전으로 바뀝니다.</p>
-<p class="l-en">The scene was made with an earlier version of the drawing engine, so the pattern may look very slightly different. Edit and save it to move it to the current engine.</p></div>
-<h2><span class="l-ko">내보내기</span><span class="l-en">Export</span></h2>
-<div class="qa"><b><span class="l-ko">사진 보관함에 저장하려면?</span><span class="l-en">How do I save to Photos?</span></b>
+<p class="l-en">The scene was made with an earlier version of the drawing engine, so the pattern may look very slightly different. Edit and save it to move it to the current engine.</p><p class="l-ja">以前のバージョンの描画エンジンで作成されたシーンなので、模様がごくわずかに違って見えることがあります。編集して保存すると現在のエンジンに移ります。</p><p class="l-de">Die Szene wurde mit einer älteren Version der Zeichen-Engine erstellt, daher kann das Muster minimal anders aussehen. Bearbeite und sichere sie, um sie auf die aktuelle Engine umzustellen.</p><p class="l-zh-Hant">此場景是以較早版本的繪圖引擎製作，圖案看起來可能略有不同。編輯並儲存後即會改用目前的引擎。</p><p class="l-zh-Hans">此场景是用较早版本的绘图引擎创建的，图案看起来可能略有不同。编辑并保存后即会改用当前的引擎。</p></div>
+<h2><span class="l-ko">내보내기</span><span class="l-en">Export</span><span class="l-ja">書き出し</span><span class="l-de">Export</span><span class="l-zh-Hant">匯出</span><span class="l-zh-Hans">导出</span></h2>
+<div class="qa"><b><span class="l-ko">사진 보관함에 저장하려면?</span><span class="l-en">How do I save to Photos?</span><span class="l-ja">写真に保存するには?</span><span class="l-de">Wie sichere ich in Fotos?</span><span class="l-zh-Hant">如何儲存到照片？</span><span class="l-zh-Hans">如何存储到照片？</span></b>
 <p class="l-ko">편집기 오른쪽 위의 공유 단추 → 형식을 고르고 <b>만들기</b> → 공유 시트에서 <b>이미지 저장</b>(영상은 <b>비디오 저장</b>)을 누르세요. 처음 한 번 사진 보관함에 추가해도 되는지 묻습니다. 앱은 사진을 읽지 않습니다.</p>
-<p class="l-en">Tap the share button at the top right of the editor, choose a format and tap <b>Create</b>, then choose <b>Save Image</b> (or <b>Save Video</b>) in the share sheet. The first time, iOS asks for permission to add to your library. Drawbench never reads your photos.</p></div>
-<div class="qa"><b><span class="l-ko">SVG는 어디에 쓸 수 있습니까?</span><span class="l-en">What is the SVG for?</span></b>
+<p class="l-en">Tap the share button at the top right of the editor, choose a format and tap <b>Create</b>, then choose <b>Save Image</b> (or <b>Save Video</b>) in the share sheet. The first time, iOS asks for permission to add to your library. Drawbench never reads your photos.</p><p class="l-ja">エディタ右上の共有ボタン → 形式を選んで<b>作成</b> → 共有シートで<b>画像を保存</b>(ビデオは<b>ビデオを保存</b>)をタップしてください。初回だけ、写真ライブラリへの追加の許可を求められます。アプリが写真を読み取ることはありません。</p><p class="l-de">Tippe oben rechts im Editor auf die Teilen-Taste, wähle ein Format und tippe auf <b>Erstellen</b>, dann im Teilen-Menü auf <b>Bild sichern</b> (oder <b>Video sichern</b>). Beim ersten Mal fragt iOS nach der Erlaubnis, zur Mediathek hinzuzufügen. Drawbench liest deine Fotos nie.</p><p class="l-zh-Hant">點選編輯器右上角的分享按鈕 → 選擇格式並點選<b>製作</b> → 在分享表單中點選<b>儲存影像</b>（影片為<b>儲存影片</b>）。第一次會詢問是否允許加入照片圖庫。App 不會讀取你的照片。</p><p class="l-zh-Hans">轻点编辑器右上角的共享按钮 → 选择格式并轻点<b>创建</b> → 在共享表单中轻点<b>存储图像</b>（视频为<b>存储视频</b>）。第一次会询问是否允许添加到照片图库。App 不会读取你的照片。</p></div>
+<div class="qa"><b><span class="l-ko">SVG는 어디에 쓸 수 있습니까?</span><span class="l-en">What is the SVG for?</span><span class="l-ja">SVGは何に使えますか?</span><span class="l-de">Wofür ist die SVG-Datei?</span><span class="l-zh-Hant">SVG 可以用來做什麼？</span><span class="l-zh-Hans">SVG 可以用来做什么？</span></b>
 <p class="l-ko">선을 경로로 담은 벡터 파일입니다. Inkscape나 Illustrator에서 편집하거나 펜 플로터로 그릴 수 있습니다. SVG 내보내기는 Pro 기능입니다.</p>
-<p class="l-en">It is a vector file with the trace as paths, for editing in Inkscape or Illustrator or drawing with a pen plotter. SVG export is part of Pro.</p></div>
-<h2><span class="l-ko">구매</span><span class="l-en">Purchase</span></h2>
-<div class="qa"><b><span class="l-ko">구독입니까?</span><span class="l-en">Is it a subscription?</span></b>
+<p class="l-en">It is a vector file with the trace as paths, for editing in Inkscape or Illustrator or drawing with a pen plotter. SVG export is part of Pro.</p><p class="l-ja">軌跡をパスとして収めたベクターファイルです。InkscapeやIllustratorで編集したり、ペンプロッタで描いたりできます。SVG書き出しはProの機能です。</p><p class="l-de">Eine Vektordatei mit der Spur als Pfade – zum Bearbeiten in Inkscape oder Illustrator oder zum Zeichnen mit einem Stiftplotter. SVG-Export gehört zu Pro.</p><p class="l-zh-Hant">這是把軌跡存為路徑的向量檔，可在 Inkscape 或 Illustrator 中編輯，或用繪圖機畫出。SVG 匯出是 Pro 功能。</p><p class="l-zh-Hans">这是把轨迹存为路径的矢量文件，可在 Inkscape 或 Illustrator 中编辑，或用绘图仪画出。SVG 导出是 Pro 功能。</p></div>
+<h2><span class="l-ko">구매</span><span class="l-en">Purchase</span><span class="l-ja">購入</span><span class="l-de">Kauf</span><span class="l-zh-Hant">購買</span><span class="l-zh-Hans">购买</span></h2>
+<div class="qa"><b><span class="l-ko">구독입니까?</span><span class="l-en">Is it a subscription?</span><span class="l-ja">サブスクリプションですか?</span><span class="l-de">Ist es ein Abo?</span><span class="l-zh-Hant">這是訂閱嗎？</span><span class="l-zh-Hans">这是订阅吗？</span></b>
 <p class="l-ko">아닙니다. <b>Drawbench Pro</b>는 한 번 결제하면 계속 쓰는 상품이며 만료되지 않습니다.</p>
-<p class="l-en">No. <b>Drawbench Pro</b> is a one-time purchase that never expires.</p></div>
-<div class="qa"><b><span class="l-ko">기기를 바꿨더니 Pro가 풀려 있지 않습니다.</span><span class="l-en">Pro is not unlocked on my new device.</span></b>
+<p class="l-en">No. <b>Drawbench Pro</b> is a one-time purchase that never expires.</p><p class="l-ja">いいえ。<b>Drawbench Pro</b>は1回の購入でずっと使え、期限はありません。</p><p class="l-de">Nein. <b>Drawbench Pro</b> ist ein einmaliger Kauf, der nie abläuft.</p><p class="l-zh-Hant">不是。<b>Drawbench Pro</b> 是一次購買、永不過期。</p><p class="l-zh-Hans">不是。<b>Drawbench Pro</b> 是一次购买、永不过期。</p></div>
+<div class="qa"><b><span class="l-ko">기기를 바꿨더니 Pro가 풀려 있지 않습니다.</span><span class="l-en">Pro is not unlocked on my new device.</span><span class="l-ja">新しいデバイスでProが使えません。</span><span class="l-de">Pro ist auf meinem neuen Gerät nicht freigeschaltet.</span><span class="l-zh-Hant">新裝置上沒有解鎖 Pro。</span><span class="l-zh-Hans">新设备上没有解锁 Pro。</span></b>
 <p class="l-ko">설정 → Drawbench Pro → <b>구매 복원</b>을 누르세요. 구매 창 아래쪽에도 같은 단추가 있습니다. 구매할 때와 같은 Apple 계정이어야 합니다.</p>
-<p class="l-en">Go to Settings → Drawbench Pro → <b>Restore Purchase</b>. The purchase screen has the same button. Use the same Apple Account you bought it with.</p></div>
-<div class="qa"><b><span class="l-ko">가족 공유가 됩니까?</span><span class="l-en">Does it work with Family Sharing?</span></b>
+<p class="l-en">Go to Settings → Drawbench Pro → <b>Restore Purchase</b>. The purchase screen has the same button. Use the same Apple Account you bought it with.</p><p class="l-ja">設定 → Drawbench Pro → <b>購入を復元</b>をタップしてください。購入画面にも同じボタンがあります。購入したときと同じApple Accountを使ってください。</p><p class="l-de">Öffne Einstellungen → Drawbench Pro → <b>Kauf wiederherstellen</b>. Der Kaufbildschirm hat dieselbe Taste. Verwende denselben Apple Account wie beim Kauf.</p><p class="l-zh-Hant">前往設定 → Drawbench Pro → <b>回復購買</b>。購買畫面也有相同的按鈕。請使用購買時的同一個 Apple 帳號。</p><p class="l-zh-Hans">前往设置 → Drawbench Pro → <b>恢复购买</b>。购买界面也有相同的按钮。请使用购买时的同一个 Apple 账户。</p></div>
+<div class="qa"><b><span class="l-ko">가족 공유가 됩니까?</span><span class="l-en">Does it work with Family Sharing?</span><span class="l-ja">ファミリー共有に対応していますか?</span><span class="l-de">Funktioniert es mit der Familienfreigabe?</span><span class="l-zh-Hant">支援家人共享嗎？</span><span class="l-zh-Hans">支持家人共享吗？</span></b>
 <p class="l-ko">지금은 가족 공유를 지원하지 않습니다.</p>
-<p class="l-en">Family Sharing is not supported at this time.</p></div>
-<div class="qa"><b><span class="l-ko">환불을 받고 싶습니다.</span><span class="l-en">How do I get a refund?</span></b>
+<p class="l-en">Family Sharing is not supported at this time.</p><p class="l-ja">現在、ファミリー共有には対応していません。</p><p class="l-de">Die Familienfreigabe wird derzeit nicht unterstützt.</p><p class="l-zh-Hant">目前不支援家人共享。</p><p class="l-zh-Hans">目前不支持家人共享。</p></div>
+<div class="qa"><b><span class="l-ko">환불을 받고 싶습니다.</span><span class="l-en">How do I get a refund?</span><span class="l-ja">返金を受けるには?</span><span class="l-de">Wie bekomme ich eine Rückerstattung?</span><span class="l-zh-Hant">如何申請退款？</span><span class="l-zh-Hans">如何申请退款？</span></b>
 <p class="l-ko">환불은 Apple이 처리합니다. <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>에서 요청하세요.</p>
-<p class="l-en">Refunds are handled by Apple. Request one at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p></div>
-<h2><span class="l-ko">손쉬운 사용</span><span class="l-en">Accessibility</span></h2>
-<div class="qa"><b><span class="l-ko">VoiceOver로 쓸 수 있습니까?</span><span class="l-en">Does it work with VoiceOver?</span></b>
+<p class="l-en">Refunds are handled by Apple. Request one at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p><p class="l-ja">返金はAppleが扱います。<a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>からリクエストしてください。</p><p class="l-de">Rückerstattungen bearbeitet Apple. Beantrage sie unter <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p><p class="l-zh-Hant">退款由 Apple 處理，請至 <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a> 申請。</p><p class="l-zh-Hans">退款由 Apple 处理，请前往 <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a> 申请。</p></div>
+<h2><span class="l-ko">손쉬운 사용</span><span class="l-en">Accessibility</span><span class="l-ja">アクセシビリティ</span><span class="l-de">Bedienungshilfen</span><span class="l-zh-Hant">輔助使用</span><span class="l-zh-Hans">辅助功能</span></h2>
+<div class="qa"><b><span class="l-ko">VoiceOver로 쓸 수 있습니까?</span><span class="l-en">Does it work with VoiceOver?</span><span class="l-ja">VoiceOverで使えますか?</span><span class="l-de">Funktioniert es mit VoiceOver?</span><span class="l-zh-Hant">可以搭配 VoiceOver 使用嗎？</span><span class="l-zh-Hans">可以配合旁白使用吗？</span></b>
 <p class="l-ko">캔버스는 장면 구성과 닫힘 여부를 요약해 읽고, 요소를 고르면 반지름·진폭·각속도 핸들을 위아래로 쓸어 바꿀 수 있습니다. 수식은 말로 풀어 읽고, 자동 정지와 내보내기 완료를 알려 줍니다.</p>
-<p class="l-en">The canvas reads a summary of the scene and whether it closes. Select a part and swipe up or down on its radius, amplitude or angular velocity handle to adjust it. Formulas are read out in words, and VoiceOver announces automatic stops and finished exports.</p></div>
+<p class="l-en">The canvas reads a summary of the scene and whether it closes. Select a part and swipe up or down on its radius, amplitude or angular velocity handle to adjust it. Formulas are read out in words, and VoiceOver announces automatic stops and finished exports.</p><p class="l-ja">キャンバスはシーンの概要と閉じるかどうかを読み上げます。パーツを選び、半径・振幅・角速度のハンドルで上下にスワイプすると調整できます。数式は言葉で読み上げられ、自動停止や書き出しの完了もVoiceOverが知らせます。</p><p class="l-de">Die Leinwand liest eine Zusammenfassung der Szene vor und ob sie sich schließt. Wähle ein Teil und wische auf seinem Radius-, Amplituden- oder Winkelgeschwindigkeitsgriff nach oben oder unten, um ihn anzupassen. Formeln werden in Worten vorgelesen, und VoiceOver meldet automatische Stopps und fertige Exporte.</p><p class="l-zh-Hant">畫布會讀出場景摘要以及是否閉合。選取部件後，在半徑、振幅或角速度控制點上向上或向下滑動即可調整。公式會以文字讀出，VoiceOver 也會告知自動停止與匯出完成。</p><p class="l-zh-Hans">画布会读出场景摘要以及是否闭合。选中部件后，在半径、振幅或角速度控制点上向上或向下轻扫即可调整。公式会以文字读出，旁白也会提示自动停止与导出完成。</p></div>
 
 <footer>
   <p><a href="index.html">Drawbench</a> ·
-     <a href="support.html"><span class="l-ko">지원</span><span class="l-en">Support</span></a> ·
-     <a href="privacy.html"><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></a></p>
+     <a href="support.html"><span class="l-ko">지원</span><span class="l-en">Support</span><span class="l-ja">サポート</span><span class="l-de">Support</span><span class="l-zh-Hant">支援</span><span class="l-zh-Hans">支持</span></a> ·
+     <a href="privacy.html"><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span><span class="l-ja">プライバシーポリシー</span><span class="l-de">Datenschutzerklärung</span><span class="l-zh-Hant">隱私權政策</span><span class="l-zh-Hans">隐私政策</span></a></p>
   <p style="margin-top:8px">chungkil.cksw@gmail.com</p>
 </footer>
 
 </div>
 <script>
+var LANGS=['ko','en','ja','de','zh-Hant','zh-Hans'];
 function setLang(l){
+  if(LANGS.indexOf(l)<0){ l='en'; }
   document.documentElement.setAttribute('data-lang', l);
   document.documentElement.setAttribute('lang', l);
-  document.getElementById('b-ko').classList.toggle('on', l==='ko');
-  document.getElementById('b-en').classList.toggle('on', l==='en');
+  for(var i=0;i<LANGS.length;i++){ document.getElementById('b-'+LANGS[i]).classList.toggle('on', l===LANGS[i]); }
   try{ localStorage.setItem('lang', l); }catch(e){}
+}
+function deviceLang(){
+  var n=(navigator.language||'ko').toLowerCase();
+  if(n.indexOf('ko')===0){ return 'ko'; }
+  if(n.indexOf('ja')===0){ return 'ja'; }
+  if(n.indexOf('de')===0){ return 'de'; }
+  if(n.indexOf('zh')===0){ return /hant|-tw|-hk|-mo/.test(n)?'zh-Hant':'zh-Hans'; }
+  return 'en';
 }
 (function(){
   var s=null; try{ s=localStorage.getItem('lang'); }catch(e){}
-  if(!s){ s=((navigator.language||'ko').toLowerCase().indexOf('ko')===0)?'ko':'en'; }
-  setLang(s);
+  setLang(s||deviceLang());
 })();
 </script>
 </body>

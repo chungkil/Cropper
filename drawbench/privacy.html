@@ -10,13 +10,10 @@
 :root{--paper:#F7F3EA;--paper2:#FCFAF5;--ink:#1C2333;--ink2:#2E4A7A;--accent:#E8662A;--blue:#3D7FD9;--sub:#6B6F7A;--card:#FFFFFF;--line:#E6DFD0}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7}
-html[data-lang="ko"] .l-en{display:none}
-html[data-lang="en"] .l-ko{display:none}
+html:not([data-lang="ko"]) .l-ko,html:not([data-lang="en"]) .l-en,html:not([data-lang="ja"]) .l-ja,html:not([data-lang="de"]) .l-de,html:not([data-lang="zh-Hant"]) .l-zh-Hant,html:not([data-lang="zh-Hans"]) .l-zh-Hans{display:none}
 .wrap{max-width:960px;margin:0 auto;padding:0 20px}
-.langbar{display:flex;justify-content:flex-end;padding:14px 0}
-.langbar button{border:1px solid var(--accent);background:transparent;color:var(--accent);padding:5px 14px;cursor:pointer;font-size:14px}
-.langbar button:first-child{border-radius:8px 0 0 8px}
-.langbar button:last-child{border-radius:0 8px 8px 0}
+.langbar{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:4px;padding:14px 0}
+.langbar button{border:1px solid var(--accent);background:transparent;color:var(--accent);padding:5px 11px;cursor:pointer;font-size:14px;border-radius:8px}
 .langbar button.on{background:var(--accent);color:#fff}
 a{color:var(--ink2)}
 footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;font-size:.9rem;color:var(--sub)}
@@ -34,68 +31,80 @@ ul{padding-left:22px;margin:6px 0}
 <div class="langbar">
   <button id="b-ko" class="on" onclick="setLang('ko')">한국어</button>
   <button id="b-en" onclick="setLang('en')">English</button>
+  <button id="b-ja" onclick="setLang('ja')">日本語</button>
+  <button id="b-de" onclick="setLang('de')">Deutsch</button>
+  <button id="b-zh-Hant" onclick="setLang('zh-Hant')">繁體中文</button>
+  <button id="b-zh-Hans" onclick="setLang('zh-Hans')">简体中文</button>
 </div>
 
-<h1><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></h1>
-<p class="date"><span class="l-ko">시행일 2026년 10월 12일 · Drawbench 무늬공방</span><span class="l-en">Effective October 12, 2026 · Drawbench</span></p>
+<h1><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span><span class="l-ja">プライバシーポリシー</span><span class="l-de">Datenschutzerklärung</span><span class="l-zh-Hant">隱私權政策</span><span class="l-zh-Hans">隐私政策</span></h1>
+<p class="date"><span class="l-ko">시행일 2026년 10월 12일 · Drawbench 무늬공방</span><span class="l-en">Effective October 12, 2026 · Drawbench</span><span class="l-ja">2026年10月12日施行 · Drawbench</span><span class="l-de">Gültig ab 12. Oktober 2026 · Drawbench</span><span class="l-zh-Hant">2026 年 10 月 12 日生效 · Drawbench</span><span class="l-zh-Hans">2026 年 10 月 12 日生效 · Drawbench</span></p>
 
 <div class="box">
   <p class="l-ko"><b>Drawbench는 개인정보를 수집하지 않습니다.</b> 회원 가입이 없고, 개발자가 운영하는 서버가 없으며, 광고·분석·추적 도구를 넣지 않았습니다.</p>
-  <p class="l-en"><b>Drawbench does not collect personal data.</b> There is no sign-up and no developer server, and the app contains no advertising, analytics or tracking tools.</p>
+  <p class="l-en"><b>Drawbench does not collect personal data.</b> There is no sign-up and no developer server, and the app contains no advertising, analytics or tracking tools.</p><p class="l-ja"><b>Drawbenchは個人データを収集しません。</b>会員登録も開発者のサーバーもなく、アプリに広告・分析・トラッキングのツールは含まれていません。</p><p class="l-de"><b>Drawbench erhebt keine personenbezogenen Daten.</b> Es gibt keine Registrierung und keinen Server des Entwicklers, und die App enthält keine Werbe-, Analyse- oder Tracking-Werkzeuge.</p><p class="l-zh-Hant"><b>Drawbench 不收集個人資料。</b>無需註冊，也沒有開發者的伺服器，App 中不含廣告、分析或追蹤工具。</p><p class="l-zh-Hans"><b>Drawbench 不收集个人数据。</b>无需注册，也没有开发者的服务器，App 中不含广告、分析或跟踪工具。</p>
 </div>
 
-<h2><span class="l-ko">데이터가 저장되는 곳</span><span class="l-en">Where your data is stored</span></h2>
+<h2><span class="l-ko">데이터가 저장되는 곳</span><span class="l-en">Where your data is stored</span><span class="l-ja">データの保存場所</span><span class="l-de">Wo deine Daten gespeichert werden</span><span class="l-zh-Hant">資料儲存位置</span><span class="l-zh-Hans">数据存储位置</span></h2>
 <ul>
   <li class="l-ko"><b>장면 문서(.drawbench)</b> — 기기, 또는 사용자 본인의 iCloud Drive에 있는 Drawbench 폴더</li>
-  <li class="l-en"><b>Scene documents (.drawbench)</b> — on your device, or in the Drawbench folder of your own iCloud Drive</li>
+  <li class="l-en"><b>Scene documents (.drawbench)</b> — on your device, or in the Drawbench folder of your own iCloud Drive</li><li class="l-ja"><b>シーン書類(.drawbench)</b> — デバイス、またはご自身のiCloud DriveのDrawbenchフォルダ</li><li class="l-de"><b>Szenendokumente (.drawbench)</b> — auf deinem Gerät oder im Drawbench-Ordner deines eigenen iCloud Drive</li><li class="l-zh-Hant"><b>場景文件（.drawbench）</b> — 你的裝置，或你自己 iCloud 雲碟中的 Drawbench 檔案夾</li><li class="l-zh-Hans"><b>场景文稿（.drawbench）</b> — 你的设备，或你自己 iCloud 云盘中的 Drawbench 文件夹</li>
   <li class="l-ko"><b>설정</b>(단위, 외관, 안내를 마쳤는지) — 기기 안</li>
-  <li class="l-en"><b>Settings</b> (units, appearance, whether you finished the introduction) — on your device</li>
+  <li class="l-en"><b>Settings</b> (units, appearance, whether you finished the introduction) — on your device</li><li class="l-ja"><b>設定</b>(単位、表示、紹介を終えたかどうか) — デバイス</li><li class="l-de"><b>Einstellungen</b> (Einheiten, Darstellung, ob du die Einführung beendet hast) — auf deinem Gerät</li><li class="l-zh-Hant"><b>設定</b>（單位、外觀、是否已看完介紹）— 你的裝置</li><li class="l-zh-Hans"><b>设置</b>（单位、外观、是否已看完介绍）— 你的设备</li>
   <li class="l-ko"><b>썸네일 캐시</b> — 기기 안의 앱 캐시</li>
-  <li class="l-en"><b>Thumbnail cache</b> — in the app's cache on your device</li>
+  <li class="l-en"><b>Thumbnail cache</b> — in the app's cache on your device</li><li class="l-ja"><b>サムネイルのキャッシュ</b> — デバイス上のアプリのキャッシュ</li><li class="l-de"><b>Vorschau-Cache</b> — im Cache der App auf deinem Gerät</li><li class="l-zh-Hant"><b>縮圖快取</b> — 裝置上的 App 快取</li><li class="l-zh-Hans"><b>缩略图缓存</b> — 设备上的 App 缓存</li>
 </ul>
 <p class="l-ko">iCloud Drive는 Apple이 제공하는 사용자 본인의 저장 공간이며, 개발자는 그 내용에 접근할 수 없습니다. iCloud의 개인정보 처리는 Apple의 개인정보 처리방침을 따릅니다.</p>
-<p class="l-en">iCloud Drive is your own storage provided by Apple; the developer has no access to it. Apple's privacy policy governs iCloud.</p>
+<p class="l-en">iCloud Drive is your own storage provided by Apple; the developer has no access to it. Apple's privacy policy governs iCloud.</p><p class="l-ja">iCloud DriveはAppleが提供するご自身のストレージで、開発者はアクセスできません。iCloudにはAppleのプライバシーポリシーが適用されます。</p><p class="l-de">iCloud Drive ist dein eigener Speicher bei Apple; der Entwickler hat keinen Zugriff darauf. Für iCloud gilt die Datenschutzrichtlinie von Apple.</p><p class="l-zh-Hant">iCloud 雲碟是 Apple 提供給你的儲存空間，開發者無法存取。iCloud 適用 Apple 的隱私權政策。</p><p class="l-zh-Hans">iCloud 云盘是 Apple 提供给你的存储空间，开发者无法访问。iCloud 适用 Apple 的隐私政策。</p>
 
-<h2><span class="l-ko">권한</span><span class="l-en">Permissions</span></h2>
+<h2><span class="l-ko">권한</span><span class="l-en">Permissions</span><span class="l-ja">アクセス許可</span><span class="l-de">Berechtigungen</span><span class="l-zh-Hant">權限</span><span class="l-zh-Hans">权限</span></h2>
 <ul>
   <li class="l-ko"><b>사진 보관함에 추가</b> — 내보낸 그림이나 영상을 공유 시트에서 "이미지 저장"·"비디오 저장"으로 저장할 때만 씁니다. 사진을 읽지 않습니다.</li>
-  <li class="l-en"><b>Add to Photos</b> — used only when you choose Save Image or Save Video in the share sheet after exporting. The app never reads your photos.</li>
+  <li class="l-en"><b>Add to Photos</b> — used only when you choose Save Image or Save Video in the share sheet after exporting. The app never reads your photos.</li><li class="l-ja"><b>写真への追加</b> — 書き出したあと共有シートで「画像を保存」「ビデオを保存」を選んだときにだけ使います。アプリが写真を読み取ることはありません。</li><li class="l-de"><b>Zu Fotos hinzufügen</b> — nur wenn du nach dem Export im Teilen-Menü „Bild sichern“ oder „Video sichern“ wählst. Die App liest deine Fotos nie.</li><li class="l-zh-Hant"><b>加入照片</b> — 只在匯出後於分享表單中選擇「儲存影像」或「儲存影片」時使用。App 不會讀取你的照片。</li><li class="l-zh-Hans"><b>添加到照片</b> — 只在导出后于共享表单中选择“存储图像”或“存储视频”时使用。App 不会读取你的照片。</li>
 </ul>
 <p class="l-ko">위치, 연락처, 카메라, 마이크 권한을 요청하지 않습니다.</p>
-<p class="l-en">The app does not ask for location, contacts, camera or microphone access.</p>
+<p class="l-en">The app does not ask for location, contacts, camera or microphone access.</p><p class="l-ja">位置情報、連絡先、カメラ、マイクへのアクセスは求めません。</p><p class="l-de">Die App fragt nicht nach Zugriff auf Standort, Kontakte, Kamera oder Mikrofon.</p><p class="l-zh-Hant">App 不會要求取用位置、聯絡人、相機或麥克風。</p><p class="l-zh-Hans">App 不会要求访问位置、通讯录、相机或麦克风。</p>
 
-<h2><span class="l-ko">인앱 구매</span><span class="l-en">In-app purchase</span></h2>
+<h2><span class="l-ko">인앱 구매</span><span class="l-en">In-app purchase</span><span class="l-ja">App内課金</span><span class="l-de">In-App-Kauf</span><span class="l-zh-Hant">App 內購買</span><span class="l-zh-Hans">App 内购买</span></h2>
 <p class="l-ko">Drawbench Pro 구매는 Apple의 App Store가 처리합니다. 개발자는 결제 정보를 받지 않으며, 앱은 구매 여부만 기기에서 확인합니다.</p>
-<p class="l-en">The App Store handles Drawbench Pro purchases. The developer receives no payment details; the app only checks on your device whether Pro was purchased.</p>
+<p class="l-en">The App Store handles Drawbench Pro purchases. The developer receives no payment details; the app only checks on your device whether Pro was purchased.</p><p class="l-ja">Drawbench Proの購入はApp Storeが扱います。開発者が支払い情報を受け取ることはなく、アプリはProを購入したかどうかをデバイス上で確認するだけです。</p><p class="l-de">Käufe von Drawbench Pro wickelt der App Store ab. Der Entwickler erhält keine Zahlungsdaten; die App prüft nur auf deinem Gerät, ob Pro gekauft wurde.</p><p class="l-zh-Hant">Drawbench Pro 的購買由 App Store 處理。開發者不會收到任何付款資料，App 只在你的裝置上確認是否已購買 Pro。</p><p class="l-zh-Hans">Drawbench Pro 的购买由 App Store 处理。开发者不会收到任何付款信息，App 只在你的设备上确认是否已购买 Pro。</p>
 
-<h2><span class="l-ko">어린이</span><span class="l-en">Children</span></h2>
+<h2><span class="l-ko">어린이</span><span class="l-en">Children</span><span class="l-ja">お子さま</span><span class="l-de">Kinder</span><span class="l-zh-Hant">兒童</span><span class="l-zh-Hans">儿童</span></h2>
 <p class="l-ko">이 앱은 누구의 개인정보도 수집하지 않으며, 어린이의 개인정보도 마찬가지입니다.</p>
-<p class="l-en">The app collects no personal data from anyone, including children.</p>
+<p class="l-en">The app collects no personal data from anyone, including children.</p><p class="l-ja">アプリはお子さまを含め、誰からも個人データを収集しません。</p><p class="l-de">Die App erhebt von niemandem personenbezogene Daten, auch nicht von Kindern.</p><p class="l-zh-Hant">App 不會向任何人（包括兒童）收集個人資料。</p><p class="l-zh-Hans">App 不会向任何人（包括儿童）收集个人数据。</p>
 
-<h2><span class="l-ko">변경과 문의</span><span class="l-en">Changes and contact</span></h2>
+<h2><span class="l-ko">변경과 문의</span><span class="l-en">Changes and contact</span><span class="l-ja">変更と連絡先</span><span class="l-de">Änderungen und Kontakt</span><span class="l-zh-Hant">變更與聯絡方式</span><span class="l-zh-Hans">变更与联系方式</span></h2>
 <p class="l-ko">이 방침이 바뀌면 이 페이지에 시행일과 함께 알립니다. 문의: <b>chungkil.cksw@gmail.com</b></p>
-<p class="l-en">If this policy changes, this page will be updated with a new effective date. Contact: <b>chungkil.cksw@gmail.com</b></p>
+<p class="l-en">If this policy changes, this page will be updated with a new effective date. Contact: <b>chungkil.cksw@gmail.com</b></p><p class="l-ja">このポリシーを変更した場合は、新しい施行日とともにこのページを更新します。連絡先: <b>chungkil.cksw@gmail.com</b></p><p class="l-de">Ändert sich diese Erklärung, wird diese Seite mit einem neuen Gültigkeitsdatum aktualisiert. Kontakt: <b>chungkil.cksw@gmail.com</b></p><p class="l-zh-Hant">若本政策有所變更，將以新的生效日期更新本頁面。聯絡方式：<b>chungkil.cksw@gmail.com</b></p><p class="l-zh-Hans">若本政策有所变更，将以新的生效日期更新本页面。联系方式：<b>chungkil.cksw@gmail.com</b></p>
 
 <footer>
   <p><a href="index.html">Drawbench</a> ·
-     <a href="support.html"><span class="l-ko">지원</span><span class="l-en">Support</span></a> ·
-     <a href="privacy.html"><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></a></p>
+     <a href="support.html"><span class="l-ko">지원</span><span class="l-en">Support</span><span class="l-ja">サポート</span><span class="l-de">Support</span><span class="l-zh-Hant">支援</span><span class="l-zh-Hans">支持</span></a> ·
+     <a href="privacy.html"><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span><span class="l-ja">プライバシーポリシー</span><span class="l-de">Datenschutzerklärung</span><span class="l-zh-Hant">隱私權政策</span><span class="l-zh-Hans">隐私政策</span></a></p>
   <p style="margin-top:8px">chungkil.cksw@gmail.com</p>
 </footer>
 
 </div>
 <script>
+var LANGS=['ko','en','ja','de','zh-Hant','zh-Hans'];
 function setLang(l){
+  if(LANGS.indexOf(l)<0){ l='en'; }
   document.documentElement.setAttribute('data-lang', l);
   document.documentElement.setAttribute('lang', l);
-  document.getElementById('b-ko').classList.toggle('on', l==='ko');
-  document.getElementById('b-en').classList.toggle('on', l==='en');
+  for(var i=0;i<LANGS.length;i++){ document.getElementById('b-'+LANGS[i]).classList.toggle('on', l===LANGS[i]); }
   try{ localStorage.setItem('lang', l); }catch(e){}
+}
+function deviceLang(){
+  var n=(navigator.language||'ko').toLowerCase();
+  if(n.indexOf('ko')===0){ return 'ko'; }
+  if(n.indexOf('ja')===0){ return 'ja'; }
+  if(n.indexOf('de')===0){ return 'de'; }
+  if(n.indexOf('zh')===0){ return /hant|-tw|-hk|-mo/.test(n)?'zh-Hant':'zh-Hans'; }
+  return 'en';
 }
 (function(){
   var s=null; try{ s=localStorage.getItem('lang'); }catch(e){}
-  if(!s){ s=((navigator.language||'ko').toLowerCase().indexOf('ko')===0)?'ko':'en'; }
-  setLang(s);
+  setLang(s||deviceLang());
 })();
 </script>
 </body>

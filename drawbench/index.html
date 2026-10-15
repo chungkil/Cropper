@@ -3,20 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Drawbench 무늬공방 — 원과 진자로 무늬 만들기</title>
-<meta property="og:title" content="Drawbench 무늬공방 — 원과 진자로 무늬 만들기">
+<title>Drawbench 무늬공방 — 진자와 바퀴를 조립하는 물리 작업대</title>
+<meta property="og:title" content="Drawbench 무늬공방 — 진자와 바퀴를 조립하는 물리 작업대">
 <meta property="og:description" content="원운동·진자·스프링·회전판을 조립해 그 자취로 기하학 무늬를 만드는 iPhone·iPad 앱. Build geometric patterns from the motion of wheels, pendulums and springs.">
 <style>
 :root{--paper:#F7F3EA;--paper2:#FCFAF5;--ink:#1C2333;--ink2:#2E4A7A;--accent:#E8662A;--blue:#3D7FD9;--sub:#6B6F7A;--card:#FFFFFF;--line:#E6DFD0}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7}
-html[data-lang="ko"] .l-en{display:none}
-html[data-lang="en"] .l-ko{display:none}
+html:not([data-lang="ko"]) .l-ko,html:not([data-lang="en"]) .l-en,html:not([data-lang="ja"]) .l-ja,html:not([data-lang="de"]) .l-de,html:not([data-lang="zh-Hant"]) .l-zh-Hant,html:not([data-lang="zh-Hans"]) .l-zh-Hans{display:none}
 .wrap{max-width:960px;margin:0 auto;padding:0 20px}
-.langbar{display:flex;justify-content:flex-end;padding:14px 0}
-.langbar button{border:1px solid var(--accent);background:transparent;color:var(--accent);padding:5px 14px;cursor:pointer;font-size:14px}
-.langbar button:first-child{border-radius:8px 0 0 8px}
-.langbar button:last-child{border-radius:0 8px 8px 0}
+.langbar{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:4px;padding:14px 0}
+.langbar button{border:1px solid var(--accent);background:transparent;color:var(--accent);padding:5px 11px;cursor:pointer;font-size:14px;border-radius:8px}
 .langbar button.on{background:var(--accent);color:#fff}
 a{color:var(--ink2)}
 footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;font-size:.9rem;color:var(--sub)}
@@ -58,28 +55,32 @@ h2.sec::after{content:"";display:block;width:44px;height:3px;background:var(--ac
 <div class="langbar">
   <button id="b-ko" class="on" onclick="setLang('ko')">한국어</button>
   <button id="b-en" onclick="setLang('en')">English</button>
+  <button id="b-ja" onclick="setLang('ja')">日本語</button>
+  <button id="b-de" onclick="setLang('de')">Deutsch</button>
+  <button id="b-zh-Hant" onclick="setLang('zh-Hant')">繁體中文</button>
+  <button id="b-zh-Hans" onclick="setLang('zh-Hans')">简体中文</button>
 </div>
 
 <div class="hero">
   <svg viewBox="0 0 200 200" width="132" height="132" aria-hidden="true"><rect width="200" height="200" rx="44" fill="#141c2e"/><g fill="none" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M134.3 100.0 L134.3 100.8 L134.5 101.6 L134.8 102.3 L135.3 103.1 L135.8 103.8 L136.5 104.4 L137.2 105.0 L138.1 105.5 L139.1 105.9 L140.1 106.2 L141.2 106.5 L142.5 106.6 L143.7 106.6 L145.1 106.5 L146.4 106.3 L147.9 106.0 L149.3 105.5 L150.8 104.9 L152.2 104.2 L153.7 103.3 L155.1 102.3 L156.6 101.2 L157.9 99.9 L159.3 98.5 L160.5 97.0 L161.7 95.3 L162.9 93.5 L163.9 91.7 L164.8 89.7 L165.6 87.6 L166.4 85.4 L167.0 83.2 L167.4 80.8 L167.7 78.4 L167.9 76.0 L168.0 73.5 L167.9 70.9 L167.6 68.4 L167.2 65.8 L166.6 63.3 L165.9 60.7 L165.0 58.2 L164.0 55.7 L162.8 53.2 L161.5 50.8 L160.1 48.5 L158.5 46.3 L156.7 44.1 L154.9 42.0 L152.9 40.1 L150.8 38.2 L148.6 36.5 L146.3 34.9 L144.0 33.4 L141.5 32.1 L139.0 30.9 L136.5 29.9 L133.9 29.0 L131.2 28.2 L128.6 27.7" stroke="#58a6ff"/><path d="M128.6 27.7 L125.9 27.2 L123.3 27.0 L120.6 26.9 L118.0 26.9 L115.4 27.1 L112.9 27.4 L110.4 27.9 L108.0 28.5 L105.6 29.3 L103.4 30.1 L101.2 31.1 L99.2 32.2 L97.2 33.4 L95.4 34.7 L93.7 36.1 L92.1 37.5 L90.6 39.0 L89.3 40.5 L88.1 42.1 L87.1 43.7 L86.2 45.4 L85.4 47.0 L84.7 48.6 L84.2 50.2 L83.9 51.8 L83.6 53.4 L83.5 54.9 L83.5 56.3 L83.6 57.7 L83.8 59.0 L84.2 60.2 L84.6 61.4 L85.1 62.4 L85.6 63.4 L86.3 64.2 L87.0 64.9 L87.7 65.5 L88.5 66.0 L89.3 66.3 L90.1 66.6 L90.9 66.7 L91.7 66.7 L92.5 66.5 L93.2 66.3 L94.0 65.9 L94.6 65.4 L95.2 64.8 L95.8 64.1 L96.2 63.4 L96.6 62.5 L96.9 61.5 L97.1 60.5 L97.2 59.3 L97.1 58.2 L97.0 57.0 L96.7 55.7 L96.3 54.4 L95.7 53.1 L95.1 51.8 L94.3 50.5" stroke="#67a4ed"/><path d="M94.3 50.5 L93.4 49.2 L92.3 48.0 L91.1 46.7 L89.8 45.6 L88.3 44.4 L86.8 43.4 L85.1 42.4 L83.3 41.5 L81.4 40.7 L79.4 40.1 L77.4 39.5 L75.2 39.0 L73.0 38.7 L70.7 38.5 L68.3 38.5 L66.0 38.6 L63.5 38.8 L61.1 39.2 L58.7 39.7 L56.2 40.4 L53.8 41.3 L51.4 42.2 L49.0 43.4 L46.7 44.7 L44.4 46.1 L42.2 47.7 L40.1 49.4 L38.1 51.2 L36.2 53.2 L34.4 55.3 L32.6 57.5 L31.1 59.7 L29.6 62.1 L28.3 64.6 L27.1 67.1 L26.1 69.7 L25.2 72.3 L24.4 75.0 L23.9 77.7 L23.4 80.5 L23.2 83.2 L23.1 85.9 L23.1 88.6 L23.3 91.3 L23.7 94.0 L24.2 96.6 L24.8 99.1 L25.6 101.6 L26.5 103.9 L27.6 106.2 L28.7 108.4 L30.0 110.5 L31.3 112.5 L32.8 114.4 L34.3 116.1 L35.9 117.8 L37.6 119.2 L39.3 120.6 L41.1 121.8 L42.9 122.9" stroke="#76a2dc"/><path d="M42.9 122.9 L44.7 123.8 L46.5 124.6 L48.3 125.2 L50.1 125.7 L51.8 126.1 L53.5 126.3 L55.2 126.5 L56.8 126.4 L58.4 126.3 L59.9 126.1 L61.3 125.7 L62.6 125.3 L63.8 124.8 L64.9 124.2 L65.9 123.5 L66.8 122.8 L67.6 122.0 L68.2 121.2 L68.8 120.4 L69.2 119.5 L69.4 118.7 L69.6 117.8 L69.6 117.0 L69.5 116.2 L69.3 115.4 L69.0 114.7 L68.6 114.0 L68.0 113.4 L67.4 112.9 L66.7 112.4 L65.9 112.1 L65.0 111.8 L64.0 111.6 L63.0 111.6 L61.9 111.7 L60.8 111.8 L59.7 112.2 L58.5 112.6 L57.4 113.2 L56.2 113.9 L55.1 114.7 L54.0 115.7 L52.9 116.7 L51.8 118.0 L50.8 119.3 L49.9 120.7 L49.1 122.3 L48.3 124.0 L47.7 125.7 L47.1 127.6 L46.7 129.6 L46.3 131.6 L46.1 133.7 L46.0 135.9 L46.1 138.1 L46.3 140.3 L46.7 142.6 L47.1 144.9 L47.8 147.2 L48.6 149.5" stroke="#85a1ca"/><path d="M48.6 149.5 L49.5 151.8 L50.6 154.0 L51.8 156.3 L53.2 158.4 L54.7 160.5 L56.4 162.6 L58.2 164.5 L60.1 166.4 L62.1 168.2 L64.3 169.9 L66.6 171.4 L68.9 172.8 L71.4 174.1 L73.9 175.3 L76.5 176.3 L79.1 177.2 L81.8 177.9 L84.5 178.5 L87.3 178.9 L90.1 179.1 L92.9 179.2 L95.6 179.2 L98.4 178.9 L101.1 178.6 L103.8 178.0 L106.4 177.4 L109.0 176.6 L111.4 175.6 L113.8 174.5 L116.2 173.3 L118.4 172.0 L120.5 170.5 L122.5 169.0 L124.4 167.4 L126.1 165.7 L127.7 163.9 L129.2 162.1 L130.5 160.2 L131.7 158.2 L132.8 156.3 L133.7 154.3 L134.5 152.3 L135.1 150.3 L135.6 148.4 L135.9 146.4 L136.1 144.6 L136.2 142.7 L136.1 140.9 L136.0 139.2 L135.7 137.5 L135.3 136.0 L134.8 134.5 L134.3 133.1 L133.6 131.8 L132.9 130.7 L132.1 129.6 L131.3 128.7 L130.4 127.9 L129.5 127.2 L128.6 126.6" stroke="#949fb9"/><path d="M128.6 126.6 L127.6 126.2 L126.7 125.9 L125.8 125.7 L124.9 125.6 L124.0 125.7 L123.2 125.9 L122.4 126.1 L121.7 126.5 L121.1 127.0 L120.6 127.6 L120.1 128.3 L119.7 129.0 L119.5 129.8 L119.3 130.7 L119.3 131.7 L119.4 132.6 L119.6 133.6 L119.9 134.7 L120.3 135.7 L120.9 136.7 L121.6 137.8 L122.5 138.8 L123.4 139.7 L124.5 140.7 L125.7 141.5 L127.0 142.3 L128.4 143.1 L130.0 143.7 L131.6 144.3 L133.3 144.7 L135.1 145.1 L137.0 145.3 L139.0 145.4 L141.0 145.4 L143.0 145.3 L145.1 145.0 L147.3 144.6 L149.4 144.0 L151.6 143.3 L153.7 142.4 L155.8 141.4 L157.9 140.2 L160.0 138.9 L162.0 137.5 L163.9 135.9 L165.8 134.2 L167.6 132.3 L169.3 130.4 L170.9 128.3 L172.4 126.1 L173.8 123.8 L175.1 121.4 L176.2 118.9 L177.2 116.3 L178.0 113.7 L178.7 111.0 L179.3 108.3 L179.7 105.6 L179.9 102.8 L180.0 100.0" stroke="#a39ea8"/><path d="M180.0 100.0 L179.9 97.2 L179.7 94.4 L179.3 91.7 L178.7 89.0 L178.0 86.3 L177.2 83.7 L176.2 81.1 L175.1 78.6 L173.8 76.2 L172.4 73.9 L170.9 71.7 L169.3 69.6 L167.6 67.7 L165.8 65.8 L163.9 64.1 L162.0 62.5 L160.0 61.1 L157.9 59.8 L155.8 58.6 L153.7 57.6 L151.6 56.7 L149.4 56.0 L147.3 55.4 L145.1 55.0 L143.0 54.7 L141.0 54.6 L139.0 54.6 L137.0 54.7 L135.1 54.9 L133.3 55.3 L131.6 55.7 L130.0 56.3 L128.4 56.9 L127.0 57.7 L125.7 58.5 L124.5 59.3 L123.4 60.3 L122.5 61.2 L121.6 62.2 L120.9 63.3 L120.3 64.3 L119.9 65.3 L119.6 66.4 L119.4 67.4 L119.3 68.3 L119.3 69.3 L119.5 70.2 L119.7 71.0 L120.1 71.7 L120.6 72.4 L121.1 73.0 L121.7 73.5 L122.4 73.9 L123.2 74.1 L124.0 74.3 L124.9 74.4 L125.8 74.3 L126.7 74.1 L127.6 73.8 L128.6 73.4" stroke="#b39c96"/><path d="M128.6 73.4 L129.5 72.8 L130.4 72.1 L131.3 71.3 L132.1 70.4 L132.9 69.3 L133.6 68.2 L134.3 66.9 L134.8 65.5 L135.3 64.0 L135.7 62.5 L136.0 60.8 L136.1 59.1 L136.2 57.3 L136.1 55.4 L135.9 53.6 L135.6 51.6 L135.1 49.7 L134.5 47.7 L133.7 45.7 L132.8 43.7 L131.7 41.8 L130.5 39.8 L129.2 37.9 L127.7 36.1 L126.1 34.3 L124.4 32.6 L122.5 31.0 L120.5 29.5 L118.4 28.0 L116.2 26.7 L113.8 25.5 L111.4 24.4 L109.0 23.4 L106.4 22.6 L103.8 22.0 L101.1 21.4 L98.4 21.1 L95.6 20.8 L92.9 20.8 L90.1 20.9 L87.3 21.1 L84.5 21.5 L81.8 22.1 L79.1 22.8 L76.5 23.7 L73.9 24.7 L71.4 25.9 L68.9 27.2 L66.6 28.6 L64.3 30.1 L62.1 31.8 L60.1 33.6 L58.2 35.5 L56.4 37.4 L54.7 39.5 L53.2 41.6 L51.8 43.7 L50.6 46.0 L49.5 48.2 L48.6 50.5" stroke="#c29b85"/><path d="M48.6 50.5 L47.8 52.8 L47.1 55.1 L46.7 57.4 L46.3 59.7 L46.1 61.9 L46.0 64.1 L46.1 66.3 L46.3 68.4 L46.7 70.4 L47.1 72.4 L47.7 74.3 L48.3 76.0 L49.1 77.7 L49.9 79.3 L50.8 80.7 L51.8 82.0 L52.9 83.3 L54.0 84.3 L55.1 85.3 L56.2 86.1 L57.4 86.8 L58.5 87.4 L59.7 87.8 L60.8 88.2 L61.9 88.3 L63.0 88.4 L64.0 88.4 L65.0 88.2 L65.9 87.9 L66.7 87.6 L67.4 87.1 L68.0 86.6 L68.6 86.0 L69.0 85.3 L69.3 84.6 L69.5 83.8 L69.6 83.0 L69.6 82.2 L69.4 81.3 L69.2 80.5 L68.8 79.6 L68.2 78.8 L67.6 78.0 L66.8 77.2 L65.9 76.5 L64.9 75.8 L63.8 75.2 L62.6 74.7 L61.3 74.3 L59.9 73.9 L58.4 73.7 L56.8 73.6 L55.2 73.5 L53.5 73.7 L51.8 73.9 L50.1 74.3 L48.3 74.8 L46.5 75.4 L44.7 76.2 L42.9 77.1" stroke="#d19974"/><path d="M42.9 77.1 L41.1 78.2 L39.3 79.4 L37.6 80.8 L35.9 82.2 L34.3 83.9 L32.8 85.6 L31.3 87.5 L30.0 89.5 L28.7 91.6 L27.6 93.8 L26.5 96.1 L25.6 98.4 L24.8 100.9 L24.2 103.4 L23.7 106.0 L23.3 108.7 L23.1 111.4 L23.1 114.1 L23.2 116.8 L23.4 119.5 L23.9 122.3 L24.4 125.0 L25.2 127.7 L26.1 130.3 L27.1 132.9 L28.3 135.4 L29.6 137.9 L31.1 140.3 L32.6 142.5 L34.4 144.7 L36.2 146.8 L38.1 148.8 L40.1 150.6 L42.2 152.3 L44.4 153.9 L46.7 155.3 L49.0 156.6 L51.4 157.8 L53.8 158.7 L56.2 159.6 L58.7 160.3 L61.1 160.8 L63.5 161.2 L66.0 161.4 L68.3 161.5 L70.7 161.5 L73.0 161.3 L75.2 161.0 L77.4 160.5 L79.4 159.9 L81.4 159.3 L83.3 158.5 L85.1 157.6 L86.8 156.6 L88.3 155.6 L89.8 154.4 L91.1 153.3 L92.3 152.0 L93.4 150.8 L94.3 149.5" stroke="#e09862"/><path d="M94.3 149.5 L95.1 148.2 L95.7 146.9 L96.3 145.6 L96.7 144.3 L97.0 143.0 L97.1 141.8 L97.2 140.7 L97.1 139.5 L96.9 138.5 L96.6 137.5 L96.2 136.6 L95.8 135.9 L95.2 135.2 L94.6 134.6 L94.0 134.1 L93.2 133.7 L92.5 133.5 L91.7 133.3 L90.9 133.3 L90.1 133.4 L89.3 133.7 L88.5 134.0 L87.7 134.5 L87.0 135.1 L86.3 135.8 L85.6 136.6 L85.1 137.6 L84.6 138.6 L84.2 139.8 L83.8 141.0 L83.6 142.3 L83.5 143.7 L83.5 145.1 L83.6 146.6 L83.9 148.2 L84.2 149.8 L84.7 151.4 L85.4 153.0 L86.2 154.6 L87.1 156.3 L88.1 157.9 L89.3 159.5 L90.6 161.0 L92.1 162.5 L93.7 163.9 L95.4 165.3 L97.2 166.6 L99.2 167.8 L101.2 168.9 L103.4 169.9 L105.6 170.7 L108.0 171.5 L110.4 172.1 L112.9 172.6 L115.4 172.9 L118.0 173.1 L120.6 173.1 L123.3 173.0 L125.9 172.8 L128.6 172.3" stroke="#ef9651"/><path d="M128.6 172.3 L131.2 171.8 L133.9 171.0 L136.5 170.1 L139.0 169.1 L141.5 167.9 L144.0 166.6 L146.3 165.1 L148.6 163.5 L150.8 161.8 L152.9 159.9 L154.9 158.0 L156.7 155.9 L158.5 153.7 L160.1 151.5 L161.5 149.2 L162.8 146.8 L164.0 144.3 L165.0 141.8 L165.9 139.3 L166.6 136.7 L167.2 134.2 L167.6 131.6 L167.9 129.1 L168.0 126.5 L167.9 124.0 L167.7 121.6 L167.4 119.2 L167.0 116.8 L166.4 114.6 L165.6 112.4 L164.8 110.3 L163.9 108.3 L162.9 106.5 L161.7 104.7 L160.5 103.0 L159.3 101.5 L157.9 100.1 L156.6 98.8 L155.1 97.7 L153.7 96.7 L152.2 95.8 L150.8 95.1 L149.3 94.5 L147.9 94.0 L146.4 93.7 L145.1 93.5 L143.7 93.4 L142.5 93.4 L141.2 93.5 L140.1 93.8 L139.1 94.1 L138.1 94.5 L137.2 95.0 L136.5 95.6 L135.8 96.2 L135.3 96.9 L134.8 97.7 L134.5 98.4 L134.3 99.2 L134.3 100.0" stroke="#ff9540"/></g><circle cx="134.3" cy="100.0" r="9" fill="#ff9540"/></svg>
-  <h1><span class="l-ko">Drawbench 무늬공방</span><span class="l-en">Drawbench</span></h1>
+  <h1><span class="l-ko">Drawbench 무늬공방</span><span class="l-en">Drawbench</span><span class="l-ja">Drawbench 模様工房</span><span class="l-de">Drawbench</span><span class="l-zh-Hant">Drawbench 圖案工坊</span><span class="l-zh-Hans">Drawbench 图案工坊</span></h1>
   <p class="tag">
-    <span class="l-ko">원과 진자로 무늬 만들기</span>
-    <span class="l-en">Geometry drawn by motion</span>
+    <span class="l-ko">진자와 바퀴를 조립하는 물리 작업대</span>
+    <span class="l-en">A workbench for motion &amp; math</span><span class="l-ja">振り子と車輪を組み立てる物理作業台</span><span class="l-de">Physik-Werkbank für Bewegung</span><span class="l-zh-Hant">組裝擺與輪子的物理工作台</span><span class="l-zh-Hans">组装摆与轮子的物理工作台</span>
   </p>
-  <div class="badge"><span class="soon">
-    <span class="l-ko">App Store 출시 준비 중 · iPhone · iPad</span><span class="l-en">Coming soon to the App Store · iPhone · iPad</span>
-  </span></div>
+  <div class="badge"><a class="soon" href="https://apps.apple.com/app/id6821436108">
+    <span class="l-ko">App Store에서 받기 · iPhone · iPad</span><span class="l-en">Download on the App Store · iPhone · iPad</span><span class="l-ja">App Storeからダウンロード · iPhone · iPad</span><span class="l-de">Im App Store laden · iPhone · iPad</span><span class="l-zh-Hant">在 App Store 下載 · iPhone · iPad</span><span class="l-zh-Hans">在 App Store 下载 · iPhone · iPad</span>
+  </a></div>
 </div>
 
 <div class="stats">
-  <div class="stat"><b>35</b><span class="l-ko">프리셋</span><span class="l-en">presets</span></div>
-  <div class="stat"><b>11</b><span class="l-ko">무늬 계열</span><span class="l-en">pattern families</span></div>
-  <div class="stat"><b>6</b><span class="l-ko">운동 요소</span><span class="l-en">kinds of motion</span></div>
-  <div class="stat"><b>8</b><span class="l-ko">최대 추적점</span><span class="l-en">tracers at most</span></div>
+  <div class="stat"><b>48</b><span class="l-ko">프리셋</span><span class="l-en">presets</span><span class="l-ja">プリセット</span><span class="l-de">Vorlagen</span><span class="l-zh-Hant">預設</span><span class="l-zh-Hans">预设</span></div>
+  <div class="stat"><b>15</b><span class="l-ko">무늬 계열</span><span class="l-en">pattern families</span><span class="l-ja">模様の系統</span><span class="l-de">Musterfamilien</span><span class="l-zh-Hant">圖案系列</span><span class="l-zh-Hans">图案系列</span></div>
+  <div class="stat"><b>6</b><span class="l-ko">운동 요소</span><span class="l-en">kinds of motion</span><span class="l-ja">運動パーツ</span><span class="l-de">Bewegungsarten</span><span class="l-zh-Hant">運動部件</span><span class="l-zh-Hans">运动部件</span></div>
+  <div class="stat"><b>8</b><span class="l-ko">최대 추적점</span><span class="l-en">tracers at most</span><span class="l-ja">最大トレーサー数</span><span class="l-de">Spurpunkte maximal</span><span class="l-zh-Hant">最多描跡點</span><span class="l-zh-Hans">最多描迹点</span></div>
 </div>
 
-<h2 class="sec"><span class="l-ko">움직임을 조립하면 무늬가 된다</span><span class="l-en">Assemble motion, get a pattern</span></h2>
+<h2 class="sec"><span class="l-ko">움직임을 조립하면 무늬가 된다</span><span class="l-en">Assemble motion, get a pattern</span><span class="l-ja">動きを組み立てると模様になる</span><span class="l-de">Bewegung zusammensetzen, Muster erhalten</span><span class="l-zh-Hant">組合運動，就成了圖案</span><span class="l-zh-Hans">组合运动，就成了图案</span></h2>
 <div class="note">
   <p class="l-ko">원운동, 진자, 스프링, 회전판을 작업대에 올리고 서로 연결합니다. 바퀴 위에 바퀴를 얹고, 진자 위에 회전판을 얹는 식입니다.
   그 장치가 움직이는 동안 펜을 단 점이 자취를 남기고, 그 자취가 하모노그래프와 리사주, 장미 곡선 같은 기하학 무늬가 됩니다.
@@ -87,45 +88,51 @@ h2.sec::after{content:"";display:block;width:44px;height:3px;background:var(--ac
   <p class="l-en">Put circular motion, pendulums, springs and turntables on a workbench and connect them: a wheel on a wheel,
   a turntable on a pendulum. As the machine moves, a point carrying a pen leaves a trace, and that trace becomes a geometric pattern
   such as a harmonograph, a Lissajous figure or a rose curve. Change a value and Drawbench shows <b>a faint preview of the new
-  pattern before it is drawn</b>.</p>
+  pattern before it is drawn</b>.</p><p class="l-ja">円運動、振り子、ばね、回転台を作業台に置いてつなぎます。車輪の上に車輪を、振り子の上に回転台を載せるように。装置が動くあいだ、ペンを付けた点が軌跡を残し、その軌跡がハーモノグラフやリサージュ、バラ曲線のような幾何学模様になります。値を1つ変えると、模様がどう変わるかを<b>描く前に半透明で先に</b>見せます。</p><p class="l-de">Lege Kreisbewegungen, Pendel, Federn und Drehteller auf die Werkbank und verbinde sie: ein Rad auf einem Rad, ein Drehteller auf einem Pendel. Während sich die Maschine bewegt, hinterlässt ein Punkt mit Stift eine Spur, und diese Spur wird zu einem geometrischen Muster wie einem Harmonographen, einer Lissajous-Figur oder einer Rosenkurve. Änderst du einen Wert, zeigt Drawbench <b>eine blasse Vorschau des neuen Musters, bevor es gezeichnet wird</b>.</p><p class="l-zh-Hant">把圓周運動、擺、彈簧和轉台放到工作台上並連接起來：輪子上疊輪子、擺上放轉台。裝置運動時，帶著筆的點留下軌跡，這條軌跡就成了諧振記錄儀、李薩如圖形、玫瑰線這類幾何圖案。改變一個值，Drawbench 會<b>在畫出之前先以半透明顯示</b>圖案將如何變化。</p><p class="l-zh-Hans">把圆周运动、摆、弹簧和转台放到工作台上并连接起来：轮子上叠轮子、摆上放转台。装置运动时，带着笔的点留下轨迹，这条轨迹就成了谐振记录仪、李萨如图形、玫瑰线这类几何图案。改变一个值，Drawbench 会<b>在画出之前先以半透明显示</b>图案将如何变化。</p>
 </div>
 
-<h2 class="sec"><span class="l-ko">세 걸음으로 시작</span><span class="l-en">Three steps to start</span></h2>
+<h2 class="sec"><span class="l-ko">세 걸음으로 시작</span><span class="l-en">Three steps to start</span><span class="l-ja">3ステップで始める</span><span class="l-de">In drei Schritten loslegen</span><span class="l-zh-Hant">三步開始</span><span class="l-zh-Hans">三步开始</span></h2>
 <div class="steps">
-  <div class="step"><b><span class="l-ko">1. 프리셋 재생</span><span class="l-en">1. Play a preset</span></b>
-    <p class="l-ko">35종 가운데 하나를 고르면 바로 그려지고, 열자마자 값을 바꿔 볼 수 있습니다.</p>
-    <p class="l-en">Pick one of 35 presets and watch it draw, ready for you to change its values.</p></div>
-  <div class="step"><b><span class="l-ko">2. 값 하나 바꾸기</span><span class="l-en">2. Change a value</span></b>
+  <div class="step"><b><span class="l-ko">1. 프리셋 재생</span><span class="l-en">1. Play a preset</span><span class="l-ja">1. プリセットを再生</span><span class="l-de">1. Vorlage abspielen</span><span class="l-zh-Hant">1. 播放預設</span><span class="l-zh-Hans">1. 播放预设</span></b>
+    <p class="l-ko">48종 가운데 하나를 고르면 바로 그려지고, 열자마자 값을 바꿔 볼 수 있습니다.</p>
+    <p class="l-en">Pick one of 48 presets and watch it draw, ready for you to change its values.</p><p class="l-ja">48種から1つ選ぶとすぐに描かれ、開いたまま値を変えてみることができます。</p><p class="l-de">Wähle eine von 48 Vorlagen und sieh zu, wie sie gezeichnet wird – du kannst gleich ihre Werte ändern.</p><p class="l-zh-Hant">從 48 個預設中選一個即可立即繪製，打開就能更改數值。</p><p class="l-zh-Hans">从 48 个预设中选一个即可立即绘制，打开就能更改数值。</p></div>
+  <div class="step"><b><span class="l-ko">2. 값 하나 바꾸기</span><span class="l-en">2. Change a value</span><span class="l-ja">2. 値を1つ変える</span><span class="l-de">2. Einen Wert ändern</span><span class="l-zh-Hant">2. 改變一個值</span><span class="l-zh-Hans">2. 改变一个值</span></b>
     <p class="l-ko">핸들을 끌거나 각속도 다이얼을 돌립니다. 다이얼은 3:2 같은 정수비에 맞춰 붙습니다.</p>
-    <p class="l-en">Drag a handle or turn the angular velocity dial. The dial snaps to ratios such as 3:2.</p></div>
-  <div class="step"><b><span class="l-ko">3. 내 작업으로 저장</span><span class="l-en">3. Save to My Work</span></b>
+    <p class="l-en">Drag a handle or turn the angular velocity dial. The dial snaps to ratios such as 3:2.</p><p class="l-ja">ハンドルをドラッグするか、角速度ダイヤルを回します。ダイヤルは 3:2 のような整数比に吸着します。</p><p class="l-de">Ziehe einen Griff oder drehe das Winkelgeschwindigkeits-Rad. Das Rad rastet bei Verhältnissen wie 3:2 ein.</p><p class="l-zh-Hant">拖動控制點或轉動角速度轉盤。轉盤會吸附到 3:2 這樣的整數比。</p><p class="l-zh-Hans">拖动控制点或转动角速度转盘。转盘会吸附到 3:2 这样的整数比。</p></div>
+  <div class="step"><b><span class="l-ko">3. 내 작업으로 저장</span><span class="l-en">3. Save to My Work</span><span class="l-ja">3. マイ作品に保存</span><span class="l-de">3. Sichern</span><span class="l-zh-Hant">3. 儲存到我的作品</span><span class="l-zh-Hans">3. 保存到我的作品</span></b>
     <p class="l-ko">마음에 들면 저장합니다. 장면은 문서가 되어 iCloud Drive와 파일 앱에서 열립니다.</p>
-    <p class="l-en">Keep it as a document that opens from iCloud Drive and the Files app.</p></div>
+    <p class="l-en">Keep it as a document that opens from iCloud Drive and the Files app.</p><p class="l-ja">書類として保存され、iCloud Driveと「ファイル」アプリから開けます。</p><p class="l-de">Behalte sie als Dokument, das sich aus iCloud Drive und der Dateien-App öffnen lässt.</p><p class="l-zh-Hant">儲存為文件，可從 iCloud 雲碟與「檔案」App 開啟。</p><p class="l-zh-Hans">存为文稿，可从 iCloud 云盘和“文件”App 打开。</p></div>
 </div>
 
-<h2 class="sec"><span class="l-ko">작업대에 있는 것</span><span class="l-en">On the workbench</span></h2>
+<h2 class="sec"><span class="l-ko">작업대에 있는 것</span><span class="l-en">On the workbench</span><span class="l-ja">作業台にあるもの</span><span class="l-de">Auf der Werkbank</span><span class="l-zh-Hant">工作台上有什麼</span><span class="l-zh-Hans">工作台上有什么</span></h2>
 <div class="grid">
-  <div class="card"><h3><span class="l-ko">요소 6종</span><span class="l-en">Six parts</span></h3>
+  <div class="card"><h3><span class="l-ko">요소 6종</span><span class="l-en">Six parts</span><span class="l-ja">パーツ6種</span><span class="l-de">Sechs Teile</span><span class="l-zh-Hant">六種部件</span><span class="l-zh-Hans">六种部件</span></h3>
     <p class="l-ko">원운동, 단진동, 단진자, 스프링-질량, 회전판, 직선 이동. 끌어다 놓으면 연결됩니다.</p>
-    <p class="l-en">Circle, Oscillator, Pendulum, Spring, Turntable and Slider. Drop one onto another to connect them.</p></div>
-  <div class="card"><h3><span class="l-ko">숫자·슬라이더·수식</span><span class="l-en">Numbers, sliders, formulas</span></h3>
+    <p class="l-en">Circle, Oscillator, Pendulum, Spring, Turntable and Slider. Drop one onto another to connect them.</p><p class="l-ja">円運動、単振動、振り子、ばね、回転台、直線移動。ドラッグして重ねるとつながります。</p><p class="l-de">Kreis, Oszillator, Pendel, Feder, Drehteller und Linearschlitten. Lege eines auf ein anderes, um sie zu verbinden.</p><p class="l-zh-Hant">圓周運動、簡諧振動、單擺、彈簧、轉台、直線移動。拖放到另一個部件上就能連接。</p><p class="l-zh-Hans">圆周运动、简谐振动、单摆、弹簧、转台、直线移动。拖放到另一个部件上就能连接。</p></div>
+  <div class="card"><h3><span class="l-ko">숫자·슬라이더·수식</span><span class="l-en">Numbers, sliders, formulas</span><span class="l-ja">数値・スライダー・数式</span><span class="l-de">Zahlen, Regler, Formeln</span><span class="l-zh-Hant">數字、滑桿、公式</span><span class="l-zh-Hans">数字、滑块、公式</span></h3>
     <p class="l-ko">값을 수식으로 넣고 다른 요소의 값을 참조합니다. 예: x.omega * 3/2</p>
-    <p class="l-en">Enter a value as a formula that refers to another part, such as x.omega * 3/2.</p></div>
-  <div class="card"><h3><span class="l-ko">타임라인</span><span class="l-en">Timeline</span></h3>
+    <p class="l-en">Enter a value as a formula that refers to another part, such as x.omega * 3/2.</p><p class="l-ja">値を数式で入力し、ほかのパーツの値を参照できます。例: x.omega * 3/2</p><p class="l-de">Gib einen Wert als Formel ein, die sich auf ein anderes Teil bezieht, etwa x.omega * 3/2.</p><p class="l-zh-Hant">以公式輸入數值並參照其他部件的值，例如 x.omega * 3/2。</p><p class="l-zh-Hans">以公式输入数值并引用其他部件的值，例如 x.omega * 3/2。</p></div>
+  <div class="card"><h3><span class="l-ko">타임라인</span><span class="l-en">Timeline</span><span class="l-ja">タイムライン</span><span class="l-de">Zeitleiste</span><span class="l-zh-Hant">時間軸</span><span class="l-zh-Hans">时间轴</span></h3>
     <p class="l-ko">0.1배에서 100배까지, 한 스텝씩 진행, 어느 시점으로든 이동. 무늬가 닫히면 멈춥니다.</p>
-    <p class="l-en">From 0.1x to 100x, step by step, jump anywhere. Playback stops when the pattern closes.</p></div>
-  <div class="card"><h3><span class="l-ko">자취 꾸미기</span><span class="l-en">Styling the trace</span></h3>
+    <p class="l-en">From 0.1x to 100x, step by step, jump anywhere. Playback stops when the pattern closes.</p><p class="l-ja">0.1倍から100倍まで、1ステップずつ進める、好きな時点へ移動。模様が閉じると止まります。</p><p class="l-de">Von 0,1× bis 100×, Schritt für Schritt, zu jedem Zeitpunkt springen. Die Wiedergabe stoppt, wenn sich das Muster schließt.</p><p class="l-zh-Hant">從 0.1 倍到 100 倍，可逐步前進、跳到任意時間點。圖案閉合時自動停止。</p><p class="l-zh-Hans">从 0.1 倍到 100 倍，可逐步前进、跳到任意时间点。图案闭合时自动停止。</p></div>
+  <div class="card"><h3><span class="l-ko">자취 꾸미기</span><span class="l-en">Styling the trace</span><span class="l-ja">軌跡のスタイル</span><span class="l-de">Spur gestalten</span><span class="l-zh-Hant">軌跡樣式</span><span class="l-zh-Hans">轨迹样式</span></h3>
     <p class="l-ko">색, 두께, 불투명도. 시간이나 속도에 따라 번지는 색, 흐려지는 잔상, 두 점을 잇는 선분 추적점.</p>
-    <p class="l-en">Color, width and opacity; color by time or speed; fading trails; segment tracers between two points.</p></div>
-  <div class="card"><h3><span class="l-ko">수식 패널</span><span class="l-en">Formula panel</span></h3>
-    <p class="l-ko">장면의 매개방정식과 운동방정식을 보여 주고 LaTeX로 복사합니다.</p>
-    <p class="l-en">See the scene's parametric and motion equations and copy them as LaTeX.</p></div>
-  <div class="card"><h3><span class="l-ko">내보내기</span><span class="l-en">Export</span></h3>
-    <p class="l-ko">PNG(투명 배경 가능), SVG 경로, 그려지는 과정을 담은 MP4. 사진, 파일, AirDrop으로 보냅니다.</p>
-    <p class="l-en">PNG with an optional transparent background, SVG paths, and MP4 of the drawing as it forms.</p></div>
+    <p class="l-en">Color, width and opacity; color by time or speed; fading trails; segment tracers between two points.</p><p class="l-ja">色、太さ、不透明度。時間や速さで変わる色、消えていく残像、2点を結ぶ線分トレーサー。</p><p class="l-de">Farbe, Breite und Deckkraft; Farbe nach Zeit oder Tempo; verblassende Spuren; Segment-Spurpunkte zwischen zwei Punkten.</p><p class="l-zh-Hant">顏色、粗細、不透明度；依時間或速度變化的顏色、漸隱的殘影、連接兩點的線段描跡點。</p><p class="l-zh-Hans">颜色、粗细、不透明度；随时间或速度变化的颜色、渐隐的残影、连接两点的线段描迹点。</p></div>
+  <div class="card"><h3><span class="l-ko">수식 패널</span><span class="l-en">Formula panel</span><span class="l-ja">数式パネル</span><span class="l-de">Formelbereich</span><span class="l-zh-Hant">公式面板</span><span class="l-zh-Hans">公式面板</span></h3>
+    <p class="l-ko">장면의 매개방정식과 운동방정식, 연결된 요소 전체를 편 x(t)·y(t) 한 식. LaTeX로 복사합니다. 프리셋에는 계열마다 무늬가 생기는 원리를 두 문장으로 덧붙입니다.</p>
+    <p class="l-en">The scene's parametric and motion equations, and every connected part unfolded into one x(t), y(t) pair. Copy as LaTeX. Presets add two sentences on how their family's pattern forms.</p><p class="l-ja">シーンの媒介変数方程式と運動方程式、接続されたパーツ全体を展開した x(t)・y(t) の1組の式。LaTeXでコピーできます。プリセットには系統ごとに模様ができるしくみを2文で添えます。</p><p class="l-de">Die Parameter- und Bewegungsgleichungen der Szene und alle verbundenen Teile, entfaltet zu einem Gleichungspaar x(t), y(t). Als LaTeX kopieren. Vorlagen erklären in zwei Sätzen, wie das Muster ihrer Familie entsteht.</p><p class="l-zh-Hant">場景的參數方程式與運動方程式，以及把所有連接部件展開成的 x(t)、y(t) 一組公式。可複製為 LaTeX。預設會以兩句話補充該系列圖案的形成原理。</p><p class="l-zh-Hans">场景的参数方程与运动方程，以及把所有连接部件展开成的 x(t)、y(t) 一组公式。可复制为 LaTeX。预设会用两句话补充该系列图案的形成原理。</p></div>
+  <div class="card"><h3><span class="l-ko">기록 기준</span><span class="l-en">Record in</span><span class="l-ja">記録の基準</span><span class="l-de">Aufzeichnen in</span><span class="l-zh-Hant">記錄參考系</span><span class="l-zh-Hans">记录参考系</span></h3>
+    <p class="l-ko">자취를 종이, 세계, 특정 요소 가운데 무엇을 기준으로 남길지 고릅니다. 요소에 종이를 붙인 것처럼 기록할 수 있습니다.</p>
+    <p class="l-en">Record the trace on the paper, in the world, or relative to a part, as if the paper were attached to it.</p><p class="l-ja">軌跡を紙・ワールド・特定のパーツのどれを基準に残すかを選べます。パーツに紙を取り付けたように記録できます。</p><p class="l-de">Zeichne die Spur auf dem Papier, in der Welt oder relativ zu einem Teil auf – als wäre das Papier daran befestigt.</p><p class="l-zh-Hant">可選擇以紙、世界或指定部件為參考系留下軌跡，就像把紙貼在部件上一樣記錄。</p><p class="l-zh-Hans">可选择以纸、世界或指定部件为参考系留下轨迹，就像把纸贴在部件上一样记录。</p></div>
+  <div class="card"><h3><span class="l-ko">내보내기</span><span class="l-en">Export</span><span class="l-ja">書き出し</span><span class="l-de">Export</span><span class="l-zh-Hant">匯出</span><span class="l-zh-Hans">导出</span></h3>
+    <p class="l-ko">PNG(투명 배경 가능), SVG 경로, 그려지는 과정을 담은 MP4와 GIF. 사진, 파일, AirDrop으로 보냅니다.</p>
+    <p class="l-en">PNG with an optional transparent background, SVG paths, and MP4 and GIF of the drawing as it forms.</p><p class="l-ja">PNG(透明背景も可)、SVGパス、描かれていく過程を収めたMP4とGIF。写真、ファイル、AirDropに送れます。</p><p class="l-de">PNG mit optional transparentem Hintergrund, SVG-Pfade sowie MP4 und GIF vom Entstehen der Zeichnung.</p><p class="l-zh-Hant">PNG（可透明背景）、SVG 路徑，以及記錄繪製過程的 MP4 和 GIF。可傳送到照片、檔案或 AirDrop。</p><p class="l-zh-Hans">PNG（可透明背景）、SVG 路径，以及记录绘制过程的 MP4 和 GIF。可发送到照片、文件或隔空投送。</p></div>
+  <div class="card"><h3><span class="l-ko">iPad</span><span class="l-en">iPad</span><span class="l-ja">iPad</span><span class="l-de">iPad</span><span class="l-zh-Hant">iPad</span><span class="l-zh-Hans">iPad</span></h3>
+    <p class="l-ko">열 너비 조절과 떠 있는 패널, 속성·수식 함께 보기, 값 정밀 조절, 트랙패드·Apple Pencil 호버, 구간 반복, 키보드 단축키.</p>
+    <p class="l-en">Resizable columns and a floating panel, inspector and formula side by side, precise values, trackpad and Apple Pencil hover, loop sections and keyboard shortcuts.</p><p class="l-ja">列の幅の調整と浮かぶパネル、プロパティと数式の同時表示、値の精密な調整、トラックパッドとApple Pencilのホバー、区間リピート、キーボードショートカット。</p><p class="l-de">Veränderbare Spalten und eine schwebende Karte, Details und Formel nebeneinander, genaue Werte, Hover mit Trackpad und Apple Pencil, Abschnittswiederholung und Tastaturkurzbefehle.</p><p class="l-zh-Hant">可調整的欄寬與浮動面板、屬性與公式並排、精確數值、觸控式軌跡板與 Apple Pencil 懸停、區間循環、鍵盤快速鍵。</p><p class="l-zh-Hans">可调整的栏宽与浮动面板、属性与公式并排、精确数值、触控板与 Apple Pencil 悬停、区间循环、键盘快捷键。</p></div>
 </div>
 
-<h2 class="sec"><span class="l-ko">열한 계열의 무늬</span><span class="l-en">Eleven families</span></h2>
+<h2 class="sec"><span class="l-ko">열다섯 계열의 무늬</span><span class="l-en">Fifteen families</span><span class="l-ja">15系統の模様</span><span class="l-de">Fünfzehn Familien</span><span class="l-zh-Hant">十五個圖案系列</span><span class="l-zh-Hans">十五个图案系列</span></h2>
 <div class="families">
   <ul>
     <li class="l-ko"><b>리사주</b> — 서로 직각인 두 진동의 합</li>
@@ -139,64 +146,80 @@ h2.sec::after{content:"";display:block;width:44px;height:3px;background:var(--ac
     <li class="l-ko"><b>사이클로이드</b> — 구르는 바퀴 위의 점</li>
     <li class="l-ko"><b>모래 진자</b> — 두 방향으로 흔들리는 블랙번 진자</li>
     <li class="l-ko"><b>푸코 진자</b> — 지구의 자전으로 돌아가는 흔들림</li>
-    <li class="l-en"><b>Lissajous</b> — two perpendicular oscillations combined</li>
-    <li class="l-en"><b>Harmonograph</b> — curves drawn by damped pendulums</li>
-    <li class="l-en"><b>Rotary Harmonograph</b> — a harmonograph whose paper turns too</li>
-    <li class="l-en"><b>Hypotrochoid</b> — a point on a circle rolling inside a circle</li>
-    <li class="l-en"><b>Epitrochoid</b> — a point on a circle rolling outside a circle</li>
-    <li class="l-en"><b>Epicycles</b> — circles turning on circles</li>
-    <li class="l-en"><b>Planet Orbits</b> — the symmetry left by a line between two planets</li>
-    <li class="l-en"><b>Rose Curves</b> — petals from rotation and oscillation</li>
-    <li class="l-en"><b>Cycloids</b> — a point on a rolling wheel</li>
-    <li class="l-en"><b>Sand Pendulum</b> — a Blackburn pendulum swinging two ways</li>
-    <li class="l-en"><b>Foucault Pendulum</b> — a swing turned by the Earth's rotation</li>
+    <li class="l-ko"><b>실 그림</b> — 곱셈표를 따라 원 위의 점을 잇는 선</li>
+    <li class="l-ko"><b>기요셰</b> — 지폐 무늬처럼 겹겹이 엮인 곡선</li>
+    <li class="l-ko"><b>스프링 진자</b> — 늘었다 줄었다 하며 흔들리는 진자</li>
+    <li class="l-ko"><b>회전판 위 모래 진자</b> — 도는 판 위에 모래를 흘리는 진자</li>
+    <li class="l-en"><b>Lissajous</b> — two perpendicular oscillations combined</li><li class="l-ja"><b>リサージュ</b> — 直交する2つの振動の合成</li><li class="l-de"><b>Lissajous</b> — zwei senkrechte Schwingungen kombiniert</li><li class="l-zh-Hant"><b>李薩如</b> — 兩個互相垂直的振動合成</li><li class="l-zh-Hans"><b>李萨如</b> — 两个互相垂直的振动合成</li>
+    <li class="l-en"><b>Harmonograph</b> — curves drawn by damped pendulums</li><li class="l-ja"><b>ハーモノグラフ</b> — 減衰する振り子が描く曲線</li><li class="l-de"><b>Harmonograph</b> — Kurven gedämpfter Pendel</li><li class="l-zh-Hant"><b>諧振記錄儀</b> — 衰減的擺畫出的曲線</li><li class="l-zh-Hans"><b>谐振记录仪</b> — 衰减的摆画出的曲线</li>
+    <li class="l-en"><b>Rotary Harmonograph</b> — a harmonograph whose paper turns too</li><li class="l-ja"><b>回転ハーモノグラフ</b> — 紙まで回るハーモノグラフ</li><li class="l-de"><b>Rotierender Harmonograph</b> — auch das Papier dreht sich</li><li class="l-zh-Hant"><b>旋轉諧振記錄儀</b> — 連紙也會旋轉的諧振記錄儀</li><li class="l-zh-Hans"><b>旋转谐振记录仪</b> — 连纸也会旋转的谐振记录仪</li>
+    <li class="l-en"><b>Hypotrochoid</b> — a point on a circle rolling inside a circle</li><li class="l-ja"><b>ハイポトロコイド</b> — 円の内側を転がる円の上の点</li><li class="l-de"><b>Hypotrochoiden</b> — ein Punkt auf einem Kreis, der innen in einem Kreis rollt</li><li class="l-zh-Hant"><b>內旋輪線</b> — 在圓內滾動的圓上的一點</li><li class="l-zh-Hans"><b>内旋轮线</b> — 在圆内滚动的圆上的一点</li>
+    <li class="l-en"><b>Epitrochoid</b> — a point on a circle rolling outside a circle</li><li class="l-ja"><b>エピトロコイド</b> — 円の外側を転がる円の上の点</li><li class="l-de"><b>Epitrochoiden</b> — ein Punkt auf einem Kreis, der außen um einen Kreis rollt</li><li class="l-zh-Hant"><b>外旋輪線</b> — 在圓外滾動的圓上的一點</li><li class="l-zh-Hans"><b>外旋轮线</b> — 在圆外滚动的圆上的一点</li>
+    <li class="l-en"><b>Epicycles</b> — circles turning on circles</li><li class="l-ja"><b>周転円</b> — 円の上で回る円</li><li class="l-de"><b>Epizykel</b> — Kreise, die sich auf Kreisen drehen</li><li class="l-zh-Hant"><b>本輪</b> — 在圓上旋轉的圓</li><li class="l-zh-Hans"><b>本轮</b> — 在圆上旋转的圆</li>
+    <li class="l-en"><b>Planet Orbits</b> — the symmetry left by a line between two planets</li><li class="l-ja"><b>惑星の軌道線</b> — 2つの惑星を結ぶ線が残す対称</li><li class="l-de"><b>Planetenbahnen</b> — die Symmetrie einer Linie zwischen zwei Planeten</li><li class="l-zh-Hant"><b>行星軌道線</b> — 連接兩顆行星的線留下的對稱</li><li class="l-zh-Hans"><b>行星轨道线</b> — 连接两颗行星的线留下的对称</li>
+    <li class="l-en"><b>Rose Curves</b> — petals from rotation and oscillation</li><li class="l-ja"><b>バラ曲線</b> — 回転と振動が生む花びら</li><li class="l-de"><b>Rosenkurven</b> — Blütenblätter aus Drehung und Schwingung</li><li class="l-zh-Hant"><b>玫瑰線</b> — 旋轉與振動形成的花瓣</li><li class="l-zh-Hans"><b>玫瑰线</b> — 旋转与振动形成的花瓣</li>
+    <li class="l-en"><b>Cycloids</b> — a point on a rolling wheel</li><li class="l-ja"><b>サイクロイド</b> — 転がる車輪の上の点</li><li class="l-de"><b>Zykloiden</b> — ein Punkt auf einem rollenden Rad</li><li class="l-zh-Hant"><b>擺線</b> — 滾動輪子上的一點</li><li class="l-zh-Hans"><b>摆线</b> — 滚动轮子上的一点</li>
+    <li class="l-en"><b>Sand Pendulum</b> — a Blackburn pendulum swinging two ways</li><li class="l-ja"><b>砂振り子</b> — 2方向に揺れるブラックバーン振り子</li><li class="l-de"><b>Sandpendel</b> — ein Blackburn-Pendel, das in zwei Richtungen schwingt</li><li class="l-zh-Hant"><b>沙擺</b> — 朝兩個方向擺動的布萊克本擺</li><li class="l-zh-Hans"><b>沙摆</b> — 朝两个方向摆动的布莱克本摆</li>
+    <li class="l-en"><b>Foucault Pendulum</b> — a swing turned by the Earth's rotation</li><li class="l-ja"><b>フーコーの振り子</b> — 地球の自転で回る揺れ</li><li class="l-de"><b>Foucaultsches Pendel</b> — eine Schwingung, die die Erddrehung dreht</li><li class="l-zh-Hant"><b>傅科擺</b> — 因地球自轉而旋轉的擺動</li><li class="l-zh-Hans"><b>傅科摆</b> — 因地球自转而旋转的摆动</li>
+    <li class="l-en"><b>String Art</b> — lines joining points on a circle by a times table</li><li class="l-ja"><b>ストリングアート</b> — 九九の表に従って円周上の点を結ぶ線</li><li class="l-de"><b>Fadengrafik</b> — Linien, die Punkte auf einem Kreis nach dem Einmaleins verbinden</li><li class="l-zh-Hant"><b>線繩畫</b> — 依乘法表連接圓上各點的線</li><li class="l-zh-Hans"><b>线绳画</b> — 按乘法表连接圆上各点的线</li>
+    <li class="l-en"><b>Guilloché</b> — interwoven curves like banknote engraving</li><li class="l-ja"><b>ギョーシェ</b> — 紙幣の模様のように幾重にも編まれた曲線</li><li class="l-de"><b>Guilloche</b> — verwobene Kurven wie auf Banknoten</li><li class="l-zh-Hant"><b>扭索紋</b> — 像鈔票紋樣般層層交織的曲線</li><li class="l-zh-Hans"><b>扭索纹</b> — 像钞票纹样般层层交织的曲线</li>
+    <li class="l-en"><b>Springs</b> — pendulums that stretch as they swing</li><li class="l-ja"><b>ばね振り子</b> — 伸び縮みしながら揺れる振り子</li><li class="l-de"><b>Federpendel</b> — Pendel, die sich beim Schwingen dehnen</li><li class="l-zh-Hant"><b>彈簧擺</b> — 一邊伸縮一邊擺動的擺</li><li class="l-zh-Hans"><b>弹簧摆</b> — 一边伸缩一边摆动的摆</li>
+    <li class="l-en"><b>Sand Pendulum on a Turntable</b> — a pendulum dripping sand over a turning table</li><li class="l-ja"><b>回転台の上の砂振り子</b> — 回る台の上に砂を落とす振り子</li><li class="l-de"><b>Sandpendel über dem Drehteller</b> — ein Pendel, das Sand auf einen drehenden Teller rieseln lässt</li><li class="l-zh-Hant"><b>轉台上的沙擺</b> — 在旋轉的台上漏沙的擺</li><li class="l-zh-Hans"><b>转台上的沙摆</b> — 在旋转的台上漏沙的摆</li>
   </ul>
 </div>
 
-<h2 class="sec"><span class="l-ko">무료와 Pro</span><span class="l-en">Free and Pro</span></h2>
+<h2 class="sec"><span class="l-ko">무료와 Pro</span><span class="l-en">Free and Pro</span><span class="l-ja">無料とPro</span><span class="l-de">Gratis und Pro</span><span class="l-zh-Hant">免費與 Pro</span><span class="l-zh-Hans">免费与 Pro</span></h2>
 <div class="pricing">
-  <div class="plan"><h3><span class="l-ko">무료</span><span class="l-en">Free</span></h3>
+  <div class="plan"><h3><span class="l-ko">무료</span><span class="l-en">Free</span><span class="l-ja">無料</span><span class="l-de">Gratis</span><span class="l-zh-Hant">免費</span><span class="l-zh-Hans">免费</span></h3>
     <ul>
-      <li class="l-ko">편집기와 재생 기능 전체</li><li class="l-en">The full editor and playback</li>
-      <li class="l-ko">계열마다 대표 한 종씩, 프리셋 10종을 고쳐 저장. 나머지 25종도 열어서 재생</li>
-      <li class="l-en">Edit and save 10 presets, one per family; open and play the other 25</li>
-      <li class="l-ko">장면마다 추적점 2개</li><li class="l-en">2 tracers per scene</li>
-      <li class="l-ko">PNG 긴 변 3840px, 영상 15초</li><li class="l-en">PNG up to 3840 px, video up to 15 seconds</li>
+      <li class="l-ko">편집기와 재생 기능 전체</li><li class="l-en">The full editor and playback</li><li class="l-ja">エディタと再生のすべての機能</li><li class="l-de">Der vollständige Editor und die Wiedergabe</li><li class="l-zh-Hant">完整的編輯器與播放功能</li><li class="l-zh-Hans">完整的编辑器与播放功能</li>
+      <li class="l-ko">계열마다 대표 한 종씩, 프리셋 14종을 고쳐 저장. 나머지 34종도 열어서 재생</li>
+      <li class="l-en">Edit and save 14 presets, one per family; open and play the other 34</li><li class="l-ja">系統ごとに代表1種、14種のプリセットを編集・保存。残りの34種も開いて再生</li><li class="l-de">14 Vorlagen bearbeiten und sichern, eine pro Familie; die übrigen 34 öffnen und abspielen</li><li class="l-zh-Hant">可編輯並儲存 14 個預設（每個系列一個），其餘 34 個也能打開播放</li><li class="l-zh-Hans">可编辑并保存 14 个预设（每个系列一个），其余 34 个也能打开播放</li>
+      <li class="l-ko">장면마다 추적점 2개</li><li class="l-en">2 tracers per scene</li><li class="l-ja">シーンごとにトレーサー2個</li><li class="l-de">2 Spurpunkte pro Szene</li><li class="l-zh-Hant">每個場景 2 個描跡點</li><li class="l-zh-Hans">每个场景 2 个描迹点</li>
+      <li class="l-ko">PNG 긴 변 3840px, 영상 15초</li><li class="l-en">PNG up to 3840 px, video up to 15 seconds</li><li class="l-ja">PNG 長辺3840px、ビデオ15秒</li><li class="l-de">PNG bis 3840 px, Video bis 15 Sekunden</li><li class="l-zh-Hant">PNG 長邊 3840px、影片 15 秒</li><li class="l-zh-Hans">PNG 长边 3840px、视频 15 秒</li>
     </ul></div>
   <div class="plan pro"><h3>Drawbench Pro</h3>
     <ul>
-      <li class="l-ko"><b>한 번 구매</b>로 계속 씁니다. 구독이 아닙니다</li><li class="l-en"><b>One-time purchase</b>, not a subscription</li>
-      <li class="l-ko">프리셋 35종 전체를 고쳐 저장</li><li class="l-en">Edit and save all 35 presets</li>
-      <li class="l-ko">추적점 8개</li><li class="l-en">Up to 8 tracers</li>
-      <li class="l-ko">PNG 긴 변 7680px, SVG, 영상 60초</li><li class="l-en">PNG up to 7680 px, SVG, 60-second video</li>
+      <li class="l-ko"><b>한 번 구매</b>로 계속 씁니다. 구독이 아닙니다</li><li class="l-en"><b>One-time purchase</b>, not a subscription</li><li class="l-ja"><b>1回の購入</b>でずっと使えます。サブスクリプションではありません</li><li class="l-de"><b>Einmaliger Kauf</b>, kein Abo</li><li class="l-zh-Hant"><b>一次購買</b>，不是訂閱</li><li class="l-zh-Hans"><b>一次购买</b>，不是订阅</li>
+      <li class="l-ko">프리셋 48종 전체를 고쳐 저장</li><li class="l-en">Edit and save all 48 presets</li><li class="l-ja">48種すべてのプリセットを編集・保存</li><li class="l-de">Alle 48 Vorlagen bearbeiten und sichern</li><li class="l-zh-Hant">可編輯並儲存全部 48 個預設</li><li class="l-zh-Hans">可编辑并保存全部 48 个预设</li>
+      <li class="l-ko">추적점 8개</li><li class="l-en">Up to 8 tracers</li><li class="l-ja">トレーサー最大8個</li><li class="l-de">Bis zu 8 Spurpunkte</li><li class="l-zh-Hant">最多 8 個描跡點</li><li class="l-zh-Hans">最多 8 个描迹点</li>
+      <li class="l-ko">PNG 긴 변 7680px, SVG, 영상 60초, GIF</li><li class="l-en">PNG up to 7680 px, SVG, 60-second video, GIF</li><li class="l-ja">PNG 長辺7680px、SVG、ビデオ60秒、GIF</li><li class="l-de">PNG bis 7680 px, SVG, 60-Sekunden-Video, GIF</li><li class="l-zh-Hant">PNG 長邊 7680px、SVG、60 秒影片、GIF</li><li class="l-zh-Hans">PNG 长边 7680px、SVG、60 秒视频、GIF</li>
     </ul></div>
 </div>
 
 <div class="note">
-  <p class="l-ko">회원 가입이 없고 광고와 분석 도구도 없습니다. 데이터를 수집하지 않으며, 문서는 기기와 사용자 본인의 iCloud Drive에만 저장됩니다. 한국어와 영어를 지원합니다.</p>
-  <p class="l-en">No account, no ads, no analytics. Drawbench collects no data; your documents stay on your device and in your own iCloud Drive. Available in English and Korean.</p>
+  <p class="l-ko">회원 가입이 없고 광고와 분석 도구도 없습니다. 데이터를 수집하지 않으며, 문서는 기기와 사용자 본인의 iCloud Drive에만 저장됩니다. 한국어, 영어, 일본어, 독일어, 중국어(번체·간체)를 지원합니다.</p>
+  <p class="l-en">No account, no ads, no analytics. Drawbench collects no data; your documents stay on your device and in your own iCloud Drive. Available in English, Korean, Japanese, German and Chinese (Traditional and Simplified).</p><p class="l-ja">会員登録はなく、広告も分析ツールもありません。データを収集せず、書類はデバイスとご自身のiCloud Driveにだけ保存されます。日本語、英語、韓国語、ドイツ語、中国語(繁体字・簡体字)に対応しています。</p><p class="l-de">Kein Konto, keine Werbung, keine Analyse. Drawbench sammelt keine Daten; deine Dokumente bleiben auf deinem Gerät und in deinem eigenen iCloud Drive. Verfügbar auf Deutsch, Englisch, Koreanisch, Japanisch und Chinesisch (traditionell und vereinfacht).</p><p class="l-zh-Hant">無需註冊，沒有廣告和分析工具。不收集任何資料，文件只儲存在你的裝置和你自己的 iCloud 雲碟中。支援繁體中文、簡體中文、英文、韓文、日文和德文。</p><p class="l-zh-Hans">无需注册，没有广告和分析工具。不收集任何数据，文稿只存储在你的设备和你自己的 iCloud 云盘中。支持简体中文、繁体中文、英文、韩文、日文和德文。</p>
 </div>
 
 <footer>
   <p><a href="index.html">Drawbench</a> ·
-     <a href="support.html"><span class="l-ko">지원</span><span class="l-en">Support</span></a> ·
-     <a href="privacy.html"><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></a></p>
+     <a href="support.html"><span class="l-ko">지원</span><span class="l-en">Support</span><span class="l-ja">サポート</span><span class="l-de">Support</span><span class="l-zh-Hant">支援</span><span class="l-zh-Hans">支持</span></a> ·
+     <a href="privacy.html"><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span><span class="l-ja">プライバシーポリシー</span><span class="l-de">Datenschutzerklärung</span><span class="l-zh-Hant">隱私權政策</span><span class="l-zh-Hans">隐私政策</span></a></p>
   <p style="margin-top:8px">chungkil.cksw@gmail.com</p>
 </footer>
 
 </div>
 <script>
+var LANGS=['ko','en','ja','de','zh-Hant','zh-Hans'];
 function setLang(l){
+  if(LANGS.indexOf(l)<0){ l='en'; }
   document.documentElement.setAttribute('data-lang', l);
   document.documentElement.setAttribute('lang', l);
-  document.getElementById('b-ko').classList.toggle('on', l==='ko');
-  document.getElementById('b-en').classList.toggle('on', l==='en');
+  for(var i=0;i<LANGS.length;i++){ document.getElementById('b-'+LANGS[i]).classList.toggle('on', l===LANGS[i]); }
   try{ localStorage.setItem('lang', l); }catch(e){}
+}
+function deviceLang(){
+  var n=(navigator.language||'ko').toLowerCase();
+  if(n.indexOf('ko')===0){ return 'ko'; }
+  if(n.indexOf('ja')===0){ return 'ja'; }
+  if(n.indexOf('de')===0){ return 'de'; }
+  if(n.indexOf('zh')===0){ return /hant|-tw|-hk|-mo/.test(n)?'zh-Hant':'zh-Hans'; }
+  return 'en';
 }
 (function(){
   var s=null; try{ s=localStorage.getItem('lang'); }catch(e){}
-  if(!s){ s=((navigator.language||'ko').toLowerCase().indexOf('ko')===0)?'ko':'en'; }
-  setLang(s);
+  setLang(s||deviceLang());
 })();
 </script>
 </body>
