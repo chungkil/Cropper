@@ -75,9 +75,9 @@ if(['ko','en','ja'].indexOf(l)<0)l='en';document.addEventListener('DOMContentLoa
   </div>
   <div class="card">
     <h3><span class="l-ko">그 순간을 들어봅니다</span><span class="l-en">Listen to the moment</span><span class="l-ja">その瞬間を聴く</span></h3>
-    <p><span class="l-ko">밤새 통녹음 대신 감지된 순간만 짧게 남깁니다. 하룻밤에 15MB 남짓입니다.</span>
-       <span class="l-en">Instead of recording all night, we keep short clips of the moments that mattered — about 15 MB a night.</span>
-       <span class="l-ja">一晩中の録音ではなく、検出された瞬間だけを短く残します。一晩で約15MBです。</span></p>
+    <p><span class="l-ko">감지된 순간을 짧은 클립으로 남깁니다. 조용한 코골이까지 세기 위해 밤 전체도 녹음해 아침에 다시 분석하고, 최근 3밤만 남깁니다(8시간에 약 100MB).</span>
+       <span class="l-en">We keep short clips of the moments that mattered. To count quiet snoring too, the whole night is also recorded and analyzed again in the morning; only the last 3 nights are kept (about 100 MB for 8 hours).</span>
+       <span class="l-ja">検出された瞬間を短いクリップとして残します。静かないびきまで数えるため一晩全体も録音して朝に解析し直し、直近3晩分だけを残します(8時間で約100MB)。</span></p>
   </div>
   <div class="card">
     <h3><span class="l-ko">기기를 벗어나지 않습니다</span><span class="l-en">It stays on your phone</span><span class="l-ja">端末から出ません</span></h3>
@@ -89,9 +89,9 @@ if(['ko','en','ja'].indexOf(l)<0)l='en';document.addEventListener('DOMContentLoa
 
 <h2><span class="l-ko">어떻게 판단하나요</span><span class="l-en">How it decides</span><span class="l-ja">どのように判定するか</span></h2>
 <p class="lead"><span class="l-ko">어떤 신호도 혼자서 판정하지 않습니다.</span><span class="l-en">No single signal decides on its own.</span><span class="l-ja">どの信号も単独では判定しません。</span></p>
-<p><span class="l-ko">방의 배경 소음을 5분간 익힌 뒤 그 기준 위로 올라온 소리만 후보로 봅니다. 후보는 음향 분류, 저역 스펙트럼, 그리고 <strong>호흡 주기성</strong>으로 다시 걸러집니다. 코골이는 숨에 맞춰 반복되고, 문 닫는 소리나 지나가는 차는 단발입니다. 말소리가 감지된 구간은 판정을 보류합니다 — 말하고 있으면 깨어 있다는 뜻이니까요.</span>
-   <span class="l-en">The app spends five minutes learning your room's background noise, then only considers sounds that rise above it. Candidates are filtered again by sound classification, low-frequency spectrum, and <strong>breathing periodicity</strong> — snoring repeats with your breath, while a closing door or passing car is a one-off. Stretches with speech are held back: if you're talking, you're awake.</span>
-   <span class="l-ja">まず5分かけて部屋の環境音を学習し、その基準を超えた音だけを候補とします。候補は音の分類、低域スペクトル、そして<strong>呼吸の周期性</strong>で再度絞られます — いびきは呼吸に合わせて繰り返し、ドアの音や通過する車は単発です。話し声が検出された区間は判定を保留します。話しているなら起きているからです。</span></p>
+<p><span class="l-ko">방의 배경 소음을 5분간 익힌 뒤 그 기준 위로 올라온 소리만 후보로 봅니다. 후보는 음향 분류, <strong>호흡 주기성</strong>, 그리고 배경 대비 크기로 다시 걸러집니다. 코골이는 숨에 맞춰 반복되고, 문 닫는 소리나 지나가는 차는 단발입니다. 말소리가 감지된 구간은 판정을 보류합니다 — 말하고 있으면 깨어 있다는 뜻이니까요.</span>
+   <span class="l-en">The app spends five minutes learning your room's background noise, then only considers sounds that rise above it. Candidates are filtered again by sound classification, <strong>breathing periodicity</strong>, and how far they rise above the background — snoring repeats with your breath, while a closing door or passing car is a one-off. Stretches with speech are held back: if you're talking, you're awake.</span>
+   <span class="l-ja">まず5分かけて部屋の環境音を学習し、その基準を超えた音だけを候補とします。候補は音の分類、<strong>呼吸の周期性</strong>、そして背景からどれだけ大きいかで再度絞られます — いびきは呼吸に合わせて繰り返し、ドアの音や通過する車は単発です。話し声が検出された区間は判定を保留します。話しているなら起きているからです。</span></p>
 
 <h2><span class="l-ko">밤에는 화면을 보여드리지 않습니다</span><span class="l-en">At night, the screen gets out of the way</span><span class="l-ja">夜は画面をお見せしません</span></h2>
 <p><span class="l-ko">측정 화면에는 실시간 그래프도, 지금까지의 횟수도, 어떤 애니메이션도 없습니다. 어두운 방에서 0.5초마다 움직이는 물체는 각성 자극이기 때문입니다. 5초 뒤 화면은 스스로 어두워지고, 자다 깨서 보실 수 있게 시각만 크게 남습니다.</span>
@@ -107,9 +107,9 @@ if(['ko','en','ja'].indexOf(l)<0)l='en';document.addEventListener('DOMContentLoa
 <tr><td><span class="l-ko">측정 횟수</span><span class="l-en">Nights</span><span class="l-ja">測定回数</span></td>
     <td><span class="l-ko">주 3회</span><span class="l-en">3 a week</span><span class="l-ja">週3回</span></td>
     <td><span class="l-ko">무제한</span><span class="l-en">Unlimited</span><span class="l-ja">無制限</span></td></tr>
-<tr><td><span class="l-ko">클립 저장</span><span class="l-en">Clips</span><span class="l-ja">クリップ保存</span></td>
-    <td><span class="l-ko">30개</span><span class="l-en">30</span><span class="l-ja">30件</span></td>
-    <td><span class="l-ko">300개 · 통녹음</span><span class="l-en">300 · all night</span><span class="l-ja">300件・一晩中</span></td></tr>
+<tr><td><span class="l-ko">클립 재생</span><span class="l-en">Clip playback</span><span class="l-ja">クリップ再生</span></td>
+    <td><span class="l-ko">하룻밤 30개</span><span class="l-en">30 a night</span><span class="l-ja">一晩30件</span></td>
+    <td><span class="l-ko">전부</span><span class="l-en">All of them</span><span class="l-ja">すべて</span></td></tr>
 <tr><td><span class="l-ko">추이</span><span class="l-en">Trends</span><span class="l-ja">推移</span></td>
     <td><span class="l-ko">7일</span><span class="l-en">7 days</span><span class="l-ja">7日</span></td>
     <td><span class="l-ko">90일</span><span class="l-en">90 days</span><span class="l-ja">90日</span></td></tr>
