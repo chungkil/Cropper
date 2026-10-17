@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sidera Zenith — 지금 내 머리 위 하늘</title>
+<meta property="og:title" content="Sidera Zenith — What is above you right now">
+<meta property="og:description" content="지금 내 머리 위 하늘에 무엇이 어디에 있는지, 눈에 보이든 안 보이든. 볼 수 있는지 판정하고, 언제 그 자리에 오는지, 망원경은 어디를 겨누면 되는지 알려 드립니다. 완전 오프라인, 계정 없음, 광고 없음.">
+<style>
+:root{--sky:#0A0C1F;--sky2:#141A35;--ground:#211A12;--moon:#FCF5DC;--dim:#9AA3C0;--line:#2A3358;--card:#161C39}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;background:var(--sky);color:var(--moon);line-height:1.75}
+html[data-lang="ko"] .l-en{display:none}
+html[data-lang="en"] .l-ko{display:none}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+.langbar{display:flex;justify-content:flex-end;padding:14px 0}
+.langbar button{border:1px solid var(--moon);background:transparent;color:var(--moon);padding:5px 14px;cursor:pointer;font-size:14px}
+.langbar button:first-child{border-radius:8px 0 0 8px}
+.langbar button:last-child{border-radius:0 8px 8px 0}
+.langbar button.on{background:var(--moon);color:var(--sky)}
+.hero{text-align:center;padding:44px 0 52px}
+.hero .seal{width:120px;height:120px;border-radius:27px;background:linear-gradient(160deg,#0D1130,#232C55);box-shadow:0 8px 34px rgba(0,0,0,.5);display:inline-flex;align-items:center;justify-content:center;font-size:60px}
+.hero h1{font-size:2.3rem;margin:22px 0 10px;letter-spacing:-.5px}
+.hero p.tag{font-size:1.15rem;color:var(--dim)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:34px 0 56px}
+.stat{background:var(--card);border-radius:14px;padding:22px 8px;text-align:center;border:1px solid var(--line)}
+.stat b{display:block;font-size:1.5rem;color:var(--moon)}
+.stat span{font-size:.88rem;color:var(--dim)}
+h2.sec{font-size:1.5rem;margin:0 0 22px;text-align:center}
+h2.sec::after{content:"";display:block;width:44px;height:3px;background:var(--moon);margin:10px auto 0;border-radius:2px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:56px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 20px}
+.card .em{font-size:1.7rem}
+.card h3{font-size:1.05rem;margin:10px 0 6px}
+.card p{font-size:.92rem;color:var(--dim)}
+.feature{background:linear-gradient(180deg,var(--sky2) 55%,var(--ground) 55%);border:1px solid var(--line);border-radius:16px;padding:30px 26px;margin-bottom:56px;text-align:center}
+.feature h3{font-size:1.25rem;margin-bottom:10px}
+.feature p{font-size:.98rem;color:var(--dim);max-width:640px;margin:0 auto}
+.feature .copy{display:inline-block;margin-top:16px;background:rgba(0,0,0,.35);border:1px solid var(--line);border-radius:12px;padding:12px 18px;font-size:.95rem}
+.pricing{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;margin-bottom:56px}
+.pricing h3{font-size:1.1rem;margin-bottom:10px}
+.pricing ul{padding-left:20px;font-size:.94rem;color:var(--dim)}
+.pricing li{margin:5px 0}
+.note{background:var(--card);border-left:4px solid var(--moon);border-radius:0 12px 12px 0;padding:18px 20px;margin-bottom:56px;font-size:.94rem;color:var(--dim)}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;text-align:center;font-size:.9rem;color:var(--dim)}
+footer a{color:var(--moon)}
+@media(max-width:720px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="langbar">
+  <button id="b-ko" class="on" onclick="setLang('ko')">한국어</button>
+  <button id="b-en" onclick="setLang('en')">English</button>
+</div>
+
+<div class="hero">
+  <div class="seal">🔭</div>
+  <h1>Sidera Zenith</h1>
+  <p class="tag">
+    <span class="l-ko">지금 내 머리 위 하늘에, 무엇이 어디에</span>
+    <span class="l-en">What is above you right now, and where</span>
+  </p>
+</div>
+
+<div class="stats">
+  <div class="stat"><b>7 + 1</b><span class="l-ko">행성 일곱과 달</span><span class="l-en">seven planets and the Moon</span></div>
+  <div class="stat"><b>0.014°</b><span class="l-ko">JPL 대비 달 오차</span><span class="l-en">Moon vs JPL</span></div>
+  <div class="stat"><b>0</b><span class="l-ko">네트워크 요청</span><span class="l-en">network requests</span></div>
+  <div class="stat"><b>4</b><span class="l-ko">지원 언어</span><span class="l-en">languages</span></div>
+</div>
+
+<div class="feature">
+  <h3><span class="l-ko">보이든 안 보이든, 늘 어딘가에 있습니다</span><span class="l-en">Seen or not, it is always somewhere</span></h3>
+  <p><span class="l-ko">달과 행성은 낮에도, 구름 너머에도, 지평선 아래에도 있습니다. 천정이 가운데인 둥근 지도에 지금의 위치를 그리고, 천체마다 맨눈으로 볼 수 있는지, 아니라면 왜 못 보는지와 언제 볼 수 있는지를 함께 적습니다. 지도는 고개를 들어 올려다본 모습이라 북쪽이 위, 동쪽이 왼쪽입니다.</span>
+     <span class="l-en">The Moon and the planets are there in daylight, behind cloud and below the horizon. A round map with the zenith at its centre shows where each one is now, and beside each says whether your eyes will find it, and if not, why not and when they will. The map is the sky as you see it looking straight up, so north is at the top and east is on the left.</span></p>
+  <div class="copy">
+    <span class="l-ko">해왕성 · 쌍안경·망원경 필요 · 남 52° · 04:59에 짐</span>
+    <span class="l-en">Neptune · binoculars or a telescope · S, 52° up · sets 04:59</span>
+  </div>
+</div>
+
+<h2 class="sec"><span class="l-ko">무엇을 하는 앱인가</span><span class="l-en">What it does</span></h2>
+<div class="grid">
+  <div class="card">
+    <div class="em">👁️</div>
+    <h3><span class="l-ko">볼 수 있는가</span><span class="l-en">Can you see it</span></h3>
+    <p><span class="l-ko">맨눈으로 보임, 쌍안경·망원경 필요, 하늘이 밝음, 지평선 아래. 행성은 시민박명부터, 천왕성·해왕성은 항해박명부터, 은하 중심은 천문박명부터 셉니다. 낮의 달은 보이는 것으로 칩니다.</span>
+       <span class="l-en">Visible to the eye, binoculars or a telescope, sky too bright, below the horizon. Planets count from civil twilight, Uranus and Neptune from nautical, the galactic core from astronomical. The Moon in daylight counts as visible.</span></p>
+  </div>
+  <div class="card">
+    <div class="em">🕘</div>
+    <h3><span class="l-ko">언제 그 자리에 오는가</span><span class="l-en">When will it be there</span></h3>
+    <p><span class="l-ko">슬라이더로 앞으로 24시간 중 어느 때의 하늘이든 봅니다. 천체를 누르면 하루 동안 지나갈 길을 3시간 간격 시각과 함께 그립니다. 오늘 밤 보드는 모든 천체를 하나의 시간축에 놓습니다.</span>
+       <span class="l-en">Slide to any moment in the next 24 hours. Tap a body for the path it will take over the next day, marked every three hours. The tonight board puts every body on one timeline.</span></p>
+  </div>
+  <div class="card">
+    <div class="em">🔭</div>
+    <h3><span class="l-ko">망원경은 어디로</span><span class="l-en">Where to point a telescope</span></h3>
+    <p><span class="l-ko">어느 별자리에 있는지, 적경·적위 두 벌(그 시각 분점과 J2000), 그리고 가까운 밝은 별에서 어느 쪽으로 몇 도인지 알려 드립니다.</span>
+       <span class="l-en">The constellation it is in, right ascension and declination twice over (equinox of date and J2000), and how far and which way from the nearest bright star.</span></p>
+  </div>
+</div>
+
+<div class="feature">
+  <h3><span class="l-ko">맨눈으로 안 보이는 것도 찾아갑니다</span><span class="l-en">Finding what the eye cannot</span></h3>
+  <p><span class="l-ko">천왕성·해왕성, 낮의 금성은 맨눈으로 찾을 수 없지만 망원경이면 됩니다. 방향은 별을 바라본 채 위·아래·왼쪽·오른쪽으로 말합니다 — 북·동은 하늘의 위치와 시각마다 다른 쪽을 가리켜서, 서 있는 사람이 쓸 수 없기 때문입니다.</span>
+     <span class="l-en">Uranus, Neptune and Venus by day are beyond the eye but not beyond a telescope. Directions are given as you face the star — up, down, left, right — because north and east point a different way at every place in the sky and every hour, and nobody standing at an eyepiece can use them.</span></p>
+  <div class="copy">
+    <span class="l-ko">물고기자리 · 고래자리 β(Diphda)에서 위쪽으로 19°</span>
+    <span class="l-en">In Pisces · 19° above Diphda (β Ceti)</span>
+  </div>
+</div>
+
+<h2 class="sec"><span class="l-ko">정직한 계산</span><span class="l-en">Honest arithmetic</span></h2>
+<div class="grid">
+  <div class="card">
+    <div class="em">🧭</div>
+    <h3><span class="l-ko">나침반은 실제 천체로 맞춥니다</span><span class="l-en">The compass is checked against the sky</span></h3>
+    <p><span class="l-ko">폰을 하늘로 들면 대상이 있는 자리에 표시가 놓입니다. 폰의 자기 나침반은 금속 근처에서 5~15° 어긋나므로, 실제 달이나 밝은 행성을 겨누고 눌러 바로잡습니다. 신뢰도가 낮으면 정밀한 숫자를 감춥니다.</span>
+       <span class="l-en">Hold the phone up and a marker sits where the body is. A phone compass is often 5–15° off near metal, so aim at the real Moon or a bright planet and tap to correct it. When confidence is low, the precise number is withheld.</span></p>
+  </div>
+  <div class="card">
+    <div class="em">🔒</div>
+    <h3><span class="l-ko">위치는 기기 밖으로 나가지 않습니다</span><span class="l-en">Your location stays on the device</span></h3>
+    <p><span class="l-ko">모든 계산이 기기 안에서 끝납니다. 서버도, 계정도, 분석 도구도 없습니다. JPL Horizons 824개 위치와 대조해 달 0.014°, 행성 0.11° 이내입니다.</span>
+       <span class="l-en">Every calculation runs on the device. No server, no account, no analytics. Checked against JPL Horizons at 824 positions: the Moon within 0.014°, the planets within 0.11°.</span></p>
+  </div>
+  <div class="card">
+    <div class="em">✈️</div>
+    <h3><span class="l-ko">완전 오프라인</span><span class="l-en">Fully offline</span></h3>
+    <p><span class="l-ko">비행기 모드에서도 전 기능이 동작합니다. 위치 권한을 거부해도 도시를 직접 골라 쓸 수 있습니다.</span>
+       <span class="l-en">Everything works in airplane mode. Decline location access and you can pick a city by hand instead.</span></p>
+  </div>
+</div>
+
+<div class="pricing">
+  <h3><span class="l-ko">가격</span><span class="l-en">Pricing</span></h3>
+  <ul>
+    <li class="l-ko"><b>기본 무료</b> — 머리 위 하늘 지도와 판정, 24시간 슬라이더, 필터, 망원경 안내, 하늘 창, 오늘 밤 보드, 위젯까지 핵심 경험이 무료로 완결됩니다</li>
+    <li class="l-en"><b>Free</b> — the overhead map and its verdicts, the 24-hour slider, filters, telescope pointers, the sky window, the tonight board and the widgets. The core experience is complete without paying</li>
+    <li class="l-ko"><b>Pro</b> — 알림, 암순응을 지키는 나이트 모드, 관측 거점·스카이라인(주변 지붕선을 재 두면 그 뒤에 있는 천체를 따로 표시). <b>1회 결제</b>이며 구독이 아닙니다. 처음 15일은 무료로 전 기능을 씁니다</li>
+    <li class="l-en"><b>Pro</b> — reminders, a night mode that keeps your eyes dark-adapted, and observing spots with skylines (measure the roofline once and bodies behind it are marked). A <b>one-time purchase</b>, not a subscription. Everything is free for the first 15 days</li>
+    <li class="l-ko"><b>광고 없음</b> — 밤에 쓰는 앱이라 밝은 배너는 암순응을 깨뜨립니다. 넣지 않았습니다</li>
+    <li class="l-en"><b>No ads</b> — this is an app you use at night, and a bright banner destroys dark adaptation</li>
+  </ul>
+</div>
+
+<div class="note">
+  <p class="l-ko"><b>지원 환경</b> — iPhone · iPad, iOS 18.0 이상. 하늘 창의 방위 안내는 나침반(자력계)이 있는 기기에서 동작하며, 없으면 고도만 표시하고 그 사실을 밝힙니다. 지도·목록·망원경 안내는 나침반 없이 동작합니다. 한국어 · English · 日本語 · 简体中文.</p>
+  <p class="l-en"><b>Requirements</b> — iPhone and iPad, iOS 18.0 or later. Bearing guidance in the sky window needs a working magnetometer; without one it shows altitude only and says so. The map, the list and the telescope pointers work without a compass. Available in English, 한국어, 日本語 and 简体中文.</p>
+</div>
+
+<footer>
+  <p><a href="support.html"><span class="l-ko">지원</span><span class="l-en">Support</span></a> ·
+     <a href="privacy.html"><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></a></p>
+  <p style="margin-top:8px">chungkil.cksw@gmail.com</p>
+</footer>
+
+</div>
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  document.documentElement.setAttribute('lang', l);
+  document.getElementById('b-ko').classList.toggle('on', l==='ko');
+  document.getElementById('b-en').classList.toggle('on', l==='en');
+  try{ localStorage.setItem('lang', l); }catch(e){}
+}
+try{ var s=localStorage.getItem('lang'); if(s) setLang(s); }catch(e){}
+</script>
+</body>
+</html>
