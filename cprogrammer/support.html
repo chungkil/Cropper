@@ -111,12 +111,12 @@ and cannot touch the device's files or the network.</p>
 <h3><span class="l-ko">실제 컴파일러와 결과가 같나요?</span><span class="l-en">Does it behave like a real compiler?</span></h3>
 <p class="l-ko">C99와 C11을 지원하고, 실행 결과를 Mac의 clang과 견주어 맞췄습니다. 레슨 예제와 실습 답안, 수백 개의 시험 프로그램이 clang으로 만든 프로그램과
 출력·종료 코드까지 같습니다. 오류와 경고도 clang과 같은 문구에 한국어 설명을 붙여 보여 줍니다.</p>
-<p class="l-ko">다만 교육용이라 일부 기능은 아직 없습니다: 함수 포인터(<code>qsort</code> 포함), 파일 입출력(<code>fopen</code>), 가변 인자 함수 정의,
-넓은 문자 등. 이런 코드를 쓰면 "아직 지원하지 않음"과 그 까닭을 알려 줍니다.</p>
+<p class="l-ko">다만 교육용이라 일부 기능은 아직 없습니다: 넓은 문자, 인라인 어셈블리(<code>__asm__</code>), <code>fork</code>·<code>system</code>처럼 운영체제에 닿는 함수 등.
+이런 코드를 쓰면 "아직 지원하지 않음"과 그 까닭을 알려 줍니다.</p>
 <p class="l-en">It supports C99 and C11, and its results are checked against clang on the Mac: lesson examples, exercise solutions, and hundreds of
 test programs produce the same output and exit codes as clang-built programs. Errors and warnings use clang's wording, with an explanation in Korean.</p>
-<p class="l-en">As a teaching tool it does not yet cover everything: function pointers (including <code>qsort</code>), file I/O (<code>fopen</code>),
-defining variadic functions, wide characters, and a few others. If you use them, the app tells you they are not supported yet and why.</p>
+<p class="l-en">As a teaching tool it does not yet cover everything: wide characters, inline assembly (<code>__asm__</code>), functions that reach the
+operating system such as <code>fork</code> and <code>system</code>, and a few others. If you use them, the app tells you they are not supported yet and why.</p>
 </div>
 
 <div class="qa">
@@ -125,6 +125,17 @@ defining variadic functions, wide characters, and a few others. If you use them,
 실행 화면에서 어디까지 읽었는지 진한 글자로 보여 줍니다. 실습은 채점 테스트가 입력을 정합니다.</p>
 <p class="l-en">Type the input in the <b>입력 (Input)</b> box on the edit screen before running. The program does not pause for input; it reads that text
 from the start, and the run screen shows in bold how far it has read. In exercises, the grading tests supply the input.</p>
+</div>
+
+<div class="qa">
+<h3><span class="l-ko">파일과 명령줄 인자는 어떻게 쓰나요?</span><span class="l-en">How do files and command-line arguments work?</span></h3>
+<p class="l-ko">코드 편집 화면의 <b>파일</b> 칸에서 실행을 시작할 때의 파일을 만들고 내용을 적고, <b>명령줄 인자</b> 칸에 <code>./a.out</code> 뒤에 올 낱말을 적으세요.
+<code>fopen</code>·<code>open</code> 같은 파일 함수는 앱 안의 가상 파일만 읽고 쓰며, 실행 화면에서 바뀐 바이트를 보여 줍니다. 실행할 때마다 적어 둔 내용으로 다시 시작하고,
+가상 파일은 기기에 저장하지 않습니다.</p>
+<p class="l-en">On the edit screen, create the files the program starts with in the <b>파일 (Files)</b> section, and type the words that follow
+<code>./a.out</code> in the <b>명령줄 인자 (Command-line arguments)</b> box. File functions such as <code>fopen</code> and <code>open</code> read and
+write only these virtual files inside the app, and the run screen shows the bytes that changed. Every run starts again from what you typed, and the
+virtual files are never saved on the device.</p>
 </div>
 
 <div class="qa">
