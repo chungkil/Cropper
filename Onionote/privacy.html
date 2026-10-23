@@ -14,6 +14,20 @@
   li { margin-bottom: 0.3rem; }
   code { background: #f4f4f4; padding: 1px 6px; border-radius: 3px; font-size: 0.9em; }
   .meta { color: #888; font-size: 0.9rem; }
+  .table-wrap { overflow-x: auto; margin: 0.8rem 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+  th, td { border: 1px solid #ddd; padding: 6px 8px; text-align: left; vertical-align: top; }
+  th { background: #f6f6f8; }
+  td.c { text-align: center; white-space: nowrap; }
+  @media (max-width: 540px) {
+    .table-wrap table, .table-wrap tbody, .table-wrap tr, .table-wrap td { display: block; }
+    .table-wrap thead { display: none; }
+    .table-wrap tr { border: 1px solid #ddd; border-radius: 6px; margin-bottom: 8px; padding: 6px 10px; }
+    .table-wrap td, .table-wrap td.c { border: 0; padding: 2px 0; text-align: left; white-space: normal; }
+    .table-wrap td::before { content: attr(data-label) " · "; color: #888; }
+    .table-wrap td:first-child { font-weight: 600; }
+    .table-wrap td:first-child::before { content: none; }
+  }
   .tabs { display: flex; gap: 4px; border-bottom: 1px solid #ddd; margin-bottom: 1.5rem; }
   .tab-btn { background: none; border: 0; padding: 10px 18px; font-size: 0.95rem; cursor: pointer;
              color: #888; border-bottom: 2px solid transparent; margin-bottom: -1px;
@@ -26,6 +40,9 @@
     body { color: #EFEFF2; background: #0F0F11; }
     h2 { border-bottom-color: #2A2A2E; }
     code { background: #1A1A1D; }
+    th, td { border-color: #2A2A2E; }
+    th { background: #1A1A1D; }
+    .table-wrap tr { border-color: #2A2A2E; }
     .tabs { border-bottom-color: #2A2A2E; }
     .tab-btn { color: #9A9AA1; }
     .tab-btn.active { color: #EFEFF2; border-bottom-color: #8FAEFF; }
@@ -43,10 +60,10 @@
 <div class="tab-panel active" role="tabpanel" id="panel-ko" aria-labelledby="tab-ko">
 
 <h1>Onionote 개인정보 처리방침</h1>
-<p class="meta">최종 수정: 2026-10-22 · 버전 1.0 · 연락처: chungkil.cksw@gmail.com</p>
+<p class="meta">최종 수정: 2026-10-23 · 버전 1.0 · 연락처: chungkil.cksw@gmail.com</p>
 
 <h2>1. 수집하는 정보</h2>
-<p>Onionote(이하 "앱")는 사용자의 개인을 식별할 수 있는 정보를 <strong>직접 수집하지 않습니다</strong>. 앱은 사용자의 필기 내용, 문서, 계정 정보, 연락처, 위치를 서버에 업로드하거나 저장하지 않습니다.</p>
+<p>Onionote(이하 "앱")는 회원 가입이 없고 이름 · 이메일 · 연락처를 받지 않습니다. 필기 내용과 문서는 개발자 서버로 보내지 않습니다. 다만 앱에 포함된 Google 서비스(Firebase Analytics · Firebase Crashlytics · Google AdMob)가 아래 1.2 의 데이터를 수집합니다.</p>
 
 <h3>1.1 기기에 저장되는 정보</h3>
 <ul>
@@ -56,19 +73,32 @@
 </ul>
 <p>이 정보는 사용자의 기기 또는 사용자가 활성화한 iCloud Drive 에만 저장되며, 앱 개발자에게 전송되지 않습니다.</p>
 
-<h3>1.2 익명 사용 통계 (Analytics)</h3>
-<p>앱 품질 개선을 위해 다음과 같은 <strong>개인 식별이 불가능한</strong> 이벤트 카운트를 Firebase Analytics(또는 동등 서비스)로 전송할 수 있습니다:</p>
+<h3>1.2 수집하는 데이터</h3>
+<p>App Store 의 "앱 개인정보 보호" 항목에 신고한 내용과 같습니다.</p>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>데이터</th><th>내용</th><th>목적</th><th>사용자와 연결</th><th>추적</th></tr>
+  </thead>
+  <tbody>
+    <tr><td data-label="데이터">대략적인 위치</td><td data-label="내용">IP 주소로 추정한 국가 · 지역. 정확한 위치(GPS)는 쓰지 않습니다.</td><td data-label="목적">타사 광고 · 분석</td><td class="c" data-label="사용자와 연결">예</td><td class="c" data-label="추적">아니요</td></tr>
+    <tr><td data-label="데이터">기기 ID</td><td data-label="내용">Firebase 앱 인스턴스 ID, 광고 식별자(IDFA — 추적을 허용한 경우만)</td><td data-label="목적">타사 광고 · 분석</td><td class="c" data-label="사용자와 연결">예</td><td class="c" data-label="추적">예</td></tr>
+    <tr><td data-label="데이터">구입 내역</td><td data-label="내용">앱 내 구매 기록(상품 · 가격). 카드 등 결제 수단은 포함하지 않습니다.</td><td data-label="목적">분석</td><td class="c" data-label="사용자와 연결">아니요</td><td class="c" data-label="추적">아니요</td></tr>
+    <tr><td data-label="데이터">제품 상호 작용</td><td data-label="내용">앱 실행 · 백그라운드 전환, 온보딩 완료, 첫 필기 · 레이어 추가 · 내보내기, 기능 사용 횟수, 구매 화면 노출 · 구매 · 복원. 필기 내용은 포함하지 않습니다.</td><td data-label="목적">분석 · 타사 광고</td><td class="c" data-label="사용자와 연결">예</td><td class="c" data-label="추적">아니요</td></tr>
+    <tr><td data-label="데이터">광고 데이터</td><td data-label="내용">표시된 광고와 광고 반응 정보</td><td data-label="목적">타사 광고 · 분석</td><td class="c" data-label="사용자와 연결">예</td><td class="c" data-label="추적">아니요</td></tr>
+    <tr><td data-label="데이터">충돌 데이터</td><td data-label="내용">충돌 · 예외 스택 트레이스 (Firebase Crashlytics)</td><td data-label="목적">앱 기능 · 분석</td><td class="c" data-label="사용자와 연결">아니요</td><td class="c" data-label="추적">아니요</td></tr>
+    <tr><td data-label="데이터">성능 데이터</td><td data-label="내용">실행 시간 · 응답 속도 등</td><td data-label="목적">앱 기능 · 분석 · 타사 광고</td><td class="c" data-label="사용자와 연결">아니요</td><td class="c" data-label="추적">아니요</td></tr>
+    <tr><td data-label="데이터">기타 진단 데이터</td><td data-label="내용">기기 모델 · OS 버전 등 진단 정보</td><td data-label="목적">앱 기능 · 분석 · 타사 광고</td><td class="c" data-label="사용자와 연결">아니요</td><td class="c" data-label="추적">아니요</td></tr>
+  </tbody>
+</table>
+</div>
 <ul>
-  <li>앱 실행 · 백그라운드 전환</li>
-  <li>온보딩 완료 여부</li>
-  <li>첫 필기·레이어 추가·Export 달성 시점 (TTV 측정용)</li>
-  <li>기능 사용 횟수 (필기 수, 브러시 전환 수 등 — 필기 내용은 포함하지 않음)</li>
-  <li>구매 화면 노출 · 구매 · 복원 이벤트</li>
-  <li>충돌·예외 스택 트레이스 (Firebase Crashlytics)</li>
+  <li><strong>사용자와 연결</strong>: 기기 ID 등을 통해 같은 사용자의 데이터로 묶일 수 있다는 뜻입니다. 앱이 이름이나 계정과 잇지는 않습니다.</li>
+  <li><strong>추적</strong>: 다른 회사의 앱 · 웹사이트에서 모은 데이터와 합쳐 광고에 쓰는 것을 말합니다. 광고 식별자는 iOS 추적 권한을 허용한 경우에만 쓰입니다.</li>
 </ul>
 
 <h3>1.3 광고 (Free 플랜)</h3>
-<p>Free 플랜 사용자에게는 화면 하단에 Google AdMob 배너 광고가 표시됩니다. AdMob 은 개인화된 광고 제공을 위해 광고 식별자(IDFA)를 사용할 수 있으며, iOS <strong>App Tracking Transparency</strong> 동의를 거부한 경우 비개인화 광고로 대체됩니다. AdMob 의 데이터 수집 정책은 <a href="https://policies.google.com/privacy">Google 개인정보처리방침</a>을 따릅니다.</p>
+<p>Free 플랜 사용자에게는 화면 하단에 Google AdMob 배너 광고가 표시됩니다. 온보딩이 끝나면 iOS <strong>App Tracking Transparency</strong> 권한 창으로 추적 허용 여부를 한 번 묻습니다. 허용하면 AdMob 이 광고 식별자(IDFA)로 맞춤 광고를 보여 주고, 허용하지 않으면 광고 식별자 없이 광고가 표시됩니다. Onionote Pro 를 구매하면 광고가 표시되지 않습니다. AdMob 의 데이터 처리는 <a href="https://policies.google.com/privacy">Google 개인정보처리방침</a>을 따릅니다.</p>
 
 <h2>2. 인앱 구매 (Onionote Pro)</h2>
 <p>Onionote Pro 1회 구매 결제는 <strong>Apple 의 App Store</strong>를 통해서만 처리됩니다. 앱 개발자는 사용자의 결제 정보(카드, 결제 수단)에 접근하지 않으며, 구매 상태(Pro / Free)만 <code>Transaction.currentEntitlements</code> API 를 통해 확인합니다.</p>
@@ -77,14 +107,15 @@
 <p>사용자가 iCloud Drive 를 활성화한 경우, 앱은 사용자의 iCloud 계정에 문서를 저장합니다. 이 데이터는 Apple 의 iCloud 인프라에 의해 암호화·보관되며, 앱 개발자는 접근 권한이 없습니다. iCloud 사용 관련 세부 정책은 <a href="https://www.apple.com/legal/privacy/">Apple 개인정보처리방침</a>을 참조하세요.</p>
 
 <h2>4. 제 3자 제공 · 공유</h2>
-<p>앱은 사용자의 개인정보를 제3자에게 판매하거나 제공하지 않습니다. 법적 요구(법원 명령 등)가 있을 때만 필요한 범위에서 제공될 수 있습니다.</p>
+<p>1.2 의 데이터는 서비스 제공자인 Google(Firebase · AdMob)이 처리하며, <a href="https://policies.google.com/privacy">Google 개인정보처리방침</a>을 따릅니다. 그 밖에 앱은 사용자의 정보를 판매하거나 제3자에게 제공하지 않습니다. 법적 요구(법원 명령 등)가 있을 때만 필요한 범위에서 제공될 수 있습니다.</p>
 
 <h2>5. 사용자의 권리</h2>
 <ul>
   <li>앱에 저장된 문서는 언제든 삭제할 수 있으며, 앱을 삭제하면 기기 내 모든 문서가 제거됩니다.</li>
   <li>iCloud Drive 에 저장된 문서는 Files 앱 또는 iCloud.com 에서 직접 관리할 수 있습니다.</li>
-  <li>ATT 동의는 iOS 설정 → 개인정보 보호 및 보안 → 추적에서 언제든 변경할 수 있습니다.</li>
-  <li>익명 사용 통계 수집을 원치 않을 경우 iOS 설정 → 개인정보 보호 및 보안 → 분석 및 향상 → 앱 개발자와 공유 해제를 활용할 수 있습니다.</li>
+  <li>추적 허용은 iOS 설정 → 개인정보 보호 및 보안 → 추적에서 언제든 바꿀 수 있습니다.</li>
+  <li>앱을 지웠다 다시 설치하면 Firebase 앱 인스턴스 ID 가 새로 만들어져 이전 사용 통계와 이어지지 않습니다.</li>
+  <li>수집된 데이터에 관한 문의나 삭제 요청은 8. 연락처로 보내 주세요.</li>
 </ul>
 
 <h2>6. 아동 개인정보</h2>
@@ -101,10 +132,10 @@
 <div class="tab-panel" role="tabpanel" id="panel-en" aria-labelledby="tab-en">
 
 <h1>Onionote Privacy Policy</h1>
-<p class="meta">Last updated: 2026-10-22 · Version 1.0 · Contact: chungkil.cksw@gmail.com</p>
+<p class="meta">Last updated: 2026-10-23 · Version 1.0 · Contact: chungkil.cksw@gmail.com</p>
 
 <h2>1. Information We Collect</h2>
-<p>Onionote (the "App") does <strong>not directly collect personally identifiable information</strong>. The App does not upload your notes, documents, account info, contacts, or location to any server.</p>
+<p>Onionote (the "App") has no sign-up and never asks for your name, email, or contacts. Your notes and documents are never sent to the developer's servers. However, the Google services built into the App (Firebase Analytics, Firebase Crashlytics, Google AdMob) collect the data listed in 1.2 below.</p>
 
 <h3>1.1 Data Stored On Your Device</h3>
 <ul>
@@ -114,19 +145,32 @@
 </ul>
 <p>This data lives only on your device or in your iCloud Drive (if enabled) and is never transmitted to the developer.</p>
 
-<h3>1.2 Anonymous Usage Analytics</h3>
-<p>To improve the App, we may send the following <strong>non-identifying</strong> event counts via Firebase Analytics (or an equivalent service):</p>
+<h3>1.2 Data Collected</h3>
+<p>This matches the "App Privacy" details declared on the App Store.</p>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Data</th><th>What it is</th><th>Purpose</th><th>Linked to you</th><th>Tracking</th></tr>
+  </thead>
+  <tbody>
+    <tr><td data-label="Data">Coarse location</td><td data-label="What it is">Country and region estimated from your IP address. Precise location (GPS) is never used.</td><td data-label="Purpose">Third-party advertising, Analytics</td><td class="c" data-label="Linked to you">Yes</td><td class="c" data-label="Tracking">No</td></tr>
+    <tr><td data-label="Data">Device ID</td><td data-label="What it is">Firebase app instance ID; Advertising Identifier (IDFA — only if you allow tracking)</td><td data-label="Purpose">Third-party advertising, Analytics</td><td class="c" data-label="Linked to you">Yes</td><td class="c" data-label="Tracking">Yes</td></tr>
+    <tr><td data-label="Data">Purchase history</td><td data-label="What it is">In-app purchase records (product and price). Payment details such as cards are not included.</td><td data-label="Purpose">Analytics</td><td class="c" data-label="Linked to you">No</td><td class="c" data-label="Tracking">No</td></tr>
+    <tr><td data-label="Data">Product interaction</td><td data-label="What it is">App open / background, onboarding completion, first stroke / layer / export, feature usage counts, paywall shown / purchase / restore. Never the content of your notes.</td><td data-label="Purpose">Analytics, Third-party advertising</td><td class="c" data-label="Linked to you">Yes</td><td class="c" data-label="Tracking">No</td></tr>
+    <tr><td data-label="Data">Advertising data</td><td data-label="What it is">Ads shown and how you interacted with them</td><td data-label="Purpose">Third-party advertising, Analytics</td><td class="c" data-label="Linked to you">Yes</td><td class="c" data-label="Tracking">No</td></tr>
+    <tr><td data-label="Data">Crash data</td><td data-label="What it is">Crash and exception stack traces (Firebase Crashlytics)</td><td data-label="Purpose">App functionality, Analytics</td><td class="c" data-label="Linked to you">No</td><td class="c" data-label="Tracking">No</td></tr>
+    <tr><td data-label="Data">Performance data</td><td data-label="What it is">Launch time, responsiveness, and similar metrics</td><td data-label="Purpose">App functionality, Analytics, Third-party advertising</td><td class="c" data-label="Linked to you">No</td><td class="c" data-label="Tracking">No</td></tr>
+    <tr><td data-label="Data">Other diagnostic data</td><td data-label="What it is">Device model, OS version, and similar diagnostics</td><td data-label="Purpose">App functionality, Analytics, Third-party advertising</td><td class="c" data-label="Linked to you">No</td><td class="c" data-label="Tracking">No</td></tr>
+  </tbody>
+</table>
+</div>
 <ul>
-  <li>App open / background transitions</li>
-  <li>Onboarding completion</li>
-  <li>First stroke / layer added / export milestones (for Time-to-Value measurement)</li>
-  <li>Feature usage counts (stroke count, brush switches, etc. — never the stroke content itself)</li>
-  <li>Paywall shown / purchase completed / restored events</li>
-  <li>Crash and exception stack traces (Firebase Crashlytics)</li>
+  <li><strong>Linked to you</strong>: the data can be grouped as coming from the same user through a device ID or similar. The App never ties it to your name or an account.</li>
+  <li><strong>Tracking</strong>: combining the data with data collected from other companies' apps and websites for advertising. The Advertising Identifier is used only if you allow tracking in iOS.</li>
 </ul>
 
 <h3>1.3 Advertising (Free Plan)</h3>
-<p>Free-plan users see a Google AdMob banner ad at the bottom of the screen. AdMob may use the Advertising Identifier (IDFA) for personalized ads. If you decline iOS <strong>App Tracking Transparency</strong>, non-personalized ads are served instead. AdMob's data practices are governed by Google's <a href="https://policies.google.com/privacy">Privacy Policy</a>.</p>
+<p>Free-plan users see a Google AdMob banner ad at the bottom of the screen. After onboarding, the App asks once for tracking permission through the iOS <strong>App Tracking Transparency</strong> prompt. If you allow it, AdMob uses the Advertising Identifier (IDFA) to show personalized ads; if you don't, ads are shown without it. Purchasing Onionote Pro removes ads. AdMob's data practices are governed by Google's <a href="https://policies.google.com/privacy">Privacy Policy</a>.</p>
 
 <h2>2. In-App Purchases (Onionote Pro)</h2>
 <p>The one-time Onionote Pro purchase is processed exclusively through <strong>Apple's App Store</strong>. The developer never sees your payment details. Purchase state (Pro / Free) is retrieved via the <code>Transaction.currentEntitlements</code> API.</p>
@@ -135,14 +179,15 @@
 <p>When iCloud Drive is enabled, the App stores documents in your iCloud account. This data is encrypted and managed by Apple's infrastructure; the developer has no access. See Apple's <a href="https://www.apple.com/legal/privacy/">Privacy Policy</a> for details.</p>
 
 <h2>4. Third-Party Sharing</h2>
-<p>The App does not sell or share your personal information with third parties. Disclosure may occur only to comply with legal obligations (e.g., court order), limited to what is necessary.</p>
+<p>The data in 1.2 is processed by Google (Firebase, AdMob) as a service provider, under Google's <a href="https://policies.google.com/privacy">Privacy Policy</a>. Otherwise the App does not sell or share your information with third parties. Disclosure may occur only to comply with legal obligations (e.g., court order), limited to what is necessary.</p>
 
 <h2>5. Your Rights</h2>
 <ul>
   <li>You can delete any document in the App at any time. Uninstalling the App removes all on-device data.</li>
   <li>iCloud Drive documents can be managed via the Files app or iCloud.com.</li>
-  <li>ATT consent can be changed anytime via iOS Settings → Privacy &amp; Security → Tracking.</li>
-  <li>You can opt out of anonymous analytics via iOS Settings → Privacy &amp; Security → Analytics &amp; Improvements → Share With App Developers.</li>
+  <li>Tracking permission can be changed anytime via iOS Settings → Privacy &amp; Security → Tracking.</li>
+  <li>Reinstalling the App creates a new Firebase app instance ID, so later usage data is not connected to earlier data.</li>
+  <li>For questions about collected data or deletion requests, use the contact in section 8.</li>
 </ul>
 
 <h2>6. Children's Privacy</h2>
