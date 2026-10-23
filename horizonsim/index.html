@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>나의 지평선 · Horizon Sim</title>
+<meta name="description" content="장소와 날짜를 고르면 그날의 일출·일몰과 하늘색을 그 자리에 서서 보듯 보여 주는 앱. Sunrise and sunset, as if you were there.">
+<style>
+:root{--sea:#151B2B;--deep:#242C42;--card:#1E2538;--line:#33405E;--text:#F4EEE6;--dim:#A9AFC2;--gold:#DBBD8A;--ember:#D4885D}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;background:var(--sea);color:var(--text);line-height:1.75}
+html[data-lang="ko"] .l-en{display:none}
+html[data-lang="en"] .l-ko{display:none}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+.langbar{display:flex;justify-content:flex-end;padding:14px 0}
+.langbar button{border:1px solid var(--text);background:transparent;color:var(--text);padding:5px 14px;cursor:pointer;font-size:14px}
+.langbar button:first-child{border-radius:8px 0 0 8px}
+.langbar button:last-child{border-radius:0 8px 8px 0}
+.langbar button.on{background:var(--text);color:var(--sea)}
+.hero{background:linear-gradient(180deg,#576487 0%,#7682A2 22%,#9CA2B4 42%,#C6BDB6 56%,#DBBD8A 64%,#D4885D 69.6%,#A26866 70%,#485068 72%,#242C42 80%,#151B2B 100%)}
+.hero .wrap{min-height:560px;display:flex;flex-direction:column}
+.hero-text{padding:40px 0 0;text-shadow:0 1px 12px rgba(21,27,43,.35)}
+.hero h1{font-size:2.6rem;letter-spacing:-.01em;line-height:1.2}
+.hero .tag{font-size:1.25rem;margin-top:10px;font-weight:600}
+.hero .sub{font-size:1rem;margin-top:8px;max-width:560px}
+.hero .badge{display:inline-block;margin-top:22px;padding:7px 16px;border-radius:999px;background:rgba(21,27,43,.55);font-size:.92rem}
+.hero-foot{margin-top:auto;padding:0 0 28px;color:var(--dim);font-size:.9rem}
+h2{font-size:1.35rem;margin:52px 0 16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+.card h3{font-size:1.02rem;margin-bottom:6px;color:var(--gold)}
+.card p{font-size:.94rem;color:var(--dim)}
+.band{display:flex;height:16px;border-radius:8px;overflow:hidden;margin:6px 0 12px}
+.band span{flex:1}
+table{width:100%;border-collapse:collapse;font-size:.94rem}
+th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--gold);font-weight:600}
+td{color:var(--dim)}
+td:first-child{color:var(--text);white-space:nowrap}
+.note{color:var(--dim);font-size:.9rem;margin-top:12px}
+footer.wrap{border-top:1px solid var(--line);margin:56px auto 0;padding:26px 20px 40px;text-align:center;font-size:.9rem;color:var(--dim)}
+footer a{color:var(--text)}
+@media (max-width:560px){.hero h1{font-size:2rem}.hero .wrap{min-height:500px}th,td{padding:10px 6px}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+<div class="wrap">
+  <div class="langbar">
+    <button id="b-ko" class="on" onclick="setLang('ko')">한국어</button>
+    <button id="b-en" onclick="setLang('en')">English</button>
+  </div>
+  <div class="hero-text">
+    <h1><span class="l-ko">나의 지평선</span><span class="l-en">Horizon Sim</span></h1>
+    <p class="tag"><span class="l-ko">그 자리에서 보는 해돋이</span><span class="l-en">Sunrise, as if you were there</span></p>
+    <p class="sub"><span class="l-ko">지구 위 어느 장소, 어느 날이든 그 자리에 서서 바라보는 하늘을 다시 그립니다. 시간을 손가락으로 감아 해가 언제, 어느 쪽에서, 어떤 빛으로 오는지 미리 보세요.</span><span class="l-en">It redraws the sky you would see standing at any place on Earth, on any day. Drag through time to see when, where and in what light the sun arrives, before you go.</span></p>
+    <p class="badge"><span class="l-ko">iPhone · iPad · Mac — App Store 출시 준비 중</span><span class="l-en">iPhone · iPad · Mac — coming soon to the App Store</span></p>
+  </div>
+  <p class="hero-foot"><span class="l-ko">위 그림은 앱 아이콘과 같은 하늘입니다. 해가 뜨기 전, 바다 위 지평선.</span><span class="l-en">The gradient above is the sky from the app icon: the horizon over the sea, just before sunrise.</span></p>
+</div>
+</header>
+
+<main class="wrap">
+
+<h2><span class="l-ko">무엇을 하나요</span><span class="l-en">What it does</span></h2>
+<div class="grid">
+  <div class="card">
+    <h3><span class="l-ko">그 자리에서 보는 하늘</span><span class="l-en">The sky from where you stand</span></h3>
+    <p class="l-ko">대기가 햇빛을 흩뜨리는 과정을 계산해 그린 1인칭 지평선 장면입니다. 지평선 가까이에서 납작해지는 해, 바다 위 윤슬, 해 진 뒤 남는 붉은 띠까지 담았습니다.</p>
+    <p class="l-en">A first-person horizon rendered by simulating how the atmosphere scatters sunlight, down to the sun flattening near the horizon, glitter on the sea and the red band that lingers after sunset.</p>
+  </div>
+  <div class="card">
+    <h3><span class="l-ko">하루의 빛을 한 줄로</span><span class="l-en">A whole day of light in one bar</span></h3>
+    <div class="band" aria-hidden="true"><span style="background:#1C2541"></span><span style="background:#2E3F75"></span><span style="background:#3F5BA9"></span><span style="background:#5B8DEF"></span><span style="background:#F2A93B"></span><span style="background:#BFE0FA;flex:3"></span><span style="background:#F2A93B"></span><span style="background:#5B8DEF"></span><span style="background:#3F5BA9"></span><span style="background:#2E3F75"></span><span style="background:#1C2541"></span></div>
+    <p class="l-ko">밤, 천문·항해·시민 박명, 블루아워, 골든아워, 낮을 색과 무늬로 나눈 빛 띠를 끌면 그 시각의 하늘로 갑니다. 최대 3600배속으로 재생합니다.</p>
+    <p class="l-en">Night, astronomical, nautical and civil twilight, blue hour, golden hour and day, in color and pattern. Drag the band to go to that moment, or play the day at up to 3600×.</p>
+  </div>
+  <div class="card">
+    <h3><span class="l-ko">시각표</span><span class="l-en">Timetable</span></h3>
+    <p class="l-ko">일출·일몰 시각과 방위, 남중 시각과 고도, 낮 길이, 박명·블루아워·골든아워의 시작과 끝을 그 장소의 시간대로 정리합니다.</p>
+    <p class="l-en">Sunrise and sunset with their directions, solar noon with the sun's height, day length, and when each twilight, blue hour and golden hour begins and ends, in the place's own time zone.</p>
+  </div>
+  <div class="card">
+    <h3><span class="l-ko">어디서든, 언제든</span><span class="l-en">Any place, any day</span></h3>
+    <p class="l-ko">현재 위치, 장소·주소 검색, 지도에서 고르기, 위도·경도 입력. 달력에는 24절기와 음력을 함께 적고, 새해 첫 해·설날·춘분·하지·추분·동지로 바로 갑니다.</p>
+    <p class="l-en">Current location, place and address search, pick on a map, or type coordinates. The calendar has shortcuts to the year's first sunrise, the equinoxes and the solstices, and can also show the 24 solar terms and Korean lunar dates.</p>
+  </div>
+  <div class="card">
+    <h3><span class="l-ko">해돋이 명소 30곳</span><span class="l-en">30 sunrise spots in Korea</span></h3>
+    <p class="l-ko">정동진, 호미곶, 성산일출봉, 간절곶 등 30곳을 장면으로 담았습니다. '새해 첫 해, 어디서 가장 먼저 뜰까요?'에서 1월 1일 일출 시각을 한 화면에 견줍니다.</p>
+    <p class="l-en">Jeongdongjin, Homigot, Seongsan Ilchulbong, Ganjeolgot and 26 more, ready as scenes. "Where does the year's first sunrise appear first?" lines up New Year's Day sunrise at all 30.</p>
+  </div>
+  <div class="card">
+    <h3><span class="l-ko">알림</span><span class="l-en">Alerts</span></h3>
+    <p class="l-ko">일출·일몰, 골든아워, 블루아워를 원하는 시간만큼 미리 알려 드립니다. 명소의 새해 첫 해 알림은 누구나 무료입니다.</p>
+    <p class="l-en">Get notified ahead of sunrise, sunset, golden hour or blue hour. First-sunrise alerts for the sunrise spots are free for everyone.</p>
+  </div>
+  <div class="card">
+    <h3><span class="l-ko">iPhone, iPad, Mac</span><span class="l-en">iPhone, iPad and Mac</span></h3>
+    <p class="l-ko">큰 화면과 키보드 단축키, Mac 메뉴 막대의 다음 일출·일몰까지 남은 시간. VoiceOver, 더 큰 텍스트, 동작 줄이기를 지원합니다.</p>
+    <p class="l-en">Large screens and keyboard shortcuts, and the time to the next sunrise or sunset in the Mac menu bar. Supports VoiceOver, Larger Text and Reduce Motion.</p>
+  </div>
+  <div class="card">
+    <h3><span class="l-ko">기기 안에서 계산</span><span class="l-en">Computed on your device</span></h3>
+    <p class="l-ko">태양 위치는 NREL SPA 알고리즘으로 기기 안에서 계산합니다. 인터넷이 없어도 하늘과 시각이 나옵니다. 계정, 광고, 추적이 없습니다.</p>
+    <p class="l-en">The sun's position is calculated on your device with NREL's Solar Position Algorithm. The sky and times work offline. No account, no ads, no tracking.</p>
+  </div>
+</div>
+
+<h2><span class="l-ko">무료와 Pro</span><span class="l-en">Free and Pro</span></h2>
+<table>
+  <tr><th></th><th><span class="l-ko">무료</span><span class="l-en">Free</span></th><th>Pro</th></tr>
+  <tr><td><span class="l-ko">날짜</span><span class="l-en">Dates</span></td><td><span class="l-ko">오늘부터 30일, 명소의 새해 첫 해</span><span class="l-en">30 days from today, plus the first sunrise at the sunrise spots</span></td><td><span class="l-ko">1900–2100년 모든 날짜</span><span class="l-en">Every date from 1900 to 2100</span></td></tr>
+  <tr><td><span class="l-ko">즐겨찾기</span><span class="l-en">Favorites</span></td><td><span class="l-ko">3곳</span><span class="l-en">3 places</span></td><td><span class="l-ko">무제한</span><span class="l-en">Unlimited</span></td></tr>
+  <tr><td><span class="l-ko">알림</span><span class="l-en">Alerts</span></td><td><span class="l-ko">한 장소의 일출·일몰, 명소의 새해 첫 해</span><span class="l-en">Sunrise and sunset for one place, plus first-sunrise alerts</span></td><td><span class="l-ko">장소마다, 골든아워·블루아워까지</span><span class="l-en">Every place, plus golden and blue hour</span></td></tr>
+  <tr><td><span class="l-ko">빛 시간대 기준</span><span class="l-en">Light phase definitions</span></td><td><span class="l-ko">기본값</span><span class="l-en">Defaults</span></td><td><span class="l-ko">직접 설정</span><span class="l-en">Your own</span></td></tr>
+  <tr><td><span class="l-ko">하늘 화질</span><span class="l-en">Sky quality</span></td><td><span class="l-ko">같음</span><span class="l-en">The same</span></td><td><span class="l-ko">같음</span><span class="l-en">The same</span></td></tr>
+</table>
+<p class="note"><span class="l-ko">Pro는 한 번 구매로 계속 쓰며 구독이 없습니다.</span><span class="l-en">Pro is a one-time purchase. There is no subscription.</span></p>
+
+</main>
+
+<footer class="wrap">
+  <p><a href="support.html"><span class="l-ko">지원</span><span class="l-en">Support</span></a> ·
+     <a href="privacy.html"><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></a></p>
+  <p style="margin-top:8px">chungkil.cksw@gmail.com</p>
+</footer>
+
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  document.documentElement.setAttribute('lang', l);
+  document.getElementById('b-ko').classList.toggle('on', l==='ko');
+  document.getElementById('b-en').classList.toggle('on', l==='en');
+  try{ localStorage.setItem('lang', l); }catch(e){}
+}
+try{ var s=localStorage.getItem('lang'); if(s) setLang(s); }catch(e){}
+</script>
+</body>
+</html>

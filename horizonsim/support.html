@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>나의 지평선 — 지원 · Horizon Sim Support</title>
+<style>
+:root{--sea:#151B2B;--card:#1E2538;--line:#33405E;--text:#F4EEE6;--dim:#A9AFC2;--gold:#DBBD8A;--ember:#D4885D}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;background:var(--sea);color:var(--text);line-height:1.8}
+html[data-lang="ko"] .l-en{display:none}
+html[data-lang="en"] .l-ko{display:none}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+.topband{height:10px;background:linear-gradient(90deg,#576487,#9CA2B4,#DBBD8A,#D4885D,#485068)}
+.langbar{display:flex;justify-content:flex-end;padding:14px 0}
+.langbar button{border:1px solid var(--text);background:transparent;color:var(--text);padding:5px 14px;cursor:pointer;font-size:14px}
+.langbar button:first-child{border-radius:8px 0 0 8px}
+.langbar button:last-child{border-radius:0 8px 8px 0}
+.langbar button.on{background:var(--text);color:var(--sea)}
+h1{font-size:1.9rem;margin:20px 0 6px}
+.lead{color:var(--dim);margin-bottom:28px}
+.contact{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--ember);border-radius:0 12px 12px 0;padding:18px 20px;margin-bottom:34px}
+.contact p{color:var(--dim);font-size:.96rem}
+.contact a{color:var(--gold)}
+h2{font-size:1.2rem;margin:36px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+h3{font-size:1.02rem;margin:22px 0 6px;color:var(--gold)}
+p{font-size:.96rem;color:var(--dim);margin-bottom:10px}
+ul,ol{padding-left:22px;font-size:.96rem;color:var(--dim);margin-bottom:12px}
+li{margin:5px 0}
+b{color:var(--text)}
+a{color:var(--gold)}
+footer{border-top:1px solid var(--line);margin-top:46px;padding:26px 0 40px;text-align:center;font-size:.9rem;color:var(--dim)}
+footer a{color:var(--text)}
+</style>
+</head>
+<body>
+<div class="topband"></div>
+<div class="wrap">
+
+<div class="langbar">
+  <button id="b-ko" class="on" onclick="setLang('ko')">한국어</button>
+  <button id="b-en" onclick="setLang('en')">English</button>
+</div>
+
+<h1><span class="l-ko">지원</span><span class="l-en">Support</span></h1>
+<p class="lead"><span class="l-ko">나의 지평선 · iPhone, iPad(iOS·iPadOS 27 이상), Mac(macOS 27 이상)</span><span class="l-en">Horizon Sim · iPhone and iPad (iOS and iPadOS 27 or later), Mac (macOS 27 or later)</span></p>
+
+<div class="contact">
+  <p class="l-ko"><b>문의:</b> <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a><br>기기 이름, OS 버전, 그리고 문제가 보인 장소와 날짜·시각을 함께 적어 주시면 빨리 확인할 수 있습니다. 화면이 이상하면 스크린숏을 붙여 주세요.</p>
+  <p class="l-en"><b>Contact:</b> <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a><br>Please include your device, OS version, and the place, date and time where you saw the problem. If something looks wrong on screen, a screenshot helps a lot.</p>
+</div>
+
+<h2><span class="l-ko">시각과 계산</span><span class="l-en">Times and calculation</span></h2>
+
+<h3><span class="l-ko">일출·일몰 시각이 다른 앱이나 발표와 조금 달라요</span><span class="l-en">Sunrise or sunset differs a little from another app or an official table</span></h3>
+<p class="l-ko">앱의 일출·일몰은 <b>해의 윗부분이 트인 지평선에 닿는 순간</b>이고, 지평선 근처의 빛 굴절은 표준 대기의 평균값으로 계산합니다. 그래서 다음 경우에 실제와 차이가 날 수 있습니다.</p>
+<p class="l-en">Sunrise and sunset in the app are the moments <b>the top of the sun touches an open horizon</b>, with refraction near the horizon taken from a standard atmosphere. Differences can come from:</p>
+<ul class="l-ko">
+  <li>산이나 건물이 지평선을 가리면 해가 실제로 보이는 시각은 더 늦습니다</li>
+  <li>높은 곳에서는 지평선이 내려가 해가 조금 더 일찍 뜹니다. 해돋이 명소 가운데 일부는 관측 지점의 높이를 반영했습니다</li>
+  <li>발표 자료는 보통 가장 가까운 분으로 반올림하므로 30초 안팎의 차이는 반올림 때문일 수 있습니다</li>
+  <li>그날의 기온·기압에 따라 굴절이 달라져 1–2분이 바뀌기도 합니다</li>
+</ul>
+<ul class="l-en">
+  <li>Mountains or buildings on the horizon: the sun becomes visible later</li>
+  <li>Height: from higher ground the horizon dips and the sun rises a little earlier. Some of the sunrise spots include the height of the viewpoint</li>
+  <li>Rounding: published tables usually round to the nearest minute, so differences of about 30 seconds may be rounding alone</li>
+  <li>Weather: temperature and pressure change refraction, which can move the time by a minute or two</li>
+</ul>
+<p class="l-ko">탁 트인 곳인데도 1분 넘게 다르면 장소와 날짜를 보내 주세요.</p>
+<p class="l-en">If it is more than a minute off at an open spot, please send us the place and date.</p>
+
+<h3><span class="l-ko">시각은 어느 시간대로 나오나요?</span><span class="l-en">Which time zone are times shown in?</span></h3>
+<p class="l-ko">고른 장소의 시간대입니다. 서울에서 런던을 고르면 런던 시각으로 나옵니다. 인터넷 없이 좌표로 연 장소는 시간대를 추정해 '추정'으로 표시하고, 연결되면 확정합니다.</p>
+<p class="l-en">The time zone of the place you picked: choose London while in Seoul and you see London time. For a place opened by coordinates without an internet connection, the time zone is estimated and marked as such until the app can confirm it online.</p>
+
+<h3><span class="l-ko">인터넷 없이도 되나요?</span><span class="l-en">Does it work offline?</span></h3>
+<p class="l-ko">네. 하늘과 시각은 기기 안에서 계산합니다. 장소·주소 검색과 지도는 Apple 지도 서비스를 쓰므로 인터넷이 필요하고, 그동안에는 명소·즐겨찾기·좌표 입력으로 장소를 고를 수 있습니다.</p>
+<p class="l-en">Yes. The sky and the times are computed on your device. Place and address search and the map use Apple Maps and need a connection; offline you can still choose sunrise spots, favorites, or type coordinates.</p>
+
+<h2><span class="l-ko">위치와 알림</span><span class="l-en">Location and alerts</span></h2>
+
+<h3><span class="l-ko">위치 권한 없이 쓸 수 있나요?</span><span class="l-en">Can I use it without location access?</span></h3>
+<p class="l-ko">네. 장소 검색, 해돋이 명소, 지도에서 고르기, 좌표 입력으로 모든 기능을 쓸 수 있습니다. 나중에 켜려면 설정 앱 › 개인정보 보호 및 보안 › 위치 서비스 › 나의 지평선에서 '앱을 사용하는 동안'을 고르세요.</p>
+<p class="l-en">Yes. Search, sunrise spots, the map and coordinates all work without it. To turn it on later, open the Settings app › Privacy &amp; Security › Location Services › Horizon Sim and choose While Using the App.</p>
+
+<h3><span class="l-ko">알림이 오지 않아요</span><span class="l-en">Alerts don't arrive</span></h3>
+<ol class="l-ko">
+  <li>설정 앱 › 알림 › 나의 지평선에서 알림이 켜져 있는지 확인하세요</li>
+  <li>집중 모드(방해 금지·수면 등)가 켜져 있으면 알림이 조용히 쌓일 수 있습니다</li>
+  <li>알림은 기기에서 며칠 앞까지 미리 예약됩니다. 알림이 많으면 미리 예약하는 날이 줄어드니, 가끔 앱을 열어 주세요. 열 때마다 다시 채웁니다</li>
+  <li>설정 앱 › 일반 › 백그라운드 앱 새로 고침이 켜져 있으면 앱을 열지 않아도 대개 채워집니다</li>
+</ol>
+<ol class="l-en">
+  <li>Check that notifications are on in the Settings app › Notifications › Horizon Sim</li>
+  <li>A Focus (Do Not Disturb, Sleep and so on) can deliver alerts quietly</li>
+  <li>Alerts are scheduled on the device a few days ahead. With many alerts, fewer days fit, so open the app now and then; it refills them each time</li>
+  <li>With Background App Refresh on (Settings app › General), they are usually refilled even when you don&#39;t open the app</li>
+</ol>
+
+<h2><span class="l-ko">Pro와 구매</span><span class="l-en">Pro and purchases</span></h2>
+
+<h3><span class="l-ko">무료로 무엇을 쓸 수 있나요?</span><span class="l-en">What is free?</span></h3>
+<p class="l-ko">오늘부터 30일 안의 날짜, 즐겨찾기 3곳, 한 장소의 일출·일몰 알림, 해돋이 명소의 새해 첫 해(장면과 알림)입니다. 하늘 화질은 무료와 Pro가 같습니다. Pro는 1900–2100년 모든 날짜, 즐겨찾기 무제한, 장소마다 알림과 골든·블루아워 알림, 빛 시간대 기준 직접 설정을 엽니다.</p>
+<p class="l-en">Dates within 30 days from today, 3 favorites, sunrise and sunset alerts for one place, and the year's first sunrise at the sunrise spots (scene and alert). The sky looks the same in Free and Pro. Pro opens every date from 1900 to 2100, unlimited favorites, alerts for every place plus golden and blue hour, and your own light phase definitions.</p>
+
+<h3><span class="l-ko">새 기기에서 Pro를 되찾으려면</span><span class="l-en">Getting Pro back on a new device</span></h3>
+<p class="l-ko">같은 Apple 계정으로 로그인한 뒤, 더보기(…) › Pro 보기(또는 설정 › Pro 보기)에서 아래쪽 '구매 복원'을 누르세요. iPhone·iPad에서 산 Pro는 Mac에서도 같은 방법으로 복원됩니다. 가족 공유는 지원하지 않습니다.</p>
+<p class="l-en">Sign in with the same Apple Account, then open More (…) › See Pro (or Settings › See Pro) and tap Restore Purchases at the bottom. Pro bought on iPhone or iPad restores on Mac the same way. Family Sharing is not supported.</p>
+
+<h3><span class="l-ko">환불</span><span class="l-en">Refunds</span></h3>
+<p class="l-ko">결제는 Apple이 처리하므로 환불도 Apple에 요청합니다: <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a></p>
+<p class="l-en">Apple handles payments, so refunds are requested from Apple: <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a></p>
+
+<h2><span class="l-ko">화면과 성능</span><span class="l-en">Display and performance</span></h2>
+
+<h3><span class="l-ko">하늘이 끊기거나 기기가 따뜻해져요</span><span class="l-en">The sky stutters or the device gets warm</span></h3>
+<p class="l-ko">설정 › 하늘 품질이 '자동'이면 기기 부담에 맞춰 스스로 낮춥니다. 그래도 끊기면 '보통'이나 '낮음'으로 바꿔 보세요. 어떤 기기에서 그랬는지 알려 주시면 고치는 데 큰 도움이 됩니다.</p>
+<p class="l-en">With Settings › Sky Quality on Auto, the app lowers quality by itself when the device is busy. If it still stutters, try Medium or Low, and let us know which device it was.</p>
+
+<h3><span class="l-ko">글씨를 크게 쓰거나 VoiceOver로 쓸 수 있나요?</span><span class="l-en">Larger text and VoiceOver?</span></h3>
+<p class="l-ko">네. 더 큰 텍스트, VoiceOver, 동작 줄이기, 투명도 줄이기, 대비 증가를 지원합니다. 빛 띠의 구간은 색 없이도 무늬로 구분됩니다. VoiceOver에서 빛 띠는 위아래로 쓸어 10분씩 움직입니다.</p>
+<p class="l-en">Yes. Larger Text, VoiceOver, Reduce Motion, Reduce Transparency and Increase Contrast are supported, and the light band's phases can be told apart by pattern without color. With VoiceOver, swipe up or down on the light band to move ten minutes at a time.</p>
+
+<footer>
+  <p><a href="index.html"><span class="l-ko">홈</span><span class="l-en">Home</span></a> ·
+     <a href="privacy.html"><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></a></p>
+  <p style="margin-top:8px">chungkil.cksw@gmail.com</p>
+</footer>
+
+</div>
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  document.documentElement.setAttribute('lang', l);
+  document.getElementById('b-ko').classList.toggle('on', l==='ko');
+  document.getElementById('b-en').classList.toggle('on', l==='en');
+  try{ localStorage.setItem('lang', l); }catch(e){}
+}
+try{ var s=localStorage.getItem('lang'); if(s) setLang(s); }catch(e){}
+</script>
+</body>
+</html>
