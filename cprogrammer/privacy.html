@@ -37,8 +37,8 @@ footer a{color:var(--blue2)}
 </div>
 
 <h1><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></h1>
-<p class="upd"><span class="l-ko">스타트 C 프로그래밍 · 최종 수정 2026년 10월 18일</span>
-<span class="l-en">Start C Programming · Last updated October 18, 2026</span></p>
+<p class="upd"><span class="l-ko">스타트 C 프로그래밍 · 최종 수정 2026년 10월 24일</span>
+<span class="l-en">Start C Programming · Last updated October 24, 2026</span></p>
 
 <div class="big">
   <span class="l-ko">개발자는 이용자의 개인정보를 수집하지 않습니다. 학습 기록과 작성한 코드는 이용자의 기기 안에만 있고,
@@ -63,18 +63,19 @@ and settings (default C standard, recommended starting lesson) are stored <b>onl
 so records do not carry over to your other devices. (A whole-device backup you have turned on may include them, like any other app's data.)</p>
 </div>
 <p class="l-ko">앱의 <i>설정 › 진도 초기화</i>로 학습 기록을 지울 수 있고, 앱을 지우면 기록도 함께 지워집니다.</p>
-<p class="l-en">You can erase your study records in <i>설정 (Settings) › 진도 초기화 (Reset progress)</i>, and deleting the app removes them as well.
-The app's screens are in Korean.</p>
+<p class="l-en">You can erase your study records in <i>Settings › Reset progress</i>, and deleting the app removes them as well.</p>
 
 <h2><span class="l-ko">3. 작성한 C 코드</span><span class="l-en">3. The C code you write</span></h2>
 <p class="l-ko">작성한 C 프로그램은 앱에 들어 있는 교육용 C 인터프리터가 <b>기기 안에서</b> 실행합니다. 코드를 외부로 보내지 않고,
 실행에 인터넷 연결이 필요하지 않습니다. 프로그램은 앱 안의 가상 메모리에서만 돌며 기기의 파일·네트워크·다른 앱에 닿지 않습니다.</p>
 <p class="l-ko">프로그램이 읽고 쓰는 파일은 앱 안의 가상 파일이라 기기의 파일에 닿지 않고, 실행이 끝나면 저장하지 않습니다.</p>
+<p class="l-ko">프로세스·스레드·파이프·소켓도 앱 안에서 가상으로 만들어지며, 소켓은 앱 안의 루프백에서만 연결되어 기기 밖으로 아무것도 보내지 않습니다.</p>
 <p class="l-ko">연습장에 쓴 코드는 저장하지 않습니다(열 때마다 예제 코드로 새로 시작합니다). 실습은 채점한 코드만 위 2번처럼 기기에 남깁니다.</p>
 <p class="l-en">Your C programs run <b>on the device</b> in the educational C interpreter built into the app. Code is never sent anywhere,
 and running it needs no internet connection. Programs run only inside the app's virtual memory and cannot reach the device's files,
 the network, or other apps.</p>
 <p class="l-en">Files your program reads and writes are virtual files inside the app; they never touch the device's files and are not saved after the run.</p>
+<p class="l-en">Processes, threads, pipes, and sockets are also created virtually inside the app, and sockets connect only over loopback inside the app, so nothing is sent off the device.</p>
 <p class="l-en">Code written in the playground is not saved (it starts from the sample code each time). For exercises, only the code you grade
 is kept on the device, as described in section 2.</p>
 
@@ -115,7 +116,7 @@ function setLang(l){
   document.getElementById('b-en').classList.toggle('on', l==='en');
   try{ localStorage.setItem('lang', l); }catch(e){}
 }
-try{ var s=localStorage.getItem('lang'); if(s) setLang(s); }catch(e){}
+try{ var s=localStorage.getItem('lang'); if(s) setLang(s); else if(!/^ko/i.test(navigator.language||'')) setLang('en'); }catch(e){}
 </script>
 </body>
 </html>
