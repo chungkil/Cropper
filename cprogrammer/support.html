@@ -55,10 +55,10 @@ To redo it, tap <i>Settings › Choose a new starting point</i>. If C is new to 
 
 <div class="qa">
 <h3><span class="l-ko">무료로 볼 수 있는 범위는요?</span><span class="l-en">What is free?</span></h3>
-<p class="l-ko">트랙 1 "프로그래밍 기초" 전체, 트랙 2·3·4·5·6의 첫 모듈(2.1 첫 C 프로그램, 3.1 비트·바이트·16진수, 4.1 소스에서 실행까지, 5.1 문자열 처리기, 6.1 프로세스와 fork), 부록 "컴퓨팅과 C의 계보" 전체는 무료입니다.
+<p class="l-ko">트랙 1 "프로그래밍 기초" 전체, 트랙 2·3·4·5·6·7의 첫 모듈(2.1 첫 C 프로그램, 3.1 비트·바이트·16진수, 4.1 소스에서 실행까지, 5.1 문자열 처리기, 6.1 프로세스와 fork, 7.1 임베디드 C의 세계), 부록 "컴퓨팅과 C의 계보" 전체는 무료입니다.
 나머지 모듈은 트랙마다 한 번 구매하면 열립니다. 잠긴 레슨도 첫 카드는 미리 볼 수 있습니다.</p>
-<p class="l-en">All of Track 1 "Programming Basics", the first module of Tracks 2 to 6 (2.1 Your First C Program, 3.1 Bits, Bytes, and Hex,
-4.1 From Source to Executable, 5.1 Text Processor, 6.1 Processes and Fork), and the whole appendix "Computing and the Lineage of C" are free. The other modules unlock with a one-time purchase per track. You can preview the first card of a locked lesson.</p>
+<p class="l-en">All of Track 1 "Programming Basics", the first module of Tracks 2 to 7 (2.1 Your First C Program, 3.1 Bits, Bytes, and Hex,
+4.1 From Source to Executable, 5.1 Text Processor, 6.1 Processes and Fork, 7.1 The World of Embedded C), and the whole appendix "Computing and the Lineage of C" are free. The other modules unlock with a one-time purchase per track. You can preview the first card of a locked lesson.</p>
 </div>
 
 <div class="qa">
@@ -123,12 +123,16 @@ and cannot touch the device's files or the network.</p>
 이런 코드를 쓰면 "아직 지원하지 않음"과 그 까닭을 알려 줍니다.</p>
 <p class="l-ko">트랙 6의 <code>fork</code>·<code>pthread_create</code>·<code>pipe</code>·<code>socket</code>은 앱 안에서 가상으로 실행합니다. 프로세스·스레드·소켓은 기기의 것을 쓰지 않고,
 소켓은 앱 안의 루프백에서만 연결됩니다.</p>
+<p class="l-ko">트랙 7의 보드(LED·버튼·타이머·인터럽트·UART)도 앱 안의 가상 마이크로컨트롤러입니다. 레지스터에 쓴 값은 기기의 하드웨어에 닿지 않고,
+버튼 누름과 터미널 입력은 정해 둔 대본에서 옵니다.</p>
 <p class="l-en">It supports C99 and C11, and its results are checked against clang on the Mac: lesson examples, exercise solutions, and hundreds of
 test programs produce the same output and exit codes as clang-built programs. Errors and warnings use clang's wording, with an explanation.</p>
 <p class="l-en">As a teaching tool it does not yet cover everything: wide characters, inline assembly (<code>__asm__</code>), functions that reach the
 device's shell such as <code>system</code> and <code>popen</code>, and a few others. If you use them, the app tells you they are not supported yet and why.</p>
 <p class="l-en">In Track 6, <code>fork</code>, <code>pthread_create</code>, <code>pipe</code>, and <code>socket</code> run virtually inside the app. Processes, threads, and sockets
 never use the device's own, and sockets connect only over loopback inside the app.</p>
+<p class="l-en">The board in Track 7 (LEDs, buttons, timer, interrupts, and UART) is also a virtual microcontroller inside the app. Values written to its
+registers never reach the device's hardware, and button presses and terminal input come from a script set in advance.</p>
 </div>
 
 <div class="qa">
