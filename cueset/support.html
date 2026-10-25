@@ -69,8 +69,8 @@ footer a{color:var(--text)}
 <p class="l-en">The first time you open CueSet, a four-page welcome guide shows how it works; Try the Example on the last page opens the example program right away. To see it again later, open Settings (the gear at the top left of the library) › Show Welcome Guide.</p>
 
 <h3><span class="l-ko">처음 열면 들어 있는 예시는 무엇인가요?</span><span class="l-en">What is the example that comes with the app?</span></h3>
-<p class="l-ko">'예시: 8카운트 연습' 영상과 '예시 프로그램'입니다. 프로그램을 누르고 오른쪽 위 재생 버튼(실행)을 누르면 바로 따라 해 볼 수 있습니다. 예시는 무료 저장 개수 3개에 세지 않으며, 지우면 다시 생기지 않습니다.</p>
-<p class="l-en">An "Example: 8-Count Practice" video and an "Example Drill" program. Open the program and press the play button at the top right (Run) to try it. The example doesn't count toward the 3 free programs, and it doesn't come back once you delete it.</p>
+<p class="l-ko">'예시: 8카운트 연습' 영상과 '예시 프로그램'입니다. 프로그램을 누르고 오른쪽 위 재생 버튼(실행)을 누르면 바로 따라 해 볼 수 있습니다. 예시는 무료 저장 개수 3개에 세지 않으며, 지우면 저절로 다시 생기지 않습니다. 다시 보려면 설정 › '예시 다시 넣기'를 누르세요.</p>
+<p class="l-en">An "Example: 8-Count Practice" video and a program called "Example Program". Open the program and press the play button at the top right (Run) to try it. The example doesn't count toward the 3 free programs. It doesn't come back on its own once you delete it; to get it back, open Settings › Add Example Again.</p>
 
 <h3><span class="l-ko">내 영상을 추가하려면</span><span class="l-en">Adding your own video</span></h3>
 <p class="l-ko">라이브러리 오른쪽 위 + 버튼에서 '사진 보관함에서' 또는 '파일에서'를 고르세요. Mac에서는 Finder에서 영상을 사이드바로 끌어다 놓아도 됩니다. 기기에서 재생되는 동영상(MP4, MOV, M4V 등)을 쓸 수 있습니다. 영상 아래 '새 프로그램'을 누르면 편집기가 열립니다.</p>
@@ -120,9 +120,15 @@ footer a{color:var(--text)}
   <tr><td><kbd>Space</kbd></td><td><span class="l-ko">재생 / 일시정지</span><span class="l-en">Play / pause</span></td></tr>
   <tr><td><kbd>P</kbd></td><td><span class="l-ko">선택한 구간 미리 재생</span><span class="l-en">Preview the selected passage</span></td></tr>
   <tr><td><kbd>⌘R</kbd></td><td><span class="l-ko">프로그램 실행</span><span class="l-en">Run the program</span></td></tr>
+  <tr><td><kbd>⌘Z</kbd> / <kbd>⇧⌘Z</kbd></td><td><span class="l-ko">실행 취소 / 다시 실행</span><span class="l-en">Undo / redo</span></td></tr>
+  <tr><th><span class="l-ko">편집기 스텝 (Pro)</span><span class="l-en">Editor steps (Pro)</span></th><th></th></tr>
+  <tr><td><kbd>↑</kbd> / <kbd>↓</kbd></td><td><span class="l-ko">이전 / 다음 스텝 선택</span><span class="l-en">Select the previous / next step</span></td></tr>
+  <tr><td><kbd>⌘↑</kbd> / <kbd>⌘↓</kbd></td><td><span class="l-ko">선택한 스텝을 위 / 아래로 옮기기</span><span class="l-en">Move the selected step up / down</span></td></tr>
+  <tr><td><kbd>+</kbd> / <kbd>−</kbd></td><td><span class="l-ko">반복 횟수 늘리기 / 줄이기 (시간 기준이면 30초씩)</span><span class="l-en">More / fewer repeats (30 s at a time for timed repeats)</span></td></tr>
+  <tr><td><kbd>⌫</kbd></td><td><span class="l-ko">선택한 스텝 빼기 (구간은 남음, <kbd>⌘Z</kbd>로 되돌림)</span><span class="l-en">Remove the selected step (the passage stays; <kbd>⌘Z</kbd> brings it back)</span></td></tr>
   <tr><th><span class="l-ko">실행 화면</span><span class="l-en">Run screen</span></th><th></th></tr>
   <tr><td><kbd>Space</kbd></td><td><span class="l-ko">일시정지 / 계속</span><span class="l-en">Pause / resume</span></td></tr>
-  <tr><td><kbd>←</kbd> / <kbd>→</kbd></td><td><span class="l-ko">이전 / 다음 스텝</span><span class="l-en">Previous / next step</span></td></tr>
+  <tr><td><kbd>←</kbd> / <kbd>→</kbd>, <kbd>Page Up</kbd> / <kbd>Page Down</kbd></td><td><span class="l-ko">이전 / 다음 스텝 (블루투스 페이지 터너도 이 키로 동작)</span><span class="l-en">Previous / next step (Bluetooth page turners send these keys)</span></td></tr>
   <tr><td><kbd>R</kbd></td><td><span class="l-ko">현재 반복 다시</span><span class="l-en">Repeat the current rep</span></td></tr>
   <tr><td><kbd>Esc</kbd></td><td><span class="l-ko">프로그램 종료</span><span class="l-en">End the program</span></td></tr>
 </table>
@@ -146,8 +152,22 @@ footer a{color:var(--text)}
 <h2><span class="l-ko">무료와 Pro</span><span class="l-en">Free and Pro</span></h2>
 
 <h3><span class="l-ko">무료로 어디까지 쓸 수 있나요?</span><span class="l-en">What's free?</span></h3>
-<p class="l-ko">구간 편집, 실행, ∞ 반복, 키보드 단축키, iPhone Duo 화면은 모두 무료입니다. 무료는 프로그램을 3개까지 저장하고(예시 프로그램은 세지 않음) 재생 속도가 1.0배입니다. Pro는 프로그램 무제한과 구간별 재생 속도(0.25–2.0배, 음높이 유지)를 엽니다. 광고는 무료에도 없습니다.</p>
-<p class="l-en">Editing, running, ∞ repeats, keyboard shortcuts and the iPhone Duo layouts are all free. Free saves up to 3 programs (the example doesn't count) and plays at 1.0×. Pro unlocks unlimited programs and a speed for each passage (0.25–2.0×, pitch preserved). There are no ads in either.</p>
+<p class="l-ko">구간 편집, 실행, ∞ 반복, 기본 키보드 단축키, 블루투스 페이지 터너, iPhone Duo 화면은 모두 무료입니다. 무료는 프로그램을 3개까지 저장하고(예시 프로그램은 세지 않음) 재생 속도가 1.0배이며, 화면을 끄거나 다른 앱으로 가면 일시정지합니다. 광고는 무료에도 없습니다.</p>
+<p class="l-ko">Pro는 다음을 엽니다.</p>
+<ul class="l-ko">
+  <li>프로그램 무제한, 구간별 재생 속도(0.25–2.0배, 음높이 유지)</li>
+  <li>연습 보조: 반복 앞 간격(0–10초)과 카운트다운, 좌우 반전(스텝별·프로그램 전체), 횟수 대신 정한 시간 동안 반복</li>
+  <li>편집 보조: 타임라인 오디오 파형, 핸들을 가까운 쉼·박자에 맞추기, 재생 위치에서 구간 자르기, 스텝 단축키</li>
+  <li>화면을 꺼도 계속 재생, 잠금화면에 진행 표시, 이어폰 '다음 곡' 버튼으로 다음 스텝</li>
+</ul>
+<p class="l-en">Editing, running, ∞ repeats, basic keyboard shortcuts, Bluetooth page turners and the iPhone Duo layouts are all free. Free saves up to 3 programs (the example doesn't count), plays at 1.0×, and pauses when you lock the screen or switch apps. There are no ads in either.</p>
+<p class="l-en">Pro unlocks:</p>
+<ul class="l-en">
+  <li>Unlimited programs and a speed for each passage (0.25–2.0×, pitch preserved)</li>
+  <li>Practice aids: an interval (0–10 s) with a countdown before each rep, mirroring (per step or the whole program), and repeating for a set time instead of a number of times</li>
+  <li>Editing aids: an audio waveform on the timeline, snapping handles to the nearest pause or beat, splitting a passage at the playhead, and step shortcuts</li>
+  <li>Playback that keeps going with the screen locked, progress on the Lock Screen, and your earphones' next-track button for the next step</li>
+</ul>
 
 <h3><span class="l-ko">새 기기에서 Pro를 되찾으려면</span><span class="l-en">Getting Pro back on a new device</span></h3>
 <p class="l-ko">같은 Apple 계정으로 로그인한 뒤 라이브러리 왼쪽 위 설정(톱니바퀴) › '구매 복원'을 누르세요. iPhone·iPad에서 산 Pro는 Mac에서도 같은 방법으로 복원됩니다. 가족 공유를 지원하므로 가족 구성원도 같은 방법으로 쓸 수 있습니다.</p>
@@ -168,8 +188,8 @@ footer a{color:var(--text)}
 <p class="l-en">Yes. Larger Text is supported, and at the largest sizes the button rows wrap onto two lines. With VoiceOver, the app announces when the step or set changes during a run and when the program finishes, and you can swipe up or down to change the number of sets.</p>
 
 <h3><span class="l-ko">프로그램은 어디에 저장되나요?</span><span class="l-en">Where are my programs stored?</span></h3>
-<p class="l-ko">기기 안에만 저장됩니다. 이 버전은 iCloud 동기화를 하지 않으므로 기기마다 따로 만듭니다. 앱을 지우면 프로그램도 지워지지만 원본 영상은 사진 보관함과 파일 앱에 그대로 남습니다.</p>
-<p class="l-en">On the device only. This version doesn't sync with iCloud, so each device keeps its own programs. Deleting the app deletes them, but your original videos stay in Photos and Files.</p>
+<p class="l-ko">기기와 사용자 본인의 iCloud에 저장되어, 같은 Apple 계정으로 로그인한 iPhone·iPad·Mac 사이에 자동으로 맞춰집니다. 영상 원본은 동기화하지 않으므로 기기마다 같은 영상이 있어야 합니다. iCloud 사진에 있는 영상은 다른 기기에서도 자동으로 찾고, 파일 앱의 영상은 iCloud Drive에 있으면 대개 자동으로 연결됩니다. 찾지 못하면 프로그램을 열 때 '영상 찾기…'로 같은 영상을 골라 주세요. 설정 › 데이터에서 동기화 상태를 볼 수 있습니다.</p>
+<p class="l-en">On your devices and in your own iCloud, so they stay in step across iPhone, iPad and Mac signed in to the same Apple Account. Original videos aren't synced, so each device needs the same video. Videos in iCloud Photos are found automatically on your other devices, and videos from Files usually connect automatically when they're in iCloud Drive. If CueSet can't find one, open the program and tap Locate Video… to choose the same video. Settings › Data shows the sync status.</p>
 
 <footer>
   <p><a href="index.html"><span class="l-ko">홈</span><span class="l-en">Home</span></a> ·
