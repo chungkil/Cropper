@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Partwise – Practice Routines</title>
+<meta name="description" content="영상의 여러 구간을 구간마다 정한 횟수만큼 반복하고, 그 묶음을 세트로 다시 돌리는 연습용 플레이어. Repeat each segment of a video a set number of times, then run the whole routine in sets.">
+<style>
+:root{--bg:#12142B;--card:#1B1F3D;--line:#2E3563;--text:#F3F4FA;--dim:#A8AEC9;--accent:#FFD23F;--a:#3440A0;--b:#128084;--c:#B05C24}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.75}
+html[data-lang="ko"] .l-en{display:none}
+html[data-lang="en"] .l-ko{display:none}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+.langbar{display:flex;justify-content:flex-end;padding:14px 0}
+.langbar button{border:1px solid var(--text);background:transparent;color:var(--text);padding:5px 14px;cursor:pointer;font-size:14px}
+.langbar button:first-child{border-radius:8px 0 0 8px}
+.langbar button:last-child{border-radius:0 8px 8px 0}
+.langbar button.on{background:var(--text);color:var(--bg)}
+.hero{background:linear-gradient(160deg,#4338CA 0%,#3B4FC4 30%,#1F8A9A 75%,#14A3A0 100%)}
+.hero .wrap{padding-bottom:40px}
+.hero-text{padding:28px 0 0}
+.hero h1{font-size:2.7rem;letter-spacing:-.01em;line-height:1.15}
+.hero .tag{font-size:1.25rem;margin-top:10px;font-weight:600}
+.hero .sub{font-size:1rem;margin-top:10px;max-width:600px;color:#E6E9F7}
+.hero .badge{display:inline-block;margin-top:22px;padding:7px 16px;border-radius:999px;background:rgba(18,20,43,.45);font-size:.92rem}
+.routine{margin-top:30px;background:rgba(18,20,43,.5);border:1px solid rgba(243,244,250,.18);border-radius:18px;padding:18px 18px 14px;max-width:620px}
+.routine .row{display:flex;align-items:stretch;gap:8px;flex-wrap:wrap}
+.step{flex:1;min-width:120px;border-radius:12px;padding:10px 12px;color:#fff}
+.step b{display:block;font-size:1rem}
+.step span{font-size:.85rem;opacity:.9}
+.step.a{background:var(--a)}.step.b{background:var(--b)}.step.c{background:var(--c)}
+.reps{display:flex;gap:4px;margin-top:6px}
+.reps i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.85)}
+.routine .sets{margin-top:12px;font-size:.92rem;color:#E6E9F7;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.routine .sets strong{color:var(--accent)}
+h2{font-size:1.35rem;margin:52px 0 16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+.card h3{font-size:1.02rem;margin-bottom:6px;color:var(--accent)}
+.card p{font-size:.94rem;color:var(--dim)}
+.card h3 .pro{display:inline-block;margin-left:8px;padding:0 8px;border:1px solid var(--accent);border-radius:999px;font-size:.72rem;line-height:1.6;vertical-align:2px}
+kbd{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85em;border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;padding:0 5px;color:var(--text);background:#232849}
+table{width:100%;border-collapse:collapse;font-size:.94rem}
+th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--accent);font-weight:600}
+td{color:var(--dim)}
+td:first-child{color:var(--text)}
+.note{color:var(--dim);font-size:.9rem;margin-top:12px}
+footer.wrap{border-top:1px solid var(--line);margin:56px auto 0;padding:26px 20px 40px;text-align:center;font-size:.9rem;color:var(--dim)}
+footer a{color:var(--text)}
+@media (max-width:560px){.hero h1{font-size:2.1rem}th,td{padding:10px 6px}.step{min-width:0;flex-basis:30%}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+<div class="wrap">
+  <div class="langbar">
+    <button id="b-en" class="on" onclick="setLang('en')">English</button>
+    <button id="b-ko" onclick="setLang('ko')">한국어</button>
+  </div>
+  <div class="hero-text">
+    <h1>Partwise</h1>
+    <p class="tag"><span class="l-ko">구간마다 몇 번, 전체는 몇 세트</span><span class="l-en">Reps for each part, then sets</span></p>
+    <p class="sub"><span class="l-ko">영상의 여러 구간을 구간마다 정한 횟수만큼 순서대로 반복하고, 그 묶음 전체를 정한 세트 수만큼 다시 돌립니다. 실행을 한 번 누르면 끝날 때까지 화면을 만질 필요가 없습니다.</span><span class="l-en">Partwise plays several segments of a video in order, each as many times as you set, then runs the whole routine again for the number of sets you choose. Press Run once and practice without touching the screen.</span></p>
+    <p class="badge"><span class="l-ko">iPhone · iPad · Mac — App Store 출시 준비 중</span><span class="l-en">iPhone · iPad · Mac — coming soon to the App Store</span></p>
+  </div>
+  <div class="routine" aria-label="Example program">
+    <div class="row">
+      <div class="step a"><b><span class="l-ko">파트 A</span><span class="l-en">Part A</span></b><span>0:02–0:10 · ×2</span><div class="reps"><i></i><i></i></div></div>
+      <div class="step b"><b><span class="l-ko">파트 B</span><span class="l-en">Part B</span></b><span>0:10–0:18 · ×2</span><div class="reps"><i></i><i></i></div></div>
+      <div class="step c"><b><span class="l-ko">파트 C</span><span class="l-en">Part C</span></b><span>0:18–0:26 · ×1</span><div class="reps"><i></i></div></div>
+    </div>
+    <p class="sets"><span><span class="l-ko">전체 <strong>2세트</strong> · 예상 시간 1:20</span><span class="l-en">Whole routine <strong>× 2 sets</strong> · 1:20</span></span><span><span class="l-ko">세트 1/2 · 스텝 2/3 · 반복 1/2</span><span class="l-en">Set 1/2 · Step 2/3 · Rep 1/2</span></span></p>
+  </div>
+</div>
+</header>
+
+<main class="wrap">
+
+<h2><span class="l-ko">핵심 기능</span><span class="l-en">Key features</span></h2>
+<div class="grid">
+  <div class="card">
+    <h3><span class="l-ko">구간별 횟수 × 세트</span><span class="l-en">Reps for each part, then sets</span></h3>
+    <p class="l-ko">'파트 A 4회 → 파트 B 4회 → 전체 3세트'처럼 루틴을 프로그램으로 저장해 두면, 실행 한 번으로 스텝·반복·세트가 저절로 넘어갑니다.</p>
+    <p class="l-en">Save a routine like "Part A ×4, Part B ×4, three sets" as a program. Press Run once and Partwise moves through every step, rep and set on its own.</p>
+  </div>
+  <div class="card">
+    <h3><span class="l-ko">손대지 않는 실행</span><span class="l-en">Hands-free runs</span></h3>
+    <p class="l-ko">거울 앞에 세워 두고 실행을 누르세요. 지금 어디쯤인지 '세트 1/2 · 스텝 2/3 · 반복 1/4'처럼 멀리서도 읽히게 크게 보이고, 끝날 때까지 화면이 꺼지지 않습니다. 화면을 누르면 일시정지, 현재 반복 다시, 이전·다음 스텝, 종료 버튼이 나타납니다.</p>
+    <p class="l-en">Prop it up in front of the mirror and press Run. Where you are, such as "Set 1/2 · Step 2/3 · Rep 1/4", is shown large enough to read from across the room, and the screen stays on until the end. Tap it to pause, repeat the current rep, go to the previous or next step, or stop.</p>
+  </div>
+  <div class="card">
+    <h3><span class="l-ko">구간별 속도</span><span class="l-en">Speed for each segment</span><span class="pro">Pro</span></h3>
+    <p class="l-ko">어려운 구간만 0.25배까지 느리게 반복하고, 익숙해지면 원래 속도로 올립니다. 0.25–2.0배, 음높이는 그대로입니다.</p>
+    <p class="l-en">Slow just the hard part down to 0.25x, then bring it back up as you get it. Anywhere from 0.25x to 2.0x, with the pitch unchanged.</p>
+  </div>
+  <div class="card">
+    <h3><span class="l-ko">좌우 반전</span><span class="l-en">Mirroring</span><span class="pro">Pro</span></h3>
+    <p class="l-ko">스텝마다 또는 프로그램 전체를 거울처럼 뒤집어, 마주 보고 시범을 보이는 영상도 그대로 따라 합니다.</p>
+    <p class="l-en">Flip a step or the whole program like a mirror, so you can follow along with someone demonstrating while facing you.</p>
+  </div>
+  <div class="card">
+    <h3><span class="l-ko">프레임 단위 편집</span><span class="l-en">Frame-accurate editing</span></h3>
+    <p class="l-ko">영상을 재생하다가 시작에서 A, 끝에서 B를 누르면 스텝이 됩니다(B만 누르면 앞 구간이 끝난 곳에서 이어서). 노란 핸들을 끄는 동안 그 위치의 프레임을 보여 주고, 타임라인을 한 프레임까지 확대해 경계를 정확히 맞춥니다.</p>
+    <p class="l-en">Tap A at the start and B at the end while the video plays, and that's a step (tap only B to continue from where the previous segment ended). While you drag a yellow handle the player shows the frame under it, and the timeline zooms down to single frames.</p>
+  </div>
+  <div class="card">
+    <h3><span class="l-ko">큐 시트 공유</span><span class="l-en">Cue sheets</span></h3>
+    <p class="l-ko">만든 루틴을 작은 파일로 보내 팀·수업에서 같은 루틴으로 연습합니다. 영상은 보내지 않고, 받는 사람이 자기 기기의 같은 영상에 붙입니다. 보내기는 Pro, 받기는 무료입니다.</p>
+    <p class="l-en">Send a routine as a small file so a team or class practices the same routine. Videos aren't sent; each person attaches their own copy of the video. Sending is Pro; opening is free.</p>
+  </div>
+</div>
+
+<h2><span class="l-ko">그 밖에</span><span class="l-en">Also</span></h2>
+<div class="grid">
+  <div class="card">
+    <h3><span class="l-ko">∞ 반복</span><span class="l-en">Repeat until you're ready</span></h3>
+    <p class="l-ko">스텝이나 세트를 ∞로 두면 '다음'을 누를 때까지 계속 반복하고, '반복 7/∞'처럼 몇 번 돌았는지 세어 줍니다. ∞ 스텝이 도는 동안에는 '다음 스텝' 버튼이 늘 크게 보입니다.</p>
+    <p class="l-en">Set a step or the sets to ∞ and it keeps going until you tap Next, counting as it goes ("Rep 7/∞"). While an ∞ step plays, a large Next Step button is always on screen.</p>
+  </div>
+  <div class="card">
+    <h3><span class="l-ko">영상은 제자리에</span><span class="l-en">Your videos stay where they are</span></h3>
+    <p class="l-ko">사진 보관함이나 파일 앱의 영상을 앱으로 복사하지 않고 원래 위치만 기억해, 영상이 많아도 앱 용량이 늘지 않습니다. 프로그램과 구간은 본인의 iCloud로 iPhone·iPad·Mac이 함께 쓰고, 영상은 올리지 않습니다.</p>
+    <p class="l-en">Videos from your photo library or the Files app aren't copied; Partwise only remembers where they are, so the app doesn't grow with your videos. Programs and segments sync through your own iCloud across iPhone, iPad and Mac; videos are never uploaded.</p>
+  </div>
+  <div class="card">
+    <h3><span class="l-ko">넓은 화면은 편집기처럼</span><span class="l-en">A video-editor layout on big screens</span></h3>
+    <p class="l-ko">iPad·Mac·펼친 iPhone Duo에서는 위에 영상과 고른 스텝 설정, 가운데에 화면 폭 전체의 타임라인과 조그·셔틀, 아래에 스텝 표를 둡니다. 타임라인의 색 칸을 누르면 그 스텝이 선택되고, 재생 중인 스텝은 ▶로 표시됩니다.</p>
+    <p class="l-en">On iPad, Mac and an unfolded iPhone Duo, the video and the selected step's settings sit on top, a full-width timeline with a jog and shuttle in the middle, and a table of steps below. Tap a colored block on the timeline to select its step; the step that is playing is marked with ▶.</p>
+  </div>
+  <div class="card">
+    <h3><span class="l-ko">키보드로 편집</span><span class="l-en">Edit from the keyboard</span></h3>
+    <p class="l-ko">Mac과 키보드를 연결한 iPad에서는 영상 편집 앱처럼 <kbd>I</kbd>/<kbd>O</kbd>로 A/B, <kbd>←</kbd>/<kbd>→</kbd>로 한 프레임, <kbd>J</kbd>/<kbd>K</kbd>/<kbd>L</kbd>로 셔틀, <kbd>Space</kbd>로 재생, <kbd>P</kbd>로 구간 미리 재생을 합니다.</p>
+    <p class="l-en">On a Mac, or an iPad with a keyboard, it works like a video editor: <kbd>I</kbd>/<kbd>O</kbd> for A/B, <kbd>←</kbd>/<kbd>→</kbd> for one frame, <kbd>J</kbd>/<kbd>K</kbd>/<kbd>L</kbd> to shuttle, <kbd>Space</kbd> to play and <kbd>P</kbd> to preview a segment.</p>
+  </div>
+  <div class="card">
+    <h3><span class="l-ko">iPhone Duo</span><span class="l-en">iPhone Duo</span></h3>
+    <p class="l-ko">펼치면 넓은 편집 화면을, 반쯤 접어 세우면 위에 영상, 아래에 편집이나 진행 표시를 둡니다. 실행 중에 접거나 펴도 재생은 이어집니다.</p>
+    <p class="l-en">Unfolded, you get the wide editor. Half-folded and standing, the video goes on top with the editor or the progress below. Folding or unfolding mid-run doesn't stop playback.</p>
+  </div>
+  <div class="card">
+    <h3><span class="l-ko">바로 해 보는 예시 두 가지</span><span class="l-en">Two examples to try right away</span></h3>
+    <p class="l-ko">처음 열면 춤과 운동 예시(영상과 프로그램)가 들어 있어, 내 영상을 고르기 전에 실행을 끝까지 해 볼 수 있습니다. 예시는 무료 저장 개수에 세지 않습니다.</p>
+    <p class="l-en">The first time you open it, a dance example and a workout example, each with its video and program, are ready, so you can try a full run before picking your own video. The examples don't count toward the free limit.</p>
+  </div>
+</div>
+
+<h2><span class="l-ko">이렇게 씁니다</span><span class="l-en">How people use it</span></h2>
+<table>
+  <tr><th><span class="l-ko">누가</span><span class="l-en">Who</span></th><th><span class="l-ko">예시 프로그램</span><span class="l-en">Example program</span></th></tr>
+  <tr><td><span class="l-ko">댄서</span><span class="l-en">Dancers</span></td><td><span class="l-ko">1–8카운트 5회 → 9–16카운트 5회 → 전체 3세트</span><span class="l-en">Counts 1–8 ×5 → counts 9–16 ×5 → whole routine ×3</span></td></tr>
+  <tr><td><span class="l-ko">홈 트레이닝</span><span class="l-en">Home workouts</span></td><td><span class="l-ko">스쿼트 2회 → 팔벌려뛰기 1회 → 사이드 런지 2회 → 전체 3세트</span><span class="l-en">Squats ×2 → jumping jacks ×1 → side lunges ×2 → all ×3</span></td></tr>
+  <tr><td><span class="l-ko">어학 학습자</span><span class="l-en">Language learners</span></td><td><span class="l-ko">문장1 3회 → 문장2 3회 → 문장3 3회 → 전체 2세트 (쉐도잉)</span><span class="l-en">Sentence 1 ×3 → sentence 2 ×3 → sentence 3 ×3 → all ×2 (shadowing)</span></td></tr>
+  <tr><td><span class="l-ko">악기 연주자</span><span class="l-en">Musicians</span></td><td><span class="l-ko">솔로 앞부분 4회 → 뒷부분 4회 → 앞뒤 연결 2회 → 전체 2세트</span><span class="l-en">Solo, first half ×4 → second half ×4 → both together ×2 → all ×2</span></td></tr>
+  <tr><td><span class="l-ko">스포츠·코치</span><span class="l-en">Sports and coaching</span></td><td><span class="l-ko">임팩트 구간 0.5배속 10회 (Pro)</span><span class="l-en">Impact moment at 0.5× speed, ×10 (Pro)</span></td></tr>
+</table>
+
+<h2><span class="l-ko">무료와 Pro</span><span class="l-en">Free and Pro</span></h2>
+<table>
+  <tr><th></th><th><span class="l-ko">무료</span><span class="l-en">Free</span></th><th>Pro</th></tr>
+  <tr><td><span class="l-ko">저장 프로그램</span><span class="l-en">Saved programs</span></td><td><span class="l-ko">3개 (예시는 세지 않음)</span><span class="l-en">3 (the examples don't count)</span></td><td><span class="l-ko">무제한</span><span class="l-en">Unlimited</span></td></tr>
+  <tr><td><span class="l-ko">구간별 재생 속도</span><span class="l-en">Speed per segment</span></td><td><span class="l-ko">1.0배</span><span class="l-en">1.0×</span></td><td><span class="l-ko">0.25–2.0배, 음높이 유지</span><span class="l-en">0.25–2.0×, pitch preserved</span></td></tr>
+  <tr><td><span class="l-ko">구간 편집·실행·∞·기본 단축키·페이지 터너</span><span class="l-en">Editing, running, ∞, basic shortcuts, page turners</span></td><td><span class="l-ko">모두</span><span class="l-en">All</span></td><td><span class="l-ko">모두</span><span class="l-en">All</span></td></tr>
+  <tr><td><span class="l-ko">연습 보조: 반복 앞 간격·카운트다운, 좌우 반전, 시간 기준 반복</span><span class="l-en">Practice aids: interval and countdown before each rep, mirroring, repeat for a set time</span></td><td><span class="l-ko">없음</span><span class="l-en">—</span></td><td><span class="l-ko">사용</span><span class="l-en">Included</span></td></tr>
+  <tr><td><span class="l-ko">편집 보조: 오디오 파형, 핸들을 쉼·박자에 맞추기, 재생 위치에서 자르기, 스텝 단축키</span><span class="l-en">Editing aids: audio waveform, snapping handles to pauses and beats, split at the playhead, step shortcuts</span></td><td><span class="l-ko">없음</span><span class="l-en">—</span></td><td><span class="l-ko">사용</span><span class="l-en">Included</span></td></tr>
+  <tr><td><span class="l-ko">큐 시트</span><span class="l-en">Cue sheets</span></td><td><span class="l-ko">받기</span><span class="l-en">Open</span></td><td><span class="l-ko">보내기·받기</span><span class="l-en">Send and open</span></td></tr>
+  <tr><td><span class="l-ko">iPhone·iPad에서 화면을 끄거나 다른 앱으로 갔을 때</span><span class="l-en">On iPhone and iPad, screen locked or another app open</span></td><td><span class="l-ko">일시정지</span><span class="l-en">Pauses</span></td><td><span class="l-ko">계속 재생, 잠금화면에 진행 표시, 이어폰 '다음 곡'으로 다음 스텝</span><span class="l-en">Keeps playing, shows progress on the Lock Screen, earphones' next-track button goes to the next step</span></td></tr>
+  <tr><td><span class="l-ko">광고</span><span class="l-en">Ads</span></td><td><span class="l-ko">없음</span><span class="l-en">None</span></td><td><span class="l-ko">없음</span><span class="l-en">None</span></td></tr>
+</table>
+<p class="note"><span class="l-ko">Pro는 한 번 구매로 계속 쓰며 구독이 없습니다. 같은 Apple 계정의 iPhone·iPad·Mac에서 함께 쓰고, 가족 공유를 지원합니다.</span><span class="l-en">Pro is a one-time purchase with no subscription. It works on every iPhone, iPad and Mac signed in to the same Apple Account, and supports Family Sharing.</span></p>
+
+</main>
+
+<footer class="wrap">
+  <p><a href="support.html"><span class="l-ko">지원</span><span class="l-en">Support</span></a> ·
+     <a href="privacy.html"><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></a></p>
+  <p style="margin-top:8px">chungkil.cksw@gmail.com</p>
+</footer>
+
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  document.documentElement.setAttribute('lang', l);
+  document.getElementById('b-ko').classList.toggle('on', l==='ko');
+  document.getElementById('b-en').classList.toggle('on', l==='en');
+  try{ localStorage.setItem('lang', l); }catch(e){}
+}
+try{ var s=localStorage.getItem('lang'); if(s) setLang(s); }catch(e){}
+</script>
+</body>
+</html>
