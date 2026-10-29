@@ -41,11 +41,11 @@ footer a{color:var(--text)}
 </div>
 
 <h1><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></h1>
-<p class="updated"><span class="l-ko">최종 수정일: 2026년 10월 28일 · Partwise</span><span class="l-en">Last updated: 28 October 2026 · Partwise</span></p>
+<p class="updated"><span class="l-ko">최종 수정일: 2026년 10월 29일 · Partwise</span><span class="l-en">Last updated: 29 October 2026 · Partwise</span></p>
 
 <div class="summary">
-  <p class="l-ko" style="color:var(--text)"><b>요약 —</b> Partwise는 개인정보를 수집하지 않고 개발자에게 아무것도 보내지 않습니다. 개발자가 운영하는 서버, 계정, 분석 도구, 광고가 없습니다. 고른 영상은 앱으로 복사하지 않고 기기 안에서 재생만 하며, 기기 밖으로 내보내지 않습니다. 프로그램은 사용자 본인의 iCloud로 동기화되는 것 말고는, 사용자가 큐 시트를 직접 보낼 때만 사용자가 고른 곳으로 갑니다(영상은 넣지 않음). 인앱 구매는 Apple의 App Store가 처리합니다.</p>
-  <p class="l-en" style="color:var(--text)"><b>In short —</b> Partwise collects no personal information and sends nothing to the developer. There is no developer-run server, no account, no analytics and no advertising. The videos you choose aren't copied into the app; they are only played on your device and never leave it. Apart from syncing through your own iCloud, your programs go anywhere else only when you send a cue sheet yourself, and only where you choose; videos are never included. In-app purchases are handled by Apple's App Store.</p>
+  <p class="l-ko" style="color:var(--text)"><b>요약 —</b> Partwise는 개인정보를 수집하지 않고 개발자에게 아무것도 보내지 않습니다. 개발자가 운영하는 서버, 계정, 분석 도구, 광고가 없습니다. 고른 영상은 앱으로 복사하지 않고 기기 안에서 재생만 하며, 앱이 기기 밖으로 보내지 않습니다. 프로그램은 사용자 본인의 iCloud로 동기화되는 것 말고는, 사용자가 큐 시트(영상은 넣지 않음)나 영상으로 내보낸 파일을 직접 공유할 때만 사용자가 고른 곳으로 갑니다. 인앱 구매는 Apple의 App Store가 처리합니다.</p>
+  <p class="l-en" style="color:var(--text)"><b>In short —</b> Partwise collects no personal information and sends nothing to the developer. There is no developer-run server, no account, no analytics and no advertising. The videos you choose aren't copied into the app; they are only played on your device, and the app never sends them anywhere. Apart from syncing through your own iCloud, your programs go anywhere else only when you share a cue sheet (which never includes the video) or a video you exported yourself, and only where you choose. In-app purchases are handled by Apple's App Store.</p>
 </div>
 
 <h2><span class="l-ko">1. 사진 보관함</span><span class="l-en">1. Photo library</span></h2>
@@ -58,11 +58,15 @@ footer a{color:var(--text)}
   <li class="l-en">Access to selected photos only is fine, and if you decline, you can add videos with From Files instead</li>
   <li class="l-ko">원본이 iCloud 사진에만 있으면 기기가 Apple의 iCloud에서 내려받아 재생합니다. 이 과정은 Apple이 처리하며 개발자에게 아무것도 전달되지 않습니다</li>
   <li class="l-en">If the original is only in iCloud Photos, your device downloads it from Apple's iCloud to play it. Apple handles this, and nothing reaches the developer</li>
+  <li class="l-ko">내보낸 영상을 공유 시트의 '비디오 저장'으로 사진 앱에 저장할 때는 사진 보관함에 '추가'만 하는 권한을 따로 묻습니다. 이 권한으로는 사진을 읽지 않습니다</li>
+  <li class="l-en">When you save an exported video to Photos with Save Video in the share sheet, the app separately asks for permission to add to your photo library. That permission doesn't let it read your photos</li>
 </ul>
 
 <h2><span class="l-ko">2. 파일 앱의 영상</span><span class="l-en">2. Videos from Files</span></h2>
 <p class="l-ko">'파일에서'(Mac에서는 끌어다 놓기 포함)로 고른 영상도 복사하지 않습니다. 다음에 다시 열 수 있도록 그 파일의 위치를 가리키는 북마크만 기기에 저장합니다. 파일이 iCloud Drive에 있으면 기기가 Apple의 iCloud에서 내려받습니다.</p>
+<p class="l-ko">'자막 불러오기…'로 고른 자막 파일(SRT·WebVTT)은 읽어서 그 내용을 앱에 저장하고(아래 3항), 원래 파일은 건드리지 않습니다.</p>
 <p class="l-en">Videos chosen with From Files (or dragged in on a Mac) aren't copied either. Only a bookmark pointing to the file's location is stored on the device so it can be opened again. If the file is in iCloud Drive, your device downloads it from Apple's iCloud.</p>
+<p class="l-en">A subtitle file (SRT or WebVTT) chosen with Add Subtitles is read and its contents are saved in the app (section 3); the original file is left as it is.</p>
 
 <h2><span class="l-ko">3. 기기와 사용자의 iCloud에 저장되는 것</span><span class="l-en">3. What is stored on the device and in your iCloud</span></h2>
 <p class="l-ko">다음 정보가 기기에 저장됩니다. 원본 영상은 사진 보관함과 파일 앱에 그대로 남습니다.</p>
@@ -70,15 +74,19 @@ footer a{color:var(--text)}
 <ul>
   <li class="l-ko"><b>영상 목록.</b> 영상 이름과 파일 이름, 길이, 파일 크기, 프레임 정보, 위 1·2항의 식별자와 북마크. 파일 이름·길이·크기와 iCloud 사진의 식별자는 다른 기기에서 같은 영상을 찾는 데 씁니다</li>
   <li class="l-en"><b>Your video list.</b> Each video's name, file name, length, file size and frame information, plus the identifier or bookmark described in sections 1 and 2. The file name, length and size, and the iCloud Photos identifier, are used to find the same video on your other devices</li>
-  <li class="l-ko"><b>구간과 프로그램.</b> 구간의 이름·시작·끝·재생 속도, 스텝의 순서·반복 횟수·쉬는 시간·좌우 반전, 세트 수, 프로그램 이름과 마지막으로 실행한 시각</li>
-  <li class="l-en"><b>Segments and programs.</b> Segment names, start and end times and speeds; each step's order, repeat count, rest and mirroring; set counts; program names and when each was last run</li>
+  <li class="l-ko"><b>구간과 프로그램.</b> 구간의 이름·시작·끝·재생 속도, 스텝의 순서·반복 횟수·쉬는 시간·좌우 반전·반복마다 빠르게 할 폭과 최고 속도, 세트 수, 프로그램 이름과 마지막으로 실행한 시각</li>
+  <li class="l-ko"><b>자막.</b> 영상에 붙인 자막의 줄과 시각, 자막 이름. 사용자가 고른 자막 파일이나 영상에 든 자막 트랙에서 읽어 온 것입니다</li>
+  <li class="l-en"><b>Subtitles.</b> The lines and times of subtitles you add to a video, and their name, read from a subtitle file you choose or from a subtitle track in the video</li>
+  <li class="l-ko"><b>연습 기록.</b> 실행마다 시작한 날짜·시각, 영상이 재생된 시간, 끝까지 재생한 반복 수, 끝까지 마쳤는지, 그때의 프로그램 이름. 프로그램을 지워도 남으며, '연습 기록'에서 하나씩 지울 수 있습니다</li>
+  <li class="l-en"><b>Practice Log.</b> For each run, the date and time it started, how long the video played, the reps played to the end, whether the program finished, and the program's name at the time. Records stay if you delete the program, and you can delete them one by one in the Practice Log</li>
+  <li class="l-en"><b>Segments and programs.</b> Segment names, start and end times and speeds; each step's order, repeat count, rest, mirroring, and how much to speed up on each repeat and up to what speed; set counts; program names and when each was last run</li>
   <li class="l-ko"><b>미리보기 그림.</b> 라이브러리와 타임라인에 보여 줄 작은 그림. 기기의 캐시 폴더에 두며 시스템이 공간이 부족할 때 지울 수 있습니다</li>
   <li class="l-en"><b>Thumbnails.</b> Small images for the library and the timeline, kept in the device's cache folder, which the system may clear when space runs low</li>
   <li class="l-ko"><b>앱 상태.</b> 시작 안내를 봤는지, 예시를 이미 넣었는지, 설정에서 고른 값 같은 간단한 정보</li>
   <li class="l-en"><b>App state.</b> Small details, such as whether you've seen the welcome guide, whether the examples have been added, and the choices you make in Settings</li>
 </ul>
-<p class="l-ko"><b>iCloud 동기화.</b> 같은 Apple 계정의 기기 사이에 맞추기 위해 영상 목록·구간·프로그램을 <b>사용자 본인의 iCloud 개인 데이터베이스</b>에 저장합니다. 이 저장 공간은 Apple이 운영하며 사용자만 볼 수 있고, 개발자는 그 내용에 접근할 수 없습니다. 영상 원본과 미리보기 그림은 동기화하지 않습니다. 동기화를 원치 않으면 기기의 설정에서 iCloud를 쓰는 앱 목록에서 Partwise를 끄면 됩니다. 앱을 지워도 iCloud에 남은 자료는 Apple 계정의 iCloud 저장 공간 관리에서 지울 수 있습니다.</p>
-<p class="l-en"><b>iCloud sync.</b> To keep devices on the same Apple Account in step, your video list, segments and programs are stored in <b>your own private iCloud database</b>. Apple runs this storage; only you can see it, and the developer has no access to its contents. Original videos and thumbnails are not synced. If you don't want syncing, turn Partwise off in the list of apps using iCloud in your device's Settings. Data left in iCloud after deleting the app can be removed under your Apple Account's iCloud storage management.</p>
+<p class="l-ko"><b>iCloud 동기화.</b> 같은 Apple 계정의 기기 사이에 맞추기 위해 영상 목록·구간·프로그램·자막·연습 기록을 <b>사용자 본인의 iCloud 개인 데이터베이스</b>에 저장합니다. 이 저장 공간은 Apple이 운영하며 사용자만 볼 수 있고, 개발자는 그 내용에 접근할 수 없습니다. 영상 원본과 미리보기 그림은 동기화하지 않습니다. 동기화를 원치 않으면 기기의 설정에서 iCloud를 쓰는 앱 목록에서 Partwise를 끄면 됩니다. 앱을 지워도 iCloud에 남은 자료는 Apple 계정의 iCloud 저장 공간 관리에서 지울 수 있습니다.</p>
+<p class="l-en"><b>iCloud sync.</b> To keep devices on the same Apple Account in step, your video list, segments, programs, subtitles and Practice Log are stored in <b>your own private iCloud database</b>. Apple runs this storage; only you can see it, and the developer has no access to its contents. Original videos and thumbnails are not synced. If you don't want syncing, turn Partwise off in the list of apps using iCloud in your device's Settings. Data left in iCloud after deleting the app can be removed under your Apple Account's iCloud storage management.</p>
 <p class="l-ko">기기 백업(iCloud 백업, Mac·PC 백업)을 켜 두셨다면 위 정보가 그 백업에 포함될 수 있으며, 이는 Apple과 사용자의 백업 설정에 따릅니다.</p>
 <p class="l-en">If you back up your device (iCloud Backup, or to a Mac or PC), this information may be included in that backup, under Apple's and your own backup settings.</p>
 
@@ -88,37 +96,41 @@ footer a{color:var(--text)}
 <ul>
   <li class="l-ko"><b>담기는 것.</b> 프로그램 이름과 세트 수, 구간의 이름·시작·끝·속도, 스텝 설정, 그리고 받는 사람이 같은 영상을 고르도록 돕는 영상의 제목·파일 이름·길이</li>
   <li class="l-en"><b>What it contains.</b> The program name and set count; segment names, start and end times and speeds; step settings; and the video's title, file name and length, so the recipient can pick the same video</li>
-  <li class="l-ko"><b>담기지 않는 것.</b> 영상 자체, 사진 보관함 식별자, 파일 위치를 가리키는 북마크</li>
-  <li class="l-en"><b>What it leaves out.</b> The video itself, photo library identifiers and file bookmarks</li>
+  <li class="l-ko"><b>담기지 않는 것.</b> 영상 자체, 사진 보관함 식별자, 파일 위치를 가리키는 북마크, 자막, 연습 기록</li>
+  <li class="l-en"><b>What it leaves out.</b> The video itself, photo library identifiers, file bookmarks, subtitles and the Practice Log</li>
   <li class="l-ko">파일은 사용자가 공유 시트에서 고른 곳(메시지, 메일, AirDrop, 파일 앱 등)으로만 갑니다. 전송은 사용자가 고른 앱과 Apple이 처리하며, 개발자에게는 아무것도 오지 않습니다. 프로그램 이름이나 영상 제목에 남에게 보이고 싶지 않은 내용이 있으면 보내기 전에 바꿔 주세요</li>
   <li class="l-en">The file goes only where you send it from the share sheet (Messages, Mail, AirDrop, the Files app and so on). The app you choose and Apple handle the transfer, and nothing reaches the developer. If a program name or video title contains something you'd rather not share, change it before sending</li>
   <li class="l-ko">받은 큐 시트를 열면 그 내용이 받은 사람의 기기에 새 프로그램으로 저장되고 위 3항과 같이 다뤄집니다. 시스템이 앱으로 넘겨준 파일 사본은 읽은 뒤 지웁니다</li>
   <li class="l-en">When you open a cue sheet you received, its contents are saved on your device as a new program and handled as described in section 3. A copy of the file that the system hands to the app is deleted once it has been read</li>
 </ul>
 
-<h2><span class="l-ko">5. 인앱 구매</span><span class="l-en">5. In-app purchases</span></h2>
+<h2><span class="l-ko">5. 영상으로 내보내기</span><span class="l-en">5. Exporting a video</span></h2>
+<p class="l-ko">'영상으로 내보내기'(Pro)는 사용자가 '영상 만들기'를 누를 때만, 사용자의 영상에서 프로그램 순서대로 새 영상 파일을 기기 안에서 만듭니다. 만든 파일은 앱의 임시 폴더에 있다가 사용자가 공유 시트에서 고른 곳(사진 앱에 저장, 메시지, AirDrop, 파일 앱 등)으로만 가며, 내보내기 화면을 닫으면 앱 안의 임시 파일은 지웁니다. 개발자에게는 아무것도 오지 않습니다.</p>
+<p class="l-en">Export as Video (Pro) makes a new video file on the device from your own video, in the program's order, only when you tap Export Video. The file waits in the app's temporary folder and goes only where you send it from the share sheet (saving to Photos, Messages, AirDrop, the Files app and so on); the temporary file is deleted when you close the export screen. Nothing reaches the developer.</p>
+
+<h2><span class="l-ko">6. 인앱 구매</span><span class="l-en">6. In-app purchases</span></h2>
 <p class="l-ko">Partwise Pro 구매와 복원은 <b>Apple의 App Store</b>가 처리합니다. 앱은 구매 여부만 기기에서 확인하며, 개발자는 결제 수단이나 Apple 계정 같은 정보를 받지 않습니다.</p>
 <p class="l-en">Buying and restoring Partwise Pro are handled by <b>Apple's App Store</b>. The app only checks on the device whether Pro has been purchased; the developer never receives your payment details or Apple Account information.</p>
 
-<h2><span class="l-ko">6. 네트워크</span><span class="l-en">6. Network</span></h2>
+<h2><span class="l-ko">7. 네트워크</span><span class="l-en">7. Network</span></h2>
 <p class="l-ko">앱은 개발자의 서버나 다른 회사의 서버에 접속하지 않습니다. 인터넷이 쓰이는 경우는 위의 iCloud 동기화·내려받기와 App Store 구매처럼 Apple의 서비스가 처리할 때뿐입니다.</p>
-<p class="l-ko">카운트다운 음성, 파형, 소리 멈춤·박자 찾기는 모두 기기 안에서 처리합니다. 설정의 '도움말'·'개인정보 처리방침'·'Partwise 평가하기'는 브라우저나 App Store를 열 뿐이고, '문의하기'는 메일 앱을 엽니다. 문의 메일 제목에는 앱 버전이 들어가며, 사용자가 보내기 전에는 아무 데도 가지 않습니다.</p>
+<p class="l-ko">카운트다운 음성, 파형, 소리 멈춤·박자 찾기, 자막 읽기, 영상으로 내보내기는 모두 기기 안에서 처리합니다. 설정의 '도움말'·'개인정보 처리방침'·'Partwise 평가하기'는 브라우저나 App Store를 열 뿐이고, '문의하기'는 메일 앱을 엽니다. 문의 메일 제목에는 앱 버전이 들어가며, 사용자가 보내기 전에는 아무 데도 가지 않습니다.</p>
 <p class="l-en">The app does not connect to any server run by the developer or by anyone else. The only internet use is through Apple's own services, such as the iCloud sync and downloads and the App Store purchases above.</p>
-<p class="l-en">The spoken countdown, the waveform and finding pauses and beats all run on the device. Help, Privacy Policy and Rate Partwise in Settings simply open your browser or the App Store, and Contact Us opens your mail app with the app version in the subject; nothing is sent until you send it.</p>
+<p class="l-en">The spoken countdown, the waveform, finding pauses and beats, reading subtitles and exporting videos all run on the device. Help, Privacy Policy and Rate Partwise in Settings simply open your browser or the App Store, and Contact Us opens your mail app with the app version in the subject; nothing is sent until you send it.</p>
 
-<h2><span class="l-ko">7. 분석 · 추적 · 광고</span><span class="l-en">7. Analytics, tracking and advertising</span></h2>
+<h2><span class="l-ko">8. 분석 · 추적 · 광고</span><span class="l-en">8. Analytics, tracking and advertising</span></h2>
 <p class="l-ko">사용하지 않습니다. 분석 SDK, 크래시 리포터, 광고 네트워크, 추적 식별자(IDFA) 중 어느 것도 앱에 없으며, 앱 추적 투명성(ATT) 동의도 요청하지 않습니다. Apple이 App Store 차원에서 개발자에게 주는 집계 통계(다운로드 수 등)와, 사용자가 기기 설정에서 공유에 동의한 경우의 크래시 보고서는 개인을 식별할 수 없는 형태로 Apple을 통해 전달됩니다.</p>
 <p class="l-en">None are used. The app contains no analytics SDK, crash reporter, ad network or tracking identifier (IDFA), and never asks for App Tracking Transparency permission. Aggregate App Store statistics that Apple gives developers (such as download counts), and crash reports if you chose to share them in your device settings, come through Apple in a form that does not identify you.</p>
 
-<h2><span class="l-ko">8. 아동의 개인정보</span><span class="l-en">8. Children's privacy</span></h2>
+<h2><span class="l-ko">9. 아동의 개인정보</span><span class="l-en">9. Children's privacy</span></h2>
 <p class="l-ko">앱은 누구로부터도 개인정보를 수집하지 않으므로 아동으로부터 수집하는 정보도 없습니다.</p>
 <p class="l-en">The app collects no personal information from anyone, and therefore none from children.</p>
 
-<h2><span class="l-ko">9. 방침의 변경</span><span class="l-en">9. Changes to this policy</span></h2>
+<h2><span class="l-ko">10. 방침의 변경</span><span class="l-en">10. Changes to this policy</span></h2>
 <p class="l-ko">방침이 바뀌면 이 페이지를 고치고 위의 최종 수정일을 바꿉니다. 새로 수집하는 항목이 생기면 앱 안에서도 알리고, 그 항목은 사용자가 직접 켜야 동작하게 합니다.</p>
 <p class="l-en">If this policy changes, this page and the date above are updated. Should anything ever begin to be collected, you will be told in the app as well, and it will stay off until you turn it on.</p>
 
-<h2><span class="l-ko">10. 문의</span><span class="l-en">10. Contact</span></h2>
+<h2><span class="l-ko">11. 문의</span><span class="l-en">11. Contact</span></h2>
 <p class="l-ko">개인정보 관련 문의는 <b>chungkil.cksw@gmail.com</b> 으로 보내 주세요.</p>
 <p class="l-en">Questions about privacy can be sent to <b>chungkil.cksw@gmail.com</b>.</p>
 
