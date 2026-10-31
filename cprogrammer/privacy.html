@@ -37,8 +37,8 @@ footer a{color:var(--blue2)}
 </div>
 
 <h1><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></h1>
-<p class="upd"><span class="l-ko">스타트 C 프로그래밍 · 최종 수정 2026년 10월 28일</span>
-<span class="l-en">Start C Programming · Last updated October 28, 2026</span></p>
+<p class="upd"><span class="l-ko">스타트 C 프로그래밍 · 최종 수정 2026년 10월 31일</span>
+<span class="l-en">Start C Programming · Last updated October 31, 2026</span></p>
 
 <div class="big">
   <span class="l-ko">개발자는 이름·이메일 같은 개인정보를 수집하지 않습니다. 학습 기록과 작성한 코드는 이용자의 기기 안에만 있고,
@@ -55,30 +55,39 @@ We do not collect or transmit names, email addresses, phone numbers, contacts, o
 
 <h2><span class="l-ko">2. 학습 기록이 저장되는 곳</span><span class="l-en">2. Where your study data lives</span></h2>
 <div class="box">
-<p class="l-ko">레슨 진도(어디까지 봤는지, 마친 레슨), 퀴즈 답과 점수, 실습에서 채점한 코드, 설정(기본 C 표준, 추천받은 시작 레슨)은
-<b>이 기기 안에만</b> 저장됩니다. 이 기록을 iCloud나 다른 곳으로 보내지 않으므로 다른 기기와 이어지지 않습니다
+<p class="l-ko">레슨 진도(어디까지 봤는지, 마친 레슨), 퀴즈 답과 점수, 실습에서 채점한 코드, 연습장에 남긴 코드는 이 기기와 <b>이용자 본인의 iCloud</b>(Apple CloudKit의
+비공개 데이터베이스)에 저장되어, 같은 Apple 계정으로 iCloud에 로그인한 기기 사이에 이어집니다. 이 데이터베이스는 이용자의 Apple 계정에 속하며
+개발자는 볼 수 없습니다. iCloud에 로그인하지 않았거나 iOS 설정의 iCloud에서 이 앱을 끄면 이 기기 안에만 저장됩니다.
+설정(기본 C 표준, 추천받은 시작 레슨)은 <b>이 기기 안에만</b> 저장됩니다. 이 기록을 그 밖의 곳으로 보내지 않습니다
 (레슨을 마칠 때 그 트랙의 진행률만 5번의 이용 통계로 보냅니다).
 (이용자가 켜 둔 기기 전체 백업에는 다른 앱의 데이터처럼 함께 들어갈 수 있습니다.)</p>
-<p class="l-en">Lesson progress (where you stopped and which lessons you finished), quiz answers and scores, the code you graded in exercises,
-and settings (default C standard, recommended starting lesson) are stored <b>only on this device</b>. These records are not sent to iCloud or anywhere else,
-so they do not carry over to your other devices (when you finish a lesson, only that track's progress is sent as a usage statistic, see section 5). (A whole-device backup you have turned on may include them, like any other app's data.)</p>
+<p class="l-en">Lesson progress (where you stopped and which lessons you finished), quiz answers and scores, the code you graded in exercises, and the code you keep in the playground
+are stored on this device and in <b>your own iCloud</b> (a private database in Apple's CloudKit), so they carry over between devices signed in to iCloud
+with the same Apple Account. That database belongs to your Apple Account, and the developer cannot see it. If you are not signed in to iCloud,
+or you turn this app off under iCloud in iOS Settings, they are stored only on this device. Settings (default C standard, recommended starting lesson)
+are stored <b>only on this device</b>. These records are not sent anywhere else (when you finish a lesson, only that track's progress is sent
+as a usage statistic, see section 5). (A whole-device backup you have turned on may include them, like any other app's data.)</p>
 </div>
-<p class="l-ko">앱의 <i>설정 › 진도 초기화</i>로 학습 기록을 지울 수 있고, 앱을 지우면 기록도 함께 지워집니다.</p>
-<p class="l-en">You can erase your study records in <i>Settings › Reset progress</i>, and deleting the app removes them as well.</p>
+<p class="l-ko">앱의 <i>설정 › 진도 초기화</i>로 학습 기록을 지울 수 있으며, iCloud와 같은 계정의 다른 기기에서도 함께 지워집니다.
+연습장 코드는 진도 초기화로 지워지지 않고, 연습장 목록에서 하나씩 지우면 같은 방식으로 지워집니다.
+앱을 지우면 이 기기의 기록은 지워지지만 iCloud에 있는 기록은 남으므로, 모두 지우려면 앱을 지우기 전에 진도 초기화를 해 주세요.</p>
+<p class="l-en">You can erase your study records in <i>Settings › Reset progress</i>, which also erases them from iCloud and your other devices on the same account.
+Playground code is not erased by resetting progress; delete each one from the playground list, and it is erased the same way.
+Deleting the app removes the records on this device but not those in iCloud, so to erase everything, reset your progress before deleting the app.</p>
 
 <h2><span class="l-ko">3. 작성한 C 코드</span><span class="l-en">3. The C code you write</span></h2>
-<p class="l-ko">작성한 C 프로그램은 앱에 들어 있는 교육용 C 인터프리터가 <b>기기 안에서</b> 실행합니다. 코드를 외부로 보내지 않고,
+<p class="l-ko">작성한 C 프로그램은 앱에 들어 있는 교육용 C 인터프리터가 <b>기기 안에서</b> 실행합니다. 코드를 실행하려고 외부로 보내지 않고,
 실행에 인터넷 연결이 필요하지 않습니다. 프로그램은 앱 안의 가상 메모리에서만 돌며 기기의 파일·네트워크·다른 앱에 닿지 않습니다.</p>
 <p class="l-ko">프로그램이 읽고 쓰는 파일은 앱 안의 가상 파일이라 기기의 파일에 닿지 않고, 실행이 끝나면 저장하지 않습니다.</p>
 <p class="l-ko">프로세스·스레드·파이프·소켓도 앱 안에서 가상으로 만들어지며, 소켓은 앱 안의 루프백에서만 연결되어 기기 밖으로 아무것도 보내지 않습니다.</p>
-<p class="l-ko">연습장에 쓴 코드는 저장하지 않습니다(열 때마다 예제 코드로 새로 시작합니다). 실습은 채점한 코드만 위 2번처럼 기기에 남깁니다.</p>
-<p class="l-en">Your C programs run <b>on the device</b> in the educational C interpreter built into the app. Code is never sent anywhere,
+<p class="l-ko">연습장에 쓴 코드는 고칠 때마다 함께 적은 입력·명령줄 인자·가상 파일과 함께 위 2번처럼 기기와 본인의 iCloud에 남습니다. 실습은 채점한 코드만 남깁니다.</p>
+<p class="l-en">Your C programs run <b>on the device</b> in the educational C interpreter built into the app. Code is never sent anywhere to run,
 and running it needs no internet connection. Programs run only inside the app's virtual memory and cannot reach the device's files,
 the network, or other apps.</p>
 <p class="l-en">Files your program reads and writes are virtual files inside the app; they never touch the device's files and are not saved after the run.</p>
 <p class="l-en">Processes, threads, pipes, and sockets are also created virtually inside the app, and sockets connect only over loopback inside the app, so nothing is sent off the device.</p>
-<p class="l-en">Code written in the playground is not saved (it starts from the sample code each time). For exercises, only the code you grade
-is kept on the device, as described in section 2.</p>
+<p class="l-en">Code written in the playground is kept as you edit it, together with its input, command-line arguments, and virtual files, on the device and in your own iCloud,
+as described in section 2. For exercises, only the code you grade is kept.</p>
 
 <h2><span class="l-ko">4. 인앱 구매</span><span class="l-en">4. In-app purchases</span></h2>
 <p class="l-ko">트랙 구매는 Apple의 App Store를 통해서만 이루어집니다. 결제 정보는 Apple이 처리하며 개발자에게 전달되지 않습니다.
@@ -88,13 +97,15 @@ The app only checks which tracks you own, and sends the purchased track, product
 
 <h2><span class="l-ko">5. 광고 · 분석 · 추적</span><span class="l-en">5. Ads, analytics, and tracking</span></h2>
 <p class="l-ko"><b>광고는 없습니다.</b> 앱을 고치는 데 쓰려고 Google 애널리틱스(Firebase)로 익명의 이용 통계를 받습니다:
-앱 실행과 사용 시간, 레슨을 마칠 때의 트랙 진행률(트랙·레슨 번호, 마친 레슨 수), 트랙 구매(상품 ID, App Store가 알려 주는 가격),
+앱 실행과 사용 시간, 레슨을 마칠 때의 트랙 진행률(트랙·레슨 번호, 마친 레슨 수), 퀴즈와 복습을 끝낼 때의 점수(맞힌 수), 실습을 처음 통과할 때의 채점 횟수,
+잠긴 레슨 미리보기와 구매 화면 열기, 트랙 구매(상품 ID, App Store가 알려 주는 가격),
 기기 종류와 OS 버전, IP 주소로 짐작한 대략의 지역입니다. 이 통계는 앱을 설치할 때마다 새로 만들어지는 무작위 식별자에만 묶이며,
 이름·이메일 같은 개인정보나 작성한 코드·퀴즈 답은 보내지 않습니다.</p>
 <p class="l-ko">광고 식별자(IDFA)를 쓰지 않고, 다른 회사의 앱이나 웹사이트에 걸쳐 이용자를 추적하지 않으므로 추적 동의 요청도 표시하지 않습니다.
 보낸 통계는 Google의 개인정보처리방침(policies.google.com/privacy)에 따라 처리됩니다.</p>
 <p class="l-en"><b>No ads.</b> To improve the app, it sends anonymous usage statistics to Google Analytics (Firebase):
-app launches and time in the app, track progress when you finish a lesson (track and lesson numbers, lessons finished), track purchases
+app launches and time in the app, track progress when you finish a lesson (track and lesson numbers, lessons finished), your score when you finish a quiz or a review
+(number correct), how many times you graded before first passing an exercise, previews of locked lessons and opening the purchase screen, track purchases
 (product ID and the price reported by the App Store), device model and OS version, and an approximate region inferred from your IP address.
 These statistics are tied only to a random identifier created for each installation of the app; no personal information such as
 your name or email, and none of your code or quiz answers, is sent.</p>
