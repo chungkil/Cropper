@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parens — Common Lisp 배우기</title>
+<meta name="description" content="레슨을 읽으며 바로 실행하고, 자동 채점 문제로 익히는 Common Lisp 학습 앱 (iPhone·iPad·Mac)">
+<style>
+:root{--paper:#F5F5F2;--card:#FFFFFF;--ink:#15171D;--sub:#5A5E68;--line:#E2E1DA;--blue:#3A52C4;--blue2:#2A3D96;--soft:#E8ECFA;--code:#FAFAF7;--val:#2E7D32}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;background:var(--paper);color:var(--ink);line-height:1.7}
+html[data-lang="ko"] .l-en{display:none}
+html[data-lang="en"] .l-ko{display:none}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px 60px}
+.langbar{display:flex;justify-content:flex-end;padding:14px 0}
+.langbar button{border:1px solid var(--blue);background:transparent;color:var(--blue);padding:5px 14px;cursor:pointer;font-size:14px}
+.langbar button:first-child{border-radius:8px 0 0 8px}
+.langbar button:last-child{border-radius:0 8px 8px 0}
+.langbar button.on{background:var(--blue);color:#fff}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:center;margin:20px 0 36px}
+.hero h1{font-size:2.3rem;line-height:1.25;margin-bottom:12px}
+.hero .tag{font-size:1.1rem;color:var(--sub)}
+.badge{display:inline-block;margin-top:18px;background:var(--ink);color:#fff;border-radius:10px;padding:9px 16px;font-size:.95rem;text-decoration:none}
+.demo{background:var(--card);border-radius:18px;padding:16px;box-shadow:0 6px 24px rgba(21,23,29,.08);font-size:.88rem}
+.demo pre{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--code);border-radius:10px;padding:12px 14px;line-height:1.6;overflow-x:auto}
+.demo .p{color:var(--blue)}
+.demo .v{color:var(--val)}
+.demo .cap{color:var(--sub);font-size:.82rem;margin-top:8px}
+h2{font-size:1.35rem;margin:40px 0 14px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.card{background:var(--card);border-radius:16px;padding:20px 22px;box-shadow:0 4px 18px rgba(21,23,29,.06)}
+.card h3{font-size:1.05rem;margin-bottom:6px}
+p,li,td,th{font-size:.98rem;color:#33363d}
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:16px;overflow:hidden;box-shadow:0 4px 18px rgba(21,23,29,.06)}
+th,td{text-align:left;padding:12px 16px;border-bottom:1px solid #ECEBE4;vertical-align:top;word-break:keep-all}
+th{background:#F0F0EC;font-weight:600}
+tr:last-child td{border-bottom:none}
+.free{color:var(--val);font-weight:600}
+.note{color:var(--sub);font-size:.9rem;margin-top:10px}
+footer{border-top:1px solid var(--line);padding:24px 0 0;margin-top:44px;text-align:center;font-size:.9rem;color:var(--sub)}
+footer a{color:var(--blue2)}
+@media (max-width:720px){.hero{grid-template-columns:1fr}.hero h1{font-size:1.9rem}.grid{grid-template-columns:1fr}th,td{padding:10px 10px;font-size:.92rem}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="langbar">
+  <button id="b-ko" class="on" onclick="setLang('ko')">한국어</button>
+  <button id="b-en" onclick="setLang('en')">English</button>
+</div>
+
+<section class="hero">
+  <div>
+    <h1>Parens</h1>
+    <p class="tag"><span class="l-ko">읽고, 바로 실행하고, 풀어 보며 배우는 Common Lisp. 다른 언어를 아는 개발자를 위해 만들었습니다.</span>
+    <span class="l-en">Learn Common Lisp by reading, running, and solving. Made for developers who already know another language.</span></p>
+    <a class="badge" href="https://apps.apple.com/app/id6829205546"><span class="l-ko">App Store에서 받기</span><span class="l-en">Get it on the App Store</span></a>
+    <p class="note"><span class="l-ko">iPhone · iPad · Mac · 1~3단원 무료</span><span class="l-en">iPhone · iPad · Mac · Units 1–3 free</span></p>
+  </div>
+  <div class="demo">
+<pre><span class="p">&gt;</span> (defun twice (f x) (funcall f (funcall f x)))
+<span class="v">TWICE</span>
+<span class="p">&gt;</span> (twice (lambda (n) (* n 3)) 7)
+<span class="v">63</span>
+<span class="p">&gt;</span> (mapcar #'evenp '(1 2 3 4))
+<span class="v">(NIL T NIL T)</span></pre>
+    <p class="cap"><span class="l-ko">앱 안의 Lisp 엔진이 기기에서 바로 실행합니다. 인터넷이 없어도 됩니다.</span>
+    <span class="l-en">The Lisp engine inside the app runs it right on the device, no internet needed.</span></p>
+  </div>
+</section>
+
+<h2><span class="l-ko">이렇게 배웁니다</span><span class="l-en">How you learn</span></h2>
+<div class="grid">
+  <div class="card">
+    <h3><span class="l-ko">카드마다 실행되는 예제</span><span class="l-en">Runnable examples on every card</span></h3>
+    <p class="l-ko">레슨은 짧은 카드로 나뉘고, 카드마다 있는 예제를 그 자리에서 실행하고 고쳐 볼 수 있습니다.</p>
+    <p class="l-en">Lessons are split into short cards, and every card has examples you can run and edit in place.</p>
+  </div>
+  <div class="card">
+    <h3><span class="l-ko">아는 언어와 나란히</span><span class="l-en">Side by side with a language you know</span></h3>
+    <p class="l-ko">같은 개념을 Python · JavaScript · Swift로 쓴 비교 코드를 함께 보여 줍니다.</p>
+    <p class="l-en">See the same idea written in Python, JavaScript, or Swift next to the Lisp.</p>
+  </div>
+  <div class="card">
+    <h3><span class="l-ko">자동 채점 문제</span><span class="l-en">Auto-graded problems</span></h3>
+    <p class="l-ko">숨긴 테스트 케이스로 채점하고, 틀리면 입력·기대값·실제값을 보여 줍니다. 3단계 힌트와, 통과한 뒤 다른 풀이도 있습니다.</p>
+    <p class="l-en">Solutions are graded against hidden test cases; when one fails you see the input, the expected value, and what you got. Three-step hints, and other solutions once you pass.</p>
+  </div>
+  <div class="card">
+    <h3><span class="l-ko">진짜 Lisp답게 다루는 REPL</span><span class="l-en">A REPL that feels like Lisp</span></h3>
+    <p class="l-ko">오류가 나면 재시작(restart)을 골라 이어 갈 수 있고, 괄호 단위로 옮기고 감싸는 구조 편집과 자동완성을 지원합니다.</p>
+    <p class="l-en">When an error happens you can pick a restart and carry on, with structural editing that moves and wraps by parentheses, plus completion.</p>
+  </div>
+  <div class="card">
+    <h3><span class="l-ko">스킬 트리와 오늘의 챌린지</span><span class="l-en">Skill tree and daily challenge</span></h3>
+    <p class="l-ko">단원을 마치면 다음 단원이 열리고, 매일 문제 하나가 챌린지로 나옵니다.</p>
+    <p class="l-en">Finishing a unit opens the next one, and one problem a day is picked as the challenge.</p>
+  </div>
+  <div class="card">
+    <h3><span class="l-ko">이미 안다면 배치 테스트</span><span class="l-en">Already know some? Take the placement test</span></h3>
+    <p class="l-ko">10문항으로 1·2단원 내용을 아는지 확인해, 아는 단원은 건너뜁니다.</p>
+    <p class="l-en">Ten questions check whether you know units 1 and 2, and skip the ones you do.</p>
+  </div>
+</div>
+
+<h2><span class="l-ko">무엇을 배우나요</span><span class="l-en">What's inside</span></h2>
+<table>
+  <tr><th><span class="l-ko">구성</span><span class="l-en">Part</span></th><th><span class="l-ko">단원</span><span class="l-en">Units</span></th></tr>
+  <tr><td class="free"><span class="l-ko">무료</span><span class="l-en">Free</span></td>
+      <td><span class="l-ko">1 시작하기 · 2 리스트와 데이터 · 3 함수와 제어 흐름</span><span class="l-en">1 Getting Started · 2 Lists and Data · 3 Functions and Control Flow</span></td></tr>
+  <tr><td><span class="l-ko">트랙 A: 함수와 데이터</span><span class="l-en">Track A: Functions and Data</span></td>
+      <td><span class="l-ko">4 고차 함수와 클로저 · 5 자료구조와 출력 · 6 반복</span><span class="l-en">4 Higher-Order Functions and Closures · 5 Data Structures and Output · 6 Iteration</span></td></tr>
+  <tr><td><span class="l-ko">트랙 B: 매크로·객체·컨디션</span><span class="l-en">Track B: Macros, Objects, Conditions</span></td>
+      <td><span class="l-ko">7 매크로 · 8 CLOS · 9 컨디션</span><span class="l-en">7 Macros · 8 CLOS · 9 Conditions</span></td></tr>
+  <tr><td><span class="l-ko">트랙 C: 패키지와 작은 Lisp 만들기</span><span class="l-en">Track C: Packages and Building a Small Lisp</span></td>
+      <td><span class="l-ko">10 패키지 · 11 캡스톤: 작은 Lisp 만들기</span><span class="l-en">10 Packages · 11 Capstone: Building a Small Lisp</span></td></tr>
+</table>
+<p class="note"><span class="l-ko">모두 11단원, 레슨 100개, 문제 286개. 트랙은 구독이 아니라 한 번 사면 계속 쓰며, 순서와 상관없이 살 수 있습니다. 가격은 App Store에 표시됩니다.</span>
+<span class="l-en">11 units, 100 lessons, and 286 problems in all. Tracks are one-time purchases, not subscriptions, and can be bought in any order. Prices are shown in the App Store.</span></p>
+
+<footer>
+  <p><a href="support.html"><span class="l-ko">지원</span><span class="l-en">Support</span></a> ·
+     <a href="privacy.html"><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></a></p>
+  <p>© 2026 CHUNGKIL KIM</p>
+</footer>
+
+</div>
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  document.documentElement.setAttribute('lang', l);
+  document.getElementById('b-ko').classList.toggle('on', l==='ko');
+  document.getElementById('b-en').classList.toggle('on', l==='en');
+  try{ localStorage.setItem('lang', l); }catch(e){}
+}
+try{ var s=localStorage.getItem('lang'); if(s) setLang(s); else if(!/^ko/i.test(navigator.language||'')) setLang('en'); }catch(e){}
+</script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>지원 — Parens</title>
+<style>
+:root{--paper:#F5F5F2;--card:#FFFFFF;--ink:#15171D;--sub:#5A5E68;--line:#E2E1DA;--blue:#3A52C4;--blue2:#2A3D96;--soft:#E8ECFA}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;background:var(--paper);color:var(--ink);line-height:1.75}
+html[data-lang="ko"] .l-en{display:none}
+html[data-lang="en"] .l-ko{display:none}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px 60px}
+.langbar{display:flex;justify-content:flex-end;padding:14px 0}
+.langbar button{border:1px solid var(--blue);background:transparent;color:var(--blue);padding:5px 14px;cursor:pointer;font-size:14px}
+.langbar button:first-child{border-radius:8px 0 0 8px}
+.langbar button:last-child{border-radius:0 8px 8px 0}
+.langbar button.on{background:var(--blue);color:#fff}
+h1{font-size:1.8rem;margin:16px 0 6px}
+.upd{color:var(--sub);font-size:.9rem;margin-bottom:24px}
+h2{font-size:1.2rem;margin:32px 0 10px;padding-top:14px;border-top:1px solid var(--line)}
+.qa{background:var(--card);border-radius:14px;padding:16px 20px;margin:12px 0;box-shadow:0 4px 18px rgba(21,23,29,.06)}
+.qa b{display:block;margin-bottom:4px}
+p,li{font-size:.98rem;color:#33363d}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.9em;background:#EFEFEA;border-radius:4px;padding:1px 4px}
+.mail{background:var(--soft);border-left:4px solid var(--blue);border-radius:0 12px 12px 0;padding:16px 20px;margin:14px 0}
+.mail a{color:var(--blue2);font-weight:600}
+footer{border-top:1px solid var(--line);padding:24px 0 0;margin-top:40px;text-align:center;font-size:.9rem;color:var(--sub)}
+footer a{color:var(--blue2)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="langbar">
+  <button id="b-ko" class="on" onclick="setLang('ko')">한국어</button>
+  <button id="b-en" onclick="setLang('en')">English</button>
+</div>
+
+<h1><span class="l-ko">지원</span><span class="l-en">Support</span></h1>
+<p class="upd">Parens · <span class="l-ko">iPhone · iPad · Mac</span><span class="l-en">iPhone · iPad · Mac</span></p>
+
+<h2><span class="l-ko">시작하기</span><span class="l-en">Getting started</span></h2>
+<div class="qa">
+  <b><span class="l-ko">처음 열면 무엇을 고르나요?</span><span class="l-en">What do I choose on first launch?</span></b>
+  <p class="l-ko">주로 쓰는 언어(Python · JavaScript · Swift)를 고르면 레슨에서 같은 개념을 그 언어로 쓴 비교 코드를 함께 보여 줍니다. 보지 않음을 골라도 되고, 프로필에서 언제든 바꿀 수 있습니다.</p>
+  <p class="l-en">Pick the language you use most (Python, JavaScript, or Swift) and lessons show comparison code in that language. You can also choose none, and change it any time in Profile.</p>
+</div>
+<div class="qa">
+  <b><span class="l-ko">Lisp를 조금 아는데 처음부터 해야 하나요?</span><span class="l-en">I know some Lisp. Do I have to start from the beginning?</span></b>
+  <p class="l-ko">첫 화면이나 학습 화면의 <i>배치 테스트</i>(10문항)를 보면 됩니다. 단원마다 5문항 중 4문항 이상 맞히면 앞에서부터 그 단원(1·2단원)을 건너뜁니다. 건너뛴 단원은 끝난 것으로 표시되지만 언제든 열어 볼 수 있고, XP는 주지 않습니다. 2단원을 끝내기 전까지는 다시 볼 수 있습니다.</p>
+  <p class="l-en">Take the <i>placement test</i> (10 questions) from the first screen or the Learn screen. Answer at least 4 of a unit's 5 questions and that unit (units 1 and 2, in order) is skipped. Skipped units are marked as done but stay open, and give no XP. You can retake it until you finish unit 2.</p>
+</div>
+
+<h2><span class="l-ko">구매</span><span class="l-en">Purchases</span></h2>
+<div class="qa">
+  <b><span class="l-ko">무엇이 무료이고 무엇을 사야 하나요?</span><span class="l-en">What's free and what do I buy?</span></b>
+  <p class="l-ko">1~3단원은 무료입니다. 4단원부터는 트랙 A(4~6단원), 트랙 B(7~9단원), 트랙 C(10~11단원)를 따로 삽니다. 구독이 아니라 한 번 사면 계속 쓰며, 트랙끼리 순서 없이 살 수 있고 산 트랙은 바로 열립니다.</p>
+  <p class="l-en">Units 1–3 are free. From unit 4 on, buy Track A (units 4–6), Track B (units 7–9), or Track C (units 10–11). They are one-time purchases, not subscriptions; buy them in any order, and a track opens as soon as you buy it.</p>
+</div>
+<div class="qa">
+  <b><span class="l-ko">새 기기에서 산 트랙이 잠겨 있어요</span><span class="l-en">A track I bought is locked on a new device</span></b>
+  <p class="l-ko">같은 Apple 계정으로 로그인한 뒤, 잠긴 단원을 눌러 나오는 구매 화면에서 <i>구매 복원</i>을 누르세요.</p>
+  <p class="l-en">Sign in with the same Apple Account, tap a locked unit, and choose <i>Restore Purchases</i> on the purchase screen.</p>
+</div>
+<div class="qa">
+  <b><span class="l-ko">환불은 어떻게 하나요?</span><span class="l-en">How do I get a refund?</span></b>
+  <p class="l-ko">결제는 Apple이 처리하므로 환불도 Apple에 요청합니다: <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a></p>
+  <p class="l-en">Payments are handled by Apple, so request refunds from Apple: <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a></p>
+</div>
+
+<h2><span class="l-ko">진도와 데이터</span><span class="l-en">Progress and data</span></h2>
+<div class="qa">
+  <b><span class="l-ko">다른 기기에서도 이어지나요?</span><span class="l-en">Does my progress carry over to other devices?</span></b>
+  <p class="l-ko">진도와 작성한 코드는 이용자 본인의 iCloud에 저장되어 같은 Apple 계정의 iPhone · iPad · Mac에서 이어집니다. iCloud에 로그인하지 않았거나 설정에서 이 앱의 iCloud를 끄면 그 기기에만 남습니다.</p>
+  <p class="l-en">Progress and the code you write are stored in your own iCloud and carry over between your iPhone, iPad, and Mac on the same Apple Account. If you're not signed in to iCloud, or you turn iCloud off for this app in Settings, they stay on that device only.</p>
+</div>
+<div class="qa">
+  <b><span class="l-ko">학습 기록을 내보내거나 지울 수 있나요?</span><span class="l-en">Can I export or delete my study data?</span></b>
+  <p class="l-ko">프로필의 <i>학습 데이터 내보내기</i>로 JSON 파일을 받을 수 있고, <i>모든 학습 데이터 삭제</i>로 진도·작성한 코드·읽던 위치를 모든 기기에서 지웁니다(iCloud에서 지워지기까지 몇 분 걸릴 수 있습니다).</p>
+  <p class="l-en">In Profile, <i>Export Learning Data</i> gives you a JSON file, and <i>Delete All Learning Data</i> erases your progress, code, and reading positions on all devices (it can take a few minutes to disappear from iCloud).</p>
+</div>
+
+<h2><span class="l-ko">Lisp 코드 실행</span><span class="l-en">Running Lisp code</span></h2>
+<div class="qa">
+  <b><span class="l-ko">코드는 어디서 실행되나요?</span><span class="l-en">Where does my code run?</span></b>
+  <p class="l-ko">앱에 들어 있는 Common Lisp 엔진이 기기 안에서 실행합니다. 인터넷이 없어도 되고, 코드를 밖으로 보내지 않습니다.</p>
+  <p class="l-en">A Common Lisp engine built into the app runs it on your device. No internet connection is needed, and your code is never sent anywhere.</p>
+</div>
+<div class="qa">
+  <b><span class="l-ko">SBCL에서 되는 코드가 앱에서 안 돼요</span><span class="l-en">Code that works in SBCL doesn't work in the app</span></b>
+  <p class="l-ko">앱의 엔진은 ANSI Common Lisp 가운데 학습에 필요한 부분을 구현했습니다. 파일 열기(<code>open</code>, <code>with-open-file</code>), <code>load</code>, <code>compile-file</code> 같은 파일·시스템 기능은 없습니다. 레슨과 문제는 모두 이 엔진과 SBCL에서 같은 결과가 나오는지 확인해 두었습니다. 그 밖에 결과가 다르면 아래로 알려 주세요.</p>
+  <p class="l-en">The app's engine implements the parts of ANSI Common Lisp needed for learning. File and system features such as opening files (<code>open</code>, <code>with-open-file</code>), <code>load</code>, and <code>compile-file</code> are not available. Every lesson and problem has been checked to give the same results in this engine and in SBCL. If you find another difference, please let us know below.</p>
+</div>
+<div class="qa">
+  <b><span class="l-ko">코드가 끝나지 않아요</span><span class="l-en">My code never finishes</span></b>
+  <p class="l-ko">실행 중에 나오는 <i>중단</i> 버튼(키보드 ⌘.)으로 멈출 수 있고, 너무 오래 걸리면 시간 제한으로 멈춥니다. 채점은 테스트 케이스마다 2초 안에 끝나야 합니다. 엔진이 응답하지 않는다는 안내가 나오면 앱을 다시 시작해 주세요. 채점하거나 실행한 코드는 저장되어 있습니다.</p>
+  <p class="l-en">Use the <i>Stop</i> button that appears while code runs (⌘. on a keyboard); code that runs too long is stopped by a time limit. When grading, each test case must finish within 2 seconds. If the app says the engine isn't responding, restart the app; the code you graded or ran is saved.</p>
+</div>
+<div class="qa">
+  <b><span class="l-ko">REPL에서 오류가 나면 선택지가 보여요</span><span class="l-en">The REPL shows choices after an error</span></b>
+  <p class="l-ko">Common Lisp의 재시작(restart)입니다. 코드가 <code>restart-case</code>로 마련해 둔 재시작을 골라 이어 가거나, 최상위로 돌아가(<code>ABORT</code>) 그 실행을 끝낼 수 있습니다. 9단원(컨디션)에서 자세히 배웁니다.</p>
+  <p class="l-en">Those are Common Lisp restarts. You can pick a restart that the code set up with <code>restart-case</code> and carry on, or return to the top level (<code>ABORT</code>) to end that run. Unit 9 (Conditions) covers them in detail.</p>
+</div>
+
+<h2><span class="l-ko">문의</span><span class="l-en">Contact</span></h2>
+<div class="mail">
+  <p class="l-ko">질문 · 오류 신고 · 원고에서 틀린 곳은 이메일로 보내 주세요. 기기 종류와 OS 버전, 해당 레슨이나 문제 이름을 함께 적어 주시면 빨리 확인할 수 있습니다.</p>
+  <p class="l-en">Send questions, bug reports, or mistakes in the lessons by email. Including your device model, OS version, and the lesson or problem name helps us check quickly.</p>
+  <p><a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a></p>
+</div>
+
+<footer>
+  <p><a href="index.html"><span class="l-ko">홈</span><span class="l-en">Home</span></a> ·
+     <a href="privacy.html"><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></a></p>
+</footer>
+
+</div>
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  document.documentElement.setAttribute('lang', l);
+  document.getElementById('b-ko').classList.toggle('on', l==='ko');
+  document.getElementById('b-en').classList.toggle('on', l==='en');
+  try{ localStorage.setItem('lang', l); }catch(e){}
+}
+try{ var s=localStorage.getItem('lang'); if(s) setLang(s); else if(!/^ko/i.test(navigator.language||'')) setLang('en'); }catch(e){}
+</script>
+</body>
+</html>

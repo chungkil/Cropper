@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>개인정보 처리방침 — Parens</title>
+<style>
+:root{--paper:#F5F5F2;--card:#FFFFFF;--ink:#15171D;--sub:#5A5E68;--line:#E2E1DA;--blue:#3A52C4;--blue2:#2A3D96;--soft:#E8ECFA}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;background:var(--paper);color:var(--ink);line-height:1.75}
+html[data-lang="ko"] .l-en{display:none}
+html[data-lang="en"] .l-ko{display:none}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px 60px}
+.langbar{display:flex;justify-content:flex-end;padding:14px 0}
+.langbar button{border:1px solid var(--blue);background:transparent;color:var(--blue);padding:5px 14px;cursor:pointer;font-size:14px}
+.langbar button:first-child{border-radius:8px 0 0 8px}
+.langbar button:last-child{border-radius:0 8px 8px 0}
+.langbar button.on{background:var(--blue);color:#fff}
+h1{font-size:1.8rem;margin:16px 0 6px}
+.upd{color:var(--sub);font-size:.9rem;margin-bottom:30px}
+h2{font-size:1.2rem;margin:32px 0 10px;padding-top:14px;border-top:1px solid var(--line)}
+p,li{font-size:.98rem;color:#33363d}
+p+p{margin-top:8px}
+ul{padding-left:22px;margin:8px 0}
+.box{background:var(--card);border-radius:14px;padding:20px 22px;margin:16px 0;box-shadow:0 4px 18px rgba(21,23,29,.06)}
+.big{background:var(--soft);border-left:4px solid var(--blue);border-radius:0 12px 12px 0;padding:18px 20px;margin:18px 0;font-weight:600}
+footer{border-top:1px solid var(--line);padding:24px 0 0;margin-top:40px;text-align:center;font-size:.9rem;color:var(--sub)}
+footer a{color:var(--blue2)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="langbar">
+  <button id="b-ko" class="on" onclick="setLang('ko')">한국어</button>
+  <button id="b-en" onclick="setLang('en')">English</button>
+</div>
+
+<h1><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></h1>
+<p class="upd"><span class="l-ko">Parens · 최종 수정 2026년 10월 31일</span>
+<span class="l-en">Parens · Last updated October 31, 2026</span></p>
+
+<div class="big">
+  <span class="l-ko">개발자는 이름·이메일 같은 개인정보를 수집하지 않습니다. 학습 기록과 작성한 코드는 이용자의 기기와 본인의 iCloud에만 있고,
+  광고가 없습니다. 앱을 고치는 데 쓰려고 Google 애널리틱스로 익명의 이용 통계(레슨 진행, 문제 채점 결과 등)만 받으며, 프로필에서 끌 수 있습니다.</span>
+  <span class="l-en">The developer collects no personal information such as your name or email. Your study records and the code you write stay on your device and in your own iCloud,
+  and the app contains no ads. To improve the app, it sends only anonymous usage statistics (such as lesson progress and grading results) to Google Analytics, which you can turn off in Profile.</span>
+</div>
+
+<h2><span class="l-ko">1. 수집하는 정보</span><span class="l-en">1. Information we collect</span></h2>
+<p class="l-ko"><b>개발자가 직접 수집하는 개인정보는 없습니다.</b> 회원 가입과 로그인이 없고, 개발자가 운영하는 서버도 없습니다.
+이름·이메일·전화번호·연락처·정확한 위치 같은 정보를 수집하거나 전송하지 않습니다. 익명의 이용 통계는 5번에 적은 대로 Google 애널리틱스로 보냅니다.</p>
+<p class="l-en"><b>The developer does not directly collect personal information.</b> There is no sign-up, no login, and no developer-operated server.
+We do not collect or transmit names, email addresses, phone numbers, contacts, or precise location. Anonymous usage statistics go to Google Analytics as described in section 5.</p>
+
+<h2><span class="l-ko">2. 학습 기록이 저장되는 곳</span><span class="l-en">2. Where your study data lives</span></h2>
+<div class="box">
+<p class="l-ko">마친 레슨과 푼 문제, 퀴즈 답, 연 힌트, 오늘의 챌린지와 배치 테스트 결과, 레슨에서 읽던 위치, 그리고 레슨 예제를 고쳐 실행하거나 문제에서 채점한 코드(항목마다 최근 30개)는
+이 기기와 <b>이용자 본인의 iCloud</b>(Apple CloudKit의 비공개 데이터베이스)에 저장되어, 같은 Apple 계정으로 iCloud에 로그인한 iPhone · iPad · Mac 사이에 이어집니다.
+이 데이터베이스는 이용자의 Apple 계정에 속하며 개발자는 볼 수 없습니다. iCloud에 로그인하지 않았거나 설정의 iCloud에서 이 앱을 끄면 이 기기 안에만 저장됩니다.
+REPL에 입력한 코드는 앱을 닫으면 사라지며 저장하지 않습니다. 설정(비교 코드 언어, 사용 통계 보내기)도 <b>이 기기와 본인의 iCloud에만</b> 저장되며 개발자에게 보내지 않습니다.
+(이용자가 켜 둔 기기 전체 백업에는 다른 앱의 데이터처럼 함께 들어갈 수 있습니다.)</p>
+<p class="l-en">Lessons you finished and problems you solved, quiz answers, hints you opened, daily challenge and placement test results, your reading position in lessons,
+and the code you ran after editing lesson examples or graded in problems (the latest 30 per item) are stored on this device and in <b>your own iCloud</b>
+(a private database in Apple's CloudKit), so they carry over between your iPhone, iPad, and Mac signed in to iCloud with the same Apple Account.
+That database belongs to your Apple Account, and the developer cannot see it. If you are not signed in to iCloud, or you turn this app off under iCloud in Settings,
+they are stored only on this device. Code typed into the REPL is gone when you close the app and is never saved. Settings (comparison language, sharing usage statistics)
+are likewise stored <b>only on this device and in your own iCloud</b>, and are never sent to the developer. (A whole-device backup you have turned on may include them, like any other app's data.)</p>
+</div>
+<p class="l-ko">앱의 <i>프로필 › 학습 데이터 내보내기</i>로 이 기록을 JSON 파일로 받을 수 있고, <i>프로필 › 모든 학습 데이터 삭제</i>로 iCloud와 같은 계정의 다른 기기에서도 함께 지울 수 있습니다.
+앱을 지우면 이 기기의 기록은 지워지지만 iCloud에 있는 기록은 남으므로, 모두 지우려면 앱을 지우기 전에 모든 학습 데이터 삭제를 해 주세요.</p>
+<p class="l-en">In the app, <i>Profile › Export Learning Data</i> gives you these records as a JSON file, and <i>Profile › Delete All Learning Data</i> erases them, including from iCloud and your other devices on the same account.
+Deleting the app removes the records on this device but not those in iCloud, so to erase everything, use Delete All Learning Data before deleting the app.</p>
+
+<h2><span class="l-ko">3. 작성한 Lisp 코드</span><span class="l-en">3. The Lisp code you write</span></h2>
+<p class="l-ko">작성한 코드는 앱에 들어 있는 Common Lisp 엔진이 <b>기기 안에서</b> 실행합니다. 코드를 실행하려고 외부로 보내지 않고, 실행에 인터넷 연결이 필요하지 않습니다.
+엔진에는 기기의 파일을 열거나 네트워크에 연결하는 기능이 없어, 코드는 기기의 파일·네트워크·다른 앱에 닿지 않습니다.</p>
+<p class="l-en">Your code runs <b>on the device</b> in the Common Lisp engine built into the app. Code is never sent anywhere to run, and running it needs no internet connection.
+The engine has no features for opening the device's files or connecting to the network, so your code cannot reach the device's files, the network, or other apps.</p>
+
+<h2><span class="l-ko">4. 인앱 구매</span><span class="l-en">4. In-app purchases</span></h2>
+<p class="l-ko">트랙 구매는 Apple의 App Store를 통해서만 이루어집니다. 결제 정보는 Apple이 처리하며 개발자에게 전달되지 않습니다.
+앱은 어느 트랙을 구매했는지만 확인하고, 구매한 트랙을 5번의 이용 통계로 보냅니다.</p>
+<p class="l-en">Track purchases are processed entirely by Apple's App Store. Payment details are handled by Apple and never reach the developer.
+The app only checks which tracks you own, and sends the purchased track as a usage statistic (section 5).</p>
+
+<h2><span class="l-ko">5. 광고 · 분석 · 추적</span><span class="l-en">5. Ads, analytics, and tracking</span></h2>
+<p class="l-ko"><b>광고는 없습니다.</b> 앱을 고치는 데 쓰려고 Google 애널리틱스(Firebase)로 익명의 이용 통계를 받습니다:
+레슨을 시작하고 마칠 때(단원·레슨 번호, 걸린 시간), 문제를 채점할 때(문제 번호, 통과 여부, 몇 번째 채점인지, 연 힌트 단계),
+REPL 실행 결과의 종류별 횟수(값·오류·시간 초과 수를 앱 사용 한 번마다 모아서), 구매 화면 열기, 트랙 구매(트랙 이름),
+그리고 Google 애널리틱스가 자동으로 모으는 앱 실행과 사용 시간, 기기 종류와 OS 버전, IP 주소로 짐작한 대략의 지역입니다.
+이 통계는 앱을 설치할 때마다 새로 만들어지는 무작위 식별자에만 묶이며(모든 학습 데이터 삭제 때도 새로 만듭니다),
+이름·이메일 같은 개인정보나 작성한 코드·퀴즈 답은 보내지 않습니다.</p>
+<p class="l-ko"><i>프로필 › 사용 통계 보내기</i>를 끄면 이 통계를 보내지 않습니다.
+광고 식별자(IDFA)를 쓰지 않고, 다른 회사의 앱이나 웹사이트에 걸쳐 이용자를 추적하지 않으므로 추적 동의 요청도 표시하지 않습니다.
+보낸 통계는 Google의 개인정보처리방침(policies.google.com/privacy)에 따라 처리됩니다.</p>
+<p class="l-en"><b>No ads.</b> To improve the app, it sends anonymous usage statistics to Google Analytics (Firebase):
+when you start and finish a lesson (unit and lesson numbers, time taken), when you grade a problem (problem number, whether it passed, which attempt it was, the hint level you opened),
+counts of REPL results by kind (numbers of values, errors, and timeouts, gathered once per app session), opening the purchase screen, track purchases (the track's name),
+and what Google Analytics collects automatically: app launches and time in the app, device model and OS version, and an approximate region inferred from your IP address.
+These statistics are tied only to a random identifier created for each installation of the app (and created anew when you delete all learning data);
+no personal information such as your name or email, and none of your code or quiz answers, is sent.</p>
+<p class="l-en">Turn off <i>Profile › Share Usage Statistics</i> and none of these statistics are sent.
+The app does not use the advertising identifier (IDFA) and does not track you across other companies' apps or websites,
+so it never shows a tracking permission prompt. The statistics are handled under Google's Privacy Policy (policies.google.com/privacy).</p>
+
+<h2><span class="l-ko">6. 아동의 개인정보</span><span class="l-en">6. Children's privacy</span></h2>
+<p class="l-ko">이 앱은 어린이를 포함한 모든 연령이 쓸 수 있으며, 개발자는 연령과 상관없이 이름·이메일 같은 개인정보를 수집하지 않습니다.
+5번의 익명 이용 통계는 모든 이용자에게 같습니다.</p>
+<p class="l-en">The app is suitable for all ages, including children, and the developer collects no personal information such as names or email addresses from anyone.
+The anonymous usage statistics in section 5 are the same for every user.</p>
+
+<h2><span class="l-ko">7. 방침의 변경</span><span class="l-en">7. Changes to this policy</span></h2>
+<p class="l-ko">내용이 바뀌면 이 페이지에 고쳐 싣고 위의 최종 수정일을 바꿉니다.</p>
+<p class="l-en">Any changes will be posted on this page with an updated revision date.</p>
+
+<h2><span class="l-ko">8. 문의</span><span class="l-en">8. Contact</span></h2>
+<p><a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a></p>
+
+<footer>
+  <p><a href="index.html"><span class="l-ko">홈</span><span class="l-en">Home</span></a> ·
+     <a href="support.html"><span class="l-ko">지원</span><span class="l-en">Support</span></a></p>
+</footer>
+
+</div>
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  document.documentElement.setAttribute('lang', l);
+  document.getElementById('b-ko').classList.toggle('on', l==='ko');
+  document.getElementById('b-en').classList.toggle('on', l==='en');
+  try{ localStorage.setItem('lang', l); }catch(e){}
+}
+try{ var s=localStorage.getItem('lang'); if(s) setLang(s); else if(!/^ko/i.test(navigator.language||'')) setLang('en'); }catch(e){}
+</script>
+</body>
+</html>
