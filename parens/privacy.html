@@ -37,14 +37,14 @@ footer a{color:var(--blue2)}
 </div>
 
 <h1><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></h1>
-<p class="upd"><span class="l-ko">Parens · 최종 수정 2026년 10월 31일</span>
-<span class="l-en">Parens · Last updated October 31, 2026</span></p>
+<p class="upd"><span class="l-ko">Parens · 최종 수정 2026년 11월 1일</span>
+<span class="l-en">Parens · Last updated November 1, 2026</span></p>
 
 <div class="big">
   <span class="l-ko">개발자는 이름·이메일 같은 개인정보를 수집하지 않습니다. 학습 기록과 작성한 코드는 이용자의 기기와 본인의 iCloud에만 있고,
-  광고가 없습니다. 앱을 고치는 데 쓰려고 Google 애널리틱스로 익명의 이용 통계(레슨 진행, 문제 채점 결과 등)만 받으며, 프로필에서 끌 수 있습니다.</span>
+  광고가 없습니다. 앱을 고치는 데 쓰려고 Google 애널리틱스로 익명의 이용 통계(레슨 진행, 문제 채점 결과 등)만 받으며, 설정에서 끌 수 있습니다(Mac 판은 보내지 않습니다).</span>
   <span class="l-en">The developer collects no personal information such as your name or email. Your study records and the code you write stay on your device and in your own iCloud,
-  and the app contains no ads. To improve the app, it sends only anonymous usage statistics (such as lesson progress and grading results) to Google Analytics, which you can turn off in Profile.</span>
+  and the app contains no ads. To improve the app, it sends only anonymous usage statistics (such as lesson progress and grading results) to Google Analytics, which you can turn off in Settings (the Mac version sends none).</span>
 </div>
 
 <h2><span class="l-ko">1. 수집하는 정보</span><span class="l-en">1. Information we collect</span></h2>
@@ -67,9 +67,9 @@ That database belongs to your Apple Account, and the developer cannot see it. If
 they are stored only on this device. Code typed into the REPL is gone when you close the app and is never saved. Settings (comparison language, sharing usage statistics)
 are likewise stored <b>only on this device and in your own iCloud</b>, and are never sent to the developer. (A whole-device backup you have turned on may include them, like any other app's data.)</p>
 </div>
-<p class="l-ko">앱의 <i>프로필 › 학습 데이터 내보내기</i>로 이 기록을 JSON 파일로 받을 수 있고, <i>프로필 › 모든 학습 데이터 삭제</i>로 iCloud와 같은 계정의 다른 기기에서도 함께 지울 수 있습니다.
+<p class="l-ko">앱의 <i>설정 › 학습 데이터 내보내기</i>로 이 기록을 JSON 파일로 받을 수 있고, <i>설정 › 모든 학습 데이터 삭제</i>로 iCloud와 같은 계정의 다른 기기에서도 함께 지울 수 있습니다.
 앱을 지우면 이 기기의 기록은 지워지지만 iCloud에 있는 기록은 남으므로, 모두 지우려면 앱을 지우기 전에 모든 학습 데이터 삭제를 해 주세요.</p>
-<p class="l-en">In the app, <i>Profile › Export Learning Data</i> gives you these records as a JSON file, and <i>Profile › Delete All Learning Data</i> erases them, including from iCloud and your other devices on the same account.
+<p class="l-en">In the app, <i>Settings › Export Learning Data</i> gives you these records as a JSON file, and <i>Settings › Delete All Learning Data</i> erases them, including from iCloud and your other devices on the same account.
 Deleting the app removes the records on this device but not those in iCloud, so to erase everything, use Delete All Learning Data before deleting the app.</p>
 
 <h2><span class="l-ko">3. 작성한 Lisp 코드</span><span class="l-en">3. The Lisp code you write</span></h2>
@@ -91,7 +91,7 @@ REPL 실행 결과의 종류별 횟수(값·오류·시간 초과 수를 앱 사
 그리고 Google 애널리틱스가 자동으로 모으는 앱 실행과 사용 시간, 기기 종류와 OS 버전, IP 주소로 짐작한 대략의 지역입니다.
 이 통계는 앱을 설치할 때마다 새로 만들어지는 무작위 식별자에만 묶이며(모든 학습 데이터 삭제 때도 새로 만듭니다),
 이름·이메일 같은 개인정보나 작성한 코드·퀴즈 답은 보내지 않습니다.</p>
-<p class="l-ko"><i>프로필 › 사용 통계 보내기</i>를 끄면 이 통계를 보내지 않습니다.
+<p class="l-ko"><i>설정 › 사용 통계 보내기</i>를 끄면 이 통계를 보내지 않습니다. Mac 판은 이 통계를 보내지 않아 이 설정이 없습니다.
 광고 식별자(IDFA)를 쓰지 않고, 다른 회사의 앱이나 웹사이트에 걸쳐 이용자를 추적하지 않으므로 추적 동의 요청도 표시하지 않습니다.
 보낸 통계는 Google의 개인정보처리방침(policies.google.com/privacy)에 따라 처리됩니다.</p>
 <p class="l-en"><b>No ads.</b> To improve the app, it sends anonymous usage statistics to Google Analytics (Firebase):
@@ -100,7 +100,7 @@ counts of REPL results by kind (numbers of values, errors, and timeouts, gathere
 and what Google Analytics collects automatically: app launches and time in the app, device model and OS version, and an approximate region inferred from your IP address.
 These statistics are tied only to a random identifier created for each installation of the app (and created anew when you delete all learning data);
 no personal information such as your name or email, and none of your code or quiz answers, is sent.</p>
-<p class="l-en">Turn off <i>Profile › Share Usage Statistics</i> and none of these statistics are sent.
+<p class="l-en">Turn off <i>Settings › Share Usage Statistics</i> and none of these statistics are sent. The Mac version doesn't send these statistics, so it has no such setting.
 The app does not use the advertising identifier (IDFA) and does not track you across other companies' apps or websites,
 so it never shows a tracking permission prompt. The statistics are handled under Google's Privacy Policy (policies.google.com/privacy).</p>
 
