@@ -58,13 +58,13 @@ We do not collect or transmit names, email addresses, phone numbers, contacts, o
 <p class="l-ko">마친 레슨과 푼 문제, 퀴즈 답, 연 힌트, 오늘의 챌린지와 배치 테스트 결과, 레슨에서 읽던 위치, 그리고 레슨 예제를 고쳐 실행하거나 문제에서 채점한 코드와 시뮬레이션 랩에서 고치거나 직접 쓴 코드(항목마다 최근 30개)는
 이 기기와 <b>이용자 본인의 iCloud</b>(Apple CloudKit의 비공개 데이터베이스)에 저장되어, 같은 Apple 계정으로 iCloud에 로그인한 iPhone · iPad · Mac · Apple Vision Pro 사이에 이어집니다.
 이 데이터베이스는 이용자의 Apple 계정에 속하며 개발자는 볼 수 없습니다. iCloud에 로그인하지 않았거나 기기 설정의 iCloud에서 이 앱을 끄면 이 기기 안에만 저장됩니다.
-REPL에 입력한 코드는 앱을 닫으면 사라지며 저장하지 않습니다. Lisp 코드가 <code>open</code>·<code>with-open-file</code> 등으로 만든 파일은 <b>이 기기 안의 앱 전용 공간에만</b> 저장되고(최대 10MB) iCloud로 동기화하거나 개발자에게 보내지 않으며, <i>설정 › 파일</i>에서 지울 수 있습니다. 설정(비교 코드 언어, 사용 통계 보내기)도 <b>이 기기와 본인의 iCloud에만</b> 저장되며 개발자에게 보내지 않습니다.
+REPL에 입력한 코드는 앱을 닫으면 사라지며 저장하지 않습니다. Lisp 코드가 <code>open</code>·<code>with-open-file</code> 등으로 만든 파일과 직접 가져온 파일은 <b>이 기기 안의 앱 전용 공간에만</b> 저장되고 iCloud로 동기화하거나 개발자에게 보내지 않으며, <i>설정 › 파일</i>에서 보고 고치거나 지울 수 있습니다. 설정(비교 코드 언어, 사용 통계 보내기)도 <b>이 기기와 본인의 iCloud에만</b> 저장되며 개발자에게 보내지 않습니다.
 (이용자가 켜 둔 기기 전체 백업에는 다른 앱의 데이터처럼 함께 들어갈 수 있습니다.)</p>
 <p class="l-en">Lessons you finished and problems you solved, quiz answers, hints you opened, daily challenge and placement test results, your reading position in lessons,
 and the code you ran after editing lesson examples, graded in problems, or edited or wrote in the Simulation Lab (the latest 30 per item) are stored on this device and in <b>your own iCloud</b>
 (a private database in Apple's CloudKit), so they carry over between your iPhone, iPad, Mac, and Apple Vision Pro signed in to iCloud with the same Apple Account.
 That database belongs to your Apple Account, and the developer cannot see it. If you are not signed in to iCloud, or you turn this app off under iCloud in your device's Settings,
-they are stored only on this device. Code typed into the REPL is gone when you close the app and is never saved. Files your Lisp code creates with <code>open</code>, <code>with-open-file</code>, and similar functions are stored <b>only in the app's own space on this device</b> (up to 10 MB); they are not synced to iCloud or sent to the developer, and you can delete them under <i>Settings › Files</i>. Settings (comparison language, sharing usage statistics)
+they are stored only on this device. Code typed into the REPL is gone when you close the app and is never saved. Files your Lisp code creates with <code>open</code>, <code>with-open-file</code>, and similar functions, and files you import, are stored <b>only in the app's own space on this device</b>; they are not synced to iCloud or sent to the developer, and you can view, edit, or delete them under <i>Settings › Files</i>. Settings (comparison language, sharing usage statistics)
 are likewise stored <b>only on this device and in your own iCloud</b>, and are never sent to the developer. (A whole-device backup you have turned on may include them, like any other app's data.)</p>
 </div>
 <p class="l-ko">앱의 <i>설정 › 학습 데이터 내보내기</i>로 이 기록을 JSON 파일로 받을 수 있고, <i>설정 › 모든 학습 데이터 삭제</i>로 iCloud와 같은 계정의 다른 기기에서도 함께 지울 수 있습니다.
