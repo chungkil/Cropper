@@ -10,11 +10,11 @@
       "category": "meteorShower",
       "icon": "sparkles",
       "date": "2026-01-03",
-      "peakDate": "2026-01-03T21:00:00Z",
+      "peakDate": "2026-01-03T21:16:00Z",
       "endDate": "2026-01-04",
       "source": "remote",
       "extraInfo": {
-        "zhr": 120,
+        "zhr": 80,
         "moonIllumination": 1.0
       }
     },
@@ -225,12 +225,12 @@
       "category": "meteorShower",
       "icon": "sparkles",
       "date": "2026-04-22",
-      "peakDate": "2026-04-22T19:15:00Z",
+      "peakDate": "2026-04-22T19:37:00Z",
       "endDate": "2026-04-23",
       "source": "remote",
       "extraInfo": {
         "zhr": 18,
-        "moonIllumination": 0.27
+        "moonIllumination": 0.36
       }
     },
     {
@@ -240,13 +240,13 @@
       "descriptionKey": "event_eta_aquariids_desc",
       "category": "meteorShower",
       "icon": "sparkles",
-      "date": "2026-05-05",
-      "peakDate": "2026-05-05T03:51:00Z",
-      "endDate": "2026-05-06",
+      "date": "2026-05-06",
+      "peakDate": "2026-05-06T09:13:00Z",
+      "endDate": "2026-05-07",
       "source": "remote",
       "extraInfo": {
         "zhr": 50,
-        "moonIllumination": 0.84
+        "moonIllumination": 0.81
       }
     },
     {
@@ -378,11 +378,12 @@
       "descriptionKey": "event_june_bootids_desc",
       "category": "meteorShower",
       "icon": "sparkles",
-      "date": "2026-06-27",
-      "peakDate": "2026-06-27T12:00:00Z",
+      "date": "2026-06-22",
+      "peakDate": "2026-06-22T01:10:00Z",
       "source": "remote",
       "extraInfo": {
-        "zhr": 2
+        "zhr": 2,
+        "moonIllumination": 0.52
       },
       "localizedStrings": {
         "en": {
@@ -504,57 +505,58 @@
       "descriptionKey": "event_delta_aquariids_desc",
       "category": "meteorShower",
       "icon": "sparkles",
-      "date": "2026-07-29",
-      "peakDate": "2026-07-30T12:00:00Z",
-      "endDate": "2026-07-31",
+      "date": "2026-07-31",
+      "peakDate": "2026-07-31T13:26:00Z",
+      "endDate": "2026-08-01",
       "source": "remote",
       "extraInfo": {
-        "zhr": 25
+        "zhr": 25,
+        "moonIllumination": 0.96
       },
       "localizedStrings": {
         "en": {
           "title": "Southern Delta Aquariids",
-          "description": "A steady shower peaking around July 30 (~25 meteors/hour), best from the Southern Hemisphere. Coincides with the minor Alpha Capricornids."
+          "description": "A steady shower peaking around July 31 (~25 meteors/hour), best from the Southern Hemisphere. Coincides with the minor Alpha Capricornids."
         },
         "ko": {
           "title": "남쪽 물병자리 델타 유성우",
-          "description": "7월 30일경 극대(시간당 ~25개)에 이르는 꾸준한 유성우로 남반구에서 관측이 가장 좋습니다. 마이너한 염소자리 알파 유성우와 겹칩니다."
+          "description": "7월 31일경 극대(시간당 ~25개)에 이르는 꾸준한 유성우로 남반구에서 관측이 가장 좋습니다. 마이너한 염소자리 알파 유성우와 겹칩니다."
         },
         "ja": {
           "title": "みずがめ座δ南流星群",
-          "description": "7月30日頃に極大(1時間に約25個)を迎える安定した流星群で、南半球で最もよく見えます。小規模なやぎ座α流星群と重なります。"
+          "description": "7月31日頃に極大(1時間に約25個)を迎える安定した流星群で、南半球で最もよく見えます。小規模なやぎ座α流星群と重なります。"
         },
         "zh-Hans": {
           "title": "南宝瓶座δ流星雨",
-          "description": "在7月30日左右达到极大(每小时约25颗)的稳定流星雨,南半球观测最佳。与小型摩羯座α流星雨重叠。"
+          "description": "在7月31日左右达到极大(每小时约25颗)的稳定流星雨,南半球观测最佳。与小型摩羯座α流星雨重叠。"
         },
         "zh-Hant": {
           "title": "南寶瓶座δ流星雨",
-          "description": "在7月30日左右達到極大(每小時約25顆)的穩定流星雨,南半球觀測最佳。與小型摩羯座α流星雨重疊。"
+          "description": "在7月31日左右達到極大(每小時約25顆)的穩定流星雨,南半球觀測最佳。與小型摩羯座α流星雨重疊。"
         },
         "de": {
           "title": "Südliche Delta-Aquariiden",
-          "description": "Ein gleichmäßiger Strom mit Maximum um den 30. Juli (~25 Meteore/Stunde), am besten von der Südhalbkugel. Fällt mit den schwachen Alpha-Capricorniden zusammen."
+          "description": "Ein gleichmäßiger Strom mit Maximum um den 31. Juli (~25 Meteore/Stunde), am besten von der Südhalbkugel. Fällt mit den schwachen Alpha-Capricorniden zusammen."
         },
         "es": {
           "title": "Delta Acuáridas del Sur",
-          "description": "Una lluvia constante con máximo hacia el 30 de julio (~25 meteoros/hora), mejor desde el hemisferio sur. Coincide con las menores Alfa Capricórnidas."
+          "description": "Una lluvia constante con máximo hacia el 31 de julio (~25 meteoros/hora), mejor desde el hemisferio sur. Coincide con las menores Alfa Capricórnidas."
         },
         "fr": {
           "title": "Delta Aquarides du Sud",
-          "description": "Une pluie régulière culminant vers le 30 juillet (~25 météores/heure), idéale depuis l'hémisphère sud. Coïncide avec les faibles Alpha Capricornides."
+          "description": "Une pluie régulière culminant vers le 31 juillet (~25 météores/heure), idéale depuis l'hémisphère sud. Coïncide avec les faibles Alpha Capricornides."
         },
         "it": {
           "title": "Delta Aquaridi del Sud",
-          "description": "Uno sciame costante con picco intorno al 30 luglio (~25 meteore/ora), migliore dall'emisfero sud. Coincide con le minori Alfa Capricornidi."
+          "description": "Uno sciame costante con picco intorno al 31 luglio (~25 meteore/ora), migliore dall'emisfero sud. Coincide con le minori Alfa Capricornidi."
         },
         "pt-BR": {
           "title": "Delta Aquáridas do Sul",
-          "description": "Uma chuva constante com pico por volta de 30 de julho (~25 meteoros/hora), melhor do hemisfério sul. Coincide com as menores Alfa Capricornídeas."
+          "description": "Uma chuva constante com pico por volta de 31 de julho (~25 meteoros/hora), melhor do hemisfério sul. Coincide com as menores Alfa Capricornídeas."
         },
         "ru": {
           "title": "Южные дельта-Аквариды",
-          "description": "Стабильный поток с максимумом около 30 июля (~25 метеоров/час), лучше виден в Южном полушарии. Совпадает со слабыми Альфа-Каприкорнидами."
+          "description": "Стабильный поток с максимумом около 31 июля (~25 метеоров/час), лучше виден в Южном полушарии. Совпадает со слабыми Альфа-Каприкорнидами."
         }
       }
     },
@@ -632,7 +634,7 @@
       "category": "meteorShower",
       "icon": "sparkles",
       "date": "2026-08-13",
-      "peakDate": "2026-08-13T14:53:00Z",
+      "peakDate": "2026-08-13T02:01:00Z",
       "endDate": "2026-08-14",
       "source": "remote",
       "extraInfo": {
@@ -903,13 +905,13 @@
       "descriptionKey": "event_leonids_desc",
       "category": "meteorShower",
       "icon": "sparkles",
-      "date": "2026-11-18",
-      "peakDate": "2026-11-18T00:00:00Z",
-      "endDate": "2026-11-19",
+      "date": "2026-11-17",
+      "peakDate": "2026-11-17T23:44:00Z",
+      "endDate": "2026-11-18",
       "source": "remote",
       "extraInfo": {
         "zhr": 15,
-        "moonIllumination": 0.5
+        "moonIllumination": 0.55
       }
     },
     {
@@ -1012,47 +1014,47 @@
       "localizedStrings": {
         "en": {
           "title": "Ursids Meteor Shower",
-          "description": "A minor shower radiating from Ursa Minor around the winter solstice, with about 10 meteors per hour at its peak. In 2026 a 94%-full Moon washes out all but the brightest meteors."
+          "description": "A minor shower radiating from Ursa Minor around the winter solstice, with about 10 meteors per hour at its peak. In 2026 a 98%-full Moon washes out all but the brightest meteors."
         },
         "ko": {
           "title": "작은곰자리 유성우",
-          "description": "동지 무렵 작은곰자리에서 복사되는 소규모 유성우로, 극대기에 시간당 약 10개의 유성이 흐릅니다. 2026년에는 94% 밝기의 달이 밝은 유성을 제외한 대부분을 가립니다."
+          "description": "동지 무렵 작은곰자리에서 복사되는 소규모 유성우로, 극대기에 시간당 약 10개의 유성이 흐릅니다. 2026년에는 98% 밝기의 달이 밝은 유성을 제외한 대부분을 가립니다."
         },
         "ja": {
           "title": "こぐま座流星群",
-          "description": "冬至の頃にこぐま座から放射される小規模な流星群で、極大時には1時間あたり約10個の流星が見られます。2026年は94%の月明かりが、明るい流星以外をかき消します。"
+          "description": "冬至の頃にこぐま座から放射される小規模な流星群で、極大時には1時間あたり約10個の流星が見られます。2026年は98%の月明かりが、明るい流星以外をかき消します。"
         },
         "zh-Hans": {
           "title": "小熊座流星雨",
-          "description": "冬至前后从小熊座辐射的小型流星雨,极大时每小时约10颗。2026年94%的明亮月光会盖过除最亮流星以外的大部分。"
+          "description": "冬至前后从小熊座辐射的小型流星雨,极大时每小时约10颗。2026年98%的明亮月光会盖过除最亮流星以外的大部分。"
         },
         "zh-Hant": {
           "title": "小熊座流星雨",
-          "description": "冬至前後從小熊座輻射的小型流星雨,極大時每小時約10顆。2026年94%的明亮月光會蓋過除最亮流星以外的大部分。"
+          "description": "冬至前後從小熊座輻射的小型流星雨,極大時每小時約10顆。2026年98%的明亮月光會蓋過除最亮流星以外的大部分。"
         },
         "de": {
           "title": "Ursiden-Meteorstrom",
-          "description": "Ein kleiner Strom, der um die Wintersonnenwende aus dem Kleinen Bären strahlt, mit etwa 10 Meteoren pro Stunde im Maximum. 2026 überstrahlt ein zu 94 % beleuchteter Mond alle bis auf die hellsten Meteore."
+          "description": "Ein kleiner Strom, der um die Wintersonnenwende aus dem Kleinen Bären strahlt, mit etwa 10 Meteoren pro Stunde im Maximum. 2026 überstrahlt ein zu 98 % beleuchteter Mond alle bis auf die hellsten Meteore."
         },
         "es": {
           "title": "Lluvia de meteoros Úrsidas",
-          "description": "Una lluvia menor que irradia desde la Osa Menor cerca del solsticio de invierno, con unos 10 meteoros por hora en su pico. En 2026 una Luna llena al 94 % oculta todos menos los más brillantes."
+          "description": "Una lluvia menor que irradia desde la Osa Menor cerca del solsticio de invierno, con unos 10 meteoros por hora en su pico. En 2026 una Luna llena al 98 % oculta todos menos los más brillantes."
         },
         "fr": {
           "title": "Pluie de météores des Ursides",
-          "description": "Une pluie mineure rayonnant de la Petite Ourse autour du solstice d'hiver, avec environ 10 météores par heure au maximum. En 2026, une Lune éclairée à 94 % efface tous les météores sauf les plus brillants."
+          "description": "Une pluie mineure rayonnant de la Petite Ourse autour du solstice d'hiver, avec environ 10 météores par heure au maximum. En 2026, une Lune éclairée à 98 % efface tous les météores sauf les plus brillants."
         },
         "it": {
           "title": "Sciame meteorico delle Ursidi",
-          "description": "Uno sciame minore che irradia dall'Orsa Minore vicino al solstizio d'inverno, con circa 10 meteore all'ora al picco. Nel 2026 una Luna piena al 94% cancella tutte tranne le meteore più luminose."
+          "description": "Uno sciame minore che irradia dall'Orsa Minore vicino al solstizio d'inverno, con circa 10 meteore all'ora al picco. Nel 2026 una Luna piena al 98% cancella tutte tranne le meteore più luminose."
         },
         "pt-BR": {
           "title": "Chuva de meteoros Ursídeas",
-          "description": "Uma chuva menor que irradia da Ursa Menor perto do solstício de inverno, com cerca de 10 meteoros por hora no pico. Em 2026, uma Lua 94% cheia ofusca todos, exceto os mais brilhantes."
+          "description": "Uma chuva menor que irradia da Ursa Menor perto do solstício de inverno, com cerca de 10 meteoros por hora no pico. Em 2026, uma Lua 98% cheia ofusca todos, exceto os mais brilhantes."
         },
         "ru": {
           "title": "Метеорный поток Урсиды",
-          "description": "Небольшой поток, исходящий из созвездия Малой Медведицы вблизи зимнего солнцестояния, с примерно 10 метеорами в час в максимуме. В 2026 году Луна, освещённая на 94 %, затмевает все метеоры, кроме самых ярких."
+          "description": "Небольшой поток, исходящий из созвездия Малой Медведицы вблизи зимнего солнцестояния, с примерно 10 метеорами в час в максимуме. В 2026 году Луна, освещённая на 98 %, затмевает все метеоры, кроме самых ярких."
         }
       }
     }

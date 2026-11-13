@@ -35,7 +35,7 @@
       "descriptionKey": "event_annular_solar_eclipse_desc",
       "category": "solarEvent",
       "icon": "sun.max.fill",
-      "date": "2027-02-06T16:01:00Z",
+      "date": "2027-02-06T16:00:00Z",
       "source": "remote",
       "visibility": [
         "Chile",
@@ -105,47 +105,47 @@
       "localizedStrings": {
         "en": {
           "title": "Jupiter at Opposition",
-          "description": "Jupiter is at its closest to Earth and fully illuminated by the Sun. The giant planet will be brighter than any other time of the year in the constellation Gemini."
+          "description": "Jupiter is at its closest to Earth and fully illuminated by the Sun. The giant planet will be brighter than any other time of the year in the constellation Leo."
         },
         "ko": {
           "title": "목성 충",
-          "description": "목성이 지구에 가장 가까워지며 태양에 의해 완전히 밝혀집니다. 쌍둥이자리에서 올해 가장 밝게 빛나는 거대한 행성을 관측하세요."
+          "description": "목성이 지구에 가장 가까워지며 태양에 의해 완전히 밝혀집니다. 사자자리에서 올해 가장 밝게 빛나는 거대한 행성을 관측하세요."
         },
         "ja": {
           "title": "木星の衝",
-          "description": "木星が地球に最も近づき、太陽の光を完全に受けます。ふたご座で今年最も明るく輝く巨大惑星を観測できます。"
+          "description": "木星が地球に最も近づき、太陽の光を完全に受けます。しし座で今年最も明るく輝く巨大惑星を観測できます。"
         },
         "zh-Hans": {
           "title": "木星冲日",
-          "description": "木星距离地球最近,被太阳完全照亮。这颗巨行星在双子座中全年最亮。"
+          "description": "木星距离地球最近,被太阳完全照亮。这颗巨行星在狮子座中全年最亮。"
         },
         "zh-Hant": {
           "title": "木星衝",
-          "description": "木星距離地球最近,被太陽完全照亮。這顆巨行星在雙子座中全年最亮。"
+          "description": "木星距離地球最近,被太陽完全照亮。這顆巨行星在獅子座中全年最亮。"
         },
         "de": {
           "title": "Jupiter in Opposition",
-          "description": "Jupiter steht der Erde am nächsten und wird von der Sonne voll beleuchtet. Der Riesenplanet erstrahlt im Sternbild Zwillinge am hellsten des Jahres."
+          "description": "Jupiter steht der Erde am nächsten und wird von der Sonne voll beleuchtet. Der Riesenplanet erstrahlt im Sternbild Löwe am hellsten des Jahres."
         },
         "es": {
           "title": "Oposición de Júpiter",
-          "description": "Júpiter está en su punto más cercano a la Tierra e iluminado completamente por el Sol. El planeta gigante brillará más que nunca en la constelación de Géminis."
+          "description": "Júpiter está en su punto más cercano a la Tierra e iluminado completamente por el Sol. El planeta gigante brillará más que nunca en la constelación de Leo."
         },
         "fr": {
           "title": "Jupiter en opposition",
-          "description": "Jupiter est au plus proche de la Terre et entièrement éclairée par le Soleil. La planète géante brille au maximum dans la constellation des Gémeaux."
+          "description": "Jupiter est au plus proche de la Terre et entièrement éclairée par le Soleil. La planète géante brille au maximum dans la constellation du Lion."
         },
         "it": {
           "title": "Opposizione di Giove",
-          "description": "Giove è nel punto più vicino alla Terra e completamente illuminato dal Sole. Il pianeta gigante brilla al massimo nella costellazione dei Gemelli."
+          "description": "Giove è nel punto più vicino alla Terra e completamente illuminato dal Sole. Il pianeta gigante brilla al massimo nella costellazione del Leone."
         },
         "pt-BR": {
           "title": "Oposição de Júpiter",
-          "description": "Júpiter está no ponto mais próximo da Terra e totalmente iluminado pelo Sol. O planeta gigante brilhará ao máximo na constelação de Gêmeos."
+          "description": "Júpiter está no ponto mais próximo da Terra e totalmente iluminado pelo Sol. O planeta gigante brilhará ao máximo na constelação de Leão."
         },
         "ru": {
           "title": "Противостояние Юпитера",
-          "description": "Юпитер находится ближе всего к Земле и полностью освещён Солнцем. Гигантская планета сияет ярче всего в созвездии Близнецов."
+          "description": "Юпитер находится ближе всего к Земле и полностью освещён Солнцем. Гигантская планета сияет ярче всего в созвездии Льва."
         }
       }
     },
@@ -212,7 +212,7 @@
       "descriptionKey": "event_penumbral_lunar_eclipse_desc",
       "category": "lunarEvent",
       "icon": "moon.fill",
-      "date": "2027-02-20T23:14:00Z",
+      "date": "2027-02-20T23:13:00Z",
       "source": "remote",
       "visibility": [
         "Americas",
@@ -321,47 +321,47 @@
       "localizedStrings": {
         "en": {
           "title": "Venus Meets Saturn",
-          "description": "Venus passes 0.6° from Saturn in the evening sky — about the width of a full Moon. The brilliant white of Venus next to Saturn's steady gold, close enough to hold both in one telescope field."
+          "description": "Venus passes 0.6° from Saturn in the morning sky — about the width of a full Moon. The brilliant white of Venus next to Saturn's steady gold, close enough to hold both in one telescope field."
         },
         "ko": {
           "title": "금성-토성 근접",
-          "description": "저녁 하늘에서 금성이 토성으로부터 0.6°까지 다가갑니다. 보름달 지름 정도의 간격입니다. 눈부신 흰 금성과 은은한 금빛 토성이 망원경 시야 하나에 함께 들어옵니다."
+          "description": "새벽 하늘에서 금성이 토성으로부터 0.6°까지 다가갑니다. 보름달 지름 정도의 간격입니다. 눈부신 흰 금성과 은은한 금빛 토성이 망원경 시야 하나에 함께 들어옵니다."
         },
         "ja": {
           "title": "金星と土星の接近",
-          "description": "夕方の空で金星が土星から0.6°まで近づきます。満月の見かけの直径ほどの間隔です。まぶしい白の金星と落ち着いた金色の土星が、望遠鏡の同じ視野に収まります。"
+          "description": "明け方の空で金星が土星から0.6°まで近づきます。満月の見かけの直径ほどの間隔です。まぶしい白の金星と落ち着いた金色の土星が、望遠鏡の同じ視野に収まります。"
         },
         "zh-Hans": {
           "title": "金星合土星",
-          "description": "傍晚天空中，金星与土星相距仅0.6°，约为满月的视直径。耀眼的白色金星与沉稳的金色土星近到可以同时收入一个望远镜视场。"
+          "description": "清晨天空中，金星与土星相距仅0.6°，约为满月的视直径。耀眼的白色金星与沉稳的金色土星近到可以同时收入一个望远镜视场。"
         },
         "zh-Hant": {
           "title": "金星合土星",
-          "description": "傍晚天空中，金星與土星相距僅0.6°，約為滿月的視直徑。耀眼的白色金星與沉穩的金色土星近到可以同時收入一個望遠鏡視場。"
+          "description": "清晨天空中，金星與土星相距僅0.6°，約為滿月的視直徑。耀眼的白色金星與沉穩的金色土星近到可以同時收入一個望遠鏡視場。"
         },
         "de": {
           "title": "Venus trifft Saturn",
-          "description": "Venus zieht am Abendhimmel 0,6° an Saturn vorbei – etwa eine Vollmondbreite. Das strahlende Weiß der Venus neben dem ruhigen Gold Saturns, nah genug für ein gemeinsames Teleskopgesichtsfeld."
+          "description": "Venus zieht am Morgenhimmel 0,6° an Saturn vorbei – etwa eine Vollmondbreite. Das strahlende Weiß der Venus neben dem ruhigen Gold Saturns, nah genug für ein gemeinsames Teleskopgesichtsfeld."
         },
         "es": {
           "title": "Venus junto a Saturno",
-          "description": "Venus pasa a 0,6° de Saturno en el cielo del atardecer, aproximadamente el diámetro de la Luna llena. El blanco brillante de Venus junto al dorado sereno de Saturno, lo bastante cerca para caber en un mismo campo del telescopio."
+          "description": "Venus pasa a 0,6° de Saturno en el cielo del amanecer, aproximadamente el diámetro de la Luna llena. El blanco brillante de Venus junto al dorado sereno de Saturno, lo bastante cerca para caber en un mismo campo del telescopio."
         },
         "fr": {
           "title": "Vénus rencontre Saturne",
-          "description": "Vénus passe à 0,6° de Saturne dans le ciel du soir, soit environ le diamètre de la pleine Lune. Le blanc éclatant de Vénus à côté de l'or paisible de Saturne, assez proches pour tenir dans un même champ de télescope."
+          "description": "Vénus passe à 0,6° de Saturne dans le ciel du matin, soit environ le diamètre de la pleine Lune. Le blanc éclatant de Vénus à côté de l'or paisible de Saturne, assez proches pour tenir dans un même champ de télescope."
         },
         "it": {
           "title": "Venere incontra Saturno",
-          "description": "Venere passa a 0,6° da Saturno nel cielo della sera, circa il diametro della Luna piena. Il bianco brillante di Venere accanto all'oro tranquillo di Saturno, abbastanza vicini da stare in un solo campo del telescopio."
+          "description": "Venere passa a 0,6° da Saturno nel cielo del mattino, circa il diametro della Luna piena. Il bianco brillante di Venere accanto all'oro tranquillo di Saturno, abbastanza vicini da stare in un solo campo del telescopio."
         },
         "pt-BR": {
           "title": "Vênus encontra Saturno",
-          "description": "Vênus passa a 0,6° de Saturno no céu do anoitecer, cerca do diâmetro da Lua cheia. O branco brilhante de Vênus ao lado do dourado sereno de Saturno, perto o bastante para caberem no mesmo campo do telescópio."
+          "description": "Vênus passa a 0,6° de Saturno no céu do amanhecer, cerca do diâmetro da Lua cheia. O branco brilhante de Vênus ao lado do dourado sereno de Saturno, perto o bastante para caberem no mesmo campo do telescópio."
         },
         "ru": {
           "title": "Венера рядом с Сатурном",
-          "description": "Венера проходит в 0,6° от Сатурна на вечернем небе — примерно ширина полной Луны. Ослепительно белая Венера рядом со спокойным золотом Сатурна: достаточно близко, чтобы уместиться в одном поле зрения телескопа."
+          "description": "Венера проходит в 0,6° от Сатурна на утреннем небе — примерно ширина полной Луны. Ослепительно белая Венера рядом со спокойным золотом Сатурна: достаточно близко, чтобы уместиться в одном поле зрения телескопа."
         }
       }
     },
@@ -453,7 +453,7 @@
       "descriptionKey": "event_penumbral_lunar_eclipse_desc",
       "category": "lunarEvent",
       "icon": "moon.fill",
-      "date": "2027-07-18T16:04:00Z",
+      "date": "2027-07-18T16:03:00Z",
       "source": "remote",
       "visibility": [
         "Eastern Africa",
@@ -526,47 +526,47 @@
       "localizedStrings": {
         "en": {
           "title": "Southern Delta Aquariids",
-          "description": "A steady shower peaking around July 30 (~25 meteors/hour), best from the Southern Hemisphere. Coincides with the minor Alpha Capricornids."
+          "description": "A steady shower peaking around July 31 (~25 meteors/hour), best from the Southern Hemisphere. Coincides with the minor Alpha Capricornids."
         },
         "ko": {
           "title": "남쪽 물병자리 델타 유성우",
-          "description": "7월 30일경 극대(시간당 ~25개)에 이르는 꾸준한 유성우로 남반구에서 관측이 가장 좋습니다. 마이너한 염소자리 알파 유성우와 겹칩니다."
+          "description": "7월 31일경 극대(시간당 ~25개)에 이르는 꾸준한 유성우로 남반구에서 관측이 가장 좋습니다. 마이너한 염소자리 알파 유성우와 겹칩니다."
         },
         "ja": {
           "title": "みずがめ座δ南流星群",
-          "description": "7月30日頃に極大(1時間に約25個)を迎える安定した流星群で、南半球で最もよく見えます。小規模なやぎ座α流星群と重なります。"
+          "description": "7月31日頃に極大(1時間に約25個)を迎える安定した流星群で、南半球で最もよく見えます。小規模なやぎ座α流星群と重なります。"
         },
         "zh-Hans": {
           "title": "南宝瓶座δ流星雨",
-          "description": "在7月30日左右达到极大(每小时约25颗)的稳定流星雨,南半球观测最佳。与小型摩羯座α流星雨重叠。"
+          "description": "在7月31日左右达到极大(每小时约25颗)的稳定流星雨,南半球观测最佳。与小型摩羯座α流星雨重叠。"
         },
         "zh-Hant": {
           "title": "南寶瓶座δ流星雨",
-          "description": "在7月30日左右達到極大(每小時約25顆)的穩定流星雨,南半球觀測最佳。與小型摩羯座α流星雨重疊。"
+          "description": "在7月31日左右達到極大(每小時約25顆)的穩定流星雨,南半球觀測最佳。與小型摩羯座α流星雨重疊。"
         },
         "de": {
           "title": "Südliche Delta-Aquariiden",
-          "description": "Ein gleichmäßiger Strom mit Maximum um den 30. Juli (~25 Meteore/Stunde), am besten von der Südhalbkugel. Fällt mit den schwachen Alpha-Capricorniden zusammen."
+          "description": "Ein gleichmäßiger Strom mit Maximum um den 31. Juli (~25 Meteore/Stunde), am besten von der Südhalbkugel. Fällt mit den schwachen Alpha-Capricorniden zusammen."
         },
         "es": {
           "title": "Delta Acuáridas del Sur",
-          "description": "Una lluvia constante con máximo hacia el 30 de julio (~25 meteoros/hora), mejor desde el hemisferio sur. Coincide con las menores Alfa Capricórnidas."
+          "description": "Una lluvia constante con máximo hacia el 31 de julio (~25 meteoros/hora), mejor desde el hemisferio sur. Coincide con las menores Alfa Capricórnidas."
         },
         "fr": {
           "title": "Delta Aquarides du Sud",
-          "description": "Une pluie régulière culminant vers le 30 juillet (~25 météores/heure), idéale depuis l'hémisphère sud. Coïncide avec les faibles Alpha Capricornides."
+          "description": "Une pluie régulière culminant vers le 31 juillet (~25 météores/heure), idéale depuis l'hémisphère sud. Coïncide avec les faibles Alpha Capricornides."
         },
         "it": {
           "title": "Delta Aquaridi del Sud",
-          "description": "Uno sciame costante con picco intorno al 30 luglio (~25 meteore/ora), migliore dall'emisfero sud. Coincide con le minori Alfa Capricornidi."
+          "description": "Uno sciame costante con picco intorno al 31 luglio (~25 meteore/ora), migliore dall'emisfero sud. Coincide con le minori Alfa Capricornidi."
         },
         "pt-BR": {
           "title": "Delta Aquáridas do Sul",
-          "description": "Uma chuva constante com pico por volta de 30 de julho (~25 meteoros/hora), melhor do hemisfério sul. Coincide com as menores Alfa Capricornídeas."
+          "description": "Uma chuva constante com pico por volta de 31 de julho (~25 meteoros/hora), melhor do hemisfério sul. Coincide com as menores Alfa Capricornídeas."
         },
         "ru": {
           "title": "Южные дельта-Аквариды",
-          "description": "Стабильный поток с максимумом около 30 июля (~25 метеоров/час), лучше виден в Южном полушарии. Совпадает со слабыми Альфа-Каприкорнидами."
+          "description": "Стабильный поток с максимумом около 31 июля (~25 метеоров/час), лучше виден в Южном полушарии. Совпадает со слабыми Альфа-Каприкорнидами."
         }
       }
     },
@@ -577,7 +577,7 @@
       "descriptionKey": "event_total_solar_eclipse_desc",
       "category": "solarEvent",
       "icon": "sun.max.fill",
-      "date": "2027-08-02T10:08:00Z",
+      "date": "2027-08-02T10:07:00Z",
       "source": "remote",
       "visibility": [
         "Morocco",
@@ -663,7 +663,7 @@
       "descriptionKey": "event_penumbral_lunar_eclipse_desc",
       "category": "lunarEvent",
       "icon": "moon.fill",
-      "date": "2027-08-17T07:15:00Z",
+      "date": "2027-08-17T07:14:00Z",
       "source": "remote",
       "visibility": [
         "Pacific",
@@ -738,47 +738,47 @@
       "localizedStrings": {
         "en": {
           "title": "Neptune at Opposition",
-          "description": "Neptune is at its closest to Earth and fully illuminated by the Sun, shining at its brightest for the year in the constellation Pisces. At magnitude 7.8 it requires binoculars or a telescope to see."
+          "description": "Neptune is at its closest to Earth and fully illuminated by the Sun, shining at its brightest for the year in the constellation Pisces. At magnitude 7.7 it requires binoculars or a telescope to see."
         },
         "ko": {
           "title": "해왕성 충",
-          "description": "해왕성이 지구에 가장 가까워지며 태양에 의해 완전히 밝혀져 물고기자리에서 올해 가장 밝게 빛납니다. 밝기 7.8등급으로 쌍안경이나 망원경이 필요합니다."
+          "description": "해왕성이 지구에 가장 가까워지며 태양에 의해 완전히 밝혀져 물고기자리에서 올해 가장 밝게 빛납니다. 밝기 7.7등급으로 쌍안경이나 망원경이 필요합니다."
         },
         "ja": {
           "title": "海王星の衝",
-          "description": "海王星が地球に最も近づき、太陽に完全に照らされ、うお座で一年で最も明るく輝きます。7.8等級のため、観測には双眼鏡か望遠鏡が必要です。"
+          "description": "海王星が地球に最も近づき、太陽に完全に照らされ、うお座で一年で最も明るく輝きます。7.7等級のため、観測には双眼鏡か望遠鏡が必要です。"
         },
         "zh-Hans": {
           "title": "海王星冲日",
-          "description": "海王星距离地球最近,被太阳完全照亮,在双鱼座中达到全年最亮。视星等7.8,需借助双筒望远镜或天文望远镜观测。"
+          "description": "海王星距离地球最近,被太阳完全照亮,在双鱼座中达到全年最亮。视星等7.7,需借助双筒望远镜或天文望远镜观测。"
         },
         "zh-Hant": {
           "title": "海王星衝",
-          "description": "海王星距離地球最近,被太陽完全照亮,在雙魚座中達到全年最亮。視星等7.8,需借助雙筒望遠鏡或天文望遠鏡觀測。"
+          "description": "海王星距離地球最近,被太陽完全照亮,在雙魚座中達到全年最亮。視星等7.7,需借助雙筒望遠鏡或天文望遠鏡觀測。"
         },
         "de": {
           "title": "Neptun in Opposition",
-          "description": "Neptun steht der Erde am nächsten und wird von der Sonne voll beleuchtet. Im Sternbild Fische erstrahlt er am hellsten des Jahres. Mit einer Helligkeit von 7,8 mag ist ein Fernglas oder Teleskop nötig."
+          "description": "Neptun steht der Erde am nächsten und wird von der Sonne voll beleuchtet. Im Sternbild Fische erstrahlt er am hellsten des Jahres. Mit einer Helligkeit von 7,7 mag ist ein Fernglas oder Teleskop nötig."
         },
         "es": {
           "title": "Oposición de Neptuno",
-          "description": "Neptuno está en su punto más cercano a la Tierra e iluminado completamente por el Sol, brillando al máximo del año en la constelación de Piscis. Con magnitud 7,8 requiere binoculares o telescopio."
+          "description": "Neptuno está en su punto más cercano a la Tierra e iluminado completamente por el Sol, brillando al máximo del año en la constelación de Piscis. Con magnitud 7,7 requiere binoculares o telescopio."
         },
         "fr": {
           "title": "Neptune en opposition",
-          "description": "Neptune est au plus proche de la Terre et entièrement éclairée par le Soleil, brillant au maximum de l'année dans la constellation des Poissons. À magnitude 7,8, des jumelles ou un télescope sont nécessaires."
+          "description": "Neptune est au plus proche de la Terre et entièrement éclairée par le Soleil, brillant au maximum de l'année dans la constellation des Poissons. À magnitude 7,7, des jumelles ou un télescope sont nécessaires."
         },
         "it": {
           "title": "Opposizione di Nettuno",
-          "description": "Nettuno è nel punto più vicino alla Terra e completamente illuminato dal Sole, splendendo al massimo dell'anno nella costellazione dei Pesci. A magnitudine 7,8 richiede binocolo o telescopio."
+          "description": "Nettuno è nel punto più vicino alla Terra e completamente illuminato dal Sole, splendendo al massimo dell'anno nella costellazione dei Pesci. A magnitudine 7,7 richiede binocolo o telescopio."
         },
         "pt-BR": {
           "title": "Oposição de Netuno",
-          "description": "Netuno está no ponto mais próximo da Terra e totalmente iluminado pelo Sol, brilhando no máximo do ano na constelação de Peixes. Com magnitude 7,8, exige binóculos ou telescópio."
+          "description": "Netuno está no ponto mais próximo da Terra e totalmente iluminado pelo Sol, brilhando no máximo do ano na constelação de Peixes. Com magnitude 7,7, exige binóculos ou telescópio."
         },
         "ru": {
           "title": "Противостояние Нептуна",
-          "description": "Нептун находится ближе всего к Земле и полностью освещён Солнцем, сияя ярче всего в году в созвездии Рыб. При звёздной величине 7,8 для наблюдения нужны бинокль или телескоп."
+          "description": "Нептун находится ближе всего к Земле и полностью освещён Солнцем, сияя ярче всего в году в созвездии Рыб. При звёздной величине 7,7 для наблюдения нужны бинокль или телескоп."
         }
       }
     },
@@ -882,47 +882,47 @@
       "localizedStrings": {
         "en": {
           "title": "Venus Meets Mars",
-          "description": "Venus and Mars close to within 0.3° in the morning sky — half the width of a full Moon. The brightest planet beside the red one, an easy naked-eye pairing at dawn."
+          "description": "Venus and Mars close to within 0.3° in the evening sky — half the width of a full Moon. The brightest planet beside the red one, an easy naked-eye pairing at dusk."
         },
         "ko": {
           "title": "금성-화성 근접",
-          "description": "새벽 하늘에서 금성과 화성이 0.3°까지 가까워집니다. 보름달 지름의 절반 정도입니다. 가장 밝은 행성과 붉은 행성이 나란히 서서, 맨눈으로도 쉽게 찾을 수 있습니다."
+          "description": "저녁 하늘에서 금성과 화성이 0.3°까지 가까워집니다. 보름달 지름의 절반 정도입니다. 가장 밝은 행성과 붉은 행성이 나란히 서서, 맨눈으로도 쉽게 찾을 수 있습니다."
         },
         "ja": {
           "title": "金星と火星の接近",
-          "description": "明け方の空で金星と火星が0.3°まで近づきます。満月の見かけの直径の半分ほどです。最も明るい惑星と赤い惑星が並び、肉眼でも簡単に見つけられます。"
+          "description": "夕方の空で金星と火星が0.3°まで近づきます。満月の見かけの直径の半分ほどです。最も明るい惑星と赤い惑星が並び、肉眼でも簡単に見つけられます。"
         },
         "zh-Hans": {
           "title": "金星合火星",
-          "description": "清晨天空中，金星与火星相距仅0.3°，约为满月视直径的一半。最亮的行星与红色的行星并肩而立，肉眼即可轻松找到。"
+          "description": "傍晚天空中，金星与火星相距仅0.3°，约为满月视直径的一半。最亮的行星与红色的行星并肩而立，肉眼即可轻松找到。"
         },
         "zh-Hant": {
           "title": "金星合火星",
-          "description": "清晨天空中，金星與火星相距僅0.3°，約為滿月視直徑的一半。最亮的行星與紅色的行星並肩而立，肉眼即可輕鬆找到。"
+          "description": "傍晚天空中，金星與火星相距僅0.3°，約為滿月視直徑的一半。最亮的行星與紅色的行星並肩而立，肉眼即可輕鬆找到。"
         },
         "de": {
           "title": "Venus trifft Mars",
-          "description": "Venus und Mars kommen sich am Morgenhimmel bis auf 0,3° nahe – eine halbe Vollmondbreite. Der hellste Planet neben dem roten, mit bloßem Auge leicht zu finden."
+          "description": "Venus und Mars kommen sich am Abendhimmel bis auf 0,3° nahe – eine halbe Vollmondbreite. Der hellste Planet neben dem roten, mit bloßem Auge leicht zu finden."
         },
         "es": {
           "title": "Venus junto a Marte",
-          "description": "Venus y Marte se acercan hasta 0,3° en el cielo matutino, la mitad del diámetro de la Luna llena. El planeta más brillante junto al rojo, fácil de ver a simple vista al amanecer."
+          "description": "Venus y Marte se acercan hasta 0,3° en el cielo vespertino, la mitad del diámetro de la Luna llena. El planeta más brillante junto al rojo, fácil de ver a simple vista al atardecer."
         },
         "fr": {
           "title": "Vénus rencontre Mars",
-          "description": "Vénus et Mars se rapprochent à 0,3° dans le ciel du matin, soit la moitié du diamètre de la pleine Lune. La planète la plus brillante à côté de la rouge, facile à repérer à l'œil nu à l'aube."
+          "description": "Vénus et Mars se rapprochent à 0,3° dans le ciel du soir, soit la moitié du diamètre de la pleine Lune. La planète la plus brillante à côté de la rouge, facile à repérer à l'œil nu au crépuscule."
         },
         "it": {
           "title": "Venere incontra Marte",
-          "description": "Venere e Marte si avvicinano fino a 0,3° nel cielo del mattino, metà del diametro della Luna piena. Il pianeta più luminoso accanto a quello rosso, facile da vedere a occhio nudo all'alba."
+          "description": "Venere e Marte si avvicinano fino a 0,3° nel cielo della sera, metà del diametro della Luna piena. Il pianeta più luminoso accanto a quello rosso, facile da vedere a occhio nudo al tramonto."
         },
         "pt-BR": {
           "title": "Vênus encontra Marte",
-          "description": "Vênus e Marte se aproximam até 0,3° no céu da manhã, metade do diâmetro da Lua cheia. O planeta mais brilhante ao lado do vermelho, fácil de ver a olho nu ao amanhecer."
+          "description": "Vênus e Marte se aproximam até 0,3° no céu do anoitecer, metade do diâmetro da Lua cheia. O planeta mais brilhante ao lado do vermelho, fácil de ver a olho nu ao anoitecer."
         },
         "ru": {
           "title": "Венера рядом с Марсом",
-          "description": "Венера и Марс сближаются до 0,3° на утреннем небе — половина ширины полной Луны. Самая яркая планета рядом с красной: лёгкая пара для невооружённого глаза на рассвете."
+          "description": "Венера и Марс сближаются до 0,3° на вечернем небе — половина ширины полной Луны. Самая яркая планета рядом с красной: лёгкая пара для невооружённого глаза в сумерках."
         }
       }
     },
@@ -1026,47 +1026,47 @@
       "localizedStrings": {
         "en": {
           "title": "Ursids Meteor Shower",
-          "description": "A minor shower radiating from Ursa Minor around the winter solstice, with about 10 meteors per hour at its peak. In 2026 a 94%-full Moon washes out all but the brightest meteors."
+          "description": "A minor shower radiating from Ursa Minor around the winter solstice, with about 10 meteors per hour at its peak. In 2027 a 21% waning crescent Moon leaves the sky dark for most of the night."
         },
         "ko": {
           "title": "작은곰자리 유성우",
-          "description": "동지 무렵 작은곰자리에서 복사되는 소규모 유성우로, 극대기에 시간당 약 10개의 유성이 흐릅니다. 2026년에는 94% 밝기의 달이 밝은 유성을 제외한 대부분을 가립니다."
+          "description": "동지 무렵 작은곰자리에서 복사되는 소규모 유성우로, 극대기에 시간당 약 10개의 유성이 흐릅니다. 2027년에는 달이 21% 밝기의 그믐달이라 밤 대부분 하늘이 어둡습니다."
         },
         "ja": {
           "title": "こぐま座流星群",
-          "description": "冬至の頃にこぐま座から放射される小規模な流星群で、極大時には1時間あたり約10個の流星が見られます。2026年は94%の月明かりが、明るい流星以外をかき消します。"
+          "description": "冬至の頃にこぐま座から放射される小規模な流星群で、極大時には1時間あたり約10個の流星が見られます。2027年は輝面比21%の細い月で、夜の大半は月明かりの影響がありません。"
         },
         "zh-Hans": {
           "title": "小熊座流星雨",
-          "description": "冬至前后从小熊座辐射的小型流星雨,极大时每小时约10颗。2026年94%的明亮月光会盖过除最亮流星以外的大部分。"
+          "description": "冬至前后从小熊座辐射的小型流星雨,极大时每小时约10颗。2027年月相仅为21%的残月,夜间大部分时间不受月光影响。"
         },
         "zh-Hant": {
           "title": "小熊座流星雨",
-          "description": "冬至前後從小熊座輻射的小型流星雨,極大時每小時約10顆。2026年94%的明亮月光會蓋過除最亮流星以外的大部分。"
+          "description": "冬至前後從小熊座輻射的小型流星雨,極大時每小時約10顆。2027年月相僅為21%的殘月,夜間大部分時間不受月光影響。"
         },
         "de": {
           "title": "Ursiden-Meteorstrom",
-          "description": "Ein kleiner Strom, der um die Wintersonnenwende aus dem Kleinen Bären strahlt, mit etwa 10 Meteoren pro Stunde im Maximum. 2026 überstrahlt ein zu 94 % beleuchteter Mond alle bis auf die hellsten Meteore."
+          "description": "Ein kleiner Strom, der um die Wintersonnenwende aus dem Kleinen Bären strahlt, mit etwa 10 Meteoren pro Stunde im Maximum. 2027 stört der zu 21 % beleuchtete abnehmende Mond den größten Teil der Nacht nicht."
         },
         "es": {
           "title": "Lluvia de meteoros Úrsidas",
-          "description": "Una lluvia menor que irradia desde la Osa Menor cerca del solsticio de invierno, con unos 10 meteoros por hora en su pico. En 2026 una Luna llena al 94 % oculta todos menos los más brillantes."
+          "description": "Una lluvia menor que irradia desde la Osa Menor cerca del solsticio de invierno, con unos 10 meteoros por hora en su pico. En 2027 una Luna menguante iluminada al 21 % deja el cielo oscuro la mayor parte de la noche."
         },
         "fr": {
           "title": "Pluie de météores des Ursides",
-          "description": "Une pluie mineure rayonnant de la Petite Ourse autour du solstice d'hiver, avec environ 10 météores par heure au maximum. En 2026, une Lune éclairée à 94 % efface tous les météores sauf les plus brillants."
+          "description": "Une pluie mineure rayonnant de la Petite Ourse autour du solstice d'hiver, avec environ 10 météores par heure au maximum. En 2027, un croissant de Lune décroissant éclairé à 21 % laisse le ciel sombre la majeure partie de la nuit."
         },
         "it": {
           "title": "Sciame meteorico delle Ursidi",
-          "description": "Uno sciame minore che irradia dall'Orsa Minore vicino al solstizio d'inverno, con circa 10 meteore all'ora al picco. Nel 2026 una Luna piena al 94% cancella tutte tranne le meteore più luminose."
+          "description": "Uno sciame minore che irradia dall'Orsa Minore vicino al solstizio d'inverno, con circa 10 meteore all'ora al picco. Nel 2027 una Luna calante illuminata al 21% lascia il cielo buio per gran parte della notte."
         },
         "pt-BR": {
           "title": "Chuva de meteoros Ursídeas",
-          "description": "Uma chuva menor que irradia da Ursa Menor perto do solstício de inverno, com cerca de 10 meteoros por hora no pico. Em 2026, uma Lua 94% cheia ofusca todos, exceto os mais brilhantes."
+          "description": "Uma chuva menor que irradia da Ursa Menor perto do solstício de inverno, com cerca de 10 meteoros por hora no pico. Em 2027, uma Lua minguante 21% iluminada deixa o céu escuro durante a maior parte da noite."
         },
         "ru": {
           "title": "Метеорный поток Урсиды",
-          "description": "Небольшой поток, исходящий из созвездия Малой Медведицы вблизи зимнего солнцестояния, с примерно 10 метеорами в час в максимуме. В 2026 году Луна, освещённая на 94 %, затмевает все метеоры, кроме самых ярких."
+          "description": "Небольшой поток, исходящий из созвездия Малой Медведицы вблизи зимнего солнцестояния, с примерно 10 метеорами в час в максимуме. В 2027 году убывающая Луна, освещённая на 21 %, почти всю ночь не мешает наблюдениям."
         }
       }
     }
