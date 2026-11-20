@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>스타트 Zig 프로그래밍</title>
+<style>
+:root{--paper:#F6F4EE;--card:#FFFFFF;--ink:#16181D;--sub:#5B5F68;--line:#E3E0D7;--blue:#2456A6;--blue2:#1F4C92;--orange:#B85418;--soft:#E6EDF8}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;background:var(--paper);color:var(--ink);line-height:1.75}
+html[data-lang="ko"] .l-en{display:none}
+html[data-lang="en"] .l-ko{display:none}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px 60px}
+.langbar{display:flex;justify-content:flex-end;padding:14px 0}
+.langbar button{border:1px solid var(--blue);background:transparent;color:var(--blue);padding:5px 14px;cursor:pointer;font-size:14px}
+.langbar button:first-child{border-radius:8px 0 0 8px}
+.langbar button:last-child{border-radius:0 8px 8px 0}
+.langbar button.on{background:var(--blue);color:#fff}
+h1{font-size:1.8rem;margin:16px 0 6px}
+.upd{color:var(--sub);font-size:.9rem;margin-bottom:30px}
+h2{font-size:1.2rem;margin:32px 0 10px;padding-top:14px;border-top:1px solid var(--line)}
+h3{font-size:1.02rem;margin:18px 0 4px}
+p,li{font-size:.98rem;color:#33363d}
+p+p{margin-top:8px}
+ul{padding-left:22px;margin:8px 0}
+.box{background:var(--card);border-radius:14px;padding:20px 22px;margin:16px 0;box-shadow:0 4px 18px rgba(22,24,29,.06)}
+.big{background:var(--soft);border-left:4px solid var(--blue);border-radius:0 12px 12px 0;padding:18px 20px;margin:18px 0;font-weight:600}
+.hero{display:flex;gap:18px;align-items:center;margin:10px 0 6px}
+.hero img{width:88px;height:88px;border-radius:20px;box-shadow:0 4px 14px rgba(22,24,29,.12)}
+.sub{color:var(--sub);font-size:1.05rem}
+nav.links{margin:22px 0 0;display:flex;gap:14px;flex-wrap:wrap}
+nav.links a,footer a,p a{color:var(--blue2)}
+footer{border-top:1px solid var(--line);padding:24px 0 0;margin-top:40px;text-align:center;font-size:.9rem;color:var(--sub)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="langbar">
+  <button id="b-ko" class="on" onclick="setLang('ko')">한국어</button>
+  <button id="b-en" onclick="setLang('en')">English</button>
+</div>
+
+<div class="hero">
+  <img src="data:image/png;base64,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" alt="">
+  <div>
+    <h1><span class="l-ko">스타트 Zig 프로그래밍</span><span class="l-en">Start Zig Programming</span></h1>
+    <p class="sub"><span class="l-ko">한 줄씩 실행하며 보는 Zig와 메모리</span><span class="l-en">See Zig and memory, line by line</span></p>
+  </div>
+</div>
+<nav class="links">
+  <a href="support.html"><span class="l-ko">지원</span><span class="l-en">Support</span></a>
+  <a href="privacy.html"><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></a>
+</nav>
+
+<h2><span class="l-ko">이런 앱이에요</span><span class="l-en">What it does</span></h2>
+<p class="l-ko">Zig 코드를 한 줄씩 실행하며 메모리가 바뀌는 모습을 눈으로 보는 Zig 학습 앱입니다. 함수의 스택 칸, 그 안의 값, 할당자가 빌려준 힙 블록,
+포인터와 슬라이스가 가리키는 곳이 그림으로 바뀌고, 방금 바뀐 값은 노랗게 칠해집니다. 앱 화면과 레슨은 한국어로 나옵니다.</p>
+<p class="l-en">A Zig learning app that lets you watch memory change as you run code one line at a time. Stack frames and their values, heap blocks handed out by allocators,
+and where pointers and slices point are drawn as pictures, and values that just changed are highlighted. The app's screens and lessons are in Korean.</p>
+
+<h2><span class="l-ko">한 줄씩 실행하고 되감기</span><span class="l-en">Step forward, step back</span></h2>
+<ul class="l-ko">
+  <li>다음 줄, 이전 줄, 처음과 끝으로 옮겨 가며 실행합니다</li>
+  <li>함수 칸이 쌓이고 사라지는 모습, defer가 거꾸로 도는 차례가 보입니다</li>
+  <li>변수를 누르면 바이트와 비트를 16진수·10진수·2진수·문자로 봅니다</li>
+  <li>comptime으로 바꾸면 컴파일 시간에 계산되는 값을 따로 따라갑니다</li>
+  <li>가상 마이크로컨트롤러 보드의 LED·버튼·레지스터가 보드 패널에 보입니다</li>
+</ul>
+<ul class="l-en">
+  <li>Move to the next line, the previous line, the start, or the end</li>
+  <li>Watch frames pile up and disappear, and defer run in reverse order</li>
+  <li>Tap a variable to see its bytes and bits in hex, decimal, binary, or characters</li>
+  <li>Switch to comptime to follow values computed at compile time</li>
+  <li>See the LEDs, buttons, and registers of a virtual microcontroller board</li>
+</ul>
+
+<h2><span class="l-ko">다섯 트랙 · 레슨 113개 · 실습 40개</span><span class="l-en">Five tracks, 113 lessons, 40 exercises</span></h2>
+<div class="box">
+<ul class="l-ko">
+  <li><b>트랙 1 Zig 첫걸음</b> — 첫 프로그램, 값과 자료형, 흐름 제어, 함수와 test 블록 (무료)</li>
+  <li><b>트랙 2 Zig 핵심</b> — 배열과 슬라이스, 포인터, 구조체, 옵셔널, 오류 처리, 문자열, 할당자, 표준 컨테이너</li>
+  <li><b>트랙 3 comptime</b> — 컴파일 시간 값과 자료형을 값으로 받는 함수</li>
+  <li><b>트랙 4 안전과 메모리</b> — 검사되는 잘못, 최적화 모드, 비트와 배치</li>
+  <li><b>트랙 5 임베디드 Zig</b> — 운영체제 없는 Zig로 가상 보드의 레지스터와 GPIO</li>
+</ul>
+<ul class="l-en">
+  <li><b>Track 1 First steps</b> — first program, values and types, control flow, functions and test blocks (free)</li>
+  <li><b>Track 2 Zig core</b> — arrays and slices, pointers, structs, optionals, errors, strings, allocators, standard containers</li>
+  <li><b>Track 3 comptime</b> — compile-time values and functions that take types as values</li>
+  <li><b>Track 4 Safety and memory</b> — checked illegal behavior, optimization modes, bits and layout</li>
+  <li><b>Track 5 Embedded Zig</b> — freestanding Zig with the registers and GPIO of a virtual board</li>
+</ul>
+</div>
+<p class="l-ko">트랙 1 전체와 트랙 2~5의 첫 모듈은 무료이고, 나머지는 트랙마다 한 번 구매하면 열립니다. 모듈마다 퀴즈와 테스트로 채점되는 실습이 있고,
+C를 아는 분을 위해 같은 일을 하는 C 코드와 나란히 놓은 대조 카드가 있습니다.</p>
+<p class="l-en">All of Track 1 and the first module of Tracks 2–5 are free; the rest opens with a one-time purchase per track. Every module has a quiz and test-graded exercises,
+and contrast cards set Zig side by side with C code that does the same thing.</p>
+
+<h2><span class="l-ko">실제 Zig처럼, 기기 안에서</span><span class="l-en">Like the real Zig, on the device</span></h2>
+<p class="l-ko">이 과정은 Zig 0.17을 가르칩니다. 모든 예제와 실습 답안, 퀴즈 코드를 실제 zig 0.17.1로 돌려 보고 넣었습니다. 컴파일 오류는 한국어 설명과 함께 컴파일러의 원문을 보여 줍니다.
+코드는 앱 안의 교육용 Zig 실행기가 기기 안에서 실행하며, 인터넷이 필요하지 않습니다. 광고가 없고 개인정보를 수집하지 않습니다.</p>
+<p class="l-en">The course teaches Zig 0.17. Every example, exercise solution, and quiz program was checked with the real zig 0.17.1. Compile errors come with an explanation and the compiler's original message.
+Code runs on the device in the app's educational Zig runner, with no internet needed. There are no ads, and no personal information is collected.</p>
+
+<h2><span class="l-ko">지원 기기</span><span class="l-en">Requirements</span></h2>
+<p class="l-ko">iOS 18 이상의 iPhone과 iPad. iPad와 펼친 접는 iPhone에서는 코드, 메모리, 출력을 한 화면에 나란히 봅니다.</p>
+<p class="l-en">iPhone and iPad with iOS 18 or later. On iPad and an unfolded foldable iPhone, code, memory, and output sit side by side.</p>
+
+<footer>
+  <p><a href="index.html"><span class="l-ko">스타트 Zig 프로그래밍</span><span class="l-en">Start Zig Programming</span></a> ·
+  <a href="support.html"><span class="l-ko">지원</span><span class="l-en">Support</span></a> ·
+  <a href="privacy.html"><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></a></p>
+  <p><span class="l-ko">이 앱은 Zig Software Foundation과 관계없는 비공식 학습 앱입니다.</span>
+  <span class="l-en">This is an unofficial learning app, not affiliated with the Zig Software Foundation.</span></p>
+</footer>
+
+</div>
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  document.documentElement.setAttribute('lang', l);
+  document.getElementById('b-ko').classList.toggle('on', l==='ko');
+  document.getElementById('b-en').classList.toggle('on', l==='en');
+  try{ localStorage.setItem('lang', l); }catch(e){}
+}
+try{ var s=localStorage.getItem('lang'); if(s) setLang(s); else if(!/^ko/i.test(navigator.language||'')) setLang('en'); }catch(e){}
+</script>
+</body>
+</html>

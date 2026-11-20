@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>지원 — 스타트 Zig 프로그래밍</title>
+<style>
+:root{--paper:#F6F4EE;--card:#FFFFFF;--ink:#16181D;--sub:#5B5F68;--line:#E3E0D7;--blue:#2456A6;--blue2:#1F4C92;--orange:#B85418;--soft:#E6EDF8}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;background:var(--paper);color:var(--ink);line-height:1.75}
+html[data-lang="ko"] .l-en{display:none}
+html[data-lang="en"] .l-ko{display:none}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px 60px}
+.langbar{display:flex;justify-content:flex-end;padding:14px 0}
+.langbar button{border:1px solid var(--blue);background:transparent;color:var(--blue);padding:5px 14px;cursor:pointer;font-size:14px}
+.langbar button:first-child{border-radius:8px 0 0 8px}
+.langbar button:last-child{border-radius:0 8px 8px 0}
+.langbar button.on{background:var(--blue);color:#fff}
+h1{font-size:1.8rem;margin:16px 0 6px}
+.upd{color:var(--sub);font-size:.9rem;margin-bottom:30px}
+h2{font-size:1.2rem;margin:32px 0 10px;padding-top:14px;border-top:1px solid var(--line)}
+h3{font-size:1.02rem;margin:18px 0 4px}
+p,li{font-size:.98rem;color:#33363d}
+p+p{margin-top:8px}
+ul{padding-left:22px;margin:8px 0}
+.box{background:var(--card);border-radius:14px;padding:20px 22px;margin:16px 0;box-shadow:0 4px 18px rgba(22,24,29,.06)}
+.big{background:var(--soft);border-left:4px solid var(--blue);border-radius:0 12px 12px 0;padding:18px 20px;margin:18px 0;font-weight:600}
+.hero{display:flex;gap:18px;align-items:center;margin:10px 0 6px}
+.hero img{width:88px;height:88px;border-radius:20px;box-shadow:0 4px 14px rgba(22,24,29,.12)}
+.sub{color:var(--sub);font-size:1.05rem}
+nav.links{margin:22px 0 0;display:flex;gap:14px;flex-wrap:wrap}
+nav.links a,footer a,p a{color:var(--blue2)}
+footer{border-top:1px solid var(--line);padding:24px 0 0;margin-top:40px;text-align:center;font-size:.9rem;color:var(--sub)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="langbar">
+  <button id="b-ko" class="on" onclick="setLang('ko')">한국어</button>
+  <button id="b-en" onclick="setLang('en')">English</button>
+</div>
+
+<h1><span class="l-ko">지원</span><span class="l-en">Support</span></h1>
+<p class="upd"><span class="l-ko">스타트 Zig 프로그래밍</span><span class="l-en">Start Zig Programming</span></p>
+
+<h2><span class="l-ko">시작하기</span><span class="l-en">Getting started</span></h2>
+<p class="l-ko">처음 열면 써 본 언어를 고르고 짧은 진단 퀴즈를 풀어 시작할 레슨을 추천받습니다. "건너뛰기"를 누르면 트랙 1의 첫 레슨부터 시작합니다.
+추천은 언제든 <i>설정 › 시작 지점 다시 고르기</i>로 다시 받을 수 있고, 어느 레슨이든 과정 탭에서 바로 열 수 있습니다.</p>
+<p class="l-en">On first launch, pick the languages you know and take a short placement quiz to get a recommended starting lesson. Tap "Skip" to start from the first lesson of Track 1.
+You can get a new recommendation any time in <i>Settings › Choose a starting point again</i>, and you can open any lesson directly from the Courses tab.
+(The app's screens and lessons are in Korean.)</p>
+
+<h2><span class="l-ko">구매</span><span class="l-en">Purchases</span></h2>
+<h3><span class="l-ko">무엇이 무료인가요?</span><span class="l-en">What is free?</span></h3>
+<p class="l-ko">트랙 1 "Zig 첫걸음" 전체와 트랙 2·3·4·5의 첫 모듈이 무료입니다. 나머지 모듈은 트랙마다 한 번 구매하면 열리고, 업데이트로 더해지는 모듈도 함께 열립니다.
+잠긴 레슨은 첫 카드를 미리 볼 수 있습니다.</p>
+<p class="l-en">All of Track 1 and the first module of Tracks 2–5 are free. The other modules open with a one-time purchase per track, which also opens modules added in later updates.
+You can preview the first card of a locked lesson.</p>
+<h3><span class="l-ko">다른 기기에서 산 트랙이 잠겨 있어요</span><span class="l-en">A track I bought on another device is locked</span></h3>
+<p class="l-ko"><i>설정 › 구매 › 구매 복원</i>을 누르세요. 같은 Apple 계정으로 산 트랙이 열립니다(App Store 계정을 물을 수 있습니다).</p>
+<p class="l-en">Tap <i>Settings › Purchases › Restore Purchases</i>. Tracks bought with the same Apple Account will open (you may be asked to sign in to the App Store).</p>
+<h3><span class="l-ko">가격이 보이지 않아요</span><span class="l-en">I can't see the price</span></h3>
+<p class="l-ko">가격은 App Store에서 받아 옵니다. 인터넷에 연결된 뒤 트랙 화면을 다시 열어 주세요.</p>
+<p class="l-en">Prices come from the App Store. Connect to the internet and open the track screen again.</p>
+<h3><span class="l-ko">환불</span><span class="l-en">Refunds</span></h3>
+<p class="l-ko">환불은 Apple이 처리합니다. <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>에서 요청할 수 있습니다.</p>
+<p class="l-en">Refunds are handled by Apple. You can request one at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+
+<h2><span class="l-ko">진도</span><span class="l-en">Progress</span></h2>
+<p class="l-ko">진도와 퀴즈 점수, 실습 기록은 이 기기에만 저장되며 다른 기기로 이어지지 않습니다. <i>설정 › 진도 초기화</i>로 모두 지울 수 있습니다.</p>
+<p class="l-en">Progress, quiz scores, and exercise records are stored only on this device and do not carry over to other devices. You can erase them all in <i>Settings › Reset progress</i>.</p>
+
+<h2><span class="l-ko">Zig 코드 실행</span><span class="l-en">Running Zig code</span></h2>
+<p class="l-ko">앱은 Zig 0.17을 가르치며, 앱 안의 교육용 Zig 실행기가 기기 안에서 코드를 실행합니다. 모든 예제와 실습 답안, 퀴즈 코드는 실제 zig 0.17.1로 돌려 보고 넣었습니다.
+실행기가 아직 하지 않는 기능을 쓰면 "아직 하지 않는 기능"이라고 알려 줍니다. 결과가 실제 zig와 다르면 코드와 함께 알려 주세요.</p>
+<p class="l-en">The app teaches Zig 0.17, and an educational Zig runner inside the app runs your code on the device. Every example, exercise solution, and quiz program was checked with the real zig 0.17.1.
+If you use a feature the runner doesn't support yet, it tells you so. If a result differs from the real zig, please send us the code.</p>
+<p class="l-ko">끝없이 도는 프로그램은 <i>설정 › 실행 한도</i>의 명령 수에서 멈춥니다. 큰 프로그램이 한도에 걸리면 이 값을 늘리세요.</p>
+<p class="l-en">A program that never ends stops at the instruction limit in <i>Settings › Run limits</i>. If a large program hits the limit, raise it there.</p>
+
+<h2><span class="l-ko">문의</span><span class="l-en">Contact</span></h2>
+<p class="l-ko">오류 신고나 제안은 이메일로 보내 주세요. 기기 모델, iOS 버전, 앱 버전(<i>설정 › 정보</i>), 레슨 번호를 함께 적어 주시면 빨리 확인할 수 있습니다.</p>
+<p class="l-en">Please send bug reports and suggestions by email. Including your device model, iOS version, app version (<i>Settings › About</i>), and the lesson number helps us check quickly.</p>
+<p><a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a></p>
+
+<footer>
+  <p><a href="index.html"><span class="l-ko">스타트 Zig 프로그래밍</span><span class="l-en">Start Zig Programming</span></a> ·
+  <a href="support.html"><span class="l-ko">지원</span><span class="l-en">Support</span></a> ·
+  <a href="privacy.html"><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></a></p>
+  <p><span class="l-ko">이 앱은 Zig Software Foundation과 관계없는 비공식 학습 앱입니다.</span>
+  <span class="l-en">This is an unofficial learning app, not affiliated with the Zig Software Foundation.</span></p>
+</footer>
+
+</div>
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  document.documentElement.setAttribute('lang', l);
+  document.getElementById('b-ko').classList.toggle('on', l==='ko');
+  document.getElementById('b-en').classList.toggle('on', l==='en');
+  try{ localStorage.setItem('lang', l); }catch(e){}
+}
+try{ var s=localStorage.getItem('lang'); if(s) setLang(s); else if(!/^ko/i.test(navigator.language||'')) setLang('en'); }catch(e){}
+</script>
+</body>
+</html>
