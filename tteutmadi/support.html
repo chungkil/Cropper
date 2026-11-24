@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>지원 — 뜻마디</title>
+<style>
+:root{--paper:#F4F6FA;--ink:#1E2B4A;--accent:#2563C9;--sub:#5B6475;--card:#FFFFFF;--line:#E3E8F0}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;background:var(--paper);color:#2B3340;line-height:1.8;word-break:keep-all;overflow-wrap:break-word}
+html[data-lang="ko"] .l-en{display:none!important}
+html[data-lang="en"] .l-ko{display:none!important}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px 60px}
+.langbar{display:flex;justify-content:flex-end;padding:14px 0}
+.langbar button{border:1px solid var(--accent);background:transparent;color:var(--accent);padding:5px 14px;cursor:pointer;font-size:14px}
+.langbar button:first-child{border-radius:8px 0 0 8px}
+.langbar button:last-child{border-radius:0 8px 8px 0}
+.langbar button.on{background:var(--accent);color:#fff}
+h1{color:var(--ink);font-size:1.7rem;margin:16px 0 24px}
+.card{background:var(--card);border-radius:14px;padding:26px;box-shadow:0 4px 18px rgba(30,43,74,.08);margin-bottom:18px}
+.card h2{color:var(--ink);font-size:1.15rem;margin-bottom:10px}
+.contact{border-left:4px solid var(--accent)}
+.contact a{font-size:1.05rem;font-weight:600}
+.note{font-size:.9rem;color:var(--sub)}
+.faq h3{color:var(--ink);font-size:1rem;margin:18px 0 4px}
+.faq h3:first-of-type{margin-top:0}
+.faq .note{margin-bottom:14px}
+.faq p{font-size:.94rem}
+table{width:100%;border-collapse:collapse;font-size:.94rem}
+td{padding:7px 4px;border-bottom:1px solid var(--line);vertical-align:top}
+td:first-child{color:var(--sub);width:34%}
+a{color:var(--accent)}
+.links a{margin-right:16px}
+.back{display:inline-block;margin-top:10px;color:var(--ink);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="langbar">
+    <button id="btn-ko" class="on" onclick="setLang('ko')">한국어</button>
+    <button id="btn-en" onclick="setLang('en')">English</button>
+  </div>
+
+  <h1><span class="l-ko">지원</span><span class="l-en">Support</span></h1>
+
+  <div class="card contact">
+    <h2><span class="l-ko">문의하기</span><span class="l-en">Contact Us</span></h2>
+    <p><a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a></p>
+    <p class="note">
+      <span class="l-ko">보통 1~2 영업일 안에 답변드립니다. 기기 모델과 iOS 버전을 함께 알려 주시면 더 빨리 도와드릴 수 있습니다.</span>
+      <span class="l-en">We usually reply within 1–2 business days. Including your device model and iOS version helps us respond faster.</span>
+    </p>
+  </div>
+
+  <div class="card faq">
+    <h2><span class="l-ko">자주 묻는 질문</span><span class="l-en">FAQ</span></h2>
+    <p class="note l-en">The app is in Korean only. The answers below give the Korean names you will see in the app.</p>
+
+    <h3><span class="l-ko">인터넷 없이 쓸 수 있나요?</span><span class="l-en">Does it work offline?</span></h3>
+    <p><span class="l-ko">네. 단원과 문항이 모두 앱에 들어 있어 인터넷 없이 배우고 복습할 수 있습니다. 구매, 구매 복원, iCloud 백업에는 인터넷 연결이 필요합니다.</span>
+    <span class="l-en">Yes. All units and questions ship inside the app, so you can learn and review without an internet connection. Purchasing, restoring purchases, and iCloud backup need a connection.</span></p>
+
+    <h3><span class="l-ko">4단원부터 "구독하면 열려요"라고 나와요.</span><span class="l-en">From unit 4 it says “구독하면 열려요” (opens with a subscription).</span></h3>
+    <p><span class="l-ko">앞 3단원은 누구나 끝까지 배울 수 있습니다. 4단원부터는 월 구독, 연 구독, 평생 이용 가운데 하나로 열립니다. 배운 글자의 복습, 처음 보는 낱말 풀기, 같은 소리 다른 뜻은 구독하지 않아도 계속할 수 있습니다.</span>
+    <span class="l-en">Anyone can study the first three units in full. From unit 4, units open with a monthly subscription, a yearly subscription, or a lifetime purchase. Reviewing characters you have learned, “처음 보는 낱말 풀기” (figuring out new words), and “같은 소리, 다른 뜻” (same sound, different meaning) stay available without a subscription.</span></p>
+
+    <h3><span class="l-ko">다음 단원에 자물쇠가 있어요.</span><span class="l-en">The next unit has a lock.</span></h3>
+    <p><span class="l-ko">단원은 앞 단원을 마치면 차례로 열립니다. 구매와는 상관없는 학습 순서입니다.</span>
+    <span class="l-en">Units open in order as you finish the one before. This is the learning sequence, not a paywall.</span></p>
+
+    <h3><span class="l-ko">구독이 끝나면 배운 단원은 어떻게 되나요?</span><span class="l-en">What happens to finished units when a subscription ends?</span></h3>
+    <p><span class="l-ko">마친 단원은 계속 다시 배울 수 있습니다. 아직 마치지 않은 4단원 이후의 단원만 다시 잠깁니다. 학습 기록과 복습도 그대로 남습니다.</span>
+    <span class="l-en">You can keep studying the units you finished. Only unfinished units from unit 4 on lock again. Your learning records and reviews stay as they are.</span></p>
+
+    <h3><span class="l-ko">구매했는데 열리지 않아요.</span><span class="l-en">I bought it but nothing opened.</span></h3>
+    <p><span class="l-ko">가족 공유의 '구매 요청'이 켜져 있으면 보호자가 승인해야 구매가 완료됩니다. 승인되면 앱이 열려 있을 때는 곧바로, 아니면 다음에 앱을 열 때 열립니다. 그래도 잠겨 있으면 첫 화면 오른쪽 위의 별 단추로 구독 화면에 들어가 '구매 복원'을 눌러 주세요.</span>
+    <span class="l-en">If Ask to Buy is on in Family Sharing, the purchase completes only after a parent or guardian approves it. Once approved, units open right away if the app is open, or the next time you open it. If they are still locked, tap the star button at the top right of the home screen to open the subscription screen, then tap “구매 복원” (Restore Purchases).</span></p>
+
+    <h3><span class="l-ko">다른 기기에서도 구매를 쓸 수 있나요?</span><span class="l-en">Can I use my purchase on another device?</span></h3>
+    <p><span class="l-ko">네. 구매할 때 쓴 Apple 계정으로 로그인한 기기라면 구독 화면에서 '구매 복원'을 누르면 열립니다.</span>
+    <span class="l-en">Yes. On a device signed in with the Apple Account you used to buy, tap “구매 복원” (Restore Purchases) on the subscription screen.</span></p>
+
+    <h3><span class="l-ko">구독을 해지하려면 어떻게 하나요?</span><span class="l-en">How do I cancel a subscription?</span></h3>
+    <p><span class="l-ko">설정 앱의 Apple 계정 &gt; 구독에서 해지할 수 있습니다. 구독 중이면 앱의 구독 화면에 있는 '구독 관리'로도 갈 수 있습니다. 월·연 구독은 기간이 끝나기 24시간 전까지 해지하지 않으면 자동으로 갱신됩니다. 해지해도 이번 기간이 끝날 때까지는 열려 있습니다.</span>
+    <span class="l-en">Cancel under Apple Account &gt; Subscriptions in the Settings app. While subscribed, you can also tap “구독 관리” (Manage Subscription) on the app's subscription screen. Monthly and yearly subscriptions renew automatically unless canceled at least 24 hours before the period ends. After canceling, units stay open until the current period ends.</span></p>
+
+    <h3><span class="l-ko">기기를 바꾸면 학습 기록이 옮겨지나요?</span><span class="l-en">Do my learning records move to a new device?</span></h3>
+    <p><span class="l-ko">자동으로 옮겨지지는 않습니다. 쓰던 기기에서 첫 화면 오른쪽 위의 구름 단추를 눌러 '지금 백업하기'를 하고, 새 기기에서 같은 화면의 '백업에서 되살리기'를 눌러 주세요. 두 기기 모두 같은 Apple 계정으로 로그인하고 iCloud Drive를 켜 두어야 합니다. 새 기기에 이미 한 학습이 있으면, 바꾸기 전에 확인을 받고 그 기록의 사본을 기기에 남겨 둡니다.</span>
+    <span class="l-en">Not automatically. On your old device, tap the cloud button at the top right of the home screen and choose “지금 백업하기” (Back Up Now). On the new device, open the same screen and choose “백업에서 되살리기” (Restore from Backup). Both devices need to be signed in to the same Apple Account with iCloud Drive turned on. If the new device already has some learning, the app asks before replacing it and keeps a copy of that record on the device.</span></p>
+
+    <h3><span class="l-ko">복습은 언제 나오나요?</span><span class="l-en">When do reviews appear?</span></h3>
+    <p><span class="l-ko">배운 글자는 잊을 때쯤 첫 화면의 복습 카드에 다시 나옵니다. 틀린 글자는 더 일찍 나옵니다.</span>
+    <span class="l-en">Characters you have learned come back in the review card (복습) on the home screen around the time you are likely to forget them. Characters you got wrong come back sooner.</span></p>
+
+    <h3><span class="l-ko">학습 기록을 지우고 싶어요.</span><span class="l-en">How do I delete my learning records?</span></h3>
+    <p><span class="l-ko">앱을 삭제하면 기기의 학습 기록이 지워집니다. iCloud에 백업해 두었다면, 백업은 설정 앱의 iCloud 저장 공간 관리에서 지울 수 있습니다.</span>
+    <span class="l-en">Deleting the app removes the learning records on the device. If you backed up to iCloud, you can delete the backup from iCloud storage management in the Settings app.</span></p>
+  </div>
+
+  <div class="card">
+    <h2><span class="l-ko">앱 정보</span><span class="l-en">App Information</span></h2>
+    <table>
+      <tr><td><span class="l-ko">개발자</span><span class="l-en">Developer</span></td><td>Chungkil Kim</td></tr>
+      <tr><td><span class="l-ko">플랫폼</span><span class="l-en">Platform</span></td><td><span class="l-ko">iPhone, iPad (iOS 18.0 이상)</span><span class="l-en">iPhone, iPad (iOS 18.0 or later)</span></td></tr>
+      <tr><td><span class="l-ko">가격</span><span class="l-en">Price</span></td><td><span class="l-ko">무료 다운로드 · 앞 3단원 무료 · 월·연 구독 또는 평생 이용(앱 내 구입) · 광고 없음</span><span class="l-en">Free download · first three units free · monthly or yearly subscription, or lifetime purchase (in-app purchase) · no ads</span></td></tr>
+      <tr><td><span class="l-ko">언어</span><span class="l-en">Language</span></td><td><span class="l-ko">한국어</span><span class="l-en">Korean</span></td></tr>
+    </table>
+  </div>
+
+  <p class="links">
+    <a href="privacy.html"><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></a>
+    <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"><span class="l-ko">이용약관(Apple 표준 EULA)</span><span class="l-en">Terms of Use (Apple Standard EULA)</span></a>
+  </p>
+  <a class="back" href="index.html"><span class="l-ko">← 홈으로</span><span class="l-en">← Back to Home</span></a>
+</div>
+
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  document.documentElement.setAttribute('lang', l);
+  document.getElementById('btn-ko').classList.toggle('on', l==='ko');
+  document.getElementById('btn-en').classList.toggle('on', l==='en');
+  try{localStorage.setItem('ttm-lang', l);}catch(e){}
+}
+try{var s=localStorage.getItem('ttm-lang'); if(s==='en') setLang('en');}catch(e){}
+</script>
+</body>
+</html>
