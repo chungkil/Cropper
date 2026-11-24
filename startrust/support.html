@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>지원 — Start Rust</title>
+<style>
+:root{--paper:#F7F2EC;--ink:#2A2138;--accent:#E8590C;--sub:#7A6F86;--card:#FFFFFF}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;background:var(--paper);color:#2d2a33;line-height:1.8}
+html[data-lang="ko"] .l-en{display:none}
+html[data-lang="en"] .l-ko{display:none}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px 60px}
+.langbar{display:flex;justify-content:flex-end;padding:14px 0}
+.langbar button{border:1px solid var(--accent);background:transparent;color:var(--accent);padding:5px 14px;cursor:pointer;font-size:14px}
+.langbar button:first-child{border-radius:8px 0 0 8px}
+.langbar button:last-child{border-radius:0 8px 8px 0}
+.langbar button.on{background:var(--accent);color:#fff}
+h1{color:var(--ink);font-size:1.7rem;margin:16px 0 4px}
+.date{color:var(--sub);font-size:.9rem;margin-bottom:28px}
+.card{background:var(--card);border-radius:14px;padding:26px;box-shadow:0 4px 18px rgba(42,33,56,.08);margin-bottom:18px}
+.card h2{color:var(--ink);font-size:1.15rem;margin-bottom:10px}
+.card p,.card li{font-size:.95rem}
+.card ul{padding-left:20px;margin-top:6px}
+.hl{background:#FDEFE6;border-left:4px solid var(--accent);padding:14px 18px;border-radius:8px;font-weight:600;color:var(--ink)}
+a{color:var(--accent)}
+.back{display:inline-block;margin-top:10px;color:var(--ink);text-decoration:none}
+.notice{color:var(--sub);font-size:.85rem;margin-top:28px;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="langbar">
+    <button id="btn-ko" class="on" onclick="setLang('ko')">한국어</button>
+    <button id="btn-en" onclick="setLang('en')">English</button>
+  </div>
+  <h1><span class="l-ko">지원</span><span class="l-en">Support</span></h1>
+  <p class="date"><span class="l-ko">앱: Start Rust (iPhone·iPad·Mac)</span><span class="l-en">App: Start Rust (iPhone, iPad, Mac)</span></p>
+  <div class="card">
+    <h2><span class="l-ko">문의</span><span class="l-en">Contact</span></h2>
+    <p><span class="l-ko">질문이나 문제 보고는 이메일로 보내 주세요: <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a></span>
+    <span class="l-en">Send questions or problem reports by email: <a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a></span></p>
+  </div>
+  <div class="card">
+    <h2><span class="l-ko">자주 묻는 질문</span><span class="l-en">FAQ</span></h2>
+    <p><span class="l-ko"><b>인터넷이 필요한가요?</b> 아니요. 코드 실행과 채점은 모두 기기 안에서 이루어집니다.</span>
+    <span class="l-en"><b>Do I need an internet connection?</b> No. Running and grading code happen entirely on your device.</span></p>
+    <p><span class="l-ko"><b>실행이 멈추지 않아요.</b> 실행 중에는 Run 버튼 자리에 중단 버튼이 나옵니다. 실행 시간은 5초로 제한됩니다.</span>
+    <span class="l-en"><b>My program does not stop.</b> While running, a Stop button replaces Run. Each run is limited to 5 seconds.</span></p>
+    <p><span class="l-ko"><b>앱이 갑자기 종료됐어요.</b> 실행 직전의 코드는 저장되어 있습니다. 다시 열면 안내가 나옵니다. 같은 코드에서 반복되면 이메일로 알려 주세요.</span>
+    <span class="l-en"><b>The app closed unexpectedly.</b> Your code from just before the run is saved, and the app shows a notice when reopened. If it keeps happening with the same code, please let us know by email.</span></p>
+  </div>
+  <a class="back" href="index.html"><span class="l-ko">← 홈으로</span><span class="l-en">← Back to Home</span></a>
+
+  <p class="notice"><span class="l-ko">이 앱은 Rust Foundation 또는 Rust 프로젝트와 관련이 없으며, 이들의 승인이나 보증을 받지 않았습니다.</span><span class="l-en">This app is not affiliated with or endorsed by the Rust Foundation or the Rust Project.</span></p>
+</div>
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  document.getElementById('btn-ko').classList.toggle('on', l==='ko');
+  document.getElementById('btn-en').classList.toggle('on', l==='en');
+  try{localStorage.setItem('startrust-lang', l);}catch(e){}
+}
+try{var s=localStorage.getItem('startrust-lang'); if(s==='en') setLang('en');}catch(e){}
+</script>
+</body>
+</html>

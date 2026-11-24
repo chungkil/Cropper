@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>개인정보 처리방침 — Start Rust</title>
+<style>
+:root{--paper:#F7F2EC;--ink:#2A2138;--accent:#E8590C;--sub:#7A6F86;--card:#FFFFFF}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Segoe UI',Roboto,sans-serif;background:var(--paper);color:#2d2a33;line-height:1.8}
+html[data-lang="ko"] .l-en{display:none}
+html[data-lang="en"] .l-ko{display:none}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px 60px}
+.langbar{display:flex;justify-content:flex-end;padding:14px 0}
+.langbar button{border:1px solid var(--accent);background:transparent;color:var(--accent);padding:5px 14px;cursor:pointer;font-size:14px}
+.langbar button:first-child{border-radius:8px 0 0 8px}
+.langbar button:last-child{border-radius:0 8px 8px 0}
+.langbar button.on{background:var(--accent);color:#fff}
+h1{color:var(--ink);font-size:1.7rem;margin:16px 0 4px}
+.date{color:var(--sub);font-size:.9rem;margin-bottom:28px}
+.card{background:var(--card);border-radius:14px;padding:26px;box-shadow:0 4px 18px rgba(42,33,56,.08);margin-bottom:18px}
+.card h2{color:var(--ink);font-size:1.15rem;margin-bottom:10px}
+.card p,.card li{font-size:.95rem}
+.card ul{padding-left:20px;margin-top:6px}
+.hl{background:#FDEFE6;border-left:4px solid var(--accent);padding:14px 18px;border-radius:8px;font-weight:600;color:var(--ink)}
+a{color:var(--accent)}
+.back{display:inline-block;margin-top:10px;color:var(--ink);text-decoration:none}
+.notice{color:var(--sub);font-size:.85rem;margin-top:28px;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="langbar">
+    <button id="btn-ko" class="on" onclick="setLang('ko')">한국어</button>
+    <button id="btn-en" onclick="setLang('en')">English</button>
+  </div>
+  <h1><span class="l-ko">개인정보 처리방침</span><span class="l-en">Privacy Policy</span></h1>
+  <p class="date"><span class="l-ko">앱: Start Rust (iPhone·iPad·Mac) · 최종 수정일: 2026년 11월 25일</span><span class="l-en">App: Start Rust (iPhone, iPad, Mac) · Last updated: November 25, 2026</span></p>
+  <div class="card">
+    <p class="hl">
+      <span class="l-ko">Start Rust의 개발자는 어떤 개인정보도 수집하지 않습니다.</span>
+      <span class="l-en">The developer of Start Rust does not collect any personal information.</span>
+    </p>
+  </div>
+  <div class="card">
+    <h2><span class="l-ko">1. 수집하는 정보</span><span class="l-en">1. Information We Collect</span></h2>
+    <p><span class="l-ko">개발자가 받는 정보는 없습니다. 이 앱에는 로그인, 계정, 광고, 분석 도구, 개발자의 서버가 없으며, 앱은 외부 서버와 통신하지 않습니다.</span>
+    <span class="l-en">The developer receives no information. The app has no sign-in, no accounts, no ads, no analytics, and no developer servers, and it does not communicate with external servers.</span></p>
+  </div>
+  <div class="card">
+    <h2><span class="l-ko">2. 코드 실행</span><span class="l-en">2. Running Code</span></h2>
+    <p><span class="l-ko">작성한 코드는 기기 안의 Rust 컴파일러와 해석기로만 실행되며 외부로 전송되지 않습니다. 실행되는 코드는 기기의 파일이나 네트워크에 접근할 수 없습니다.</span>
+    <span class="l-en">Code you write runs only through the Rust compiler and interpreter inside the app on your device and is never transmitted. Running code cannot access your device's files or network.</span></p>
+  </div>
+  <div class="card">
+    <h2><span class="l-ko">3. 데이터 저장</span><span class="l-en">3. Data Storage</span></h2>
+    <p><span class="l-ko">작성한 코드와 설정은 기기 안의 앱 저장 공간에만 저장됩니다. 개발자는 이 데이터에 접근할 수 없으며, 앱을 삭제하면 함께 삭제됩니다.</span>
+    <span class="l-en">Your code and settings are stored only in the app's storage on your device. The developer cannot access this data, and deleting the app removes it.</span></p>
+  </div>
+  <div class="card">
+    <h2><span class="l-ko">4. 제3자 서비스</span><span class="l-en">4. Third-Party Services</span></h2>
+    <p><span class="l-ko">광고 SDK, 분석 SDK, 소셜 로그인 등 제3자 서비스를 사용하지 않습니다.</span>
+    <span class="l-en">The app uses no third-party services such as advertising SDKs, analytics SDKs, or social sign-in.</span></p>
+  </div>
+  <div class="card">
+    <h2><span class="l-ko">5. 아동의 개인정보</span><span class="l-en">5. Children's Privacy</span></h2>
+    <p><span class="l-ko">개발자는 어떤 정보도 수집하지 않으므로 아동의 개인정보 역시 수집하지 않습니다.</span>
+    <span class="l-en">Since the developer collects nothing, no information from children is collected either.</span></p>
+  </div>
+  <div class="card">
+    <h2><span class="l-ko">6. 정책 변경</span><span class="l-en">6. Changes to This Policy</span></h2>
+    <p><span class="l-ko">정책이 변경되면 이 페이지에 게시하고 최종 수정일을 갱신합니다.</span>
+    <span class="l-en">If this policy changes, we will post the update on this page and revise the date above.</span></p>
+  </div>
+  <div class="card">
+    <h2><span class="l-ko">7. 문의</span><span class="l-en">7. Contact</span></h2>
+    <p><a href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a></p>
+  </div>
+  <a class="back" href="index.html"><span class="l-ko">← 홈으로</span><span class="l-en">← Back to Home</span></a>
+
+  <p class="notice"><span class="l-ko">이 앱은 Rust Foundation 또는 Rust 프로젝트와 관련이 없으며, 이들의 승인이나 보증을 받지 않았습니다.</span><span class="l-en">This app is not affiliated with or endorsed by the Rust Foundation or the Rust Project.</span></p>
+</div>
+<script>
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  document.getElementById('btn-ko').classList.toggle('on', l==='ko');
+  document.getElementById('btn-en').classList.toggle('on', l==='en');
+  try{localStorage.setItem('startrust-lang', l);}catch(e){}
+}
+try{var s=localStorage.getItem('startrust-lang'); if(s==='en') setLang('en');}catch(e){}
+</script>
+</body>
+</html>
