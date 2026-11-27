@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skiagraph — 지원 · Support</title>
+<meta property="og:title" content="Skiagraph — Support">
+<style>
+  :root { --bg: #f1f3ef; --card: #ffffff; --fg: #1c2320; --muted: #56615a; --line: #d3d9d1; --accent: #1c6a58; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #111513; --card: #191f1c; --fg: #e5ebe6; --muted: #9aa69e; --line: #2b342f; --accent: #62c4a8; }
+  }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", Roboto, sans-serif;
+         margin: 0; background: var(--bg); color: var(--fg); line-height: 1.7; word-break: keep-all; overflow-wrap: break-word; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 36px 20px 60px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 26px 28px; margin-bottom: 18px; }
+  h1 { font-size: 27px; margin: 0 0 6px; }
+  h2 { font-size: 18px; margin: 26px 0 4px; }
+  .card h2:first-child { margin-top: 0; }
+  p { margin: 0 0 10px; }
+  .meta { color: var(--muted); }
+  a { color: var(--accent); }
+  .mail { font-weight: 600; user-select: all; }
+  nav.top { display: flex; flex-wrap: wrap; gap: 8px 16px; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+  nav.top .links a { margin-right: 14px; text-decoration: none; }
+  .lang-switch { display: flex; gap: 8px; }
+  .lang-switch button { font: inherit; font-size: 13px; padding: 6px 14px; border-radius: 999px; border: 1px solid var(--line);
+    background: var(--card); color: var(--fg); cursor: pointer; white-space: nowrap; }
+  .lang-switch button.active { background: var(--accent); border-color: var(--accent); color: var(--card); }
+  footer { text-align: center; color: var(--muted); font-size: 14px; margin-top: 24px; }
+  @media (max-width: 480px) { .card { padding: 20px 18px; } h1 { font-size: 23px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="top">
+    <div class="links"><a href="index.html">Skiagraph</a><a href="privacy.html">Privacy · 개인정보</a></div>
+    <!-- 스크립트가 꺼져 있으면 두 언어가 모두 보인다 -->
+    <div class="lang-switch" id="langSwitch" hidden>
+      <button type="button" data-lang="ko">한국어</button>
+      <button type="button" data-lang="en">English</button>
+    </div>
+  </nav>
+
+  <!-- ====================== ko ====================== -->
+  <section class="lang" data-lang="ko" lang="ko">
+    <div class="card">
+      <h1>Skiagraph 지원</h1>
+      <p>도움이 필요하시면 아래 주소로 메일을 보내 주세요. 기기와 OS 버전, 화면 캡처를 함께 보내 주시면 빨리 살펴볼 수 있습니다.</p>
+      <p><a class="mail" href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a></p>
+    </div>
+
+    <div class="card">
+      <h2>그림자가 가리키는 시각과 테두리의 숫자가 다릅니다</h2>
+      <p class="meta">틀린 것이 아닙니다. 그림자는 해의 시각(진태양시)을, 테두리에 켜진 숫자는 시계 시각을 가리킵니다. 둘은 경도와 균시차 때문에 몇십 분씩 다릅니다. 예를 들어 서울은 한 해 내내 해시계가 시계보다 16–47분쯤 늦습니다. 왼쪽 위의 칩을 누르면 지금의 차이와 까닭을 분으로 보여 줍니다.</p>
+
+      <h2>밤에도 그림자가 보입니다 / 밤에 그림자가 없습니다</h2>
+      <p class="meta">"늘 비춤" 모드에서는 밤에 달이 밝게 떠 있으면 달빛이, 아니면 램프가 그릇을 비춥니다. 이때의 그림자는 시각을 가리키지 않습니다. "실제 해" 모드에서는 해가 지면 그림자도 사라집니다. 이 모드에서는 화면을 길게 눌러 라이터를 잠깐 켤 수 있습니다.</p>
+
+      <h2>위치 권한을 주지 않고 쓸 수 있나요?</h2>
+      <p class="meta">네. 권한이 없으면 기기의 시간대에 맞는 대표 위치로 계산합니다. 설정의 "위치 출처"에서 "도시 직접 선택"을 고르면 지금 시간대의 도시 가운데 하나를 고를 수 있습니다. 다른 시간대의 도시는 기기의 시간대를 바꾸면 고를 수 있습니다.</p>
+
+      <h2>화면을 계속 켜 두고 싶습니다</h2>
+      <p class="meta">오른쪽 위의 거치 모드 버튼을 누르면 화면이 꺼지지 않고 시각이 크게 보입니다. iPhone·iPad는 충전 중에 가로로 세워 두면 스스로 거치 모드로 들어갑니다. 이 동작과 밤에 어둡게 하는 것은 설정의 "거치 모드"에서 끌 수 있습니다.</p>
+
+      <h2>"북극성 맞춤"이 보이지 않습니다</h2>
+      <p class="meta">나침반이 있는 기기에서만 고를 수 있습니다. 나침반이 없는 기기에서는 설정에 값만 보입니다. 남반구에서는 이름이 "천구 남극 맞춤"으로 바뀝니다.</p>
+
+      <h2>구매한 Pro가 보이지 않습니다</h2>
+      <p class="meta">설정의 Pro 묶음에서 "광고 없애기"를 누른 뒤 "구매 복원"을 눌러 주세요. 구매할 때와 같은 Apple 계정으로 로그인돼 있어야 합니다.</p>
+
+      <h2>환불을 받고 싶습니다</h2>
+      <p class="meta">구매와 환불은 Apple이 처리합니다. <a href="https://reportaproblem.apple.com/">reportaproblem.apple.com</a>에서 요청할 수 있습니다.</p>
+
+      <h2>지원하는 기기와 언어</h2>
+      <p class="meta">iOS 27, iPadOS 27 이상. 한국어와 영어. 지평환에 새긴 시 이름과 절기 이름은 어느 언어에서나 한글이고, 뜻은 앱의 정보 화면과 VoiceOver가 풀어 줍니다.</p>
+    </div>
+  </section>
+
+  <!-- ====================== en ====================== -->
+  <section class="lang" data-lang="en" lang="en">
+    <div class="card">
+      <h1>Skiagraph Support</h1>
+      <p>If you need help, write to the address below. Your device, OS version and a screenshot help us look into it quickly.</p>
+      <p><a class="mail" href="mailto:chungkil.cksw@gmail.com">chungkil.cksw@gmail.com</a></p>
+    </div>
+
+    <div class="card">
+      <h2>The shadow and the numbers on the rim show different times</h2>
+      <p class="meta">That is not an error. The shadow shows the sun's own time (true solar time); the glowing numbers on the rim show clock time. Longitude and the equation of time put them tens of minutes apart. Tap the chip at the top left to see the difference right now, and why, in minutes.</p>
+
+      <h2>There is a shadow at night / there is no shadow at night</h2>
+      <p class="meta">In Always Lit, the bowl is lit at night by moonlight when a bright moon is up, and by a lamp when it is not. That shadow does not show the time. In Real Sun, the shadow goes when the sun sets; touch and hold the screen to light a lighter for a moment.</p>
+
+      <h2>Can I use it without granting location access?</h2>
+      <p class="meta">Yes. Without access, the app uses the representative place of your device's time zone. In Settings, set Location Source to Chosen City to pick a city in your current time zone. Cities in other time zones become available when you change the device's time zone.</p>
+
+      <h2>I want to keep the screen on</h2>
+      <p class="meta">Tap the Dock Mode button at the top right: the screen stays on and the time is shown large. On iPhone and iPad, standing the device in landscape while charging docks it by itself. You can turn that off, and the dimming at night, under Dock Mode in Settings.</p>
+
+      <h2>I can't find North Star Alignment</h2>
+      <p class="meta">It can be chosen only on devices with a compass. On devices without one, Settings shows the value only. In the southern hemisphere it is called South Celestial Pole Alignment.</p>
+
+      <h2>My Pro purchase is missing</h2>
+      <p class="meta">Open Settings, tap Remove Ads in the Pro section, then Restore Purchases. You need to be signed in with the Apple Account you bought it with.</p>
+
+      <h2>I'd like a refund</h2>
+      <p class="meta">Purchases and refunds are handled by Apple. You can request one at <a href="https://reportaproblem.apple.com/">reportaproblem.apple.com</a>.</p>
+
+      <h2>Supported devices and languages</h2>
+      <p class="meta">iOS 27 and iPadOS 27 or later. English and Korean. The hour names and solar terms engraved on the rim are in Hangul in every language; the app's About screen and VoiceOver explain what they mean.</p>
+    </div>
+  </section>
+
+  <footer>© 2026 Skiagraph</footer>
+</div>
+
+<script>
+(function () {
+  var sw = document.getElementById("langSwitch");
+  var sections = document.querySelectorAll("section.lang");
+  function show(lang) {
+    sections.forEach(function (s) { s.hidden = s.getAttribute("data-lang") !== lang; });
+    sw.querySelectorAll("button").forEach(function (b) { b.classList.toggle("active", b.getAttribute("data-lang") === lang); });
+    document.documentElement.lang = lang;
+    try { localStorage.setItem("skiagraph-lang", lang); } catch (e) {}
+  }
+  var saved = null;
+  try { saved = localStorage.getItem("skiagraph-lang"); } catch (e) {}
+  var first = saved || ((navigator.language || "en").toLowerCase().indexOf("ko") === 0 ? "ko" : "en");
+  sw.hidden = false;
+  sw.addEventListener("click", function (e) {
+    var lang = e.target && e.target.getAttribute && e.target.getAttribute("data-lang");
+    if (lang) show(lang);
+  });
+  show(first);
+})();
+</script>
+</body>
+</html>
