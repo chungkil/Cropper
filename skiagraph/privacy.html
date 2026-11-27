@@ -48,13 +48,18 @@
   <section class="lang" data-lang="ko" lang="ko">
     <div class="card">
       <h1>개인정보 처리방침</h1>
-      <p class="meta">시행일 2026년 11월 27일 · Skiagraph(해시계: 앙부일구), iPhone·iPad</p>
-      <p>Skiagraph는 계정이 없고, 앱이 직접 운영하는 서버도 없습니다. 앱의 코드는 사용자의 정보를 모아 어디로도 보내지 않습니다. 다만 무료판은 화면 아래에 Google의 광고(AdMob)를 보여 주며, 그 광고 SDK가 아래에 적은 데이터를 모읍니다.</p>
+      <p class="meta">시행일 2026년 11월 28일 · Skiagraph(해시계: 앙부일구), iPhone·iPad</p>
+      <p>Skiagraph는 계정이 없고, 앱이 직접 운영하는 서버도 없습니다. 이름·이메일 같은 개인정보를 묻지 않습니다. 앱을 고치는 데 쓰는 사용 통계(Google Analytics)를 보내고, 무료판은 화면 아래에 Google의 광고(AdMob)를 보여 주며 그 광고 SDK가 아래에 적은 데이터를 모읍니다.</p>
     </div>
 
     <div class="card">
       <h2>위치</h2>
-      <p class="meta">해와 달의 방향을 계산하고, "북극성 맞춤"을 켜면 진북을 맞추는 데 대략적인 위치를 씁니다. 계산은 기기 안에서 하고, 앱은 위치를 다른 곳으로 보내지 않습니다. 위치 권한을 주지 않아도 도시를 직접 골라 쓸 수 있습니다. 무료판의 광고는 대략적인 위치를 쓸 수 있습니다.</p>
+      <p class="meta">해와 달의 방향을 계산하고, "북극성 맞춤"을 켜면 진북을 맞추는 데 대략적인 위치를 씁니다. 계산은 기기 안에서 하고, 앱은 위치를 다른 곳으로 보내지 않습니다. 위치 권한을 주지 않아도 도시를 직접 골라 쓸 수 있습니다. 무료판의 광고는 대략적인 위치를 쓸 수 있고, 사용 통계는 IP 주소로 대략적인 지역을 짐작합니다(아래).</p>
+
+      <h2>사용 통계 (Google Analytics)</h2>
+      <p class="meta">앱을 고치는 데 쓰려고 Google Analytics for Firebase로 다음 사용 통계를 보냅니다. 무료판과 Pro 모두 보냅니다.</p>
+      <p class="meta">- 설치마다 새로 만드는 임의의 앱 식별자. 사용 통계에는 기기의 광고 식별자(IDFA)를 쓰지 않습니다.<br>- 앱 사용 기록: 앱을 연 날과 쓴 시간, 본 화면, 구매 화면을 본 일, Pro를 구매하거나 복원한 일, 무료·Pro 구분, 무료판에서 광고가 요청되고 표시된 일.<br>- 기기와 앱 정보: 기종, OS 버전, 앱 버전, 언어, IP 주소로 짐작한 대략적인 지역(국가·도시 수준).</p>
+      <p class="meta">앱이 해와 달 계산에 쓰는 위치(좌표와 고른 도시)는 사용 통계에 넣지 않습니다. 사용 통계는 광고와 추적에 쓰지 않습니다.</p>
 
       <h2>광고 (무료판)</h2>
       <p class="meta">무료판은 Google Mobile Ads SDK로 배너 광고를 보여 줍니다. 이 SDK가 모으는 데이터는 다음과 같습니다.</p>
@@ -63,7 +68,7 @@
       <p class="meta">Google이 이 데이터를 어떻게 쓰는지는 <a href="https://policies.google.com/technologies/partner-sites">Google의 안내</a>와 <a href="https://policies.google.com/privacy">개인정보처리방침</a>에 있습니다.</p>
 
       <h2>Pro 구매</h2>
-      <p class="meta">구매와 결제는 Apple이 처리합니다. 앱은 구매 여부만 기기에서 확인하고, 결제 정보를 받지 않습니다. Pro를 구매하면 광고 SDK를 시동하지 않으므로 위의 광고 데이터 수집이 일어나지 않습니다.</p>
+      <p class="meta">구매와 결제는 Apple이 처리합니다. 앱은 구매 여부만 기기에서 확인하고, 결제 정보를 받지 않습니다. Pro를 구매하면 광고 SDK를 시동하지 않으므로 위의 광고 데이터 수집이 일어나지 않습니다. 사용 통계는 Pro에서도 보냅니다.</p>
 
       <h2>기기에만 두는 것</h2>
       <p class="meta">재질, 조명 모드, 고른 도시 같은 설정은 기기에만 저장합니다. 앱을 지우면 함께 지워집니다.</p>
@@ -80,13 +85,18 @@
   <section class="lang" data-lang="en" lang="en">
     <div class="card">
       <h1>Privacy Policy</h1>
-      <p class="meta">Effective November 27, 2026 · Skiagraph: Sundial Clock, for iPhone and iPad</p>
-      <p>Skiagraph has no accounts and no server of its own. The app's own code does not collect your information or send it anywhere. The free version, however, shows Google ads (AdMob) at the bottom of the screen, and that advertising SDK collects the data described below.</p>
+      <p class="meta">Effective November 28, 2026 · Skiagraph: Sundial Clock, for iPhone and iPad</p>
+      <p>Skiagraph has no accounts and no server of its own, and never asks for your name, email address or other contact details. It sends usage statistics (Google Analytics) that we use to improve the app. The free version also shows Google ads (AdMob) at the bottom of the screen, and that advertising SDK collects the data described below.</p>
     </div>
 
     <div class="card">
       <h2>Location</h2>
-      <p class="meta">The app uses your approximate location to work out where the sun and moon are and, with North Star Alignment on, to find true north. The calculation happens on your device, and the app itself does not send your location anywhere. You can use the app without granting location access by choosing a city. Ads in the free version may use your approximate location.</p>
+      <p class="meta">The app uses your approximate location to work out where the sun and moon are and, with North Star Alignment on, to find true north. The calculation happens on your device, and the app itself does not send your location anywhere. You can use the app without granting location access by choosing a city. Ads in the free version may use your approximate location, and usage statistics infer an approximate region from your IP address (below).</p>
+
+      <h2>Usage statistics (Google Analytics)</h2>
+      <p class="meta">To improve the app, it sends the following usage statistics through Google Analytics for Firebase, in both the free version and Pro.</p>
+      <p class="meta">- A random identifier created for each installation. Usage statistics do not use the device's advertising identifier (IDFA).<br>- App usage: the days you open the app and how long you use it, the screens you view, when the purchase screen is shown, when Pro is purchased or restored, whether you are on the free version or Pro, and, in the free version, when an ad is requested and shown.<br>- Device and app information: device model, OS version, app version, language, and an approximate region (country or city level) inferred from your IP address.</p>
+      <p class="meta">The location the app uses for the sun and moon (coordinates and a chosen city) is never included in usage statistics. Usage statistics are not used for advertising or tracking.</p>
 
       <h2>Advertising (free version)</h2>
       <p class="meta">The free version shows banner ads through the Google Mobile Ads SDK. The SDK collects the following.</p>
@@ -95,7 +105,7 @@
       <p class="meta">How Google uses this data is described in <a href="https://policies.google.com/technologies/partner-sites">Google's explanation</a> and its <a href="https://policies.google.com/privacy">Privacy Policy</a>.</p>
 
       <h2>Pro purchase</h2>
-      <p class="meta">Purchases and payments are handled by Apple. The app only checks on your device whether you have purchased Pro; it receives no payment details. With Pro, the advertising SDK is not started, so the ad data collection above does not take place.</p>
+      <p class="meta">Purchases and payments are handled by Apple. The app only checks on your device whether you have purchased Pro; it receives no payment details. With Pro, the advertising SDK is not started, so the ad data collection above does not take place. Usage statistics are still sent with Pro.</p>
 
       <h2>Kept on your device only</h2>
       <p class="meta">Settings such as the material, the lighting mode and a chosen city are stored only on your device. They are removed when you delete the app.</p>
